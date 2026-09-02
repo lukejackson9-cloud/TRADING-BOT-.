@@ -30,13 +30,24 @@ separate step, not a default.
   that places any trades on your behalf in this mode.
 
 ## The advisory flow
-1. A routine runs skills/screen.md → skills/research.md → skills/propose_trades.md.
-   This writes trade ideas to /data/pending_trades.json and pings you via
-   ClickUp (if configured). **No order is ever sent — there's no account to
-   send one to.**
-2. You review the ideas — in the file, in ClickUp, or by asking Claude Code
+1. A routine runs skills/screen.md → skills/research.md. research.md is
+   deliberately skeptical — most tickers should end in PASS or WATCH, not
+   CANDIDATE.
+2. Any ticker research.md marks CANDIDATE goes through skills/council.md
+   before anything is proposed: independent bull-case and bear-case
+   subagents build their strongest honest arguments without seeing each
+   other's work, then Claude Code moderates honestly — the bull case does
+   not win by default, and a downgrade back to WATCH/PASS is a normal,
+   expected outcome, not a failure. This exists because a single research
+   pass can talk itself into a good story; the point is to catch that
+   before it reaches you as advice.
+3. Only a ticker that survives council review reaches
+   skills/propose_trades.md, which writes the idea to
+   /data/pending_trades.json and pings you via ClickUp (if configured).
+   **No order is ever sent — there's no account to send one to.**
+4. You review the ideas — in the file, in ClickUp, or by asking Claude Code
    directly ("show me today's trade ideas").
-3. You decide what to do with them, and place anything you like yourself in
+5. You decide what to do with them, and place anything you like yourself in
    the T212 app. This repo has no execution capability while unconnected.
 
 ## Setup
@@ -72,7 +83,8 @@ Claude Code routines replace cron. In Claude Code:
   2. Set up a routine (check Claude Code's docs for current syntax/UI —
      search "Claude Code routines" if it's not obvious) for each cadence:
      - 8:00 AM ET  → "Follow skills/screen.md"
-     - 10:00 AM ET → "Follow skills/research.md then skills/propose_trades.md"
+     - 10:00 AM ET → "Follow skills/research.md, then skills/council.md for
+       any CANDIDATE, then skills/propose_trades.md"
      - 1:00 PM ET  → "Follow skills/monitor.md"
      - 4:15 PM ET  → "Follow skills/report.md"
   3. Do NOT schedule skills/execute_approved.md — it's inert in advisory-only
@@ -91,6 +103,7 @@ trading-agent/
 ├── skills/
 │   ├── screen.md               # find candidates (WebSearch-based, not T212 data)
 │   ├── research.md             # WebSearch-based research per ticker
+│   ├── council.md              # adversarial bull/bear review of any CANDIDATE
 │   ├── propose_trades.md       # size ideas, write to pending_trades.json — advisory only
 │   ├── execute_approved.md     # INERT in this mode — no connected account
 │   ├── monitor.md              # advisory position check-in, based on what you report
@@ -100,7 +113,8 @@ trading-agent/
 │   ├── perplexity_client.py   # unused — research runs on WebSearch instead
 │   └── clickup_client.py
 ├── data/
-│   ├── research/YYYY-MM-DD/{TICKER}.md
+│   ├── research/YYYY-MM-DD/{TICKER}.md            # research.md's take
+│   ├── research/YYYY-MM-DD/{TICKER}_council.md    # council.md's bull/bear/decision
 │   ├── pending_trades.json    # proposals awaiting your approval
 │   ├── trades.log
 │   └── positions.json

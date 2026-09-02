@@ -7,6 +7,10 @@ full stop — there is no execution path to hand off to.
 
 ## Preconditions
 - /data/research/{today}/{TICKER}.md exists and Verdict == CANDIDATE
+- /data/research/{today}/{TICKER}_council.md exists (see skills/council.md)
+  and its Moderator decision is also CANDIDATE. If council.md hasn't been
+  run yet for this ticker, run it first — never propose a trade idea off
+  the research.md verdict alone.
 
 ## Steps
 1. Do NOT call `scripts/trading212_client.py` — there is no connected

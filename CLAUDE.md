@@ -35,10 +35,15 @@ advisory-only mode (see above), your job is to:
    project does not use the Perplexity API (the user doesn't want a paid
    API subscription) — `scripts/perplexity_client.py` is unused dead code,
    kept only in case a future contributor wants to wire it back in
-3. PROPOSE sized trades as advice (% of portfolio, not live-account-based)
+3. Before any CANDIDATE reaches the user, pressure-test it with
+   skills/council.md — independent bull and bear subagents, adversarial by
+   design, with you moderating honestly rather than defaulting to the bull
+   case. See skills/council.md for why and how. Never skip this step for a
+   CANDIDATE, no matter how strong research.md made it look.
+4. PROPOSE sized trades as advice (% of portfolio, not live-account-based)
    — this agent never executes trades, live or paper
-4. Log every decision with reasoning
-5. Send a daily report via ClickUp (if configured)
+5. Log every decision with reasoning
+6. Send a daily report via ClickUp (if configured)
 
 The user acts on any advice themselves, manually, in the Trading 212 app —
 this agent has no order-placing capability while unconnected.
@@ -85,7 +90,8 @@ to execute into — but the rule stays in force for if/when that changes.
 
 ## Routine Cadence (set up via Claude Code routines, see README.md)
 - Pre-market (8:00 AM ET): run skills/screen.md → update watchlist
-- Market open+30m (10:00 AM ET): run skills/research.md + skills/propose_trades.md
+- Market open+30m (10:00 AM ET): run skills/research.md → skills/council.md
+  (only for tickers research.md marked CANDIDATE) → skills/propose_trades.md
   (writes advisory ideas and notifies you via ClickUp — nothing executes,
   ever, in this mode)
 - skills/execute_approved.md: do not run — inert in advisory-only mode
@@ -96,5 +102,7 @@ to execute into — but the rule stays in force for if/when that changes.
 ## Non-negotiables
 - Never fabricate research — if web search returns nothing useful, say so and skip the ticker.
 - Never place a trade without writing the rationale to /data/research/ first.
+- Never let a CANDIDATE skip skills/council.md before it's proposed to the
+  user. A research.md verdict alone is not enough.
 - Always operate in PAPER mode unless /config/settings.json explicitly sets "mode": "live"
   AND the user has confirmed live trading in writing.
