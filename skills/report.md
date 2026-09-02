@@ -14,8 +14,11 @@ the user gets a daily digest without needing to check logs manually.
    - Tickers screened, tickers researched
    - Trade IDEAS produced today (advisory only — nothing was proposed for
      execution, since there is no execution path)
+   - Any correlation_flag warnings on today's ideas (see propose_trades.md)
    - Any positions discussed in skills/monitor.md today, based on what the
      user told you (not a live sync)
+   - If /data/journal/scorecard.md exists, its headline win rate/downgrade
+     accuracy numbers, WITH the sample-size caveat — never bare percentages
    - Any warnings/errors logged today
 6. Send via `scripts/clickup_client.py post_report(summary)` as a comment on
    the configured ClickUp task (see /config/settings.json "clickup_task_id"),

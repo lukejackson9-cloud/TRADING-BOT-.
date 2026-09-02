@@ -14,7 +14,7 @@ bear agent, or the moderator tends to be right. This closes the loop:
 propose an idea → find out what actually happened → write it down honestly
 → let future passes read that history before forming a new opinion.
 
-## Two things this maintains
+## Three things this maintains
 1. **Per-ticker history**: /data/journal/tickers/{TICKER}.md — every time
    this ticker is screened, researched, put through council, or its
    outcome is checked, append an entry. So the next time GTLB comes up,
@@ -24,6 +24,11 @@ propose an idea → find out what actually happened → write it down honestly
    evidence (dates, tickers, counts) — not vibes. This is what gets read
    at the start of research.md and council.md, kept short on purpose so it
    doesn't bloat every future pass.
+3. **Scorecard**: /data/journal/scorecard.md — a running numeric summary
+   recomputed from every outcome recorded in step 3 below. This turns
+   lessons.md's qualitative patterns into an actual base rate instead of a
+   handful of anecdotes, and honestly tracks whether council.md's
+   downgrades are net helping or hurting.
 
 ## Steps
 1. Find ideas worth checking: entries in /data/pending_trades.json (any
@@ -57,6 +62,34 @@ propose an idea → find out what actually happened → write it down honestly
    tickers/dates behind it. Remove or revise old lessons if new evidence
    contradicts them — this file should reflect current best understanding,
    not accumulate forever.
+5. Every time you append new outcomes, recompute and rewrite
+   /data/journal/scorecard.md in full (it's a summary, not an append-only
+   log) by tallying every "Assessment:" line across
+   /data/journal/tickers/*.md, using this template:
+   ```
+   # Scorecard — updated {date}
+
+   ## Proposed ideas (survived council, reached propose_trades.md)
+   Total checked: {N}
+   Hit target: {X} | Hit stop: {Y} | Time-stopped, neither hit: {Z} | Unclear: {U}
+   Win rate (target vs. stop, excludes unclear/time-stopped): {X}/({X}+{Y}) = {P}%
+
+   ## Council downgrades (research.md CANDIDATE -> council.md WATCH/PASS)
+   Total checked: {N}
+   Downgrade validated (price faded or didn't continue): {X}
+   Downgrade cost a winner (price kept running without us): {Y}
+   Unclear: {U}
+   Downgrade accuracy: {X}/({X}+{Y}) = {P}%
+
+   ## Sample size note
+   With this few observations (N < ~20), these percentages are directional
+   only, not statistically meaningful — don't let a short streak (in
+   either direction) drive a strategy change on its own. Say this plainly
+   in reports rather than presenting a percentage without the caveat.
+   ```
+   If there aren't yet enough outcomes to compute a category, write
+   "not enough data yet (N={N})" for that line instead of a fabricated or
+   misleadingly precise percentage.
 
 ## How research.md and council.md use this
 - research.md: before writing a fresh research note, check if
@@ -65,6 +98,9 @@ propose an idea → find out what actually happened → write it down honestly
 - council.md: give both the bull and bear agents the same ticker journal
   history (if any) as shared factual background — this doesn't bias which
   side wins, it's just prior track record, not either agent's opinion.
+- report.md: when /data/journal/scorecard.md exists, include its headline
+  numbers (win rate, downgrade accuracy) in the periodic digest, with the
+  sample-size caveat intact — don't quote a percentage without it.
 
 ## Hard rules
 - Never let the journal's lessons override fresh, specific evidence on a
@@ -73,6 +109,10 @@ propose an idea → find out what actually happened → write it down honestly
 - Never write "correct" or "incorrect" without a specific, sourced
   price-action check. If you can't find enough information to judge the
   outcome, write "unclear" honestly rather than guessing.
+- Never quote a scorecard percentage without its sample-size caveat, and
+  never let a short streak in scorecard.md (good or bad) drive a change to
+  CLAUDE.md's strategy on its own — flag it to the user as a pattern
+  worth their attention, let them decide whether to act on it.
 - Never let lessons.md grow into a wall of hedge-everything platitudes —
   if a pattern isn't specific and evidenced, it doesn't belong there.
 - This skill has no execution capability and never will, same as every

@@ -47,6 +47,11 @@ research note before any trade decision is made.
    be rare and require a real catalyst, not just "price went up."
 4. If web search returns nothing substantive, write "insufficient
    information" and mark PASS — never invent a catalyst.
+5. If watchlist.txt tags this ticker `EARNINGS {date} — pre-catalyst watch`
+   and that date hasn't happened yet, the verdict is capped at WATCH no
+   matter how good the setup looks — the print itself is unresolved binary
+   risk, not a documented catalyst (see screen.md). Once the date has
+   passed, treat it like any other ticker and evaluate the actual reaction.
 
 ## Output
 One markdown file per ticker in /data/research/YYYY-MM-DD/. Only tickers

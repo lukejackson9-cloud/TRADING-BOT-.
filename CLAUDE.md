@@ -67,6 +67,11 @@ to execute into — but the rule stays in force for if/when that changes.
 - Max position size: 5% of portfolio value per trade (advisory — % terms
   unless the user gives you a live portfolio value in chat)
 - Max total exposure: 50% of portfolio value at any time
+- Correlation check: the 50% cap counts dollars, not correlated risk —
+  skills/propose_trades.md must check new ideas against open ideas/
+  positions for sector/theme overlap and flag it explicitly
+  (`correlation_flag`), not just silently stack "different" tickers that
+  are really one bet
 - Max daily loss: in advisory-only mode there is no live P&L to check this
   against — ask the user how their account is doing before proposing new
   ideas on a day they mention being down, rather than assuming
@@ -78,9 +83,14 @@ to execute into — but the rule stays in force for if/when that changes.
   ACCOUNT CONNECTION STATUS above)
 
 ## Strategy (edit this section to change behavior)
-- Style: momentum + news catalyst (see skills/strategy.md for full rules)
-- Watchlist source: /config/watchlist.txt (edit manually or let screener update it)
+- Style: momentum + news catalyst
+- Watchlist source: /config/watchlist.txt — both reactive (today's movers)
+  and forward-looking (skills/screen.md's earnings-calendar lookahead, so
+  research.md can catch a reaction same-session instead of chasing a move
+  that already happened by the time it shows up as a "mover")
 - Entry: only after a skills/research.md pass produces a documented catalyst
+  — an upcoming-earnings tag alone is never a catalyst; see screen.md's
+  hard rule on pre-catalyst tickers
 - Exit: hard stop-loss at -4%, take-profit at +8%, or time-stop at 5 trading days
 
 ## File Map (the agent's "memory")
@@ -95,6 +105,8 @@ to execute into — but the rule stays in force for if/when that changes.
                                  what actually happened, from skills/journal.md
 - /data/journal/lessons.md    — short, evidenced cross-ticker patterns,
                                  curated by skills/journal.md
+- /data/journal/scorecard.md  — running win-rate/downgrade-accuracy stats,
+                                 recomputed by skills/journal.md
 - /skills/                    — how-to instructions for each capability
 
 ## Routine Cadence (set up via Claude Code routines, see README.md)

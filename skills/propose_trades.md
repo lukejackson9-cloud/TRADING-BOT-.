@@ -28,7 +28,22 @@ full stop — there is no execution path to hand off to.
    to the entry price. These are advisory reference points for the user to
    set themselves in the T212 app — this agent cannot attach or monitor
    live orders.
-5. Append the idea to /data/pending_trades.json as a new entry:
+5. Correlation/concentration check — do this before finalizing size, not
+   after. Read every entry in /data/pending_trades.json that isn't
+   WITHDRAWN/EXECUTED/FAILED, and everything in /data/positions.json. Ask
+   honestly: does this new ticker share a sector or theme (e.g. AI
+   infrastructure, regional banks, a single commodity, a single supplier's
+   customer base) with any of them? CLAUDE.md's 50% total-exposure cap
+   counts dollars, not correlation — three "different" 5% ideas that are
+   all really one AI-infrastructure bet isn't diversification, it's a 15%
+   concentrated bet wearing three tickers. If you find real overlap:
+   - Say so explicitly in the proposal (`correlation_flag` field below) —
+     don't silently adjust the size without explaining why.
+   - Consider whether the size should be smaller than the standard 5% cap
+     given the combined exposure, and say what you'd recommend and why.
+   - If there's no real overlap, set `correlation_flag` to `"none"` — an
+     explicit "checked, no overlap" is more honest than omitting the field.
+6. Append the idea to /data/pending_trades.json as a new entry:
    ```json
    {
      "id": "2026-09-02-NVDA-01",
@@ -39,11 +54,14 @@ full stop — there is no execution path to hand off to.
      "suggested_stop": 179.90,
      "suggested_target": 202.40,
      "research_file": "/data/research/2026-09-02/NVDA.md",
+     "correlation_flag": "none",
      "status": "ADVISORY_ONLY",
      "proposed_at": "2026-09-02T14:03:00Z"
    }
    ```
-6. Notify via `scripts/clickup_client.py post_report()` if ClickUp is
+   `correlation_flag` example when there IS overlap:
+   `"correlation_flag": "Same AI-infrastructure theme as pending idea 2026-09-01-SMCI-01 (still open); combined exposure would be 10%, consider sizing this one at 3% instead of 5%."`
+7. Notify via `scripts/clickup_client.py post_report()` if ClickUp is
    configured.
 
 ## Hard rule

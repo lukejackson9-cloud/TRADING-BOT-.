@@ -30,9 +30,13 @@ separate step, not a default.
   that places any trades on your behalf in this mode.
 
 ## The advisory flow
-1. A routine runs skills/screen.md → skills/research.md. research.md is
+1. A routine runs skills/screen.md → skills/research.md. screen.md looks
+   both backward (today's movers) and forward (an earnings-calendar
+   lookahead, so research.md can catch a reaction same-session instead of
+   always chasing a move that already happened). research.md is
    deliberately skeptical — most tickers should end in PASS or WATCH, not
-   CANDIDATE.
+   CANDIDATE, and an upcoming-earnings tag alone never counts as a
+   catalyst.
 2. Any ticker research.md marks CANDIDATE goes through skills/council.md
    before anything is proposed: independent bull-case and bear-case
    subagents build their strongest honest arguments without seeing each
@@ -42,8 +46,11 @@ separate step, not a default.
    pass can talk itself into a good story; the point is to catch that
    before it reaches you as advice.
 3. Only a ticker that survives council review reaches
-   skills/propose_trades.md, which writes the idea to
-   /data/pending_trades.json and pings you via ClickUp (if configured).
+   skills/propose_trades.md, which checks the new idea against everything
+   already open in pending_trades.json/positions.json for sector/theme
+   overlap (a `correlation_flag`, since three "different" 5% ideas in one
+   theme is really one concentrated bet) before writing it to
+   /data/pending_trades.json and pinging you via ClickUp (if configured).
    **No order is ever sent — there's no account to send one to.**
 4. You review the ideas — in the file, in ClickUp, or by asking Claude Code
    directly ("show me today's trade ideas").
@@ -129,5 +136,6 @@ trading-agent/
 │   ├── positions.json
 │   └── journal/
 │       ├── tickers/{TICKER}.md    # per-ticker verdict history + outcomes
-│       └── lessons.md             # short, evidenced cross-ticker patterns
+│       ├── lessons.md             # short, evidenced cross-ticker patterns
+│       └── scorecard.md           # running win-rate / downgrade-accuracy stats
 └── .env.example
