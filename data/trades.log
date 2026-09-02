@@ -1,3 +1,5 @@
 2026-09-02T00:00:00Z SCREEN: watchlist updated via WebSearch (pre-market movers). Added GTLB (earnings catalyst). Screened out PPBT (price ~$0.01, fails $5 floor).
 2026-09-02T00:00:00Z RESEARCH: GTLB -> CANDIDATE (confidence: medium). See /data/research/2026-09-02/GTLB.md
 2026-09-02T00:00:00Z PROPOSE: idea 2026-09-02-GTLB-01 written to pending_trades.json, status ADVISORY_ONLY (advisory-only mode, no account connected, no execution possible)
+2026-09-02T00:00:00Z COUNCIL: GTLB -> bull (moderate) vs bear (moderate); bear's "consensus target fell despite beat" + AI-competition downgrade cluster (BofA/Guggenheim/UBS/Mizuho) independently verified. Moderator verdict: WATCH, downgraded from research.md's CANDIDATE. See /data/research/2026-09-02/GTLB_council.md
+2026-09-02T00:00:00Z PROPOSE: idea 2026-09-02-GTLB-01 retroactively WITHDRAWN_COUNCIL_DOWNGRADE (proposed before council.md existed; would not have passed the new precondition)

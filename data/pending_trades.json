@@ -9,7 +9,9 @@
     "suggested_stop": 51.84,
     "suggested_target": 58.32,
     "research_file": "/data/research/2026-09-02/GTLB.md",
-    "status": "ADVISORY_ONLY",
+    "council_file": "/data/research/2026-09-02/GTLB_council.md",
+    "status": "WITHDRAWN_COUNCIL_DOWNGRADE",
+    "status_note": "Proposed before skills/council.md existed. Retroactive council review downgraded this to WATCH: consensus price target didn't follow the pop, and multiple analysts (BofA, Guggenheim, UBS, Mizuho) carry an unresolved AI-competition thesis on this name. Withdrawn, not executed on.",
     "proposed_at": "2026-09-02T00:00:00Z"
   }
 ]
