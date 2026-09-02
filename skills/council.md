@@ -33,9 +33,15 @@ substance. This design avoids that on purpose:
 ## Steps
 1. Precondition: /data/research/{today}/{TICKER}.md exists with
    Verdict == CANDIDATE.
-2. Spawn two subagents in parallel with the Agent tool. Give each ONLY the
-   ticker and today's date — not the research.md file, not each other's
-   output, not your own opinion of the trade:
+2. Check if /data/journal/tickers/{TICKER}.md exists (skills/journal.md's
+   per-ticker history — past verdicts on this exact ticker and what
+   actually happened). If it exists, its content is fair shared background
+   for BOTH agents below — it's factual track record, not either agent's
+   opinion, so handing it to both doesn't bias which side wins.
+3. Spawn two subagents in parallel with the Agent tool. Give each ONLY the
+   ticker, today's date, and the journal history from step 2 if any — not
+   the research.md file, not each other's output, not your own opinion of
+   the trade:
    - **Bull case agent**: research and build the strongest honest case FOR
      entering this trade. Use WebSearch for its own sources — don't just
      hand it research.md's citations to rephrase. Must cite real,
@@ -48,7 +54,7 @@ substance. This design avoids that on purpose:
      sounds better than the underlying numbers, a pattern resembling past
      failed breakouts in similar names. Must cite real sources for every
      claim, not vague hedging.
-3. Once both return, act as moderator yourself — this step is not
+4. Once both return, act as moderator yourself — this step is not
    delegated:
    a. Fact-check both cases against their own cited sources. Reject or
       flag any claim you can't verify was actually said by the source
@@ -60,7 +66,7 @@ substance. This design avoids that on purpose:
       real, sourced substance? Only then does CANDIDATE stand.
    d. Write the outcome to
       /data/research/{today}/{TICKER}_council.md using the template below.
-4. Only a ticker that keeps CANDIDATE status after this step moves to
+5. Only a ticker that keeps CANDIDATE status after this step moves to
    skills/propose_trades.md. A downgrade here is a normal, expected
    outcome — tell the user plainly when it happens and why, don't bury it.
 

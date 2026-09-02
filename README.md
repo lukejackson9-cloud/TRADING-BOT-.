@@ -49,6 +49,12 @@ separate step, not a default.
    directly ("show me today's trade ideas").
 5. You decide what to do with them, and place anything you like yourself in
    the T212 app. This repo has no execution capability while unconnected.
+6. Separately, skills/journal.md — the third council member — periodically
+   checks what actually happened to past ideas and verdicts, writes an
+   honest retrospective per ticker, and distills real (evidenced, not
+   vibes) patterns into a short lessons file. research.md and council.md
+   both read this for context on future tickers, so the system's opinions
+   can actually improve over time instead of resetting to zero every run.
 
 ## Setup
 1. `cp .env.example .env` and fill in the keys you're using:
@@ -87,6 +93,8 @@ Claude Code routines replace cron. In Claude Code:
        any CANDIDATE, then skills/propose_trades.md"
      - 1:00 PM ET  → "Follow skills/monitor.md"
      - 4:15 PM ET  → "Follow skills/report.md"
+     - Weekly (or whenever pending_trades.json has entries 5+ trading days
+       old) → "Follow skills/journal.md"
   3. Do NOT schedule skills/execute_approved.md — it's inert in advisory-only
      mode anyway (no connected account), and even if that changes later it
      should only ever be run on demand, never unattended.
@@ -107,7 +115,8 @@ trading-agent/
 │   ├── propose_trades.md       # size ideas, write to pending_trades.json — advisory only
 │   ├── execute_approved.md     # INERT in this mode — no connected account
 │   ├── monitor.md              # advisory position check-in, based on what you report
-│   └── report.md               # daily ClickUp summary of ideas produced
+│   ├── report.md               # daily ClickUp summary of ideas produced
+│   └── journal.md              # 3rd council member: checks past outcomes, writes lessons
 ├── scripts/
 │   ├── trading212_client.py
 │   ├── perplexity_client.py   # unused — research runs on WebSearch instead
@@ -117,5 +126,8 @@ trading-agent/
 │   ├── research/YYYY-MM-DD/{TICKER}_council.md    # council.md's bull/bear/decision
 │   ├── pending_trades.json    # proposals awaiting your approval
 │   ├── trades.log
-│   └── positions.json
+│   ├── positions.json
+│   └── journal/
+│       ├── tickers/{TICKER}.md    # per-ticker verdict history + outcomes
+│       └── lessons.md             # short, evidenced cross-ticker patterns
 └── .env.example

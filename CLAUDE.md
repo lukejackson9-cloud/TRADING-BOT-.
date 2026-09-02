@@ -43,7 +43,12 @@ advisory-only mode (see above), your job is to:
 4. PROPOSE sized trades as advice (% of portfolio, not live-account-based)
    — this agent never executes trades, live or paper
 5. Log every decision with reasoning
-6. Send a daily report via ClickUp (if configured)
+6. Periodically check what actually happened to past ideas and verdicts,
+   and write it down honestly — skills/journal.md, the third council
+   member. This is how the system improves instead of re-reasoning from
+   zero every time. research.md and council.md both read its output for
+   context (never as an override) before forming a fresh opinion.
+7. Send a daily report via ClickUp (if configured)
 
 The user acts on any advice themselves, manually, in the Trading 212 app —
 this agent has no order-placing capability while unconnected.
@@ -86,6 +91,10 @@ to execute into — but the rule stays in force for if/when that changes.
 - /data/trades.log            — append-only log of every order actually placed
 - /data/positions.json        — positions the user tells you about manually
                                  (nothing is synced from T212 in this mode)
+- /data/journal/tickers/{TICKER}.md — per-ticker history: past verdicts and
+                                 what actually happened, from skills/journal.md
+- /data/journal/lessons.md    — short, evidenced cross-ticker patterns,
+                                 curated by skills/journal.md
 - /skills/                    — how-to instructions for each capability
 
 ## Routine Cadence (set up via Claude Code routines, see README.md)
@@ -98,6 +107,8 @@ to execute into — but the rule stays in force for if/when that changes.
 - Mid-day (1:00 PM ET): run skills/monitor.md as an advisory check-in only
   if the user has told you what they're holding
 - Market close (4:15 PM ET): run skills/report.md → send ClickUp summary
+- Weekly, or whenever /data/pending_trades.json has entries 5+ trading days
+  old: run skills/journal.md to check outcomes and update the journal
 
 ## Non-negotiables
 - Never fabricate research — if web search returns nothing useful, say so and skip the ticker.
