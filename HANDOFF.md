@@ -27,20 +27,41 @@ other's work), with **you moderating** and fact-checking their load-bearing
 claims, plus the **Journal Keeper** (skills/journal.md) for memory across
 time. Every CANDIDATE must survive council before reaching the user.
 
-## BLOCKED: market screener needs a network allowlist entry
-`scripts/market_screener_client.py` (Financial Modeling Prep) is written and
-ready — it gives screen.md a real whole-market screener instead of guessing
-at WebSearch terms. **It cannot run until `financialmodelingprep.com` is
-added to this environment's network allowlist** (claude.ai/code → cloud icon
-→ gear → Network access → Custom).
+## RESOLVED (2026-09-02): FMP is reachable, and free-tier limits are now mapped
+The earlier network block is gone in this environment — `financialmodelingprep.com`
+answers normally. `scripts/market_screener_client.py` now targets FMP's
+`/stable/` namespace; the old `/api/v3/` paths are retired for any key made
+after 2025-08-31 ("Legacy Endpoint" error) — if a future session sees that
+error again, re-check FMP's docs before assuming the key is bad, not before.
 
-**First thing to do in a new session**: test it, don't assume.
-```bash
-curl -sS --max-time 10 -o /dev/null -w "%{http_code}\n" https://financialmodelingprep.com
-```
-- If it connects: the screener works. Run a real market-wide screen — this
-  is the big upgrade the user has been waiting for.
-- If it 403s: still blocked. Tell the user plainly, fall back to WebSearch.
+**Free-tier ceiling found by actually calling it, not guessing:**
+- `/stable/biggest-gainers`, `/biggest-losers`, `/most-actives`,
+  `/earnings-calendar` all work and return real whole-market movers.
+- `/stable/quote` (needed for volume) only works for a curated allowlist of
+  large/liquid symbols (confirmed: AAPL, AAL, F, INTC, NOK, NVDA, PFE, PLTR,
+  SOFI, T, TSLA) — any other symbol 402s with "Special Endpoint... not
+  available under your current subscription." So volume can be verified
+  precisely only for that allowlist; for everything else the fallback is
+  "did it also appear in most-actives" (real proxy, most-actives is
+  volume-sorted) or, failing that, an explicit UNCONFIRMED flag rather than
+  assuming it's liquid.
+- `/stable/stock-screener` and `/company-screener` (the actual whole-market
+  price/volume/sector filter) are both gated on the free tier — empty `[]`
+  or an explicit "Restricted Endpoint" message. So there's no single call
+  that replaces the old workflow; screen.md now does gainers+losers+actives
+  unioned, price-filtered client-side, volume-checked as above.
+- `/stable/earnings-calendar` is real but sparse on the free tier — only 17
+  entries market-wide across 2026-09-01 to 2026-10-15. It does **not**
+  contain ORCL at all in that window, which neither confirms nor refutes
+  the ~09-09 WebSearch-sourced guess below — treat the calendar as
+  incomplete, not authoritative, until proven otherwise.
+
+Net effect: this is a real upgrade over WebSearch-guessing for gainers/
+losers/actives/earnings-calendar breadth, but it is not the fully-verified
+whole-market screener the original plan assumed — some volume claims below
+are confirmed, some are "appeared in most-actives" (a fair proxy), and a
+few are flagged unconfirmed and pushed to research.md/WebSearch to verify
+before they can become CANDIDATEs.
 
 ## Keys — must be recreated, they are NOT in the repo
 `.env` is gitignored (correctly — secrets never get committed), so a fresh
@@ -75,8 +96,24 @@ This is logged in `/data/trades.log`. Don't assume either answer — once
 answers it with evidence. Flag the pattern to the user, let them weigh in.
 
 ## Sensible next actions
-1. Test the FMP domain (above). If unblocked, run a real screen.
+1. ~~Test the FMP domain~~ — done, see "RESOLVED" above. **Next: run
+   `skills/research.md` on today's new FMP-screened candidates below** (they
+   have not been researched or council-reviewed yet — screen.md only
+   narrows the list, per its own step 6).
 2. **ORCL reports ~2026-09-09** — research the actual reaction that day.
+   FMP's calendar doesn't confirm or deny this date (see above); keep using
+   the WebSearch-sourced estimate until closer to the date.
 3. Run `skills/journal.md` once these WATCH calls are ~5 trading days old
    (i.e. from ~2026-09-09) to check what actually happened and start the
    scorecard. This is how the 0-for-8 question gets answered honestly.
+
+## New candidates from the 2026-09-02 FMP screen — NOT yet researched
+`config/watchlist.txt` now has 15 new tickers added by a real FMP-based
+screen (see script docstring / RESOLVED section above for methodology):
+DELL, BIAF, CNH, ONDS, IREN, NU, CDE, RIG, SOFI, PLTR, PCG, NVDA, MDB, CRDO,
+DOCU (DOCU is EARNINGS 2026-09-03 pre-catalyst, not yet a candidate per
+screen.md's hard rule). MDB and CRDO have unconfirmed volume (see above) —
+have research.md sanity-check liquidity via WebSearch before treating them
+as real candidates, not just their price move. None of these 15 has been
+through `skills/research.md` or `skills/council.md` yet — that's the next
+session's job, same two-step gate as the original 8 (see table above).

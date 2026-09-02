@@ -1,7 +1,6 @@
 # One ticker per line. Comment after # is optional context.
 # This file gets overwritten daily by skills/screen.md for auto-added names;
 # manually added lines are preserved.
-AAPL   # example seed ticker — replace with your own
 GTLB   # 2026-09-02: +20% on Q2 earnings beat + raised FY guidance, screened via WebSearch
 HOOD   # 2026-09-02: Morgan Stanley/Piper Sandler/Bernstein/Scotiabank all bullish this week; council found live regulatory risk on the exact catalyst
 DUOL   # 2026-09-02: Evercore doubled target to $210 on bounce-back data; council WATCH, current-year margin compression is real (closest call of the day)
@@ -9,4 +8,23 @@ SIRI   # 2026-09-02: Deutsche Bank upgrade to Buy $45; council WATCH, the +7.5% 
 IHG    # 2026-09-02: UBS upgrade to $188 but contradicts other fair-value estimates ($134-159) -- WATCH at research stage, not sent to council
 CAT    # 2026-09-02: strong long-term AI/backlog story but no fresh 1-2wk trigger, already +32.6% YTD -- WATCH, doesn't fit short-term strategy
 OGE    # 2026-09-02: modest RBC upgrade sits against unresolved Oklahoma rate case/CWIP dispute and a recent revenue miss -- WATCH
-ORCL   # EARNINGS 2026-09-09 (unconfirmed vs 09-14) — pre-catalyst watch, not yet a candidate
+ORCL   # EARNINGS 2026-09-09 (unconfirmed vs 09-14, WebSearch) — FMP's free-tier earnings calendar has no ORCL entry through mid-Oct either, doesn't confirm or deny — pre-catalyst watch, not yet a candidate
+
+# --- added 2026-09-02 via scripts/market_screener_client.py (FMP, real screen) ---
+# $5-$500 price filter applied; leveraged/inverse/sector ETFs (TSLL, SOXL,
+# SOXS, TQQQ, SQQQ, XLF, HYG, EWZ) excluded from candidates below.
+DELL   # 2026-09-02: +15.8% today, in FMP top-50 gainers AND most-actives (volume confirmed)
+BIAF   # 2026-09-02: +48.0% today (bioAffinity Technologies), in FMP top-50 gainers AND most-actives (volume confirmed) -- small/micro-cap, verify liquidity and catalyst carefully in research.md
+CNH    # 2026-09-02: +9.2% today, FMP most-actives (volume confirmed)
+ONDS   # 2026-09-02: +8.1% today, FMP most-actives (volume confirmed)
+IREN   # 2026-09-02: +7.6% today, FMP most-actives (volume confirmed)
+NU     # 2026-09-02: +6.5% today, FMP most-actives (volume confirmed)
+CDE    # 2026-09-02: +6.0% today, FMP most-actives (volume confirmed)
+RIG    # 2026-09-02: +5.1% today, FMP most-actives (volume confirmed)
+SOFI   # 2026-09-02: +4.6% today, FMP most-actives, quote-confirmed volume 40.5M
+PLTR   # 2026-09-02: -5.8% today, FMP most-actives, quote-confirmed volume 39.6M
+PCG    # 2026-09-02: -5.2% today, FMP most-actives (volume confirmed)
+NVDA   # 2026-09-02: +3.2% today, FMP most-actives, quote-confirmed volume 156.0M
+MDB    # 2026-09-02: -13.5% today per FMP top-50 losers -- volume UNCONFIRMED, FMP free tier blocks /quote for this symbol; verify liquidity/catalyst via WebSearch before treating as a candidate
+CRDO   # 2026-09-02: -20.0% today per FMP top-50 losers -- volume UNCONFIRMED, FMP free tier blocks /quote for this symbol; verify liquidity/catalyst via WebSearch before treating as a candidate
+DOCU   # EARNINGS 2026-09-03 — pre-catalyst watch (FMP earnings calendar), not yet a candidate
