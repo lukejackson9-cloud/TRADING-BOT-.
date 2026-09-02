@@ -1,8 +1,21 @@
 # Skill: Execute Approved Trades
 
-Goal: place orders for trades the user has explicitly approved — and only
-those. This is the ONLY skill allowed to call `place_market_order()` /
-`place_limit_order()`.
+## THIS SKILL IS CURRENTLY INERT — DO NOT RUN IT
+Per CLAUDE.md's "ACCOUNT CONNECTION STATUS", the user has withheld the
+Trading 212 API secret and explicitly asked for advice only, not live
+trading. There is no connected account to place an order into, and
+`scripts/trading212_client.py` cannot authenticate. If asked to "execute" or
+"approve" a trade, explain this to the user instead of running these steps
+— they act on advisory ideas manually, in the T212 app themselves. Only
+resume following the steps below if the user later supplies the API secret
+AND explicitly asks to connect the account for real execution, and
+CLAUDE.md's status section has been updated accordingly.
+
+---
+
+Goal (once re-enabled): place orders for trades the user has explicitly
+approved — and only those. This is the ONLY skill allowed to call
+`place_market_order()` / `place_limit_order()`.
 
 ## How approval works
 The user reviews /data/pending_trades.json (or the ClickUp notification) and

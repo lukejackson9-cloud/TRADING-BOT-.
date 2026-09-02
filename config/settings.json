@@ -1,6 +1,9 @@
 {
   "broker": "trading212",
+  "account_connected": false,
   "mode": "paper",
+  "portfolio_value_gbp": 1000,
+  "portfolio_value_note": "User-declared in chat on 2026-09-02, not synced from a live account (advisory-only mode). Update if the user tells you a new figure; never infer or assume a change.",
   "max_position_pct": 0.05,
   "max_total_exposure_pct": 0.50,
   "max_daily_loss_pct": 0.03,
