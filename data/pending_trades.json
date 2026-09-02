@@ -1,1 +1,15 @@
-[]
+[
+  {
+    "id": "2026-09-02-GTLB-01",
+    "ticker": "GTLB",
+    "action": "BUY",
+    "size_pct_of_portfolio": 5,
+    "est_price": 54.00,
+    "est_price_note": "approximate, from WebSearch news coverage, not a live quote",
+    "suggested_stop": 51.84,
+    "suggested_target": 58.32,
+    "research_file": "/data/research/2026-09-02/GTLB.md",
+    "status": "ADVISORY_ONLY",
+    "proposed_at": "2026-09-02T00:00:00Z"
+  }
+]

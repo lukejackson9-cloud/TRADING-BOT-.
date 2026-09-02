@@ -1,0 +1,3 @@
+2026-09-02T00:00:00Z SCREEN: watchlist updated via WebSearch (pre-market movers). Added GTLB (earnings catalyst). Screened out PPBT (price ~$0.01, fails $5 floor).
+2026-09-02T00:00:00Z RESEARCH: GTLB -> CANDIDATE (confidence: medium). See /data/research/2026-09-02/GTLB.md
+2026-09-02T00:00:00Z PROPOSE: idea 2026-09-02-GTLB-01 written to pending_trades.json, status ADVISORY_ONLY (advisory-only mode, no account connected, no execution possible)

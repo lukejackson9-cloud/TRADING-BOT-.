@@ -2,3 +2,4 @@
 # This file gets overwritten daily by skills/screen.md for auto-added names;
 # manually added lines are preserved.
 AAPL   # example seed ticker — replace with your own
+GTLB   # 2026-09-02: +20% on Q2 earnings beat + raised FY guidance, screened via WebSearch
