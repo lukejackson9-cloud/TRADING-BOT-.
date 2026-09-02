@@ -1,5 +1,6 @@
 {
   "broker": "trading212",
+  "account_connected": false,
   "mode": "paper",
   "max_position_pct": 0.05,
   "max_total_exposure_pct": 0.50,

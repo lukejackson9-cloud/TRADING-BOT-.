@@ -1,41 +1,49 @@
 # Skill: Propose Trades
 
 Goal: turn CANDIDATE research notes into a fully-specified, human-readable
-trade proposal — WITHOUT sending any order. This is as far as any automated
-routine is allowed to go.
+trade *idea* for the user to consider — WITHOUT sending any order. In
+advisory-only mode (see CLAUDE.md) this is as far as this skill ever goes,
+full stop — there is no execution path to hand off to.
 
 ## Preconditions
 - /data/research/{today}/{TICKER}.md exists and Verdict == CANDIDATE
 
 ## Steps
-1. Pull account cash/value via `scripts/trading212_client.py get_account_cash()`.
-2. Pull current positions via `get_portfolio()` to check existing exposure.
-3. Look up the exact T212 ticker via `lookup_instrument()` — never guess the
-   ticker suffix.
-4. Compute a proposed position size = min(5% of account value, available
-   cash) at current price. Round to a sensible quantity (T212 supports
-   fractional shares).
-5. Compute a suggested stop-loss (-4%) and take-profit (+8%) level. Note:
-   these are informational only — T212's live order types are currently
-   limited (see scripts/trading212_client.py notes), so stops/targets may
-   need to be monitored manually via skills/monitor.md rather than attached
-   to the order automatically. Check current T212 docs before assuming
-   otherwise.
-6. Append the proposal to /data/pending_trades.json as a new entry:
+1. Do NOT call `scripts/trading212_client.py` — there is no connected
+   account (advisory-only mode, see CLAUDE.md) and every call would fail
+   auth. Do not try to "check" this by calling it anyway.
+2. If the user has told you their approximate portfolio value in chat
+   recently, use it for a dollar-figure example. Otherwise, size the idea
+   purely in **% of portfolio** terms.
+3. Compute a proposed position size = 5% of portfolio value (the hard cap
+   from CLAUDE.md), expressed as a percentage, or a dollar amount/share
+   count only if you have a real portfolio value and a recent price
+   (Perplexity can supply an approximate current price — flag it as
+   approximate, not a live quote).
+4. Compute a suggested stop-loss (-4%) and take-profit (+8%) level relative
+   to the entry price. These are advisory reference points for the user to
+   set themselves in the T212 app — this agent cannot attach or monitor
+   live orders.
+5. Append the idea to /data/pending_trades.json as a new entry:
    ```json
    {
      "id": "2026-09-02-NVDA-01",
-     "ticker": "NVDA_US_EQ",
+     "ticker": "NVDA",
      "action": "BUY",
-     "quantity": 3.2,
+     "size_pct_of_portfolio": 5,
      "est_price": 187.40,
      "suggested_stop": 179.90,
      "suggested_target": 202.40,
      "research_file": "/data/research/2026-09-02/NVDA.md",
-     "status": "PENDING_APPROVAL",
+     "status": "ADVISORY_ONLY",
      "proposed_at": "2026-09-02T14:03:00Z"
    }
-scripts/clickup_client.py post_report()
-Hard rule
-This skill NEVER calls place_market_order() or place_limit_order().
-It only ever writes to /data/pending_trades.json and notifies via ClickUp.
+   ```
+6. Notify via `scripts/clickup_client.py post_report()` if ClickUp is
+   configured.
+
+## Hard rule
+This skill NEVER calls `place_market_order()` or `place_limit_order()`, and
+never calls any other `trading212_client.py` function either, since there is
+no connected account in this mode. It only ever writes to
+/data/pending_trades.json and optionally notifies via ClickUp.
