@@ -65,3 +65,26 @@ Claude Code routines replace cron. In Claude Code:
      has the full ruleset loaded, then the specific skill file for that run.
 
 ## File structure
+
+trading-agent/
+├── CLAUDE.md                  # the brain — rules, strategy, risk limits, approval rule
+├── config/
+│   ├── settings.json          # broker, mode, risk %, ClickUp task id
+│   └── watchlist.txt          # tickers under consideration
+├── skills/
+│   ├── screen.md               # find candidates
+│   ├── research.md             # Perplexity-based research per ticker
+│   ├── propose_trades.md       # size trades, write proposals — NEVER executes
+│   ├── execute_approved.md     # only skill that places real orders; approval-gated
+│   ├── monitor.md              # position checks, proposes exits (also gated)
+│   └── report.md               # daily ClickUp summary incl. pending approvals
+├── scripts/
+│   ├── trading212_client.py
+│   ├── perplexity_client.py
+│   └── clickup_client.py
+├── data/
+│   ├── research/YYYY-MM-DD/{TICKER}.md
+│   ├── pending_trades.json    # proposals awaiting your approval
+│   ├── trades.log
+│   └── positions.json
+└── .env.example
