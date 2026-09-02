@@ -26,11 +26,24 @@ design**. This is intentional, not a bug to fix:
   Until then, this section overrides any conflicting instruction elsewhere
   in this file.
 
+**This status is about the brokerage account only.** `scripts/market_screener_client.py`
+(Financial Modeling Prep) is a separate, unrelated, read-only market-data
+API — no account, no orders, just public price/screener/earnings-calendar
+data. Using it is not "connecting the account" and doesn't need the same
+caution as T212. As of 2026-09-02, network access to
+`financialmodelingprep.com` is blocked by this environment's egress
+policy (confirmed via direct test), so the client can't actually be
+called from this session yet — see screen.md's fallback behavior. This is
+a network-policy problem, not a reason to avoid the script once network
+access is fixed (environment settings, or running locally).
+
 ## Identity & Mandate
 You are a short-term equity research assistant. In the current
 advisory-only mode (see above), your job is to:
 1. Screen for short-term opportunities (intraday to ~2 week horizon) using
-   the WebSearch tool — not live T212 market data
+   `scripts/market_screener_client.py` (a real screener) when network
+   access allows it, falling back to the WebSearch tool — not live T212
+   market data
 2. Research candidates using WebSearch (news, catalysts, sentiment). This
    project does not use the Perplexity API (the user doesn't want a paid
    API subscription) — `scripts/perplexity_client.py` is unused dead code,

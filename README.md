@@ -23,6 +23,22 @@ against your actual balance, you'd need to add the T212 API secret and
 explicitly ask for the account to be connected — that's a deliberate,
 separate step, not a default.
 
+## Market data: real screener vs. WebSearch guessing
+`screen.md` prefers `scripts/market_screener_client.py` (Financial
+Modeling Prep) — a real screener that queries the whole market by
+price/volume/sector — over guessing at WebSearch terms, which only
+surfaces whatever a search engine happened to return for that query, not
+a comprehensive scan. This is unrelated to the T212 "not connected"
+status above — it's a separate, read-only market-data API, no account or
+orders involved.
+
+**Known limitation**: as of 2026-09-02, this environment's network policy
+blocks `financialmodelingprep.com` (confirmed by direct test — same block
+that affects `trading212.com`/`perplexity.ai`/`clickup.com`). Until that's
+fixed — by adding the domain to this environment's Custom network
+allowlist, or running from a local Claude Code session — `screen.md` falls
+back to WebSearch automatically and says so.
+
 ## What this is (and isn't)
 - IS: a research/screening assistant that writes up sized trade *ideas*
   with documented reasoning, for you to evaluate and act on yourself.
@@ -76,6 +92,10 @@ separate step, not a default.
      back to Perplexity later.
    - ClickUp: optional. Create a Personal API Token and a task if you want
      the daily digest; skip it if you're fine reading /data/ directly.
+   - Financial Modeling Prep (FMP): recommended. A free-tier API key from
+     site.financialmodelingprep.com gives screen.md a real market screener
+     instead of WebSearch guessing. Needs network access to
+     financialmodelingprep.com — see "Market data" above if that's blocked.
 2. `pip install requests --break-system-packages`
 3. Export the env vars (or use `direnv` / your shell profile) so Claude
    Code's shell has access to them when it runs scripts.
@@ -116,7 +136,7 @@ trading-agent/
 │   ├── settings.json          # broker, mode, risk %, ClickUp task id
 │   └── watchlist.txt          # tickers under consideration
 ├── skills/
-│   ├── screen.md               # find candidates (WebSearch-based, not T212 data)
+│   ├── screen.md               # find candidates (FMP screener, WebSearch fallback)
 │   ├── research.md             # WebSearch-based research per ticker
 │   ├── council.md              # adversarial bull/bear review of any CANDIDATE
 │   ├── propose_trades.md       # size ideas, write to pending_trades.json — advisory only
@@ -127,7 +147,8 @@ trading-agent/
 ├── scripts/
 │   ├── trading212_client.py
 │   ├── perplexity_client.py   # unused — research runs on WebSearch instead
-│   └── clickup_client.py
+│   ├── clickup_client.py
+│   └── market_screener_client.py   # FMP — real screener for screen.md
 ├── data/
 │   ├── research/YYYY-MM-DD/{TICKER}.md            # research.md's take
 │   ├── research/YYYY-MM-DD/{TICKER}_council.md    # council.md's bull/bear/decision
