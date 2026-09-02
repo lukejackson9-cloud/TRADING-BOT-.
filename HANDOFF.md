@@ -84,36 +84,66 @@ council writeups are in `/data/research/2026-09-02/`.
 | OGE | Modest upgrade against an unresolved Oklahoma rate case + revenue miss |
 | ORCL | Pre-catalyst — **earnings ~2026-09-09**, hard-capped at WATCH until it prints |
 
-## Open question — do not quietly ignore this
-Going 0-for-8 is a real signal and it's **unresolved which way it cuts**:
-1. Genuinely uncertain macro week (elevated bond yields, Iran/oil tension,
-   rotation out of the AI trade) and the caution is earning its keep, or
+(See "Open question" further down — merged with the second batch's result
+rather than duplicated here.)
+
+## Sensible next actions
+1. ~~Test the FMP domain~~ — done, see "RESOLVED" above.
+2. ~~Run research.md + council.md on the 15 FMP-screened candidates~~ —
+   done, see "Second batch" below. **Next: nothing urgent from this batch**
+   — 0 CANDIDATEs survived council, so there's nothing to propose today.
+3. **ORCL reports ~2026-09-09** — research the actual reaction that day.
+   FMP's calendar doesn't confirm or deny this date (see above); keep using
+   the WebSearch-sourced estimate until closer to the date.
+4. **DOCU reports 2026-09-03 (tomorrow as of this writing)** — same
+   pre-catalyst treatment as ORCL; research the actual reaction once it
+   prints, don't research the "will it beat" question again.
+5. Run `skills/journal.md` once the original 8 WATCH calls are ~5 trading
+   days old (i.e. from ~2026-09-09) to check what actually happened and
+   start the scorecard. This is how the "Open question" section near the
+   bottom of this file gets answered honestly — it covers both batches
+   now, not just the first 8.
+
+## Second batch (2026-09-02, same day, after FMP screen): 15 reviewed, 2 reached council, 0 survived
+DELL and SOFI both made CANDIDATE in research.md; both got downgraded to
+WATCH in council.md. Full writeups: `/data/research/2026-09-02/DELL.md`,
+`DELL_council.md`, `SOFI.md`, `SOFI_council.md`.
+
+| Ticker | Why it didn't clear the bar |
+|---|---|
+| DELL | Real Q2 FY27 beat-and-raise, but a climax-volume single-day 16% pop already at consensus target; Evercore ISI pulled it from their own "Tactical Outperform" list right after the print — verified, not just cited. Bull agent's own self-assessment called it weak before the bear case even weighed in. |
+| SOFI | Real, dated Scotiabank initiation today, but most of the bounce pre-dates that catalyst, stock is still below all 3 major moving averages, broader 15-analyst consensus is still Hold, and a live bond-yield spike hits this exact rate-sensitive business model. Closer call than DELL — not a knockout, but ties go to WATCH per council.md's rule. |
+
+The other 13 (BIAF, CNH, ONDS, IREN, NU, CDE, RIG, PLTR, PCG, NVDA, MDB,
+CRDO, DOCU) never reached CANDIDATE in research.md — mostly stale catalysts
+already priced in, sector-beta moves with no single-name cause, or (DOCU)
+the pre-catalyst earnings cap. Full reasoning in each `{TICKER}.md`.
+
+## Free-tier data-quality note carried over from this batch
+Two research subjects (MDB, CRDO) had FMP-unconfirmed volume per the
+RESOLVED section above — research.md's WebSearch pass confirmed both are
+normal, liquid, well-covered large/mid-caps reacting to their own earnings,
+not a data-quality problem. Worth remembering FMP's free-tier volume gate
+doesn't mean "illiquid," just "not on FMP's free allowlist" — don't treat
+an UNCONFIRMED tag as a red flag on its own, always check WebSearch before
+discarding a name on that basis alone.
+
+## Open question — do not quietly ignore this, it just got a bit more data
+Going 0-for-8 on the first batch, then 0-for-2-at-council on this second
+batch (6-for-6 council downgrades total today, all 2026-09-02), is a real
+signal and it's **still unresolved which way it cuts**:
+1. Genuinely uncertain macro week (elevated bond yields — literally the
+   highest since Oct 2023 as of yesterday per this batch's SOFI research —
+   Iran/oil tension, rotation out of the AI trade) and the caution is
+   earning its keep, or
 2. Council moderation has calibrated too strict now that it's actually
    being applied with rigor.
 
-This is logged in `/data/trades.log`. Don't assume either answer — once
-`skills/journal.md` has outcome data on these WATCH calls, the scorecard
-answers it with evidence. Flag the pattern to the user, let them weigh in.
-
-## Sensible next actions
-1. ~~Test the FMP domain~~ — done, see "RESOLVED" above. **Next: run
-   `skills/research.md` on today's new FMP-screened candidates below** (they
-   have not been researched or council-reviewed yet — screen.md only
-   narrows the list, per its own step 6).
-2. **ORCL reports ~2026-09-09** — research the actual reaction that day.
-   FMP's calendar doesn't confirm or deny this date (see above); keep using
-   the WebSearch-sourced estimate until closer to the date.
-3. Run `skills/journal.md` once these WATCH calls are ~5 trading days old
-   (i.e. from ~2026-09-09) to check what actually happened and start the
-   scorecard. This is how the 0-for-8 question gets answered honestly.
-
-## New candidates from the 2026-09-02 FMP screen — NOT yet researched
-`config/watchlist.txt` now has 15 new tickers added by a real FMP-based
-screen (see script docstring / RESOLVED section above for methodology):
-DELL, BIAF, CNH, ONDS, IREN, NU, CDE, RIG, SOFI, PLTR, PCG, NVDA, MDB, CRDO,
-DOCU (DOCU is EARNINGS 2026-09-03 pre-catalyst, not yet a candidate per
-screen.md's hard rule). MDB and CRDO have unconfirmed volume (see above) —
-have research.md sanity-check liquidity via WebSearch before treating them
-as real candidates, not just their price move. None of these 15 has been
-through `skills/research.md` or `skills/council.md` yet — that's the next
-session's job, same two-step gate as the original 8 (see table above).
+One data point worth naming: this batch's downgrades were closer calls
+than the first batch's (DELL and SOFI both had genuinely real, dated,
+verified catalysts; the bear case had to work harder than "the target
+fell" or "the pop already happened" alone). That's weak evidence toward
+(1) over (2), but it's not enough to call it — `skills/journal.md` with
+real outcome data is still the honest way to settle this, not more
+narrative pattern-matching. Flag both batches to the user together next
+time this comes up, don't treat them as separate open questions.
