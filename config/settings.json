@@ -1,0 +1,12 @@
+{
+  "broker": "trading212",
+  "mode": "paper",
+  "max_position_pct": 0.05,
+  "max_total_exposure_pct": 0.50,
+  "max_daily_loss_pct": 0.03,
+  "stop_loss_pct": 0.04,
+  "take_profit_pct": 0.08,
+  "time_stop_days": 5,
+  "require_approval": true,
+  "clickup_task_id": "REPLACE_WITH_YOUR_TASK_ID"
+}
