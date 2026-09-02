@@ -3,3 +3,4 @@
 # manually added lines are preserved.
 AAPL   # example seed ticker — replace with your own
 GTLB   # 2026-09-02: +20% on Q2 earnings beat + raised FY guidance, screened via WebSearch
+HOOD   # 2026-09-02: Morgan Stanley/Piper Sandler/Bernstein/Scotiabank all bullish this week; council found live regulatory risk on the exact catalyst
