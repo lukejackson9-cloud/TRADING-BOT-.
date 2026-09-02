@@ -5,9 +5,10 @@ Goal: produce a short list (5–15 tickers) of candidates worth researching toda
 ## Steps
 1. Pull pre-market movers and volume leaders. In advisory-only mode (see
    CLAUDE.md) `scripts/trading212_client.py` cannot authenticate — do not
-   call it. Instead ask Perplexity (`scripts/perplexity_client.py`) for
-   today's notable pre-market movers/momentum names with a real catalyst,
-   or use another data source the user configures.
+   call it. Instead use the WebSearch tool directly (e.g. "stock market
+   pre-market movers today", "biggest stock gainers premarket") to find
+   today's notable pre-market movers/momentum names with a real catalyst
+   behind them, not just a random gainer list.
 2. Filter: price between $5–$500 (avoid penny stocks and needing huge capital),
    average daily volume > 1M shares (avoid illiquid names you can't exit).
 3. Cross-reference against /config/watchlist.txt (manual adds always included).

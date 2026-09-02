@@ -45,8 +45,11 @@ separate step, not a default.
      leave `T212_API_KEY`/`T212_API_SECRET` unset entirely — nothing in the
      advisory flow calls the T212 API. Only fill both in if you later
      decide to connect the account for real.
-   - Perplexity: sign up at perplexity.ai, get an API key — this is what
-     actually powers the research/screening.
+   - Perplexity: not used. Screening and research run on Claude Code's
+     built-in WebSearch tool instead, so there's no separate paid API to
+     sign up for. `scripts/perplexity_client.py` and `PERPLEXITY_API_KEY`
+     are unused — kept only in case you want to swap the research source
+     back to Perplexity later.
    - ClickUp: optional. Create a Personal API Token and a task if you want
      the daily digest; skip it if you're fine reading /data/ directly.
 2. `pip install requests --break-system-packages`
@@ -86,15 +89,15 @@ trading-agent/
 │   ├── settings.json          # broker, mode, risk %, ClickUp task id
 │   └── watchlist.txt          # tickers under consideration
 ├── skills/
-│   ├── screen.md               # find candidates (Perplexity-based, not T212 data)
-│   ├── research.md             # Perplexity-based research per ticker
+│   ├── screen.md               # find candidates (WebSearch-based, not T212 data)
+│   ├── research.md             # WebSearch-based research per ticker
 │   ├── propose_trades.md       # size ideas, write to pending_trades.json — advisory only
 │   ├── execute_approved.md     # INERT in this mode — no connected account
 │   ├── monitor.md              # advisory position check-in, based on what you report
 │   └── report.md               # daily ClickUp summary of ideas produced
 ├── scripts/
 │   ├── trading212_client.py
-│   ├── perplexity_client.py
+│   ├── perplexity_client.py   # unused — research runs on WebSearch instead
 │   └── clickup_client.py
 ├── data/
 │   ├── research/YYYY-MM-DD/{TICKER}.md

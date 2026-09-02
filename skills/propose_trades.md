@@ -17,9 +17,9 @@ full stop — there is no execution path to hand off to.
    purely in **% of portfolio** terms.
 3. Compute a proposed position size = 5% of portfolio value (the hard cap
    from CLAUDE.md), expressed as a percentage, or a dollar amount/share
-   count only if you have a real portfolio value and a recent price
-   (Perplexity can supply an approximate current price — flag it as
-   approximate, not a live quote).
+   count only if you have a real portfolio value and a recent price (use
+   WebSearch for an approximate current price — flag it as approximate,
+   not a live quote).
 4. Compute a suggested stop-loss (-4%) and take-profit (+8%) level relative
    to the entry price. These are advisory reference points for the user to
    set themselves in the T212 app — this agent cannot attach or monitor
