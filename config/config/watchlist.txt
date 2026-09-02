@@ -1,0 +1,4 @@
+# One ticker per line. Comment after # is optional context.
+# This file gets overwritten daily by skills/screen.md for auto-added names;
+# manually added lines are preserved.
+AAPL   # example seed ticker — replace with your own
