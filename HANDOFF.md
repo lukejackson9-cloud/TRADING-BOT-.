@@ -63,46 +63,49 @@ are confirmed, some are "appeared in most-actives" (a fair proxy), and a
 few are flagged unconfirmed and pushed to research.md/WebSearch to verify
 before they can become CANDIDATEs.
 
-## BLOCKED (2026-09-03): Massive.com (formerly Polygon.io) — network policy, not the key
+## RESOLVED (2026-09-03): Massive.com (formerly Polygon.io) — real whole-market screener, confirmed live
 User asked what other free market-screener options exist beyond FMP (whose
 free tier only exposes a curated top-50 gainers/losers/actives list, not a
-true whole-market filter — see RESOLVED section above). Researched real
+true whole-market filter — see RESOLVED/FMP section above). Researched real
 2026 free tiers (WebSearch, not memory — these change often): Finnhub (60
 calls/min, no whole-market screener endpoint though), Alpha Vantage (down
 to 25 requests/DAY, unusable), EODHD (20/day, also too thin), Twelve Data
 (800/day, 8/min). **Massive.com stood out**: its `/v2/aggs/grouped/...`
 endpoint returns every US stock's OHLCV for a whole day in ONE call — a
-genuine whole-market screen, not a top-N list — on a free tier (5 calls/
-min, no card required, per WebSearch — not yet confirmed against a live
-response).
+genuine whole-market screen, not a top-N list.
 
-User provided `MASSIVE_API_KEY`, now in `.env`. **But both `api.massive.com`
-and `api.polygon.io` (the old domain, still valid post-rebrand) are
-rejected by this environment's network egress policy** — confirmed via the
-proxy's relay-failure log ("gateway answered 403 to CONNECT, policy
-denial"), not just a failed request. Same shape as FMP's block before it
-got added to this environment's Custom network allowlist (claude.ai/code
-→ cloud icon → gear → Network access → Custom) — this is a policy fix, not
-a key problem, and not something to route around.
+User provided `MASSIVE_API_KEY` (now in `.env`) and initially both
+`api.massive.com` and `api.polygon.io` were blocked by this environment's
+network policy — user then fixed the network setting. **`api.massive.com`
+is now confirmed reachable and `scripts/massive_client.py` was run live**:
+`get_grouped_daily('2026-09-02')` returned `status: OK, resultsCount:
+12541` with the exact response shape documented in the script (fields `T`
+ticker, `o`/`h`/`l`/`c` OHLC, `v` volume as a float not always int, `vw`
+VWAP, `t` ms-epoch timestamp, `n` trade count). `api.polygon.io` (the old
+domain) is STILL blocked — irrelevant, the client only uses
+`api.massive.com`.
 
-`scripts/massive_client.py` is written and ready (grouped-daily endpoint,
-client-side price/volume filtering) but **completely untested against
-live data** — the response-shape comments in its docstring come from
-Massive's public docs, not a real call. **First thing to do once network
-access is confirmed**: run it, verify the response shape matches, adjust
-if not, before trusting any output from it in a screen.
+**One real finding from the live test**: the grouped-daily payload
+includes ALL US securities, not just single-name equities — XRP (a
+cryptocurrency) showed up in the results. Price/volume filtering alone
+won't exclude ETFs or other non-equity tickers; screen.md's ticker list
+should filter by a known-equity check (or against a maintained exclude
+list, same idea as the leveraged-ETF exclusion already used with FMP's
+movers lists) before treating a grouped-daily hit as a stock candidate.
 
-**Test command for a new session:**
-```bash
-curl -sS --max-time 10 -o /dev/null -w "%{http_code}\n" https://api.massive.com
-```
+**Recommended going forward**: prefer `massive_client.get_grouped_daily()`
+for the price/volume screening step (whole market in one call, 5 req/min
+free tier easily covers this) over FMP's top-50 movers lists. Keep FMP for
+gainers/losers *framing* (useful context even if not comprehensive) and
+its earnings-calendar endpoint, which massive_client.py doesn't replace.
+Not yet wired into skills/screen.md itself — that's the next step, not
+done this session.
 
 ## Keys — must be recreated, they are NOT in the repo
 `.env` is gitignored (correctly — secrets never get committed), so a fresh
 clone has no keys. `cp .env.example .env` and ask the user to re-paste:
 - `FMP_API_KEY` — works today, real but limited (see RESOLVED above)
-- `MASSIVE_API_KEY` — set, but blocked by network policy as of 2026-09-03
-  (see above) — re-test before assuming it still is
+- `MASSIVE_API_KEY` — works today, confirmed live 2026-09-03 (see above)
 - `T212_API_KEY` — optional, unusable without the secret anyway
 
 ## Where we got to (2026-09-02)
@@ -139,13 +142,13 @@ rather than duplicated here.)
    start the scorecard. This is how the "Open question" section near the
    bottom of this file gets answered honestly — it covers both batches
    now, not just the first 8.
-6. **Test `api.massive.com` reachability** (command above) at the start of
-   a new session — if it's unblocked, run `scripts/massive_client.py`,
-   verify its response-shape assumptions against a real call, and if it
-   checks out, prefer it over FMP for the price/volume screening step
-   (it covers the whole market in one call; FMP's free tier only covers a
-   top-50 list) while keeping FMP for gainers/losers framing and earnings
-   calendar, which massive_client.py doesn't replace.
+6. ~~Test api.massive.com reachability~~ — done, confirmed live 2026-09-03,
+   see "RESOLVED: Massive.com" above. **Next: wire `massive_client.py`
+   into `skills/screen.md`** as the primary price/volume filter (replacing
+   or supplementing the FMP-movers-based approach), with an equity-only
+   filter added (grouped-daily includes ETFs/crypto — see the finding
+   above). Not done yet — worth doing before the next screen.md run so
+   that run gets genuine whole-market coverage instead of FMP's top-50.
 
 ## Second batch (2026-09-02, same day, after FMP screen): 15 reviewed, 2 reached council, 0 survived
 DELL and SOFI both made CANDIDATE in research.md; both got downgraded to
