@@ -142,13 +142,22 @@ rather than duplicated here.)
    start the scorecard. This is how the "Open question" section near the
    bottom of this file gets answered honestly — it covers both batches
    now, not just the first 8.
-6. ~~Test api.massive.com reachability~~ — done, confirmed live 2026-09-03,
-   see "RESOLVED: Massive.com" above. **Next: wire `massive_client.py`
-   into `skills/screen.md`** as the primary price/volume filter (replacing
-   or supplementing the FMP-movers-based approach), with an equity-only
-   filter added (grouped-daily includes ETFs/crypto — see the finding
-   above). Not done yet — worth doing before the next screen.md run so
-   that run gets genuine whole-market coverage instead of FMP's top-50.
+6. ~~Test api.massive.com reachability~~ / ~~wire massive_client.py into
+   skills/screen.md~~ — both done 2026-09-03. `screen_market_movers()` is
+   now step 0 of screen.md (whole-market, equity-only, price/volume
+   filtered), with FMP demoted to step 0b (same-day intraday framing +
+   earnings calendar, since Massive is always one session behind — see
+   RESOLVED section above). Live-tested: 5,315 common-stock tickers
+   fetched, 1,356 passed the $5-$500/>1M-volume filter for 2026-09-02 vs
+   2026-09-01 — most of those never appeared in FMP's top-50 lists at all
+   (SWVL, FCEL, MLYS, OABI, CCOI, SION, UAMY, JLHL, FMC, ASTS, TARS, GIII,
+   STDN, WNC, PLAY, VRNS among the top 20 movers alone). **Next: run a real
+   screen.md pass with the new pipeline** and push the resulting watchlist
+   through research.md/council.md — not done yet this session, this was
+   wiring + validation only, not a fresh screen-to-candidate cycle.
+   `get_common_stock_tickers()` caches to `/data/reference/equity_tickers.json`
+   (gitignored, 7-day freshness) — already fetched once, don't re-fetch
+   needlessly (costs ~9 rate-limited API calls, ~70s).
 
 ## Second batch (2026-09-02, same day, after FMP screen): 15 reviewed, 2 reached council, 0 survived
 DELL and SOFI both made CANDIDATE in research.md; both got downgraded to

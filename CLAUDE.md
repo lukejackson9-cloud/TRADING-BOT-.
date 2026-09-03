@@ -120,6 +120,11 @@ to execute into — but the rule stays in force for if/when that changes.
                                  curated by skills/journal.md
 - /data/journal/scorecard.md  — running win-rate/downgrade-accuracy stats,
                                  recomputed by skills/journal.md
+- /data/reference/             — gitignored API caches (e.g. Massive.com's
+                                 common-stock ticker list, refreshed weekly
+                                 by scripts/massive_client.py); regenerable
+                                 infrastructure, not part of the agent's
+                                 actual memory — never treat it as research
 - /skills/                    — how-to instructions for each capability
 
 ## Routine Cadence (set up via Claude Code routines, see README.md)
