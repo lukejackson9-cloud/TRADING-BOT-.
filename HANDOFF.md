@@ -217,13 +217,48 @@ and `VRNS_council.md`.
 | ASTS | Berenberg's "Buy" init was independently verified to be a 4-stock sector-wide space-coverage launch (Rocket Lab, ASTS, Planet Labs, HawkEye 360), not an ASTS-specific call — undercuts the bull thesis's core premise. Real launch delay to 2027, $1.15B dilutive convert, insider selling far outweighing the highlighted buy. |
 | VRNS | This is the SECOND unconverted takeover rumor on this exact ticker in under 3 months (June 2026 Blackstone/Thoma Bravo/Vista report, independently verified, also popped the stock and produced no deal). Citi's target on today's own news sits BELOW the post-pop price. Active securities fraud suit tied to a real Oct 2025 disclosure failure. |
 
-**Running total: 8-for-8 council downgrades** since council.md started being
-used (all on 2026-09-02/09-03). This is no longer "one uncertain week" —
-it's held across two different screening methodologies (FMP top-50-based,
-then genuine whole-market via Massive) and a wide range of catalyst types
-(earnings beats, analyst upgrades, M&A rumors). Still can't be settled
-without real outcome data (see Open question above — this note extends it,
-doesn't replace it), but the pattern is getting harder to explain away as
-"just this week's macro." Say this to the user plainly next time it comes
-up, don't let a good screening pipeline quietly imply the strategy itself
-is working if council keeps finding real reasons every single time.
+**Running total after this batch: 8-for-8 council downgrades.** This is no
+longer "one uncertain week" — it's held across two different screening
+methodologies (FMP top-50-based, then genuine whole-market via Massive)
+and a wide range of catalyst types (earnings beats, analyst upgrades, M&A
+rumors). Still can't be settled without real outcome data (see Open
+question above — this note extends it, doesn't replace it), but the
+pattern is getting harder to explain away as "just this week's macro."
+
+## Fourth pass, same day (2026-09-03): user explicitly asked "is there ANY buy opportunity" — widened the screen, still 9-for-9
+After the 8-for-8 result above, user asked directly whether anything at
+all looked buyable. Rather than re-present a rejected name, looked past
+the top ~35 movers already reviewed into ranks 36-100 of the same
+1,356-name Massive.com filtered list, specifically hunting for distinct
+single-name stories rather than sector-wide themes (skipped duplicate
+LatAm-fintech/solar/steel clusters, researched one representative each).
+
+Six names checked: KSS, CLF, FOUR, XP all PASS (stale or confirmed
+sector-wide, not company-specific). RUN reached WATCH (a real same-day IRS
+tax-credit catalyst, but sector-wide and layered on genuine cash-burn
+concerns). **ALNY (Alnylam) reached CANDIDATE** — real Phase 3 HELIOS-B
+clinical data at ESC Congress 2026, with same-window price-target raises
+from five separate desks (TD Cowen, Canaccord, Raymond James, Bernstein,
+BMO). This was the strongest-looking case of the whole day.
+
+**Council downgraded it to WATCH anyway.** Full writeup:
+`/data/research/2026-09-03/ALNY_council.md`. The decisive fact-checked
+finding: at the same ESC Congress, rival AstraZeneca/Ionis's competing TTR
+silencer Wainua's detailed trial data showed patients already on
+background stabilizer therapy saw NO benefit when a silencer was added —
+a live, unresolved mechanism question that applies to Alnylam's own drug
+class, not just the failed competitor. Combined with post-crash analyst
+targets (Wells Fargo $256, Jefferies $230) sitting near or below the
+$246 price, no dated catalyst inside 2 weeks, and an unresolved securities-
+fraud investigation into the July guidance-cut disclosure.
+
+**Running total: 9-for-9 council downgrades**, across three separate
+screening passes now (FMP top-50, Massive top ~35, and this widened
+ranks-36-100 pass). Say this plainly to the user, and DO NOT interpret a
+future pass finding a CANDIDATE as license to relax the council process —
+if anything ALNY was the best-looking case yet and it still didn't survive
+real scrutiny. Only `skills/journal.md` with actual outcome data on the
+existing WATCH calls (starting ~2026-09-09, see Sensible next actions)
+resolves whether this reflects genuinely risky market conditions or
+overly strict moderation — don't let either explanation win by default
+just because it's been said out loud enough times.

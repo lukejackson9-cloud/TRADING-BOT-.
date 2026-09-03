@@ -45,3 +45,11 @@ VRNS   # 2026-09-03: +10.4% on 2026-09-02, Bloomberg-reported Proofpoint takeove
 FCEL   # 2026-09-03: -15.7% on 2026-09-02, clean earnings/revenue miss + dilution history -- PASS
 GIII   # 2026-09-03: -11.5% on 2026-09-02, EPS beat but revenue miss/soft guidance on structural PVH-license headwind -- WATCH
 WNC    # 2026-09-03: +11.35% on 2026-09-02, no ticker-specific catalyst found (broad risk-on rally) -- PASS, volume right at the 1M liquidity floor
+
+# --- widened pass 2026-09-03, ranks 36-100 of the same Massive.com screen (user asked for any buy opportunity) ---
+ALNY   # 2026-09-03: +8.65% on 2026-09-02, real Phase 3 HELIOS-B data at ESC Congress + analyst PT raises -- CANDIDATE at research, council WATCH (rival Wainua trial's stabilizer-subgroup data raises an unresolved same-class mechanism question; post-crash analyst targets near/below current price; no dated catalyst inside 2wks)
+KSS    # 2026-09-03: +7.80% on 2026-09-02, no ticker-specific news, soft Q2 beat (comp sales still declining) -- PASS
+CLF    # 2026-09-03: +7.63% on 2026-09-02, weeks-stale steel/tariff story, live 30-day strike-deferral risk unresolved -- PASS
+FOUR   # 2026-09-03: +7.67% on 2026-09-02, only news found is >1 week stale -- PASS
+XP     # 2026-09-03: +6.78% on 2026-09-02, confirmed sector-wide LatAm fintech move (STNE/PAGS/PicPay moved together) -- PASS, not XP-specific
+RUN    # 2026-09-03: +7.05% on 2026-09-02, real same-day IRS ITC clarification -- WATCH, sector-wide (CSIQ moved too) + real cash-burn/guidance-cut concerns underneath
