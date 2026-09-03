@@ -53,3 +53,16 @@ CLF    # 2026-09-03: +7.63% on 2026-09-02, weeks-stale steel/tariff story, live 
 FOUR   # 2026-09-03: +7.67% on 2026-09-02, only news found is >1 week stale -- PASS
 XP     # 2026-09-03: +6.78% on 2026-09-02, confirmed sector-wide LatAm fintech move (STNE/PAGS/PicPay moved together) -- PASS, not XP-specific
 RUN    # 2026-09-03: +7.05% on 2026-09-02, real same-day IRS ITC clarification -- WATCH, sector-wide (CSIQ moved too) + real cash-burn/guidance-cut concerns underneath
+
+# --- added 2026-09-03 (second pass, same-day) via scripts/market_screener_client.py (FMP live intraday) ---
+# Market closed for real this time (Sept 3 session), fresh data. Excluded a
+# large cluster of leveraged single-stock crypto ETFs (MSTX, HOOX, COIA,
+# CONL, XXRP, etc.) as derivative noise, not real companies.
+RARE   # 2026-09-03: -44.0% today, Phase 3 ASPIRE trial failed both primary and key secondary endpoints (Angelman syndrome) -- PASS, clean negative catalyst, no bounce case
+PSNY   # 2026-09-03: -27.5% today, FY26 delivery guidance slashed on US market-access denial for MY2027+ vehicles -- PASS, structural multi-year loss
+MEI    # 2026-09-03: -15.4% today, revenue beat but EPS/EBITDA miss, guidance only reaffirmed not raised -- WATCH
+MSTR   # 2026-09-03: +17.6% today, tracks a real BTC breakout above $80k (Waller dovish comments) -- WATCH, the company's own BTC purchase news is 4 days stale
+MARA   # 2026-09-03: +10.8% today, same BTC-breakout theme -- WATCH low confidence, sources gave conflicting BTC price levels and an unverifiable claim
+BMNR   # 2026-09-03: reported inconsistently across sources (-2.1% vs +14%) -- PASS, this is an Ethereum treasury company (not Bitcoin, pivoted June 2025), no fresh distinct catalyst
+AVGO   # 2026-09-03: -2.7% today, real Q3 beat but Q4 guidance missed + sector profit-taking spillover from Marvell -- WATCH, negative catalyst, long-only has no edge
+VALE   # 2026-09-03: DATA CONFLICT -- one source says -2.7%, another says +4.0% same day -- PASS, no fresh catalyst either way and direction itself unconfirmed

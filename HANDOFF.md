@@ -268,3 +268,41 @@ existing WATCH calls (starting ~2026-09-09, see Sensible next actions)
 resolves whether this reflects genuinely risky market conditions or
 overly strict moderation — don't let either explanation win by default
 just because it's been said out loud enough times.
+
+## Fifth pass, same day (2026-09-03, later): the Sept 3 session actually closed — fresh live data, still nothing
+Massive.com's grouped-daily for 2026-09-03 stayed NOT_AUTHORIZED (its
+free-tier lag runs longer than "market closed," at least a few hours),
+but FMP's live quote timestamps confirmed the real 4pm ET close was in
+(20:00:01 UTC) — genuinely fresh same-day data, not a repeat of the
+Sept 2 snapshot. Ran a live-intraday FMP screen, excluded a large cluster
+of leveraged single-stock crypto ETFs (MSTX, HOOX, COIA, CONL, XXRP, etc.
+— all derivative products riding the same BTC move, not real companies),
+and researched 8 genuinely new tickers: RARE, PSNY, MEI, MSTR, MARA,
+BMNR, AVGO, VALE.
+
+**All 8 came back PASS or WATCH — zero CANDIDATEs, no council.md run
+needed.** RARE (-44%) and PSNY (-27.5%) both had clean, well-documented
+negative catalysts (a failed Phase 3 trial; a US market-access loss) with
+no bounce/overreaction case — this bot is long-only, so a purely negative
+catalyst is never a buy setup regardless of size. MSTR/MARA/BMNR all track
+a real, datable Bitcoin breakout above $80k (Fed Governor Waller dovish
+comments) rather than having distinct company-level news — BMNR in
+particular was mischaracterized in the initial screen data as
+Bitcoin-adjacent when it's actually an Ethereum treasury company (pivoted
+away from BTC mining in June 2025), corrected in its research file. AVGO
+had a real catalyst (Q4 guidance miss) but a negative one, same long-only
+issue.
+
+**Data-quality flag worth remembering**: VALE, MARA, and BMNR all had
+genuinely conflicting figures (price direction or magnitude) across
+different WebSearch sources on the same fast-moving day — flagged
+explicitly in each file rather than silently picked. Worth a second-source
+check before treating any single figure as settled on a volatile session,
+especially for a surprising or extreme move.
+
+This doesn't change the running total's substance (still no CANDIDATE
+reached council today) but is worth naming as a DIFFERENT kind of result
+than the ALNY pass — this time nothing even reached the CANDIDATE bar at
+research.md, versus ALNY reaching CANDIDATE and then getting downgraded.
+Both are the system working as designed; neither should be read as
+evidence either way about calibration on their own.
