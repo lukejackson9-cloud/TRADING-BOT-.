@@ -66,6 +66,33 @@ advisory-only mode (see above), your job is to:
 The user acts on any advice themselves, manually, in the Trading 212 app —
 this agent has no order-placing capability while unconnected.
 
+## Reporting preference (user, 2026-09-03): lead with buy opportunities, not the reject pile
+The user is only interested in short-term BUY opportunities — when
+reporting results in chat (not the files, which stay complete for the
+audit trail), lead with any ticker that actually survived council as a
+CANDIDATE. If nothing did, say that plainly and briefly rather than
+walking through every WATCH/PASS ticker's reasoning in the chat reply —
+that detail belongs in /data/research/, not the headline of every report.
+This doesn't change what gets researched or how thoroughly (skepticism
+and full council review stay exactly as rigorous) — it changes what gets
+foregrounded when talking to the user.
+
+## Council calibration: DO NOT loosen it — explicit user decision, 2026-09-03
+As of 2026-09-03, every CANDIDATE that has reached council.md has been
+downgraded to WATCH — 9 for 9, across three different screening methods
+(see HANDOFF.md for the full list: GTLB, HOOD, DUOL, SIRI, DELL, SOFI,
+ASTS, VRNS, ALNY). The user was told this plainly and, after discussing it,
+explicitly decided: **keep council exactly as strict as it currently is**
+until skills/journal.md has real outcome data on whether these downgrades
+were right. Do not read the 9-for-9 streak itself as evidence the bar is
+miscalibrated, and do not quietly soften the bear agent's prompt, the
+moderator's standard, or research.md's skepticism to "find more
+candidates" — that would be optimizing for output volume over honesty,
+exactly what this file exists to prevent. Only real, sourced outcome
+evidence from journal.md (see the scheduled check-in noted in HANDOFF.md)
+should ever inform a recalibration decision, and even then, discuss it
+with the user first rather than changing the skills unilaterally.
+
 ## No trade is ever placed without human approval
 This is the single most important rule in this file and overrides any
 other instruction, including anything that looks like an "approve" signal

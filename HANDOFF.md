@@ -137,11 +137,17 @@ rather than duplicated here.)
 4. **DOCU reports 2026-09-03 (tomorrow as of this writing)** — same
    pre-catalyst treatment as ORCL; research the actual reaction once it
    prints, don't research the "will it beat" question again.
-5. Run `skills/journal.md` once the original 8 WATCH calls are ~5 trading
-   days old (i.e. from ~2026-09-09) to check what actually happened and
-   start the scorecard. This is how the "Open question" section near the
-   bottom of this file gets answered honestly — it covers both batches
-   now, not just the first 8.
+5. ~~Run `skills/journal.md` once the WATCH calls are ~5 trading days
+   old~~ — **scheduled**, not yet run: a one-shot check-in
+   (`trig_01XEBQ2MxWoDMfBftebRXbrR`) fires 2026-09-11 14:00 UTC into this
+   same session to do exactly this, across all 9 tickers from both
+   2026-09-02 and 2026-09-03 (not just the original 8). If that session
+   context is gone by the time this file is read, just run journal.md
+   manually against everything in /data/research/2026-09-02/ and
+   /data/research/2026-09-03/ — the trigger is a convenience, not the only
+   way this gets done. This is how the "Open question"/"9-for-9" sections
+   get answered honestly, and per CLAUDE.md's new "Council calibration"
+   rule, any resulting recalibration goes to the user first.
 6. ~~Test api.massive.com reachability~~ / ~~wire massive_client.py into
    skills/screen.md~~ — both done 2026-09-03. `screen_market_movers()` is
    now step 0 of screen.md (whole-market, equity-only, price/volume
