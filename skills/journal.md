@@ -33,10 +33,16 @@ propose an idea → find out what actually happened → write it down honestly
 ## Steps
 1. Find ideas worth checking: entries in /data/pending_trades.json (any
    status) whose proposed_at is 5+ trading days old (the CLAUDE.md
-   time-stop), plus any WATCH/PASS verdicts in recent
-   /data/research/YYYY-MM-DD/{TICKER}.md or _council.md files that are
-   worth a look back (a WATCH is a testable prediction — did waiting turn
-   out to be right?).
+   time-stop), plus EVERY ticker with a verdict in
+   /data/research/YYYY-MM-DD/{TICKER}.md or _council.md that's 5+ trading
+   days old — not just ones that reached council. Restricting outcome-
+   checking to council-reviewed CANDIDATEs alone badly under-samples the
+   system (most tickers never reach council), so default to the full set:
+   every PASS, WATCH, and CANDIDATE verdict is a testable prediction (did
+   waiting/skipping turn out to be right?), and checking only the
+   headline-grabbing council cases produces an unreliable, cherry-picked
+   read on accuracy. Skip a ticker only if there's a specific reason
+   (e.g. genuinely no findable price history).
 2. For each, use WebSearch to find the ticker's price action since the
    idea/verdict date. You're checking, honestly:
    - If it was a proposed BUY idea: did it hit suggested_stop,
@@ -80,6 +86,23 @@ propose an idea → find out what actually happened → write it down honestly
    Downgrade cost a winner (price kept running without us): {Y}
    Unclear: {U}
    Downgrade accuracy: {X}/({X}+{Y}) = {P}%
+
+   ## Research-level WATCH/PASS calls (never reached council)
+   The much larger sample: every ticker research.md screened but didn't
+   even mark CANDIDATE. Same question as above (did the price move the
+   way the PASS/WATCH reasoning implied?) but at a scale council-only
+   checking can't reach — most tickers never make it to council, so
+   restricting outcome-checking to that subset badly under-samples the
+   system's actual accuracy. Use this category by default; the narrower
+   "Council downgrades" category above is a useful subset view, not a
+   substitute.
+   Total checked: {N}
+   Call validated (price faded/stayed flat/moved against the thesis,
+     matching the PASS/WATCH reasoning): {X}
+   Call cost a winner (price moved the way a CANDIDATE would have,
+     without us): {Y}
+   Unclear: {U}
+   Accuracy: {X}/({X}+{Y}) = {P}%
 
    ## Sample size note
    With this few observations (N < ~20), these percentages are directional
