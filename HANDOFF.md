@@ -300,9 +300,55 @@ explicitly in each file rather than silently picked. Worth a second-source
 check before treating any single figure as settled on a volatile session,
 especially for a surprising or extreme move.
 
-This doesn't change the running total's substance (still no CANDIDATE
-reached council today) but is worth naming as a DIFFERENT kind of result
-than the ALNY pass — this time nothing even reached the CANDIDATE bar at
-research.md, versus ALNY reaching CANDIDATE and then getting downgraded.
-Both are the system working as designed; neither should be read as
-evidence either way about calibration on their own.
+## Sixth pass, same day (2026-09-03, later still): user asked why the daily pool is so small, then to keep going until real coverage was reached
+User asked why only ~40 tickers get reviewed when the market has
+thousands of stocks — answer: the screen genuinely covers thousands
+(5,315 common stocks via Massive, ~150 slots via FMP movers), but only the
+biggest movers get individually researched, since that's a deliberate
+design choice (momentum strategy = signal concentrates in what's actually
+moving; deep research doesn't scale to hundreds of names/day). User then
+explicitly asked to keep reviewing until a genuine candidate turns up,
+adding "I don't want to only watch a minority." **Important: this was
+answered by widening data coverage, NOT by lowering the bar** — see the
+exchange in chat where this was made explicit: finding a CANDIDATE cannot
+become the goal itself (with 5,000+ stocks, sheer chance guarantees
+something will look interesting on a shallow pass — that's noise, not
+edge, and is exactly what council exists to catch). If a future session
+gets a similar request, hold this same line: widen coverage, keep the same
+rigor, don't manufacture a yes.
+
+Widened the live FMP screen from the original 8 tickers (RARE/PSNY/MEI/
+MSTR/MARA/BMNR/AVGO/VALE, all PASS/WATCH) through the rest of the
+2026-09-03 live movers list — 28 more tickers, 36 total for the day.
+Notable finding: **9 tickers that looked like huge individual movers were
+actually leveraged/inverse single-stock ETF products** (SMST, CRCG, BULG,
+BTDL, MRAL, BMNG, GEMG, GLGG, CONX, PLTZ, HFSP — 2x daily wrappers on
+MSTR/CRCL/BULL/BTDR/MARA/BMNR/GEMI/GLXY/COIN/PLTR, not real companies) —
+correctly excluded, but worth remembering these show up disguised as
+massive movers in any live gainers/losers list and need identity-checking
+before research, not just a price/volume filter. Also one confirmed
+data-quality failure: RACC's screener-reported -37.4% move could not be
+verified against ANY source (real trading range is $24-25, barely moved) —
+flagged rather than inventing a catalyst for a move that may not have
+happened.
+
+**Two genuine CANDIDATEs surfaced: SPCX (SpaceX, now public) and HPE.**
+Both went to council. Both downgraded to WATCH.
+
+| Ticker | Why it didn't clear the bar |
+|---|---|
+| SPCX | Fresh Oppenheimer target raise + Starship Flight 14 (targeted Sept 15) inside the 2-week window — but the bull's own research found the decisive counter-facts: a real insider-lockup tranche unlocks Sept 9 (independently verified), inside the same window and before the launch even happens, and the only precedent for a Starship test on this stock (Flight 13, July 24) saw shares fall despite technical progress. ~$2T valuation, 51-78x P/S, leaves no room for disappointment. |
+| HPE | Genuine Q3 beat-and-raise, but the bull's own research found no dated catalyst inside the 2-week window (next event Sept 30) and that Morgan Stanley cut its target the same day other desks raised theirs (independently verified) — confirming this print validates MS's Nov 2025 memory-supercycle downgrade thesis rather than resolving it. Management itself said supply constraints (DDR5/DDR4/NAND/wafer) may persist "through 2028." Stock already up 120-149% YTD. |
+
+**Running total: 11-for-11 council downgrades**, across four distinct
+screening passes now (FMP top-50, Massive whole-market top ~35, a widened
+Massive pass to ALNY, and today's full live-intraday FMP pass). Both
+today's downgrades were genuinely close calls — both bull agents rated
+their own cases weak-to-moderate BEFORE the bear case was weighed, and
+both found the decisive counter-fact themselves. That's a meaningfully
+different texture than early in this streak (e.g. GTLB's "the target
+barely moved" or DUOL's stale JPMorgan number) — the system is finding
+real, specific, dated reasons every time now, not generic hedges. Still
+not enough to conclude anything on its own — that's still journal.md's
+job (see the scheduled 2026-09-11 check-in, now covering all ~76 tickers
+across both days' full sessions, not just the 11 that reached council).

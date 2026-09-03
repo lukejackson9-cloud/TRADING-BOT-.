@@ -66,3 +66,37 @@ MARA   # 2026-09-03: +10.8% today, same BTC-breakout theme -- WATCH low confiden
 BMNR   # 2026-09-03: reported inconsistently across sources (-2.1% vs +14%) -- PASS, this is an Ethereum treasury company (not Bitcoin, pivoted June 2025), no fresh distinct catalyst
 AVGO   # 2026-09-03: -2.7% today, real Q3 beat but Q4 guidance missed + sector profit-taking spillover from Marvell -- WATCH, negative catalyst, long-only has no edge
 VALE   # 2026-09-03: DATA CONFLICT -- one source says -2.7%, another says +4.0% same day -- PASS, no fresh catalyst either way and direction itself unconfirmed
+
+# --- widened same-day pass: rest of the live FMP movers list (user asked to keep reviewing until real coverage was reached) ---
+# 9 tickers here are leveraged/inverse single-stock ETFs disguised as huge
+# individual movers (SMST, CRCG, BULG, BTDL, MRAL, BMNG, GEMG, GLGG, CONX,
+# PLTZ, HFSP) -- excluded by mandate, not real companies.
+CHPT   # 2026-09-03: +75.0% today, real Q2 beat + record margin + zero cash burn -- WATCH, already fully priced by the time of research, high short interest amplifying a squeeze
+RACC   # 2026-09-03: DATA FAILURE -- screener's -37.4% move could not be verified against any source (actual range $24-25) -- PASS, flagged not fabricated
+AEHL   # 2026-09-03: +37.2% today, recycled Bitcoin-treasury "Genius Plan" narrative, 3rd+ time this year -- PASS, serial thin-float pump pattern
+SMST   # leveraged inverse (2x short MSTR) ETF -- PASS, excluded by mandate
+CRCG   # leveraged (2x long CRCL) ETF -- PASS, excluded by mandate
+BMNG   # leveraged (2x long BMNR) ETF -- PASS, excluded by mandate
+FCUV   # 2026-09-03: +27.4% today, no dated catalyst found for today specifically -- PASS, thin-float pump pattern (same shape as BIAF)
+PUR    # 2026-09-03: could not confidently identify the actual company behind this ticker -- PASS, insufficient information
+GEMG   # leveraged (2x long GEMI) ETF -- PASS, excluded by mandate
+ZOOZ   # 2026-09-03: Bitcoin-treasury pivot company, down 90% from 52wk high, vague "strategic alternatives" -- PASS
+PRHI   # 2026-09-03: +22.5% today, genuine turnaround fundamentals but no same-day news found -- WATCH low confidence
+BULG   # leveraged (2x long BULL/Webull) ETF -- PASS, excluded by mandate
+MF     # 2026-09-03: -21.2% today, thin-float shell-like microcap, no negative news found -- PASS, long-only + noise
+BTDL   # leveraged (2x long BTDR/Bitdeer) ETF -- PASS, excluded by mandate
+MRAL   # leveraged (2x long MARA) ETF -- PASS, excluded by mandate
+GLGG   # leveraged (2x long GLXY/Galaxy Digital) ETF -- PASS, excluded by mandate
+CONX   # leveraged (2x long COIN/Coinbase) ETF -- PASS, excluded by mandate
+PSQL   # 2026-09-03: -20.0% today, recent de-SPAC, no fresh catalyst beyond post-SPAC pop-and-fade pattern -- PASS
+NTRB   # 2026-09-03: +19.8% today, no dated news found (only stale 2021 patent story recurring) -- PASS
+FGL    # 2026-09-03: -18.9% today, serial reverse-split name (two 100-for-1 splits this year) -- PASS
+ABTC   # 2026-09-03: +18.7% today, American Bitcoin Corp, plausible BTC-rally beta but no company-specific news found -- WATCH low confidence
+PLTZ   # leveraged inverse (2x short PLTR) ETF -- PASS, excluded by mandate (real story is PLTR +7.9% on a PwC deal)
+METC   # 2026-09-03: -14.3% today, post-earnings de-rating (Baird/Morgan Stanley cuts) against a contested rare-earth optionality bull case -- WATCH
+HFSP   # algorithmic futures-trading ETF, not an operating company -- PASS, excluded by mandate
+NXL    # 2026-09-03: -13.4% today, 1-for-30 reverse split + dilutive raise, distressed microcap -- PASS
+AUR    # 2026-09-03: +8.0% today, dated Investor Day (9/23) but still ~$270M/quarter cash burn vs ~$2M revenue -- WATCH
+SPCX   # 2026-09-03: +6.4% today (SpaceX itself, now public) -- CANDIDATE at research, council WATCH (Sept 9 lockup unlock falls inside the window; Flight 13 precedent went against the stock)
+BTG    # 2026-09-03: +5.3% today, same gold-sector-beta theme as CDE, no BTG-specific catalyst -- PASS
+HPE    # 2026-09-03: +5.0% today, Q3 beat-and-raise -- CANDIDATE at research, council WATCH (Morgan Stanley cut target same day; no dated catalyst inside 2wk window; management confirmed supply constraints through 2028)
