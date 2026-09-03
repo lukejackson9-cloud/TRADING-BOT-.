@@ -28,3 +28,20 @@ NVDA   # 2026-09-02: +3.2% today, FMP most-actives, quote-confirmed volume 156.0
 MDB    # 2026-09-02: -13.5% today per FMP top-50 losers -- volume UNCONFIRMED, FMP free tier blocks /quote for this symbol; verify liquidity/catalyst via WebSearch before treating as a candidate
 CRDO   # 2026-09-02: -20.0% today per FMP top-50 losers -- volume UNCONFIRMED, FMP free tier blocks /quote for this symbol; verify liquidity/catalyst via WebSearch before treating as a candidate
 DOCU   # EARNINGS 2026-09-03 — pre-catalyst watch (FMP earnings calendar), not yet a candidate
+
+# --- added 2026-09-03 via scripts/massive_client.py (Massive.com, real whole-market screen) ---
+# 5,315 common-stock tickers scanned, 1,356 passed $5-$500/>1M-volume filter
+# for the 2026-09-02 vs 2026-09-01 session (Massive is EOD-only, one session
+# behind live). BIAF/CRDO/DELL/MDB/CNH/GTLB also appeared here but already
+# have verdicts above -- not re-added.
+FMC    # 2026-09-03: +12.2% on 2026-09-02 -- no FMC-specific news found, reads as ag-input sector beta (Middle East supply disruption) against a stale Q2 miss -- WATCH/PASS boundary
+ASTS   # 2026-09-03: +11.8% on 2026-09-02, Berenberg Buy init + insider buy -- CANDIDATE at research, council WATCH (init was sector-wide not ASTS-specific; launch delay + dilutive convert underneath)
+RDDT   # 2026-09-03: +9.3% on 2026-09-02, Baird note on AI-licensing risk (Neutral, unchanged target) -- WATCH, soft/sentiment-driven signal
+PANW   # 2026-09-03: -9.3% on 2026-09-02, post-earnings margin-compression scare despite a real beat -- WATCH, catalyst already fully fired
+SRPT   # 2026-09-03: +8.8% on 2026-09-02, undated pipeline-data anticipation -- WATCH low confidence, real overhang from past fatal adverse events
+CHTR   # 2026-09-03: +8.7% on 2026-09-02, relief bounce off CFO-resignation overreaction -- PASS, doesn't address the underlying subscriber-loss problem
+MGNI   # 2026-09-03: +8.7% on 2026-09-02, agentic-AI ad product + Q2 beat -- WATCH, thin news peg on an already +72%-in-90-days stock
+VRNS   # 2026-09-03: +10.4% on 2026-09-02, Bloomberg-reported Proofpoint takeover talks -- CANDIDATE at research, council WATCH (documented repeat unconverted rumor pattern since June 2026, active securities fraud lawsuit)
+FCEL   # 2026-09-03: -15.7% on 2026-09-02, clean earnings/revenue miss + dilution history -- PASS
+GIII   # 2026-09-03: -11.5% on 2026-09-02, EPS beat but revenue miss/soft guidance on structural PVH-license headwind -- WATCH
+WNC    # 2026-09-03: +11.35% on 2026-09-02, no ticker-specific catalyst found (broad risk-on rally) -- PASS, volume right at the 1M liquidity floor

@@ -202,3 +202,28 @@ fell" or "the pop already happened" alone). That's weak evidence toward
 real outcome data is still the honest way to settle this, not more
 narrative pattern-matching. Flag both batches to the user together next
 time this comes up, don't treat them as separate open questions.
+
+## Third batch (2026-09-03): first screen.md run on the new Massive.com pipeline — 8-for-8 now
+Ran the newly-wired whole-market screen for real (see RESOLVED: Massive.com
+above) — 17 tickers reviewed (11 new, 6 reused verdicts from 2026-09-02:
+BIAF, CRDO, DELL, MDB, CNH, GTLB, none of which changed). 2 of the 11 new
+names reached CANDIDATE: ASTS (Berenberg Buy init + insider buy) and VRNS
+(Bloomberg-reported Proofpoint takeover talks). **Both downgraded to WATCH
+by council** — full writeups in `/data/research/2026-09-03/ASTS_council.md`
+and `VRNS_council.md`.
+
+| Ticker | Why it didn't clear the bar |
+|---|---|
+| ASTS | Berenberg's "Buy" init was independently verified to be a 4-stock sector-wide space-coverage launch (Rocket Lab, ASTS, Planet Labs, HawkEye 360), not an ASTS-specific call — undercuts the bull thesis's core premise. Real launch delay to 2027, $1.15B dilutive convert, insider selling far outweighing the highlighted buy. |
+| VRNS | This is the SECOND unconverted takeover rumor on this exact ticker in under 3 months (June 2026 Blackstone/Thoma Bravo/Vista report, independently verified, also popped the stock and produced no deal). Citi's target on today's own news sits BELOW the post-pop price. Active securities fraud suit tied to a real Oct 2025 disclosure failure. |
+
+**Running total: 8-for-8 council downgrades** since council.md started being
+used (all on 2026-09-02/09-03). This is no longer "one uncertain week" —
+it's held across two different screening methodologies (FMP top-50-based,
+then genuine whole-market via Massive) and a wide range of catalyst types
+(earnings beats, analyst upgrades, M&A rumors). Still can't be settled
+without real outcome data (see Open question above — this note extends it,
+doesn't replace it), but the pattern is getting harder to explain away as
+"just this week's macro." Say this to the user plainly next time it comes
+up, don't let a good screening pipeline quietly imply the strategy itself
+is working if council keeps finding real reasons every single time.
