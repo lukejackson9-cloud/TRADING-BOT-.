@@ -373,3 +373,33 @@ picture: `trig_01XEBQ2MxWoDMfBftebRXbrR` (one-shot journal.md check-in,
 2026-09-11) and nothing else scheduled. All three (this one included) are
 bound to the same persistent session, so `list_triggers` from that session
 is the source of truth if this file and reality ever drift.
+
+## First live daily-screen firing (2026-09-04): 1 CANDIDATE, downgraded — 12-for-12
+Ran Massive's whole-market screen for the just-completed 2026-09-03 session
+(1,305 tickers passed filters) plus FMP's live movers for 2026-09-04 itself
+(53 new names after excluding leveraged ETFs and everything already
+researched). Kept this proportionate to a daily routine, not a repeat of
+the prior marathon — researched the 10 most significant, non-duplicate
+movers: LULU, GWRE, PATH, TSLA, NFLX, ASAN, AEHR, TITN, SMMT, CLS.
+
+**GWRE reached CANDIDATE, downgraded to WATCH by council.** The decisive,
+independently-verified fact: this is the SECOND time in three months GWRE
+has run the identical "beat on revenue/EPS, guide down on ARR, crash
+10-20%" sequence (same pattern, same analysts trimming targets while
+keeping Buy ratings, first time was June 5 2026) — and the recovery from
+that first instance took roughly a quarter, not two weeks. Full writeup:
+`/data/research/2026-09-04/GWRE_council.md`.
+
+The other 9 were PASS/WATCH at research.md, mostly negative catalysts this
+long-only bot has no edge on (LULU, TSLA, PATH, NFLX, ASAN) or real stories
+that were already stale/priced-in by the time of research (AEHR, TITN,
+SMMT, CLS).
+
+**Running total: 12-for-12 council downgrades**, now across five distinct
+screening passes/days. GWRE's repeat-pattern precedent is arguably the
+single most concrete piece of evidence in the whole streak — a demonstrated
+behavioral precedent on the exact same stock, not a generic valuation or
+sector argument. Worth remembering when the Sept 11 journal check-in runs:
+GWRE's June 2026 crash-and-recovery is itself now a testable prior case
+that could be checked for the scorecard, if the June research/council
+files exist somewhere — worth a quick check, not an assumption either way.

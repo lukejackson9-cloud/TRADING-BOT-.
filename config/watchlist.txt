@@ -100,3 +100,15 @@ AUR    # 2026-09-03: +8.0% today, dated Investor Day (9/23) but still ~$270M/qua
 SPCX   # 2026-09-03: +6.4% today (SpaceX itself, now public) -- CANDIDATE at research, council WATCH (Sept 9 lockup unlock falls inside the window; Flight 13 precedent went against the stock)
 BTG    # 2026-09-03: +5.3% today, same gold-sector-beta theme as CDE, no BTG-specific catalyst -- PASS
 HPE    # 2026-09-03: +5.0% today, Q3 beat-and-raise -- CANDIDATE at research, council WATCH (Morgan Stanley cut target same day; no dated catalyst inside 2wk window; management confirmed supply constraints through 2028)
+
+# --- added 2026-09-04 via the new daily screen routine (Massive whole-market for the 2026-09-03 session + FMP live for 2026-09-04) ---
+LULU   # 2026-09-04: -17.4% today, comp sales down 9% (leggings -20%), 2nd straight guidance cut, China weakness -- PASS, clean structural deterioration
+GWRE   # 2026-09-04: -20% over 2 days, Q4 beat but FY27 ARR guide-down -- CANDIDATE at research, council WATCH (this EXACT beat-then-ARR-guide-down-crash pattern already happened to GWRE in June 2026; recovery took ~3 months, not 2 weeks; zero insider buying)
+PATH   # 2026-09-04: -16.6% today, revenue beat but ARR growth decelerating to 12%, Canaccord downgrade on competitive concerns -- WATCH
+TSLA   # 2026-09-04: -5.9% today, live NHTSA safety probe (no timeline) + underwhelming robotaxi event -- WATCH, open-ended regulatory overhang
+NFLX   # 2026-09-04: -5.4% today (magnitude disputed across sources, -3.7% to -5.4%), 2nd straight quarter of light guidance -- WATCH
+ASAN   # 2026-09-04: -12.7% today, good Q2 print but guidance shows deceleration + margin compression -- PASS, long-only has no edge on the negative catalyst
+AEHR   # 2026-09-04: +13.1% today, real AI-testing growth story but every driver is 3+ weeks stale -- WATCH, likely "sell the news" setup ahead of Sept 10 investor conference
+TITN   # 2026-09-04: +14.85% today, no dated catalyst found, just analysts updating models on week-old news -- PASS
+SMMT   # 2026-09-03: +17.33%, real Phase 3 data beating Keytruda on OS -- WATCH, already fully priced in by the time of research (broke prior session)
+CLS    # 2026-09-03: +11.55%, real AMD partnership tailwind but no fresh dated catalyst, next earnings Oct 26 (outside window) -- WATCH
