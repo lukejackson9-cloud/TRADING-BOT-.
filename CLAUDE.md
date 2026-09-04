@@ -155,17 +155,38 @@ to execute into — but the rule stays in force for if/when that changes.
 - /skills/                    — how-to instructions for each capability
 
 ## Routine Cadence (set up via Claude Code routines, see README.md)
-- Pre-market (8:00 AM ET): run skills/screen.md → update watchlist
-- Market open+30m (10:00 AM ET): run skills/research.md → skills/council.md
-  (only for tickers research.md marked CANDIDATE) → skills/propose_trades.md
-  (writes advisory ideas and notifies you via ClickUp — nothing executes,
-  ever, in this mode)
+- **Daily, ~5:30 PM ET / 21:30 UTC, weekdays** (`trig_0149vd3ymUFWFhDyRxza7aA4`,
+  "Daily short-term stock screen"): the full skills/screen.md → research.md
+  → council.md → propose_trades.md pipeline in one run, then a
+  PushNotification plus a chat summary. **This timing is deliberate, not
+  the original 8am/10am split below** — confirmed live on 2026-09-03/09-04
+  that both FMP and Massive.com only return genuinely fresh, non-stale data
+  once the trading session has actually closed and settled (~30-90 min
+  post-close); querying pre-market or mid-session returns yesterday's
+  numbers dressed as today's. Keep the routine post-close unless a future
+  session confirms intraday data has actually become reliable — verify
+  with a live test (check quote timestamps) before ever moving it earlier,
+  don't assume.
 - skills/execute_approved.md: do not run — inert in advisory-only mode
 - Mid-day (1:00 PM ET): run skills/monitor.md as an advisory check-in only
   if the user has told you what they're holding
 - Market close (4:15 PM ET): run skills/report.md → send ClickUp summary
+  (separate from the daily screen routine above, which posts directly to
+  chat/push rather than ClickUp)
 - Weekly, or whenever /data/pending_trades.json has entries 5+ trading days
-  old: run skills/journal.md to check outcomes and update the journal
+  old: run skills/journal.md to check outcomes and update the journal — see
+  the standing 2026-09-11 check-in (`trig_01XEBQ2MxWoDMfBftebRXbrR`) for
+  the first real run of this, covering everything both screening pushes
+  have produced so far.
+
+### Original theoretical cadence (kept for reference — superseded by the single daily run above for the screen/research/council/propose steps)
+- Pre-market (8:00 AM ET): run skills/screen.md → update watchlist
+- Market open+30m (10:00 AM ET): run skills/research.md → skills/council.md
+  → skills/propose_trades.md
+This split assumed intraday data would be reliably fresh at those times;
+2026-09-03/09-04 testing showed it isn't on this project's free-tier data
+sources. Revert to this split only if a future session re-verifies fresh
+intraday data is actually available at those hours.
 
 ## Non-negotiables
 - Never fabricate research — if web search returns nothing useful, say so and skip the ticker.

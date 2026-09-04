@@ -1,4 +1,4 @@
-# Session Handoff — last updated 2026-09-03
+# Session Handoff — last updated 2026-09-04
 
 Read this after CLAUDE.md when picking this project up in a new session.
 CLAUDE.md is the permanent ruleset; this file is "where we actually got to."
@@ -352,3 +352,24 @@ real, specific, dated reasons every time now, not generic hedges. Still
 not enough to conclude anything on its own — that's still journal.md's
 job (see the scheduled 2026-09-11 check-in, now covering all ~76 tickers
 across both days' full sessions, not just the 11 that reached council).
+
+## Recurring daily screen set up (2026-09-04)
+User asked for the screening pipeline to run daily on its own and notify
+them, instead of only running when they ask in chat. Set up
+`trig_0149vd3ymUFWFhDyRxza7aA4` ("Daily short-term stock screen") — cron
+`30 21 * * 1-5`, ~5:30 PM ET weekdays, bound to this session. See
+CLAUDE.md's "Routine Cadence" section for why that time and not the
+original 8am/10am split: both data sources confirmed live to only return
+fresh, non-stale data once the session has actually closed and settled.
+Each firing runs screen → research → council → propose_trades end to end,
+commits/pushes its own changes, sends a PushNotification, and posts a
+chat summary leading with any surviving CANDIDATE (or a brief "nothing
+today" per the Reporting preference). **First live firing: today,
+2026-09-04 ~21:30 UTC** — a new session picking this up before then should
+know the routine exists and not duplicate it by hand.
+
+Two other standing triggers, for context if a new session needs the full
+picture: `trig_01XEBQ2MxWoDMfBftebRXbrR` (one-shot journal.md check-in,
+2026-09-11) and nothing else scheduled. All three (this one included) are
+bound to the same persistent session, so `list_triggers` from that session
+is the source of truth if this file and reality ever drift.
