@@ -19,22 +19,38 @@ research done 2026-09-06). Treat every call defensively:
   - Mention to the user once per session if this stops working, same rule
     CLAUDE.md already applies to FMP/Massive/T212 network failures.
 
-STATUS AS OF 2026-09-06: BLOCKED (network policy) AND UNTESTED. Add
-`query1.finance.yahoo.com` and `query2.finance.yahoo.com` to this
-environment's Custom network allowlist (claude.ai/code -> cloud icon ->
-gear -> Network access -> Custom) before this can be verified against a
-live response -- both hostnames, Yahoo uses them somewhat interchangeably
-across different unofficial endpoints. Response shape below is inferred
-from public documentation of the yfinance/yahooquery libraries that wrap
-this same endpoint, NOT confirmed against a real call.
+STATUS AS OF 2026-09-06: WORKING, confirmed live. `get_uk_gainers()` and
+`get_uk_losers()` were both run for real and returned genuine data —
+response shape matches what's documented below. A bare request with no
+User-Agent gets a 429 from Yahoo directly (confirmed) — that's Yahoo's own
+bot-defense, not this environment's network policy; the User-Agent header
+below is required, not optional.
 
-Known predefined screener IDs (from public documentation, unverified this
-session): "day_gainers", "day_losers", "most_actives" (US, region=US);
-region-specific variants exist for at least the UK ("day_gainers_gb",
-"day_losers_gb") -- other region codes (DE, FR, JP, HK, etc.) are plausible
-by the same naming pattern but NOT individually confirmed. Verify each
-region code actually returns real data before trusting it; don't assume
-the pattern holds for every market.
+**Confirmed finding: `day_gainers_gb`/`day_losers_gb` return a MIX of
+exchanges, not just genuine UK-domestic stocks** — check `fullExchangeName`
+on every quote:
+  - `"LSE"` or `"Aquis AQSE"` — genuine UK-domestic stocks, priced in GBp
+    (pence) per the `currency` field. Confirmed live: a stock with
+    `regularMarketPrice: 2.25, currency: "GBp"` is 2.25 PENCE (£0.0225),
+    not £2.25 — convert before applying any price filter (see screen.md's
+    international price-filter gotcha). Volume can be enormous for
+    sub-penny names (confirmed: one at $0.0091 GBp had 3.5 BILLION shares
+    volume) — that's a sign of a worthless penny stock, not real liquidity;
+    don't let raw volume alone pass a filter without a sane price floor.
+  - `"IOB"` (International Order Book) — foreign companies cross-listed on
+    the LSE, priced in THEIR OWN home currency (confirmed live: EUR, SEK,
+    NOK, CHF, RON all appeared in one 10-row sample), not GBP/GBX at all.
+    These aren't really "UK stocks" for research purposes even though
+    they show up in a `_gb`-region screener — treat them as whatever
+    market their `currency` field says, and research/size them in that
+    currency, not GBP.
+
+Known predefined screener IDs (from public documentation): "day_gainers",
+"day_losers", "most_actives" (US, region=US); UK variants confirmed live
+("day_gainers_gb", "day_losers_gb"). Other region codes (DE, FR, JP, HK,
+etc.) are plausible by the same naming pattern but NOT individually
+confirmed — verify each one actually returns real data before trusting it,
+don't assume the pattern holds for every market.
 
 No install beyond `requests` (already used elsewhere in this repo).
 """
@@ -53,14 +69,16 @@ HEADERS = {
 def get_predefined_screener(scr_id, region="US", count=25):
     """
     Run one of Yahoo's predefined screeners (e.g. "day_gainers_gb" for UK
-    day gainers). Response shape (UNVERIFIED, inferred from yfinance/
-    yahooquery library source -- confirm against a live call before
-    trusting this):
+    day gainers). Response shape CONFIRMED against live calls (2026-09-06):
       {"finance": {"result": [{"id": ..., "quotes": [
           {"symbol": ..., "shortName": ..., "regularMarketPrice": ...,
            "regularMarketChangePercent": ..., "regularMarketVolume": ...,
-           "fullExchangeName": ..., ...}, ...
+           "fullExchangeName": ..., "currency": ...}, ...
       ]}]}}
+    IMPORTANT: check "currency" and "fullExchangeName" on every quote --
+    see the module docstring's confirmed finding on GBp-vs-other-currency
+    mixing in the `_gb` screeners. Don't assume the number in
+    "regularMarketPrice" is in the currency you expect.
     Raises requests.HTTPError or returns unexpected shape if Yahoo has
     changed or blocked this endpoint -- callers MUST handle that and fall
     back to WebSearch (see skills/screen.md), not crash the whole screen.

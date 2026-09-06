@@ -48,13 +48,21 @@ Goal: produce a short list (5–15 tickers) of candidates worth researching toda
     listings — confirmed 2026-09-06, not an oversight to fix, a real data
     source limitation). Two layers here, since the primary one is fragile:
     - `scripts/yahoo_screener_client.py` — free, no key, Yahoo Finance's
-      unofficial regional screeners (`get_uk_gainers()`/`get_uk_losers()`
-      confirmed to exist for the UK; other region codes are plausible by
-      the same pattern but unverified — check before trusting one). This
-      is UNOFFICIAL and UNSUPPORTED (see the module docstring) — it can
-      break, rate-limit, or change shape with no warning, unlike the
-      documented APIs in steps 0/0b. Wrap it defensively; a failure here
-      is expected sometimes, not a sign something's broken elsewhere.
+      unofficial regional screeners. `get_uk_gainers()`/`get_uk_losers()`
+      CONFIRMED working live (2026-09-06); other region codes are plausible
+      by the same naming pattern but unverified — check before trusting
+      one. This is UNOFFICIAL and UNSUPPORTED (see the module docstring)
+      — it can break, rate-limit, or change shape with no warning, unlike
+      the documented APIs in steps 0/0b. Wrap it defensively; a failure
+      here is expected sometimes, not a sign something's broken elsewhere.
+    - **Confirmed live: the `_gb` screeners return a MIX of markets, not
+      just UK stocks.** Check `fullExchangeName` on every quote — `"LSE"`/
+      `"Aquis AQSE"` are genuine UK-domestic stocks (priced in GBp/pence);
+      `"IOB"` (International Order Book) rows are foreign companies
+      cross-listed on the LSE, priced in THEIR OWN currency (confirmed:
+      EUR/SEK/NOK/CHF/RON all appeared in one sample) — treat those as
+      whatever market the `currency` field says, not as UK stocks, when
+      deciding where research.md's catalyst-sourcing should focus.
     - If Yahoo's screener errors, is unreachable, or its data looks
       obviously wrong (e.g. stale prices, empty quotes list), fall back to
       WebSearch for that market instead — e.g. "FTSE 100 biggest movers

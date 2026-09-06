@@ -459,16 +459,29 @@ without notice (there's a live GitHub issue against that library titled
 exactly that). User explicitly chose to pursue this AND keep WebSearch as
 a real, formalized fallback rather than leaning on Yahoo alone.
 
-Wrote `scripts/yahoo_screener_client.py` (untested — `query1`/
-`query2.finance.yahoo.com` still need adding to this environment's Custom
-network allowlist, same place FMP/Massive/Alpaca were added) and a new
-step 0c in `skills/screen.md`: Yahoo screener first for international
-markets, WebSearch fallback if Yahoo errors, is unreachable, or looks
-wrong (stale data, empty results). Also documented a real, easy-to-miss
-gotcha: LSE stocks are quoted in **GBX (pence)**, not GBP — a naive $5-$500
-price filter will misfire without converting units first.
+Wrote `scripts/yahoo_screener_client.py` and a new step 0c in
+`skills/screen.md`: Yahoo screener first for international markets,
+WebSearch fallback if Yahoo errors, is unreachable, or looks wrong (stale
+data, empty results).
 
-**Next step**: add those two domains to the network allowlist, then verify
-`get_uk_gainers()`/`get_uk_losers()` against a live call and confirm the
-response shape actually matches what's documented in the script (inferred
-from library source, not yet confirmed against a real response).
+**RESOLVED same day: user added the network allowlist entries, confirmed
+live.** `get_uk_gainers()`/`get_uk_losers()` both ran for real and returned
+genuine data. Two confirmed findings from that live test, both now
+documented in the script and screen.md:
+1. The GBp/pence gotcha is real, not theoretical — a live quote showed
+   `regularMarketPrice: 2.25, currency: "GBp"`, i.e. 2.25 pence (£0.0225),
+   not £2.25. Any price filter must check the `currency` field and convert
+   before comparing against a dollar-equivalent band.
+2. The `_gb` screeners mix genuine UK-domestic stocks (`fullExchangeName`
+   `"LSE"`/`"Aquis AQSE"`, priced in GBp) with **International Order Book
+   ("IOB") cross-listings** — foreign companies also traded on the LSE but
+   priced in their OWN home currency (confirmed live: EUR, SEK, NOK, CHF,
+   RON all appeared in one 10-row sample). IOB rows aren't really "UK
+   stocks" for research purposes despite showing up in a UK-region
+   screener — research/size them in whatever currency they're actually in.
+
+International screening (confirmed for the UK; other region codes are
+untested, verify each before trusting) is genuinely live now, alongside
+the existing US pipeline (Massive + FMP). Not yet exercised inside a full
+screen.md → research.md → council.md run on a non-US ticker — that's the
+natural next real-world test, not done this session.
