@@ -1,4 +1,4 @@
-# Session Handoff — last updated 2026-09-04
+# Session Handoff — last updated 2026-09-06
 
 Read this after CLAUDE.md when picking this project up in a new session.
 CLAUDE.md is the permanent ruleset; this file is "where we actually got to."
@@ -403,3 +403,25 @@ sector argument. Worth remembering when the Sept 11 journal check-in runs:
 GWRE's June 2026 crash-and-recovery is itself now a testable prior case
 that could be checked for the scorecard, if the June research/council
 files exist somewhere — worth a quick check, not an assumption either way.
+
+## Alpaca client added for skills/monitor.md (2026-09-06)
+User asked for live/real-time market access, specifically for intraday
+position monitoring (not screening — the daily routine's post-close timing
+is deliberate and correct for the strategy, see RESOLVED sections above).
+Researched current options: Alpaca Markets gives genuine real-time quotes
+free (IEX exchange feed only, ~2-4% of volume, not the full consolidated
+tape — good enough to catch a stop/target approach, not execution-grade).
+IEX Cloud, the other well-known free real-time option, shut down
+permanently in Aug 2024 — don't suggest it if it comes up in old notes or
+search results.
+
+Wrote `scripts/alpaca_client.py` (`get_latest_trade`, `get_latest_quote`,
+`get_latest_trades` for batches) and wired it into `skills/monitor.md` as
+the preferred price source, WebSearch as fallback. **Untested against live
+data** — awaiting the user's `ALPACA_API_KEY`/`ALPACA_API_SECRET` (free
+signup at alpaca.markets, paper-account keys are fine, nothing here ever
+places an Alpaca order). First thing to do once a key arrives: run
+`get_latest_trade("AAPL")` for real and verify the response shape in the
+script's docstring actually matches, same caution applied to every other
+client in this repo before its first live call. Also fixed a stale
+Perplexity-API reference left over in monitor.md's step 3 while editing.

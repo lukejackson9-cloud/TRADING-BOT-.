@@ -93,9 +93,19 @@ back to WebSearch automatically and says so.
    - ClickUp: optional. Create a Personal API Token and a task if you want
      the daily digest; skip it if you're fine reading /data/ directly.
    - Financial Modeling Prep (FMP): recommended. A free-tier API key from
-     site.financialmodelingprep.com gives screen.md a real market screener
-     instead of WebSearch guessing. Needs network access to
+     site.financialmodelingprep.com gives screen.md same-day gainers/
+     losers/actives and an earnings calendar. Needs network access to
      financialmodelingprep.com — see "Market data" above if that's blocked.
+   - Massive.com (formerly Polygon.io): recommended. A free-tier API key
+     from massive.com gives screen.md a genuine whole-market screen (every
+     US common stock in one call) rather than FMP's curated top-50 lists —
+     see `scripts/massive_client.py`. Needs network access to
+     `api.massive.com`. Note: EOD-only on the free tier, not intraday.
+   - Alpaca Markets: optional, for `skills/monitor.md`'s intraday position
+     check-ins. A free account at alpaca.markets gives genuine real-time
+     (IEX-feed) quotes, unlike FMP/Massive's EOD-only free tiers — see
+     `scripts/alpaca_client.py`. Paper-account keys work fine; nothing
+     here ever places an Alpaca order.
 2. `pip install requests --break-system-packages`
 3. Export the env vars (or use `direnv` / your shell profile) so Claude
    Code's shell has access to them when it runs scripts.
