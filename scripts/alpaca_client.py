@@ -13,17 +13,10 @@ https://alpaca.markets -> sign up -> dashboard -> API Keys (paper account
 keys work for market data; no funding or identity verification needed
 just to read quotes).
 
-STATUS AS OF 2026-09-06: BLOCKED, untested against live data. Key/secret
-were provided and added to .env, but `data.alpaca.markets` is rejected by
-this environment's network egress policy (confirmed via the proxy's
-relay-failure log: "gateway answered 403 to CONNECT (policy denial or
-upstream failure)") — the same kind of block FMP and Massive.com both had
-before their domains were added to this environment's Custom network
-allowlist (claude.ai/code -> cloud icon -> gear -> Network access ->
-Custom). Add `data.alpaca.markets` there (or run from a local Claude Code
-session) before relying on this client — then re-verify the response
-shape below actually matches a real call, since it was written from
-Alpaca's public docs, not confirmed against a live response.
+STATUS AS OF 2026-09-06: WORKING, confirmed live. `data.alpaca.markets`
+is reachable (network policy fixed by the user) and all three functions
+below were run for real against AAPL/MSFT/TSLA — response shapes match
+what's documented in each function's docstring.
 
 Free-tier limitation, important to keep in view: this is the IEX feed
 only, not the full consolidated SIP tape across all US exchanges — IEX is
@@ -33,6 +26,16 @@ the T212 app (which presumably uses a fuller feed). Treat it as "real-time
 enough to catch a stop/target approach," not as a precise execution-grade
 price -- this project has no execution path anyway, so that's an
 acceptable tradeoff for an advisory check-in.
+
+Confirmed live quirk worth remembering: get_latest_quote() during closed-
+market hours (tested on a Sunday) returned a bid/ask spread of ~10% on
+AAPL ($305.33 bid / $338.27 ask) -- wildly wider than AAPL's real intraday
+spread, an artifact of no active market-making while the market is shut,
+not a data error. get_latest_trade()'s last-print price ($319.80) was a
+far more sensible number for the same closed-market moment. Prefer
+get_latest_trade() over get_latest_quote() for a stop/target sanity check
+outside active market hours; the quote endpoint is more meaningful while
+the market is actually open.
 
 Install: pip install requests --break-system-packages
 """
@@ -59,13 +62,17 @@ def _get(path, **params):
 def get_latest_quote(symbol):
     """
     Latest bid/ask quote for one US equity symbol, IEX feed. Response shape
-    per Alpaca's public docs (UNVERIFIED against a live call):
+    CONFIRMED against a live call (AAPL, 2026-09-06):
       {"symbol": "AAPL", "quote": {"t": <RFC3339 timestamp>, "ax": <ask exchange>,
        "ap": <ask price>, "as": <ask size>, "bx": <bid exchange>, "bp": <bid price>,
-       "bs": <bid size>, ...}}
+       "bs": <bid size>, "c": [<condition codes>], "z": <tape>}}
     Use ("ap" + "bp") / 2 as an approximate mid-price for a stop/target check
     -- this is a quote, not a trade print, so there's no single "last price"
     field here; get_latest_trade() below gives the actual last executed price.
+    NOTE: during closed-market hours this can show an unrealistically wide
+    spread (confirmed: ~10% on AAPL on a Sunday) -- an artifact of no active
+    market-making, not a data error. Prefer get_latest_trade() when the
+    market is closed.
     """
     return _get(f"/v2/stocks/{symbol}/quotes/latest", feed="iex")
 
@@ -73,9 +80,12 @@ def get_latest_quote(symbol):
 def get_latest_trade(symbol):
     """
     Most recent actual executed trade for one symbol, IEX feed. Simpler
-    "what's it trading at right now" check than the bid/ask spread above.
-    Response shape (UNVERIFIED):
-      {"symbol": "AAPL", "trade": {"t": <timestamp>, "p": <price>, "s": <size>, ...}}
+    "what's it trading at right now" check than the bid/ask spread above,
+    and more reliable outside active market hours (see get_latest_quote's
+    note). Response shape CONFIRMED against a live call (AAPL, 2026-09-06):
+      {"symbol": "AAPL", "trade": {"t": <RFC3339 timestamp>, "p": <price>,
+       "s": <size>, "i": <trade id>, "x": <exchange>, "c": [<condition codes>],
+       "z": <tape>}}
     """
     return _get(f"/v2/stocks/{symbol}/trades/latest", feed="iex")
 
@@ -86,7 +96,10 @@ def get_latest_trades(symbols):
     prefer this over looping get_latest_trade() when checking several open
     positions at once (e.g. skills/monitor.md checking a whole watchlist).
     symbols: list of ticker strings.
-    Response shape (UNVERIFIED): {"trades": {"AAPL": {...}, "MSFT": {...}}}
+    Response shape CONFIRMED against a live call (AAPL/MSFT/TSLA, 2026-09-06):
+      {"trades": {"AAPL": {...}, "MSFT": {...}, "TSLA": {...}}}
+    (same per-symbol trade shape as get_latest_trade(), keyed by symbol
+    instead of wrapped with a top-level "symbol" field)
     """
     return _get("/v2/stocks/trades/latest", symbols=",".join(symbols), feed="iex")
 

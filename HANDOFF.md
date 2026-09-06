@@ -420,18 +420,20 @@ Wrote `scripts/alpaca_client.py` (`get_latest_trade`, `get_latest_quote`,
 the preferred price source, WebSearch as fallback. Also fixed a stale
 Perplexity-API reference left over in monitor.md's step 3 while editing.
 
-**BLOCKED (2026-09-06): key provided, but `data.alpaca.markets` is
-network-policy-blocked.** Same shape as FMP's and Massive's blocks before
-this session's environment got fixed — confirmed via the proxy's
-relay-failure log (policy denial, not a bad key). `ALPACA_API_KEY`/
-`ALPACA_API_SECRET` are both set in `.env`. **Fix:** add
-`data.alpaca.markets` to this environment's Custom network allowlist
-(claude.ai/code → cloud icon → gear → Network access → Custom), same place
-`api.massive.com` and `financialmodelingprep.com` were added. Test command
-for a new session:
-```bash
-curl -sS --max-time 10 -o /dev/null -w "%{http_code}\n" https://data.alpaca.markets
-```
-Once unblocked: run `get_latest_trade("AAPL")` for real and verify the
-response shape in the script's docstring actually matches — it was written
-from Alpaca's public docs, not confirmed against a live response yet.
+**RESOLVED (2026-09-06): user fixed the network policy, confirmed live.**
+`data.alpaca.markets` is now reachable and all three client functions
+(`get_latest_quote`, `get_latest_trade`, `get_latest_trades`) were run for
+real against AAPL/MSFT/TSLA — response shapes match what's now documented
+in the script (updated from "unverified" to confirmed).
+
+One real finding from testing on a Sunday (market closed): `get_latest_quote`
+showed an unrealistically wide bid/ask spread (~10% on AAPL) — an artifact
+of no active market-making while the market is shut, not a data error.
+`get_latest_trade`'s last-print price was sane for the same moment.
+`skills/monitor.md`/future sessions should prefer `get_latest_trade` over
+`get_latest_quote` when checking a position outside active market hours;
+the quote endpoint is more meaningful once the market is actually open.
+This is genuinely a free real-time feed now available for intraday
+position monitoring — not yet exercised in a real `skills/monitor.md` run
+against an actual position (no positions in `/data/positions.json` to test
+against yet).
