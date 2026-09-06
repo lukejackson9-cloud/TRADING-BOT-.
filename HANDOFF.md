@@ -437,3 +437,38 @@ This is genuinely a free real-time feed now available for intraday
 position monitoring — not yet exercised in a real `skills/monitor.md` run
 against an actual position (no positions in `/data/positions.json` to test
 against yet).
+
+## International screening: real gap confirmed, one fragile lead found (2026-09-06)
+User pushed on a real, fair concern: everything screened so far has been
+US-only, and "surely something globally has a real catalyst." Researched
+properly rather than assuming: Massive (US-only equity coverage) and FMP
+(blocks non-US symbols on free tier) both confirmed dead ends for
+international coverage. Checked Finnhub (no whole-market screener endpoint
+at all, just per-symbol lookups), Twelve Data (has an international
+movers endpoint but it's confirmed Pro-plan-only), Alpha Vantage
+(gainers/losers is US-only anyway), Marketstack (no confirmed screener
+endpoint) — none work free. This mirrors the US pattern (screening
+capability gated behind paid tiers) but international has no lucky
+exception like Massive's grouped-daily was for the US.
+
+**One real lead**: Yahoo Finance's unofficial regional screeners
+(`query2.finance.yahoo.com`, e.g. `day_gainers_gb` for the UK) — free, no
+key, genuinely international. But it's UNOFFICIAL/UNSUPPORTED — the same
+endpoint the `yfinance` library scrapes, known to break or rate-limit
+without notice (there's a live GitHub issue against that library titled
+exactly that). User explicitly chose to pursue this AND keep WebSearch as
+a real, formalized fallback rather than leaning on Yahoo alone.
+
+Wrote `scripts/yahoo_screener_client.py` (untested — `query1`/
+`query2.finance.yahoo.com` still need adding to this environment's Custom
+network allowlist, same place FMP/Massive/Alpaca were added) and a new
+step 0c in `skills/screen.md`: Yahoo screener first for international
+markets, WebSearch fallback if Yahoo errors, is unreachable, or looks
+wrong (stale data, empty results). Also documented a real, easy-to-miss
+gotcha: LSE stocks are quoted in **GBX (pence)**, not GBP — a naive $5-$500
+price filter will misfire without converting units first.
+
+**Next step**: add those two domains to the network allowlist, then verify
+`get_uk_gainers()`/`get_uk_losers()` against a live call and confirm the
+response shape actually matches what's documented in the script (inferred
+from library source, not yet confirmed against a real response).

@@ -43,13 +43,34 @@ Goal: produce a short list (5–15 tickers) of candidates worth researching toda
       you're looking for.
     Same network-policy caveat as step 0 applies if `financialmodelingprep.com`
     is unreachable.
-1. WebSearch fallback (only if BOTH 0 and 0b are unreachable, or to
-   sanity-check a surprising result from either): pull pre-market movers
-   and volume leaders via WebSearch (e.g. "stock market pre-market movers
-   today", "biggest stock gainers premarket") — a sample of what's out
-   there, not comprehensive, so widen the query angles (analyst upgrades,
-   sector rotation, earnings calendar) rather than trusting one narrow
-   search.
+0c. International (UK/European/other non-US markets): steps 0/0b are both
+    US-only (Massive's equity coverage and FMP's free tier both stop at US
+    listings — confirmed 2026-09-06, not an oversight to fix, a real data
+    source limitation). Two layers here, since the primary one is fragile:
+    - `scripts/yahoo_screener_client.py` — free, no key, Yahoo Finance's
+      unofficial regional screeners (`get_uk_gainers()`/`get_uk_losers()`
+      confirmed to exist for the UK; other region codes are plausible by
+      the same pattern but unverified — check before trusting one). This
+      is UNOFFICIAL and UNSUPPORTED (see the module docstring) — it can
+      break, rate-limit, or change shape with no warning, unlike the
+      documented APIs in steps 0/0b. Wrap it defensively; a failure here
+      is expected sometimes, not a sign something's broken elsewhere.
+    - If Yahoo's screener errors, is unreachable, or its data looks
+      obviously wrong (e.g. stale prices, empty quotes list), fall back to
+      WebSearch for that market instead — e.g. "FTSE 100 biggest movers
+      today", "LSE stocks up today news" — same sampling caveat as step 1
+      below (not comprehensive, widen query angles). This isn't a last
+      resort bolted on; it's the designed second layer for exactly the
+      case where the fragile unofficial endpoint stops working.
+    - Mention to the user once per session if Yahoo's screener is
+      unreachable/blocked, same rule as steps 0/0b's network-policy note.
+1. WebSearch fallback (only if 0, 0b, AND 0c are unreachable, or to
+   sanity-check a surprising result from any of them): pull pre-market
+   movers and volume leaders via WebSearch (e.g. "stock market pre-market
+   movers today", "biggest stock gainers premarket") — a sample of what's
+   out there, not comprehensive, so widen the query angles (analyst
+   upgrades, sector rotation, earnings calendar) rather than trusting one
+   narrow search.
 2. Separately, look ahead: earnings calendar for the coming week (real
    dates from step 0b's FMP call when reachable, WebSearch otherwise). This
    exists because reacting only to today's movers means always chasing a
@@ -61,11 +82,19 @@ Goal: produce a short list (5–15 tickers) of candidates worth researching toda
    the filters below) with a distinct comment tag: `# EARNINGS {date} —
    pre-catalyst watch, not yet a candidate`. These are watch-and-be-ready
    entries, not movers.
-3. Filter (all lists from steps 0/0b/1/2): price between $5–$500 (avoid
+3. Filter (all lists from steps 0/0b/0c/1/2): price between $5–$500 (avoid
    penny stocks and needing huge capital), average daily volume > 1M shares
    (avoid illiquid names you can't exit). Already applied if step 0's
-   `screen_market_movers()` was used; apply manually to WebSearch/FMP
+   `screen_market_movers()` was used; apply manually to WebSearch/FMP/Yahoo
    movers-list results.
+   **International price-filter gotcha**: LSE stocks are usually quoted in
+   GBX (pence), not GBP (pounds) — e.g. a `regularMarketPrice` of `1250`
+   means £12.50, not £1,250. Convert to a whole-currency-unit price before
+   applying the $5–$500-equivalent band, and convert to USD (or re-derive
+   an equivalent GBP/EUR band) rather than comparing raw non-USD numbers
+   against a dollar threshold. Getting this wrong either dumps real
+   candidates or lets penny stocks through silently — check the currency/
+   unit field in whatever response you're reading, don't assume.
 4. Cross-reference against /config/watchlist.txt (manual adds always included).
 5. Narrow step 0's ~30-name pool (plus anything from 0b/1/2) down to the
    final 5–15: prioritize names with a plausible catalyst behind the move
