@@ -13,10 +13,17 @@ https://alpaca.markets -> sign up -> dashboard -> API Keys (paper account
 keys work for market data; no funding or identity verification needed
 just to read quotes).
 
-STATUS: UNTESTED as of setup (2026-09-04) — no key provided yet. Verify
-the response shape below against a live call before trusting it in
-monitor.md, same caution as every other client in this repo before its
-first real test.
+STATUS AS OF 2026-09-06: BLOCKED, untested against live data. Key/secret
+were provided and added to .env, but `data.alpaca.markets` is rejected by
+this environment's network egress policy (confirmed via the proxy's
+relay-failure log: "gateway answered 403 to CONNECT (policy denial or
+upstream failure)") — the same kind of block FMP and Massive.com both had
+before their domains were added to this environment's Custom network
+allowlist (claude.ai/code -> cloud icon -> gear -> Network access ->
+Custom). Add `data.alpaca.markets` there (or run from a local Claude Code
+session) before relying on this client — then re-verify the response
+shape below actually matches a real call, since it was written from
+Alpaca's public docs, not confirmed against a live response.
 
 Free-tier limitation, important to keep in view: this is the IEX feed
 only, not the full consolidated SIP tape across all US exchanges — IEX is

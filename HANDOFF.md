@@ -417,11 +417,21 @@ search results.
 
 Wrote `scripts/alpaca_client.py` (`get_latest_trade`, `get_latest_quote`,
 `get_latest_trades` for batches) and wired it into `skills/monitor.md` as
-the preferred price source, WebSearch as fallback. **Untested against live
-data** — awaiting the user's `ALPACA_API_KEY`/`ALPACA_API_SECRET` (free
-signup at alpaca.markets, paper-account keys are fine, nothing here ever
-places an Alpaca order). First thing to do once a key arrives: run
-`get_latest_trade("AAPL")` for real and verify the response shape in the
-script's docstring actually matches, same caution applied to every other
-client in this repo before its first live call. Also fixed a stale
+the preferred price source, WebSearch as fallback. Also fixed a stale
 Perplexity-API reference left over in monitor.md's step 3 while editing.
+
+**BLOCKED (2026-09-06): key provided, but `data.alpaca.markets` is
+network-policy-blocked.** Same shape as FMP's and Massive's blocks before
+this session's environment got fixed — confirmed via the proxy's
+relay-failure log (policy denial, not a bad key). `ALPACA_API_KEY`/
+`ALPACA_API_SECRET` are both set in `.env`. **Fix:** add
+`data.alpaca.markets` to this environment's Custom network allowlist
+(claude.ai/code → cloud icon → gear → Network access → Custom), same place
+`api.massive.com` and `financialmodelingprep.com` were added. Test command
+for a new session:
+```bash
+curl -sS --max-time 10 -o /dev/null -w "%{http_code}\n" https://data.alpaca.markets
+```
+Once unblocked: run `get_latest_trade("AAPL")` for real and verify the
+response shape in the script's docstring actually matches — it was written
+from Alpaca's public docs, not confirmed against a live response yet.
