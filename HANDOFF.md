@@ -482,6 +482,39 @@ documented in the script and screen.md:
 
 International screening (confirmed for the UK; other region codes are
 untested, verify each before trusting) is genuinely live now, alongside
-the existing US pipeline (Massive + FMP). Not yet exercised inside a full
-screen.md → research.md → council.md run on a non-US ticker — that's the
-natural next real-world test, not done this session.
+the existing US pipeline (Massive + FMP).
+
+## First full international pipeline test (2026-09-06): fallback chain worked exactly as designed
+User asked to run a full screen to test the system. Real, important
+finding: **Yahoo's UK predefined screeners (day_gainers_gb, day_losers_gb,
+most_actives_gb) are dominated by AIM penny stocks, not genuine liquid
+large-cap movers.** Confirmed live: all 72 UK-domestic (LSE/Aquis) rows
+across gainers+losers failed a £4-£400 / >1M-volume filter after correct
+GBp→GBP conversion — literally zero survived. `most_actives_gb` was no
+better (e.g. one stock had 3.5 billion shares of volume at 0.0091p — huge
+raw share count, near-zero actual value traded). Unlike FMP's US
+most-actives list (AAPL/NVDA/TSLA-caliber names), there's no UK screener
+ID found so far that surfaces genuinely liquid, analyst-covered names —
+this looks structural (penny stocks naturally dominate "biggest % mover"
+and "most shares traded" rankings), not a filter-tuning problem to fix.
+
+**This is exactly the scenario the WebSearch fallback (step 0c) was built
+for, and it worked**: switched to WebSearch for "FTSE 100/250 movers this
+week," which surfaced two real, dated, sourced catalysts — a Goldman
+Sachs double-upgrade on Vodafone (Sell→Buy, target 85p→155p) and a UBS
+target raise on Computacenter — plus a third lead (GSK) that research
+correctly determined was based on a stale premise (the assumed "this
+week" upgrade was actually from May-July) and reported that honestly
+rather than manufacturing a catalyst. Full writeups in
+`/data/research/2026-09-06/`. VOD.L and CCC.L are both WATCH — real
+catalysts, but VOD.L is a lone-outlier-sized upgrade against a still-mixed
+Street consensus and real balance-sheet deterioration, and CCC.L is
+already near record highs riding a broader sector rally.
+
+**Net assessment of the international pipeline**: the primary layer
+(Yahoo screener) is real but currently low-value for the UK specifically
+— it finds volatility, not quality. The documented fallback isn't a
+backup plan collecting dust, it's carrying the actual useful signal right
+now. Worth revisiting whether a different Yahoo screener ID (large-cap-
+focused, if one exists for GB) or a different region's screener behaves
+better before concluding this pattern holds for every non-US market.

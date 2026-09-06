@@ -112,3 +112,12 @@ AEHR   # 2026-09-04: +13.1% today, real AI-testing growth story but every driver
 TITN   # 2026-09-04: +14.85% today, no dated catalyst found, just analysts updating models on week-old news -- PASS
 SMMT   # 2026-09-03: +17.33%, real Phase 3 data beating Keytruda on OS -- WATCH, already fully priced in by the time of research (broke prior session)
 CLS    # 2026-09-03: +11.55%, real AMD partnership tailwind but no fresh dated catalyst, next earnings Oct 26 (outside window) -- WATCH
+
+# --- added 2026-09-06 via scripts/yahoo_screener_client.py (first international/UK test) ---
+# UK screener's day_gainers_gb/day_losers_gb/most_actives_gb are ALL dominated
+# by AIM penny stocks (confirmed live, 0 passed a GBP4-400/>1M-volume filter
+# out of 72 UK-domestic rows) -- fell back to WebSearch per screen.md's
+# designed fallback chain, which found real candidates.
+VOD.L  # 2026-09-06: Goldman Sachs double-upgrade Sell->Buy, target 85p->155p (2026-09-04) -- WATCH, credible ROIC thesis but a lone outlier vs. still-mixed 3 Buy/4 Hold/3 Sell consensus, against real Germany subscriber losses + rising net debt
+CCC.L  # 2026-09-06: UBS target raised 5250p->7000p (2026-09-04), corroborated by CCC's own July guidance upgrade + Berenberg -- WATCH, better-corroborated than VOD.L but already near record highs, rode a broader tech rally
+GSK.L  # 2026-09-06: PASS -- the assumed "analyst upgrade this week" premise didn't hold up on research; actual upgrades dated May-July, this week's only GSK-specific news is an early-stage HUTCHMED licensing deal, one broker explicitly kept Hold unchanged
