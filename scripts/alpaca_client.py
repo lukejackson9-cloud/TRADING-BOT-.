@@ -104,6 +104,37 @@ def get_latest_trades(symbols):
     return _get("/v2/stocks/trades/latest", symbols=",".join(symbols), feed="iex")
 
 
+def get_historical_bars(symbol, start, end, timeframe="5Min", feed="iex"):
+    """
+    Paginated historical bars for one symbol between start/end (RFC3339
+    timestamps, e.g. "2021-06-01T00:00:00Z"). Handles next_page_token
+    looping -- CONFIRMED live (2026-09-07): a multi-year request returns
+    ~2,000 bars per page regardless of a higher `limit` param, so a several
+    year 5-min-bar pull needs dozens of pages; this function does that
+    transparently and returns the full flat list.
+
+    CONFIRMED live (2026-09-07): real intraday history starts mid-2021 --
+    a confirmed-weekday request for 2020-06-03 and earlier returned 0 bars
+    (status 200, just empty) while 2021-06-02 onward returned real data.
+    This is a genuine data-depth limit on Alpaca's free/IEX tier, not a
+    bug here -- don't request further back than ~2021-06 expecting data.
+
+    Returns a flat list of bar dicts: [{"t":..., "o":..., "h":..., "l":...,
+    "c":..., "v":...}, ...] in chronological order.
+    """
+    bars, page_token = [], None
+    while True:
+        params = {"timeframe": timeframe, "start": start, "end": end, "feed": feed, "limit": 10000}
+        if page_token:
+            params["page_token"] = page_token
+        data = _get(f"/v2/stocks/{symbol}/bars", **params)
+        bars.extend(data.get("bars") or [])
+        page_token = data.get("next_page_token")
+        if not page_token:
+            break
+    return bars
+
+
 if __name__ == "__main__":
     # quick manual sanity check
     print(get_latest_trade("AAPL"))
