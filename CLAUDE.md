@@ -293,6 +293,16 @@ market, completed 2026-09-07):**
     via skills/paper_trade_ta.md) keep landing net-positive after
     accounting for realistic slippage, that's worth re-examining with the
     user specifically — but the historical result alone isn't there.
+  - **Tested two improvement ideas (2026-09-07), neither rescued anything:**
+    a market-regime filter (only take breakout/ema_cross entries when SPY
+    is above its own 50-day SMA) barely moved either setup's numbers —
+    largely because SPY was above that SMA ~75% of this specific 2-year
+    window, so the filter wasn't very discriminating for this period. A
+    third setup, mean_reversion (RSI(14) crossing up through 30 — a
+    confirmed oversold bounce), came back negative too (-0.17%/trade,
+    8,294 trades), no better than the momentum setups. See
+    `scripts/backtest_ta.py compare` for the full comparison and
+    data/trades.log's 2026-09-07T22:35 entry for exact numbers.
   - A 2-month sanity check (Jul–Sep 2026) initially showed both setups
     roughly breakeven-to-slightly-negative (~37-38% win rate, ~0% avg
     return/trade) — consistent with the full result above, not
