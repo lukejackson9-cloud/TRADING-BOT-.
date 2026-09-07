@@ -59,11 +59,18 @@ from pathlib import Path
 from collections import defaultdict
 
 sys.path.insert(0, str(Path(__file__).parent))
-from massive_client import get_grouped_daily, get_common_stock_tickers  # noqa: E402
+from massive_client import get_grouped_daily, get_common_stock_tickers, get_ticker_range_aggs  # noqa: E402
 
 CACHE_DIR = Path("data/reference/backtest_cache")
 PRICE_MIN, PRICE_MAX, VOLUME_MIN = 5, 500, 1_000_000
 STOP_PCT, TARGET_PCT, TIME_STOP_DAYS = -0.04, 0.08, 5
+REGIME_SMA_WINDOW = 50  # short enough to fit this project's days-to-2-week
+# horizon (a 200-day "bull/bear market" filter is the more classic choice,
+# but it needs 200 days of warmup data we don't have within the 2-year
+# free-tier window without eating deep into the test sample -- 50-day is a
+# defensible, cheaper-to-warm-up stand-in, not a claim that it's the "right"
+# lookback; worth revisiting with 200-day if this shows promise).
+RSI_PERIOD, RSI_OVERSOLD = 14, 30
 
 
 def _trading_days(start, end):
@@ -119,6 +126,57 @@ def _ema(prev_ema, price, n):
     return price * k + prev_ema * (1 - k) if prev_ema is not None else price
 
 
+def _fetch_spy_regime(start, end, sma_window=REGIME_SMA_WINDOW):
+    """Market-regime filter: {date: bool} -- True on days SPY's close is
+    above its own `sma_window`-day SMA ("bullish regime"), False otherwise.
+    Only take breakout/ema_cross LONG entries on True days -- the standard
+    "don't fight the tape" filter for momentum-continuation systems, which
+    tend to fail worst in choppy/downtrending markets. Caches SPY's raw
+    bars to CACHE_DIR/SPY.json (one API call covers the whole range -- see
+    get_ticker_range_aggs). The first sma_window trading days of `start`..
+    `end` have no regime value yet (not enough warmup) and are dropped by
+    callers, not treated as bearish by default."""
+    cache_file = CACHE_DIR / "SPY.json"
+    if cache_file.exists():
+        bars = json.loads(cache_file.read_text())
+    else:
+        bars = get_ticker_range_aggs("SPY", start, end)
+        CACHE_DIR.mkdir(parents=True, exist_ok=True)
+        cache_file.write_text(json.dumps(bars))
+
+    regime = {}
+    closes = []
+    for b in bars:
+        date = datetime.datetime.fromtimestamp(b["t"] / 1000, tz=datetime.timezone.utc).date().isoformat()
+        closes.append(b["c"])
+        if len(closes) >= sma_window:
+            sma = sum(closes[-sma_window:]) / sma_window
+            regime[date] = closes[-1] > sma
+    return regime
+
+
+def _rsi_series(bars, period=RSI_PERIOD):
+    """Wilder's RSI, standard incremental smoothing (same shape as _ema
+    above). Returns a list aligned to `bars`, None until enough bars exist."""
+    out = [None] * len(bars)
+    if len(bars) <= period:
+        return out
+    gains = losses = 0.0
+    for i in range(1, period + 1):
+        delta = bars[i][4] - bars[i - 1][4]
+        gains += max(delta, 0)
+        losses += max(-delta, 0)
+    avg_gain, avg_loss = gains / period, losses / period
+    out[period] = 100 - 100 / (1 + avg_gain / avg_loss) if avg_loss else 100
+    for i in range(period + 1, len(bars)):
+        delta = bars[i][4] - bars[i - 1][4]
+        gain, loss = max(delta, 0), max(-delta, 0)
+        avg_gain = (avg_gain * (period - 1) + gain) / period
+        avg_loss = (avg_loss * (period - 1) + loss) / period
+        out[i] = 100 - 100 / (1 + avg_gain / avg_loss) if avg_loss else 100
+    return out
+
+
 def _simulate_exit(bars, entry_idx):
     """bars: full chronological list for one ticker. entry_idx: index of the
     signal day. Enters at bars[entry_idx+1]'s open, exits per the stop/
@@ -146,11 +204,20 @@ def _simulate_exit(bars, entry_idx):
 def iter_signals(bars):
     """Shared signal logic -- yields (index, date, setup_name) for every bar
     in `bars` (one ticker's chronological [(date,o,h,l,c,v), ...]) where
-    either setup fires. Used by both the historical backtest (run_backtest,
+    any setup fires. Used by both the historical backtest (run_backtest,
     below) and scripts/paper_trader.py's forward daily scan, so the two
-    can never drift apart on what counts as a signal."""
+    can never drift apart on what counts as a signal.
+
+    Three setups: "breakout" and "ema_cross" (both momentum-continuation,
+    see module docstring) and "mean_reversion" -- the OPPOSITE regime bet,
+    added 2026-09-07 to test whether momentum failing means the market's
+    character right now favors reversion instead: RSI(14) crossing UP
+    through 30 (an oversold bounce CONFIRMED by the cross, not "still
+    falling and cheap" -- entering while RSI is still dropping is closer
+    to catching a falling knife than a bounce)."""
     ema9 = ema21 = None
     prev_ema9 = prev_ema21 = None
+    rsi = _rsi_series(bars)
     for i, (date, o, h, l, c, v) in enumerate(bars):
         prev_ema9, prev_ema21 = ema9, ema21
         ema9 = _ema(ema9, c, 9)
@@ -171,32 +238,72 @@ def iter_signals(bars):
             if prev_ema9 <= prev_ema21 and ema9 > ema21:
                 yield i, date, "ema_cross"
 
+        if rsi[i] is not None and rsi[i - 1] is not None:
+            if rsi[i - 1] < RSI_OVERSOLD <= rsi[i]:
+                yield i, date, "mean_reversion"
 
-def run_backtest(start, end):
+
+def run_backtest(start, end, regime=None, setups=("breakout", "ema_cross", "mean_reversion")):
+    """regime: optional {date: bool} from _fetch_spy_regime -- when given,
+    breakout/ema_cross signals are only counted on bullish-regime days
+    (mean_reversion is exempt -- it's deliberately the counter-trend bet,
+    applying a "don't fight the tape" filter to it would defeat the point).
+    A signal on a date with no regime value yet (not enough SMA warmup) is
+    dropped rather than assumed bullish or bearish."""
     series = _load_series(start, end)
-    results = {"breakout": [], "ema_cross": []}
+    results = {s: [] for s in setups}
 
     for ticker, bars in series.items():
         if len(bars) < 25:
             continue
         for i, date, setup in iter_signals(bars):
+            if setup not in results:
+                continue
+            if regime is not None and setup != "mean_reversion":
+                if date not in regime or not regime[date]:
+                    continue
             r = _simulate_exit(bars, i)
             if r is not None:
                 results[setup].append({"ticker": ticker, "date": date, "return": r})
 
+    return results
+
+
+def _summarize(label, results):
+    print(f"\n=== {label} ===")
     for setup, trades in results.items():
         n = len(trades)
         if n == 0:
-            print(f"\n{setup}: 0 trades in range")
+            print(f"  {setup}: 0 trades in range")
             continue
         wins = [t for t in trades if t["return"] > 0]
         win_rate = len(wins) / n * 100
         avg_return = sum(t["return"] for t in trades) / n * 100
-        print(f"\n{setup}: {n} trades, win rate {win_rate:.1f}%, avg return/trade {avg_return:.2f}%")
+        print(f"  {setup}: {n} trades, win rate {win_rate:.1f}%, avg return/trade {avg_return:.2f}%")
 
-    out_path = CACHE_DIR / f"results_{start}_{end}.json"
-    out_path.write_text(json.dumps(results, indent=2))
-    print(f"\nfull trade list written to {out_path}")
+
+def compare(start, end):
+    """Runs and prints, side by side: the original unfiltered baseline
+    (all 3 setups), a market-regime-filtered version of the two momentum
+    setups (SPY above its 50-day SMA), and mean_reversion again on its own
+    for clarity (it's identical to the baseline row -- regime filtering
+    doesn't apply to it -- repeated here just so all "final" numbers are
+    in one place). Answers: does a regime filter rescue the momentum
+    setups, and does mean-reversion look more promising than either,
+    given the same 2-year window/universe/exit-rule for a fair comparison."""
+    baseline = run_backtest(start, end)
+    _summarize("BASELINE (unfiltered)", baseline)
+
+    regime = _fetch_spy_regime(start, end)
+    regime_filtered = run_backtest(start, end, regime=regime, setups=("breakout", "ema_cross"))
+    _summarize(f"REGIME-FILTERED (SPY > its {REGIME_SMA_WINDOW}-day SMA)", regime_filtered)
+
+    bullish_days = sum(1 for v in regime.values() if v)
+    print(f"\n(regime filter: {bullish_days}/{len(regime)} days in dataset were bullish per this filter)")
+
+    out_path = CACHE_DIR / f"compare_{start}_{end}.json"
+    out_path.write_text(json.dumps({"baseline": baseline, "regime_filtered": regime_filtered}, indent=2))
+    print(f"full trade lists written to {out_path}")
 
 
 if __name__ == "__main__":
@@ -204,6 +311,12 @@ if __name__ == "__main__":
     if cmd == "fetch":
         fetch_range(start, end)
     elif cmd == "backtest":
-        run_backtest(start, end)
+        results = run_backtest(start, end)
+        _summarize("BASELINE (unfiltered)", results)
+        out_path = CACHE_DIR / f"results_{start}_{end}.json"
+        out_path.write_text(json.dumps(results, indent=2))
+        print(f"\nfull trade list written to {out_path}")
+    elif cmd == "compare":
+        compare(start, end)
     else:
-        print("usage: backtest_ta.py [fetch|backtest] START END")
+        print("usage: backtest_ta.py [fetch|backtest|compare] START END")

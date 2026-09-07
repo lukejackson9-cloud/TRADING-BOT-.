@@ -95,6 +95,31 @@ def get_previous_close(ticker, adjusted=True):
     return _get(f"/v2/aggs/ticker/{ticker}/prev", adjusted=str(adjusted).lower())
 
 
+def get_ticker_range_aggs(ticker, from_date, to_date, timespan="day", multiplier=1, adjusted=True):
+    """
+    One ticker's historical bars over a date range in as few calls as
+    possible (paginates via next_url) -- much cheaper than grouped-daily
+    when only one symbol is needed (e.g. SPY for a market-regime filter),
+    since grouped-daily returns the whole market for a single date.
+    Same 2-year free-tier lookback limit as get_grouped_daily (see that
+    function's docstring) applies here too -- from_date earlier than
+    ~2 years back from today will 403.
+    Returns a flat list of {"T","o","h","l","c","v","t",...} dicts,
+    chronological, same per-bar shape as get_grouped_daily's "results".
+    """
+    url = f"{BASE_URL}/v2/aggs/ticker/{ticker}/range/{multiplier}/{timespan}/{from_date}/{to_date}"
+    params = {"apiKey": API_KEY, "adjusted": str(adjusted).lower(), "sort": "asc", "limit": 50000}
+    out = []
+    while url:
+        resp = requests.get(url, params=params, timeout=20)
+        resp.raise_for_status()
+        data = resp.json()
+        out.extend({**r, "T": ticker} for r in data.get("results", []))
+        url = data.get("next_url")
+        params = {"apiKey": API_KEY}  # next_url already carries the rest of the query
+    return out
+
+
 def get_common_stock_tickers(cache_path="data/reference/equity_tickers.json", max_age_days=7, max_pages=20):
     """
     Full list of active US common-stock tickers (type=CS) -- used to filter
