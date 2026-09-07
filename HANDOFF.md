@@ -518,3 +518,50 @@ backup plan collecting dust, it's carrying the actual useful signal right
 now. Worth revisiting whether a different Yahoo screener ID (large-cap-
 focused, if one exists for GB) or a different region's screener behaves
 better before concluding this pattern holds for every non-US market.
+
+## 2026-09-07: TA/ICT backtesting, execution-policy decision, daily screen
+Big session: built and ran two mechanical-strategy backtests per the
+user's friend's suggestion, then the user decided to move toward
+automatic paper/live execution once a strategy actually earns it.
+
+**TA setups (`scripts/backtest_ta.py`)**: 20-day breakout+volume and
+9/21-EMA-crossover, backtested against Massive.com's full 2-year history
+(free tier's actual limit, confirmed live — not 3 years as first assumed).
+2-month sanity check: ~37-38% win rate, ~0% avg return/trade for both —
+no edge. Full 2-year backtest fetch ran most of the day (background
+process died once mid-run when this environment doesn't reliably keep a
+manually-`nohup`'d process alive across tool calls — switch to the Bash
+tool's own `run_in_background` for anything long-running here, it
+actually persists). Results pending as of this entry.
+
+**ICT model (`scripts/backtest_ict.py`)**: one specific, coded
+interpretation (liquidity sweep of prior-day high/low → market structure
+shift → fair value gap entry, NY AM killzone) using Alpaca's free-tier
+intraday bars — confirmed live to go back to ~mid-2021 (5 years, deeper
+and more granular than Massive's daily-bar limit). 987 trades over 30
+large-caps: 32.6% win rate, -0.11R/trade — just under the ~33.3%
+breakeven this model's fixed 1:2 R:R needs. No edge, but this tests one
+model, not "ICT" broadly.
+
+**Forward paper-trading (`scripts/paper_trader.py` +
+`skills/paper_trade_ta.md`)**: automates the TA setups going forward in
+real time (not just historical), separate from the advisory pipeline,
+wired to a daily routine. Live-tested, works.
+
+**Execution policy change**: user explicitly decided neither TA setup nor
+ICT has earned automation yet (correctly — both are flat/negative), but
+wants automatic paper/demo execution once one does, and eventually fully
+automatic live execution too (no per-trade approval) as a later separate
+decision. This revises the project's original absolute "no trade without
+human approval" rule — see CLAUDE.md's new "Trade execution & approval"
+section for the full staged plan and the mandatory safeguards (fill
+notifications, daily-loss circuit breaker, in-code risk-rule enforcement)
+that apply regardless of backtest performance. User also sent T212 demo
+API key+secret mid-session; stored in .env, connectivity blocked by this
+environment's network policy (not yet allowlisted, not urgent since
+nothing is being connected until a setup earns it).
+
+**Daily screen**: 10 tickers researched (FMP-sourced; Massive's
+whole-market screen was skipped this run to avoid colliding with the
+concurrent 2-year backtest fetch's rate limit), 5 WATCH / 5 PASS, zero
+CANDIDATEs — consistent with the ongoing calibration pattern.
