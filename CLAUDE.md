@@ -303,6 +303,21 @@ market, completed 2026-09-07):**
     8,294 trades), no better than the momentum setups. See
     `scripts/backtest_ta.py compare` for the full comparison and
     data/trades.log's 2026-09-07T22:35 entry for exact numbers.
+  - **Tested combining TA signals with a catalyst (2026-09-07), made
+    things WORSE:** FMP's free tier has no historical earnings-calendar
+    lookback (confirmed live, 402 Payment Required), so used an overnight
+    price gap as a data-only proxy for "real news happened" instead
+    (disclosed as a proxy, not verified news). Requiring a gap made both
+    setups worse, monotonically with gap size (breakout -0.25%→-0.57%,
+    ema_cross +0.07%→-0.54% at a 5% gap threshold) — because entry is
+    simulated at the NEXT day's open, so a big gap means buying AFTER the
+    reaction, often near the top of the pop. This is the same "sell the
+    news" pattern already seen repeatedly in discretionary research
+    (DOCU, AEHR) — cross-validated quantitatively here, not contradicted.
+    A version of this idea that catches the catalyst BEFORE the reaction
+    (matching screen.md's forward earnings-lookahead design) might work
+    better but isn't backtestable historically at this data tier — would
+    need forward paper-trading evidence instead.
   - A 2-month sanity check (Jul–Sep 2026) initially showed both setups
     roughly breakeven-to-slightly-negative (~37-38% win rate, ~0% avg
     return/trade) — consistent with the full result above, not
