@@ -1,0 +1,182 @@
+"""
+Automated forward paper-trading for the two TA setups researched in
+scripts/backtest_ta.py (20-day breakout + volume, 9/21 EMA crossover).
+
+This is NOT the advisory pipeline (skills/screen.md -> research.md ->
+council.md -> propose_trades.md) and it never touches that flow -- it's a
+separate, fully mechanical evaluation track with no human judgment and no
+proposal to the user. Positions here are SIMULATED against real market
+data, never real trades, and are never something the user is asked to act
+on. It exists purely to build a live, forward track record for the TA
+setups, so that the decision about promoting one to CLAUDE.md's main
+screening layer is made on real forward evidence, not just a historical
+backtest that could be overfit to the tested window. See
+scripts/backtest_ta.py's docstring for the historical side of this same
+question.
+
+CLAUDE.md's "no trade is ever placed without human approval" rule is about
+REAL trades -- there is no brokerage account connected in this project's
+current mode, and nothing here calls trading212_client.py or any
+execution path. This ledger is exactly as inert as the historical
+backtest, just extended forward day by day instead of computed once over
+history.
+
+Ledger: data/paper_trades.json -- list of positions:
+  {"ticker", "setup", "entry_date", "entry_price", "stop_price",
+   "target_price", "days_held", "status": "open"|"closed",
+   "exit_date", "exit_price", "exit_reason": "stop"|"target"|"time_stop",
+   "pct_return"}
+
+Meant to run once per trading day, after the session settles (same
+post-close timing rationale as skills/screen.md -- Massive's grouped-daily
+data is end-of-day only, confirmed unreliable if queried intraday):
+  1. check_open_positions(as_of_date) -- pulls the latest completed
+     session's OHLC for every open position's ticker and applies the same
+     -4%/+8%/5-trading-day exit rule as backtest_ta.py, closing any that
+     resolve.
+  2. scan_for_new_signals(as_of_date) -- pulls/caches the last ~35
+     calendar days of grouped-daily data (reusing backtest_ta.py's cache
+     so repeat daily runs mostly hit disk, not the API), runs
+     backtest_ta.iter_signals() on each ticker's trailing window, and
+     opens one new paper position per (ticker, setup) signal on the most
+     recent day, unless that exact (ticker, setup) already has an open
+     position.
+
+Usage:
+  python scripts/paper_trader.py run 2026-09-04   # as_of_date = last completed session
+"""
+
+import sys
+import json
+import datetime
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+from massive_client import get_grouped_daily  # noqa: E402
+from backtest_ta import (  # noqa: E402
+    fetch_range, _load_series, iter_signals,
+    STOP_PCT, TARGET_PCT, TIME_STOP_DAYS,
+)
+
+LEDGER_PATH = Path("data/paper_trades.json")
+SCAN_LOOKBACK_DAYS = 35  # calendar days -- comfortably covers 21+ trading days
+
+
+def _load_ledger():
+    if LEDGER_PATH.exists():
+        return json.loads(LEDGER_PATH.read_text())
+    return []
+
+
+def _save_ledger(ledger):
+    LEDGER_PATH.write_text(json.dumps(ledger, indent=2))
+
+
+def check_open_positions(as_of_date):
+    """Closes any open position whose stop/target/time-stop has resolved
+    as of as_of_date's session (must be a completed session's date -- same
+    caveat as everywhere else in this project that touches Massive)."""
+    ledger = _load_ledger()
+    open_positions = [p for p in ledger if p["status"] == "open"]
+    if not open_positions:
+        return ledger
+
+    data = get_grouped_daily(as_of_date)
+    if data.get("status") != "OK":
+        print(f"check_open_positions: {as_of_date} not a usable session ({data.get('status')}), skipping")
+        return ledger
+    day = {r["T"]: r for r in data.get("results", [])}
+
+    for p in open_positions:
+        row = day.get(p["ticker"])
+        if row is None:
+            continue  # no print/data today (halted, delisted) -- leave open, check again next run
+        if p.get("last_checked_date") == as_of_date:
+            continue  # already processed this date (re-run safety)
+
+        p["days_held"] = p.get("days_held", 0) + 1
+        p["last_checked_date"] = as_of_date
+
+        if row["l"] <= p["stop_price"]:
+            p.update(status="closed", exit_date=as_of_date, exit_price=p["stop_price"],
+                      exit_reason="stop", pct_return=STOP_PCT)
+        elif row["h"] >= p["target_price"]:
+            p.update(status="closed", exit_date=as_of_date, exit_price=p["target_price"],
+                      exit_reason="target", pct_return=TARGET_PCT)
+        elif p["days_held"] >= TIME_STOP_DAYS:
+            pct = (row["c"] - p["entry_price"]) / p["entry_price"]
+            p.update(status="closed", exit_date=as_of_date, exit_price=row["c"],
+                      exit_reason="time_stop", pct_return=pct)
+
+    _save_ledger(ledger)
+    closed_now = [p for p in open_positions if p["status"] == "closed" and p.get("exit_date") == as_of_date]
+    print(f"check_open_positions: {len(open_positions)} were open, {len(closed_now)} closed today")
+    return ledger
+
+
+def scan_for_new_signals(as_of_date):
+    """Opens a new paper position for each (ticker, setup) that signals on
+    as_of_date's session, unless that exact combination already has an
+    open position (avoids re-opening the same signal every day it stays
+    technically true, e.g. price still above the breakout level)."""
+    end = datetime.date.fromisoformat(as_of_date)
+    start = (end - datetime.timedelta(days=SCAN_LOOKBACK_DAYS)).isoformat()
+    fetch_range(start, as_of_date)  # cache-aware; only fetches days not already cached
+    series = _load_series(start, as_of_date)
+
+    ledger = _load_ledger()
+    already_open = {(p["ticker"], p["setup"]) for p in ledger if p["status"] == "open"}
+    opened = 0
+
+    for ticker, bars in series.items():
+        if len(bars) < 25 or bars[-1][0] != as_of_date:
+            continue  # not enough history, or ticker had no print on as_of_date
+        last_i = len(bars) - 1
+        for i, date, setup in iter_signals(bars):
+            if i != last_i:
+                continue  # only care about a signal firing on the most recent day
+            if (ticker, setup) in already_open:
+                continue
+            entry_price = bars[i][4]  # today's close -- real entry would be tomorrow's
+            # open; using today's close as a same-day approximation since
+            # this runs once daily after close, not intraday.
+            ledger.append({
+                "ticker": ticker, "setup": setup,
+                "entry_date": as_of_date, "entry_price": entry_price,
+                "stop_price": entry_price * (1 + STOP_PCT),
+                "target_price": entry_price * (1 + TARGET_PCT),
+                "days_held": 0, "status": "open",
+            })
+            already_open.add((ticker, setup))
+            opened += 1
+
+    _save_ledger(ledger)
+    print(f"scan_for_new_signals: opened {opened} new paper position(s) as of {as_of_date}")
+    return ledger
+
+
+def summary():
+    ledger = _load_ledger()
+    open_n = sum(1 for p in ledger if p["status"] == "open")
+    closed = [p for p in ledger if p["status"] == "closed"]
+    print(f"{open_n} open, {len(closed)} closed")
+    for setup in ("breakout", "ema_cross"):
+        trades = [p for p in closed if p["setup"] == setup]
+        if not trades:
+            continue
+        wins = sum(1 for p in trades if p["pct_return"] > 0)
+        avg = sum(p["pct_return"] for p in trades) / len(trades) * 100
+        print(f"  {setup}: {len(trades)} closed, {wins}/{len(trades)} wins, avg {avg:.2f}%/trade")
+
+
+if __name__ == "__main__":
+    cmd = sys.argv[1]
+    if cmd == "run":
+        as_of = sys.argv[2]
+        check_open_positions(as_of)
+        scan_for_new_signals(as_of)
+        summary()
+    elif cmd == "summary":
+        summary()
+    else:
+        print("usage: paper_trader.py run AS_OF_DATE | paper_trader.py summary")

@@ -147,6 +147,16 @@ to execute into — but the rule stays in force for if/when that changes.
                                  curated by skills/journal.md
 - /data/journal/scorecard.md  — running win-rate/downgrade-accuracy stats,
                                  recomputed by skills/journal.md
+- /data/paper_trades.json     — forward paper-trading ledger for the
+                                 mechanical TA setups (breakout, EMA
+                                 crossover), run by skills/paper_trade_ta.md
+                                 and scripts/paper_trader.py. NOT the
+                                 advisory pipeline — no proposal to the
+                                 user, no research/council review, purely
+                                 evaluation data for whether either setup
+                                 earns a place in Strategy below. See
+                                 scripts/backtest_ta.py for the historical
+                                 (2-year) side of the same evaluation.
 - /data/reference/             — gitignored API caches (e.g. Massive.com's
                                  common-stock ticker list, refreshed weekly
                                  by scripts/massive_client.py); regenerable
@@ -178,6 +188,33 @@ to execute into — but the rule stays in force for if/when that changes.
   the standing 2026-09-11 check-in (`trig_01XEBQ2MxWoDMfBftebRXbrR`) for
   the first real run of this, covering everything both screening pushes
   have produced so far.
+- **Daily, post-close, weekdays**: run skills/paper_trade_ta.md — a
+  separate, fully mechanical TA paper-trading track (breakout, EMA
+  crossover), started 2026-09-07 per user request. Does not touch the
+  advisory pipeline or produce anything reported to the user day-to-day;
+  see skills/paper_trade_ta.md for why and scripts/backtest_ta.py for the
+  historical-backtest side of the same evaluation. Review the accumulated
+  results alongside skills/journal.md's weekly run, not daily.
+
+## Technical-analysis screening layer (evaluation in progress, 2026-09-07)
+User's trading contact suggested the bot needed a technical-setup layer
+(not just fundamental/catalyst research), backtested for a real win rate,
+to become the MAIN screening layer if it proves out. Two mechanical
+momentum-continuation setups are being evaluated — 20-day breakout +
+1.5x volume, and 9/21-day EMA crossover — via two parallel tracks:
+`scripts/backtest_ta.py` (historical, ~2 years of Massive.com data — that
+data source's actual free-tier limit, confirmed live, not 3 years) and
+`skills/paper_trade_ta.md` (forward, live paper trades from 2026-09-07
+onward). **Neither setup replaces the existing catalyst-driven Strategy
+below yet.** A 2-month sanity check (Jul–Sep 2026) showed both setups
+roughly breakeven-to-slightly-negative (~37-38% win rate, ~0% avg
+return/trade) — not promising, but too small a sample to judge. Do not
+promote either setup to the Strategy section, and do not treat a CANDIDATE
+sourced this way as pre-validated, until: (a) the full 2-year historical
+backtest is done and shows real edge, (b) a meaningful number of forward
+paper trades agree with it, and (c) the user has discussed and confirmed
+the change — same standard as the council-calibration rule above, real
+evidence before a conversation, never a silent change.
 
 ### Original theoretical cadence (kept for reference — superseded by the single daily run above for the screen/research/council/propose steps)
 - Pre-market (8:00 AM ET): run skills/screen.md → update watchlist

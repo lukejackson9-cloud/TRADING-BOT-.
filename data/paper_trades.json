@@ -1,0 +1,322 @@
+[
+  {
+    "ticker": "VRT",
+    "setup": "ema_cross",
+    "entry_date": "2026-09-04",
+    "entry_price": 280.53,
+    "stop_price": 269.30879999999996,
+    "target_price": 302.9724,
+    "days_held": 0,
+    "status": "open"
+  },
+  {
+    "ticker": "IREN",
+    "setup": "ema_cross",
+    "entry_date": "2026-09-04",
+    "entry_price": 44.68,
+    "stop_price": 42.8928,
+    "target_price": 48.254400000000004,
+    "days_held": 0,
+    "status": "open"
+  },
+  {
+    "ticker": "F",
+    "setup": "ema_cross",
+    "entry_date": "2026-09-04",
+    "entry_price": 14.62,
+    "stop_price": 14.035199999999998,
+    "target_price": 15.7896,
+    "days_held": 0,
+    "status": "open"
+  },
+  {
+    "ticker": "TRMD",
+    "setup": "breakout",
+    "entry_date": "2026-09-04",
+    "entry_price": 35.18,
+    "stop_price": 33.7728,
+    "target_price": 37.9944,
+    "days_held": 0,
+    "status": "open"
+  },
+  {
+    "ticker": "STNG",
+    "setup": "breakout",
+    "entry_date": "2026-09-04",
+    "entry_price": 82.35,
+    "stop_price": 79.056,
+    "target_price": 88.938,
+    "days_held": 0,
+    "status": "open"
+  },
+  {
+    "ticker": "EPRX",
+    "setup": "breakout",
+    "entry_date": "2026-09-04",
+    "entry_price": 8.4,
+    "stop_price": 8.064,
+    "target_price": 9.072000000000001,
+    "days_held": 0,
+    "status": "open"
+  },
+  {
+    "ticker": "TARS",
+    "setup": "breakout",
+    "entry_date": "2026-09-04",
+    "entry_price": 90.78,
+    "stop_price": 87.1488,
+    "target_price": 98.0424,
+    "days_held": 0,
+    "status": "open"
+  },
+  {
+    "ticker": "AEO",
+    "setup": "ema_cross",
+    "entry_date": "2026-09-04",
+    "entry_price": 17.39,
+    "stop_price": 16.6944,
+    "target_price": 18.781200000000002,
+    "days_held": 0,
+    "status": "open"
+  },
+  {
+    "ticker": "NX",
+    "setup": "breakout",
+    "entry_date": "2026-09-04",
+    "entry_price": 22.93,
+    "stop_price": 22.0128,
+    "target_price": 24.764400000000002,
+    "days_held": 0,
+    "status": "open"
+  },
+  {
+    "ticker": "NX",
+    "setup": "ema_cross",
+    "entry_date": "2026-09-04",
+    "entry_price": 22.93,
+    "stop_price": 22.0128,
+    "target_price": 24.764400000000002,
+    "days_held": 0,
+    "status": "open"
+  },
+  {
+    "ticker": "WWW",
+    "setup": "ema_cross",
+    "entry_date": "2026-09-04",
+    "entry_price": 20.76,
+    "stop_price": 19.9296,
+    "target_price": 22.420800000000003,
+    "days_held": 0,
+    "status": "open"
+  },
+  {
+    "ticker": "RIOT",
+    "setup": "ema_cross",
+    "entry_date": "2026-09-04",
+    "entry_price": 21.8,
+    "stop_price": 20.928,
+    "target_price": 23.544000000000004,
+    "days_held": 0,
+    "status": "open"
+  },
+  {
+    "ticker": "BBY",
+    "setup": "ema_cross",
+    "entry_date": "2026-09-04",
+    "entry_price": 90.27,
+    "stop_price": 86.6592,
+    "target_price": 97.4916,
+    "days_held": 0,
+    "status": "open"
+  },
+  {
+    "ticker": "MRVL",
+    "setup": "ema_cross",
+    "entry_date": "2026-09-04",
+    "entry_price": 223.55,
+    "stop_price": 214.608,
+    "target_price": 241.43400000000003,
+    "days_held": 0,
+    "status": "open"
+  },
+  {
+    "ticker": "SFL",
+    "setup": "breakout",
+    "entry_date": "2026-09-04",
+    "entry_price": 12.86,
+    "stop_price": 12.3456,
+    "target_price": 13.8888,
+    "days_held": 0,
+    "status": "open"
+  },
+  {
+    "ticker": "DHT",
+    "setup": "breakout",
+    "entry_date": "2026-09-04",
+    "entry_price": 20.87,
+    "stop_price": 20.0352,
+    "target_price": 22.539600000000004,
+    "days_held": 0,
+    "status": "open"
+  },
+  {
+    "ticker": "AOUT",
+    "setup": "breakout",
+    "entry_date": "2026-09-04",
+    "entry_price": 14.48,
+    "stop_price": 13.9008,
+    "target_price": 15.6384,
+    "days_held": 0,
+    "status": "open"
+  },
+  {
+    "ticker": "GOLD",
+    "setup": "ema_cross",
+    "entry_date": "2026-09-04",
+    "entry_price": 46.13,
+    "stop_price": 44.284800000000004,
+    "target_price": 49.82040000000001,
+    "days_held": 0,
+    "status": "open"
+  },
+  {
+    "ticker": "APH",
+    "setup": "ema_cross",
+    "entry_date": "2026-09-04",
+    "entry_price": 82.78,
+    "stop_price": 79.4688,
+    "target_price": 89.4024,
+    "days_held": 0,
+    "status": "open"
+  },
+  {
+    "ticker": "VST",
+    "setup": "ema_cross",
+    "entry_date": "2026-09-04",
+    "entry_price": 149.3,
+    "stop_price": 143.328,
+    "target_price": 161.24400000000003,
+    "days_held": 0,
+    "status": "open"
+  },
+  {
+    "ticker": "KSS",
+    "setup": "ema_cross",
+    "entry_date": "2026-09-04",
+    "entry_price": 19.44,
+    "stop_price": 18.6624,
+    "target_price": 20.995200000000004,
+    "days_held": 0,
+    "status": "open"
+  },
+  {
+    "ticker": "HAFN",
+    "setup": "breakout",
+    "entry_date": "2026-09-04",
+    "entry_price": 9.22,
+    "stop_price": 8.8512,
+    "target_price": 9.957600000000001,
+    "days_held": 0,
+    "status": "open"
+  },
+  {
+    "ticker": "CHPT",
+    "setup": "breakout",
+    "entry_date": "2026-09-04",
+    "entry_price": 9.89,
+    "stop_price": 9.4944,
+    "target_price": 10.6812,
+    "days_held": 0,
+    "status": "open"
+  },
+  {
+    "ticker": "MRX",
+    "setup": "breakout",
+    "entry_date": "2026-09-04",
+    "entry_price": 78.27,
+    "stop_price": 75.13919999999999,
+    "target_price": 84.5316,
+    "days_held": 0,
+    "status": "open"
+  },
+  {
+    "ticker": "ABR",
+    "setup": "ema_cross",
+    "entry_date": "2026-09-04",
+    "entry_price": 5.25,
+    "stop_price": 5.04,
+    "target_price": 5.67,
+    "days_held": 0,
+    "status": "open"
+  },
+  {
+    "ticker": "AGCO",
+    "setup": "breakout",
+    "entry_date": "2026-09-04",
+    "entry_price": 133.4,
+    "stop_price": 128.064,
+    "target_price": 144.072,
+    "days_held": 0,
+    "status": "open"
+  },
+  {
+    "ticker": "RKT",
+    "setup": "ema_cross",
+    "entry_date": "2026-09-04",
+    "entry_price": 14.06,
+    "stop_price": 13.4976,
+    "target_price": 15.184800000000001,
+    "days_held": 0,
+    "status": "open"
+  },
+  {
+    "ticker": "ITGR",
+    "setup": "breakout",
+    "entry_date": "2026-09-04",
+    "entry_price": 126.5,
+    "stop_price": 121.44,
+    "target_price": 136.62,
+    "days_held": 0,
+    "status": "open"
+  },
+  {
+    "ticker": "BIAF",
+    "setup": "breakout",
+    "entry_date": "2026-09-04",
+    "entry_price": 15.27,
+    "stop_price": 14.659199999999998,
+    "target_price": 16.491600000000002,
+    "days_held": 0,
+    "status": "open"
+  },
+  {
+    "ticker": "TYRA",
+    "setup": "breakout",
+    "entry_date": "2026-09-04",
+    "entry_price": 28.65,
+    "stop_price": 27.503999999999998,
+    "target_price": 30.942,
+    "days_held": 0,
+    "status": "open"
+  },
+  {
+    "ticker": "GEO",
+    "setup": "ema_cross",
+    "entry_date": "2026-09-04",
+    "entry_price": 31.77,
+    "stop_price": 30.4992,
+    "target_price": 34.3116,
+    "days_held": 0,
+    "status": "open"
+  },
+  {
+    "ticker": "AEHL",
+    "setup": "ema_cross",
+    "entry_date": "2026-09-04",
+    "entry_price": 8.17,
+    "stop_price": 7.8431999999999995,
+    "target_price": 8.8236,
+    "days_held": 0,
+    "status": "open"
+  }
+]

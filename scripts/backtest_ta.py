@@ -143,6 +143,35 @@ def _simulate_exit(bars, entry_idx):
     return None
 
 
+def iter_signals(bars):
+    """Shared signal logic -- yields (index, date, setup_name) for every bar
+    in `bars` (one ticker's chronological [(date,o,h,l,c,v), ...]) where
+    either setup fires. Used by both the historical backtest (run_backtest,
+    below) and scripts/paper_trader.py's forward daily scan, so the two
+    can never drift apart on what counts as a signal."""
+    ema9 = ema21 = None
+    prev_ema9 = prev_ema21 = None
+    for i, (date, o, h, l, c, v) in enumerate(bars):
+        prev_ema9, prev_ema21 = ema9, ema21
+        ema9 = _ema(ema9, c, 9)
+        ema21 = _ema(ema21, c, 21)
+
+        if i < 21:
+            continue
+        if not (PRICE_MIN <= c <= PRICE_MAX) or v < VOLUME_MIN:
+            continue
+
+        window = bars[i - 20:i]  # prior 20 days, excludes today
+        prior_high = max(b[2] for b in window)
+        prior_avg_vol = sum(b[5] for b in window) / 20
+        if c > prior_high and v >= 1.5 * prior_avg_vol:
+            yield i, date, "breakout"
+
+        if prev_ema9 is not None and prev_ema21 is not None:
+            if prev_ema9 <= prev_ema21 and ema9 > ema21:
+                yield i, date, "ema_cross"
+
+
 def run_backtest(start, end):
     series = _load_series(start, end)
     results = {"breakout": [], "ema_cross": []}
@@ -150,31 +179,10 @@ def run_backtest(start, end):
     for ticker, bars in series.items():
         if len(bars) < 25:
             continue
-        ema9 = ema21 = None
-        prev_ema9 = prev_ema21 = None
-        for i, (date, o, h, l, c, v) in enumerate(bars):
-            prev_ema9, prev_ema21 = ema9, ema21
-            ema9 = _ema(ema9, c, 9)
-            ema21 = _ema(ema21, c, 21)
-
-            if i < 21:
-                continue
-            if not (PRICE_MIN <= c <= PRICE_MAX) or v < VOLUME_MIN:
-                continue
-
-            window = bars[i - 20:i]  # prior 20 days, excludes today
-            prior_high = max(b[2] for b in window)
-            prior_avg_vol = sum(b[5] for b in window) / 20
-            if c > prior_high and v >= 1.5 * prior_avg_vol:
-                r = _simulate_exit(bars, i)
-                if r is not None:
-                    results["breakout"].append({"ticker": ticker, "date": date, "return": r})
-
-            if prev_ema9 is not None and prev_ema21 is not None:
-                if prev_ema9 <= prev_ema21 and ema9 > ema21:
-                    r = _simulate_exit(bars, i)
-                    if r is not None:
-                        results["ema_cross"].append({"ticker": ticker, "date": date, "return": r})
+        for i, date, setup in iter_signals(bars):
+            r = _simulate_exit(bars, i)
+            if r is not None:
+                results[setup].append({"ticker": ticker, "date": date, "return": r})
 
     for setup, trades in results.items():
         n = len(trades)
