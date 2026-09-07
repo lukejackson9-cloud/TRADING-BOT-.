@@ -274,15 +274,36 @@ momentum-continuation setups are being evaluated — 20-day breakout +
 data source's actual free-tier limit, confirmed live, not 3 years) and
 `skills/paper_trade_ta.md` (forward, live paper trades from 2026-09-07
 onward). **Neither setup replaces the existing catalyst-driven Strategy
-below yet.** A 2-month sanity check (Jul–Sep 2026) showed both setups
-roughly breakeven-to-slightly-negative (~37-38% win rate, ~0% avg
-return/trade) — not promising, but too small a sample to judge. Do not
-promote either setup to the Strategy section, and do not treat a CANDIDATE
-sourced this way as pre-validated, until: (a) the full 2-year historical
-backtest is done and shows real edge, (b) a meaningful number of forward
-paper trades agree with it, and (c) the user has discussed and confirmed
-the change — same standard as the council-calibration rule above, real
-evidence before a conversation, never a silent change.
+below yet.**
+
+**FULL 2-YEAR HISTORICAL RESULT (2024-09-08 to 2026-09-04, whole US
+market, completed 2026-09-07):**
+  - breakout: 18,219 trades, 38.2% win rate, **-0.25% avg return/trade**
+    — clearly negative. Larger sample confirmed the 2-month sanity
+    check's negative read; do not promote.
+  - ema_cross: 13,863 trades, 43.7% win rate, **+0.07% avg return/trade**
+    — technically positive with a large enough sample that it's probably
+    not zero by chance, but economically negligible: this backtest has
+    NO transaction costs, spread, or slippage modeled, any of which would
+    plausibly erase +0.07%/trade in practice. This does not clear the
+    "real edge" bar on its own.
+  - **Verdict: neither setup is promoted.** Same standard as always —
+    real evidence before a conversation, never enthusiasm substituting
+    for it. If ema_cross's forward paper-trading results (running daily
+    via skills/paper_trade_ta.md) keep landing net-positive after
+    accounting for realistic slippage, that's worth re-examining with the
+    user specifically — but the historical result alone isn't there.
+  - A 2-month sanity check (Jul–Sep 2026) initially showed both setups
+    roughly breakeven-to-slightly-negative (~37-38% win rate, ~0% avg
+    return/trade) — consistent with the full result above, not
+    contradicted by it.
+
+Do not promote either setup to the Strategy section, and do not treat a
+CANDIDATE sourced this way as pre-validated, until: (a) a historical
+backtest shows real edge net of realistic costs, (b) a meaningful number
+of forward paper trades agree with it, and (c) the user has discussed and
+confirmed the change — same standard as the council-calibration rule
+above.
 
 ### Original theoretical cadence (kept for reference — superseded by the single daily run above for the screen/research/council/propose steps)
 - Pre-market (8:00 AM ET): run skills/screen.md → update watchlist
