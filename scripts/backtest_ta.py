@@ -243,13 +243,38 @@ def iter_signals(bars):
                 yield i, date, "mean_reversion"
 
 
-def run_backtest(start, end, regime=None, setups=("breakout", "ema_cross", "mean_reversion")):
+def _gap_pct(bars, i):
+    """Overnight gap: bar i's open vs bar i-1's close, as a fraction (0.02
+    = +2%). Returns None for i==0 (no prior bar)."""
+    if i == 0:
+        return None
+    return (bars[i][1] - bars[i - 1][4]) / bars[i - 1][4]
+
+
+def run_backtest(start, end, regime=None, setups=("breakout", "ema_cross", "mean_reversion"),
+                  require_gap_pct=None):
     """regime: optional {date: bool} from _fetch_spy_regime -- when given,
     breakout/ema_cross signals are only counted on bullish-regime days
     (mean_reversion is exempt -- it's deliberately the counter-trend bet,
     applying a "don't fight the tape" filter to it would defeat the point).
     A signal on a date with no regime value yet (not enough SMA warmup) is
-    dropped rather than assumed bullish or bearish."""
+    dropped rather than assumed bullish or bearish.
+
+    require_gap_pct: optional float (e.g. 0.02) -- when given, breakout/
+    ema_cross signals are only counted if that day's open gapped up from
+    the PRIOR day's close by at least this much. This is a PROXY for "a
+    real dated catalyst drove this, not just gradual drift" -- added
+    2026-09-07 because FMP's free tier has no historical earnings-calendar
+    lookback (confirmed live: 402 Payment Required on any date more than
+    ~a few weeks in the past), so verifying an actual news catalyst for
+    each of 30,000+ historical signals isn't feasible at this tier. A
+    genuine overnight gap is a reasonable, fully data-derived stand-in
+    (real catalysts -- earnings, M&A, FDA news -- usually gap; routine
+    technical drift usually doesn't) but it is NOT the same claim as
+    "verified this ticker had real news that day" -- be honest about that
+    distinction when reporting results. mean_reversion is exempt (a gap
+    DOWN would be the relevant direction for a bounce setup, a different
+    question not tested here)."""
     series = _load_series(start, end)
     results = {s: [] for s in setups}
 
@@ -261,6 +286,10 @@ def run_backtest(start, end, regime=None, setups=("breakout", "ema_cross", "mean
                 continue
             if regime is not None and setup != "mean_reversion":
                 if date not in regime or not regime[date]:
+                    continue
+            if require_gap_pct is not None and setup != "mean_reversion":
+                gap = _gap_pct(bars, i)
+                if gap is None or gap < require_gap_pct:
                     continue
             r = _simulate_exit(bars, i)
             if r is not None:
@@ -300,6 +329,10 @@ def compare(start, end):
 
     bullish_days = sum(1 for v in regime.values() if v)
     print(f"\n(regime filter: {bullish_days}/{len(regime)} days in dataset were bullish per this filter)")
+
+    for gap in (0.02, 0.05):
+        gap_filtered = run_backtest(start, end, setups=("breakout", "ema_cross"), require_gap_pct=gap)
+        _summarize(f"GAP-CONFIRMED (open gapped up >= {gap*100:.0f}% vs prior close -- catalyst PROXY, not verified news)", gap_filtered)
 
     out_path = CACHE_DIR / f"compare_{start}_{end}.json"
     out_path.write_text(json.dumps({"baseline": baseline, "regime_filtered": regime_filtered}, indent=2))
