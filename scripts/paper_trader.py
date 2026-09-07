@@ -88,6 +88,11 @@ def check_open_positions(as_of_date):
     day = {r["T"]: r for r in data.get("results", [])}
 
     for p in open_positions:
+        if p["entry_date"] >= as_of_date:
+            continue  # entry_price is that day's close (see scan_for_new_signals) --
+            # checking stop/target against the SAME day's own low/high would test the
+            # position against the very bar that set its entry price, not a real
+            # forward move. Only evaluate starting from a session strictly after entry.
         row = day.get(p["ticker"])
         if row is None:
             continue  # no print/data today (halted, delisted) -- leave open, check again next run
