@@ -121,3 +121,15 @@ CLS    # 2026-09-03: +11.55%, real AMD partnership tailwind but no fresh dated c
 VOD.L  # 2026-09-06: Goldman Sachs double-upgrade Sell->Buy, target 85p->155p (2026-09-04) -- WATCH, credible ROIC thesis but a lone outlier vs. still-mixed 3 Buy/4 Hold/3 Sell consensus, against real Germany subscriber losses + rising net debt
 CCC.L  # 2026-09-06: UBS target raised 5250p->7000p (2026-09-04), corroborated by CCC's own July guidance upgrade + Berenberg -- WATCH, better-corroborated than VOD.L but already near record highs, rode a broader tech rally
 GSK.L  # 2026-09-06: PASS -- the assumed "analyst upgrade this week" premise didn't hold up on research; actual upgrades dated May-July, this week's only GSK-specific news is an early-stage HUTCHMED licensing deal, one broker explicitly kept Hold unchanged
+
+# --- added 2026-09-07 via the daily screen routine (FMP gainers/losers/most-active, Massive whole-market skipped -- concurrent with the 2-year TA backtest fetch, see trades.log) ---
+AOUT   # 2026-09-07: +44.7% today, real Q1 FY27 beat + raised EBITDA guidance + 2 analyst PT hikes, but conflicting sources on magnitude/timing, no fresh catalyst dated to today specifically -- WATCH
+NX     # 2026-09-07: +22.2% today, real Q3 beat (+16% EPS surprise) reported 9/3 -- WATCH, but the actual pop happened Friday 9/4, today just confirms the level held
+MTEX   # 2026-09-07: +23.5% today, no substantive dated catalyst found (only a 9/1 board-chair transition, stale May insider buys) -- PASS, unexplained thin-float move
+PDEX   # 2026-09-07: +18.9% today, real Q4/FY26 results 9/3 (gross profit +103% YoY) but conflicting EPS figures and reports shares initially traded DOWN on the print -- WATCH, delayed re-rating with no distinct same-day trigger
+INTC   # 2026-09-07: +4.5% today, mixed real events ($20B dilutive raise, AI/18A optimism, Tiger Global stake increase) undercut by a same-week Mizuho target cut, next earnings 7wk out -- WATCH
+SMCI   # 2026-09-07: +4.5% today, no new dated catalyst (last earnings 8/11, next 11/3) -- PASS, stale AI-hardware momentum
+IREN   # 2026-09-07: +7.3% today, rebounding off a post-earnings selloff with a 9/3 Bernstein bullish note assist, but no confirmed dated trigger for today and extreme 52wk volatility -- WATCH, low confidence
+BANL   # 2026-09-07: -40.7% today, real dated event (large share sale triggered a trading halt ~9/4) but a distressed micro-cap share-supply shock, not a fundamentals catalyst -- PASS
+OXM    # 2026-09-07: -15.7% today, real Q2 FY26 earnings 9/3 with guidance cut well below consensus (Lilly Pulitzer weakness, consumer macro pressure) -- PASS, falling-knife not a buy setup
+EGAN   # 2026-09-07: -17.9% today, real FY26 Q4 results 9/3 with FY27 guidance showing legacy revenue collapsing faster than AI revenue offsets, swing to GAAP net loss -- PASS, structural decline
