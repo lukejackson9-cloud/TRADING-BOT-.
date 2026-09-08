@@ -318,5 +318,105 @@
     "target_price": 8.8236,
     "days_held": 0,
     "status": "open"
+  },
+  {
+    "ticker": "WSC",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-04",
+    "entry_price": 19.98,
+    "stop_price": 19.1808,
+    "target_price": 21.578400000000002,
+    "days_held": 0,
+    "status": "open"
+  },
+  {
+    "ticker": "SWBI",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-04",
+    "entry_price": 12.89,
+    "stop_price": 12.3744,
+    "target_price": 13.9212,
+    "days_held": 0,
+    "status": "open"
+  },
+  {
+    "ticker": "AS",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-04",
+    "entry_price": 29.53,
+    "stop_price": 28.3488,
+    "target_price": 31.892400000000002,
+    "days_held": 0,
+    "status": "open"
+  },
+  {
+    "ticker": "LEVI",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-04",
+    "entry_price": 21.06,
+    "stop_price": 20.217599999999997,
+    "target_price": 22.7448,
+    "days_held": 0,
+    "status": "open"
+  },
+  {
+    "ticker": "HON",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-04",
+    "entry_price": 209.61,
+    "stop_price": 201.22560000000001,
+    "target_price": 226.37880000000004,
+    "days_held": 0,
+    "status": "open"
+  },
+  {
+    "ticker": "YSS",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-04",
+    "entry_price": 8.96,
+    "stop_price": 8.601600000000001,
+    "target_price": 9.676800000000002,
+    "days_held": 0,
+    "status": "open"
+  },
+  {
+    "ticker": "AOUT",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-04",
+    "entry_price": 14.48,
+    "stop_price": 13.9008,
+    "target_price": 15.6384,
+    "days_held": 0,
+    "status": "open"
+  },
+  {
+    "ticker": "UNFI",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-04",
+    "entry_price": 43.93,
+    "stop_price": 42.172799999999995,
+    "target_price": 47.4444,
+    "days_held": 0,
+    "status": "open"
+  },
+  {
+    "ticker": "TYRA",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-04",
+    "entry_price": 28.65,
+    "stop_price": 27.503999999999998,
+    "target_price": 30.942,
+    "days_held": 0,
+    "status": "open"
+  },
+  {
+    "ticker": "IVR",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-04",
+    "entry_price": 7.2,
+    "stop_price": 6.912,
+    "target_price": 7.776000000000001,
+    "days_held": 0,
+    "status": "open"
   }
 ]

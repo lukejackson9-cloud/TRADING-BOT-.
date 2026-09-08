@@ -217,13 +217,22 @@ eventually live, execution of a setup that has actually earned it.*
                                  curated by skills/journal.md
 - /data/journal/scorecard.md  — running win-rate/downgrade-accuracy stats,
                                  recomputed by skills/journal.md
-- /data/paper_trades.json     — forward paper-trading ledger for the
-                                 mechanical TA setups (breakout, EMA
-                                 crossover), run by skills/paper_trade_ta.md
-                                 and scripts/paper_trader.py. NOT the
-                                 advisory pipeline — no proposal to the
-                                 user, no research/council review, purely
-                                 evaluation data for whether either setup
+- /data/paper_trades.json     — forward paper-trading ledger for ALL
+                                 mechanical setups defined in
+                                 scripts/backtest_ta.py's iter_signals()
+                                 (breakout, EMA crossover, and — since
+                                 2026-09-08, when mean_reversion was added
+                                 to that shared function for the
+                                 historical backtest — mean_reversion too,
+                                 automatically, since paper_trader.py
+                                 reuses the same signal function on
+                                 purpose so the two tracks can never
+                                 define a signal differently). Run by
+                                 skills/paper_trade_ta.md and
+                                 scripts/paper_trader.py. NOT the advisory
+                                 pipeline — no proposal to the user, no
+                                 research/council review, purely
+                                 evaluation data for whether any setup
                                  earns a place in Strategy below. See
                                  scripts/backtest_ta.py for the historical
                                  (2-year) side of the same evaluation.

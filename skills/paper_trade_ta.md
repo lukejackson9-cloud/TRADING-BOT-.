@@ -1,8 +1,10 @@
 # Skill: Paper-trade the TA setups
 
-Goal: keep a live, forward-running paper track record for the two
-mechanical TA setups defined in `scripts/backtest_ta.py` (20-day breakout
-+ volume, 9/21-day EMA crossover), so the decision on whether either
+Goal: keep a live, forward-running paper track record for the mechanical
+TA setups defined in `scripts/backtest_ta.py`'s shared `iter_signals()`
+(20-day breakout + volume, 9/21-day EMA crossover, and — automatically,
+since 2026-09-08, when mean_reversion was added to that shared function —
+RSI(14) mean-reversion too), so the decision on whether any of them
 becomes a new screening layer in CLAUDE.md is made on real forward
 evidence, not just the historical backtest.
 
