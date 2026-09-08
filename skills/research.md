@@ -18,6 +18,16 @@ research note before any trade decision is made.
    sentiment shifts, and notable risks for that ticker. Run a couple of
    targeted searches per ticker (e.g. "{TICKER} stock news today", "{TICKER}
    earnings catalyst") rather than one vague one.
+1b. Optional cross-check: `scripts/tradingview_client.py`'s `get_rating()`
+    (unofficial, same caveats as scripts/yahoo_screener_client.py — wrap
+    in try/except, skip silently if it errors) gives TradingView's own
+    aggregated technical-analysis consensus (STRONG_BUY/BUY/NEUTRAL/SELL/
+    STRONG_SELL across ~26 indicators) for a symbol. This is someone
+    else's black-box aggregation, not a transparent rule like this
+    project's own backtested setups — treat a strong disagreement between
+    it and your WebSearch-based read as a prompt to look harder, not as a
+    tiebreaker that overrides actual news/fundamentals. Never let this
+    alone justify a verdict.
 2. Write your findings + summary to /data/research/YYYY-MM-DD/{TICKER}.md
    using this template:
 
