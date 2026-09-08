@@ -565,3 +565,41 @@ nothing is being connected until a setup earns it).
 whole-market screen was skipped this run to avoid colliding with the
 concurrent 2-year backtest fetch's rate limit), 5 WATCH / 5 PASS, zero
 CANDIDATEs — consistent with the ongoing calibration pattern.
+
+## 2026-09-07: TradingView alerts bridge (setup pending user action)
+User chose the third-party-bridge option for receiving TradingView alerts
+(option 2 of 3 presented: connect Gmail / third-party bridge / manual
+relay). Plan, since this session can't create the user's Zapier/Google/
+TradingView accounts:
+
+1. **User creates a Google Sheet** (header row: Timestamp, Ticker,
+   Message) and publishes it to the web as CSV (File > Share > Publish to
+   web > CSV). This makes a public, unauthenticated, unguessable CSV URL
+   — no Google credential needed on this project's side at all.
+2. **User creates a Zapier Zap**: trigger "Webhooks by Zapier" -> "Catch
+   Hook" (gives a webhook URL), action "Google Sheets" -> "Create
+   Spreadsheet Row" mapped to the sheet from step 1.
+3. **User creates a TradingView alert** on their strategy/indicator,
+   enables Webhook URL in the alert's Notifications tab, pastes the Zap's
+   webhook URL, and formats the alert message as JSON using TradingView's
+   placeholders, e.g. `{"ticker": "{{ticker}}", "message":
+   "{{strategy.order.action}} at {{close}}", "time": "{{time}}"}`.
+   Requires a paid TradingView plan (Essential+) for webhook alerts —
+   flagged to the user, not yet confirmed they have one.
+4. **User gives this session the published CSV URL**, which goes in
+   `.env` as `TRADINGVIEW_ALERTS_CSV_URL`.
+
+Built `scripts/tradingview_alerts_client.py` (reading side) already —
+polls the CSV over plain HTTP, tracks a row-count cursor in
+`data/reference/tradingview_alerts_cursor.json` (gitignored) so repeated
+polls only return genuinely new rows. Not yet wired into any routine
+(nothing to poll until the URL exists) and not yet tested live (no real
+CSV to test against). Once the user provides the URL: test
+`get_new_alerts()` live, then decide with them how alerts should surface
+(a routine checking periodically? push notification per alert? logged
+only?) — that's a separate design question from the plumbing itself.
+
+Separately, TradingView's own technical-analysis rating (unofficial
+`tradingview-ta` library, NOT the alerts bridge above) is already live —
+see scripts/tradingview_client.py, wired into skills/research.md as an
+optional cross-check.
