@@ -133,3 +133,16 @@ IREN   # 2026-09-07: +7.3% today, rebounding off a post-earnings selloff with a 
 BANL   # 2026-09-07: -40.7% today, real dated event (large share sale triggered a trading halt ~9/4) but a distressed micro-cap share-supply shock, not a fundamentals catalyst -- PASS
 OXM    # 2026-09-07: -15.7% today, real Q2 FY26 earnings 9/3 with guidance cut well below consensus (Lilly Pulitzer weakness, consumer macro pressure) -- PASS, falling-knife not a buy setup
 EGAN   # 2026-09-07: -17.9% today, real FY26 Q4 results 9/3 with FY27 guidance showing legacy revenue collapsing faster than AI revenue offsets, swing to GAAP net loss -- PASS, structural decline
+
+# --- added 2026-09-08 via the daily screen routine (Massive whole-market, same 2026-09-03->09-04 session pair as yesterday -- 09-07 was Labor Day, no new session) ---
+ADBE   # EARNINGS 2026-09-10 -- pre-catalyst watch, not yet a candidate
+TYRA   # 2026-09-08: +15.2%, Sept 9 Phase 2 dabogratinib data call announced -- WATCH, binary readout still a day away and unresolved, TA reads SELL against the bullish framing
+PSQL   # 2026-09-08: -18.4%, no fresh catalyst -- PASS, continuing post-de-SPAC pop-and-fade (down >65% from 8/31 high), same as this project's 9/3 note
+GOLD   # 2026-09-08: +11.2% -- WATCH. NOTE: ticker GOLD is no longer Barrick (renamed Barrick Mining/'B' in 2025); now Gold.com Inc (fka A-Mark Precious Metals). Real FY26 beat + special $1 dividend but mixed (revenue miss, 2 analyst PT cuts, gold-price headwind)
+RACC   # 2026-09-08: -7.5% per screener -- PASS/insufficient info, could not verify this move against ANY live source (all show RACC trading $24-25), same data-reliability issue flagged 2026-09-03 -- treated as unverified, not a real catalyst
+TARS   # 2026-09-08: +9.1%, real converging catalysts (Alkeus acquisition close + Jefferies Strong-Buy upgrade to $105) -- CANDIDATE at research, council WATCH (unresolved unrebutted Culper Research anti-kickback allegation on sole product XDEMVY + real deal dilution + entry at all-time highs the day after both catalysts already fired; bull agent's own independent research converged on the same risk cluster before seeing the bear case)
+CHPT   # 2026-09-08: +8.9%, no new catalyst -- WATCH, day-3 continuation of the 9/2 earnings-beat pop, even fresh analyst targets sit below current price
+ADSK   # 2026-09-08: -8.3%, sympathy move off Adobe's CEO-transition news reopening AI-disruption fears for seat-based SaaS -- PASS, Autodesk's own quarter actually beat and raised guidance; also long-only so no edge either direction anyway
+KLAC   # 2026-09-08: +7.3%, part of a confirmed sector-wide semiconductor/AI-infra rally (also lifting ALAB/NBIS/AXTI/TSEM/FORM/UCTT/TTMI/SMTC/BE) but has the strongest independent company-specific case on top -- WATCH, raised advanced-packaging/AI guidance, though UBS cut target same week
+ALAB   # 2026-09-08: +9.8%, same sector rally -- WATCH low confidence, catalyst is speculative (S&P 500 inclusion bet, decision not until 9/18), TA consensus SELL disagrees with bullish narrative -- CORRELATED with KLAC/NBIS, not independent
+NBIS   # 2026-09-08: +7.5%, same sector rally -- WATCH low confidence, no identifiable company-specific dated catalyst this session, Palantir news actually postdates the move -- CORRELATED with KLAC/ALAB, not independent

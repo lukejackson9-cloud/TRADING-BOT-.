@@ -603,3 +603,41 @@ Separately, TradingView's own technical-analysis rating (unofficial
 `tradingview-ta` library, NOT the alerts bridge above) is already live —
 see scripts/tradingview_client.py, wired into skills/research.md as an
 optional cross-check.
+
+## 2026-09-08: Daily screen -- TARS reaches council, downgraded (13-for-13)
+Second daily-screen firing since Labor Day (09-07 was a holiday, no new
+session). Ran Massive's full whole-market screen this time (free of the
+backtest fetch that blocked it yesterday) and found real candidates FMP's
+top-15 lists missed: TYRA, PSQL, GOLD, RACC, TARS, CHPT, ADSK, KLAC, ALAB,
+NBIS. Confirmed KLAC/ALAB/NBIS (plus AXTI/TSEM/FORM/UCTT/TTMI/SMTC/BE)
+were one correlated sector-wide semiconductor/AI-infra rally, not
+independent stories.
+
+**TARS reached CANDIDATE** (real converging catalysts: Alkeus acquisition
+close + Jefferies Strong-Buy upgrade to $105, both dated 2026-09-04) --
+first CANDIDATE since GWRE/HPE on 2026-09-04. Council review: bull and
+bear agents, working independently with no visibility into each other,
+both surfaced the SAME major risk cluster (an unresolved, unrebutted
+Culper Research anti-kickback allegation on TARS's only approved product;
+real dilution from the Alkeus deal's financing at $61.38/share vs. ~$90
+current; insider selling with zero buying) -- that unprompted convergence
+was treated as strong evidence, not coincidence. The bull agent's own
+honest confidence was only low-medium despite being tasked with building
+the strongest case FOR. Moderator downgraded to WATCH. Along the way,
+fact-checked and resolved a price-data conflict the bull agent flagged
+(wildly inconsistent WebSearch-sourced prices) using Massive.com's own
+OHLCV directly -- same lesson as the DOCU case from 2026-09-06, precise
+market data beats ambiguous WebSearch summaries.
+
+**Running council-downgrade total: 13-for-13** (9-for-9 as of 2026-09-03,
++GWRE/+HPE on 09-04, +TARS today). Per CLAUDE.md's calibration rule, this
+is reported plainly and is not itself being read as proof of
+miscalibration -- the 2026-09-11 journal.md check-in remains the actual
+answer to that question.
+
+Also corrected: ticker GOLD is no longer Barrick (renamed Barrick
+Mining/"B" in 2025) -- now Gold.com Inc. And RACC's screener-implied move
+could not be verified against any live source for the second time (same
+issue flagged 2026-09-03) -- worth considering whether RACC's data is
+just unreliable at the source and should be filtered out going forward
+rather than re-litigated each time it appears.
