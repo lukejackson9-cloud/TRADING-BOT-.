@@ -146,3 +146,15 @@ ADSK   # 2026-09-08: -8.3%, sympathy move off Adobe's CEO-transition news reopen
 KLAC   # 2026-09-08: +7.3%, part of a confirmed sector-wide semiconductor/AI-infra rally (also lifting ALAB/NBIS/AXTI/TSEM/FORM/UCTT/TTMI/SMTC/BE) but has the strongest independent company-specific case on top -- WATCH, raised advanced-packaging/AI guidance, though UBS cut target same week
 ALAB   # 2026-09-08: +9.8%, same sector rally -- WATCH low confidence, catalyst is speculative (S&P 500 inclusion bet, decision not until 9/18), TA consensus SELL disagrees with bullish narrative -- CORRELATED with KLAC/NBIS, not independent
 NBIS   # 2026-09-08: +7.5%, same sector rally -- WATCH low confidence, no identifiable company-specific dated catalyst this session, Palantir news actually postdates the move -- CORRELATED with KLAC/ALAB, not independent
+
+# --- added 2026-09-09 via the daily screen routine (Massive whole-market, 2026-09-04 -> 09-08 session pair) ---
+HWM    # 2026-09-09: -10.7%, multi-day slide on SpaceX in-house turbine-casting threat -- WATCH low confidence, unresolved
+AMGN   # 2026-09-09: -10.1%, sympathy selloff from Novartis's pelacarsen Phase 3 failure (same Lp(a) mechanism as Amgen's olpasiran) -- WATCH, echoes the ALNY same-class-doubt pattern
+SMR    # 2026-09-09: +15.3%, real dated AI-partnership/milestone news but pre-revenue story stock, brutal 1yr drawdown -- WATCH low confidence, possible AI-infra correlation with CRWV
+CRWV   # 2026-09-09: +11.7%, Nebius/Palantir partnership -- WATCH low confidence, sector-wide "neocloud" rally not CRWV-specific, already extended since August
+ROIV   # 2026-09-09: +18.8%, real same-day Phase 2 PH-ILD win (primary+secondary endpoints) + confirmed genuine LISRAYA FDA approval (8/27) -- CANDIDATE at research, council WATCH (reaction already fired/partially faded, no near-term follow-up catalyst for 1-2wks, real multi-month insider selling pattern across CEO/President/CIO/director entity)
+DYN    # 2026-09-09: -16.4%, no dated catalyst found anywhere -- PASS
+FCUV   # 2026-09-09: -65.2% crash in extremely thin float -- PASS, repeat of the 9/3 thin-float/no-catalyst pattern
+BIAF   # 2026-09-09: -41.5%, real catalysts (Nasdaq compliance regained + expanded indication) but session round-tripped a +54.78% intraday spike into this close -- PASS, confirms the 9/2 thin-float pump/dump pattern flagged hypothetically then, now observed directly
+DOCN   # 2026-09-09: +12.6%, real dated AI-strategy reveal at Goldman conference -- WATCH, stock already +160% YTD with analysts staying Neutral on valuation despite raising targets
+VIAV   # 2026-09-09: +11.2%, no dated ticker-specific catalyst confirmed despite strong fundamentals -- WATCH low confidence, also surfaced a likely stale/cross-contaminated analyst data point

@@ -97,6 +97,25 @@ project, every one downgraded to WATCH at council. Common threads:
   (sell-the-news) and #8 (independent convergence as strong evidence).
 - **Outcome**: PENDING, check due 2026-09-11.
 
+### ROIV — 2026-09-09, council-downgraded, PENDING
+- **What happened**: +18.8% on real, dated Phase 2 PH-ILD data for
+  mosliciguat (primary + secondary endpoints met, Phase 3 already
+  initiated), plus a confirmed genuine second catalyst — LISRAYA
+  (brepocitinib) FDA approval, independently verified by the moderator
+  via WebSearch as real (2026-08-27), not the stale "still pending"
+  claim one research source carried.
+- **Why downgraded**: Both council agents independently landed at
+  medium confidence rather than one side collapsing — a closer call than
+  most reviews here. Tipped to WATCH on: the reaction had already fired
+  and partially faded intraday (moderator corrected the bear's overstated
+  fade magnitude using Massive OHLCV — real high $42.50/close $41.48, a
+  ~2.4% pullback, not the ~5-6% the bear's uncorroborated $43.93 figure
+  implied, but the directional point stood); no scheduled near-term
+  (1-2wk) follow-up catalyst, next Phase 3 readout years out; and a
+  concrete, sourced, multi-month insider-selling pattern across CEO,
+  President, CIO, and a director entity, all before this news.
+- **Outcome**: PENDING, check due 2026-09-11.
+
 ---
 
 ## Appendix: every other researched ticker (WATCH/PASS, never reached council)
@@ -186,3 +205,12 @@ full research writeup behind each.
 | 09-08 | KLAC | WATCH | sector rally + strongest independent company case |
 | 09-08 | ALAB | WATCH low confidence | sector rally, speculative catalyst |
 | 09-08 | NBIS | WATCH low confidence | sector rally, no company-specific catalyst |
+| 09-09 | HWM | WATCH low confidence | SpaceX turbine-casting threat, unresolved |
+| 09-09 | AMGN | WATCH | sympathy selloff, rival same-class Lp(a) trial failure |
+| 09-09 | SMR | WATCH low confidence | real news but pre-revenue story stock |
+| 09-09 | CRWV | WATCH low confidence | sector-wide neocloud rally, already extended |
+| 09-09 | DYN | PASS | no dated catalyst found anywhere |
+| 09-09 | FCUV | PASS | repeat thin-float/no-catalyst pattern (see 09-03) |
+| 09-09 | BIAF | PASS | confirmed pump/dump pattern (see 09-02) |
+| 09-09 | DOCN | WATCH | real catalyst but already +160% YTD, analysts Neutral |
+| 09-09 | VIAV | WATCH low confidence | no dated catalyst confirmed despite strong fundamentals |

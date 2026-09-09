@@ -641,3 +641,24 @@ could not be verified against any live source for the second time (same
 issue flagged 2026-09-03) -- worth considering whether RACC's data is
 just unreliable at the source and should be filtered out going forward
 rather than re-litigated each time it appears.
+
+## 2026-09-09: Daily screen -- ROIV reaches council, downgraded (14-for-14)
+ROIV (Roivant Sciences) reached CANDIDATE on real, dated Phase 2 PH-ILD
+data plus a second catalyst (LISRAYA FDA approval) -- a genuinely closer
+council call than most: both bull and bear agents independently landed
+at medium confidence rather than one side collapsing under its own
+research the way TARS's did. Moderator fact-checked two load-bearing
+claims directly: LISRAYA's approval status (confirmed genuinely approved
+8/27 via WebSearch, resolving the bull agent's own uncertainty in its
+favor) and the intraday price action (Massive OHLCV showed the bear
+overstated the fade magnitude -- real high $42.50 vs. claimed $43.93).
+Downgraded to WATCH on the already-fired/partially-faded reaction, no
+near-term follow-up catalyst, and a concrete multi-month insider-selling
+pattern across CEO/President/CIO/a director entity. Running total:
+14-for-14.
+
+Also notable: BIAF's 2026-09-02 hypothetical "thin-float pump pattern"
+flag was directly confirmed today -- a +54.78% intraday spike
+round-tripped into a -41.5% close on real underlying catalysts (Nasdaq
+compliance regained + expanded indication). The pattern-recognition
+worked as intended.

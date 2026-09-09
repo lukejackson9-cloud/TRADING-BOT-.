@@ -130,12 +130,14 @@ progress — but don't treat the wait itself as a reason to lower the bar.
 As of 2026-09-03, every CANDIDATE that has reached council.md has been
 downgraded to WATCH — 9 for 9, across three different screening methods
 (see HANDOFF.md for the full list: GTLB, HOOD, DUOL, SIRI, DELL, SOFI,
-ASTS, VRNS, ALNY). **Running total as of 2026-09-08: 13-for-13** (GWRE and
-HPE added 2026-09-04, TARS added 2026-09-08 — see HANDOFF.md for each
-one's specific reasoning). The user was told this plainly and, after discussing it,
+ASTS, VRNS, ALNY). **Running total as of 2026-09-09: 14-for-14** (GWRE and
+HPE added 2026-09-04, TARS added 2026-09-08, ROIV added 2026-09-09 — a
+genuinely closer call than most, both council agents independently
+landed at medium confidence, see HANDOFF.md/trade_ledger.md for the full
+reasoning). The user was told this plainly and, after discussing it,
 explicitly decided: **keep council exactly as strict as it currently is**
 until skills/journal.md has real outcome data on whether these downgrades
-were right. Do not read the streak itself (9-for-9, now 13-for-13) as evidence the bar is
+were right. Do not read the streak itself (9-for-9, now 14-for-14) as evidence the bar is
 miscalibrated, and do not quietly soften the bear agent's prompt, the
 moderator's standard, or research.md's skepticism to "find more
 candidates" — that would be optimizing for output volume over honesty,
