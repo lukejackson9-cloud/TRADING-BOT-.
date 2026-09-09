@@ -204,24 +204,43 @@ def _ema(prev_ema, price, n):
     return price * k + prev_ema * (1 - k) if prev_ema is not None else price
 
 
+def _load_spy_bars(start, end):
+    """Shared SPY daily-bar loader for both _fetch_spy_regime and
+    _spy_closes -- sourced from Alpaca (not Massive's get_ticker_range_aggs
+    as originally written), because Massive's 2-year cap can't reach the
+    older portion of the extended 2020-08+ range fetch_range_alpaca()
+    populates for everything else, added 2026-09-09. Alpaca's bars use an
+    RFC3339 string "t" ("2021-06-02T04:00:00Z"), not Massive/Polygon's
+    epoch-ms int -- normalized to epoch-ms here at fetch/cache time so the
+    two callers' existing parsing (`b["t"] / 1000`) doesn't need to care
+    which source built the cache. Caches to CACHE_DIR/SPY.json (one API
+    call covers the whole range); delete that file to force a re-fetch
+    with a wider range if a caller ever needs dates outside what's cached
+    (confirmed live 2026-09-09: don't assume the old cached range covers
+    a new, wider request -- check/refresh explicitly)."""
+    cache_file = CACHE_DIR / "SPY.json"
+    if cache_file.exists():
+        return json.loads(cache_file.read_text())
+    raw = get_historical_bars("SPY", f"{start}T00:00:00Z", f"{end}T23:59:59Z", timeframe="1Day")
+    bars = [
+        {"t": int(datetime.datetime.fromisoformat(b["t"].replace("Z", "+00:00")).timestamp() * 1000), "c": b["c"]}
+        for b in raw
+    ]
+    CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    cache_file.write_text(json.dumps(bars))
+    return bars
+
+
 def _fetch_spy_regime(start, end, sma_window=REGIME_SMA_WINDOW):
     """Market-regime filter: {date: bool} -- True on days SPY's close is
     above its own `sma_window`-day SMA ("bullish regime"), False otherwise.
     Only take breakout/ema_cross LONG entries on True days -- the standard
     "don't fight the tape" filter for momentum-continuation systems, which
-    tend to fail worst in choppy/downtrending markets. Caches SPY's raw
-    bars to CACHE_DIR/SPY.json (one API call covers the whole range -- see
-    get_ticker_range_aggs). The first sma_window trading days of `start`..
-    `end` have no regime value yet (not enough warmup) and are dropped by
-    callers, not treated as bearish by default."""
-    cache_file = CACHE_DIR / "SPY.json"
-    if cache_file.exists():
-        bars = json.loads(cache_file.read_text())
-    else:
-        bars = get_ticker_range_aggs("SPY", start, end)
-        CACHE_DIR.mkdir(parents=True, exist_ok=True)
-        cache_file.write_text(json.dumps(bars))
-
+    tend to fail worst in choppy/downtrending markets. The first
+    sma_window trading days of `start`..`end` have no regime value yet
+    (not enough warmup) and are dropped by callers, not treated as
+    bearish by default."""
+    bars = _load_spy_bars(start, end)
     regime = {}
     closes = []
     for b in bars:
@@ -234,18 +253,10 @@ def _fetch_spy_regime(start, end, sma_window=REGIME_SMA_WINDOW):
 
 
 def _spy_closes(start, end):
-    """{date: close} for SPY -- reuses the same CACHE_DIR/SPY.json cache
-    _fetch_spy_regime writes (one API call for the whole range), just
-    returned as a plain lookup instead of the regime bool. Used by the
-    relative_strength signal in iter_signals to compute a stock's return
-    vs. SPY's return over the same window."""
-    cache_file = CACHE_DIR / "SPY.json"
-    if cache_file.exists():
-        bars = json.loads(cache_file.read_text())
-    else:
-        bars = get_ticker_range_aggs("SPY", start, end)
-        CACHE_DIR.mkdir(parents=True, exist_ok=True)
-        cache_file.write_text(json.dumps(bars))
+    """{date: close} for SPY, via the shared _load_spy_bars() cache. Used
+    by the relative_strength signal in iter_signals to compute a stock's
+    return vs. SPY's return over the same window."""
+    bars = _load_spy_bars(start, end)
     return {
         datetime.datetime.fromtimestamp(b["t"] / 1000, tz=datetime.timezone.utc).date().isoformat(): b["c"]
         for b in bars
