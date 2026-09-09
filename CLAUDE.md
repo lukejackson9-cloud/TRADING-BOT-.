@@ -211,10 +211,21 @@ eventually live, execution of a setup that has actually earned it.*
 - /data/trades.log            — append-only log of every order actually placed
 - /data/positions.json        — positions the user tells you about manually
                                  (nothing is synced from T212 in this mode)
-- /data/journal/tickers/{TICKER}.md — per-ticker history: past verdicts and
-                                 what actually happened, from skills/journal.md
+- /data/journal/trade_ledger.md — ONE chronological log of every ticker
+                                 decision (research verdict, council
+                                 verdict, and outcome once known) and why,
+                                 maintained by skills/journal.md. Built
+                                 2026-09-09 per user request as a single
+                                 file to prompt/reflect on, replacing the
+                                 original per-ticker-file design
+                                 (/data/journal/tickers/ is now an unused
+                                 empty legacy directory).
 - /data/journal/lessons.md    — short, evidenced cross-ticker patterns,
-                                 curated by skills/journal.md
+                                 curated by skills/journal.md — e.g.
+                                 "sell the news" gap-chasing, WebSearch vs.
+                                 authoritative OHLCV, correlated sector
+                                 clusters (see the file for full list with
+                                 evidence)
 - /data/journal/scorecard.md  — running win-rate/downgrade-accuracy stats,
                                  recomputed by skills/journal.md
 - /data/paper_trades.json     — forward paper-trading ledger for ALL

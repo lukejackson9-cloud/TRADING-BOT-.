@@ -33,9 +33,9 @@ substance. This design avoids that on purpose:
 ## Steps
 1. Precondition: /data/research/{today}/{TICKER}.md exists with
    Verdict == CANDIDATE.
-2. Check if /data/journal/tickers/{TICKER}.md exists (skills/journal.md's
-   per-ticker history — past verdicts on this exact ticker and what
-   actually happened). If it exists, its content is fair shared background
+2. Check /data/journal/trade_ledger.md for this ticker (skills/journal.md's
+   trade ledger — past verdicts on this exact ticker and what actually
+   happened). If it has an entry, that content is fair shared background
    for BOTH agents below — it's factual track record, not either agent's
    opinion, so handing it to both doesn't bias which side wins.
 3. Spawn two subagents in parallel with the Agent tool. Give each ONLY the

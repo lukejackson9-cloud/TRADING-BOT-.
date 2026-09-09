@@ -15,10 +15,16 @@ propose an idea → find out what actually happened → write it down honestly
 → let future passes read that history before forming a new opinion.
 
 ## Three things this maintains
-1. **Per-ticker history**: /data/journal/tickers/{TICKER}.md — every time
-   this ticker is screened, researched, put through council, or its
-   outcome is checked, append an entry. So the next time GTLB comes up,
-   research.md and council.md aren't starting from nothing.
+1. **Trade ledger**: /data/journal/trade_ledger.md — ONE chronological log
+   of every ticker-decision (research verdict, council verdict, and the
+   outcome once known), not scattered per-ticker files. Built this way
+   (2026-09-09, per user request) specifically so it can be read in one
+   pass and reflected on before forming a fresh opinion on a new ticker,
+   rather than globbing many small files. So the next time GTLB comes up,
+   research.md and council.md aren't starting from nothing — grep the
+   ledger for the ticker name. (Supersedes the original per-ticker-file
+   design — /data/journal/tickers/ is kept only as an empty legacy
+   directory, don't resurrect it.)
 2. **Cross-ticker lessons**: /data/journal/lessons.md — a short, curated
    digest of patterns that have actually shown up more than once, with
    evidence (dates, tickers, counts) — not vibes. This is what gets read
@@ -51,27 +57,32 @@ propose an idea → find out what actually happened → write it down honestly
      concern implied (e.g. faded/pulled back, validating caution), or did
      it keep running (meaning the caution cost a good trade)? Say
      which, plainly — don't spin a miss into a near-win.
-3. Append an entry to /data/journal/tickers/{TICKER}.md:
+3. Update /data/journal/trade_ledger.md: find the ticker's existing entry
+   (full narrative entry under "CANDIDATE / Council-reviewed trades" if it
+   reached council, or its row in the appendix table otherwise) and change
+   its Outcome from PENDING to RESOLVED, adding:
    ```
-   ## {date of this check} — reviewing {date of original idea/verdict}
-   Original call: {verdict/idea and why}
-   What actually happened: {price action, with a source}
-   Assessment: correct / incorrect / unclear (be honest — "correct" needs
-   the outcome to actually match the call, not just "the stock went up
-   eventually")
+   **How it ended (RESOLVED {date of this check})**: {price action, with
+   a source — prefer scripts/massive_client.py's OHLCV over WebSearch
+   summaries when they'd conflict, see lessons.md #2}. {Assessment: correct
+   / incorrect / unclear — be honest, "correct" needs the outcome to
+   actually match the call, not just "the stock went up eventually"}.
    ```
-4. After appending a handful of new outcomes (don't do this on every single
+   If the ticker doesn't have an entry yet (a new one since the last
+   ledger update), add one in whichever section fits (full narrative if
+   it reached council, appendix row otherwise) rather than skipping it.
+4. After resolving a handful of new outcomes (don't do this on every single
    run — only when there's enough new evidence to matter), review
-   /data/journal/tickers/*.md for a real pattern: something that's shown up
-   3+ times, not a one-off. If you find one, update
+   /data/journal/trade_ledger.md for a real pattern: something that's shown
+   up 3+ times, not a one-off. If you find one, update
    /data/journal/lessons.md with a dated bullet, citing the specific
    tickers/dates behind it. Remove or revise old lessons if new evidence
    contradicts them — this file should reflect current best understanding,
    not accumulate forever.
-5. Every time you append new outcomes, recompute and rewrite
+5. Every time you resolve new outcomes, recompute and rewrite
    /data/journal/scorecard.md in full (it's a summary, not an append-only
-   log) by tallying every "Assessment:" line across
-   /data/journal/tickers/*.md, using this template:
+   log) by tallying every RESOLVED entry's assessment in
+   /data/journal/trade_ledger.md, using this template:
    ```
    # Scorecard — updated {date}
 
@@ -115,9 +126,10 @@ propose an idea → find out what actually happened → write it down honestly
    misleadingly precise percentage.
 
 ## How research.md and council.md use this
-- research.md: before writing a fresh research note, check if
-  /data/journal/tickers/{TICKER}.md exists and skim it for this specific
-  ticker's history. Check /data/journal/lessons.md for general patterns.
+- research.md: before writing a fresh research note, check
+  /data/journal/trade_ledger.md for this specific ticker's history (it may
+  not have one yet — that's normal). Check /data/journal/lessons.md for
+  general patterns.
 - council.md: give both the bull and bear agents the same ticker journal
   history (if any) as shared factual background — this doesn't bias which
   side wins, it's just prior track record, not either agent's opinion.
