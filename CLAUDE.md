@@ -388,8 +388,35 @@ market, completed 2026-09-07):**
     roughly breakeven-to-slightly-negative (~37-38% win rate, ~0% avg
     return/trade) — consistent with the full result above, not
     contradicted by it.
+  - **Tested two new setups (2026-09-09) — vcp_breakout is the most
+    promising result this project has produced so far:**
+    - `vcp_breakout`: breakout, but only when the prior 20 days show a
+      genuine volatility contraction first (recent-half average daily
+      range <= a ratio of the earlier half's — classic VCP/Minervini-
+      style setup). Real, MONOTONIC improvement as the contraction
+      requirement tightens: 0.8 ratio → 2,519 trades, -0.01%/trade
+      (roughly breakeven, matches plain breakout); 0.7 (default) → 1,072
+      trades, **+0.24%/trade**; 0.6 (tightest) → 383 trades,
+      **+0.79%/trade**, 49.3% win rate. This is the first setup tested
+      here with a meaningfully positive result across multiple parameter
+      values in the theoretically-expected direction, not a single
+      lucky number. Still not promoted — no transaction costs modeled,
+      and the tightest/best setting has a smaller sample (383 trades) —
+      but this is the strongest candidate yet for the forward
+      paper-trading track to confirm or refute. Automatically included
+      in `scripts/paper_trader.py`'s forward scan starting 2026-09-09
+      (shares `iter_signals()`, same mechanism as mean_reversion's
+      automatic inclusion on 09-08).
+    - `relative_strength`: stock's 20-day return vs. SPY's crossing up
+      through an outperformance threshold. Not promising — negative or
+      near-zero at every threshold tested (10pp: -0.04%/trade, 15pp:
+      -0.15%/trade, 20pp: -0.21%/trade). Not added to forward paper
+      trading (needs SPY data explicitly passed in, which the paper
+      trader doesn't currently do — correctly, since there's no result
+      here worth tracking forward).
 
-Do not promote either setup to the Strategy section, and do not treat a
+Do not promote any setup to the Strategy section — including vcp_breakout,
+its most promising result so far — and do not treat a
 CANDIDATE sourced this way as pre-validated, until: (a) a historical
 backtest shows real edge net of realistic costs, (b) a meaningful number
 of forward paper trades agree with it, and (c) the user has discussed and

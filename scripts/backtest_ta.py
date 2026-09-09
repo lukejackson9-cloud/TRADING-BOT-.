@@ -1,11 +1,12 @@
 """
-Backtests two classic short-term momentum TA setups against Massive.com's
-historical whole-market daily data, using CLAUDE.md's existing exit rule
-(-4% stop / +8% target / 5-trading-day time-stop) so results are measured
-against the rule this project already trades by, not an arbitrary new one.
+Backtests short-term TA setups against Massive.com's historical
+whole-market daily data, using CLAUDE.md's existing exit rule (-4% stop /
++8% target / 5-trading-day time-stop) so results are measured against the
+rule this project already trades by, not an arbitrary new one.
 
-Setups (both chosen to fit CLAUDE.md's existing "momentum + news catalyst"
-style -- momentum-continuation, not mean-reversion):
+Setups (see iter_signals()'s docstring for the full, current list --
+breakout, ema_cross, mean_reversion, vcp_breakout, relative_strength as
+of 2026-09-09):
   - breakout: today's close > the prior 20-trading-day high, AND today's
     volume >= 1.5x the prior 20-day average volume.
   - ema_cross: 9-day EMA crosses above the 21-day EMA (yesterday 9EMA <=
@@ -71,6 +72,14 @@ REGIME_SMA_WINDOW = 50  # short enough to fit this project's days-to-2-week
 # defensible, cheaper-to-warm-up stand-in, not a claim that it's the "right"
 # lookback; worth revisiting with 200-day if this shows promise).
 RSI_PERIOD, RSI_OVERSOLD = 14, 30
+VCP_LOOKBACK = 20  # same window as breakout, split in half to compare
+# recent vs. earlier volatility
+VCP_CONTRACTION_RATIO = 0.7  # recent-half avg daily range must be <= 70%
+# of the earlier half's -- a real tightening, not just "any" breakout
+RS_WINDOW = 20  # trading days of trailing return to compare against SPY
+RS_THRESHOLD = 0.15  # stock must be outperforming SPY by 15 percentage
+# points over that window at the moment the signal fires (a crossing, not
+# "still outperforming" -- see iter_signals)
 
 
 def _trading_days(start, end):
@@ -155,6 +164,25 @@ def _fetch_spy_regime(start, end, sma_window=REGIME_SMA_WINDOW):
     return regime
 
 
+def _spy_closes(start, end):
+    """{date: close} for SPY -- reuses the same CACHE_DIR/SPY.json cache
+    _fetch_spy_regime writes (one API call for the whole range), just
+    returned as a plain lookup instead of the regime bool. Used by the
+    relative_strength signal in iter_signals to compute a stock's return
+    vs. SPY's return over the same window."""
+    cache_file = CACHE_DIR / "SPY.json"
+    if cache_file.exists():
+        bars = json.loads(cache_file.read_text())
+    else:
+        bars = get_ticker_range_aggs("SPY", start, end)
+        CACHE_DIR.mkdir(parents=True, exist_ok=True)
+        cache_file.write_text(json.dumps(bars))
+    return {
+        datetime.datetime.fromtimestamp(b["t"] / 1000, tz=datetime.timezone.utc).date().isoformat(): b["c"]
+        for b in bars
+    }
+
+
 def _rsi_series(bars, period=RSI_PERIOD):
     """Wilder's RSI, standard incremental smoothing (same shape as _ema
     above). Returns a list aligned to `bars`, None until enough bars exist."""
@@ -201,20 +229,36 @@ def _simulate_exit(bars, entry_idx):
     return None
 
 
-def iter_signals(bars):
+def iter_signals(bars, spy_closes=None):
     """Shared signal logic -- yields (index, date, setup_name) for every bar
     in `bars` (one ticker's chronological [(date,o,h,l,c,v), ...]) where
     any setup fires. Used by both the historical backtest (run_backtest,
     below) and scripts/paper_trader.py's forward daily scan, so the two
     can never drift apart on what counts as a signal.
 
-    Three setups: "breakout" and "ema_cross" (both momentum-continuation,
-    see module docstring) and "mean_reversion" -- the OPPOSITE regime bet,
-    added 2026-09-07 to test whether momentum failing means the market's
-    character right now favors reversion instead: RSI(14) crossing UP
-    through 30 (an oversold bounce CONFIRMED by the cross, not "still
-    falling and cheap" -- entering while RSI is still dropping is closer
-    to catching a falling knife than a bounce)."""
+    Five setups:
+    - "breakout" and "ema_cross": momentum-continuation (see module
+      docstring).
+    - "mean_reversion": the OPPOSITE regime bet, added 2026-09-07 to test
+      whether momentum failing means the market's character right now
+      favors reversion instead: RSI(14) crossing UP through 30 (an
+      oversold bounce CONFIRMED by the cross, not "still falling and
+      cheap").
+    - "vcp_breakout" (added 2026-09-09): a tightened version of breakout
+      requiring genuine volatility contraction first -- the last
+      VCP_LOOKBACK days split in half, recent-half average daily range
+      must be <= VCP_CONTRACTION_RATIO of the earlier half's, THEN the
+      same close-above-prior-high + volume trigger as breakout. Targets
+      breakout's specific failure mode (false breakouts from names that
+      were never actually consolidating).
+    - "relative_strength" (added 2026-09-09): stock's trailing RS_WINDOW-day
+      return minus SPY's return over the same window crossing UP through
+      RS_THRESHOLD (a real acceleration in outperformance, not "has been
+      outperforming for a while already" -- same crossing-not-level design
+      as ema_cross/mean_reversion). Only computed when `spy_closes` (a
+      {date: close} dict from _spy_closes) is given -- callers without it
+      (e.g. a quick scan that hasn't fetched SPY) simply don't get this
+      setup, not an error."""
     ema9 = ema21 = None
     prev_ema9 = prev_ema21 = None
     rsi = _rsi_series(bars)
@@ -231,7 +275,8 @@ def iter_signals(bars):
         window = bars[i - 20:i]  # prior 20 days, excludes today
         prior_high = max(b[2] for b in window)
         prior_avg_vol = sum(b[5] for b in window) / 20
-        if c > prior_high and v >= 1.5 * prior_avg_vol:
+        breakout_trigger = c > prior_high and v >= 1.5 * prior_avg_vol
+        if breakout_trigger:
             yield i, date, "breakout"
 
         if prev_ema9 is not None and prev_ema21 is not None:
@@ -242,6 +287,28 @@ def iter_signals(bars):
             if rsi[i - 1] < RSI_OVERSOLD <= rsi[i]:
                 yield i, date, "mean_reversion"
 
+        if breakout_trigger and i >= VCP_LOOKBACK:
+            vcp_window = bars[i - VCP_LOOKBACK:i]
+            mid = VCP_LOOKBACK // 2
+            earlier_half, recent_half = vcp_window[:mid], vcp_window[mid:]
+            earlier_vol = sum((b[2] - b[3]) / b[4] for b in earlier_half) / len(earlier_half)
+            recent_vol = sum((b[2] - b[3]) / b[4] for b in recent_half) / len(recent_half)
+            if earlier_vol > 0 and recent_vol <= VCP_CONTRACTION_RATIO * earlier_vol:
+                yield i, date, "vcp_breakout"
+
+        if spy_closes is not None and i >= RS_WINDOW + 1:
+            d_now, d_prev, d_base_now, d_base_prev = date, bars[i - 1][0], bars[i - RS_WINDOW][0], bars[i - 1 - RS_WINDOW][0]
+            if all(d in spy_closes for d in (d_now, d_prev, d_base_now, d_base_prev)):
+                stock_ret_now = (c - bars[i - RS_WINDOW][4]) / bars[i - RS_WINDOW][4]
+                spy_ret_now = (spy_closes[d_now] - spy_closes[d_base_now]) / spy_closes[d_base_now]
+                excess_now = stock_ret_now - spy_ret_now
+                prev_close = bars[i - 1][4]
+                stock_ret_prev = (prev_close - bars[i - 1 - RS_WINDOW][4]) / bars[i - 1 - RS_WINDOW][4]
+                spy_ret_prev = (spy_closes[d_prev] - spy_closes[d_base_prev]) / spy_closes[d_base_prev]
+                excess_prev = stock_ret_prev - spy_ret_prev
+                if excess_prev < RS_THRESHOLD <= excess_now:
+                    yield i, date, "relative_strength"
+
 
 def _gap_pct(bars, i):
     """Overnight gap: bar i's open vs bar i-1's close, as a fraction (0.02
@@ -251,7 +318,8 @@ def _gap_pct(bars, i):
     return (bars[i][1] - bars[i - 1][4]) / bars[i - 1][4]
 
 
-def run_backtest(start, end, regime=None, setups=("breakout", "ema_cross", "mean_reversion"),
+def run_backtest(start, end, regime=None,
+                  setups=("breakout", "ema_cross", "mean_reversion", "vcp_breakout", "relative_strength"),
                   require_gap_pct=None):
     """regime: optional {date: bool} from _fetch_spy_regime -- when given,
     breakout/ema_cross signals are only counted on bullish-regime days
@@ -277,11 +345,12 @@ def run_backtest(start, end, regime=None, setups=("breakout", "ema_cross", "mean
     question not tested here)."""
     series = _load_series(start, end)
     results = {s: [] for s in setups}
+    spy_closes = _spy_closes(start, end) if "relative_strength" in setups else None
 
     for ticker, bars in series.items():
         if len(bars) < 25:
             continue
-        for i, date, setup in iter_signals(bars):
+        for i, date, setup in iter_signals(bars, spy_closes=spy_closes):
             if setup not in results:
                 continue
             if regime is not None and setup != "mean_reversion":
@@ -320,6 +389,7 @@ def compare(start, end):
     in one place). Answers: does a regime filter rescue the momentum
     setups, and does mean-reversion look more promising than either,
     given the same 2-year window/universe/exit-rule for a fair comparison."""
+    global VCP_CONTRACTION_RATIO, RS_THRESHOLD
     baseline = run_backtest(start, end)
     _summarize("BASELINE (unfiltered)", baseline)
 
@@ -333,6 +403,24 @@ def compare(start, end):
     for gap in (0.02, 0.05):
         gap_filtered = run_backtest(start, end, setups=("breakout", "ema_cross"), require_gap_pct=gap)
         _summarize(f"GAP-CONFIRMED (open gapped up >= {gap*100:.0f}% vs prior close -- catalyst PROXY, not verified news)", gap_filtered)
+
+    print(f"\n(baseline row above already includes vcp_breakout at the default "
+          f"{VCP_CONTRACTION_RATIO*100:.0f}% contraction ratio and relative_strength at "
+          f"the default {RS_THRESHOLD*100:.0f}pp threshold -- sensitivity checks at other "
+          f"thresholds follow)")
+
+    orig_vcp, orig_rs = VCP_CONTRACTION_RATIO, RS_THRESHOLD
+    for ratio in (0.6, 0.8):
+        VCP_CONTRACTION_RATIO = ratio
+        vcp_variant = run_backtest(start, end, setups=("vcp_breakout",))
+        _summarize(f"VCP_BREAKOUT (contraction ratio {ratio})", vcp_variant)
+    VCP_CONTRACTION_RATIO = orig_vcp
+
+    for threshold in (0.10, 0.20):
+        RS_THRESHOLD = threshold
+        rs_variant = run_backtest(start, end, setups=("relative_strength",))
+        _summarize(f"RELATIVE_STRENGTH (threshold {threshold*100:.0f}pp)", rs_variant)
+    RS_THRESHOLD = orig_rs
 
     out_path = CACHE_DIR / f"compare_{start}_{end}.json"
     out_path.write_text(json.dumps({"baseline": baseline, "regime_filtered": regime_filtered}, indent=2))
