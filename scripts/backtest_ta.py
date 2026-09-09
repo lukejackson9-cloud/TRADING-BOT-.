@@ -61,6 +61,7 @@ from collections import defaultdict
 
 sys.path.insert(0, str(Path(__file__).parent))
 from massive_client import get_grouped_daily, get_common_stock_tickers, get_ticker_range_aggs  # noqa: E402
+from alpaca_client import get_historical_bars  # noqa: E402
 
 CACHE_DIR = Path("data/reference/backtest_cache")
 PRICE_MIN, PRICE_MAX, VOLUME_MIN = 5, 500, 1_000_000
@@ -116,6 +117,74 @@ def fetch_range(start, end):
         fetched += 1
         time.sleep(13)  # free tier: 5 req/min (sliding window -- space every call, not just every 5th)
     print(f"done: {len(days)} calendar weekdays checked, {fetched} newly fetched")
+
+
+def fetch_range_alpaca(start, end, batch_size=500):
+    """Extends the SAME CACHE_DIR day-file cache fetch_range() builds, but
+    sourced from Alpaca's per-symbol daily bars instead of Massive's
+    whole-market-per-day endpoint -- added 2026-09-09 because Alpaca's
+    free tier confirmed live to serve daily bars back to ~2020-08 (a
+    single-symbol binary search: 2020-07-01 empty, 2020-08-05 real data),
+    over 3x Massive's 2-year cap. Writes day-files in the EXACT same
+    {"status": "OK", "results": {ticker: [o,h,l,c,v]}} shape fetch_range()
+    does, so _load_series()/iter_signals()/run_backtest() all work
+    unchanged on the combined dataset -- call this for the OLDER portion
+    of the range (before Massive's 2024-09-08 cutoff) and leave the
+    existing Massive-sourced files for the newer portion alone; a
+    continuous multi-year dataset falls out of _load_series() reading
+    both without any code caring which source a given day came from.
+
+    Alpaca is per-SYMBOL (one API call gets a whole date range for one
+    ticker), the opposite shape from Massive's per-DAY-whole-market call,
+    so this fetches ticker by ticker and buffers results in memory,
+    flushing to day-files every `batch_size` tickers to bound memory
+    (~5,300 tickers x ~6 years of daily bars all held at once would be
+    too much). A small manifest (CACHE_DIR/_alpaca_fetched.json) tracks
+    which tickers are already done, for resumability if interrupted --
+    same lesson as the manual nohup fetch that died mid-run on 2026-09-07,
+    this uses the harness's own run_in_background tracking, not a
+    detached shell process.
+    """
+    CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    equities = sorted(get_common_stock_tickers())
+
+    manifest_path = CACHE_DIR / "_alpaca_fetched.json"
+    done = set(json.loads(manifest_path.read_text())) if manifest_path.exists() else set()
+    todo = [t for t in equities if t not in done]
+    print(f"{len(done)} tickers already fetched, {len(todo)} remaining")
+
+    buffer = defaultdict(dict)  # date -> {ticker: [o,h,l,c,v]}
+
+    def _flush():
+        for date, ticker_data in buffer.items():
+            cache_file = CACHE_DIR / f"{date}.json"
+            if cache_file.exists():
+                existing = json.loads(cache_file.read_text())
+                results = existing.get("results", {})
+            else:
+                results = {}
+            results.update(ticker_data)
+            cache_file.write_text(json.dumps({"status": "OK", "results": results}))
+        buffer.clear()
+        manifest_path.write_text(json.dumps(sorted(done)))
+
+    for idx, ticker in enumerate(todo):
+        try:
+            bars = get_historical_bars(ticker, f"{start}T00:00:00Z", f"{end}T23:59:59Z", timeframe="1Day")
+        except Exception as e:
+            print(f"{ticker}: fetch error ({e}), skipping")
+            done.add(ticker)
+            continue
+        for b in bars:
+            date = datetime.datetime.fromisoformat(b["t"].replace("Z", "+00:00")).date().isoformat()
+            buffer[date][ticker] = [b["o"], b["h"], b["l"], b["c"], b["v"]]
+        done.add(ticker)
+        if (idx + 1) % batch_size == 0 or idx == len(todo) - 1:
+            _flush()
+            print(f"...flushed after {idx + 1}/{len(todo)} tickers this run ({len(done)}/{len(equities)} total)")
+        time.sleep(0.32)  # 200 req/min free tier, safety margin
+
+    print(f"done: {len(done)}/{len(equities)} tickers fetched")
 
 
 def _load_series(start, end):
@@ -431,6 +500,8 @@ if __name__ == "__main__":
     cmd, start, end = sys.argv[1], sys.argv[2], sys.argv[3]
     if cmd == "fetch":
         fetch_range(start, end)
+    elif cmd == "fetch_alpaca":
+        fetch_range_alpaca(start, end)
     elif cmd == "backtest":
         results = run_backtest(start, end)
         _summarize("BASELINE (unfiltered)", results)
@@ -440,4 +511,4 @@ if __name__ == "__main__":
     elif cmd == "compare":
         compare(start, end)
     else:
-        print("usage: backtest_ta.py [fetch|backtest|compare] START END")
+        print("usage: backtest_ta.py [fetch|fetch_alpaca|backtest|compare] START END")
