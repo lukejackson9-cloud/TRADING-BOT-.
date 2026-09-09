@@ -106,6 +106,26 @@ This doesn't change what gets researched or how thoroughly (skepticism
 and full council review stay exactly as rigorous) — it changes what gets
 foregrounded when talking to the user.
 
+## Goals & pace — explicit user decision, 2026-09-09
+User's stated goals: (1) make short-term trades for actual profit, (2)
+build something that improves through data analysis over time. Asked
+directly whether to stay patient (keep every existing evidence bar — council
+calibration, the TA/ICT promotion criteria — exactly where it is, even
+though that means real trading hasn't started and might not for a while)
+or deliberately loosen something now to get real/demo trades running
+sooner. **User chose patience: take more time for a higher win-rate
+chance, do not loosen anything to manufacture activity.** This
+reconfirms and extends the 2026-09-03 council-calibration decision and
+the 2026-09-07 execution-promotion criteria to the mechanical TA/ICT
+tracks too, now that the two were explicitly weighed against each other
+head-to-head. Do not revisit this trade-off unilaterally — a real,
+evidenced case for one setup (per its existing promotion criteria) is
+what changes this, not accumulated impatience, a losing streak, or a
+long stretch of "nothing happened" reports. If it's been a while and
+genuinely nothing has moved (no new evidence, no closer to a real
+candidate), say that plainly rather than manufacturing a sense of
+progress — but don't treat the wait itself as a reason to lower the bar.
+
 ## Council calibration: DO NOT loosen it — explicit user decision, 2026-09-03
 As of 2026-09-03, every CANDIDATE that has reached council.md has been
 downgraded to WATCH — 9 for 9, across three different screening methods
