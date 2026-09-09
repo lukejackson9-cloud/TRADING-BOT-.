@@ -388,35 +388,67 @@ market, completed 2026-09-07):**
     roughly breakeven-to-slightly-negative (~37-38% win rate, ~0% avg
     return/trade) — consistent with the full result above, not
     contradicted by it.
-  - **Tested two new setups (2026-09-09) — vcp_breakout is the most
-    promising result this project has produced so far:**
-    - `vcp_breakout`: breakout, but only when the prior 20 days show a
-      genuine volatility contraction first (recent-half average daily
-      range <= a ratio of the earlier half's — classic VCP/Minervini-
-      style setup). Real, MONOTONIC improvement as the contraction
-      requirement tightens: 0.8 ratio → 2,519 trades, -0.01%/trade
-      (roughly breakeven, matches plain breakout); 0.7 (default) → 1,072
-      trades, **+0.24%/trade**; 0.6 (tightest) → 383 trades,
-      **+0.79%/trade**, 49.3% win rate. This is the first setup tested
-      here with a meaningfully positive result across multiple parameter
-      values in the theoretically-expected direction, not a single
-      lucky number. Still not promoted — no transaction costs modeled,
-      and the tightest/best setting has a smaller sample (383 trades) —
-      but this is the strongest candidate yet for the forward
-      paper-trading track to confirm or refute. Automatically included
-      in `scripts/paper_trader.py`'s forward scan starting 2026-09-09
-      (shares `iter_signals()`, same mechanism as mean_reversion's
-      automatic inclusion on 09-08).
-    - `relative_strength`: stock's 20-day return vs. SPY's crossing up
-      through an outperformance threshold. Not promising — negative or
-      near-zero at every threshold tested (10pp: -0.04%/trade, 15pp:
-      -0.15%/trade, 20pp: -0.21%/trade). Not added to forward paper
-      trading (needs SPY data explicitly passed in, which the paper
-      trader doesn't currently do — correctly, since there's no result
-      here worth tracking forward).
+  - **Tested two new setups (2026-09-09), initially over the same 2-year
+    window, then re-tested over an extended 6-year window — the extension
+    REVERSED the one promising finding. Full honest account below:**
+    - `vcp_breakout` (breakout requiring genuine volatility contraction
+      first — classic VCP/Minervini pattern): over the 2-year window,
+      showed a real, monotonic improvement as the contraction requirement
+      tightened (0.8 ratio → -0.01%/trade; 0.7 default → +0.24%/trade;
+      0.6 tightest → +0.79%/trade, 383 trades) — the most promising
+      result this project had produced. **Extended to 6 years
+      (2020-08-05 to 2026-09-04, via Alpaca — see below): the pattern
+      did NOT replicate.** Default (0.7): 138 trades, -0.07%/trade
+      (negative, not +0.24%). Tightest (0.6): 57 trades, +0.27%/trade
+      (still positive but far smaller than +0.79%, and a small sample).
+      Loosest (0.8): 351 trades, -0.07%/trade (no longer clearly worse
+      than the default, breaking the monotonic pattern entirely). Total
+      signal count also dropped sharply over the longer window (138 vs.
+      1,072 at default) despite 3x the time span — the 2024-2026 period
+      used for the original test was evidently unusually rich in
+      qualifying momentum setups compared to the fuller 2020-2026 cycle
+      (which includes 2022's bear market), meaning the original 2-year
+      result was likely specific to a favorable, non-representative
+      window rather than a durable edge. **This is exactly the outcome
+      the "extend to more data before trusting a result" instinct exists
+      to catch** — logged honestly as a reversal, not hidden or
+      soft-pedaled. Not promoted; remains in forward paper trading
+      (harmless to keep collecting real data on, now with much lower
+      expectations).
+    - `relative_strength`: negative or near-zero at every threshold over
+      the 2-year window. Over 6 years: mixed and inconsistent, not
+      monotonic (10pp: +0.14%/trade, 15pp default: +0.06%/trade, 20pp:
+      -0.16%/trade) — reads as noise, not a real pattern. Not promoted,
+      not added to forward paper trading.
+    - All other setups also re-tested over the 6-year window: breakout
+      -0.06%/trade (2,666 trades, still negative but less so than the
+      2-year read), ema_cross +0.01%/trade (887 trades, now essentially
+      zero, weaker than the 2-year +0.07%), mean_reversion -0.46%/trade
+      (562 trades, notably worse than the 2-year -0.17%). Nothing here
+      shows a robust edge over the fuller market cycle either.
+    - **Data source note**: the 6-year extension uses Alpaca (confirmed
+      live 2026-09-09: real daily bars back to ~2020-08-05, over 3x
+      Massive's 2-year cap) for both the price universe
+      (`scripts/backtest_ta.py fetch_alpaca`) and SPY
+      (`_load_spy_bars()`, also switched to Alpaca since Massive can't
+      reach 2020 at all). TradingView was considered and ruled out for
+      this — the `tradingview-ta` integration only gives a live rating,
+      no historical bars, and getting real history from TradingView
+      would need session-authenticated scraping, a bigger step than the
+      public endpoints used elsewhere in this project.
+    - **Standing caveat, applies to every backtest in this file**: the
+      universe (`get_common_stock_tickers()`) reflects TODAY's active
+      tickers applied retroactively — a company that delisted or was
+      acquired between 2020-2026 is entirely absent from every year's
+      test, including years it was actually trading. This is
+      survivorship bias in the classic sense and plausibly makes every
+      result here look somewhat better than the true historical
+      picture, on top of whatever each individual setup's own numbers
+      already show (or don't).
 
-Do not promote any setup to the Strategy section — including vcp_breakout,
-its most promising result so far — and do not treat a
+Do not promote any setup to the Strategy section — none has earned it,
+and vcp_breakout's earlier promising read did not hold up under more
+data — and do not treat a
 CANDIDATE sourced this way as pre-validated, until: (a) a historical
 backtest shows real edge net of realistic costs, (b) a meaningful number
 of forward paper trades agree with it, and (c) the user has discussed and
