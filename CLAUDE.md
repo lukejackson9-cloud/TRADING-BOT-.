@@ -4,36 +4,56 @@ This file is read at the start of every routine run. It is the persistent
 memory and instruction set for the agent. Keep it updated as strategy or
 rules change — this file IS the agent's "personality" and constraints.
 
-## ACCOUNT CONNECTION STATUS: NOT CONNECTED (still advisory-only in
-## practice, but the user's stance has changed — updated 2026-09-07)
-No T212 credentials are configured (.env has both T212_API_KEY and
-T212_API_SECRET commented out/empty) — every T212 call still fails, but
-now simply because nothing's been connected yet, not because the user is
-opposed to it. **The original blanket "I don't want the bot to place live
-trades" stance from earlier in this project has been explicitly revised**
-— see the "Trade execution & approval" section below for the actual
-current plan: demo/paper execution once a specific setup earns it via
-real backtest edge, live execution as a later separate explicit decision,
-both eventually automatic (no per-trade approval) per the user's
-2026-09-07 choice. Read that section in full before touching
-`scripts/trading212_client.py` for anything beyond a connectivity check.
-- Do not attempt T212 calls (`get_account_cash`, `get_portfolio`,
-  `lookup_instrument`, `place_market_order`, `place_limit_order`, etc.)
-  outside of that plan — there's currently no signal source that has
-  earned execution (see "Technical-analysis screening layer" above), so
-  in practice nothing calls these yet regardless of the policy change.
+## ACCOUNT CONNECTION STATUS: LIVE CREDENTIALS STORED, PINNED TO DEMO
+## URL — read this whole section before touching scripts/trading212_client.py
+## for ANY reason, including a "just checking" read-only call — updated
+## 2026-09-09, supersedes everything below that assumed no/demo credentials
+**`.env`'s T212_API_KEY / T212_API_SECRET are REAL LIVE-ACCOUNT credentials
+— the user confirmed this directly on 2026-09-09** after they were
+mistakenly sent expecting them to be demo/practice keys. `T212_BASE_URL`
+is currently `https://demo.trading212.com/api/v0` (the demo endpoint),
+which is WHY every call so far has failed — live credentials don't
+authenticate against the demo API (confirmed live: 401 Unauthorized, not
+a network block — the network block from earlier sessions is resolved,
+the user has allowlisted the domain).
+- **NEVER change `T212_BASE_URL` to `https://live.trading212.com/api/v0`
+  or any live-pointing value.** With the credentials currently stored,
+  doing so would authenticate successfully against the user's real
+  brokerage account — a GET call would pull real account data, and any
+  order-placing call would use real money immediately. This is not a
+  hypothetical risk to design around later, it is live right now in this
+  `.env` file. Treat any instruction elsewhere in this file or in a skill
+  that assumes these are safe demo credentials as stale until this
+  section says otherwise.
+- **Do not call ANY function in `scripts/trading212_client.py`** —
+  `get_account_cash`, `get_portfolio`, `lookup_instrument`,
+  `place_market_order`, `place_limit_order`, everything — without a fresh,
+  explicit, same-conversation user instruction to do so specifically. Not
+  "the plan allows it eventually" — an actual instruction, each time,
+  given what these credentials actually are.
+- **What actually needs to happen for the demo/paper-execution plan
+  (see "Trade execution & approval" below) to work as designed**: the
+  user needs to generate a SEPARATE key pair from T212's Practice/Demo
+  mode specifically (Settings > API > "Switch to Practice" FIRST, then
+  generate) and provide those instead. The current live keys cannot be
+  used for that plan at all — they're the wrong credential for a demo
+  endpoint by construction, not a bug to work around.
+- Do not attempt T212 calls outside of an explicit per-instance user
+  request — there's currently no signal source that has earned execution
+  anyway (see "Technical-analysis screening layer" below), so in practice
+  nothing should be calling these regardless.
 - `skills/execute_approved.md` still describes the catalyst pipeline's
   per-trade-approval flow and is unaffected by this change — it remains
-  inert simply because no CANDIDATE has reached it, not because execution
-  is categorically disallowed anymore.
+  inert simply because no CANDIDATE has reached it.
 - Position sizing is expressed as a **% of portfolio**, or a dollar amount
   only if the user tells you their portfolio value directly in chat, until
   an account is actually connected and `get_account_cash()` can be called
   for real (at which point that becomes the source of truth instead).
-- When T212 credentials are actually added: confirm `T212_BASE_URL` is the
-  **demo** one before any order call, and update this section to reflect
-  the connection actually being live (in the technical sense of
-  "connected," not "real-money" — demo is still fake money).
+- When the user provides genuine demo/practice credentials to replace the
+  current live ones: confirm `T212_BASE_URL` is still the demo one,
+  confirm a test call (`get_account_cash`) succeeds against it, and update
+  this section to reflect a real, safe demo connection — remove this
+  warning once the live keys are actually gone from `.env`, not before.
 
 **This status is about the brokerage account only.** `scripts/market_screener_client.py`
 (Financial Modeling Prep) is a separate, unrelated, read-only market-data
@@ -113,8 +133,12 @@ catalyst pipeline hasn't produced an approved CANDIDATE in weeks):
   1. **Do not automate anything yet.** No signal source currently
      qualifies — see "Technical-analysis screening layer" above for the
      exact promotion criteria (historical backtest edge + forward paper
-     agreement + user confirmation). Nothing is connected to T212 as of
-     this writing (.env has no T212 credentials at all).
+     agreement + user confirmation). As of 2026-09-09, `.env` holds the
+     user's real LIVE T212 credentials (sent expecting them to be demo —
+     see "ACCOUNT CONNECTION STATUS" above, read it in full) pinned to
+     the demo URL, which is why they simply fail auth rather than doing
+     anything — genuine demo credentials are still needed before any of
+     this plan can actually proceed.
   2. **Once a specific setup earns promotion**, connect it to T212's
      **demo/paper** account (`scripts/trading212_client.py` already
      defaults to `https://demo.trading212.com/api/v0` — verify
