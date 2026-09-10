@@ -4,56 +4,59 @@ This file is read at the start of every routine run. It is the persistent
 memory and instruction set for the agent. Keep it updated as strategy or
 rules change — this file IS the agent's "personality" and constraints.
 
-## ACCOUNT CONNECTION STATUS: LIVE CREDENTIALS STORED, PINNED TO DEMO
-## URL — read this whole section before touching scripts/trading212_client.py
-## for ANY reason, including a "just checking" read-only call — updated
-## 2026-09-09, supersedes everything below that assumed no/demo credentials
-**`.env`'s T212_API_KEY / T212_API_SECRET are REAL LIVE-ACCOUNT credentials
-— the user confirmed this directly on 2026-09-09** after they were
-mistakenly sent expecting them to be demo/practice keys. `T212_BASE_URL`
-is currently `https://demo.trading212.com/api/v0` (the demo endpoint),
-which is WHY every call so far has failed — live credentials don't
-authenticate against the demo API (confirmed live: 401 Unauthorized, not
-a network block — the network block from earlier sessions is resolved,
-the user has allowlisted the domain).
-- **NEVER change `T212_BASE_URL` to `https://live.trading212.com/api/v0`
-  or any live-pointing value.** With the credentials currently stored,
-  doing so would authenticate successfully against the user's real
-  brokerage account — a GET call would pull real account data, and any
-  order-placing call would use real money immediately. This is not a
-  hypothetical risk to design around later, it is live right now in this
-  `.env` file. Treat any instruction elsewhere in this file or in a skill
-  that assumes these are safe demo credentials as stale until this
-  section says otherwise.
-- **Do not call ANY function in `scripts/trading212_client.py`** —
-  `get_account_cash`, `get_portfolio`, `lookup_instrument`,
-  `place_market_order`, `place_limit_order`, everything — without a fresh,
-  explicit, same-conversation user instruction to do so specifically. Not
-  "the plan allows it eventually" — an actual instruction, each time,
-  given what these credentials actually are.
-- **What actually needs to happen for the demo/paper-execution plan
-  (see "Trade execution & approval" below) to work as designed**: the
-  user needs to generate a SEPARATE key pair from T212's Practice/Demo
-  mode specifically (Settings > API > "Switch to Practice" FIRST, then
-  generate) and provide those instead. The current live keys cannot be
-  used for that plan at all — they're the wrong credential for a demo
-  endpoint by construction, not a bug to work around.
-- Do not attempt T212 calls outside of an explicit per-instance user
-  request — there's currently no signal source that has earned execution
-  anyway (see "Technical-analysis screening layer" below), so in practice
-  nothing should be calling these regardless.
+## ACCOUNT CONNECTION STATUS: GENUINE DEMO ACCOUNT CONNECTED — updated
+## 2026-09-10, supersedes everything below that assumed live or
+## non-working credentials
+**`.env`'s T212_API_KEY / T212_API_SECRET are now genuine Practice/Demo
+credentials, confirmed live-tested 2026-09-10**: `get_account_cash()`
+returned `200 OK` with `{"free": 5000.00, "total": 5000.00, "ppl": 0,
+"invested": 0, ...}` — a real demo account with a $5,000 starting
+balance. `T212_BASE_URL` is `https://demo.trading212.com/api/v0`. The
+original live keys from 2026-09-09 are fully replaced in `.env`, not
+just shadowed — confirmed by reading the file directly before writing
+this section.
+- **Root cause of every earlier connection failure, now resolved**: the
+  first two demo key pairs generated on 2026-09-09/10 both returned an
+  empty-body `403 Forbidden` (a Cloudflare-layer signature — `__cf_bm`
+  cookie, `Server: cloudflare`, no JSON body) that looked like a
+  network/WAF block and reproduced even from the user's own separate
+  mobile network, not just this session's sandbox. It turned out to be
+  neither: **the API key itself had permission scopes unchecked** at
+  generation time in the T212 app. A third key generated with all
+  available scopes ticked worked immediately, same sandbox, same code,
+  first try. Lesson for any future T212 connectivity debugging: an
+  empty 403 with Cloudflare headers on this API can mean "key lacks a
+  required scope," not only "network/WAF block" — check key permissions
+  in the T212 app before spending more time on network-layer theories.
+- **This connects the mechanical TA/ICT paper-trading track's promotion
+  path (see "Trade execution & approval" below) to a real demo account
+  for the first time** — but connectivity alone does not promote
+  anything. No setup has earned automatic demo execution yet per that
+  section's criteria; this just means the plumbing now works when one
+  does.
+- **NEVER change `T212_BASE_URL` to `https://live.trading212.com/api/v0`**
+  — that remains true regardless of whether the stored credentials are
+  demo or live at any given time; live execution requires the separate,
+  explicit, later decision described in "Trade execution & approval"
+  below, plus `/config/settings.json` set to `"mode": "live"`.
+- Read-only calls (`get_account_cash`, `get_portfolio`,
+  `get_pending_orders`, `lookup_instrument`) against the demo endpoint
+  are now safe to make when they serve an actual purpose (e.g.
+  confirming balance before sizing a demo trade once a setup is
+  promoted) — this is a real demo account with fake money, not a
+  hazard. Order-placing calls (`place_market_order`,
+  `place_limit_order`) still require either an explicit per-instance
+  user instruction, or an actual promoted setup executing per its own
+  approved, coded rules (see "Trade execution & approval") — never an
+  ad hoc call outside those two paths.
 - `skills/execute_approved.md` still describes the catalyst pipeline's
-  per-trade-approval flow and is unaffected by this change — it remains
-  inert simply because no CANDIDATE has reached it.
-- Position sizing is expressed as a **% of portfolio**, or a dollar amount
-  only if the user tells you their portfolio value directly in chat, until
-  an account is actually connected and `get_account_cash()` can be called
-  for real (at which point that becomes the source of truth instead).
-- When the user provides genuine demo/practice credentials to replace the
-  current live ones: confirm `T212_BASE_URL` is still the demo one,
-  confirm a test call (`get_account_cash`) succeeds against it, and update
-  this section to reflect a real, safe demo connection — remove this
-  warning once the live keys are actually gone from `.env`, not before.
+  per-trade-approval flow, unaffected by this change — it remains inert
+  simply because no CANDIDATE has reached it, not because of any
+  connection issue.
+- Position sizing can now use the real demo balance ($5,000 as of
+  2026-09-10) as source of truth via `get_account_cash()` once a demo
+  trade is actually being sized — advisory proposals to the user still
+  express size as a % of portfolio per the Hard Risk Rules.
 
 **This status is about the brokerage account only.** `scripts/market_screener_client.py`
 (Financial Modeling Prep) is a separate, unrelated, read-only market-data
