@@ -460,6 +460,43 @@ of forward paper trades agree with it, and (c) the user has discussed and
 confirmed the change — same standard as the council-calibration rule
 above.
 
+### ICT (Inner Circle Trader / smart money concepts) intraday model — six variants tested, none show edge (2026-09-07, extended 2026-09-10)
+Separate from the swing-style setups above, `scripts/backtest_ict.py` tests
+mechanical ICT day-trading concepts against Alpaca's 5-min bars
+(2021-06-01 to 2026-09-04, ~30 large-cap liquid names, NY AM killzone
+only — see the module docstring for exactly why this scope, not "all of
+ICT"). **Six distinct mechanisms tested, all negative or statistically
+zero once verified:**
+- Baseline (liquidity sweep → market structure shift → fair value gap
+  retracement entry): 987 trades, 32.6% win rate, **-0.11R/trade**.
+- + RSI-divergence bias filter at the sweep: 175 trades, 33.1% win,
+  **-0.19R/trade** — filtering for momentum confirmation made it worse,
+  not better, despite the higher win rate.
+- Order-block entry (last opposite-color candle before the impulse,
+  instead of the FVG): 2,835 trades, 35.3% win, **-0.02R/trade** — the
+  closest to flat of any variant, confirmed broadly distributed across
+  the universe (checked per-symbol; no single name driving it).
+- OTE (62-79% Fibonacci retracement) entry: 3,871 trades, 34.1% win,
+  **headline +0.02R/trade — but this does NOT hold up.** NVDA alone
+  contributed 70.2% of the entire net positive R (58.1 of 82.8 total);
+  excluding NVDA the average is +0.007R/trade, statistically
+  indistinguishable from zero. Caught and verified via the same
+  per-symbol due-diligence that caught vcp_breakout's false positive —
+  logged here specifically so a future session doesn't re-report the
+  headline number without re-deriving this check.
+- Inverse FVG (a violated gap flips polarity, trade the reversal): 326
+  trades, 31.3% win, **-0.16R/trade**.
+- Equal-highs/equal-lows liquidity pool (genuine equal levels over a
+  5-day lookback, instead of always PDH/PDL): 218 trades, 30.7% win,
+  **-0.13R/trade**.
+
+**Verdict: none of these six mechanisms are promoted or fed into forward
+paper trading.** Order-block is the least-bad and could be worth a future
+look if combined with a genuinely different idea, but is still net
+negative on its own. Full trade-level results cached at
+`data/reference/backtest_ict_cache/results_*.json` (gitignored,
+regenerable via the `backtest*` CLI commands documented in the script).
+
 ### Original theoretical cadence (kept for reference — superseded by the single daily run above for the screen/research/council/propose steps)
 - Pre-market (8:00 AM ET): run skills/screen.md → update watchlist
 - Market open+30m (10:00 AM ET): run skills/research.md → skills/council.md

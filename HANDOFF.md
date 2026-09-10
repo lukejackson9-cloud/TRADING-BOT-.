@@ -703,3 +703,41 @@ moves) -- traced to a self-made analysis-script bug (double-applying the
 client-code issue. The client's actual `pct_change` field was correct
 the whole time. Worth remembering before assuming a screener bug on a
 future session.
+
+## 2026-09-10 (evening): T212 demo connected; six ICT variants tested, none show edge
+Two unrelated threads, same evening.
+
+**T212 demo account genuinely connected.** After two demo key pairs both
+returned an empty-body 403 (a Cloudflare-layer signature that reproduced
+even from the user's own separate mobile network, initially read as a
+network/WAF block), a THIRD key generated with all permission scopes
+explicitly ticked worked immediately: `get_account_cash()` returned
+`200 OK`, `{"free": 5000.00, "total": 5000.00}`. Root cause was a missing
+key scope, not network/WAF at all -- see CLAUDE.md's rewritten ACCOUNT
+CONNECTION STATUS section for the full account, including this lesson
+for future connectivity debugging. This doesn't promote anything to
+automatic execution by itself -- just means the plumbing works once a
+setup does earn it.
+
+**Six ICT model variants tested against `scripts/backtest_ict.py`'s
+existing 5-year cached dataset (2021-06-01 to 2026-09-04, no new fetch
+needed)** -- user wanted to explore ICT concepts (bias/divergence,
+inverse FVG, retrace-to-FVG, resting liquidity) given concern about weeks
+passing with no trades. Full comparison table and reasoning now lives in
+CLAUDE.md's new "ICT ... six variants tested" subsection under Technical-
+analysis screening layer -- summary: baseline -0.11R/trade, +divergence
+filter -0.19R, order-block entry -0.02R (closest to flat, confirmed
+broadly distributed), OTE/Fibonacci entry headline +0.02R but revealed
+via per-symbol breakdown to be 70.2% attributable to NVDA alone
+(ex-NVDA: +0.007R, statistically zero), inverse FVG -0.16R, EQH/EQL
+liquidity pool -0.13R. **None promoted.** The OTE/NVDA catch is a good
+concrete example of the same due-diligence discipline that caught
+vcp_breakout's 2-year-vs-6-year reversal -- verify a promising aggregate
+number against per-symbol/per-period concentration before reporting it,
+every time, no exceptions for "this one looks different."
+
+This was done same-evening as the 09-11 14:00 UTC journal check-in
+(already updated with the current scope, see that trigger's description)
+specifically as a bounded, cheap exception the user asked for given their
+stated concern about pace -- not a precedent for skipping the "hold new
+testing for the check-in" rule going forward without asking first.

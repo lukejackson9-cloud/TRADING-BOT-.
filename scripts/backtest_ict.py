@@ -167,6 +167,52 @@ def _find_fvg(bars, lo, hi, direction):
     return None
 
 
+def _find_order_block_zone(bars, lo, hi, direction):
+    """Order block: the last candle of the OPPOSITE color to the impulse,
+    immediately before that impulse, in bars[lo:hi] -- the classic ICT
+    "last down candle before the up move" (and mirror for bearish). Returns
+    (low, high) of that candle's full range, or None if no opposite-color
+    candle exists in the window."""
+    opposite_is_red = direction == "bullish"  # bullish impulse -> look for a red (down) candle
+    for i in range(hi - 1, lo - 1, -1):
+        b = bars[i]
+        is_red = b["c"] < b["o"]
+        if is_red == opposite_is_red:
+            return b["l"], b["h"]
+    return None
+
+
+def _find_ote_zone(bars, lo, hi, direction):
+    """Optimal Trade Entry: the 62%-79% Fibonacci retracement zone of the
+    impulse leg spanning bars[lo:hi] (leg_low/leg_high = the extremes
+    reached across that window). Returns (zone_low, zone_high), or None if
+    the leg has zero range."""
+    leg_low = min(b["l"] for b in bars[lo:hi])
+    leg_high = max(b["h"] for b in bars[lo:hi])
+    rng = leg_high - leg_low
+    if rng <= 0:
+        return None
+    if direction == "bullish":
+        return leg_high - 0.79 * rng, leg_high - 0.62 * rng
+    else:
+        return leg_low + 0.62 * rng, leg_low + 0.79 * rng
+
+
+def _find_equal_levels(extremes, tolerance=0.0015):
+    """Given a list of (date, price) extremes (e.g. each of the last N
+    days' regular-session highs, or lows), finds the first pair within
+    `tolerance` (relative) of each other and returns their average as the
+    "equal highs/lows" liquidity level. Returns None if no pair is close
+    enough -- genuinely equal levels are the point, not just "the max of
+    the lookback window" relabeled."""
+    for i in range(len(extremes)):
+        for j in range(i + 1, len(extremes)):
+            p1, p2 = extremes[i][1], extremes[j][1]
+            if abs(p1 - p2) / max(p1, p2) <= tolerance:
+                return (p1 + p2) / 2
+    return None
+
+
 def _has_divergence(bar, direction, swing_bars):
     """Bias/divergence filter: does the sweep bar's RSI fail to confirm its
     own price extreme against the most extreme prior swing bar? A bearish
@@ -190,14 +236,21 @@ def _has_divergence(bar, direction, swing_bars):
         return bar["l"] <= ref["l"] and bar["_rsi"] > ref["_rsi"]
 
 
-def _simulate_day(killzone_bars, pdh, pdl, all_day_bars, kz_start_idx, require_divergence=False):
-    """Runs the sweep -> MSS -> FVG model against one day's killzone bars.
-    Returns a trade dict or None. all_day_bars/kz_start_idx let the target/
-    stop simulation continue past 11:00 using the rest of the day's bars.
+def _simulate_day(killzone_bars, pdh, pdl, all_day_bars, kz_start_idx, require_divergence=False, entry_mode="fvg"):
+    """Runs the sweep -> MSS -> {FVG,order_block,OTE} model against one
+    day's killzone bars. Returns a trade dict or None. all_day_bars/
+    kz_start_idx let the target/stop simulation continue past 11:00 using
+    the rest of the day's bars.
     require_divergence=True adds an RSI-divergence bias filter at the
     sweep bar (see _has_divergence) -- a cheap sanity test of whether a
     momentum-confirmation filter closes the near-miss gap in the baseline
-    model's win rate, using bars already cached, no new data fetch."""
+    model's win rate, using bars already cached, no new data fetch.
+    entry_mode selects the zone the model waits for a retracement into:
+    "fvg" (baseline), "order_block", or "ote" -- isolates the effect of
+    changing ONLY the entry-zone definition, keeping sweep/MSS/stop/target
+    logic identical across all three so results are directly comparable."""
+    if pdh is None or pdl is None:
+        return None
     for k in range(len(killzone_bars)):
         bar = killzone_bars[k]
         swept_high = bar["h"] > pdh and bar["c"] < pdh
@@ -228,10 +281,15 @@ def _simulate_day(killzone_bars, pdh, pdl, all_day_bars, kz_start_idx, require_d
         if mss_idx is None:
             continue
 
-        fvg = _find_fvg(killzone_bars, k, mss_idx + 1, direction)
-        if fvg is None:
+        if entry_mode == "order_block":
+            zone = _find_order_block_zone(killzone_bars, k, mss_idx + 1, direction)
+        elif entry_mode == "ote":
+            zone = _find_ote_zone(killzone_bars, k, mss_idx + 1, direction)
+        else:
+            zone = _find_fvg(killzone_bars, k, mss_idx + 1, direction)
+        if zone is None:
             continue
-        gap_low, gap_high = fvg
+        gap_low, gap_high = zone
         entry_price = (gap_low + gap_high) / 2
 
         entry_idx = None
@@ -270,7 +328,21 @@ def _simulate_day(killzone_bars, pdh, pdl, all_day_bars, kz_start_idx, require_d
     return None
 
 
-def run_backtest(start, end, require_divergence=False):
+def _report(all_trades, label, start, end, suffix):
+    n = len(all_trades)
+    if n == 0:
+        print(f"{label}: 0 trades in range")
+        return
+    wins = [t for t in all_trades if t["return_r"] > 0]
+    win_rate = len(wins) / n * 100
+    avg_r = sum(t["return_r"] for t in all_trades) / n
+    print(f"{label}: {n} trades, win rate {win_rate:.1f}%, avg {avg_r:.2f}R/trade")
+    out_path = CACHE_DIR / f"results_{start}_{end}{suffix}.json"
+    out_path.write_text(json.dumps(all_trades, indent=2))
+    print(f"full trade list written to {out_path}")
+
+
+def run_backtest(start, end, require_divergence=False, entry_mode="fvg"):
     all_trades = []
     for symbol in UNIVERSE:
         days = _load_days(symbol)
@@ -293,25 +365,193 @@ def run_backtest(start, end, require_divergence=False):
             if kz_start_idx is None:
                 continue
 
-            trade = _simulate_day(kz, pdh, pdl, day_bars, kz_start_idx, require_divergence=require_divergence)
+            trade = _simulate_day(kz, pdh, pdl, day_bars, kz_start_idx,
+                                   require_divergence=require_divergence, entry_mode=entry_mode)
             if trade:
                 trade.update(symbol=symbol, date=date)
                 all_trades.append(trade)
 
-    n = len(all_trades)
-    label = "ICT sweep+MSS+FVG+divergence-bias model" if require_divergence else "ICT sweep+MSS+FVG model"
-    if n == 0:
-        print(f"{label}: 0 trades in range")
-        return
-    wins = [t for t in all_trades if t["return_r"] > 0]
-    win_rate = len(wins) / n * 100
-    avg_r = sum(t["return_r"] for t in all_trades) / n
-    print(f"{label}: {n} trades, win rate {win_rate:.1f}%, avg {avg_r:.2f}R/trade")
+    if require_divergence:
+        label, suffix = "ICT sweep+MSS+FVG+divergence-bias model", "_divergence"
+    elif entry_mode == "order_block":
+        label, suffix = "ICT sweep+MSS+order-block-entry model", "_orderblock"
+    elif entry_mode == "ote":
+        label, suffix = "ICT sweep+MSS+OTE-entry model", "_ote"
+    else:
+        label, suffix = "ICT sweep+MSS+FVG model", ""
+    _report(all_trades, label, start, end, suffix)
 
-    suffix = "_divergence" if require_divergence else ""
-    out_path = CACHE_DIR / f"results_{start}_{end}{suffix}.json"
-    out_path.write_text(json.dumps(all_trades, indent=2))
-    print(f"full trade list written to {out_path}")
+
+def _simulate_day_inverse_fvg(killzone_bars, pdh, pdl, all_day_bars, kz_start_idx):
+    """Inverse FVG variant: same sweep -> MSS -> FVG detection as the
+    baseline, but instead of entering on the FIRST retracement into the
+    gap, watches for the gap to be VIOLATED first (a later bar closes back
+    through it, meaning the original impulse failed) and then trades the
+    REVERSAL -- entering on a retracement back into that same zone, now
+    acting as resistance/support in the opposite direction. This is a
+    materially different mechanism from the baseline's "gap holds, trade
+    the continuation" bet -- it's "gap fails, trade the flip.\""""
+    if pdh is None or pdl is None:
+        return None
+    for k in range(len(killzone_bars)):
+        bar = killzone_bars[k]
+        swept_high = bar["h"] > pdh and bar["c"] < pdh
+        swept_low = bar["l"] < pdl and bar["c"] > pdl
+        if not (swept_high or swept_low):
+            continue
+
+        direction = "bearish" if swept_high else "bullish"
+
+        lookback_start = max(0, k - SWING_LOOKBACK)
+        swing_bars = killzone_bars[lookback_start:k]
+        if not swing_bars:
+            continue
+        swing_level = min(b["l"] for b in swing_bars) if direction == "bearish" else max(b["h"] for b in swing_bars)
+
+        mss_idx = None
+        for m in range(k + 1, len(killzone_bars)):
+            if direction == "bearish" and killzone_bars[m]["c"] < swing_level:
+                mss_idx = m
+                break
+            if direction == "bullish" and killzone_bars[m]["c"] > swing_level:
+                mss_idx = m
+                break
+        if mss_idx is None:
+            continue
+
+        fvg = _find_fvg(killzone_bars, k, mss_idx + 1, direction)
+        if fvg is None:
+            continue
+        gap_low, gap_high = fvg
+
+        # Watch for violation: a bar closing back through the gap against
+        # the original direction, after the MSS confirmation.
+        violation_idx = None
+        for v in range(mss_idx + 1, len(killzone_bars)):
+            vb = killzone_bars[v]
+            if direction == "bullish" and vb["c"] < gap_low:
+                violation_idx = v
+                break
+            if direction == "bearish" and vb["c"] > gap_high:
+                violation_idx = v
+                break
+        if violation_idx is None:
+            continue
+
+        new_direction = "bearish" if direction == "bullish" else "bullish"
+        # New stop reference: the most extreme price reached in the
+        # ORIGINAL direction between the MSS and the violation -- the high
+        # (for a failed bullish move) or low (for a failed bearish move)
+        # that the reversal needs to invalidate to prove itself wrong.
+        pre_violation = killzone_bars[mss_idx:violation_idx + 1]
+        new_stop = max(b["h"] for b in pre_violation) if new_direction == "bearish" else min(b["l"] for b in pre_violation)
+
+        entry_price = (gap_low + gap_high) / 2
+        entry_idx = None
+        for e in range(violation_idx + 1, len(killzone_bars)):
+            if killzone_bars[e]["l"] <= entry_price <= killzone_bars[e]["h"]:
+                entry_idx = e
+                break
+        if entry_idx is None:
+            continue
+
+        risk = abs(entry_price - new_stop)
+        if risk <= 0:
+            continue
+        target_price = entry_price + (2 * risk if new_direction == "bullish" else -2 * risk)
+
+        global_entry_idx = kz_start_idx + entry_idx
+        for f in range(global_entry_idx + 1, len(all_day_bars)):
+            fb = all_day_bars[f]
+            if fb["_ny_time"] > SESSION_CLOSE:
+                break
+            if new_direction == "bullish":
+                if fb["l"] <= new_stop:
+                    return {"return_r": -1.0, "direction": new_direction}
+                if fb["h"] >= target_price:
+                    return {"return_r": 2.0, "direction": new_direction}
+            else:
+                if fb["h"] >= new_stop:
+                    return {"return_r": -1.0, "direction": new_direction}
+                if fb["l"] <= target_price:
+                    return {"return_r": 2.0, "direction": new_direction}
+        last_close = all_day_bars[min(global_entry_idx + 1, len(all_day_bars) - 1)]["c"]
+        pct = (last_close - entry_price) / risk if new_direction == "bullish" else (entry_price - last_close) / risk
+        return {"return_r": pct, "direction": new_direction}
+    return None
+
+
+def run_backtest_inverse_fvg(start, end):
+    all_trades = []
+    for symbol in UNIVERSE:
+        days = _load_days(symbol)
+        sorted_dates = sorted(days.keys())
+        for i in range(1, len(sorted_dates)):
+            date, prev_date = sorted_dates[i], sorted_dates[i - 1]
+            if not (start <= date <= end):
+                continue
+            prev_bars = days[prev_date]
+            regular = [b for b in prev_bars if datetime.time(9, 30) <= b["_ny_time"] <= SESSION_CLOSE]
+            if not regular:
+                continue
+            pdh, pdl = max(b["h"] for b in regular), min(b["l"] for b in regular)
+            day_bars = sorted(days[date], key=lambda b: b["_ny_time"])
+            kz = [b for b in day_bars if KILLZONE_START <= b["_ny_time"] <= KILLZONE_END]
+            if not kz:
+                continue
+            kz_start_idx = next((idx for idx, b in enumerate(day_bars) if b["_ny_time"] >= KILLZONE_START), None)
+            if kz_start_idx is None:
+                continue
+            trade = _simulate_day_inverse_fvg(kz, pdh, pdl, day_bars, kz_start_idx)
+            if trade:
+                trade.update(symbol=symbol, date=date)
+                all_trades.append(trade)
+    _report(all_trades, "ICT sweep+MSS+inverse-FVG model", start, end, "_inversefvg")
+
+
+def run_backtest_eqhl(start, end, lookback_days=5, tolerance=0.0015):
+    """Same sweep -> MSS -> FVG model as the baseline, but the liquidity
+    pool is genuine equal highs/equal lows over the trailing `lookback_days`
+    regular sessions (two closes within `tolerance` of each other) instead
+    of always using the prior day's high/low. Isolates the effect of the
+    liquidity-pool DEFINITION, keeping entry/stop/target logic identical to
+    baseline. A day with no qualifying equal-high or equal-low cluster has
+    no pool on that side -- skipped, not silently replaced with PDH/PDL."""
+    all_trades = []
+    for symbol in UNIVERSE:
+        days = _load_days(symbol)
+        sorted_dates = sorted(days.keys())
+        session_extremes = {}
+        for d in sorted_dates:
+            regular = [b for b in days[d] if datetime.time(9, 30) <= b["_ny_time"] <= SESSION_CLOSE]
+            if regular:
+                session_extremes[d] = (max(b["h"] for b in regular), min(b["l"] for b in regular))
+
+        for i in range(lookback_days, len(sorted_dates)):
+            date = sorted_dates[i]
+            if not (start <= date <= end):
+                continue
+            window_dates = [sorted_dates[i - n] for n in range(1, lookback_days + 1) if sorted_dates[i - n] in session_extremes]
+            highs = [(d, session_extremes[d][0]) for d in window_dates]
+            lows = [(d, session_extremes[d][1]) for d in window_dates]
+            pdh = _find_equal_levels(highs, tolerance)
+            pdl = _find_equal_levels(lows, tolerance)
+            if pdh is None and pdl is None:
+                continue
+
+            day_bars = sorted(days[date], key=lambda b: b["_ny_time"])
+            kz = [b for b in day_bars if KILLZONE_START <= b["_ny_time"] <= KILLZONE_END]
+            if not kz:
+                continue
+            kz_start_idx = next((idx for idx, b in enumerate(day_bars) if b["_ny_time"] >= KILLZONE_START), None)
+            if kz_start_idx is None:
+                continue
+
+            trade = _simulate_day(kz, pdh, pdl, day_bars, kz_start_idx)
+            if trade:
+                trade.update(symbol=symbol, date=date)
+                all_trades.append(trade)
+    _report(all_trades, "ICT sweep(EQH/EQL)+MSS+FVG model", start, end, "_eqhl")
 
 
 if __name__ == "__main__":
@@ -322,5 +562,14 @@ if __name__ == "__main__":
         run_backtest(start, end)
     elif cmd == "backtest_divergence":
         run_backtest(start, end, require_divergence=True)
+    elif cmd == "backtest_orderblock":
+        run_backtest(start, end, entry_mode="order_block")
+    elif cmd == "backtest_ote":
+        run_backtest(start, end, entry_mode="ote")
+    elif cmd == "backtest_inversefvg":
+        run_backtest_inverse_fvg(start, end)
+    elif cmd == "backtest_eqhl":
+        run_backtest_eqhl(start, end)
     else:
-        print("usage: backtest_ict.py [fetch|backtest|backtest_divergence] START END")
+        print("usage: backtest_ict.py [fetch|backtest|backtest_divergence|"
+              "backtest_orderblock|backtest_ote|backtest_inversefvg|backtest_eqhl] START END")
