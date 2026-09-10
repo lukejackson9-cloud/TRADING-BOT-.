@@ -460,12 +460,12 @@ of forward paper trades agree with it, and (c) the user has discussed and
 confirmed the change — same standard as the council-calibration rule
 above.
 
-### ICT (Inner Circle Trader / smart money concepts) intraday model — six variants tested, none show edge (2026-09-07, extended 2026-09-10)
+### ICT (Inner Circle Trader / smart money concepts) intraday model — eight variants tested, none show edge (2026-09-07, extended 2026-09-10)
 Separate from the swing-style setups above, `scripts/backtest_ict.py` tests
 mechanical ICT day-trading concepts against Alpaca's 5-min bars
 (2021-06-01 to 2026-09-04, ~30 large-cap liquid names, NY AM killzone
 only — see the module docstring for exactly why this scope, not "all of
-ICT"). **Six distinct mechanisms tested, all negative or statistically
+ICT"). **Eight distinct mechanisms tested, all negative or statistically
 zero once verified:**
 - Baseline (liquidity sweep → market structure shift → fair value gap
   retracement entry): 987 trades, 32.6% win rate, **-0.11R/trade**.
@@ -489,11 +489,36 @@ zero once verified:**
 - Equal-highs/equal-lows liquidity pool (genuine equal levels over a
   5-day lookback, instead of always PDH/PDL): 218 trades, 30.7% win,
   **-0.13R/trade**.
+- News-calendar filter, EXCLUDING NFP+FOMC days: 913 trades, 32.4% win,
+  **-0.11R/trade** — essentially identical to baseline; news days are too
+  small a fraction (~7%) of all sweeps to move the aggregate either way.
+- News-calendar filter, ONLY NFP+FOMC days: 74 trades, 35.1% win,
+  **-0.07R/trade** — a real, modestly better result than baseline
+  (verified broadly distributed: 27 of 30 symbols, 48 distinct dates, not
+  a fluke), but still net negative and a small sample. Tested 2026-09-10
+  after the user's friend mentioned his own (reportedly successful) ICT
+  bot integrates ForexFactory's economic calendar — this was the
+  concrete, testable version of that idea. FOMC dates (39, 2021-06 to
+  2026-09) were verified via WebSearch against Fed schedule
+  announcements, NOT guessed; NFP is a deterministic rule (first Friday
+  of month) needing no external source. CPI dates were deliberately
+  EXCLUDED from this test — BLS's schedule pages are blocked by this
+  environment's egress policy and WebSearch only returned scattered
+  sample dates, not a complete verified multi-year list; guess-filling
+  the gaps would have violated this project's non-negotiable rule
+  against fabricating research, so the test is honestly scoped to
+  NFP+FOMC only, not "all high-impact news."
 
-**Verdict: none of these six mechanisms are promoted or fed into forward
-paper trading.** Order-block is the least-bad and could be worth a future
-look if combined with a genuinely different idea, but is still net
-negative on its own. Full trade-level results cached at
+**Verdict: none of these eight mechanisms are promoted or fed into
+forward paper trading.** Order-block is the least-bad and could be worth
+a future look if combined with a genuinely different idea, but is still
+net negative on its own. The news-calendar hypothesis is real but small,
+not the explanation for a reportedly successful friend's-bot comparison
+— the more likely explanations (different instrument, e.g. forex vs.
+these US equities; genuine discretionary selectivity vs. a fixed
+mechanical rule; finer timeframe; execution/data precision) remain
+untestable without specifics from that other bot, not more variant-
+testing on this project's own dataset. Full trade-level results cached at
 `data/reference/backtest_ict_cache/results_*.json` (gitignored,
 regenerable via the `backtest*` CLI commands documented in the script).
 

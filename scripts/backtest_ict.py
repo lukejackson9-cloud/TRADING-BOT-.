@@ -96,6 +96,40 @@ KILLZONE_START, KILLZONE_END = datetime.time(9, 30), datetime.time(11, 0)
 SESSION_CLOSE = datetime.time(16, 0)
 SWING_LOOKBACK = 6
 
+# FOMC decision-day dates (the 2nd day of each 2-day meeting, when the 2pm ET
+# announcement happens), verified via WebSearch against Federal Reserve
+# schedule announcements -- NOT computed/guessed. Covers 2021-06 through
+# 2026-09 (this script's backtest range). CPI dates were also researched but
+# could not be reliably compiled into a complete, verified multi-year list
+# in this session (BLS's own schedule pages are blocked by this
+# environment's network egress policy, and WebSearch only surfaced scattered
+# sample dates, not a full verified set) -- deliberately excluded rather
+# than guess-filled, per this project's non-negotiable rule against
+# fabricating research. NFP is not listed here since it's a fixed calendar
+# rule (see _is_nfp_day) needing no external source.
+FOMC_DATES = {
+    "2021-06-16", "2021-07-28", "2021-09-22", "2021-11-03", "2021-12-15",
+    "2022-01-26", "2022-03-16", "2022-05-04", "2022-06-15", "2022-07-27",
+    "2022-09-21", "2022-11-02", "2022-12-14",
+    "2023-02-01", "2023-03-22", "2023-05-03", "2023-06-14", "2023-07-26",
+    "2023-09-20", "2023-11-01", "2023-12-13",
+    "2024-01-31", "2024-03-20", "2024-05-01", "2024-06-12", "2024-07-31",
+    "2024-09-18", "2024-11-07", "2024-12-18",
+    "2025-01-29", "2025-03-19", "2025-05-07", "2025-06-18", "2025-07-30",
+    "2025-09-17", "2025-10-29", "2025-12-10",
+    "2026-01-28", "2026-03-18",
+}
+
+
+def _is_nfp_day(date_str):
+    """NFP releases at 8:30am ET on the first Friday of each month (the one
+    fixed, no-exceptions-in-this-window rule among the "big three" releases
+    -- unlike FOMC/CPI, this needs no external source to get right)."""
+    d = datetime.date.fromisoformat(date_str)
+    if d.weekday() != 4:  # Friday
+        return False
+    return d.day <= 7
+
 
 def fetch_universe(start, end):
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
@@ -554,6 +588,50 @@ def run_backtest_eqhl(start, end, lookback_days=5, tolerance=0.0015):
     _report(all_trades, "ICT sweep(EQH/EQL)+MSS+FVG model", start, end, "_eqhl")
 
 
+def run_backtest_newsfilter(start, end, mode):
+    """Same baseline sweep+MSS+FVG model, but restricted by news-day status.
+    mode="exclude": skip NFP/FOMC days entirely (the "avoid news noise"
+    theory). mode="only": trade ONLY on NFP/FOMC days (the "news creates
+    the real institutional liquidity sweep" theory). Isolates this one
+    variable -- entry/stop/target logic is identical to baseline."""
+    all_trades = []
+    for symbol in UNIVERSE:
+        days = _load_days(symbol)
+        sorted_dates = sorted(days.keys())
+        for i in range(1, len(sorted_dates)):
+            date, prev_date = sorted_dates[i], sorted_dates[i - 1]
+            if not (start <= date <= end):
+                continue
+            is_news_day = date in FOMC_DATES or _is_nfp_day(date)
+            if mode == "exclude" and is_news_day:
+                continue
+            if mode == "only" and not is_news_day:
+                continue
+
+            prev_bars = days[prev_date]
+            regular = [b for b in prev_bars if datetime.time(9, 30) <= b["_ny_time"] <= SESSION_CLOSE]
+            if not regular:
+                continue
+            pdh, pdl = max(b["h"] for b in regular), min(b["l"] for b in regular)
+
+            day_bars = sorted(days[date], key=lambda b: b["_ny_time"])
+            kz = [b for b in day_bars if KILLZONE_START <= b["_ny_time"] <= KILLZONE_END]
+            if not kz:
+                continue
+            kz_start_idx = next((idx for idx, b in enumerate(day_bars) if b["_ny_time"] >= KILLZONE_START), None)
+            if kz_start_idx is None:
+                continue
+
+            trade = _simulate_day(kz, pdh, pdl, day_bars, kz_start_idx)
+            if trade:
+                trade.update(symbol=symbol, date=date)
+                all_trades.append(trade)
+
+    label = f"ICT sweep+MSS+FVG model (news-{mode}: NFP+FOMC days)"
+    suffix = f"_news{mode}"
+    _report(all_trades, label, start, end, suffix)
+
+
 if __name__ == "__main__":
     cmd, start, end = sys.argv[1], sys.argv[2], sys.argv[3]
     if cmd == "fetch":
@@ -570,6 +648,11 @@ if __name__ == "__main__":
         run_backtest_inverse_fvg(start, end)
     elif cmd == "backtest_eqhl":
         run_backtest_eqhl(start, end)
+    elif cmd == "backtest_newsexclude":
+        run_backtest_newsfilter(start, end, mode="exclude")
+    elif cmd == "backtest_newsonly":
+        run_backtest_newsfilter(start, end, mode="only")
     else:
         print("usage: backtest_ict.py [fetch|backtest|backtest_divergence|"
-              "backtest_orderblock|backtest_ote|backtest_inversefvg|backtest_eqhl] START END")
+              "backtest_orderblock|backtest_ote|backtest_inversefvg|backtest_eqhl|"
+              "backtest_newsexclude|backtest_newsonly] START END")
