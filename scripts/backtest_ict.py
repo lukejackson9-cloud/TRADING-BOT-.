@@ -109,18 +109,48 @@ def fetch_universe(start, end):
         print(f"{symbol}: cached {len(bars)} bars")
 
 
+def _compute_rsi(bars, period=14):
+    """Wilder's RSI, computed over `bars` in chronological order. Annotates
+    each bar dict in place with `_rsi` (None for the warmup period before
+    `period` closes are available)."""
+    for b in bars:
+        b["_rsi"] = None
+    if len(bars) <= period:
+        return
+    gains, losses = [], []
+    for i in range(1, len(bars)):
+        change = bars[i]["c"] - bars[i - 1]["c"]
+        gains.append(max(change, 0.0))
+        losses.append(max(-change, 0.0))
+    avg_gain = sum(gains[:period]) / period
+    avg_loss = sum(losses[:period]) / period
+    bars[period]["_rsi"] = 100.0 if avg_loss == 0 else 100 - (100 / (1 + avg_gain / avg_loss))
+    for i in range(period, len(gains)):
+        avg_gain = (avg_gain * (period - 1) + gains[i]) / period
+        avg_loss = (avg_loss * (period - 1) + losses[i]) / period
+        rsi = 100.0 if avg_loss == 0 else 100 - (100 / (1 + avg_gain / avg_loss))
+        bars[i + 1]["_rsi"] = rsi
+
+
 def _load_days(symbol):
     """Returns {date_str: [bar, ...]} -- bars grouped by NY-local trading
-    date, each bar annotated with its NY-local time for session logic."""
+    date, each bar annotated with its NY-local time for session logic and
+    its RSI(14) computed over the full chronological series (so early-day
+    bars still get a real value using the prior session's tail, not reset
+    to a fresh warmup every day)."""
     cache_file = CACHE_DIR / f"{symbol}.json"
     if not cache_file.exists():
         return {}
     bars = json.loads(cache_file.read_text())
-    days = defaultdict(list)
     for b in bars:
         ts = datetime.datetime.fromisoformat(b["t"].replace("Z", "+00:00")).astimezone(NY)
         b["_ny_time"] = ts.time()
-        days[ts.date().isoformat()].append(b)
+        b["_ts"] = ts
+    bars.sort(key=lambda b: b["_ts"])
+    _compute_rsi(bars)
+    days = defaultdict(list)
+    for b in bars:
+        days[b["_ts"].date().isoformat()].append(b)
     return days
 
 
@@ -137,10 +167,37 @@ def _find_fvg(bars, lo, hi, direction):
     return None
 
 
-def _simulate_day(killzone_bars, pdh, pdl, all_day_bars, kz_start_idx):
+def _has_divergence(bar, direction, swing_bars):
+    """Bias/divergence filter: does the sweep bar's RSI fail to confirm its
+    own price extreme against the most extreme prior swing bar? A bearish
+    sweep (new/equal high) with WEAKER RSI than the prior swing high is
+    bearish divergence (momentum fading into the sweep, not confirming it)
+    -- and the mirror for a bullish sweep -- treated as confirming bias for
+    the reversal this model is already betting on. Requires both bars to
+    have a real RSI (past the warmup period); returns False (no filter
+    pass) if either is missing rather than guessing."""
+    if bar["_rsi"] is None:
+        return False
+    if direction == "bearish":
+        ref = max(swing_bars, key=lambda b: b["h"])
+        if ref["_rsi"] is None:
+            return False
+        return bar["h"] >= ref["h"] and bar["_rsi"] < ref["_rsi"]
+    else:
+        ref = min(swing_bars, key=lambda b: b["l"])
+        if ref["_rsi"] is None:
+            return False
+        return bar["l"] <= ref["l"] and bar["_rsi"] > ref["_rsi"]
+
+
+def _simulate_day(killzone_bars, pdh, pdl, all_day_bars, kz_start_idx, require_divergence=False):
     """Runs the sweep -> MSS -> FVG model against one day's killzone bars.
     Returns a trade dict or None. all_day_bars/kz_start_idx let the target/
-    stop simulation continue past 11:00 using the rest of the day's bars."""
+    stop simulation continue past 11:00 using the rest of the day's bars.
+    require_divergence=True adds an RSI-divergence bias filter at the
+    sweep bar (see _has_divergence) -- a cheap sanity test of whether a
+    momentum-confirmation filter closes the near-miss gap in the baseline
+    model's win rate, using bars already cached, no new data fetch."""
     for k in range(len(killzone_bars)):
         bar = killzone_bars[k]
         swept_high = bar["h"] > pdh and bar["c"] < pdh
@@ -156,6 +213,9 @@ def _simulate_day(killzone_bars, pdh, pdl, all_day_bars, kz_start_idx):
         if not swing_bars:
             continue
         swing_level = min(b["l"] for b in swing_bars) if direction == "bearish" else max(b["h"] for b in swing_bars)
+
+        if require_divergence and not _has_divergence(bar, direction, swing_bars):
+            continue
 
         mss_idx = None
         for m in range(k + 1, len(killzone_bars)):
@@ -210,7 +270,7 @@ def _simulate_day(killzone_bars, pdh, pdl, all_day_bars, kz_start_idx):
     return None
 
 
-def run_backtest(start, end):
+def run_backtest(start, end, require_divergence=False):
     all_trades = []
     for symbol in UNIVERSE:
         days = _load_days(symbol)
@@ -233,21 +293,23 @@ def run_backtest(start, end):
             if kz_start_idx is None:
                 continue
 
-            trade = _simulate_day(kz, pdh, pdl, day_bars, kz_start_idx)
+            trade = _simulate_day(kz, pdh, pdl, day_bars, kz_start_idx, require_divergence=require_divergence)
             if trade:
                 trade.update(symbol=symbol, date=date)
                 all_trades.append(trade)
 
     n = len(all_trades)
+    label = "ICT sweep+MSS+FVG+divergence-bias model" if require_divergence else "ICT sweep+MSS+FVG model"
     if n == 0:
-        print("0 trades in range")
+        print(f"{label}: 0 trades in range")
         return
     wins = [t for t in all_trades if t["return_r"] > 0]
     win_rate = len(wins) / n * 100
     avg_r = sum(t["return_r"] for t in all_trades) / n
-    print(f"ICT sweep+MSS+FVG model: {n} trades, win rate {win_rate:.1f}%, avg {avg_r:.2f}R/trade")
+    print(f"{label}: {n} trades, win rate {win_rate:.1f}%, avg {avg_r:.2f}R/trade")
 
-    out_path = CACHE_DIR / f"results_{start}_{end}.json"
+    suffix = "_divergence" if require_divergence else ""
+    out_path = CACHE_DIR / f"results_{start}_{end}{suffix}.json"
     out_path.write_text(json.dumps(all_trades, indent=2))
     print(f"full trade list written to {out_path}")
 
@@ -258,5 +320,7 @@ if __name__ == "__main__":
         fetch_universe(start, end)
     elif cmd == "backtest":
         run_backtest(start, end)
+    elif cmd == "backtest_divergence":
+        run_backtest(start, end, require_divergence=True)
     else:
-        print("usage: backtest_ict.py [fetch|backtest] START END")
+        print("usage: backtest_ict.py [fetch|backtest|backtest_divergence] START END")
