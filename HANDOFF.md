@@ -662,3 +662,44 @@ flag was directly confirmed today -- a +54.78% intraday spike
 round-tripped into a -41.5% close on real underlying catalysts (Nasdaq
 compliance regained + expanded indication). The pattern-recognition
 worked as intended.
+
+## 2026-09-10: Daily screen -- ASO reaches council, downgraded (15-for-15)
+Researched 12 tickers from the 2026-09-09 Massive whole-market screen
+(session 2026-09-09 vs 2026-09-08). ASO (Academy Sports and Outdoors)
+reached CANDIDATE on a real, large Q2 beat (adjusted EPS $2.31 vs.
+$2.08-2.09 est., ~10-11% surprise, holding even ex the one-time
+tariff-refund benefit) plus fast broad sell-side confirmation (5 brokers
+raised targets to $54-65 within 24h) and a STRONG_BUY TradingView
+cross-check. Council downgraded to WATCH: the bear case surfaced
+concrete, independently-sourced structural weakness underneath the
+beat -- comp sales still negative (-0.4%), the margin driver (tariff
+refunds) explicitly non-recurring per management, and a real
+income-cohort traffic bifurcation (sub-$50k households down
+high-single-digits, >$100k households up) showing the core lower-income
+customer still eroding. Same "beat-on-margin, soft-underneath,
+already-priced pop" shape as HPE (09-03) and GWRE (09-04). Running
+total: 15-for-15.
+
+Two other same-day earnings reactions worth noting for pattern-tracking:
+TYRA's Sept 9 Phase 2 dabogratinib data read as favorable on its face
+(79% ORR/64% CR at the top dose, clean safety) but the stock still fell
+-17.66% -- a genuine "market already rendered its verdict, and it read
+the data more skeptically than the topline numbers suggest" case, PASS.
+BRZE (-21.73%) hit the same beat-but-soft-forward-guidance shape as
+GWRE's own repeat pattern (real beat, decelerating customer adds, FCF
+margin nearly halved QoQ, soft Q3 EPS guide) -- WATCH, flagged explicitly
+as matching a pattern this project has already treated as a caution
+signal rather than an entry trigger.
+
+ADBE's earnings (a real beat, $6.13 vs $6.08 EPS) printed today
+after-hours -- the pre-catalyst tag from 09-08 is resolved, but the
+actual market reaction isn't observable until tomorrow's session
+settles. Revisit 2026-09-11.
+
+**Data-quality note**: today's initial `screen_market_movers()` output
+looked briefly alarming (some rows appeared to show 1000%+ single-day
+moves) -- traced to a self-made analysis-script bug (double-applying the
+*100 conversion in a throwaway print statement), not a real data or
+client-code issue. The client's actual `pct_change` field was correct
+the whole time. Worth remembering before assuming a screener bug on a
+future session.

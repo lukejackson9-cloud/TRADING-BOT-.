@@ -158,3 +158,17 @@ FCUV   # 2026-09-09: -65.2% crash in extremely thin float -- PASS, repeat of the
 BIAF   # 2026-09-09: -41.5%, real catalysts (Nasdaq compliance regained + expanded indication) but session round-tripped a +54.78% intraday spike into this close -- PASS, confirms the 9/2 thin-float pump/dump pattern flagged hypothetically then, now observed directly
 DOCN   # 2026-09-09: +12.6%, real dated AI-strategy reveal at Goldman conference -- WATCH, stock already +160% YTD with analysts staying Neutral on valuation despite raising targets
 VIAV   # 2026-09-09: +11.2%, no dated ticker-specific catalyst confirmed despite strong fundamentals -- WATCH low confidence, also surfaced a likely stale/cross-contaminated analyst data point
+
+# --- added 2026-09-10 via the daily screen routine (Massive whole-market, 2026-09-08 -> 09-09 session pair) ---
+ADBE   # 2026-09-10: EARNINGS PRINTED TODAY -- beat (EPS $6.13 vs $6.08 est, rev $6.76B vs $6.69B est), pre-catalyst tag from 09-08 now resolved, evaluating the reaction
+TYRA   # 2026-09-10: -17.66%, Sept 9 Phase 2 dabogratinib readout now resolved (was WATCH pending this exact catalyst on 09-08) -- evaluating the reaction
+SIG    # 2026-09-10: +23.96% on 2026-09-09 session, Signet Jewelers
+CHWY   # 2026-09-10: -10.83% on 2026-09-09 session, Chewy
+NET    # 2026-09-10: +10.51% on 2026-09-09 session, Cloudflare
+PINS   # 2026-09-10: -9.24% on 2026-09-09 session, Pinterest
+VRT    # 2026-09-10: -9.61% on 2026-09-09 session, Vertiv
+ASO    # 2026-09-10: +14.4% on 2026-09-09 session, Academy Sports + Outdoors
+BAND   # 2026-09-10: +11.94% on 2026-09-09 session, Bandwidth
+KRMN   # 2026-09-10: -11.26% on 2026-09-09 session, Karman Holdings
+TBBK   # 2026-09-10: -22.33% on 2026-09-09 session, The Bancorp
+BRZE   # 2026-09-10: -21.73% on 2026-09-09 session, Braze
