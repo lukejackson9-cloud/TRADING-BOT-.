@@ -244,15 +244,15 @@ pass, they are not evidence either way.
 | 09-03 | MEI | WATCH | revenue beat but EPS/EBITDA miss | Unclear — no reliable post-verdict trajectory found |
 | 09-03 | MSTR | WATCH | real BTC breakout but company news 4 days stale | Validated — chasing the peak would have lost ~11-13% |
 | 09-03 | MARA | WATCH low confidence | conflicting BTC price levels across sources | Unclear — a source appears to have conflated BTC price with MARA's own |
-| 09-03 | BMNR | PASS | wrong-asset confusion (ETH not BTC), no fresh catalyst | Not checked this pass |
+| 09-03 | BMNR | PASS | wrong-asset confusion (ETH not BTC), no fresh catalyst | Validated — stop hit (low -7.8% vs 09-04 entry $25.34), ended -1.1%; 5/5 days elapsed [OHLCV 2026-09-11] |
 | 09-03 | AVGO | WATCH | negative catalyst, long-only has no edge | Unclear (leans validated) — real ~-6.2% drop confirmed, no clean current print |
 | 09-03 | VALE | PASS | direction of the move itself unconfirmed across sources | Unclear — verdict-date baseline still not confirmed |
 | 09-03 | CHPT | WATCH | real beat but already fully priced, squeeze-driven | Validated — squeeze substantially unwound |
 | 09-03 | RACC | PASS | screener move unverifiable against any source (repeat 09-08) | Unclear — data quality issue reconfirmed, not resolved |
 | 09-03 | AEHL | PASS | recycled narrative, 3rd+ time this year | Cost a winner (so far)/unclear longer-term — pump extended another +14% by 9/9 |
 | 09-03 | FCUV | PASS | thin-float pump, no dated catalyst | Validated strongly — collapsed ~65% by 9/10-11 |
-| 09-03 | PUR | PASS | could not identify the company | Not checked this pass |
-| 09-03 | ZOOZ | PASS | down 90% from high, vague "strategic alternatives" | Not checked this pass |
+| 09-03 | PUR | PASS | could not identify the company | Unclear — BOTH +8% target (max +16.4%) and -4% stop (max -8.2%) touched in-window; daily bars can't sequence them (conservative convention assumes stop first). Also not a directional thesis — PASS was "could not identify the company" [OHLCV 2026-09-11] |
+| 09-03 | ZOOZ | PASS | down 90% from high, vague "strategic alternatives" | Validated strongly — never traded above the 09-04 entry open ($7.82) at all (max +0.0%), stop hit, ended -3.0% [OHLCV 2026-09-11] |
 | 09-03 | PRHI | WATCH low confidence | real fundamentals but no same-day news | Unclear — no clean baseline, but the later pop doesn't contradict the thesis |
 | 09-03 | MF | PASS | thin-float shell-like microcap, no news | Unclear on direction — but the observed ~23% intraday range itself supports the "too noisy" framing |
 | 09-03 | PSQL | PASS | post-SPAC pop-and-fade (repeat 09-08) | Validated strongly — ~70% collapse from peak |
@@ -300,18 +300,18 @@ pass, they are not evidence either way.
 | 09-09 | SMR | WATCH low confidence | real news but pre-revenue story stock | Validated — -6% the day after (AI-partnership bump didn't hold) |
 | 09-09 | CRWV | WATCH low confidence | sector-wide neocloud rally, already extended | Unclear — well off 52wk highs by 9/11, but timing vs. the verdict date not confirmed |
 | 09-09 | DYN | PASS | no dated catalyst found anywhere | Unclear — the move had already happened before the verdict, not really scoreable |
-| 09-09 | FCUV | PASS | repeat thin-float/no-catalyst pattern (see 09-03) | Not checked — search budget exhausted this pass |
-| 09-09 | BIAF | PASS | confirmed pump/dump pattern (see 09-02) | Not checked — search budget exhausted this pass |
-| 09-09 | DOCN | WATCH | real catalyst but already +160% YTD, analysts Neutral | Not checked — search budget exhausted this pass |
-| 09-09 | VIAV | WATCH low confidence | no dated catalyst confirmed despite strong fundamentals | Not checked — search budget exhausted this pass |
-| 09-10 | ADBE | WATCH | earnings beat printed, reaction pending at write-up time | **Not checked — search budget exhausted before reaching it; explicitly requested, needs a dedicated re-run** |
+| 09-09 | FCUV | PASS | repeat thin-float/no-catalyst pattern (see 09-03) | Provisional (2/5 days) — +3.3%, neither stop nor target hit yet [OHLCV 2026-09-11] |
+| 09-09 | BIAF | PASS | confirmed pump/dump pattern (see 09-02) | Validated strongly — -17.9% in 2 sessions (max -19.0%); pump/dump call confirmed [OHLCV 2026-09-11] |
+| 09-09 | DOCN | WATCH | real catalyst but already +160% YTD, analysts Neutral | Validated — stop hit, -6.3% in 2 sessions; the "already +160% YTD" extension caution was right [OHLCV 2026-09-11] |
+| 09-09 | VIAV | WATCH low confidence | no dated catalyst confirmed despite strong fundamentals | Provisional (2/5 days) — +2.2%, neither hit [OHLCV 2026-09-11] |
+| 09-10 | ADBE | WATCH | earnings beat printed, reaction pending at write-up time | Validated (weak), 1/5 days — reaction session gapped DOWN to $241.80 then reversed to close $252.32: **+1.4% vs the 09-10 close, +4.2% vs the 09-11 entry open**. Neither target nor stop. NOTE: the specific pattern the note leaned on (ADBE fell 7.6% and 6.7% after its last two beats) did NOT repeat — third instance broke it. Intraday snapback shape matches lessons.md #10 [OHLCV 2026-09-11] |
 | 09-10 | TYRA | PASS | Sept 9 Phase 2 data read favorably but stock still fell -17.66% | Already resolved in the Why column itself — favorable-looking data still sold off |
-| 09-10 | CHWY | PASS | in-line quarter after pre-earnings run-up, real liquidity flag | Not checked — search budget exhausted this pass |
-| 09-10 | NET | WATCH low confidence | no confirmed dated catalyst despite bullish backdrop | Not checked — search budget exhausted this pass |
-| 09-10 | PINS | PASS | clean negative catalyst (CEO international-headwinds warning) | Not checked — search budget exhausted this pass |
-| 09-10 | VRT | PASS | sector-wide AI-infra repricing + deal-financial-disclosure gap | Not checked — search budget exhausted this pass |
-| 09-10 | BAND | PASS | no confirmed dated catalyst despite bullish backdrop | Not checked — search budget exhausted this pass |
-| 09-10 | KRMN | PASS | insufficient information on a dated same-day catalyst | Not checked — search budget exhausted this pass |
-| 09-10 | TBBK | PASS | clean structural negative (Chime/Stride partner-loss risk) | Not checked — search budget exhausted this pass |
-| 09-10 | BRZE | WATCH | real beat undercut by soft forward guidance, GWRE-shaped pattern | Not checked — search budget exhausted this pass |
-| 09-10 | SIG | WATCH | real beat-and-raise but reaction already fired, now reversing | Not checked — search budget exhausted this pass |
+| 09-10 | CHWY | PASS | in-line quarter after pre-earnings run-up, real liquidity flag | Provisional (1/5 days) — -0.1%, neither hit [OHLCV 2026-09-11] |
+| 09-10 | NET | WATCH low confidence | no confirmed dated catalyst despite bullish backdrop | Provisional (1/5 days) — -2.2%, neither hit [OHLCV 2026-09-11] |
+| 09-10 | PINS | PASS | clean negative catalyst (CEO international-headwinds warning) | Provisional (1/5 days) — +0.8%, neither hit [OHLCV 2026-09-11] |
+| 09-10 | VRT | PASS | sector-wide AI-infra repricing + deal-financial-disclosure gap | Provisional (1/5 days) — +1.8%, neither hit [OHLCV 2026-09-11] |
+| 09-10 | BAND | PASS | no confirmed dated catalyst despite bullish backdrop | Provisional (1/5 days) — **+7.5%, max +7.9% — within 0.1pp of the +8% target on day ONE**. PASS'd for "no confirmed dated catalyst" and ran anyway: candidate third instance of lessons.md #9, re-check at 5/5 days [OHLCV 2026-09-11] |
+| 09-10 | KRMN | PASS | insufficient information on a dated same-day catalyst | Provisional (1/5 days) — +1.2%, neither hit [OHLCV 2026-09-11] |
+| 09-10 | TBBK | PASS | clean structural negative (Chime/Stride partner-loss risk) | Provisional (1/5 days) — -0.4%, neither hit [OHLCV 2026-09-11] |
+| 09-10 | BRZE | WATCH | real beat undercut by soft forward guidance, GWRE-shaped pattern | Leans validated (1/5 days) — -4% stop touched intraday on day 1 (low -4.0%), ended -1.9%; the GWRE-shaped soft-guidance read looks right [OHLCV 2026-09-11] |
+| 09-10 | SIG | WATCH | real beat-and-raise but reaction already fired, now reversing | Provisional (1/5 days) — +0.2%, neither hit [OHLCV 2026-09-11] |

@@ -205,22 +205,54 @@ extended stocks with no catalyst — the opposite overcorrection is just as
 wrong, and lesson #1 still stands on its own evidence. It means the
 absence of a dated event is not itself bearish, and shouldn't be written
 up as though it were.
-Sample-size caveat, stated plainly: N=2 clean instances, and BOTH are
-logged in the ledger as tentative/leaning ("cost a winner (tentative)",
-"leans cost a winner") rather than cleanly resolved — this clears this
-file's "more than once with real sourcing" bar but is nowhere near strong
-enough to change a verdict rule on its own. Re-check both outcomes with
-a proper dated-source price comparison before this is treated as settled.
+**Candidate third instance, found 2026-09-11, not yet resolved**: BAND
+(09-10, PASS, reason given: "no confirmed dated catalyst despite bullish
+backdrop") rose **+7.5% on the very first session after the verdict, with
+an intraday high +7.9% — within 0.1pp of this project's +8% target**, on
+day one of five. Same shape as CLS and CCC.L: the absence of a dated
+catalyst was written up as the reason to stand aside, and the stock moved
+anyway. Deliberately NOT counted as a miss yet — one session is not a
+resolution, and it could still round-trip before the 5-day time-stop.
+Re-check at 5/5 sessions; if it holds, this lesson has three instances
+and the ordering question ("is the estimate trend still moving") becomes
+worth raising with the user directly rather than just logging.
+Sample-size caveat, stated plainly: N=2 clean instances (+1 pending), and
+BOTH resolved ones are logged in the ledger as tentative/leaning ("cost a
+winner (tentative)", "leans cost a winner") rather than cleanly resolved —
+this clears this file's "more than once with real sourcing" bar but is
+nowhere near strong enough to change a verdict rule on its own. Re-check
+all three outcomes with a proper dated-source price comparison before this
+is treated as settled.
 
-## 10. This system is most confident exactly where it has been most wrong
-— clean structural-negative stories that then snap back
-The 2026-09-11 calibration backfill (first one ever run — see
-scorecard.md) found accuracy INVERTED against confidence: high-confidence
-calls 75% (n=8), medium 78% (n=27), low 88% (n=8). A well-calibrated
-system produces the opposite ordering.
-The mechanism, not just the number: both high-confidence misses are the
-same shape — a clean, well-sourced, unambiguous bear story that then
-reversed hard.
+## 10. [DOWNGRADED TO HYPOTHESIS, same day it was written — does NOT meet
+this file's evidence bar] Possible pattern: clean structural-negative
+stories snapping back
+**Read the correction first.** This lesson was written earlier on
+2026-09-11 claiming calibration was clearly inverted (high 75%, medium
+78%, low 88%) and that "both high-confidence misses" shared a snapback
+shape. Re-running the tally the same day with bucketing corrected to match
+scorecard.md's own documented methodology — hedged outcomes like "unclear
+— leans cost a winner" count as UNCLEAR, not as confirmed misses, and
+no-thesis rows are excluded — changed the picture materially:
+- High-confidence accuracy is **83% (n=6)**, not 75%. EGAN, one of the two
+  claimed high-confidence misses, is logged as "Unclear (leans cost a
+  winner)" and should never have been counted as a confirmed miss.
+- Corrected calibration: high 83% (n=6), medium 81% (n=27), low 100%
+  (n=8). The low bucket still outperforms the high bucket, so *some*
+  inversion remains at the extremes — but high is no longer the worst
+  bucket, the gap is far smaller than first reported, and n=6 in the high
+  bucket means a single outcome decides it.
+- The snapback pattern therefore rests on **one confirmed instance (OXM)
+  plus one leaning (EGAN)** — which does not clear this file's stated bar
+  of "shown up more than once with real sourcing."
+Kept here, explicitly demoted rather than deleted, for the same reason
+vcp_breakout's reversal was kept in CLAUDE.md: the mistake is instructive.
+A crude text-matching bucket rule inflated a finding into a confident
+claim about the system's calibration within a single pass. Any future
+calibration claim must state its bucketing rules and reproduce
+scorecard.md's miss list exactly (FCEL, XP, AEHL, AEHR, CLS, CCC.L, OXM)
+before its percentages are trusted.
+The underlying hypothesis, still worth watching as more outcomes resolve:
 - **OXM** (09-07, PASS, high confidence): "clean earnings-miss-and-
   guide-down story," full-year EPS guidance cut well below consensus,
   next quarter guided to a loss, explicitly written up as a
@@ -234,18 +266,17 @@ off — and clean, fully-digested bad news is also exactly the setup where
 positioning gets crowded and oversold snapbacks happen. High confidence
 here is tracking "how unambiguous is the story," which is not the same
 thing as "how likely am I to be right about the next two weeks."
-Action: when a research pass is about to mark a structural-negative PASS
-at HIGH confidence, that combination specifically should prompt one extra
-check — is this already widely known and heavily positioned, and is there
-a near-term event (earnings, investor day, analyst capitulation cycle)
-that could force a re-rate inside the 2-week window? Do not downgrade the
-confidence reflexively; just don't let "the bear case is clean" alone
-produce a high-confidence rating.
-Sample-size caveat: n=8 in each of the high and low buckets — a single
-outcome flip moves these numbers by 12+ points, and the medium bucket
-carries 25 unresolved "unclear" outcomes that could shift the picture
-substantially once checked. This is a first read and a hypothesis to test
-as more outcomes resolve, NOT evidence to recalibrate on. Per CLAUDE.md's
-standing 2026-09-03/09-09 user decisions, any actual change to
-confidence-rating behavior or council's bar is the user's call, not
-something this finding triggers on its own.
+Action while this remains a hypothesis: no behaviour change. Do NOT adjust
+how confidence is assigned, and do not add a "clean bear case" check to
+research.md on this evidence — one confirmed instance is an anecdote. What
+to do instead is purely observational: when the next structural-negative
+PASS at HIGH confidence resolves, record it here. Three confirmed
+instances would make this a real lesson; continued 80%+ high-confidence
+accuracy would retire it.
+Sample-size reality: n=6 (high) and n=8 (low). A single outcome flip moves
+either by 12-17 points. The medium bucket still carries 21 unresolved
+"unclear" outcomes — more unresolved than resolved — so the graded subset
+may not represent the whole. Per CLAUDE.md's standing 2026-09-03/09-09
+user decisions, any actual change to confidence-rating behaviour or
+council's bar is the user's call, and nothing here comes close to
+justifying one.
