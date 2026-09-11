@@ -115,6 +115,29 @@ propose an idea → find out what actually happened → write it down honestly
    Unclear: {U}
    Accuracy: {X}/({X}+{Y}) = {P}%
 
+   ## Council calibration (Confidence vs. actual outcome)
+   Every council review since 2026-09-11 records a Confidence
+   (low/medium/high) and a Near-miss note BEFORE the outcome is known
+   (see skills/council.md's hard rules — never adjusted in hindsight).
+   Once a reviewed ticker resolves, bucket it here by the Confidence it
+   was given at review time:
+   High confidence:   {X} correct / {N} resolved ({P}%)
+   Medium confidence: {X} correct / {N} resolved ({P}%)
+   Low confidence:    {X} correct / {N} resolved ({P}%)
+   A well-calibrated system's high-confidence bucket should resolve
+   correctly MORE often than its low-confidence bucket — if the rates are
+   similar (or inverted), Confidence isn't tracking anything real yet,
+   which is itself useful to know and worth saying plainly rather than
+   quoting the raw downgrade-accuracy % as if it were calibration. This is
+   a stronger signal than the raw accuracy % above once there's enough
+   per-bucket sample to compute it (each bucket needs its own N — don't
+   report a bucket's % with fewer than ~5 resolved).
+   Near-miss tally (informational, not a pass/fail number): {X} reviews
+   marked "close" / {N} total reviewed. Report this even at low N — its
+   value is qualitative (does council ever record a close call, or is
+   every review a blowout) as much as numeric; see skills/council.md's
+   "Why this requirement exists" section for what this is checking.
+
    ## Sample size note
    With this few observations (N < ~20), these percentages are directional
    only, not statistically meaningful — don't let a short streak (in

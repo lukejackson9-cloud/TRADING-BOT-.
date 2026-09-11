@@ -149,6 +149,24 @@ evidence from journal.md (see the scheduled check-in noted in HANDOFF.md)
 should ever inform a recalibration decision, and even then, discuss it
 with the user first rather than changing the skills unilaterally.
 
+**Diagnostic instrumentation added 2026-09-11 (not a loosening — read
+skills/council.md's "Why this requirement exists" section in full
+before touching this further)**: the 14-for-14 streak is consistent with
+either real, earned skepticism OR a structural artifact of council's own
+decision rule (bull must win every point, bear only needs one — a rule
+like that produces 100% downgrades by construction regardless of true
+calibration). Three changes address this without loosening the verdict
+bar itself: (1) bear's objections must now be specific and falsifiable,
+not generic risk-raising; (2) every review records a near-miss note
+(blowout vs. close) so a future pass can tell whether the gate is
+well-tuned or just permanently shut; (3) skills/journal.md's scorecard
+now buckets outcomes by the Confidence recorded at review time, to check
+whether "high confidence" actually predicts being right more often than
+"low confidence" — real calibration, not just a raw accuracy %. None of
+this changes today's verdicts or loosens anything; it's built so the
+next real recalibration conversation with the user has actual evidence
+instead of just a streak length to go on.
+
 ## Trade execution & approval — updated 2026-09-07 (supersedes the old
 ## "no trade without human approval, ever" rule below for paper/demo and,
 ## eventually, live — read this whole section before touching execution)
@@ -495,15 +513,42 @@ market, completed 2026-09-07):**
       no historical bars, and getting real history from TradingView
       would need session-authenticated scraping, a bigger step than the
       public endpoints used elsewhere in this project.
-    - **Standing caveat, applies to every backtest in this file**: the
-      universe (`get_common_stock_tickers()`) reflects TODAY's active
-      tickers applied retroactively — a company that delisted or was
-      acquired between 2020-2026 is entirely absent from every year's
-      test, including years it was actually trading. This is
-      survivorship bias in the classic sense and plausibly makes every
-      result here look somewhat better than the true historical
-      picture, on top of whatever each individual setup's own numbers
-      already show (or don't).
+    - **Survivorship bias — PARTIALLY FIXED 2026-09-11, re-read before
+      trusting any number above**: every result in this section was
+      produced against a universe filtered by `get_common_stock_tickers()`
+      (TODAY's active list) applied retroactively — a company that
+      delisted or was acquired between 2020-2026 was entirely absent from
+      every year's cached data, including years it was actually trading.
+      This is classic survivorship bias and plausibly makes every result
+      above look somewhat better than the true historical picture, on top
+      of whatever each individual setup's own numbers already show (or
+      don't). `scripts/backtest_ta.py`'s `fetch_range()` (the Massive-
+      sourced 2-year path) no longer applies this filter — see the
+      script's module docstring's "SURVIVORSHIP-BIAS FIX" section for the
+      full fix and its trade-off (a small amount of ETF/crypto-adjacent
+      contamination instead). **This fix has NOT been re-run yet**: every
+      number in this section still reflects the OLD, biased cache — the
+      gitignored `data/reference/backtest_cache/` must be regenerated via
+      a fresh `fetch` (real Massive API credentials + several hours at the
+      free tier's 5 req/min rate limit) before any of these numbers can be
+      trusted as bias-corrected. `fetch_range_alpaca()` (the 6-year
+      extension) has a harder, NOT-fixed version of the same bug — it
+      iterates today's active-ticker list up front and never attempts a
+      delisted ticker's history at all, and fixing that needs a
+      point-in-time delisted-securities list this project doesn't have
+      access to. Until both are addressed, treat every 6-year Alpaca
+      number in this section as still fully survivorship-biased, and every
+      2-year Massive number as biased until the cache is regenerated.
+    - **Cost sensitivity, added 2026-09-11**: `scripts/backtest_ta.py`
+      now has a `cost_sensitivity` command (sweeps round-trip cost in bps
+      against whatever's already cached, no new fetches needed) to answer
+      "is +0.04%/trade real, or does a realistic spread/slippage
+      assumption erase it" directly instead of only noting the caveat
+      qualitatively. Not yet run against real data in this branch/session
+      (no cached data present here) — run
+      `python scripts/backtest_ta.py cost_sensitivity {start} {end}` once
+      a session with the real cache (or a freshly regenerated one) is
+      available, and report the breakeven bps per setup here.
 
 Do not promote any setup to the Strategy section — none has earned it,
 and vcp_breakout's earlier promising read did not hold up under more

@@ -21,10 +21,50 @@ assumes the stop hit first (standard, conservative backtest convention
 when intraday sequencing isn't known from daily bars alone) -- a real
 limitation of daily-bar backtesting, not a bug; noted in the report.
 
-Universe: get_common_stock_tickers() (~5,300 US common stocks), filtered
-to $5-$500 price and >1M volume ON THE SIGNAL DAY -- matching CLAUDE.md's
-existing screening filters, so this measures "would this rule have found
-tradeable, liquid setups", not a survivorship-biased universe.
+Universe: EVERY ticker Massive's grouped-daily endpoint returns for each
+historical date, filtered to $5-$500 price and >1M volume ON THE SIGNAL
+DAY -- matching CLAUDE.md's existing screening filters. This measures
+"would this rule have found tradeable, liquid setups".
+
+SURVIVORSHIP-BIAS FIX (2026-09-11): fetch_range() used to additionally
+require `r["T"] in get_common_stock_tickers()` -- TODAY's active
+common-stock list -- before caching a day's data. That silently dropped
+every ticker that was later delisted, acquired, or went bankrupt from
+EVERY historical day's cache, including days it was actually trading,
+which systematically flatters every result (the exact bug CLAUDE.md's
+"Standing caveat" section used to just disclose rather than fix). Fixed
+by caching Massive's grouped-daily response for a date unfiltered by
+ticker identity -- that endpoint already returns whatever was genuinely
+trading on that date, not today's roster, so no client-side "is this
+ticker still around" filter is needed or wanted.
+Trade-off, stated plainly: Massive's grouped-daily payload has no
+asset-type field (confirmed against a live response), so this can no
+longer cheaply exclude ETFs/crypto-adjacent tickers (get_grouped_daily's
+own docstring notes XRP showed up in a live pull) the way the old,
+now-removed filter incidentally did. A handful of non-common-stock
+instruments technically firing a breakout/ema_cross signal is a much
+smaller distortion than systematically erasing every stock that ever
+went to zero or got bought out -- survivorship bias inflates results in
+one direction on every single trade; ETF contamination adds a small,
+directionless amount of noise on a small minority of trades. Re-running
+`fetch` end to end (needed to actually pick up the newly-uncensored
+historical data -- the existing gitignored cache under
+data/reference/backtest_cache/ still reflects the OLD, filtered fetch and
+must be regenerated, not just re-analyzed) requires real Massive API
+credentials and takes hours at the free tier's 5 req/min -- not done as
+part of this fix, flagged for whichever session actually has `.env`
+credentials loaded.
+fetch_range_alpaca() (the 6-year extension) has a HARDER, NOT-YET-FIXED
+version of the same bug: it fetches per-SYMBOL, iterating
+get_common_stock_tickers() (today's list) up front, so it never even
+attempts to fetch a delisted ticker's history in the first place -- there
+is no per-day "whatever was trading" endpoint on the Alpaca free tier to
+fall back on here. Properly fixing this needs a point-in-time historical
+ticker/delisted-securities list (e.g. a paid data vendor or an
+index-membership history), which this project doesn't currently have
+access to. Until that exists, treat the 6-year Alpaca-extended results as
+carrying the full, unmitigated version of this bias; the 2-year
+Massive-sourced results above do not, once re-fetched per this fix.
 
 CONFIRMED LIVE (2026-09-07): Massive's free tier only serves 2 years of
 grouped-daily history -- every date before 2024-09-08 returned 403
@@ -93,8 +133,10 @@ def _trading_days(start, end):
 
 
 def fetch_range(start, end):
+    """No longer filters by get_common_stock_tickers() (today's active
+    list) before caching -- see the module docstring's "SURVIVORSHIP-BIAS
+    FIX" section for why that filter was removed and what it traded off."""
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
-    equities = get_common_stock_tickers()
     days = list(_trading_days(start, end))
     fetched = 0
     for date in days:
@@ -106,7 +148,6 @@ def fetch_range(start, end):
             compact = {
                 r["T"]: [r["o"], r["h"], r["l"], r["c"], r["v"]]
                 for r in data["results"]
-                if r["T"] in equities
             }
             cache_file.write_text(json.dumps({"status": "OK", "results": compact}))
             print(f"{date}: cached {len(compact)} tickers")
@@ -400,8 +441,18 @@ def _gap_pct(bars, i):
 
 def run_backtest(start, end, regime=None,
                   setups=("breakout", "ema_cross", "mean_reversion", "vcp_breakout", "relative_strength"),
-                  require_gap_pct=None):
-    """regime: optional {date: bool} from _fetch_spy_regime -- when given,
+                  require_gap_pct=None, cost_pct=0.0):
+    """cost_pct: fraction (e.g. 0.001 = 0.10%) subtracted from every
+    trade's raw return to represent round-trip cost (spread + slippage +
+    commission combined). Applied as a flat per-trade haircut, not as a
+    change to entry/exit prices, since cost doesn't change WHICH of
+    stop/target/time-stop fires first, only the net P&L once it does --
+    safe to apply post-hoc rather than re-simulating exits. Default 0.0
+    reproduces every prior backtest's numbers unchanged (all of which were
+    gross-of-costs). See cost_sensitivity() below for sweeping this to
+    find the breakeven cost that erases a setup's edge.
+
+    regime: optional {date: bool} from _fetch_spy_regime -- when given,
     breakout/ema_cross signals are only counted on bullish-regime days
     (mean_reversion is exempt -- it's deliberately the counter-trend bet,
     applying a "don't fight the tape" filter to it would defeat the point).
@@ -442,9 +493,59 @@ def run_backtest(start, end, regime=None,
                     continue
             r = _simulate_exit(bars, i)
             if r is not None:
-                results[setup].append({"ticker": ticker, "date": date, "return": r})
+                results[setup].append({"ticker": ticker, "date": date, "return": r - cost_pct})
 
     return results
+
+
+def cost_sensitivity(start, end, setups=("breakout", "ema_cross", "mean_reversion", "vcp_breakout", "relative_strength"),
+                      cost_levels_bps=(0, 2, 4, 6, 8, 10, 15, 20, 30, 50), regime=None):
+    """Answers the question raised alongside every 'no edge' verdict in
+    this project so far: is that conclusion final, or just 'no edge under
+    a zero-cost assumption'? Reuses run_backtest() (and therefore whatever
+    is already cached under CACHE_DIR -- no new network calls) at a sweep
+    of round-trip cost assumptions (in basis points, 1bps = 0.01%) and
+    reports, per setup, the highest cost level in this sweep whose avg
+    return/trade is still positive -- i.e. a lower bound on the breakeven
+    cost. A setup whose edge disappears at 2-4bps is fragile (that's
+    below typical real-world spread+slippage for a liquid large-cap, let
+    alone a small/mid-cap); one that survives 20-30bps is more robust to
+    being wrong about costs.
+
+    For scale: T212 itself charges no per-trade commission on this
+    project's target instrument (US equities), so 'cost' here is
+    effectively bid/ask spread + slippage only, not commission -- a
+    liquid large-cap's spread is often 1-5bps, a thinner small/mid-cap
+    name can be 10-50bps+. Compare the breakeven this prints against that
+    range rather than assuming any single number."""
+    print(f"\n=== COST SENSITIVITY: {start}..{end} ===")
+    print("(round-trip cost in bps subtracted flat from every trade's return; "
+          "0bps reproduces this project's existing gross-of-costs numbers)\n")
+    breakeven = {s: None for s in setups}
+    for bps in cost_levels_bps:
+        results = run_backtest(start, end, regime=regime, setups=setups, cost_pct=bps / 10_000)
+        row = []
+        for setup, trades in results.items():
+            n = len(trades)
+            if n == 0:
+                row.append(f"{setup}: 0 trades")
+                continue
+            avg_return = sum(t["return"] for t in trades) / n * 100
+            if avg_return > 0:
+                breakeven[setup] = bps
+            row.append(f"{setup}: {avg_return:+.3f}%/trade (n={n})")
+        print(f"  {bps:>3}bps: " + " | ".join(row))
+    print("\nBreakeven (highest cost level tested still net positive; "
+          "'0' means already negative even at zero cost; '>=' the top "
+          "tested level means still positive at every level tried):")
+    top = cost_levels_bps[-1]
+    for setup, bps in breakeven.items():
+        if bps is None:
+            print(f"  {setup}: negative/flat even at 0bps cost -- cost sensitivity is moot, there's no edge to erode")
+        elif bps == top:
+            print(f"  {setup}: still positive at >={top}bps, the highest level tested -- extend cost_levels_bps to pin this down further")
+        else:
+            print(f"  {setup}: ~{bps}bps (positive at {bps}bps, flips negative at the next level tested)")
 
 
 def _summarize(label, results):
@@ -521,5 +622,7 @@ if __name__ == "__main__":
         print(f"\nfull trade list written to {out_path}")
     elif cmd == "compare":
         compare(start, end)
+    elif cmd == "cost_sensitivity":
+        cost_sensitivity(start, end)
     else:
-        print("usage: backtest_ta.py [fetch|fetch_alpaca|backtest|compare] START END")
+        print("usage: backtest_ta.py [fetch|fetch_alpaca|backtest|compare|cost_sensitivity] START END")

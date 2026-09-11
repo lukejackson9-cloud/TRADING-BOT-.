@@ -49,6 +49,17 @@ reignite a "stale" story. Don't downgrade a real near-term dated event
 (even one attached to an already-running story) to "stale" without
 weighing that it could still be the next leg's actual trigger.
 
+**Turned into an explicit checklist (2026-09-11)**, not left as a
+one-line caveat: skills/research.md step 3a now requires research.md to
+explicitly check for, and record, whether a dated near-term company event
+exists before downgrading anything as "stale" — and skills/council.md's
+falsifiability requirement makes the same check mandatory for any bear
+case leaning on "already priced in." The gap this closes specifically:
+AEHR's own research note correctly identified every driver as stale
+without ever checking whether a NEW dated event (the conference) was
+still ahead — the checklist forces that second question to be asked and
+answered on the record, not just the first.
+
 ## 2. WebSearch summaries are unreliable for precise facts (price levels,
 % moves, even direction) — verify against authoritative OHLCV when
 sources disagree
