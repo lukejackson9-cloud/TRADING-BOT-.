@@ -2327,7 +2327,11 @@
     "target_price": 16.610400000000002,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Only Goldman Sachs conference appearance (general growth commentary) and a major holder's new Rule 10b5-1 sale plan on 9/10 - neither is earnings/M&A/FDA/guidance/analyst action",
+      "tagged_on": "2026-09-10"
+    }
   },
   {
     "ticker": "CVI",
@@ -2338,7 +2342,11 @@
     "target_price": 52.48800000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch found no dated 9/10 catalyst for CVR Energy -- Q2 EPS miss and Morgan Stanley/Mizuho Sell ratings are from early August; next earnings not until 10/28.",
+      "tagged_on": "2026-09-10"
+    }
   },
   {
     "ticker": "OBE",
@@ -2349,7 +2357,11 @@
     "target_price": 13.759200000000002,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated news found for 9/10; most recent items in search results are from May/June 2026 (capital program, earnings)",
+      "tagged_on": "2026-09-10"
+    }
   },
   {
     "ticker": "SWKS",
@@ -2360,7 +2372,11 @@
     "target_price": 90.75240000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Same merger-regulatory catalyst as QRVO: CEO confirmed Sept 10 that China SAMR review hit its final phase, SWKS +10% intraday on the news (already tagged by ICT track; TA-side entry filled in here).",
+      "tagged_on": "2026-09-10"
+    }
   },
   {
     "ticker": "NTSK",
@@ -2371,7 +2387,11 @@
     "target_price": 16.308,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Stale: Q2 earnings were Sept 2 2026 and analyst price-target raises were Sept 3 2026, both over a week before signal date; nothing dated to 9/9-9/10",
+      "tagged_on": "2026-09-10"
+    }
   },
   {
     "ticker": "DBGI",
@@ -2382,7 +2402,11 @@
     "target_price": 7.333200000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Digital Brands Group surged 54% on 9/10 after shareholder letter confirming a $165M government supply contract and a going-private buyout offer at $77.58/share from a >$1B-net-worth shareholder -- dated, company-specific M&A/contract news.",
+      "tagged_on": "2026-09-10"
+    }
   },
   {
     "ticker": "YELP",
@@ -2393,7 +2417,11 @@
     "target_price": 22.626,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Sept-10 news is a Goldman Sachs Communacopia conference presentation on an AI strategy pivot -- not earnings, M&A, FDA, a guidance change, or an analyst action, so does not meet the catalyst definition.",
+      "tagged_on": "2026-09-10"
+    }
   },
   {
     "ticker": "ELV",
@@ -2404,7 +2432,11 @@
     "target_price": 449.86320000000006,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Elevance reaffirmed/raised FY26 EPS and cost guidance 9/10 (8-K filed same day), stock +5.42% same session",
+      "tagged_on": "2026-09-10"
+    }
   },
   {
     "ticker": "DVN",
@@ -2415,7 +2447,11 @@
     "target_price": 54.02160000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Stifel resumed coverage 9/10 w/ Buy rating, $61 PT, named DVN a top energy pick (valuation discount vs peers) - dated analyst action",
+      "tagged_on": "2026-09-10"
+    }
   },
   {
     "ticker": "SION",
@@ -2426,7 +2462,11 @@
     "target_price": 8.229600000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated Sept-10 event found; only a modest price bounce from the August clinical-trial-driven selloff, no new company-specific news cited.",
+      "tagged_on": "2026-09-10"
+    }
   },
   {
     "ticker": "SION",
@@ -2437,7 +2477,11 @@
     "target_price": 8.229600000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated Sept-10 event found; only a modest price bounce from the August clinical-trial-driven selloff, no new company-specific news cited.",
+      "tagged_on": "2026-09-10"
+    }
   },
   {
     "ticker": "KVUE",
@@ -2448,7 +2492,11 @@
     "target_price": 19.2132,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Only a routine quarterly dividend declaration on 9/10 and stale/ongoing Kimberly-Clark merger progress (previously known, targeted Q4 close) - nothing newly dated/material found",
+      "tagged_on": "2026-09-10"
+    }
   },
   {
     "ticker": "PAGS",
@@ -2459,7 +2507,11 @@
     "target_price": 10.940400000000002,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch found no dated Sept-10 event; only stale Sept-2 dividend/buyback news and a Hold rating pending Selic rate cuts.",
+      "tagged_on": "2026-09-10"
+    }
   },
   {
     "ticker": "MUR",
@@ -2470,7 +2522,11 @@
     "target_price": 41.9364,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst: CEO spoke at Barclays Energy-Power Conference 9/9/26 (routine investor conference, not new material info); Q2 earnings were Aug 6; recent analyst notes are Hold/Neutral reiterations, not upgrades",
+      "tagged_on": "2026-09-10"
+    }
   },
   {
     "ticker": "WTTR",
@@ -2481,7 +2537,11 @@
     "target_price": 21.9888,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated Sept-10 news found; only a stale Sept-3 sustainability-report announcement, not company-specific/material.",
+      "tagged_on": "2026-09-10"
+    }
   },
   {
     "ticker": "MOH",
@@ -2492,7 +2552,11 @@
     "target_price": 216.3024,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst near 9/10: Q2 earnings were already out weeks earlier, and the securities-lawsuit coverage concerns a Feb-Jul 2025 disclosure period (stale, not new)",
+      "tagged_on": "2026-09-10"
+    }
   },
   {
     "ticker": "VMC",
@@ -2503,7 +2567,11 @@
     "target_price": 270.648,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated Sept-10 news found; most recent items (DOJ ruling, asset sale/acquisition) are from Q1/Q2 2026, stale relative to this date.",
+      "tagged_on": "2026-09-10"
+    }
   },
   {
     "ticker": "FRO",
@@ -2514,7 +2582,11 @@
     "target_price": 52.272,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 9/10 catalyst found - Q2 earnings already reported prior weeks, dividend ex-date is 9/18 (future), analyst PT moves are from 8/31 (stale)",
+      "tagged_on": "2026-09-10"
+    }
   },
   {
     "ticker": "IMPP",
@@ -2525,7 +2597,11 @@
     "target_price": 6.053400000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Q2 2026 earnings released 9/10: adj EPS $0.76 vs $0.35 est (+117%), revenue $87.1M vs $49.1M est (+77.5%) - clear dated earnings beat",
+      "tagged_on": "2026-09-10"
+    }
   },
   {
     "ticker": "NET",
@@ -2536,7 +2612,11 @@
     "target_price": 336.06360000000006,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Stale: the AI-security/OpenAI-integration rally traces to the Sept 3 2026 product launch, already priced in over the prior week -- no new dated company-specific news found for 9/9-9/10",
+      "tagged_on": "2026-09-10"
+    }
   },
   {
     "ticker": "BYD",
@@ -2547,7 +2627,11 @@
     "target_price": 82.566,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch found no dated 9/10 news for Boyd Gaming -- Q2 earnings and Sam's Town Shreveport sale/dividend items predate this; next earnings not until 10/22, nothing company-specific tied to 9/10.",
+      "tagged_on": "2026-09-10"
+    }
   },
   {
     "ticker": "HAFN",
@@ -2558,7 +2642,11 @@
     "target_price": 10.1088,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "CEO stepping down (effective 9/1) and dividend ex-date (9/8) both predate 9/10; no new dated company-specific news found for 9/10 itself",
+      "tagged_on": "2026-09-10"
+    }
   },
   {
     "ticker": "ORI",
@@ -2569,7 +2657,11 @@
     "target_price": 44.107200000000006,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Only a routine quarterly dividend (declared Aug 14, ex-date Sep 4 2026) found -- not a guidance change or material new-information event per the catalyst definition",
+      "tagged_on": "2026-09-10"
+    }
   },
   {
     "ticker": "ASO",
@@ -2580,7 +2672,11 @@
     "target_price": 58.552200000000006,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Academy Sports reported Q2 FY26 earnings on 9/10: adj EPS $2.31 vs $2.08 est, raised FY26 adj EPS guidance to $6.50-6.90 from $6.40-6.80; stock rose ~11% same day.",
+      "tagged_on": "2026-09-10"
+    }
   },
   {
     "ticker": "QRVO",
@@ -2591,7 +2687,11 @@
     "target_price": 121.34880000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "CEO Phil Brace confirmed on Sept 10 that China SAMR's merger review reached its final (Phase III) stage targeting a year-end close of the Skyworks-Qorvo merger, driving QRVO +6.8% to a 52-wk high on elevated volume -- genuinely new M&A/regulatory information, not just a price move.",
+      "tagged_on": "2026-09-10"
+    }
   },
   {
     "ticker": "COHU",
@@ -2602,7 +2702,11 @@
     "target_price": 59.1084,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch found only stale news: Cohu's 10.4% earnings-driven pop and Jefferies PT raise to $74 dated ~9/4, outside the earnings-day/day-before window and already priced in by 9/10; nothing new dated 9/10.",
+      "tagged_on": "2026-09-10"
+    }
   },
   {
     "ticker": "MEOH",
@@ -2613,7 +2717,11 @@
     "target_price": 67.7376,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": "unclear",
+      "note": "WebSearch found only routine items (NZ plant idling, bond refi, a Piper Sandler upgrade) with no confirmed date tying any to 9/9-9/10; nothing dated and company-specific found for that day",
+      "tagged_on": "2026-09-10"
+    }
   },
   {
     "ticker": "DBI",
@@ -2624,7 +2732,11 @@
     "target_price": 6.469200000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Designer Brands reported Q2 2026 earnings on 9/10: adj EPS $0.34 vs $0.26 est, raised full-year adj EPS guidance to $0.47-0.52 from $0.28-0.38; shares climbed on the report.",
+      "tagged_on": "2026-09-10"
+    }
   },
   {
     "ticker": "ANGX",
@@ -2635,7 +2747,11 @@
     "target_price": 5.8104000000000005,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch found only investor-conference attendance (Lake Street BIG10, B. Riley Consumer/TMT) on 9/10 -- not earnings/M&A/FDA/guidance/analyst action, so not a qualifying catalyst.",
+      "tagged_on": "2026-09-10"
+    }
   },
   {
     "ticker": "HCA",
@@ -2646,7 +2762,11 @@
     "target_price": 454.90680000000003,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Management commentary at Wells Fargo Healthcare Conf 9/9 (99% of business at/above plan, EBITDA growth at high end of range) drove a 4.9% rally into 9/10 - guidance-type update",
+      "tagged_on": "2026-09-10"
+    }
   },
   {
     "ticker": "MTDR",
@@ -2657,7 +2777,11 @@
     "target_price": 66.5496,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst near 9/10: Q2 earnings were Aug 6 2026; only routine analyst reiterations (UBS Hold, Siebert Buy) found, none carrying new info dated to 9/9-9/10",
+      "tagged_on": "2026-09-10"
+    }
   },
   {
     "ticker": "WLTH",
@@ -2668,7 +2792,11 @@
     "target_price": 11.7504,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": "unclear",
+      "note": "Sept-10-dated Johnson Fistel investor-alert re: post-IPO disclosures found, but this is a law-firm investigation notice, not one of the defined catalyst types (earnings/M&A/FDA/guidance/analyst action); underlying Q2 earnings beat referenced without a clear date, so inconclusive whether it lands on/before Sept 10.",
+      "tagged_on": "2026-09-10"
+    }
   },
   {
     "ticker": "AMTM",
@@ -2679,6 +2807,10 @@
     "target_price": 21.1248,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch found no dated 9/10 catalyst: Q3 earnings and UK-grid contract wins predate this by weeks, Morgan Stanley PT cut dated Sept 8 not Sept 10/9 -- no company-specific event tied to 9/10.",
+      "tagged_on": "2026-09-10"
+    }
   }
 ]
