@@ -73,6 +73,28 @@ research note before any trade decision is made.
     the Risks section which case applies and what was checked, not just
     the conclusion — a future outcome-check (skills/journal.md) needs to
     be able to tell whether this checklist was actually run or skipped.
+3b. **Estimate-revision check (added 2026-09-11, see lessons.md #9)**.
+    Step 3a catches the case where a dated event was pending and got
+    missed. This catches the opposite one — where research correctly
+    established that NO dated catalyst exists and treated that absence as
+    itself bearish, while the stock kept re-rating anyway (CLS, CCC.L,
+    both logged misses). Before writing "no fresh dated catalyst" as a
+    reason to PASS/WATCH, check separately whether there is a
+    corroborated UPWARD revision trend underneath: company guidance
+    raised (especially a language upgrade like "ahead" → "comfortably
+    ahead"), consensus EPS estimates revised up over recent weeks, or
+    more than one broker independently moving the same direction. If
+    there is, record it as its own line in the Catalyst section — not
+    folded into "no dated event found" — and weigh it as a real positive
+    signal rather than a neutral fact sitting next to a negative
+    conclusion.
+    Guard against the opposite overcorrection, which is equally wrong:
+    this is NOT license to treat any extended stock with no catalyst as a
+    buy. Lesson #1 (a fired catalyst with nothing behind it fades) still
+    stands on its own, larger evidence base. The distinguishing question
+    between the two is not "was there a dated catalyst" but "is the
+    underlying estimate/guidance trend still moving upward" — state which
+    of the two applies and why, rather than defaulting to either.
 4. If web search returns nothing substantive, write "insufficient
    information" and mark PASS — never invent a catalyst.
 5. If watchlist.txt tags this ticker `EARNINGS {date} — pre-catalyst watch`

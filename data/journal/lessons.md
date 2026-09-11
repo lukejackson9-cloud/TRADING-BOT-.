@@ -162,3 +162,90 @@ Action: when moderating council, explicitly check whether both sides
 independently found the same facts (not just whether they disagree on
 interpretation) — unprompted agreement on a specific risk is more
 reliable than either side's argued position.
+
+## 9. "No fresh dated catalyst" is not a reason a move will stop — a
+rising-estimate-revision story can keep running with no new event at all
+This is the failure mode lesson #1's new AEHR checklist does NOT catch,
+found by the 2026-09-11 structured postmortem on every logged miss (see
+scorecard.md's calibration section for the full method). AEHR was a case
+where a dated event WAS pending and got missed. These are the opposite —
+cases where research correctly verified no dated catalyst existed, and
+the move continued anyway:
+- **CLS** (09-04, WATCH, "cost a winner (tentative)", +5-6% in under a
+  week): the note explicitly checked and correctly established that the
+  next earnings were Oct 26, ">7 weeks out, past this bot's ~2-week
+  horizon — no near-term binary event to trade around," and treated that
+  absence as a reason to stand aside. What it also recorded, and then
+  weighed as neutral-to-negative, was that FY26 EPS estimates were +11.4%
+  and FY27 +30.2% over the prior 60 days, with multiple brokers raising
+  targets.
+- **CCC.L** (09-06, WATCH, "leans cost a winner", kept rising to new
+  record highs 5,700-5,825p): same shape — "no fresh company-specific
+  news accompanied this particular UBS note... a target/estimate revision
+  layered on already-known H1/July information," plus "near record highs"
+  treated as extension risk. Underneath it: the company's own July
+  guidance upgrade ("ahead" → "comfortably ahead of market
+  expectations"), H1 adjusted PBT guided to roughly double, and a second
+  broker (Berenberg) independently upgrading.
+Both notes reasoned that an already-known story with no fresh dated event
+had nothing left to give. In both cases the stock kept re-rating on the
+estimate-revision trend itself. Note this is the exact opposite direction
+from lesson #1 — which is why both belong here rather than one replacing
+the other: a fired catalyst with nothing behind it fades (#1), but a
+rising estimate/guidance trend with no single dated event can keep going
+(#9). The distinguishing feature is not "was there a dated catalyst" but
+"is the underlying estimate trend still moving."
+Action: treat a corroborated, multi-source UPWARD estimate/guidance
+revision trend (company guidance raised, consensus EPS revised up over
+weeks, more than one broker moving the same way) as a real signal in its
+own right, not as "no catalyst, therefore pass." Record it explicitly as
+a distinct line in the research note's Catalyst section rather than
+folding it into "no dated event found." This does NOT mean buying
+extended stocks with no catalyst — the opposite overcorrection is just as
+wrong, and lesson #1 still stands on its own evidence. It means the
+absence of a dated event is not itself bearish, and shouldn't be written
+up as though it were.
+Sample-size caveat, stated plainly: N=2 clean instances, and BOTH are
+logged in the ledger as tentative/leaning ("cost a winner (tentative)",
+"leans cost a winner") rather than cleanly resolved — this clears this
+file's "more than once with real sourcing" bar but is nowhere near strong
+enough to change a verdict rule on its own. Re-check both outcomes with
+a proper dated-source price comparison before this is treated as settled.
+
+## 10. This system is most confident exactly where it has been most wrong
+— clean structural-negative stories that then snap back
+The 2026-09-11 calibration backfill (first one ever run — see
+scorecard.md) found accuracy INVERTED against confidence: high-confidence
+calls 75% (n=8), medium 78% (n=27), low 88% (n=8). A well-calibrated
+system produces the opposite ordering.
+The mechanism, not just the number: both high-confidence misses are the
+same shape — a clean, well-sourced, unambiguous bear story that then
+reversed hard.
+- **OXM** (09-07, PASS, high confidence): "clean earnings-miss-and-
+  guide-down story," full-year EPS guidance cut well below consensus,
+  next quarter guided to a loss, explicitly written up as a
+  "falling-knife pattern." Then +23% in three sessions.
+- **EGAN** (09-07, PASS, high confidence): "structural decline, swing to
+  GAAP net loss." Ledger: "leans cost a winner — data suggestive of a
+  rebound."
+The pattern is intuitive in hindsight and worth naming: the cleaner and
+more one-sided the bad news, the more confidently this system writes it
+off — and clean, fully-digested bad news is also exactly the setup where
+positioning gets crowded and oversold snapbacks happen. High confidence
+here is tracking "how unambiguous is the story," which is not the same
+thing as "how likely am I to be right about the next two weeks."
+Action: when a research pass is about to mark a structural-negative PASS
+at HIGH confidence, that combination specifically should prompt one extra
+check — is this already widely known and heavily positioned, and is there
+a near-term event (earnings, investor day, analyst capitulation cycle)
+that could force a re-rate inside the 2-week window? Do not downgrade the
+confidence reflexively; just don't let "the bear case is clean" alone
+produce a high-confidence rating.
+Sample-size caveat: n=8 in each of the high and low buckets — a single
+outcome flip moves these numbers by 12+ points, and the medium bucket
+carries 25 unresolved "unclear" outcomes that could shift the picture
+substantially once checked. This is a first read and a hypothesis to test
+as more outcomes resolve, NOT evidence to recalibrate on. Per CLAUDE.md's
+standing 2026-09-03/09-09 user decisions, any actual change to
+confidence-rating behavior or council's bar is the user's call, not
+something this finding triggers on its own.
