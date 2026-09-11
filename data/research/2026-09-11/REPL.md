@@ -46,7 +46,6 @@ extending the slide rather than bouncing.
 - Active securities class action (Complete Response Letter-era
   misstatement allegations) is an ongoing overhang, unresolved, with a
   lead-plaintiff deadline of 2026-10-05 — real but not new.
-  info this session found.
 - Recent $150M dilutive equity offering (Aug 2026) is a real structural
   headwind on the share count, separate from the price action being
   researched here.
