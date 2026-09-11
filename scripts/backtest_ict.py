@@ -101,14 +101,8 @@ SWING_LOOKBACK = 6
 # FOMC decision-day dates (the 2nd day of each 2-day meeting, when the 2pm ET
 # announcement happens), verified via WebSearch against Federal Reserve
 # schedule announcements -- NOT computed/guessed. Covers 2021-06 through
-# 2026-09 (this script's backtest range). CPI dates were also researched but
-# could not be reliably compiled into a complete, verified multi-year list
-# in this session (BLS's own schedule pages are blocked by this
-# environment's network egress policy, and WebSearch only surfaced scattered
-# sample dates, not a full verified set) -- deliberately excluded rather
-# than guess-filled, per this project's non-negotiable rule against
-# fabricating research. NFP is not listed here since it's a fixed calendar
-# rule (see _is_nfp_day) needing no external source.
+# 2026-09 (this script's backtest range). NFP is not listed here since it's
+# a fixed calendar rule (see _is_nfp_day) needing no external source.
 FOMC_DATES = {
     "2021-06-16", "2021-07-28", "2021-09-22", "2021-11-03", "2021-12-15",
     "2022-01-26", "2022-03-16", "2022-05-04", "2022-06-15", "2022-07-27",
@@ -120,6 +114,32 @@ FOMC_DATES = {
     "2025-01-29", "2025-03-19", "2025-05-07", "2025-06-18", "2025-07-30",
     "2025-09-17", "2025-10-29", "2025-12-10",
     "2026-01-28", "2026-03-18",
+}
+
+# CPI release dates, 2021-06 through 2026-08 (this script's backtest range),
+# fetched live 2026-09-11 from FRED (St. Louis Fed) via
+# /fred/release/dates?release_id=10 -- an official, authoritative source,
+# not guessed or scraped. Some months show two dates close together
+# (e.g. 2022-02-08/02-10, 2023-02-10/02-14) -- FRED's own release-dates
+# record, not a bug here; both are treated as CPI news days rather than
+# picking one.
+CPI_DATES = {
+    "2021-06-10", "2021-07-13", "2021-08-11", "2021-09-14", "2021-10-13",
+    "2021-11-10", "2021-12-10",
+    "2022-01-12", "2022-02-08", "2022-02-10", "2022-03-10", "2022-04-12",
+    "2022-05-11", "2022-06-10", "2022-07-13", "2022-08-10", "2022-09-13",
+    "2022-10-13", "2022-11-10", "2022-12-13",
+    "2023-01-12", "2023-02-10", "2023-02-14", "2023-03-14", "2023-04-12",
+    "2023-05-10", "2023-06-13", "2023-07-12", "2023-08-10", "2023-09-13",
+    "2023-10-12", "2023-11-14", "2023-12-12",
+    "2024-01-11", "2024-02-09", "2024-02-13", "2024-03-12", "2024-04-10",
+    "2024-05-15", "2024-06-12", "2024-07-11", "2024-08-14", "2024-09-11",
+    "2024-10-10", "2024-11-13", "2024-12-11",
+    "2025-01-15", "2025-02-12", "2025-03-12", "2025-04-10", "2025-05-13",
+    "2025-06-11", "2025-07-15", "2025-08-12", "2025-09-11", "2025-10-24",
+    "2025-12-18",
+    "2026-01-13", "2026-02-13", "2026-03-11", "2026-04-10", "2026-05-12",
+    "2026-06-10", "2026-07-14", "2026-08-12",
 }
 
 
@@ -642,7 +662,7 @@ def run_backtest_newsfilter(start, end, mode):
             date, prev_date = sorted_dates[i], sorted_dates[i - 1]
             if not (start <= date <= end):
                 continue
-            is_news_day = date in FOMC_DATES or _is_nfp_day(date)
+            is_news_day = date in FOMC_DATES or date in CPI_DATES or _is_nfp_day(date)
             if mode == "exclude" and is_news_day:
                 continue
             if mode == "only" and not is_news_day:
@@ -667,7 +687,7 @@ def run_backtest_newsfilter(start, end, mode):
                 trade.update(symbol=symbol, date=date)
                 all_trades.append(trade)
 
-    label = f"ICT sweep+MSS+FVG model (news-{mode}: NFP+FOMC days)"
+    label = f"ICT sweep+MSS+FVG model (news-{mode}: NFP+FOMC+CPI days)"
     suffix = f"_news{mode}"
     _report(all_trades, label, start, end, suffix)
 
