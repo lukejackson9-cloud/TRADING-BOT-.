@@ -602,25 +602,57 @@ consistent across both halves of the window, and >=~50 trades minimum.
   fully clean — but there's no version of this result that supports
   "ICT-day confluence helps."
 
-**Verdict: none of the three confluence tests found an edge that clears
-this project's own pre-registered bar — two came back negative outright,
-and the one that looked positive in aggregate (Test 2) failed the
-same half-split honesty check that's caught every other false positive
-in this project (vcp_breakout, OTE/NVDA).** This tested MECHANICAL
-signal agreement only (TA×TA, TA×macro-calendar, TA×ICT) — it did NOT
-test "TA + a real news catalyst," which is the part of the user's
-original point closest to how a discretionary trader actually combines
-signals. That dimension can't be honestly backtested historically at
-this data tier: the one proxy tried for a price-only "catalyst" (an
-overnight gap, 2026-09-07) already made results worse because it
-captures the reaction after it's fired, not the catalyst itself (see
-lessons.md #1). Testing real catalyst confluence properly needs a
-forward-only track — tagging future TA/ICT paper-trade signals against
-real dated news as it happens — not a historical backtest built on a
-price-derived stand-in. Not started without the user weighing in first;
-same patience standard as everything else here. Full trade-level results
-cached at `data/reference/backtest_confluence/*.json` (gitignored,
-regenerable via `scripts/backtest_confluence.py`).
+**Three more combinations tested 2026-09-11 (same session, user asked
+"can we apply more than 1 mechanism with different combinations" after
+seeing Tests 1-3), all still reusing already-cached data:**
+- **Test 4 (ICT-internal mechanism agreement)**: does 2+ of the 6 ICT
+  mechanisms (fvg/order_block/ote/inverse_fvg/eqhl/nypm) firing the same
+  symbol/day beat just 1 firing? **Worse again**: solo 3,774 trades,
+  37.8% win, +0.03R/trade vs. agreement 5,800 trades, 31.7% win,
+  **-0.08R/trade**. (Many combos overlap by construction — fvg/
+  order_block/ote share the same sweep+MSS detection, only the entry
+  zone differs — so co-firing among those three isn't independent
+  confirmation; noted in the combo breakdown, not hidden.)
+- **Test 5 (TA + order_block ONLY, not all 6 ICT mechanisms)**: isolating
+  just the least-bad ICT mechanism instead of lumping in the clearly
+  negative ones didn't rescue anything — overlap: 27 trades, 44.4% win,
+  -0.17%/trade vs. non-overlap: 640 trades, 51.4% win, +0.49%/trade — and
+  the overlap sample is now so thin (27 trades, flipping from +0.52%
+  first half to -1.03% second half) plus a heavy concentration flag
+  (NVDA = 51% of its own positive return) that it isn't even a reliable
+  reading of "worse," just unusable as evidence either way.
+- **Test 6 (bullish market regime as an ADDITIONAL filter on top of
+  Test 1's setup agreement)**: solo signals in a bullish regime are the
+  single best bucket found across every test run so far — but only
+  +0.04%/trade (787 bearish-regime solo trades: -0.11%). Confluence
+  trades in a bullish regime are still worse than solo in a bullish
+  regime (-0.06% vs +0.04%), and confluence in a bearish regime is the
+  worst bucket of all nine tests (-0.30%). Regime doesn't rescue
+  agreement either.
+
+**Verdict, across all six confluence tests run**: none found an edge
+that clears this project's own pre-registered bar. Every single
+combination of mechanical signals tested — TA×TA (2/3/4-way), TA×macro-
+calendar, TA×ICT (all 6 mechanisms, then order_block alone),
+ICT-internal agreement, and regime-as-filter — came back flat, negative,
+or (where briefly positive in aggregate) failed the first-half/second-
+half consistency check. The single best number found anywhere in this
+whole exercise is +0.04%/trade (solo TA signals, bullish regime) — not
+meaningfully different from zero once realistic costs are considered.
+This tested MECHANICAL signal agreement only (TA×TA, TA×macro-calendar,
+TA×ICT) — it did NOT test "TA + a real news catalyst," which is the part
+of the user's original point closest to how a discretionary trader
+actually combines signals. That dimension can't be honestly backtested
+historically at this data tier: the one proxy tried for a price-only
+"catalyst" (an overnight gap, 2026-09-07) already made results worse
+because it captures the reaction after it's fired, not the catalyst
+itself (see lessons.md #1). Testing real catalyst confluence properly
+needs a forward-only track — tagging future TA/ICT paper-trade signals
+against real dated news as it happens — not a historical backtest built
+on a price-derived stand-in. Not started without the user weighing in
+first; same patience standard as everything else here. Full trade-level
+results cached at `data/reference/backtest_confluence/*.json`
+(gitignored, regenerable via `scripts/backtest_confluence.py`).
 
 ### Original theoretical cadence (kept for reference — superseded by the single daily run above for the screen/research/council/propose steps)
 - Pre-market (8:00 AM ET): run skills/screen.md → update watchlist

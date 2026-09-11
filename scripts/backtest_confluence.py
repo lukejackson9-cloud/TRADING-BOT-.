@@ -56,7 +56,7 @@ from pathlib import Path
 from collections import defaultdict, Counter
 
 sys.path.insert(0, str(Path(__file__).parent))
-from backtest_ta import _load_series, _spy_closes, iter_signals, _simulate_exit  # noqa: E402
+from backtest_ta import _load_series, _spy_closes, iter_signals, _simulate_exit, _fetch_spy_regime  # noqa: E402
 from backtest_ict import (  # noqa: E402
     UNIVERSE as ICT_UNIVERSE, FOMC_DATES, CPI_DATES, _is_nfp_day,
     CACHE_DIR as ICT_CACHE_DIR,
@@ -210,10 +210,11 @@ def test2_macro_proximity(start, end):
     _save({s: nonews[s] for s in ALL_TA_SETUPS}, "test2_nonnews_days")
 
 
-def _load_ict_signal_days():
+def _load_ict_signal_days(suffixes=None):
     ict_start, ict_end = ICT_RESULT_RANGE
+    suffixes = ICT_RESULT_SUFFIXES if suffixes is None else suffixes
     signal_days = set()
-    for suffix in ICT_RESULT_SUFFIXES:
+    for suffix in suffixes:
         path = ICT_CACHE_DIR / f"results_{ict_start}_{ict_end}{suffix}.json"
         if not path.exists():
             print(f"  (missing {path}, skipping)")
@@ -223,17 +224,16 @@ def _load_ict_signal_days():
     return signal_days
 
 
-def test3_ta_ict_overlap():
-    """Restricted to the 30-symbol ICT universe -- the only place both
-    signal types exist. Uses the ALREADY-CACHED ICT backtest result files
-    (baseline + order_block + ote + inverse_fvg + eqhl + nypm) to build
-    the set of (symbol, date) days the ICT model fired ANY trade on,
-    rather than recomputing the ICT model here."""
+def _ta_ict_overlap(suffixes, label):
+    """Shared by Test 3 (all 6 ICT mechanisms) and Test 5 (order_block
+    only) -- restricted to the 30-symbol ICT universe, the only place
+    both signal types exist. Uses the ALREADY-CACHED ICT backtest result
+    file(s) named by `suffixes` to build the set of (symbol, date) days
+    the ICT model fired a trade on, rather than recomputing the model."""
     ict_start, ict_end = ICT_RESULT_RANGE
-    print(f"=== TEST 3: TA + ICT same-symbol/day overlap, {ict_start}..{ict_end} "
-          f"({len(ICT_UNIVERSE)}-symbol ICT universe only) ===")
-    signal_days = _load_ict_signal_days()
-    print(f"  {len(signal_days)} (symbol, date) ICT-signal-days loaded from cached results")
+    print(f"=== {label}, {ict_start}..{ict_end} ({len(ICT_UNIVERSE)}-symbol ICT universe only) ===")
+    signal_days = _load_ict_signal_days(suffixes)
+    print(f"  {len(signal_days)} (symbol, date) ICT-signal-days loaded from cached results ({suffixes})")
 
     series = _load_series(ict_start, ict_end)
     spy_closes = _spy_closes(ict_start, ict_end)
@@ -254,8 +254,156 @@ def test3_ta_ict_overlap():
     _report_group("TA signal WITH a same-day ICT signal", overlap, mid)
     _report_group("TA signal, no ICT signal that day", non_overlap, mid)
     _concentration_report(overlap)
+    return overlap, non_overlap
+
+
+def test3_ta_ict_overlap():
+    """Does a TA signal do better on a day ANY of the 6 tracked ICT
+    mechanisms also fired for that symbol?"""
+    overlap, non_overlap = _ta_ict_overlap(ICT_RESULT_SUFFIXES, "TEST 3: TA + ICT (any of 6 mechanisms) same-symbol/day overlap")
     _save(overlap, "test3_overlap")
     _save(non_overlap, "test3_non_overlap")
+
+
+def test5_best_ict_ta_overlap():
+    """Same question as Test 3, but restricted to ONLY order_block --
+    the least-bad-performing ICT mechanism on its own (-0.02R/trade, see
+    CLAUDE.md) -- instead of lumping in clearly negative mechanisms
+    (inverse_fvg -0.16R, eqhl -0.13R) that could dilute a real, if small,
+    signal from the better one."""
+    overlap, non_overlap = _ta_ict_overlap(["_orderblock"], "TEST 5: TA + ICT order_block-ONLY same-symbol/day overlap")
+    _save(overlap, "test5_overlap")
+    _save(non_overlap, "test5_non_overlap")
+
+
+def test4_ict_internal_agreement():
+    """Does agreement BETWEEN ICT mechanisms (e.g. order_block AND ote
+    both firing for the same symbol on the same day) beat a single
+    mechanism firing alone? Different mechanisms have different entry
+    rules/zones, so two mechanisms firing the same day produce two
+    SEPARATE trade records (possibly different entries/directions) --
+    "agreement" here means each mechanism's own trade is tagged by
+    whether >=1 OTHER mechanism ALSO fired that (symbol, date), not that
+    they share one entry the way TA's Test 1 does."""
+    ict_start, ict_end = ICT_RESULT_RANGE
+    print(f"=== TEST 4: ICT-internal mechanism agreement, {ict_start}..{ict_end} "
+          f"({len(ICT_UNIVERSE)}-symbol ICT universe) ===")
+
+    mechanism_by_day = defaultdict(set)  # (symbol, date) -> {mechanism, ...}
+    all_trades_by_mechanism = {}
+    for suffix in ICT_RESULT_SUFFIXES:
+        path = ICT_CACHE_DIR / f"results_{ict_start}_{ict_end}{suffix}.json"
+        if not path.exists():
+            print(f"  (missing {path}, skipping)")
+            continue
+        mech = suffix.lstrip("_") or "fvg"
+        trades = json.loads(path.read_text())
+        all_trades_by_mechanism[mech] = trades
+        for t in trades:
+            mechanism_by_day[(t["symbol"], t["date"])].add(mech)
+
+    solo, agreement = [], []
+    combo_counter = Counter()
+    mid = _midpoint_date(ict_start, ict_end)
+    for mech, trades in all_trades_by_mechanism.items():
+        for t in trades:
+            mechs_that_day = mechanism_by_day[(t["symbol"], t["date"])]
+            record = {"ticker": t["symbol"], "date": t["date"], "mechanism": mech, "return": t["return_r"]}
+            if len(mechs_that_day) >= 2:
+                combo_counter[frozenset(mechs_that_day)] += 1
+                agreement.append(record)
+            else:
+                solo.append(record)
+
+    def _report_r(label, trades):
+        n = len(trades)
+        if n == 0:
+            print(f"  {label}: 0 trades")
+            return
+        wins = [t for t in trades if t["return"] > 0]
+        avg = sum(t["return"] for t in trades) / n
+        print(f"  {label}: {n} trades, win rate {len(wins)/n*100:.1f}%, avg {avg:.2f}R/trade")
+        for half_label, half in (
+            ("first half", [t for t in trades if t["date"] < mid]),
+            ("second half", [t for t in trades if t["date"] >= mid]),
+        ):
+            if not half:
+                print(f"      {half_label}: 0 trades")
+                continue
+            hn = len(half)
+            print(f"      {half_label}: {hn} trades, {sum(1 for t in half if t['return']>0)/hn*100:.1f}% win, "
+                  f"{sum(t['return'] for t in half)/hn:.2f}R/trade")
+
+    _report_r("SOLO (only 1 mechanism fired that symbol/day)", solo)
+    _report_r("AGREEMENT (2+ ICT mechanisms fired that symbol/day)", agreement)
+    print("\n  Combo breakdown (note: mechanisms overlap by construction in places --")
+    print("  e.g. fvg/order_block/ote share the same sweep+MSS detection, only the")
+    print("  entry zone differs, so co-firing there is expected, not independent):")
+    for combo, n in combo_counter.most_common():
+        combo_trades = [t for t in agreement if len(mechanism_by_day[(t["ticker"], t["date"])] & combo) == len(combo)
+                         and mechanism_by_day[(t["ticker"], t["date"])] == combo]
+        if not combo_trades:
+            continue
+        avg = sum(t["return"] for t in combo_trades) / len(combo_trades)
+        wr = sum(1 for t in combo_trades if t["return"] > 0) / len(combo_trades) * 100
+        print(f"    {'+'.join(sorted(combo))}: {len(combo_trades)} trades, {wr:.1f}% win, {avg:.2f}R/trade")
+    _concentration_report([{"ticker": t["ticker"], "return": t["return"]} for t in agreement])
+    _save(solo, "test4_solo")
+    _save(agreement, "test4_agreement")
+
+
+def test6_regime_plus_setup_agreement(start, end):
+    """Does requiring a bullish SPY regime (SPY > its own 50-day SMA) ON
+    TOP OF Test 1's >=2-setup agreement do better than agreement alone?
+    Reuses Test 1's exact confluence/solo detection, then splits each
+    group by regime status on the signal date. Dates with no regime value
+    yet (first REGIME_SMA_WINDOW days of the range, not enough SMA
+    warmup) are dropped from this test rather than assumed either way."""
+    print(f"=== TEST 6: market regime + TA setup agreement, {start}..{end} ===")
+    series = _load_series(start, end)
+    spy_closes = _spy_closes(start, end)
+    regime = _fetch_spy_regime(start, end)
+
+    solo, confluence = [], []
+    for ticker, bars in series.items():
+        if len(bars) < 25:
+            continue
+        by_i = defaultdict(set)
+        for i, date, setup in iter_signals(bars, spy_closes=spy_closes):
+            by_i[i].add(setup)
+        for i, setups in by_i.items():
+            effective = set(setups)
+            if effective == {"breakout", "vcp_breakout"}:
+                effective = {"breakout"}
+            r = _simulate_exit(bars, i)
+            if r is None:
+                continue
+            date = bars[i][0]
+            if date not in regime:
+                continue
+            record = {"ticker": ticker, "date": date, "return": r, "regime": regime[date]}
+            if len(effective) >= 2:
+                confluence.append(record)
+            elif len(effective) == 1:
+                solo.append(record)
+
+    def _report_regime(label, trades):
+        bullish = [t for t in trades if t["regime"]]
+        bearish = [t for t in trades if not t["regime"]]
+        print(f"  {label}:")
+        for sub_label, sub in (("bullish regime", bullish), ("bearish/other regime", bearish)):
+            n = len(sub)
+            if n == 0:
+                print(f"      {sub_label}: 0 trades")
+                continue
+            avg = sum(t["return"] for t in sub) / n * 100
+            wr = sum(1 for t in sub if t["return"] > 0) / n * 100
+            print(f"      {sub_label}: {n} trades, {wr:.1f}% win, {avg:.2f}%/trade")
+
+    _report_regime("SOLO (1 setup)", solo)
+    _report_regime("CONFLUENCE (2+ setups agree)", confluence)
+    _save(solo, "test6_solo")
+    _save(confluence, "test6_confluence")
 
 
 if __name__ == "__main__":
@@ -266,10 +414,19 @@ if __name__ == "__main__":
         test2_macro_proximity(sys.argv[2], sys.argv[3])
     elif cmd == "test3":
         test3_ta_ict_overlap()
+    elif cmd == "test4":
+        test4_ict_internal_agreement()
+    elif cmd == "test5":
+        test5_best_ict_ta_overlap()
+    elif cmd == "test6":
+        test6_regime_plus_setup_agreement(sys.argv[2], sys.argv[3])
     elif cmd == "all":
         start, end = sys.argv[2], sys.argv[3]
         test1_setup_agreement(start, end)
         test2_macro_proximity(start, end)
         test3_ta_ict_overlap()
+        test4_ict_internal_agreement()
+        test5_best_ict_ta_overlap()
+        test6_regime_plus_setup_agreement(start, end)
     else:
-        print("usage: backtest_confluence.py [test1|test2] START END | test3 | all START END")
+        print("usage: backtest_confluence.py [test1|test2|test6] START END | test3|test4|test5 | all START END")
