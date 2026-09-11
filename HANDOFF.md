@@ -741,3 +741,42 @@ This was done same-evening as the 09-11 14:00 UTC journal check-in
 specifically as a bounded, cheap exception the user asked for given their
 stated concern about pace -- not a precedent for skipping the "hold new
 testing for the check-in" rule going forward without asking first.
+
+## 2026-09-11: First full journal check-in -- real outcome data at last, no calibration change made unilaterally
+Ran skills/journal.md's process across every research/council verdict
+from 2026-09-02 through 2026-09-10 (~106 tickers total: 14 council
+CANDIDATEs, ~77 research-level WATCH/PASS calls with a checkable outcome,
+9 no-thesis screened movers, 1 process-only PASS, and 18 not reached
+before search budget ran out). Full detail is in
+data/journal/trade_ledger.md (every ticker's resolution) and
+data/journal/scorecard.md (the numeric rollup) -- summary here:
+
+**Council downgrades: 10 validated, 1 cost a winner (DELL), 3 unclear
+(HOOD, ROIV, ASO -- the latter two just too recent to have resolved
+yet).** Downgrade accuracy 10/11 = 90.9%. Every CANDIDATE that has ever
+reached council (14 for 14) has still been downgraded to WATCH -- but for
+the first time there's real evidence the downgrades themselves have
+mostly been right, not just frequent.
+
+**Research-level WATCH/PASS: 32 validated, 7 cost a winner, 38 unclear**
+(mostly missing a clean baseline price, not contradictory evidence).
+Accuracy 32/39 = 82.1%. AEHR is the one clean, sizeable miss worth
+naming: the 09-04 "stale drivers, likely sell-the-news" WATCH missed a
+further +69% run into a real dated investor-conference catalyst -- logged
+as an explicit counter-example in lessons.md #1, not smoothed over.
+
+**Both numbers are directional only (N=14, N=77)** -- nowhere near enough
+to touch council's calibration, research.md's skepticism, or either
+TA/ICT promotion bar. Per the standing 2026-09-03/09-09 user decisions,
+nothing was loosened unilaterally; this is the finding being brought back
+to the user for their own call, not an autonomous recalibration.
+
+**Known gaps, not resolved this pass** (search-budget exhaustion, not
+evidence): ADBE's actual post-earnings reaction (explicitly requested by
+this check-in's own trigger and still not checked -- needs a dedicated
+re-run with more search budget), plus BMNR, PUR, ZOOZ, and the full
+09-09/09-10 batch (FCUV, BIAF, DOCN, VIAV, CHWY, NET, PINS, VRT, BAND,
+KRMN, TBBK, BRZE, SIG). ROIV and ASO also just need a few more days to
+elapse before a real post-verdict price exists. None of these should be
+read as "no news" -- they're simply unattempted, and a future check-in
+should prioritize them first.

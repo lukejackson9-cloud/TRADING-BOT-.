@@ -34,6 +34,21 @@ setup than a real catalyst about to be revealed (see screen.md's
 earnings-lookahead design, which exists specifically to catch a reaction
 same-session instead of chasing one that already happened).
 
+**Counter-example, logged honestly (2026-09-11 outcome check)**: AEHR's
+2026-09-04 WATCH ("every driver is 3+ weeks stale... likely sell-the-news
+setup") did NOT play out — the stock surged a further +69% (from $86.26
+to ~$145.61) into/past its 52-week high at a 2026-09-10 investor
+conference, rather than fading. This is the same pattern this lesson is
+built on (DOCU, AEHR's own earlier appearances, CHPT, MSTR, NX, TARS) but
+running the opposite direction on this specific occasion. Not treated as
+disproving the pattern — it's still evidenced 5+ ways above — but logged
+so a future pass doesn't smooth over the one clean miss: "stale drivers"
+is a real caution worth raising, not a reliable predictor of a fade on
+its own, and a live, dated event (the investor conference) can still
+reignite a "stale" story. Don't downgrade a real near-term dated event
+(even one attached to an already-running story) to "stale" without
+weighing that it could still be the next leg's actual trigger.
+
 ## 2. WebSearch summaries are unreliable for precise facts (price levels,
 % moves, even direction) — verify against authoritative OHLCV when
 sources disagree
