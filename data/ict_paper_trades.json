@@ -1,0 +1,100 @@
+[
+  {
+    "date": "2026-09-10",
+    "symbol": "MSFT",
+    "setup": "order_block",
+    "direction": "bullish",
+    "return_r": 2.0
+  },
+  {
+    "date": "2026-09-10",
+    "symbol": "MSFT",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": -1.0
+  },
+  {
+    "date": "2026-09-10",
+    "symbol": "AMZN",
+    "setup": "order_block",
+    "direction": "bullish",
+    "return_r": 0.1345454545454562
+  },
+  {
+    "date": "2026-09-10",
+    "symbol": "META",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": 2.0
+  },
+  {
+    "date": "2026-09-10",
+    "symbol": "TSLA",
+    "setup": "order_block",
+    "direction": "bullish",
+    "return_r": -1.0
+  },
+  {
+    "date": "2026-09-10",
+    "symbol": "TSLA",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": -1.0
+  },
+  {
+    "date": "2026-09-10",
+    "symbol": "XOM",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": 2.0
+  },
+  {
+    "date": "2026-09-10",
+    "symbol": "JNJ",
+    "setup": "nypm",
+    "direction": "bullish",
+    "return_r": -1.0
+  },
+  {
+    "date": "2026-09-10",
+    "symbol": "MA",
+    "setup": "order_block",
+    "direction": "bullish",
+    "return_r": -1.0
+  },
+  {
+    "date": "2026-09-10",
+    "symbol": "MA",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": -1.0
+  },
+  {
+    "date": "2026-09-10",
+    "symbol": "DIS",
+    "setup": "nypm",
+    "direction": "bearish",
+    "return_r": -1.0
+  },
+  {
+    "date": "2026-09-10",
+    "symbol": "NFLX",
+    "setup": "order_block",
+    "direction": "bullish",
+    "return_r": 0.21393034825874516
+  },
+  {
+    "date": "2026-09-10",
+    "symbol": "NFLX",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": 2.0
+  },
+  {
+    "date": "2026-09-10",
+    "symbol": "CVX",
+    "setup": "order_block",
+    "direction": "bullish",
+    "return_r": 0.05633802816900224
+  }
+]

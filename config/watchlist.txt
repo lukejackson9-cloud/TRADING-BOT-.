@@ -1,0 +1,174 @@
+# One ticker per line. Comment after # is optional context.
+# This file gets overwritten daily by skills/screen.md for auto-added names;
+# manually added lines are preserved.
+GTLB   # 2026-09-02: +20% on Q2 earnings beat + raised FY guidance, screened via WebSearch
+HOOD   # 2026-09-02: Morgan Stanley/Piper Sandler/Bernstein/Scotiabank all bullish this week; council found live regulatory risk on the exact catalyst
+DUOL   # 2026-09-02: Evercore doubled target to $210 on bounce-back data; council WATCH, current-year margin compression is real (closest call of the day)
+SIRI   # 2026-09-02: Deutsche Bank upgrade to Buy $45; council WATCH, the +7.5% pop already happened and structural subscriber risk stands
+IHG    # 2026-09-02: UBS upgrade to $188 but contradicts other fair-value estimates ($134-159) -- WATCH at research stage, not sent to council
+CAT    # 2026-09-02: strong long-term AI/backlog story but no fresh 1-2wk trigger, already +32.6% YTD -- WATCH, doesn't fit short-term strategy
+OGE    # 2026-09-02: modest RBC upgrade sits against unresolved Oklahoma rate case/CWIP dispute and a recent revenue miss -- WATCH
+ORCL   # EARNINGS 2026-09-09 (unconfirmed vs 09-14, WebSearch) — FMP's free-tier earnings calendar has no ORCL entry through mid-Oct either, doesn't confirm or deny — pre-catalyst watch, not yet a candidate
+
+# --- added 2026-09-02 via scripts/market_screener_client.py (FMP, real screen) ---
+# $5-$500 price filter applied; leveraged/inverse/sector ETFs (TSLL, SOXL,
+# SOXS, TQQQ, SQQQ, XLF, HYG, EWZ) excluded from candidates below.
+DELL   # 2026-09-02: +15.8% today, in FMP top-50 gainers AND most-actives (volume confirmed)
+BIAF   # 2026-09-02: +48.0% today (bioAffinity Technologies), in FMP top-50 gainers AND most-actives (volume confirmed) -- small/micro-cap, verify liquidity and catalyst carefully in research.md
+CNH    # 2026-09-02: +9.2% today, FMP most-actives (volume confirmed)
+ONDS   # 2026-09-02: +8.1% today, FMP most-actives (volume confirmed)
+IREN   # 2026-09-02: +7.6% today, FMP most-actives (volume confirmed)
+NU     # 2026-09-02: +6.5% today, FMP most-actives (volume confirmed)
+CDE    # 2026-09-02: +6.0% today, FMP most-actives (volume confirmed)
+RIG    # 2026-09-02: +5.1% today, FMP most-actives (volume confirmed)
+SOFI   # 2026-09-02: +4.6% today, FMP most-actives, quote-confirmed volume 40.5M
+PLTR   # 2026-09-02: -5.8% today, FMP most-actives, quote-confirmed volume 39.6M
+PCG    # 2026-09-02: -5.2% today, FMP most-actives (volume confirmed)
+NVDA   # 2026-09-02: +3.2% today, FMP most-actives, quote-confirmed volume 156.0M
+MDB    # 2026-09-02: -13.5% today per FMP top-50 losers -- volume UNCONFIRMED, FMP free tier blocks /quote for this symbol; verify liquidity/catalyst via WebSearch before treating as a candidate
+CRDO   # 2026-09-02: -20.0% today per FMP top-50 losers -- volume UNCONFIRMED, FMP free tier blocks /quote for this symbol; verify liquidity/catalyst via WebSearch before treating as a candidate
+DOCU   # EARNINGS 2026-09-03 — pre-catalyst watch (FMP earnings calendar), not yet a candidate
+
+# --- added 2026-09-03 via scripts/massive_client.py (Massive.com, real whole-market screen) ---
+# 5,315 common-stock tickers scanned, 1,356 passed $5-$500/>1M-volume filter
+# for the 2026-09-02 vs 2026-09-01 session (Massive is EOD-only, one session
+# behind live). BIAF/CRDO/DELL/MDB/CNH/GTLB also appeared here but already
+# have verdicts above -- not re-added.
+FMC    # 2026-09-03: +12.2% on 2026-09-02 -- no FMC-specific news found, reads as ag-input sector beta (Middle East supply disruption) against a stale Q2 miss -- WATCH/PASS boundary
+ASTS   # 2026-09-03: +11.8% on 2026-09-02, Berenberg Buy init + insider buy -- CANDIDATE at research, council WATCH (init was sector-wide not ASTS-specific; launch delay + dilutive convert underneath)
+RDDT   # 2026-09-03: +9.3% on 2026-09-02, Baird note on AI-licensing risk (Neutral, unchanged target) -- WATCH, soft/sentiment-driven signal
+PANW   # 2026-09-03: -9.3% on 2026-09-02, post-earnings margin-compression scare despite a real beat -- WATCH, catalyst already fully fired
+SRPT   # 2026-09-03: +8.8% on 2026-09-02, undated pipeline-data anticipation -- WATCH low confidence, real overhang from past fatal adverse events
+CHTR   # 2026-09-03: +8.7% on 2026-09-02, relief bounce off CFO-resignation overreaction -- PASS, doesn't address the underlying subscriber-loss problem
+MGNI   # 2026-09-03: +8.7% on 2026-09-02, agentic-AI ad product + Q2 beat -- WATCH, thin news peg on an already +72%-in-90-days stock
+VRNS   # 2026-09-03: +10.4% on 2026-09-02, Bloomberg-reported Proofpoint takeover talks -- CANDIDATE at research, council WATCH (documented repeat unconverted rumor pattern since June 2026, active securities fraud lawsuit)
+FCEL   # 2026-09-03: -15.7% on 2026-09-02, clean earnings/revenue miss + dilution history -- PASS
+GIII   # 2026-09-03: -11.5% on 2026-09-02, EPS beat but revenue miss/soft guidance on structural PVH-license headwind -- WATCH
+WNC    # 2026-09-03: +11.35% on 2026-09-02, no ticker-specific catalyst found (broad risk-on rally) -- PASS, volume right at the 1M liquidity floor
+
+# --- widened pass 2026-09-03, ranks 36-100 of the same Massive.com screen (user asked for any buy opportunity) ---
+ALNY   # 2026-09-03: +8.65% on 2026-09-02, real Phase 3 HELIOS-B data at ESC Congress + analyst PT raises -- CANDIDATE at research, council WATCH (rival Wainua trial's stabilizer-subgroup data raises an unresolved same-class mechanism question; post-crash analyst targets near/below current price; no dated catalyst inside 2wks)
+KSS    # 2026-09-03: +7.80% on 2026-09-02, no ticker-specific news, soft Q2 beat (comp sales still declining) -- PASS
+CLF    # 2026-09-03: +7.63% on 2026-09-02, weeks-stale steel/tariff story, live 30-day strike-deferral risk unresolved -- PASS
+FOUR   # 2026-09-03: +7.67% on 2026-09-02, only news found is >1 week stale -- PASS
+XP     # 2026-09-03: +6.78% on 2026-09-02, confirmed sector-wide LatAm fintech move (STNE/PAGS/PicPay moved together) -- PASS, not XP-specific
+RUN    # 2026-09-03: +7.05% on 2026-09-02, real same-day IRS ITC clarification -- WATCH, sector-wide (CSIQ moved too) + real cash-burn/guidance-cut concerns underneath
+
+# --- added 2026-09-03 (second pass, same-day) via scripts/market_screener_client.py (FMP live intraday) ---
+# Market closed for real this time (Sept 3 session), fresh data. Excluded a
+# large cluster of leveraged single-stock crypto ETFs (MSTX, HOOX, COIA,
+# CONL, XXRP, etc.) as derivative noise, not real companies.
+RARE   # 2026-09-03: -44.0% today, Phase 3 ASPIRE trial failed both primary and key secondary endpoints (Angelman syndrome) -- PASS, clean negative catalyst, no bounce case
+PSNY   # 2026-09-03: -27.5% today, FY26 delivery guidance slashed on US market-access denial for MY2027+ vehicles -- PASS, structural multi-year loss
+MEI    # 2026-09-03: -15.4% today, revenue beat but EPS/EBITDA miss, guidance only reaffirmed not raised -- WATCH
+MSTR   # 2026-09-03: +17.6% today, tracks a real BTC breakout above $80k (Waller dovish comments) -- WATCH, the company's own BTC purchase news is 4 days stale
+MARA   # 2026-09-03: +10.8% today, same BTC-breakout theme -- WATCH low confidence, sources gave conflicting BTC price levels and an unverifiable claim
+BMNR   # 2026-09-03: reported inconsistently across sources (-2.1% vs +14%) -- PASS, this is an Ethereum treasury company (not Bitcoin, pivoted June 2025), no fresh distinct catalyst
+AVGO   # 2026-09-03: -2.7% today, real Q3 beat but Q4 guidance missed + sector profit-taking spillover from Marvell -- WATCH, negative catalyst, long-only has no edge
+VALE   # 2026-09-03: DATA CONFLICT -- one source says -2.7%, another says +4.0% same day -- PASS, no fresh catalyst either way and direction itself unconfirmed
+
+# --- widened same-day pass: rest of the live FMP movers list (user asked to keep reviewing until real coverage was reached) ---
+# 9 tickers here are leveraged/inverse single-stock ETFs disguised as huge
+# individual movers (SMST, CRCG, BULG, BTDL, MRAL, BMNG, GEMG, GLGG, CONX,
+# PLTZ, HFSP) -- excluded by mandate, not real companies.
+CHPT   # 2026-09-03: +75.0% today, real Q2 beat + record margin + zero cash burn -- WATCH, already fully priced by the time of research, high short interest amplifying a squeeze
+RACC   # 2026-09-03: DATA FAILURE -- screener's -37.4% move could not be verified against any source (actual range $24-25) -- PASS, flagged not fabricated
+AEHL   # 2026-09-03: +37.2% today, recycled Bitcoin-treasury "Genius Plan" narrative, 3rd+ time this year -- PASS, serial thin-float pump pattern
+SMST   # leveraged inverse (2x short MSTR) ETF -- PASS, excluded by mandate
+CRCG   # leveraged (2x long CRCL) ETF -- PASS, excluded by mandate
+BMNG   # leveraged (2x long BMNR) ETF -- PASS, excluded by mandate
+FCUV   # 2026-09-03: +27.4% today, no dated catalyst found for today specifically -- PASS, thin-float pump pattern (same shape as BIAF)
+PUR    # 2026-09-03: could not confidently identify the actual company behind this ticker -- PASS, insufficient information
+GEMG   # leveraged (2x long GEMI) ETF -- PASS, excluded by mandate
+ZOOZ   # 2026-09-03: Bitcoin-treasury pivot company, down 90% from 52wk high, vague "strategic alternatives" -- PASS
+PRHI   # 2026-09-03: +22.5% today, genuine turnaround fundamentals but no same-day news found -- WATCH low confidence
+BULG   # leveraged (2x long BULL/Webull) ETF -- PASS, excluded by mandate
+MF     # 2026-09-03: -21.2% today, thin-float shell-like microcap, no negative news found -- PASS, long-only + noise
+BTDL   # leveraged (2x long BTDR/Bitdeer) ETF -- PASS, excluded by mandate
+MRAL   # leveraged (2x long MARA) ETF -- PASS, excluded by mandate
+GLGG   # leveraged (2x long GLXY/Galaxy Digital) ETF -- PASS, excluded by mandate
+CONX   # leveraged (2x long COIN/Coinbase) ETF -- PASS, excluded by mandate
+PSQL   # 2026-09-03: -20.0% today, recent de-SPAC, no fresh catalyst beyond post-SPAC pop-and-fade pattern -- PASS
+NTRB   # 2026-09-03: +19.8% today, no dated news found (only stale 2021 patent story recurring) -- PASS
+FGL    # 2026-09-03: -18.9% today, serial reverse-split name (two 100-for-1 splits this year) -- PASS
+ABTC   # 2026-09-03: +18.7% today, American Bitcoin Corp, plausible BTC-rally beta but no company-specific news found -- WATCH low confidence
+PLTZ   # leveraged inverse (2x short PLTR) ETF -- PASS, excluded by mandate (real story is PLTR +7.9% on a PwC deal)
+METC   # 2026-09-03: -14.3% today, post-earnings de-rating (Baird/Morgan Stanley cuts) against a contested rare-earth optionality bull case -- WATCH
+HFSP   # algorithmic futures-trading ETF, not an operating company -- PASS, excluded by mandate
+NXL    # 2026-09-03: -13.4% today, 1-for-30 reverse split + dilutive raise, distressed microcap -- PASS
+AUR    # 2026-09-03: +8.0% today, dated Investor Day (9/23) but still ~$270M/quarter cash burn vs ~$2M revenue -- WATCH
+SPCX   # 2026-09-03: +6.4% today (SpaceX itself, now public) -- CANDIDATE at research, council WATCH (Sept 9 lockup unlock falls inside the window; Flight 13 precedent went against the stock)
+BTG    # 2026-09-03: +5.3% today, same gold-sector-beta theme as CDE, no BTG-specific catalyst -- PASS
+HPE    # 2026-09-03: +5.0% today, Q3 beat-and-raise -- CANDIDATE at research, council WATCH (Morgan Stanley cut target same day; no dated catalyst inside 2wk window; management confirmed supply constraints through 2028)
+
+# --- added 2026-09-04 via the new daily screen routine (Massive whole-market for the 2026-09-03 session + FMP live for 2026-09-04) ---
+LULU   # 2026-09-04: -17.4% today, comp sales down 9% (leggings -20%), 2nd straight guidance cut, China weakness -- PASS, clean structural deterioration
+GWRE   # 2026-09-04: -20% over 2 days, Q4 beat but FY27 ARR guide-down -- CANDIDATE at research, council WATCH (this EXACT beat-then-ARR-guide-down-crash pattern already happened to GWRE in June 2026; recovery took ~3 months, not 2 weeks; zero insider buying)
+PATH   # 2026-09-04: -16.6% today, revenue beat but ARR growth decelerating to 12%, Canaccord downgrade on competitive concerns -- WATCH
+TSLA   # 2026-09-04: -5.9% today, live NHTSA safety probe (no timeline) + underwhelming robotaxi event -- WATCH, open-ended regulatory overhang
+NFLX   # 2026-09-04: -5.4% today (magnitude disputed across sources, -3.7% to -5.4%), 2nd straight quarter of light guidance -- WATCH
+ASAN   # 2026-09-04: -12.7% today, good Q2 print but guidance shows deceleration + margin compression -- PASS, long-only has no edge on the negative catalyst
+AEHR   # 2026-09-04: +13.1% today, real AI-testing growth story but every driver is 3+ weeks stale -- WATCH, likely "sell the news" setup ahead of Sept 10 investor conference
+TITN   # 2026-09-04: +14.85% today, no dated catalyst found, just analysts updating models on week-old news -- PASS
+SMMT   # 2026-09-03: +17.33%, real Phase 3 data beating Keytruda on OS -- WATCH, already fully priced in by the time of research (broke prior session)
+CLS    # 2026-09-03: +11.55%, real AMD partnership tailwind but no fresh dated catalyst, next earnings Oct 26 (outside window) -- WATCH
+
+# --- added 2026-09-06 via scripts/yahoo_screener_client.py (first international/UK test) ---
+# UK screener's day_gainers_gb/day_losers_gb/most_actives_gb are ALL dominated
+# by AIM penny stocks (confirmed live, 0 passed a GBP4-400/>1M-volume filter
+# out of 72 UK-domestic rows) -- fell back to WebSearch per screen.md's
+# designed fallback chain, which found real candidates.
+VOD.L  # 2026-09-06: Goldman Sachs double-upgrade Sell->Buy, target 85p->155p (2026-09-04) -- WATCH, credible ROIC thesis but a lone outlier vs. still-mixed 3 Buy/4 Hold/3 Sell consensus, against real Germany subscriber losses + rising net debt
+CCC.L  # 2026-09-06: UBS target raised 5250p->7000p (2026-09-04), corroborated by CCC's own July guidance upgrade + Berenberg -- WATCH, better-corroborated than VOD.L but already near record highs, rode a broader tech rally
+GSK.L  # 2026-09-06: PASS -- the assumed "analyst upgrade this week" premise didn't hold up on research; actual upgrades dated May-July, this week's only GSK-specific news is an early-stage HUTCHMED licensing deal, one broker explicitly kept Hold unchanged
+
+# --- added 2026-09-07 via the daily screen routine (FMP gainers/losers/most-active, Massive whole-market skipped -- concurrent with the 2-year TA backtest fetch, see trades.log) ---
+AOUT   # 2026-09-07: +44.7% today, real Q1 FY27 beat + raised EBITDA guidance + 2 analyst PT hikes, but conflicting sources on magnitude/timing, no fresh catalyst dated to today specifically -- WATCH
+NX     # 2026-09-07: +22.2% today, real Q3 beat (+16% EPS surprise) reported 9/3 -- WATCH, but the actual pop happened Friday 9/4, today just confirms the level held
+MTEX   # 2026-09-07: +23.5% today, no substantive dated catalyst found (only a 9/1 board-chair transition, stale May insider buys) -- PASS, unexplained thin-float move
+PDEX   # 2026-09-07: +18.9% today, real Q4/FY26 results 9/3 (gross profit +103% YoY) but conflicting EPS figures and reports shares initially traded DOWN on the print -- WATCH, delayed re-rating with no distinct same-day trigger
+INTC   # 2026-09-07: +4.5% today, mixed real events ($20B dilutive raise, AI/18A optimism, Tiger Global stake increase) undercut by a same-week Mizuho target cut, next earnings 7wk out -- WATCH
+SMCI   # 2026-09-07: +4.5% today, no new dated catalyst (last earnings 8/11, next 11/3) -- PASS, stale AI-hardware momentum
+IREN   # 2026-09-07: +7.3% today, rebounding off a post-earnings selloff with a 9/3 Bernstein bullish note assist, but no confirmed dated trigger for today and extreme 52wk volatility -- WATCH, low confidence
+BANL   # 2026-09-07: -40.7% today, real dated event (large share sale triggered a trading halt ~9/4) but a distressed micro-cap share-supply shock, not a fundamentals catalyst -- PASS
+OXM    # 2026-09-07: -15.7% today, real Q2 FY26 earnings 9/3 with guidance cut well below consensus (Lilly Pulitzer weakness, consumer macro pressure) -- PASS, falling-knife not a buy setup
+EGAN   # 2026-09-07: -17.9% today, real FY26 Q4 results 9/3 with FY27 guidance showing legacy revenue collapsing faster than AI revenue offsets, swing to GAAP net loss -- PASS, structural decline
+
+# --- added 2026-09-08 via the daily screen routine (Massive whole-market, same 2026-09-03->09-04 session pair as yesterday -- 09-07 was Labor Day, no new session) ---
+ADBE   # EARNINGS 2026-09-10 -- pre-catalyst watch, not yet a candidate
+TYRA   # 2026-09-08: +15.2%, Sept 9 Phase 2 dabogratinib data call announced -- WATCH, binary readout still a day away and unresolved, TA reads SELL against the bullish framing
+PSQL   # 2026-09-08: -18.4%, no fresh catalyst -- PASS, continuing post-de-SPAC pop-and-fade (down >65% from 8/31 high), same as this project's 9/3 note
+GOLD   # 2026-09-08: +11.2% -- WATCH. NOTE: ticker GOLD is no longer Barrick (renamed Barrick Mining/'B' in 2025); now Gold.com Inc (fka A-Mark Precious Metals). Real FY26 beat + special $1 dividend but mixed (revenue miss, 2 analyst PT cuts, gold-price headwind)
+RACC   # 2026-09-08: -7.5% per screener -- PASS/insufficient info, could not verify this move against ANY live source (all show RACC trading $24-25), same data-reliability issue flagged 2026-09-03 -- treated as unverified, not a real catalyst
+TARS   # 2026-09-08: +9.1%, real converging catalysts (Alkeus acquisition close + Jefferies Strong-Buy upgrade to $105) -- CANDIDATE at research, council WATCH (unresolved unrebutted Culper Research anti-kickback allegation on sole product XDEMVY + real deal dilution + entry at all-time highs the day after both catalysts already fired; bull agent's own independent research converged on the same risk cluster before seeing the bear case)
+CHPT   # 2026-09-08: +8.9%, no new catalyst -- WATCH, day-3 continuation of the 9/2 earnings-beat pop, even fresh analyst targets sit below current price
+ADSK   # 2026-09-08: -8.3%, sympathy move off Adobe's CEO-transition news reopening AI-disruption fears for seat-based SaaS -- PASS, Autodesk's own quarter actually beat and raised guidance; also long-only so no edge either direction anyway
+KLAC   # 2026-09-08: +7.3%, part of a confirmed sector-wide semiconductor/AI-infra rally (also lifting ALAB/NBIS/AXTI/TSEM/FORM/UCTT/TTMI/SMTC/BE) but has the strongest independent company-specific case on top -- WATCH, raised advanced-packaging/AI guidance, though UBS cut target same week
+ALAB   # 2026-09-08: +9.8%, same sector rally -- WATCH low confidence, catalyst is speculative (S&P 500 inclusion bet, decision not until 9/18), TA consensus SELL disagrees with bullish narrative -- CORRELATED with KLAC/NBIS, not independent
+NBIS   # 2026-09-08: +7.5%, same sector rally -- WATCH low confidence, no identifiable company-specific dated catalyst this session, Palantir news actually postdates the move -- CORRELATED with KLAC/ALAB, not independent
+
+# --- added 2026-09-09 via the daily screen routine (Massive whole-market, 2026-09-04 -> 09-08 session pair) ---
+HWM    # 2026-09-09: -10.7%, multi-day slide on SpaceX in-house turbine-casting threat -- WATCH low confidence, unresolved
+AMGN   # 2026-09-09: -10.1%, sympathy selloff from Novartis's pelacarsen Phase 3 failure (same Lp(a) mechanism as Amgen's olpasiran) -- WATCH, echoes the ALNY same-class-doubt pattern
+SMR    # 2026-09-09: +15.3%, real dated AI-partnership/milestone news but pre-revenue story stock, brutal 1yr drawdown -- WATCH low confidence, possible AI-infra correlation with CRWV
+CRWV   # 2026-09-09: +11.7%, Nebius/Palantir partnership -- WATCH low confidence, sector-wide "neocloud" rally not CRWV-specific, already extended since August
+ROIV   # 2026-09-09: +18.8%, real same-day Phase 2 PH-ILD win (primary+secondary endpoints) + confirmed genuine LISRAYA FDA approval (8/27) -- CANDIDATE at research, council WATCH (reaction already fired/partially faded, no near-term follow-up catalyst for 1-2wks, real multi-month insider selling pattern across CEO/President/CIO/director entity)
+DYN    # 2026-09-09: -16.4%, no dated catalyst found anywhere -- PASS
+FCUV   # 2026-09-09: -65.2% crash in extremely thin float -- PASS, repeat of the 9/3 thin-float/no-catalyst pattern
+BIAF   # 2026-09-09: -41.5%, real catalysts (Nasdaq compliance regained + expanded indication) but session round-tripped a +54.78% intraday spike into this close -- PASS, confirms the 9/2 thin-float pump/dump pattern flagged hypothetically then, now observed directly
+DOCN   # 2026-09-09: +12.6%, real dated AI-strategy reveal at Goldman conference -- WATCH, stock already +160% YTD with analysts staying Neutral on valuation despite raising targets
+VIAV   # 2026-09-09: +11.2%, no dated ticker-specific catalyst confirmed despite strong fundamentals -- WATCH low confidence, also surfaced a likely stale/cross-contaminated analyst data point
+
+# --- added 2026-09-10 via the daily screen routine (Massive whole-market, 2026-09-08 -> 09-09 session pair) ---
+ADBE   # 2026-09-10: EARNINGS PRINTED TODAY -- beat (EPS $6.13 vs $6.08 est, rev $6.76B vs $6.69B est), pre-catalyst tag from 09-08 now resolved, evaluating the reaction
+TYRA   # 2026-09-10: -17.66%, Sept 9 Phase 2 dabogratinib readout now resolved (was WATCH pending this exact catalyst on 09-08) -- evaluating the reaction
+SIG    # 2026-09-10: +23.96% on 2026-09-09 session, Signet Jewelers
+CHWY   # 2026-09-10: -10.83% on 2026-09-09 session, Chewy
+NET    # 2026-09-10: +10.51% on 2026-09-09 session, Cloudflare
+PINS   # 2026-09-10: -9.24% on 2026-09-09 session, Pinterest
+VRT    # 2026-09-10: -9.61% on 2026-09-09 session, Vertiv
+ASO    # 2026-09-10: +14.4% on 2026-09-09 session, Academy Sports + Outdoors
+BAND   # 2026-09-10: +11.94% on 2026-09-09 session, Bandwidth
+KRMN   # 2026-09-10: -11.26% on 2026-09-09 session, Karman Holdings
+TBBK   # 2026-09-10: -22.33% on 2026-09-09 session, The Bancorp
+BRZE   # 2026-09-10: -21.73% on 2026-09-09 session, Braze
