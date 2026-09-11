@@ -149,6 +149,29 @@ evidence from journal.md (see the scheduled check-in noted in HANDOFF.md)
 should ever inform a recalibration decision, and even then, discuss it
 with the user first rather than changing the skills unilaterally.
 
+**MATERIAL UPDATE 2026-09-11 — the 90.9% downgrade-accuracy figure does
+NOT show council has selection skill.** `scripts/counterfactual.py` now
+grades what would have happened if every verdict had been BOUGHT anyway,
+against a date-matched whole-market control under the identical exit
+rule. Council's downgrades: -1.71%/trade. The market on the same dates:
+-1.71%/trade. Identical. The names council rejected performed exactly as
+well as random liquid stocks — no measurable skill in either direction on
+this sample (n=13 resolved, one 8-session window, SPY flat over it).
+The dominant driver of these numbers is the EXIT RULE, not selection:
+-4% stop / +8% target needs a 33.3% win rate to break even, the market
+delivered 6.9-22.3%, and this project's picks 25.5%. That may be the
+common cause behind all 26 mechanical variants reading flat/negative,
+since every backtest here measures against this same rule. Full numbers
+and caveats: scorecard.md's "Counterfactual vs. market baseline" section.
+**Implication for demo trading**: council still has zero approvals ever
+(15 for 15 downgraded), so there is nothing to execute, and this result
+gives no basis for promoting it. Separately, NONE of the four mandatory
+§4 safeguards (push-per-fill, daily-loss circuit breaker, in-code risk
+limits, programmatic correlation check) exist in scripts/ — verified
+2026-09-11 — while place_market_order/place_limit_order are live and
+callable. Do not wire the advisory pipeline to the demo account until
+both gaps are closed and the user has explicitly decided.
+
 **Diagnostic instrumentation added 2026-09-11 (not a loosening — read
 skills/council.md's "Why this requirement exists" section in full
 before touching this further)**: the 14-for-14 streak is consistent with

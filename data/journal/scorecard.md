@@ -14,11 +14,20 @@ Downgrade accuracy: 10/(10+1) = 90.9%
 
 **Every single CANDIDATE that has ever reached council (14 for 14) has been
 downgraded to WATCH.** Of the 11 with a resolvable outcome so far, 10
-validated the downgrade and only 1 (DELL) cost a winner — a real, if
-still small, sample suggesting council's skepticism has been earning its
-keep, not just suppressing activity. Per the 2026-09-03/09-09 user
-decisions, this is NOT license to loosen anything unilaterally — it's the
-first real evidence to bring back to the user for that conversation.
+validated the downgrade and only 1 (DELL) cost a winner. Per the
+2026-09-03/09-09 user decisions, this is NOT license to loosen anything
+unilaterally — it's evidence to bring back to the user for that
+conversation.
+
+**READ THE COUNTERFACTUAL SECTION BELOW BEFORE QUOTING THE 90.9%.** This
+section previously described that figure as evidence "council's
+skepticism has been earning its keep" — that claim is now withdrawn. The
+counterfactual shows the downgraded names performed exactly at the
+date-matched whole-market baseline (-1.71% vs -1.71%). So 90.9% is
+substantially measuring the base rate that a random liquid stock doesn't
+gain 8% within 5 sessions, NOT council's judgment. It remains true that
+downgrading rarely cost a winner; it is not true that this demonstrates
+selection skill.
 
 ## Research-level WATCH/PASS calls (never reached council)
 Total checked: 94 (was 77; the 17 previously-unchecked rows were all
@@ -134,6 +143,55 @@ in trade_ledger.md's appendix. Bucket using the rules in the Calibration
 section above — NOT ad-hoc text matching, which is exactly what produced
 the wrong numbers on this file's first attempt. Re-run on every journal
 pass rather than hand-editing.
+
+## Counterfactual vs. market baseline (2026-09-11, `scripts/counterfactual.py`)
+The experiment that closes the "council has never said yes" evidence gap:
+simulate BUYING every verdict anyway under CLAUDE.md's own exit rule
+(-4% / +8% / 5-day, entry next open), then compare against the
+date-matched whole-market return under the identical rule.
+
+| Bucket | n | avg/trade | win rate |
+|---|---|---|---|
+| **Date-matched market baseline (the control)** | ~4,700 | **-1.71%** | 6.9-22.3% |
+| Council-reviewed (all 15 downgraded to WATCH) | 13 | **-1.71%** | 23.1% |
+| All project verdicts | 102 | -1.43% | 25.5% |
+| Research-level WATCH | 44 | -1.02% | 31.8% |
+| Research-level PASS | 45 | -1.75% | 20.0% |
+
+**Council's downgrades landed exactly on the market baseline — to two
+decimal places.** The names it rejected did precisely as well as buying
+any liquid stock at random on the same dates. That is not evidence the
+skepticism is working; it is evidence of NO measurable selection skill in
+either direction, on this sample. Note how badly the bare number misleads
+without the control: -1.71% alone reads as "council correctly avoided
+losers." It did not — there was nothing to avoid that random selection
+wouldn't have avoided equally.
+
+**What is actually producing every number in this file is the exit rule.**
+Break-even win rate for -4% stop / +8% target: p*8 = (1-p)*4 -> **p =
+33.3%**. The market delivered 6.9-22.3%; this project's picks 25.5%. So
+the pipeline IS selecting slightly better than random (25.5% vs ~20%) --
+but the bar it has to clear is 33.3%, and nothing here is close. This may
+be the common cause behind all 26 mechanical variants reading flat or
+negative: `backtest_ta`, `backtest_ict` and `backtest_confluence` all
+measure against this same rule by design.
+
+**Do not over-read this.** It is ONE eight-session window
+(2026-09-02..09-11), n=13 on the council bucket, and SPY was flat (-0.13%)
+over it so it is not a crash artifact -- but individual names clearly had
+a hostile stretch. backtest_ta's own 6-year numbers under the same rule
+(breakout -0.06%, ema_cross +0.01%) sit far closer to zero, which argues
+this window was unusually bad rather than the rule being -1.7% in
+general. The missing piece is a LONG-RUN whole-market baseline under this
+rule, which the survivorship-fixed `backtest_ta.py fetch` would make
+computable -- currently parked at 63/520 days.
+
+**Open question this raises for the user, not to be actioned unilaterally**:
+if the exit rule requires a 33.3% hit rate against a ~20% base rate, the
+most valuable thing to test next may be the RULE (wider stop, longer
+time-stop, lower target) rather than more selection signals. Per
+CLAUDE.md's Strategy section the exit rule is a stated parameter, so
+changing it is a user decision, not an inference from this table.
 
 ## Sample size note
 With N=14 (council) and N=77 (research-level), these percentages are
