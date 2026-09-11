@@ -159,10 +159,41 @@ well as random liquid stocks — no measurable skill in either direction on
 this sample (n=13 resolved, one 8-session window, SPY flat over it).
 The dominant driver of these numbers is the EXIT RULE, not selection:
 -4% stop / +8% target needs a 33.3% win rate to break even, the market
-delivered 6.9-22.3%, and this project's picks 25.5%. That may be the
-common cause behind all 26 mechanical variants reading flat/negative,
-since every backtest here measures against this same rule. Full numbers
+delivered 6.9-22.3%, and this project's picks 25.5%. Full numbers
 and caveats: scorecard.md's "Counterfactual vs. market baseline" section.
+
+**HYPOTHESIS TESTED AND REJECTED, same day (2026-09-11).** The paragraph
+above originally went on to suggest the exit rule "may be the common
+cause behind all 26 mechanical variants reading flat/negative." That was
+worth testing and it does not hold. `scripts/exit_rule_sweep.py` swept
+108 stop/target/time-stop combinations over 63 bias-corrected sessions,
+comparing the signal population against an unconditional whole-market
+baseline under each rule (signal minus baseline — the only comparison
+that separates alpha from beta). Results:
+- **No rule rescues the signals.** Every combination that survives the
+  first-half/second-half check is *consistently negative* on edge. The
+  one combo that topped the raw ranking (no stop, no target, 20-day hold,
+  +0.70%) FLIPPED sign across halves (+0.79% then -0.73%) — noise, caught
+  by the same check that caught vcp_breakout and the macro-calendar
+  aggregate.
+- **Changing the rule changes the absolute level, not the signal's
+  relative performance.** A 20-day no-stop hold returns +2.66% baseline
+  in this window, but that is equity drift in a bull quarter (beta), and
+  the signal captures no more of it than a random liquid stock does.
+- **The more important correction**: measuring signal returns against
+  ZERO, as every backtest in this file does, flatters them. Against the
+  correct unconditional benchmark, the current rule gives baseline
+  +0.39%/trade vs signal -0.09%/trade — so "-0.09%, essentially flat, no
+  edge" actually means **0.48%/trade WORSE than buying at random**. The
+  mechanical signals are not edge-free; on this window they are
+  negatively selective.
+Caveat that cuts the other way and must be carried with the finding: the
+baseline is every liquid ticker-day while the signal population is
+skewed toward high-volatility momentum names, and a stop/target rule
+treats volatility asymmetrically. A volatility-matched baseline is the
+more rigorous comparison and has NOT been run — until it is, "negatively
+selective" is the leading reading, not a settled one. One ~3-month
+regime (2024-09-11..2024-12-06), 4,438 signal entries.
 **Implication for demo trading**: council still has zero approvals ever
 (15 for 15 downgraded), so there is nothing to execute, and this result
 gives no basis for promoting it. Separately, NONE of the four mandatory

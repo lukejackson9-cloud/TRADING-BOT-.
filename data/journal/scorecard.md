@@ -186,12 +186,44 @@ general. The missing piece is a LONG-RUN whole-market baseline under this
 rule, which the survivorship-fixed `backtest_ta.py fetch` would make
 computable -- currently parked at 63/520 days.
 
-**Open question this raises for the user, not to be actioned unilaterally**:
-if the exit rule requires a 33.3% hit rate against a ~20% base rate, the
-most valuable thing to test next may be the RULE (wider stop, longer
-time-stop, lower target) rather than more selection signals. Per
-CLAUDE.md's Strategy section the exit rule is a stated parameter, so
-changing it is a user decision, not an inference from this table.
+**That open question is now ANSWERED — and the answer is no.** This
+section originally proposed that the most valuable next test might be the
+exit RULE rather than more selection signals. `scripts/exit_rule_sweep.py`
+ran it: 108 stop/target/time-stop combinations over 63 bias-corrected
+sessions, each scored as signal-minus-unconditional-baseline.
+
+| Rule | baseline | signal | EDGE | split-half |
+|---|---|---|---|---|
+| no stop, no target, 20d | +2.66% | +3.36% | **+0.70%** | **FLIPS (+0.79% -> -0.73%) = noise** |
+| stop -12%, no target, 20d | +2.47% | +2.96% | +0.49% | FLIPS = noise |
+| stop -8%, no target, 20d | +2.14% | +2.36% | +0.22% | FLIPS = noise |
+| stop -6%, no target, 20d | +1.84% | +2.03% | +0.19% | consistently NEGATIVE |
+| **-4% / +8% / 5d (CURRENT)** | **+0.39%** | **-0.09%** | **-0.48%** | consistently NEGATIVE |
+
+**No rule rescues the signals.** Every combination that survives the
+first-half/second-half check is consistently negative on edge; the only
+combos that looked positive flipped sign across halves — noise, caught by
+the same check that caught vcp_breakout and the macro-calendar aggregate.
+Changing the rule moves the absolute level (a 20-day no-stop hold returns
++2.66% baseline) but that is equity drift in a bull quarter, and the
+signal captures no more of it than a random liquid stock.
+
+**The finding that matters most, and it is uncomfortable**: measuring
+signal returns against ZERO — which is what every backtest in this
+project does — flatters them. Against the correct unconditional
+benchmark, the current rule gives baseline +0.39% vs signal -0.09%. So
+"essentially flat, no edge" actually means **0.48%/trade worse than
+buying at random.** The mechanical signals are not merely edge-free on
+this window; they are negatively selective.
+
+**Caveat that cuts the other way, and must travel with this finding**:
+the baseline is every liquid ticker-day, while the signal population
+skews to high-volatility momentum names, and stop/target rules treat
+volatility asymmetrically. A volatility-matched baseline is the more
+rigorous comparison and has NOT been run. Until it is, "negatively
+selective" is the leading reading, not a settled one. Scope: one
+~3-month regime (2024-09-11..2024-12-06), 4,438 signal entries, 86,621
+baseline entries, on 63 of the intended 520 fetched sessions.
 
 ## Sample size note
 With N=14 (council) and N=77 (research-level), these percentages are
