@@ -863,3 +863,19 @@ overriding a Hard Risk Rule (no setup has earned promotion; no execution
 code or safeguards exist yet either) via AskUserQuestion rather than
 just acting on it. User chose to hold off on any demo trade and build
 this track instead.
+
+## 2026-09-11 (daily screen): 0 CANDIDATEs, 12 tickers reviewed
+Massive whole-market screen (09-09->09-10 session pair) + FMP same-day
+framing. Screened ORCL, COO, AEO, BHVN, SWKS, WOLF, RELY, REPL, SMR, TGB,
+TNON, ACVA -- full detail in data/research/2026-09-11/. 4 WATCH (ORCL,
+SWKS, TNON, ACVA), 8 PASS. Nothing reached CANDIDATE, so council.md and
+propose_trades.md did not run today. Council's downgrade streak stays at
+14-for-14 by definition (no new CANDIDATE to test it against). Notable:
+ORCL's earnings beat was real but the -5.4% price move actually predates
+the print (pre-earnings AI-capex worry), so the earnings reaction itself
+isn't confirmed yet in a completed session -- worth a look on a future
+screen if ORCL moves again. TNON and ACVA both got real, verified
+catalysts (a convertible-note repayment; a confirmed $10.50/share Copart
+acquisition respectively) but were held at WATCH for structural reasons
+(thin-float pump pattern; upside capped at the deal price) rather than
+catalyst quality.
