@@ -267,6 +267,175 @@ def run(start, end):
     print("=" * 100)
 
 
+def _prior_vol(bars, i, window=20):
+    """Realized volatility over the `window` sessions ENDING at bar i --
+    strictly information available when the signal fired, no lookahead.
+    Stdev of daily close-to-close returns, as a plain fraction."""
+    if i < window:
+        return None
+    rets = []
+    for k in range(i - window + 1, i + 1):
+        p, c = bars[k - 1][4], bars[k][4]
+        if p > 0:
+            rets.append((c - p) / p)
+    if len(rets) < window // 2:
+        return None
+    m = sum(rets) / len(rets)
+    return (sum((r - m) ** 2 for r in rets) / len(rets)) ** 0.5
+
+
+def volmatch(start, end):
+    """Separates the two diagnoses the plain sweep cannot tell apart:
+
+      (a) the signals genuinely pick worse-performing stocks, or
+      (b) the signals pick MORE VOLATILE stocks, and a stop/target rule
+          mechanically punishes volatility -- a -4% stop sits inside the
+          daily noise band of a high-vol name and outside it for a
+          sleepy one, so the same rule is effectively a different rule
+          depending on what you point it at.
+
+    These have completely different fixes, and the unmatched comparison in
+    run() cannot distinguish them because it compares signal names against
+    a baseline dominated by lower-volatility tickers.
+
+    Method: compare every signal entry only against NON-signal entries
+    from the SAME SESSION and the SAME within-day volatility decile, then
+    average the per-entry differences. Same-date matching matters because
+    day effects are large and already measured (counterfactual.py found
+    whole-market returns swinging -1.34% to -3.18% across adjacent verdict
+    dates); decile matching is computed per-date so it ranks each name
+    against that day's own cross-section rather than a fixed threshold."""
+    series = _load_series(start, end)
+    print(f"Loaded {len(series)} tickers for {start}..{end}\n")
+
+    entries = []  # (date, vol, is_signal, rec)
+    for ticker, bars in series.items():
+        if len(bars) < 25:
+            continue
+        sig_idx = {i for i, _d, _s in iter_signals(bars)}
+        for i, b in enumerate(bars):
+            date, _o, _h, _l, c, v = b
+            if not (PRICE_MIN <= c <= PRICE_MAX and v >= VOLUME_MIN):
+                continue
+            vol = _prior_vol(bars, i)
+            if vol is None:
+                continue
+            rec = _first_touch(bars, i)
+            if rec is not None:
+                entries.append((date, vol, i in sig_idx, rec))
+
+    sig_vols = sorted(v for _d, v, s, _r in entries if s)
+    ctl_vols = sorted(v for _d, v, s, _r in entries if not s)
+    if not sig_vols or not ctl_vols:
+        print("not enough entries")
+        return
+    med = lambda xs: xs[len(xs) // 2]
+    print("=" * 96)
+    print("STEP 1 — is the premise even true? Are signal names actually more volatile?")
+    print("=" * 96)
+    print(f"  signal entries  n={len(sig_vols):>6,}   median 20d vol {med(sig_vols) * 100:.2f}%/day")
+    print(f"  control entries n={len(ctl_vols):>6,}   median 20d vol {med(ctl_vols) * 100:.2f}%/day")
+    ratio = med(sig_vols) / med(ctl_vols) if med(ctl_vols) else float("nan")
+    print(f"  ratio: {ratio:.2f}x  -> "
+          + ("premise HOLDS, matching is necessary" if ratio > 1.1 else
+             "premise is WEAK; the confound may not be doing much work"))
+
+    # per-date volatility deciles
+    by_date = defaultdict(list)
+    for e in entries:
+        by_date[e[0]].append(e)
+    celled = defaultdict(lambda: {"sig": [], "ctl": []})
+    for date, es in by_date.items():
+        vs = sorted(e[1] for e in es)
+        cuts = [vs[int(len(vs) * q / 10)] for q in range(1, 10)]
+        for date_, vol, is_sig, rec in es:
+            d = sum(1 for c in cuts if vol > c)
+            celled[(date_, d)]["sig" if is_sig else "ctl"].append(rec)
+
+    def matched(stop, target, ts, cells=None):
+        """Mean of (signal return - same-cell control mean)."""
+        cells = cells if cells is not None else celled
+        diffs, raw_s, raw_c = [], [], []
+        for _key, cell in cells.items():
+            ctl = [r for r in (_outcome(rec, stop, target, ts) for rec in cell["ctl"]) if r is not None]
+            if not ctl:
+                continue
+            cm = sum(ctl) / len(ctl)
+            raw_c += ctl
+            for rec in cell["sig"]:
+                r = _outcome(rec, stop, target, ts)
+                if r is not None:
+                    diffs.append(r - cm)
+                    raw_s.append(r)
+        if not diffs:
+            return None, None, None, 0
+        return (sum(diffs) / len(diffs),
+                sum(raw_s) / len(raw_s),
+                sum(raw_c) / len(raw_c), len(diffs))
+
+    rules = [(STOP_PCT, TARGET_PCT, TIME_STOP_DAYS), (-0.08, 0.08, 5),
+             (-0.08, None, 20), (None, None, 20), (None, None, 5)]
+    print("\n" + "=" * 96)
+    print("STEP 2 — signal vs VOLATILITY-MATCHED control (same session, same within-day vol decile)")
+    print("=" * 96)
+    print("NOTE: MATCHED EDGE is the mean of per-entry (signal - its own cell's control mean).")
+    print("It deliberately does NOT equal the gap between the two pooled columns beside it --")
+    print("signal entries cluster in high-vol cells, where controls also do worse, and that")
+    print("re-weighting is the entire point of matching.")
+    print(f"{'rule':<30}{'signal':>10}{'matched ctl':>13}{'MATCHED EDGE':>15}{'n':>9}")
+    print("-" * 96)
+    out = {}
+    for stop, target, ts in rules:
+        edge, s_avg, c_avg, n = matched(stop, target, ts)
+        if edge is None:
+            continue
+        s = "none" if stop is None else f"{stop * 100:+.0f}%"
+        t = "none" if target is None else f"{target * 100:+.0f}%"
+        label = f"stop {s:<5} target {t:<5} {ts:>2}d"
+        cur = "  <-- CURRENT" if (stop, target, ts) == (STOP_PCT, TARGET_PCT, TIME_STOP_DAYS) else ""
+        out[(stop, target, ts)] = edge
+        print(f"{label:<30}{s_avg * 100:>9.2f}%{c_avg * 100:>12.2f}%{edge * 100:>14.2f}%{n:>9,}{cur}")
+
+    # split-half on the matched estimator too -- same discipline as run()
+    dates = sorted(by_date)
+    mid = dates[len(dates) // 2]
+    h1 = {k: v for k, v in celled.items() if k[0] < mid}
+    h2 = {k: v for k, v in celled.items() if k[0] >= mid}
+    print("\n" + "=" * 96)
+    print(f"STEP 3 — split-half on the MATCHED edge (first half < {mid} <= second half)")
+    print("=" * 96)
+    print(f"{'rule':<30}{'H1':>10}{'H2':>10}{'verdict':>18}")
+    print("-" * 96)
+    for stop, target, ts in rules:
+        if (stop, target, ts) not in out:
+            continue
+        e1 = matched(stop, target, ts, h1)[0]
+        e2 = matched(stop, target, ts, h2)[0]
+        s = "none" if stop is None else f"{stop * 100:+.0f}%"
+        t = "none" if target is None else f"{target * 100:+.0f}%"
+        label = f"stop {s:<5} target {t:<5} {ts:>2}d"
+        if e1 is None or e2 is None:
+            v = "insufficient n"
+        elif (e1 > 0) == (e2 > 0):
+            v = "consistent POS" if e1 > 0 else "consistent NEG"
+        else:
+            v = "FLIPS — noise"
+        f = lambda e: "     n/a" if e is None else f"{e * 100:>9.2f}%"
+        print(f"{label:<30}{f(e1)}{f(e2)}{v:>18}")
+    print("\n" + "=" * 96)
+    print("HOW TO READ THIS: if the matched edge is ~0 while the UNMATCHED edge in `run` was")
+    print("clearly negative, the signals were being punished for picking volatile names, not for")
+    print("picking bad ones — diagnosis (b), and the fix is position sizing / a vol-scaled stop.")
+    print("If the matched edge stays negative and consistent, it is diagnosis (a): the signals")
+    print("genuinely select worse-than-peer names, and no exit-rule change will save them.")
+    print("=" * 96)
+
+
 if __name__ == "__main__":
-    a = sys.argv[1:]
-    run(a[0] if a else "2024-09-11", a[1] if len(a) > 1 else "2024-12-06")
+    a = [x for x in sys.argv[1:] if not x.startswith("-")]
+    start = a[0] if a else "2024-09-11"
+    end = a[1] if len(a) > 1 else "2024-12-06"
+    if "--volmatch" in sys.argv:
+        volmatch(start, end)
+    else:
+        run(start, end)

@@ -187,13 +187,33 @@ that separates alpha from beta). Results:
   edge" actually means **0.48%/trade WORSE than buying at random**. The
   mechanical signals are not edge-free; on this window they are
   negatively selective.
-Caveat that cuts the other way and must be carried with the finding: the
-baseline is every liquid ticker-day while the signal population is
-skewed toward high-volatility momentum names, and a stop/target rule
-treats volatility asymmetrically. A volatility-matched baseline is the
-more rigorous comparison and has NOT been run — until it is, "negatively
-selective" is the leading reading, not a settled one. One ~3-month
-regime (2024-09-11..2024-12-06), 4,438 signal entries.
+**The volatility-matched follow-up has now been run (2026-09-11,
+`exit_rule_sweep.py --volmatch`), and it materially softens — but does
+not overturn — the claim above.** The confound was real: signal names
+carry median 20-day volatility of 2.33%/day against the control's 1.93%,
+a 1.20x ratio, and a fixed -4% stop is a far tighter leash on a
+high-volatility name than on a sleepy one. Comparing each signal entry
+only against non-signal entries from the SAME session in the SAME
+within-day volatility decile:
+- The current rule's edge goes from **-0.48% unmatched to -0.23%
+  matched** — so roughly HALF the apparent underperformance was the
+  volatility confound, not stock selection.
+- The residual is still negative in both halves (-0.52% then -0.04%),
+  the only rule tested whose matched edge is sign-consistent. Every
+  other rule's matched edge FLIPS across halves, i.e. noise.
+- But the second-half figure is -0.04%, essentially zero. "Consistently
+  negative" is true by sign and weak by magnitude, so the right reading
+  is: after volatility adjustment the signals are somewhere between
+  slightly harmful and simply useless, not decisively either.
+**The decision-relevant part**: no rule tested produces a positive,
+split-half-consistent matched edge. Vol-scaled stops or vol-based
+position sizing would fix the *punishment* the tight stop inflicts on
+volatile names — but there is no underlying edge left to protect once
+that punishment is removed. This closes the "maybe the exit rule is
+hiding an edge" line of inquiry; the constraint is the signals, not the
+rule. Scope unchanged: one ~3-month regime (2024-09-11..2024-12-06),
+4,438 signal entries, all 5 TA setups pooled (a per-setup breakdown has
+not been run and could still differ).
 **Implication for demo trading**: council still has zero approvals ever
 (15 for 15 downgraded), so there is nothing to execute, and this result
 gives no basis for promoting it. Separately, NONE of the four mandatory

@@ -216,14 +216,39 @@ benchmark, the current rule gives baseline +0.39% vs signal -0.09%. So
 buying at random.** The mechanical signals are not merely edge-free on
 this window; they are negatively selective.
 
-**Caveat that cuts the other way, and must travel with this finding**:
-the baseline is every liquid ticker-day, while the signal population
-skews to high-volatility momentum names, and stop/target rules treat
-volatility asymmetrically. A volatility-matched baseline is the more
-rigorous comparison and has NOT been run. Until it is, "negatively
-selective" is the leading reading, not a settled one. Scope: one
-~3-month regime (2024-09-11..2024-12-06), 4,438 signal entries, 86,621
-baseline entries, on 63 of the intended 520 fetched sessions.
+**The volatility-matched follow-up has now been run** (same day,
+`exit_rule_sweep.py --volmatch`), because the unmatched comparison could
+not distinguish "the signals pick bad stocks" from "the signals pick
+volatile stocks and a fixed -4% stop punishes volatility." Those have
+completely different fixes. Each signal entry was compared only against
+non-signal entries from the same session in the same within-day
+volatility decile.
+
+| | result |
+|---|---|
+| Signal median 20d vol | 2.33%/day |
+| Control median 20d vol | 1.93%/day |
+| Ratio | **1.20x — the confound is real** |
+| Current rule, UNMATCHED edge | -0.48% |
+| Current rule, MATCHED edge | **-0.23%** |
+| Matched split-half | -0.52% / -0.04% → consistent by sign |
+
+**About half the apparent underperformance was the volatility confound.**
+The residual -0.23% is the only matched edge that is sign-consistent
+across halves (every other rule flips = noise), but its second half is
+-0.04%, essentially zero — so after volatility adjustment the signals sit
+somewhere between slightly harmful and simply useless, not decisively
+either. The earlier "negatively selective" wording overstated it and is
+softened accordingly.
+
+**What this settles**: no rule tested yields a positive,
+split-half-consistent matched edge. Vol-scaled stops or vol-based sizing
+would remove the punishment a fixed stop inflicts on volatile names, but
+there is no edge underneath to protect once it is removed. The binding
+constraint is the signals, not the exit rule — that line of inquiry is
+now closed. Scope: one ~3-month regime (2024-09-11..2024-12-06), 4,438
+signal entries, 53,919 control entries, 63 of 520 intended sessions, all
+5 TA setups pooled (no per-setup breakdown yet).
 
 ## Sample size note
 With N=14 (council) and N=77 (research-level), these percentages are
