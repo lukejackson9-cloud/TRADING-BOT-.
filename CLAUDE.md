@@ -280,11 +280,12 @@ eventually live, execution of a setup that has actually earned it.*
 - /data/paper_trades.json     — forward paper-trading ledger for ALL
                                  mechanical setups defined in
                                  scripts/backtest_ta.py's iter_signals()
-                                 (breakout, EMA crossover, and — since
-                                 2026-09-08, when mean_reversion was added
-                                 to that shared function for the
-                                 historical backtest — mean_reversion too,
-                                 automatically, since paper_trader.py
+                                 (breakout, EMA crossover, mean_reversion,
+                                 vcp_breakout, and — since 2026-09-11,
+                                 when spy_closes was wired into
+                                 scripts/paper_trader.py's
+                                 scan_for_new_signals — relative_strength
+                                 too, automatically, since paper_trader.py
                                  reuses the same signal function on
                                  purpose so the two tracks can never
                                  define a signal differently). Run by
@@ -295,7 +296,30 @@ eventually live, execution of a setup that has actually earned it.*
                                  evaluation data for whether any setup
                                  earns a place in Strategy below. See
                                  scripts/backtest_ta.py for the historical
-                                 (2-year) side of the same evaluation.
+                                 (2-year/6-year) side of the same evaluation.
+- /data/ict_paper_trades.json — forward paper-trading ledger for the 6
+                                 tracked ICT mechanisms (fvg baseline,
+                                 order_block, ote, inverse_fvg, eqhl,
+                                 nypm), built 2026-09-11. Unlike
+                                 paper_trades.json's multi-day position
+                                 tracking, ICT trades open AND resolve
+                                 within the same session, so this just
+                                 logs completed trades per day — see
+                                 scripts/ict_paper_trader.py's docstring
+                                 for why the two paper-trading tracks
+                                 look structurally different. Run daily by
+                                 the "Daily ICT paper-trade update" routine
+                                 (trig_01HnDaZn85mK1Vz9wjKEdB3a). Also NOT
+                                 the advisory pipeline. Does not track the
+                                 divergence-bias or news-calendar filters
+                                 as separate entries (analytical modifiers
+                                 on the baseline, not independent
+                                 strategies) or attempt daily 1-min/Massive
+                                 full-tape fetches (deliberately out of
+                                 scope, see the 2026-09-11 data-precision
+                                 decision above) — 5-min Alpaca IEX bars
+                                 only, same source as the historical ICT
+                                 backtest.
 - /data/reference/             — gitignored API caches (e.g. Massive.com's
                                  common-stock ticker list, refreshed weekly
                                  by scripts/massive_client.py); regenerable
@@ -328,12 +352,22 @@ eventually live, execution of a setup that has actually earned it.*
   the first real run of this, covering everything both screening pushes
   have produced so far.
 - **Daily, post-close, weekdays**: run skills/paper_trade_ta.md — a
-  separate, fully mechanical TA paper-trading track (breakout, EMA
-  crossover), started 2026-09-07 per user request. Does not touch the
-  advisory pipeline or produce anything reported to the user day-to-day;
-  see skills/paper_trade_ta.md for why and scripts/backtest_ta.py for the
-  historical-backtest side of the same evaluation. Review the accumulated
-  results alongside skills/journal.md's weekly run, not daily.
+  separate, fully mechanical TA paper-trading track (all 5 setups —
+  breakout, EMA crossover, mean_reversion, vcp_breakout,
+  relative_strength), started 2026-09-07 per user request. Does not touch
+  the advisory pipeline or produce anything reported to the user
+  day-to-day; see skills/paper_trade_ta.md for why and
+  scripts/backtest_ta.py for the historical-backtest side of the same
+  evaluation. Review the accumulated results alongside skills/journal.md's
+  weekly run, not daily.
+- **Daily, ~6:00 PM ET / 22:00 UTC, weekdays**
+  (`trig_01HnDaZn85mK1Vz9wjKEdB3a`, "Daily ICT paper-trade update"): runs
+  scripts/ict_paper_trader.py against the most recently completed
+  session, forward-tracking the 6 ICT mechanisms into
+  data/ict_paper_trades.json. Built 2026-09-11 per user request, same day
+  as the ICT variant-testing marathon (see the ICT subsection below).
+  Silent unless something errors — same reporting posture as the TA
+  paper-trade routine.
 
 ## Technical-analysis screening layer (evaluation in progress, 2026-09-07)
 User's trading contact suggested the bot needed a technical-setup layer

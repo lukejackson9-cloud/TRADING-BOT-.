@@ -1,6 +1,10 @@
 """
-Automated forward paper-trading for the two TA setups researched in
-scripts/backtest_ta.py (20-day breakout + volume, 9/21 EMA crossover).
+Automated forward paper-trading for the TA setups researched in
+scripts/backtest_ta.py -- all five setups iter_signals() yields (breakout,
+ema_cross, mean_reversion, vcp_breakout, relative_strength as of
+2026-09-11, once spy_closes was wired into scan_for_new_signals below;
+this file makes no setup-specific assumptions, so it always tracks
+whatever iter_signals() defines, by design).
 
 This is NOT the advisory pipeline (skills/screen.md -> research.md ->
 council.md -> propose_trades.md) and it never touches that flow -- it's a
@@ -54,7 +58,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from massive_client import get_grouped_daily  # noqa: E402
 from backtest_ta import (  # noqa: E402
-    fetch_range, _load_series, iter_signals,
+    fetch_range, _load_series, iter_signals, _spy_closes,
     STOP_PCT, TARGET_PCT, TIME_STOP_DAYS,
 )
 
@@ -123,11 +127,15 @@ def scan_for_new_signals(as_of_date):
     """Opens a new paper position for each (ticker, setup) that signals on
     as_of_date's session, unless that exact combination already has an
     open position (avoids re-opening the same signal every day it stays
-    technically true, e.g. price still above the breakout level)."""
+    technically true, e.g. price still above the breakout level).
+    Includes relative_strength (added 2026-09-11) alongside the other four
+    setups -- the only one of backtest_ta.py's five setups that wasn't
+    already being forward-tracked, since it needs spy_closes wired in."""
     end = datetime.date.fromisoformat(as_of_date)
     start = (end - datetime.timedelta(days=SCAN_LOOKBACK_DAYS)).isoformat()
     fetch_range(start, as_of_date)  # cache-aware; only fetches days not already cached
     series = _load_series(start, as_of_date)
+    spy_closes = _spy_closes(start, as_of_date)
 
     ledger = _load_ledger()
     already_open = {(p["ticker"], p["setup"]) for p in ledger if p["status"] == "open"}
@@ -137,7 +145,7 @@ def scan_for_new_signals(as_of_date):
         if len(bars) < 25 or bars[-1][0] != as_of_date:
             continue  # not enough history, or ticker had no print on as_of_date
         last_i = len(bars) - 1
-        for i, date, setup in iter_signals(bars):
+        for i, date, setup in iter_signals(bars, spy_closes=spy_closes):
             if i != last_i:
                 continue  # only care about a signal firing on the most recent day
             if (ticker, setup) in already_open:
