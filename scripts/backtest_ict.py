@@ -376,7 +376,8 @@ def _report(all_trades, label, start, end, suffix):
     print(f"full trade list written to {out_path}")
 
 
-def run_backtest(start, end, require_divergence=False, entry_mode="fvg"):
+def run_backtest(start, end, require_divergence=False, entry_mode="fvg", killzone=None):
+    kz_start, kz_end = killzone or (KILLZONE_START, KILLZONE_END)
     all_trades = []
     for symbol in UNIVERSE:
         days = _load_days(symbol)
@@ -392,10 +393,10 @@ def run_backtest(start, end, require_divergence=False, entry_mode="fvg"):
             pdh, pdl = max(b["h"] for b in regular), min(b["l"] for b in regular)
 
             day_bars = sorted(days[date], key=lambda b: b["_ny_time"])
-            kz = [b for b in day_bars if KILLZONE_START <= b["_ny_time"] <= KILLZONE_END]
+            kz = [b for b in day_bars if kz_start <= b["_ny_time"] <= kz_end]
             if not kz:
                 continue
-            kz_start_idx = next((idx for idx, b in enumerate(day_bars) if b["_ny_time"] >= KILLZONE_START), None)
+            kz_start_idx = next((idx for idx, b in enumerate(day_bars) if b["_ny_time"] >= kz_start), None)
             if kz_start_idx is None:
                 continue
 
@@ -405,7 +406,9 @@ def run_backtest(start, end, require_divergence=False, entry_mode="fvg"):
                 trade.update(symbol=symbol, date=date)
                 all_trades.append(trade)
 
-    if require_divergence:
+    if killzone is not None:
+        label, suffix = "ICT sweep+MSS+FVG model (NY PM killzone)", "_nypm"
+    elif require_divergence:
         label, suffix = "ICT sweep+MSS+FVG+divergence-bias model", "_divergence"
     elif entry_mode == "order_block":
         label, suffix = "ICT sweep+MSS+order-block-entry model", "_orderblock"
@@ -652,6 +655,8 @@ if __name__ == "__main__":
         run_backtest_newsfilter(start, end, mode="exclude")
     elif cmd == "backtest_newsonly":
         run_backtest_newsfilter(start, end, mode="only")
+    elif cmd == "backtest_nypm":
+        run_backtest(start, end, killzone=(datetime.time(13, 30), datetime.time(16, 0)))
     else:
         print("usage: backtest_ict.py [fetch|backtest|backtest_divergence|"
               "backtest_orderblock|backtest_ote|backtest_inversefvg|backtest_eqhl|"
