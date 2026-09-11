@@ -116,6 +116,21 @@ project, every one downgraded to WATCH at council. Common threads:
   President, CIO, and a director entity, all before this news.
 - **Outcome**: PENDING, check due 2026-09-11.
 
+### ASO — 2026-09-10, council-downgraded, PENDING
+- **What happened**: +14.4% on a real Q2 beat-and-raise (adjusted EPS
+  $2.31 vs. $2.08-2.09 est., ~10-11% surprise, holding even ex the
+  one-time tariff-refund benefit), fast broad sell-side confirmation (5
+  brokers raised targets to $54-65 within 24h), STRONG_BUY TradingView
+  cross-check.
+- **Why downgraded**: Comp sales still negative (-0.4%) even as EPS
+  guidance rose, the margin driver (tariff refunds) explicitly
+  non-recurring per management, and a real income-cohort traffic
+  bifurcation (sub-$50k households down high-single-digits, >$100k
+  households up) showing the core lower-income customer still eroding.
+  Same "beat-on-margin, soft-underneath, already-priced pop" shape as
+  HPE and GWRE above.
+- **Outcome**: PENDING, check due 2026-09-11.
+
 ---
 
 ## Appendix: every other researched ticker (WATCH/PASS, never reached council)
@@ -214,3 +229,14 @@ full research writeup behind each.
 | 09-09 | BIAF | PASS | confirmed pump/dump pattern (see 09-02) |
 | 09-09 | DOCN | WATCH | real catalyst but already +160% YTD, analysts Neutral |
 | 09-09 | VIAV | WATCH low confidence | no dated catalyst confirmed despite strong fundamentals |
+| 09-10 | ADBE | WATCH | earnings beat printed, reaction pending at write-up time |
+| 09-10 | TYRA | PASS | Sept 9 Phase 2 data read favorably but stock still fell -17.66% |
+| 09-10 | CHWY | PASS | in-line quarter after pre-earnings run-up, real liquidity flag |
+| 09-10 | NET | WATCH low confidence | no confirmed dated catalyst despite bullish backdrop |
+| 09-10 | PINS | PASS | clean negative catalyst (CEO international-headwinds warning) |
+| 09-10 | VRT | PASS | sector-wide AI-infra repricing + deal-financial-disclosure gap |
+| 09-10 | BAND | PASS | no confirmed dated catalyst despite bullish backdrop |
+| 09-10 | KRMN | PASS | insufficient information on a dated same-day catalyst |
+| 09-10 | TBBK | PASS | clean structural negative (Chime/Stride partner-loss risk) |
+| 09-10 | BRZE | WATCH | real beat undercut by soft forward guidance, GWRE-shaped pattern |
+| 09-10 | SIG | WATCH | real beat-and-raise but reaction already fired, now reversing |
