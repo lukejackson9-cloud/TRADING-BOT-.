@@ -820,3 +820,46 @@ the user as the natural next step, not started without checking first.
 
 Script: scripts/backtest_confluence.py (new). Cached results:
 data/reference/backtest_confluence/*.json (gitignored).
+
+## 2026-09-11 (later still): Catalyst-tagging track built and wired into both daily routines
+User asked to build the forward-only track scoped earlier (see the
+"Signal confluence testing" entry above) -- this is now live, not just
+scoped.
+
+**New**: `scripts/tag_catalyst.py` (pending/tag/report CLI) and
+`skills/catalyst_tag.md` (the daily procedure: after the existing TA/ICT
+paper-trade scripts run, find newly-opened tickers via `pending`, one
+WebSearch query per unique ticker checking for a real dated
+company-specific catalyst -- NOT a price move, that's the exact mistake
+the 09-07 gap-proxy made -- then record true/false/unclear via `tag`).
+Both `paper_trader.py` and `ict_paper_trader.py` now stamp every newly
+opened signal with `"catalyst": null`; older entries keep no key at all,
+so there's no retroactive/hindsight tagging of past signals.
+
+Both daily routines (`trig_0115k27mXZHtq2a6uQwt21Xa` TA,
+`trig_01HnDaZn85mK1Vz9wjKEdB3a` ICT) had their stored prompts updated via
+`update_trigger` to run this tagging step immediately after their
+existing script call -- no new schedule needed, same routines, one more
+step. Same silent-unless-erroring posture as before; still not the
+advisory pipeline.
+
+Smoke-tested `tag_catalyst.py` against a scratch copy of the real
+ledgers: correctly identifies 0 pending tickers on old dates (legacy
+entries have no `catalyst` key, not `null`, so they're never mistaken for
+awaiting a check), correctly tags a test entry, and correctly refuses to
+re-tag an already-tagged one (idempotent).
+
+**Honest timeline set going in**: rough estimate ~3-8 unique tickers/day
+across both trackers need a check, and only a minority will have a real
+company-specific catalyst -- likely weeks to a couple of months before
+the HAS-catalyst bucket reaches the same ~50-trade floor used throughout
+the historical confluence tests. `python scripts/tag_catalyst.py report`
+will say plainly if the sample's still too small; don't round up a small
+early read to "promising."
+
+This came right after the user asked to start placing real trades on the
+demo account "to see progress" -- walked through why that would mean
+overriding a Hard Risk Rule (no setup has earned promotion; no execution
+code or safeguards exist yet either) via AskUserQuestion rather than
+just acting on it. User chose to hold off on any demo trade and build
+this track instead.

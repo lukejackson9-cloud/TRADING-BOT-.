@@ -31,6 +31,10 @@ opens/closes to the user as if they were trade ideas -- they aren't.
    /data/paper_trades.json itself).
 4. Do not act on anything here -- no proposal, no research.md entry, no
    council review. This is data collection, not advice.
+5. Run skills/catalyst_tag.md's daily procedure for the same date --
+   tags each freshly-opened signal with whether a real, dated,
+   company-specific catalyst existed, the forward-only counterpart to
+   scripts/backtest_confluence.py's historical tests (added 2026-09-11).
 
 ## When to actually look at the results
 - Weekly, or whenever skills/journal.md runs: pull a summary

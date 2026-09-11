@@ -26,12 +26,20 @@ for a precision question already answered for now -- see the 2026-09-11
 decision not to purchase extended full-tape history).
 
 Ledger: data/ict_paper_trades.json -- a flat list of
-{date, symbol, setup, direction, return_r}, one entry per trade that
-actually fired (no signal that day = no entry, same as the backtest).
-NOT the advisory pipeline -- no proposal to the user, no research/
-council review, purely evaluation data for whether any ICT mechanism
-earns a place in Strategy, same purpose as data/paper_trades.json for
-the TA setups.
+{date, symbol, setup, direction, return_r, catalyst}, one entry per
+trade that actually fired (no signal that day = no entry, same as the
+backtest). NOT the advisory pipeline -- no proposal to the user, no
+research/council review, purely evaluation data for whether any ICT
+mechanism earns a place in Strategy, same purpose as data/paper_trades.json
+for the TA setups.
+
+"catalyst" (added 2026-09-11) starts None on every new trade and is
+filled in by scripts/tag_catalyst.py per skills/catalyst_tag.md's daily
+procedure -- see that script's docstring for why (the forward-only
+counterpart to backtest_confluence.py's historical tests, which could
+never honestly test "signal + a real news catalyst"). Entries from
+before 2026-09-11 simply lack this key entirely, not None -- never
+backfilled with hindsight.
 
 Usage:
   python scripts/ict_paper_trader.py run 2026-09-10
@@ -139,13 +147,15 @@ def run(date):
             trade = ict._simulate_day(killzone_bars, use_pdh, use_pdl, all_day_bars, start_idx, **kwargs)
             if trade:
                 new_trades.append({"date": date, "symbol": symbol, "setup": setup,
-                                    "direction": trade["direction"], "return_r": trade["return_r"]})
+                                    "direction": trade["direction"], "return_r": trade["return_r"],
+                                    "catalyst": None})
 
         if kz and kz_start_idx is not None and pdh is not None and (date, symbol, "inverse_fvg") not in already_done:
             trade = ict._simulate_day_inverse_fvg(kz, pdh, pdl, day_bars, kz_start_idx)
             if trade:
                 new_trades.append({"date": date, "symbol": symbol, "setup": "inverse_fvg",
-                                    "direction": trade["direction"], "return_r": trade["return_r"]})
+                                    "direction": trade["direction"], "return_r": trade["return_r"],
+                                    "catalyst": None})
 
     ledger.extend(new_trades)
     _save_ledger(ledger)

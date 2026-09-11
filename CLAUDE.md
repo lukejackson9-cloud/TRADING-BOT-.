@@ -319,7 +319,24 @@ eventually live, execution of a setup that has actually earned it.*
                                  scope, see the 2026-09-11 data-precision
                                  decision above) — 5-min Alpaca IEX bars
                                  only, same source as the historical ICT
-                                 backtest.
+                                 backtest. Since 2026-09-11, every new
+                                 entry in this file and paper_trades.json
+                                 also carries a "catalyst" field (null
+                                 until tagged) -- see skills/catalyst_tag.md
+                                 and scripts/tag_catalyst.py.
+- skills/catalyst_tag.md      — daily procedure (added 2026-09-11, runs
+                                 immediately after both paper-trade
+                                 scripts) that WebSearch-checks each
+                                 freshly-opened TA/ICT signal's ticker for
+                                 a real, dated, company-specific catalyst
+                                 and tags it via scripts/tag_catalyst.py.
+                                 The forward-only counterpart to
+                                 scripts/backtest_confluence.py's
+                                 historical tests, which could never
+                                 honestly test "signal + real news" (see
+                                 the "Signal confluence testing"
+                                 subsection below). Not the advisory
+                                 pipeline; no retroactive tagging.
 - /data/reference/             — gitignored API caches (e.g. Massive.com's
                                  common-stock ticker list, refreshed weekly
                                  by scripts/massive_client.py); regenerable
@@ -359,7 +376,9 @@ eventually live, execution of a setup that has actually earned it.*
   day-to-day; see skills/paper_trade_ta.md for why and
   scripts/backtest_ta.py for the historical-backtest side of the same
   evaluation. Review the accumulated results alongside skills/journal.md's
-  weekly run, not daily.
+  weekly run, not daily. Since 2026-09-11 this routine also runs
+  skills/catalyst_tag.md's daily tagging step immediately after
+  (see below).
 - **Daily, ~6:00 PM ET / 22:00 UTC, weekdays**
   (`trig_01HnDaZn85mK1Vz9wjKEdB3a`, "Daily ICT paper-trade update"): runs
   scripts/ict_paper_trader.py against the most recently completed
@@ -367,7 +386,8 @@ eventually live, execution of a setup that has actually earned it.*
   data/ict_paper_trades.json. Built 2026-09-11 per user request, same day
   as the ICT variant-testing marathon (see the ICT subsection below).
   Silent unless something errors — same reporting posture as the TA
-  paper-trade routine.
+  paper-trade routine. Since 2026-09-11 this routine also runs
+  skills/catalyst_tag.md's daily tagging step immediately after.
 
 ## Technical-analysis screening layer (evaluation in progress, 2026-09-07)
 User's trading contact suggested the bot needed a technical-setup layer
@@ -649,10 +669,26 @@ because it captures the reaction after it's fired, not the catalyst
 itself (see lessons.md #1). Testing real catalyst confluence properly
 needs a forward-only track — tagging future TA/ICT paper-trade signals
 against real dated news as it happens — not a historical backtest built
-on a price-derived stand-in. Not started without the user weighing in
-first; same patience standard as everything else here. Full trade-level
+on a price-derived stand-in. Full trade-level
 results cached at `data/reference/backtest_confluence/*.json`
 (gitignored, regenerable via `scripts/backtest_confluence.py`).
+
+**Built and live as of 2026-09-11**: `skills/catalyst_tag.md` +
+`scripts/tag_catalyst.py` — both daily paper-trade routines now tag each
+freshly-opened TA/ICT signal with whether a real, dated, company-specific
+catalyst existed (WebSearch-checked, one query per unique ticker/day,
+`unclear` rather than guessed when inconclusive). No retroactive tagging
+— only signals opened from 2026-09-11 onward carry this field. This will
+take real time to accumulate a usable sample (rough estimate: ~3-8 unique
+tickers/day across both trackers, only a minority with a genuine
+company-specific catalyst, so likely weeks to a couple of months before
+the HAS-catalyst bucket reaches the same ~50-trade floor used throughout
+this section). `python scripts/tag_catalyst.py report` shows current
+HAS/NO-catalyst win-rate and avg-return numbers and says plainly when the
+sample is still too small to conclude anything — check it, don't assume.
+Same promotion standard as everything else: real sample size + a genuine
+uplift + no single-ticker concentration + discussed with the user first,
+never assumed just because a number looks positive early.
 
 ### Original theoretical cadence (kept for reference — superseded by the single daily run above for the screen/research/council/propose steps)
 - Pre-market (8:00 AM ET): run skills/screen.md → update watchlist

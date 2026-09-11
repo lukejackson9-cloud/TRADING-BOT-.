@@ -29,7 +29,14 @@ Ledger: data/paper_trades.json -- list of positions:
   {"ticker", "setup", "entry_date", "entry_price", "stop_price",
    "target_price", "days_held", "status": "open"|"closed",
    "exit_date", "exit_price", "exit_reason": "stop"|"target"|"time_stop",
-   "pct_return"}
+   "pct_return", "catalyst": None|{"has_catalyst", "note", "tagged_on"}}
+  "catalyst" (added 2026-09-11) starts None on every new entry and is
+  filled in by scripts/tag_catalyst.py per skills/catalyst_tag.md's daily
+  procedure -- see that script's docstring for why (the forward-only
+  counterpart to backtest_confluence.py's historical tests, which could
+  never honestly test "signal + a real news catalyst"). Entries from
+  before 2026-09-11 simply lack this key entirely, not None -- never
+  backfilled with hindsight.
 
 Meant to run once per trading day, after the session settles (same
 post-close timing rationale as skills/screen.md -- Massive's grouped-daily
@@ -159,6 +166,12 @@ def scan_for_new_signals(as_of_date):
                 "stop_price": entry_price * (1 + STOP_PCT),
                 "target_price": entry_price * (1 + TARGET_PCT),
                 "days_held": 0, "status": "open",
+                # None = not yet checked; see scripts/tag_catalyst.py /
+                # skills/catalyst_tag.md (added 2026-09-11) -- older
+                # entries simply lack this key entirely, not None, so
+                # tag_catalyst.py's `pending` never mistakes them for
+                # something awaiting a check.
+                "catalyst": None,
             })
             already_open.add((ticker, setup))
             opened += 1
