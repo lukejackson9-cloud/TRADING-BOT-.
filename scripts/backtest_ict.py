@@ -300,7 +300,8 @@ def _has_divergence(bar, direction, swing_bars):
         return bar["l"] <= ref["l"] and bar["_rsi"] > ref["_rsi"]
 
 
-def _simulate_day(killzone_bars, pdh, pdl, all_day_bars, kz_start_idx, require_divergence=False, entry_mode="fvg"):
+def _simulate_day(killzone_bars, pdh, pdl, all_day_bars, kz_start_idx, require_divergence=False,
+                   entry_mode="fvg", swing_lookback=SWING_LOOKBACK):
     """Runs the sweep -> MSS -> {FVG,order_block,OTE} model against one
     day's killzone bars. Returns a trade dict or None. all_day_bars/
     kz_start_idx let the target/stop simulation continue past 11:00 using
@@ -325,7 +326,7 @@ def _simulate_day(killzone_bars, pdh, pdl, all_day_bars, kz_start_idx, require_d
         direction = "bearish" if swept_high else "bullish"
         sweep_extreme = bar["h"] if swept_high else bar["l"]
 
-        lookback_start = max(0, k - SWING_LOOKBACK)
+        lookback_start = max(0, k - swing_lookback)
         swing_bars = killzone_bars[lookback_start:k]
         if not swing_bars:
             continue
@@ -406,11 +407,12 @@ def _report(all_trades, label, start, end, suffix):
     print(f"full trade list written to {out_path}")
 
 
-def run_backtest(start, end, require_divergence=False, entry_mode="fvg", killzone=None):
+def run_backtest(start, end, require_divergence=False, entry_mode="fvg", killzone=None, cache_dir=None,
+                  swing_lookback=SWING_LOOKBACK):
     kz_start, kz_end = killzone or (KILLZONE_START, KILLZONE_END)
     all_trades = []
     for symbol in UNIVERSE:
-        days = _load_days(symbol)
+        days = _load_days(symbol, cache_dir=cache_dir)
         sorted_dates = sorted(days.keys())
         for i in range(1, len(sorted_dates)):
             date, prev_date = sorted_dates[i], sorted_dates[i - 1]
@@ -431,12 +433,17 @@ def run_backtest(start, end, require_divergence=False, entry_mode="fvg", killzon
                 continue
 
             trade = _simulate_day(kz, pdh, pdl, day_bars, kz_start_idx,
-                                   require_divergence=require_divergence, entry_mode=entry_mode)
+                                   require_divergence=require_divergence, entry_mode=entry_mode,
+                                   swing_lookback=swing_lookback)
             if trade:
                 trade.update(symbol=symbol, date=date)
                 all_trades.append(trade)
 
-    if killzone is not None:
+    if cache_dir == CACHE_DIR_1MIN:
+        label, suffix = "ICT sweep+MSS+FVG model (Alpaca 1-min bars)", "_1min"
+    elif cache_dir == CACHE_DIR_MASSIVE_1MIN:
+        label, suffix = "ICT sweep+MSS+FVG model (Massive full-tape 1-min bars)", "_massive1min"
+    elif killzone is not None:
         label, suffix = "ICT sweep+MSS+FVG model (NY PM killzone)", "_nypm"
     elif require_divergence:
         label, suffix = "ICT sweep+MSS+FVG+divergence-bias model", "_divergence"
@@ -673,6 +680,10 @@ if __name__ == "__main__":
         fetch_universe(start, end, timeframe="1Min", cache_dir=CACHE_DIR_1MIN)
     elif cmd == "fetch_massive_1min":
         fetch_universe_massive(start, end)
+    elif cmd == "backtest_1min":
+        run_backtest(start, end, cache_dir=CACHE_DIR_1MIN, swing_lookback=30)
+    elif cmd == "backtest_massive_1min":
+        run_backtest(start, end, cache_dir=CACHE_DIR_MASSIVE_1MIN, swing_lookback=30)
     elif cmd == "backtest":
         run_backtest(start, end)
     elif cmd == "backtest_divergence":
