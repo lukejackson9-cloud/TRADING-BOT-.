@@ -135,15 +135,40 @@ def _trading_days(start, end):
 def fetch_range(start, end):
     """No longer filters by get_common_stock_tickers() (today's active
     list) before caching -- see the module docstring's "SURVIVORSHIP-BIAS
-    FIX" section for why that filter was removed and what it traded off."""
+    FIX" section for why that filter was removed and what it traded off.
+
+    Retries a transient per-day failure (network blip, rate-limit 429,
+    momentary 5xx) up to 3 times with backoff before giving up on that one
+    date and moving on -- added 2026-09-11 for unattended multi-hour runs,
+    where get_grouped_daily() raising once used to crash the entire
+    remaining fetch (already-cached days are resumable, but a crash still
+    meant someone had to notice and manually restart). A day that still
+    fails after retries is skipped (NOT cached as empty, unlike a genuine
+    holiday/weekend) so a future run will retry it rather than silently
+    treating a real outage as "no trading that day."""
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
     days = list(_trading_days(start, end))
     fetched = 0
+    skipped = []
     for date in days:
         cache_file = CACHE_DIR / f"{date}.json"
         if cache_file.exists():
             continue
-        data = get_grouped_daily(date)
+        data = None
+        for attempt in range(3):
+            try:
+                data = get_grouped_daily(date)
+                break
+            except Exception as e:
+                print(f"{date}: fetch error ({e}), attempt {attempt + 1}/3")
+                if attempt < 2:
+                    time.sleep(15 * (attempt + 1))
+        if data is None:
+            print(f"{date}: giving up after 3 attempts, skipping (will retry on next run)")
+            skipped.append(date)
+            fetched += 1
+            time.sleep(13)
+            continue
         if data.get("status") == "OK" and data.get("results"):
             compact = {
                 r["T"]: [r["o"], r["h"], r["l"], r["c"], r["v"]]
@@ -158,6 +183,9 @@ def fetch_range(start, end):
         fetched += 1
         time.sleep(13)  # free tier: 5 req/min (sliding window -- space every call, not just every 5th)
     print(f"done: {len(days)} calendar weekdays checked, {fetched} newly fetched")
+    if skipped:
+        print(f"WARNING: {len(skipped)} date(s) skipped after repeated failures, not cached "
+              f"(re-run fetch on the same range to retry them): {skipped}")
 
 
 def fetch_range_alpaca(start, end, batch_size=500):
