@@ -51,9 +51,13 @@
     "entry_price": 35.18,
     "stop_price": 33.7728,
     "target_price": 37.9944,
-    "days_held": 2,
-    "status": "open",
-    "last_checked_date": "2026-09-09"
+    "days_held": 3,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 33.7728,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "STNG",
@@ -62,9 +66,9 @@
     "entry_price": 82.35,
     "stop_price": 79.056,
     "target_price": 88.938,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "EPRX",
@@ -103,9 +107,13 @@
     "entry_price": 17.39,
     "stop_price": 16.6944,
     "target_price": 18.781200000000002,
-    "days_held": 2,
-    "status": "open",
-    "last_checked_date": "2026-09-09"
+    "days_held": 3,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 16.6944,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "NX",
@@ -159,9 +167,13 @@
     "entry_price": 21.8,
     "stop_price": 20.928,
     "target_price": 23.544000000000004,
-    "days_held": 2,
-    "status": "open",
-    "last_checked_date": "2026-09-09"
+    "days_held": 3,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 20.928,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "BBY",
@@ -170,9 +182,9 @@
     "entry_price": 90.27,
     "stop_price": 86.6592,
     "target_price": 97.4916,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "MRVL",
@@ -211,9 +223,9 @@
     "entry_price": 20.87,
     "stop_price": 20.0352,
     "target_price": 22.539600000000004,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "AOUT",
@@ -252,9 +264,13 @@
     "entry_price": 82.78,
     "stop_price": 79.4688,
     "target_price": 89.4024,
-    "days_held": 2,
-    "status": "open",
-    "last_checked_date": "2026-09-09"
+    "days_held": 3,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 79.4688,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "VST",
@@ -263,9 +279,9 @@
     "entry_price": 149.3,
     "stop_price": 143.328,
     "target_price": 161.24400000000003,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "KSS",
@@ -379,9 +395,9 @@
     "entry_price": 126.5,
     "stop_price": 121.44,
     "target_price": 136.62,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "BIAF",
@@ -420,9 +436,9 @@
     "entry_price": 31.77,
     "stop_price": 30.4992,
     "target_price": 34.3116,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "AEHL",
@@ -446,9 +462,13 @@
     "entry_price": 19.98,
     "stop_price": 19.1808,
     "target_price": 21.578400000000002,
-    "days_held": 2,
-    "status": "open",
-    "last_checked_date": "2026-09-09"
+    "days_held": 3,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 19.1808,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "SWBI",
@@ -457,9 +477,9 @@
     "entry_price": 12.89,
     "stop_price": 12.3744,
     "target_price": 13.9212,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "AS",
@@ -498,9 +518,13 @@
     "entry_price": 209.61,
     "stop_price": 201.22560000000001,
     "target_price": 226.37880000000004,
-    "days_held": 2,
-    "status": "open",
-    "last_checked_date": "2026-09-09"
+    "days_held": 3,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 201.22560000000001,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "YSS",
@@ -569,9 +593,13 @@
     "entry_price": 7.2,
     "stop_price": 6.912,
     "target_price": 7.776000000000001,
-    "days_held": 2,
-    "status": "open",
-    "last_checked_date": "2026-09-09"
+    "days_held": 3,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 6.912,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "SPCX",
@@ -610,9 +638,13 @@
     "entry_price": 71.97,
     "stop_price": 69.0912,
     "target_price": 77.72760000000001,
-    "days_held": 1,
-    "status": "open",
-    "last_checked_date": "2026-09-09"
+    "days_held": 2,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 69.0912,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "REXR",
@@ -621,9 +653,9 @@
     "entry_price": 37.43,
     "stop_price": 35.9328,
     "target_price": 40.424400000000006,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "NWL",
@@ -677,9 +709,9 @@
     "entry_price": 52.66,
     "stop_price": 50.553599999999996,
     "target_price": 56.8728,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "ZVRA",
@@ -718,9 +750,13 @@
     "entry_price": 11.18,
     "stop_price": 10.7328,
     "target_price": 12.0744,
-    "days_held": 1,
-    "status": "open",
-    "last_checked_date": "2026-09-09"
+    "days_held": 2,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 10.7328,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "AVGO",
@@ -729,9 +765,9 @@
     "entry_price": 368.56,
     "stop_price": 353.81759999999997,
     "target_price": 398.0448,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "GOLD",
@@ -740,9 +776,13 @@
     "entry_price": 47.47,
     "stop_price": 45.5712,
     "target_price": 51.2676,
-    "days_held": 1,
-    "status": "open",
-    "last_checked_date": "2026-09-09"
+    "days_held": 2,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 45.5712,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "FLNC",
@@ -766,9 +806,9 @@
     "entry_price": 146.27,
     "stop_price": 140.41920000000002,
     "target_price": 157.97160000000002,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "VITL",
@@ -777,9 +817,9 @@
     "entry_price": 10.08,
     "stop_price": 9.6768,
     "target_price": 10.8864,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "BKD",
@@ -788,9 +828,9 @@
     "entry_price": 12.09,
     "stop_price": 11.606399999999999,
     "target_price": 13.0572,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "CUBE",
@@ -799,9 +839,9 @@
     "entry_price": 39.66,
     "stop_price": 38.07359999999999,
     "target_price": 42.8328,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "ORCL",
@@ -810,9 +850,13 @@
     "entry_price": 162.52,
     "stop_price": 156.0192,
     "target_price": 175.52160000000003,
-    "days_held": 1,
-    "status": "open",
-    "last_checked_date": "2026-09-09"
+    "days_held": 2,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 156.0192,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "IOT",
@@ -836,9 +880,13 @@
     "entry_price": 277.22,
     "stop_price": 266.13120000000004,
     "target_price": 299.39760000000007,
-    "days_held": 1,
-    "status": "open",
-    "last_checked_date": "2026-09-09"
+    "days_held": 2,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 266.13120000000004,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "ROIV",
@@ -847,9 +895,9 @@
     "entry_price": 41.48,
     "stop_price": 39.8208,
     "target_price": 44.7984,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "ROIV",
@@ -858,9 +906,9 @@
     "entry_price": 41.48,
     "stop_price": 39.8208,
     "target_price": 44.7984,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "CVI",
@@ -869,9 +917,13 @@
     "entry_price": 46.12,
     "stop_price": 44.2752,
     "target_price": 49.8096,
-    "days_held": 1,
-    "status": "open",
-    "last_checked_date": "2026-09-09"
+    "days_held": 2,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 49.8096,
+    "exit_reason": "target",
+    "pct_return": 0.08
   },
   {
     "ticker": "CXW",
@@ -880,9 +932,9 @@
     "entry_price": 35.05,
     "stop_price": 33.647999999999996,
     "target_price": 37.854,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "BWA",
@@ -891,9 +943,9 @@
     "entry_price": 66.26,
     "stop_price": 63.6096,
     "target_price": 71.56080000000001,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "CLSK",
@@ -902,9 +954,13 @@
     "entry_price": 13.48,
     "stop_price": 12.9408,
     "target_price": 14.5584,
-    "days_held": 1,
-    "status": "open",
-    "last_checked_date": "2026-09-09"
+    "days_held": 2,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 12.9408,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "PAA",
@@ -913,9 +969,9 @@
     "entry_price": 25.965,
     "stop_price": 24.926399999999997,
     "target_price": 28.0422,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "ERII",
@@ -939,9 +995,13 @@
     "entry_price": 162.62,
     "stop_price": 156.1152,
     "target_price": 175.6296,
-    "days_held": 1,
-    "status": "open",
-    "last_checked_date": "2026-09-09"
+    "days_held": 2,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 156.1152,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "SWKS",
@@ -950,9 +1010,13 @@
     "entry_price": 75.38,
     "stop_price": 72.36479999999999,
     "target_price": 81.4104,
-    "days_held": 1,
-    "status": "open",
-    "last_checked_date": "2026-09-09"
+    "days_held": 2,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 81.4104,
+    "exit_reason": "target",
+    "pct_return": 0.08
   },
   {
     "ticker": "BTSG",
@@ -961,9 +1025,13 @@
     "entry_price": 62.56,
     "stop_price": 60.0576,
     "target_price": 67.5648,
-    "days_held": 1,
-    "status": "open",
-    "last_checked_date": "2026-09-09"
+    "days_held": 2,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 60.0576,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "HESM",
@@ -972,9 +1040,9 @@
     "entry_price": 40.97,
     "stop_price": 39.331199999999995,
     "target_price": 44.2476,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "HESM",
@@ -983,9 +1051,9 @@
     "entry_price": 40.97,
     "stop_price": 39.331199999999995,
     "target_price": 44.2476,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "DINO",
@@ -994,9 +1062,9 @@
     "entry_price": 108.31,
     "stop_price": 103.9776,
     "target_price": 116.97480000000002,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "IREN",
@@ -1005,9 +1073,13 @@
     "entry_price": 46.93,
     "stop_price": 45.0528,
     "target_price": 50.684400000000004,
-    "days_held": 1,
-    "status": "open",
-    "last_checked_date": "2026-09-09"
+    "days_held": 2,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 45.0528,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "SEDG",
@@ -1046,9 +1118,9 @@
     "entry_price": 108.53,
     "stop_price": 104.1888,
     "target_price": 117.2124,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "PUMP",
@@ -1057,9 +1129,13 @@
     "entry_price": 12.03,
     "stop_price": 11.548799999999998,
     "target_price": 12.9924,
-    "days_held": 1,
-    "status": "open",
-    "last_checked_date": "2026-09-09"
+    "days_held": 2,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 11.548799999999998,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "RBLX",
@@ -1068,9 +1144,9 @@
     "entry_price": 44.82,
     "stop_price": 43.0272,
     "target_price": 48.40560000000001,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "BG",
@@ -1079,9 +1155,9 @@
     "entry_price": 123.89,
     "stop_price": 118.9344,
     "target_price": 133.80120000000002,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "VLO",
@@ -1090,9 +1166,9 @@
     "entry_price": 382.85,
     "stop_price": 367.536,
     "target_price": 413.47800000000007,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "BTDR",
@@ -1131,9 +1207,13 @@
     "entry_price": 185.04,
     "stop_price": 177.6384,
     "target_price": 199.8432,
-    "days_held": 1,
-    "status": "open",
-    "last_checked_date": "2026-09-09"
+    "days_held": 2,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 177.6384,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "SO",
@@ -1142,9 +1222,9 @@
     "entry_price": 88.99,
     "stop_price": 85.43039999999999,
     "target_price": 96.1092,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "AM",
@@ -1153,9 +1233,9 @@
     "entry_price": 22.9,
     "stop_price": 21.983999999999998,
     "target_price": 24.732,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "VST",
@@ -1164,9 +1244,9 @@
     "entry_price": 151.72,
     "stop_price": 145.6512,
     "target_price": 163.85760000000002,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "MPLX",
@@ -1175,9 +1255,9 @@
     "entry_price": 59.83,
     "stop_price": 57.4368,
     "target_price": 64.6164,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "TRLV",
@@ -1201,9 +1281,9 @@
     "entry_price": 211.88,
     "stop_price": 203.4048,
     "target_price": 228.8304,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "ABM",
@@ -1212,9 +1292,13 @@
     "entry_price": 50.6,
     "stop_price": 48.576,
     "target_price": 54.648,
-    "days_held": 1,
-    "status": "open",
-    "last_checked_date": "2026-09-09"
+    "days_held": 2,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 48.576,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "ABM",
@@ -1223,9 +1307,13 @@
     "entry_price": 50.6,
     "stop_price": 48.576,
     "target_price": 54.648,
-    "days_held": 1,
-    "status": "open",
-    "last_checked_date": "2026-09-09"
+    "days_held": 2,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 48.576,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "VIK",
@@ -1264,9 +1352,9 @@
     "entry_price": 47.39,
     "stop_price": 45.4944,
     "target_price": 51.181200000000004,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "ZIM",
@@ -1275,9 +1363,13 @@
     "entry_price": 30.08,
     "stop_price": 28.876799999999996,
     "target_price": 32.4864,
-    "days_held": 1,
-    "status": "open",
-    "last_checked_date": "2026-09-09"
+    "days_held": 2,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 28.876799999999996,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "ZIM",
@@ -1286,9 +1378,13 @@
     "entry_price": 30.08,
     "stop_price": 28.876799999999996,
     "target_price": 32.4864,
-    "days_held": 1,
-    "status": "open",
-    "last_checked_date": "2026-09-09"
+    "days_held": 2,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 28.876799999999996,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "RIVN",
@@ -1297,9 +1393,9 @@
     "entry_price": 16.17,
     "stop_price": 15.523200000000001,
     "target_price": 17.463600000000003,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "ATRC",
@@ -1308,9 +1404,9 @@
     "entry_price": 53.73,
     "stop_price": 51.580799999999996,
     "target_price": 58.0284,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "QCOM",
@@ -1319,9 +1415,9 @@
     "entry_price": 174.09,
     "stop_price": 167.1264,
     "target_price": 188.0172,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "BNC",
@@ -1345,9 +1441,9 @@
     "entry_price": 108.81,
     "stop_price": 104.4576,
     "target_price": 117.51480000000001,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "NUAI",
@@ -1356,9 +1452,13 @@
     "entry_price": 6.6,
     "stop_price": 6.335999999999999,
     "target_price": 7.128,
-    "days_held": 1,
-    "status": "open",
-    "last_checked_date": "2026-09-09"
+    "days_held": 2,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 6.335999999999999,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "NUAI",
@@ -1367,9 +1467,13 @@
     "entry_price": 6.6,
     "stop_price": 6.335999999999999,
     "target_price": 7.128,
-    "days_held": 1,
-    "status": "open",
-    "last_checked_date": "2026-09-09"
+    "days_held": 2,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 6.335999999999999,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "NUAI",
@@ -1378,9 +1482,13 @@
     "entry_price": 6.6,
     "stop_price": 6.335999999999999,
     "target_price": 7.128,
-    "days_held": 1,
-    "status": "open",
-    "last_checked_date": "2026-09-09"
+    "days_held": 2,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 6.335999999999999,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "MLYS",
@@ -1389,9 +1497,13 @@
     "entry_price": 31.12,
     "stop_price": 29.8752,
     "target_price": 33.6096,
-    "days_held": 1,
-    "status": "open",
-    "last_checked_date": "2026-09-09"
+    "days_held": 2,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 29.8752,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "HUT",
@@ -1430,9 +1542,13 @@
     "entry_price": 15.25,
     "stop_price": 14.639999999999999,
     "target_price": 16.470000000000002,
-    "days_held": 1,
-    "status": "open",
-    "last_checked_date": "2026-09-09"
+    "days_held": 2,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 14.639999999999999,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "MBGL",
@@ -1441,9 +1557,9 @@
     "entry_price": 20.52,
     "stop_price": 19.699199999999998,
     "target_price": 22.1616,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "AESI",
@@ -1452,9 +1568,9 @@
     "entry_price": 13.99,
     "stop_price": 13.4304,
     "target_price": 15.109200000000001,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "JEF",
@@ -1463,9 +1579,13 @@
     "entry_price": 55.72,
     "stop_price": 53.4912,
     "target_price": 60.177600000000005,
-    "days_held": 1,
-    "status": "open",
-    "last_checked_date": "2026-09-09"
+    "days_held": 2,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 53.4912,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "MOS",
@@ -1474,9 +1594,13 @@
     "entry_price": 26.53,
     "stop_price": 25.4688,
     "target_price": 28.652400000000004,
-    "days_held": 1,
-    "status": "open",
-    "last_checked_date": "2026-09-09"
+    "days_held": 2,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 25.4688,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "ALM",
@@ -1515,9 +1639,13 @@
     "entry_price": 104.07,
     "stop_price": 99.90719999999999,
     "target_price": 112.3956,
-    "days_held": 1,
-    "status": "open",
-    "last_checked_date": "2026-09-09"
+    "days_held": 2,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 112.3956,
+    "exit_reason": "target",
+    "pct_return": 0.08
   },
   {
     "ticker": "ECHO",
@@ -1526,9 +1654,13 @@
     "entry_price": 93.42,
     "stop_price": 89.6832,
     "target_price": 100.8936,
-    "days_held": 1,
-    "status": "open",
-    "last_checked_date": "2026-09-09"
+    "days_held": 2,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 89.6832,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "COGT",
@@ -1537,9 +1669,13 @@
     "entry_price": 35.28,
     "stop_price": 33.8688,
     "target_price": 38.1024,
-    "days_held": 1,
-    "status": "open",
-    "last_checked_date": "2026-09-09"
+    "days_held": 2,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 33.8688,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "TSN",
@@ -1548,9 +1684,9 @@
     "entry_price": 52.28,
     "stop_price": 50.1888,
     "target_price": 56.4624,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "CRC",
@@ -1559,9 +1695,9 @@
     "entry_price": 55.57,
     "stop_price": 53.3472,
     "target_price": 60.015600000000006,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "BLZE",
@@ -1585,9 +1721,13 @@
     "entry_price": 8.25,
     "stop_price": 7.92,
     "target_price": 8.91,
-    "days_held": 1,
-    "status": "open",
-    "last_checked_date": "2026-09-09"
+    "days_held": 2,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 7.92,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "SECZ",
@@ -1596,9 +1736,13 @@
     "entry_price": 8.25,
     "stop_price": 7.92,
     "target_price": 8.91,
-    "days_held": 1,
-    "status": "open",
-    "last_checked_date": "2026-09-09"
+    "days_held": 2,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 7.92,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "MCHPP",
@@ -1607,9 +1751,9 @@
     "entry_price": 63.01,
     "stop_price": 60.489599999999996,
     "target_price": 68.0508,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "MESH",
@@ -1618,9 +1762,9 @@
     "entry_price": 10.105,
     "stop_price": 9.7008,
     "target_price": 10.913400000000001,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
-    "last_checked_date": "2026-09-09"
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "BBIO",
@@ -1629,8 +1773,13 @@
     "entry_price": 76.08,
     "stop_price": 73.0368,
     "target_price": 82.16640000000001,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 73.0368,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "CRWV",
@@ -1639,8 +1788,13 @@
     "entry_price": 94.94,
     "stop_price": 91.1424,
     "target_price": 102.5352,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 91.1424,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "GME",
@@ -1649,8 +1803,9 @@
     "entry_price": 19.89,
     "stop_price": 19.0944,
     "target_price": 21.4812,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "open",
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "ODD",
@@ -1659,8 +1814,13 @@
     "entry_price": 16.48,
     "stop_price": 15.8208,
     "target_price": 17.7984,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 15.8208,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "ODD",
@@ -1669,8 +1829,13 @@
     "entry_price": 16.48,
     "stop_price": 15.8208,
     "target_price": 17.7984,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 15.8208,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "AMBA",
@@ -1679,8 +1844,13 @@
     "entry_price": 68.8,
     "stop_price": 66.048,
     "target_price": 74.304,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 66.048,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "AVAH",
@@ -1689,8 +1859,9 @@
     "entry_price": 14.02,
     "stop_price": 13.4592,
     "target_price": 15.1416,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "open",
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "AVAH",
@@ -1699,8 +1870,9 @@
     "entry_price": 14.02,
     "stop_price": 13.4592,
     "target_price": 15.1416,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "open",
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "AIG",
@@ -1709,8 +1881,9 @@
     "entry_price": 75.03,
     "stop_price": 72.0288,
     "target_price": 81.03240000000001,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "open",
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "INTC",
@@ -1719,8 +1892,13 @@
     "entry_price": 106.24,
     "stop_price": 101.9904,
     "target_price": 114.7392,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 101.9904,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "CHRW",
@@ -1729,8 +1907,9 @@
     "entry_price": 150.45,
     "stop_price": 144.432,
     "target_price": 162.486,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "open",
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "HPE",
@@ -1739,8 +1918,13 @@
     "entry_price": 58.9,
     "stop_price": 56.544,
     "target_price": 63.612,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 56.544,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "CLMT",
@@ -1749,8 +1933,9 @@
     "entry_price": 55.69,
     "stop_price": 53.462399999999995,
     "target_price": 60.1452,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "open",
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "XHLD",
@@ -1759,8 +1944,9 @@
     "entry_price": 10.51,
     "stop_price": 10.089599999999999,
     "target_price": 11.350800000000001,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "open",
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "XHLD",
@@ -1769,8 +1955,9 @@
     "entry_price": 10.51,
     "stop_price": 10.089599999999999,
     "target_price": 11.350800000000001,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "open",
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "HLF",
@@ -1779,8 +1966,13 @@
     "entry_price": 12.63,
     "stop_price": 12.1248,
     "target_price": 13.640400000000001,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 12.1248,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "IRD",
@@ -1789,8 +1981,13 @@
     "entry_price": 5.73,
     "stop_price": 5.5008,
     "target_price": 6.188400000000001,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 5.5008,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "TNGX",
@@ -1799,8 +1996,9 @@
     "entry_price": 24,
     "stop_price": 23.04,
     "target_price": 25.92,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "open",
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "VET",
@@ -1809,8 +2007,9 @@
     "entry_price": 13.37,
     "stop_price": 12.835199999999999,
     "target_price": 14.4396,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "open",
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "RLJ",
@@ -1819,8 +2018,9 @@
     "entry_price": 10.87,
     "stop_price": 10.435199999999998,
     "target_price": 11.7396,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "open",
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "SEI",
@@ -1829,8 +2029,13 @@
     "entry_price": 67.67,
     "stop_price": 64.9632,
     "target_price": 73.0836,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 64.9632,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "SEI",
@@ -1839,8 +2044,13 @@
     "entry_price": 67.67,
     "stop_price": 64.9632,
     "target_price": 73.0836,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 64.9632,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "CSR",
@@ -1849,8 +2059,9 @@
     "entry_price": 57.36,
     "stop_price": 55.065599999999996,
     "target_price": 61.948800000000006,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "open",
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "INDV",
@@ -1859,8 +2070,9 @@
     "entry_price": 34.77,
     "stop_price": 33.379200000000004,
     "target_price": 37.55160000000001,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "open",
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "TXG",
@@ -1869,8 +2081,13 @@
     "entry_price": 67.29,
     "stop_price": 64.5984,
     "target_price": 72.67320000000001,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 64.5984,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "WLTH",
@@ -1879,8 +2096,13 @@
     "entry_price": 9.46,
     "stop_price": 9.0816,
     "target_price": 10.216800000000001,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 10.216800000000001,
+    "exit_reason": "target",
+    "pct_return": 0.08
   },
   {
     "ticker": "TKO",
@@ -1889,8 +2111,9 @@
     "entry_price": 191.08,
     "stop_price": 183.4368,
     "target_price": 206.36640000000003,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "open",
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "MRVL",
@@ -1899,8 +2122,9 @@
     "entry_price": 235.01,
     "stop_price": 225.60959999999997,
     "target_price": 253.8108,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "open",
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "INSP",
@@ -1909,8 +2133,9 @@
     "entry_price": 66.48,
     "stop_price": 63.8208,
     "target_price": 71.79840000000002,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "open",
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "VG",
@@ -1919,8 +2144,9 @@
     "entry_price": 15.29,
     "stop_price": 14.678399999999998,
     "target_price": 16.5132,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "open",
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "CHYM",
@@ -1929,8 +2155,13 @@
     "entry_price": 34.55,
     "stop_price": 33.168,
     "target_price": 37.314,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 33.168,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "GLW",
@@ -1939,8 +2170,9 @@
     "entry_price": 168.46,
     "stop_price": 161.7216,
     "target_price": 181.93680000000003,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "open",
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "IBM",
@@ -1949,8 +2181,9 @@
     "entry_price": 239.94,
     "stop_price": 230.3424,
     "target_price": 259.1352,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "open",
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "SIG",
@@ -1959,8 +2192,13 @@
     "entry_price": 102.48,
     "stop_price": 98.3808,
     "target_price": 110.67840000000001,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "closed",
+    "last_checked_date": "2026-09-10",
+    "exit_date": "2026-09-10",
+    "exit_price": 98.3808,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "CVX",
@@ -1969,8 +2207,9 @@
     "entry_price": 213.81,
     "stop_price": 205.2576,
     "target_price": 230.9148,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "open",
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "ATKR",
@@ -1979,8 +2218,9 @@
     "entry_price": 94.21,
     "stop_price": 90.4416,
     "target_price": 101.7468,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "open",
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "AGRO",
@@ -1989,8 +2229,9 @@
     "entry_price": 12.46,
     "stop_price": 11.9616,
     "target_price": 13.456800000000001,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "open",
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "TXT",
@@ -1999,8 +2240,9 @@
     "entry_price": 79.89,
     "stop_price": 76.6944,
     "target_price": 86.28120000000001,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "open",
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "OPFI",
@@ -2009,8 +2251,9 @@
     "entry_price": 7.53,
     "stop_price": 7.2288,
     "target_price": 8.1324,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "open",
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "OPFI",
@@ -2019,8 +2262,9 @@
     "entry_price": 7.53,
     "stop_price": 7.2288,
     "target_price": 8.1324,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "open",
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "ASO",
@@ -2029,8 +2273,9 @@
     "entry_price": 51.15,
     "stop_price": 49.104,
     "target_price": 55.242000000000004,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "open",
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "GFR",
@@ -2039,8 +2284,9 @@
     "entry_price": 6.39,
     "stop_price": 6.134399999999999,
     "target_price": 6.9012,
-    "days_held": 0,
-    "status": "open"
+    "days_held": 1,
+    "status": "open",
+    "last_checked_date": "2026-09-10"
   },
   {
     "ticker": "DSAC",
@@ -2071,5 +2317,368 @@
     "target_price": 11.0052,
     "days_held": 0,
     "status": "open"
+  },
+  {
+    "ticker": "GRND",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-10",
+    "entry_price": 15.38,
+    "stop_price": 14.764800000000001,
+    "target_price": 16.610400000000002,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "CVI",
+    "setup": "breakout",
+    "entry_date": "2026-09-10",
+    "entry_price": 48.6,
+    "stop_price": 46.656,
+    "target_price": 52.48800000000001,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "OBE",
+    "setup": "breakout",
+    "entry_date": "2026-09-10",
+    "entry_price": 12.74,
+    "stop_price": 12.2304,
+    "target_price": 13.759200000000002,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "SWKS",
+    "setup": "breakout",
+    "entry_date": "2026-09-10",
+    "entry_price": 84.03,
+    "stop_price": 80.6688,
+    "target_price": 90.75240000000001,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "NTSK",
+    "setup": "ema_cross",
+    "entry_date": "2026-09-10",
+    "entry_price": 15.1,
+    "stop_price": 14.495999999999999,
+    "target_price": 16.308,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "DBGI",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-10",
+    "entry_price": 6.79,
+    "stop_price": 6.5184,
+    "target_price": 7.333200000000001,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "YELP",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-10",
+    "entry_price": 20.95,
+    "stop_price": 20.112,
+    "target_price": 22.626,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "ELV",
+    "setup": "breakout",
+    "entry_date": "2026-09-10",
+    "entry_price": 416.54,
+    "stop_price": 399.8784,
+    "target_price": 449.86320000000006,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "DVN",
+    "setup": "breakout",
+    "entry_date": "2026-09-10",
+    "entry_price": 50.02,
+    "stop_price": 48.0192,
+    "target_price": 54.02160000000001,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "SION",
+    "setup": "breakout",
+    "entry_date": "2026-09-10",
+    "entry_price": 7.62,
+    "stop_price": 7.3152,
+    "target_price": 8.229600000000001,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "SION",
+    "setup": "vcp_breakout",
+    "entry_date": "2026-09-10",
+    "entry_price": 7.62,
+    "stop_price": 7.3152,
+    "target_price": 8.229600000000001,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "KVUE",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-10",
+    "entry_price": 17.79,
+    "stop_price": 17.0784,
+    "target_price": 19.2132,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "PAGS",
+    "setup": "breakout",
+    "entry_date": "2026-09-10",
+    "entry_price": 10.13,
+    "stop_price": 9.7248,
+    "target_price": 10.940400000000002,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "MUR",
+    "setup": "breakout",
+    "entry_date": "2026-09-10",
+    "entry_price": 38.83,
+    "stop_price": 37.276799999999994,
+    "target_price": 41.9364,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "WTTR",
+    "setup": "ema_cross",
+    "entry_date": "2026-09-10",
+    "entry_price": 20.36,
+    "stop_price": 19.5456,
+    "target_price": 21.9888,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "MOH",
+    "setup": "ema_cross",
+    "entry_date": "2026-09-10",
+    "entry_price": 200.28,
+    "stop_price": 192.2688,
+    "target_price": 216.3024,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "VMC",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-10",
+    "entry_price": 250.6,
+    "stop_price": 240.576,
+    "target_price": 270.648,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "FRO",
+    "setup": "breakout",
+    "entry_date": "2026-09-10",
+    "entry_price": 48.4,
+    "stop_price": 46.464,
+    "target_price": 52.272,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "IMPP",
+    "setup": "breakout",
+    "entry_date": "2026-09-10",
+    "entry_price": 5.605,
+    "stop_price": 5.3808,
+    "target_price": 6.053400000000001,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "NET",
+    "setup": "ema_cross",
+    "entry_date": "2026-09-10",
+    "entry_price": 311.17,
+    "stop_price": 298.7232,
+    "target_price": 336.06360000000006,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "BYD",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-10",
+    "entry_price": 76.45,
+    "stop_price": 73.392,
+    "target_price": 82.566,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "HAFN",
+    "setup": "breakout",
+    "entry_date": "2026-09-10",
+    "entry_price": 9.36,
+    "stop_price": 8.9856,
+    "target_price": 10.1088,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "ORI",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-10",
+    "entry_price": 40.84,
+    "stop_price": 39.2064,
+    "target_price": 44.107200000000006,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "ASO",
+    "setup": "ema_cross",
+    "entry_date": "2026-09-10",
+    "entry_price": 54.215,
+    "stop_price": 52.0464,
+    "target_price": 58.552200000000006,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "QRVO",
+    "setup": "breakout",
+    "entry_date": "2026-09-10",
+    "entry_price": 112.36,
+    "stop_price": 107.8656,
+    "target_price": 121.34880000000001,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "COHU",
+    "setup": "ema_cross",
+    "entry_date": "2026-09-10",
+    "entry_price": 54.73,
+    "stop_price": 52.5408,
+    "target_price": 59.1084,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "MEOH",
+    "setup": "breakout",
+    "entry_date": "2026-09-10",
+    "entry_price": 62.72,
+    "stop_price": 60.2112,
+    "target_price": 67.7376,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "DBI",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-10",
+    "entry_price": 5.99,
+    "stop_price": 5.7504,
+    "target_price": 6.469200000000001,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "ANGX",
+    "setup": "breakout",
+    "entry_date": "2026-09-10",
+    "entry_price": 5.38,
+    "stop_price": 5.1648,
+    "target_price": 5.8104000000000005,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "HCA",
+    "setup": "ema_cross",
+    "entry_date": "2026-09-10",
+    "entry_price": 421.21,
+    "stop_price": 404.36159999999995,
+    "target_price": 454.90680000000003,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "MTDR",
+    "setup": "breakout",
+    "entry_date": "2026-09-10",
+    "entry_price": 61.62,
+    "stop_price": 59.155199999999994,
+    "target_price": 66.5496,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "WLTH",
+    "setup": "breakout",
+    "entry_date": "2026-09-10",
+    "entry_price": 10.88,
+    "stop_price": 10.4448,
+    "target_price": 11.7504,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "AMTM",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-10",
+    "entry_price": 19.56,
+    "stop_price": 18.7776,
+    "target_price": 21.1248,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
   }
 ]
