@@ -81,6 +81,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from alpaca_client import get_historical_bars  # noqa: E402
 
 CACHE_DIR = Path("data/reference/backtest_ict_cache")
+CACHE_DIR_1MIN = Path("data/reference/backtest_ict_cache_1min")
 NY = ZoneInfo("America/New_York")
 
 # Large-cap, high-volume names across sectors -- see module docstring for why
@@ -131,16 +132,17 @@ def _is_nfp_day(date_str):
     return d.day <= 7
 
 
-def fetch_universe(start, end):
-    CACHE_DIR.mkdir(parents=True, exist_ok=True)
+def fetch_universe(start, end, timeframe="5Min", cache_dir=None):
+    cache_dir = cache_dir or CACHE_DIR
+    cache_dir.mkdir(parents=True, exist_ok=True)
     for symbol in UNIVERSE:
-        cache_file = CACHE_DIR / f"{symbol}.json"
+        cache_file = cache_dir / f"{symbol}.json"
         if cache_file.exists():
-            print(f"{symbol}: already cached, skipping")
+            print(f"{symbol}: already cached, skipping", flush=True)
             continue
-        bars = get_historical_bars(symbol, f"{start}T00:00:00Z", f"{end}T23:59:59Z")
+        bars = get_historical_bars(symbol, f"{start}T00:00:00Z", f"{end}T23:59:59Z", timeframe=timeframe)
         cache_file.write_text(json.dumps(bars))
-        print(f"{symbol}: cached {len(bars)} bars")
+        print(f"{symbol}: cached {len(bars)} bars", flush=True)
 
 
 def _compute_rsi(bars, period=14):
@@ -166,13 +168,14 @@ def _compute_rsi(bars, period=14):
         bars[i + 1]["_rsi"] = rsi
 
 
-def _load_days(symbol):
+def _load_days(symbol, cache_dir=None):
     """Returns {date_str: [bar, ...]} -- bars grouped by NY-local trading
     date, each bar annotated with its NY-local time for session logic and
     its RSI(14) computed over the full chronological series (so early-day
     bars still get a real value using the prior session's tail, not reset
-    to a fresh warmup every day)."""
-    cache_file = CACHE_DIR / f"{symbol}.json"
+    to a fresh warmup every day). cache_dir defaults to the 5-min cache;
+    pass CACHE_DIR_1MIN for the 1-minute dataset once fetched."""
+    cache_file = (cache_dir or CACHE_DIR) / f"{symbol}.json"
     if not cache_file.exists():
         return {}
     bars = json.loads(cache_file.read_text())
@@ -639,6 +642,8 @@ if __name__ == "__main__":
     cmd, start, end = sys.argv[1], sys.argv[2], sys.argv[3]
     if cmd == "fetch":
         fetch_universe(start, end)
+    elif cmd == "fetch_1min":
+        fetch_universe(start, end, timeframe="1Min", cache_dir=CACHE_DIR_1MIN)
     elif cmd == "backtest":
         run_backtest(start, end)
     elif cmd == "backtest_divergence":
