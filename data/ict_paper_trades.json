@@ -96,5 +96,101 @@
     "setup": "order_block",
     "direction": "bullish",
     "return_r": 0.05633802816900224
+  },
+  {
+    "date": "2026-09-11",
+    "symbol": "JNJ",
+    "setup": "nypm",
+    "direction": "bullish",
+    "return_r": 0.2307692307693653,
+    "catalyst": {
+      "has_catalyst": "unclear",
+      "note": "no clearly-dated same-day catalyst found; the FDA approval is from August (stale) and the UBS coverage-initiation date couldn't be pinned to today specifically",
+      "tagged_on": "2026-09-11"
+    }
+  },
+  {
+    "date": "2026-09-11",
+    "symbol": "MA",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "no dated catalyst found; referenced CFO commentary is from the Q2 earnings call (already old), next earnings not until Oct 22",
+      "tagged_on": "2026-09-11"
+    }
+  },
+  {
+    "date": "2026-09-11",
+    "symbol": "BAC",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": -0.3606557377049165,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "no dated company-specific news found for 09-10/09-11; Goldman's Buy rating was a reiteration from 09-09, and the 09-15 floating-rate note redemption is routine, not a catalyst",
+      "tagged_on": "2026-09-11"
+    }
+  },
+  {
+    "date": "2026-09-11",
+    "symbol": "ADBE",
+    "setup": "order_block",
+    "direction": "bullish",
+    "return_r": 0.009430094300948466,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Q3 FY26 earnings printed 09-10: beat + raised full-year guidance + CEO transition announced -- real, dated, still-fresh reaction the next session",
+      "tagged_on": "2026-09-11"
+    }
+  },
+  {
+    "date": "2026-09-11",
+    "symbol": "NFLX",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "no fresh dated catalyst found for today specifically; the Florida lawsuit and UK price-hike stories read as ongoing/stale, not new news pinned to 09-10/09-11",
+      "tagged_on": "2026-09-11"
+    }
+  },
+  {
+    "date": "2026-09-11",
+    "symbol": "NFLX",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "no fresh dated catalyst found for today specifically; the Florida lawsuit and UK price-hike stories read as ongoing/stale, not new news pinned to 09-10/09-11",
+      "tagged_on": "2026-09-11"
+    }
+  },
+  {
+    "date": "2026-09-11",
+    "symbol": "INTC",
+    "setup": "fvg",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "dated analyst action today (Piper Sandler rating shift) plus a same-window Reuters report on Intel-backed Altera's IPO -- real, dated, company-specific",
+      "tagged_on": "2026-09-11"
+    }
+  },
+  {
+    "date": "2026-09-11",
+    "symbol": "INTC",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "dated analyst action today (Piper Sandler rating shift) plus a same-window Reuters report on Intel-backed Altera's IPO -- real, dated, company-specific",
+      "tagged_on": "2026-09-11"
+    }
   }
 ]
