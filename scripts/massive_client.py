@@ -110,12 +110,26 @@ def get_ticker_range_aggs(ticker, from_date, to_date, timespan="day", multiplier
     url = f"{BASE_URL}/v2/aggs/ticker/{ticker}/range/{multiplier}/{timespan}/{from_date}/{to_date}"
     params = {"apiKey": API_KEY, "adjusted": str(adjusted).lower(), "sort": "asc", "limit": 50000}
     out = []
+    first = True
     while url:
-        resp = requests.get(url, params=params, timeout=20)
-        resp.raise_for_status()
+        if not first:
+            time.sleep(13)  # free tier: 5 req/min -- pace pagination to stay under it
+        first = False
+        for attempt in range(5):
+            resp = requests.get(url, params=params, timeout=20)
+            if resp.status_code == 429:
+                wait = 15 * (attempt + 1)
+                print(f"  rate-limited, waiting {wait}s...", flush=True)
+                time.sleep(wait)
+                continue
+            resp.raise_for_status()
+            break
+        else:
+            raise RuntimeError(f"gave up on {url} after repeated 429s")
         data = resp.json()
         out.extend({**r, "T": ticker} for r in data.get("results", []))
         url = data.get("next_url")
+        params = {"apiKey": API_KEY}  # next_url already carries its own query params except the key
         params = {"apiKey": API_KEY}  # next_url already carries the rest of the query
     return out
 

@@ -82,6 +82,7 @@ from alpaca_client import get_historical_bars  # noqa: E402
 
 CACHE_DIR = Path("data/reference/backtest_ict_cache")
 CACHE_DIR_1MIN = Path("data/reference/backtest_ict_cache_1min")
+CACHE_DIR_MASSIVE_1MIN = Path("data/reference/backtest_ict_cache_massive_1min")
 NY = ZoneInfo("America/New_York")
 
 # Large-cap, high-volume names across sectors -- see module docstring for why
@@ -166,6 +167,32 @@ def _compute_rsi(bars, period=14):
         avg_loss = (avg_loss * (period - 1) + losses[i]) / period
         rsi = 100.0 if avg_loss == 0 else 100 - (100 / (1 + avg_gain / avg_loss))
         bars[i + 1]["_rsi"] = rsi
+
+
+def fetch_universe_massive(start, end):
+    """Fetches 1-min bars for the ICT universe from Massive/Polygon instead
+    of Alpaca -- confirmed live 2026-09-11 to carry ~25x the volume of
+    Alpaca's IEX feed for identical minutes (full-consolidated-tape
+    quality), at the cost of only ~2 years of history on the free tier
+    (vs Alpaca's ~5). Normalizes Massive's epoch-ms `t` field to the same
+    ISO-string format Alpaca's bars use, so _load_days/_simulate_day work
+    unchanged regardless of which cache_dir they're pointed at."""
+    sys.path.insert(0, str(Path(__file__).parent))
+    from massive_client import get_ticker_range_aggs  # noqa: E402
+    CACHE_DIR_MASSIVE_1MIN.mkdir(parents=True, exist_ok=True)
+    for symbol in UNIVERSE:
+        cache_file = CACHE_DIR_MASSIVE_1MIN / f"{symbol}.json"
+        if cache_file.exists():
+            print(f"{symbol}: already cached, skipping", flush=True)
+            continue
+        raw = get_ticker_range_aggs(symbol, start, end, timespan="minute", multiplier=1)
+        bars = []
+        for r in raw:
+            ts = datetime.datetime.fromtimestamp(r["t"] / 1000, tz=datetime.timezone.utc)
+            bars.append({"t": ts.strftime("%Y-%m-%dT%H:%M:%SZ"), "o": r["o"], "h": r["h"],
+                         "l": r["l"], "c": r["c"], "v": r["v"]})
+        cache_file.write_text(json.dumps(bars))
+        print(f"{symbol}: cached {len(bars)} bars", flush=True)
 
 
 def _load_days(symbol, cache_dir=None):
@@ -644,6 +671,8 @@ if __name__ == "__main__":
         fetch_universe(start, end)
     elif cmd == "fetch_1min":
         fetch_universe(start, end, timeframe="1Min", cache_dir=CACHE_DIR_1MIN)
+    elif cmd == "fetch_massive_1min":
+        fetch_universe_massive(start, end)
     elif cmd == "backtest":
         run_backtest(start, end)
     elif cmd == "backtest_divergence":
