@@ -172,3 +172,17 @@ BAND   # 2026-09-10: +11.94% on 2026-09-09 session, Bandwidth
 KRMN   # 2026-09-10: -11.26% on 2026-09-09 session, Karman Holdings
 TBBK   # 2026-09-10: -22.33% on 2026-09-09 session, The Bancorp
 BRZE   # 2026-09-10: -21.73% on 2026-09-09 session, Braze
+
+# --- added 2026-09-11 via the daily screen routine (Massive whole-market, 2026-09-09 -> 09-10 session pair) ---
+ORCL   # 2026-09-11: pending pre-catalyst tag from earlier (EARNINGS ~09-09, unconfirmed date) now resolving -- ORCL fell -5.4% on 09-10 on heavy volume (56.8M vs ~30-40M typical), evaluating the reaction
+COO    # 2026-09-11: -14.67% on 09-10 session, Cooper Companies
+AEO    # 2026-09-11: -13.97% on 09-10 session, American Eagle Outfitters
+BHVN   # 2026-09-11: -14.73% on 09-10 session, Biohaven
+SWKS   # 2026-09-11: +9.79% on 09-10 session, Skyworks Solutions
+WOLF   # 2026-09-11: -7.73% on 09-10 session, Wolfspeed
+RELY   # 2026-09-11: -8.89% on 09-10 session, Remitly
+REPL   # 2026-09-11: -8.37% on 09-10 session, Replimune
+SMR    # 2026-09-11: fresh -15.7% intraday move today per FMP most-active, on top of the existing 09-09 WATCH low-confidence entry -- re-checking given the escalation
+TGB    # 2026-09-11: -10.19% on 09-10 session, Taseko Mines -- part of a possible copper/mining cluster (HBM/ERO/SCCO/CENX also moved) worth a correlation check if this or another miner reaches CANDIDATE
+TNON   # 2026-09-11: +117.2% on 09-10 session then a further +11.9% intraday today per FMP -- thin-float-style multi-day pump, verify catalyst carefully (BIAF precedent)
+ACVA   # 2026-09-11: +44.2% per FMP most-active, ACV Auctions
