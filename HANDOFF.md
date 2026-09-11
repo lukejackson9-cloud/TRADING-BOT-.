@@ -780,3 +780,43 @@ KRMN, TBBK, BRZE, SIG). ROIV and ASO also just need a few more days to
 elapse before a real post-verdict price exists. None of these should be
 read as "no news" -- they're simply unattempted, and a future check-in
 should prioritize them first.
+
+## 2026-09-11 (later): Signal-confluence testing — scoped and run, no edge found
+User's rationale for wanting this (explicitly stated, worth preserving):
+"a single strategy alone will not help us win trades, it needs multiple
+alongside news in most cases" -- real traders synthesize signals rather
+than trusting one in isolation, and every individual setup tested so far
+(5 TA, 12 ICT variants) has come back flat/negative alone, so it was
+worth directly testing whether AGREEMENT between signals is where an
+edge lives.
+
+Scoped as 3 tests (agreed with the user before building), all reusing
+already-cached data, with success criteria fixed before running -- see
+CLAUDE.md's new "Signal confluence testing" subsection under Technical-
+analysis screening layer for full numbers. Summary: **all three came back
+negative or unconfirmed**:
+- TA-setup agreement (2+ of 5 setups firing same day): worse than solo
+  (-0.11%/trade vs +0.01%).
+- TA + macro-calendar (FOMC/NFP/CPI) proximity: looked uniformly positive
+  in aggregate across all 5 setups, but failed the standard first-half/
+  second-half honesty check -- direction flips setup-by-setup and
+  half-by-half, reads as noise from a thin sample (16-312 trades before
+  splitting), not a real pattern. Same discipline that caught
+  vcp_breakout's 2yr/6yr reversal and OTE's NVDA concentration, applied
+  here before ever reporting the aggregate number as good news.
+- TA + ICT same-symbol/same-day overlap (30-symbol ICT universe): the
+  OPPOSITE of the hypothesis -- TA signals overlapping an ICT signal did
+  worse (-0.27%/trade) than ones that didn't (+0.54%, though that better
+  group has its own NVDA concentration flag, so not fully clean either).
+
+**What this did NOT test**: real news/catalyst confluence -- the part of
+the user's own framing closest to how a discretionary trader actually
+works. There's no honest historical proxy for this at this project's
+data tier (the 09-07 overnight-gap proxy already made results worse,
+since it captures the reaction after it fires, not the catalyst itself).
+Testing that properly needs a forward-only track (tag real dated news
+against future TA/ICT paper-trade signals as it happens) -- flagged to
+the user as the natural next step, not started without checking first.
+
+Script: scripts/backtest_confluence.py (new). Cached results:
+data/reference/backtest_confluence/*.json (gitignored).

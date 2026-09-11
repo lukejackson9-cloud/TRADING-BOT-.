@@ -556,6 +556,72 @@ testing on this project's own dataset. Full trade-level results cached at
 `data/reference/backtest_ict_cache/results_*.json` (gitignored,
 regenerable via the `backtest*` CLI commands documented in the script).
 
+### Signal confluence testing (multiple mechanical signals agreeing) — no edge found, 2026-09-11
+User's rationale for wanting this tested: real traders weigh multiple
+signals together rather than trusting one strategy in isolation, and
+every setup tested individually above has come back flat or negative
+alone — worth directly asking whether AGREEMENT between signals is where
+the edge actually lives, before concluding there's none. Three tests,
+via `scripts/backtest_confluence.py`, all reusing already-cached data (no
+new fetches), with success criteria fixed before running: net positive
+avg return/trade, a genuine uplift over the relevant solo baseline (not
+just "positive"), no single ticker driving >35% of net positive return,
+consistent across both halves of the window, and >=~50 trades minimum.
+
+- **Test 1 (TA setup agreement, full 2020-08-05..2026-09-04 market
+  universe)**: does a ticker firing 2+ of the 5 TA setups the same day
+  beat firing just 1? **Result: confluence was WORSE, not better** —
+  solo signals: 3,376 trades, 41.1% win, +0.01%/trade; confluence
+  signals: 888 trades, 38.9% win, **-0.11%/trade**. (vcp_breakout is a
+  strict subset of breakout by construction — a bare breakout+vcp_breakout
+  pair was collapsed to solo "breakout" rather than counted as fake
+  agreement.) No combo of 2+ setups showed a clean, consistently positive
+  read once split by period.
+- **Test 2 (TA + macro-calendar proximity, same window/universe, reusing
+  the FOMC/NFP/CPI dates already verified for the ICT news-calendar
+  test)**: every one of the 5 TA setups looked better on a news day than
+  a non-news day in the AGGREGATE (e.g. breakout +0.07%/trade on news
+  days vs -0.07% otherwise) — but this **did not survive the
+  first-half/second-half split**, the same check that caught
+  vcp_breakout's false positive: the direction flips setup-by-setup and
+  half-by-half (breakout's news-day edge is negative in the first half of
+  the window and only positive in the second; mean_reversion's is the
+  exact opposite pattern). Sample sizes on news days are thin (16-312
+  trades before splitting, then thinner still per half) — reads as noise
+  from a small sample dressed up by a coincidentally uniform-looking
+  aggregate, not a real effect. Not promoted.
+- **Test 3 (TA + ICT same-symbol/same-day overlap, 30-symbol ICT universe
+  only, 2021-06-01..2026-09-04, reusing the already-cached ICT
+  trade-result files rather than recomputing the ICT model)**: does a TA
+  signal land better on a day the ICT model also fired? **Result: the
+  opposite of the hypothesis** — TA signals WITH a same-day ICT signal:
+  63 trades, 39.7% win, **-0.27%/trade**; TA signals with NO same-day ICT
+  signal: 604 trades, 52.3% win, **+0.54%/trade**. The better-performing
+  "no ICT signal" group itself threw a concentration warning (NVDA =
+  35.1% of its net positive return), so even that positive number isn't
+  fully clean — but there's no version of this result that supports
+  "ICT-day confluence helps."
+
+**Verdict: none of the three confluence tests found an edge that clears
+this project's own pre-registered bar — two came back negative outright,
+and the one that looked positive in aggregate (Test 2) failed the
+same half-split honesty check that's caught every other false positive
+in this project (vcp_breakout, OTE/NVDA).** This tested MECHANICAL
+signal agreement only (TA×TA, TA×macro-calendar, TA×ICT) — it did NOT
+test "TA + a real news catalyst," which is the part of the user's
+original point closest to how a discretionary trader actually combines
+signals. That dimension can't be honestly backtested historically at
+this data tier: the one proxy tried for a price-only "catalyst" (an
+overnight gap, 2026-09-07) already made results worse because it
+captures the reaction after it's fired, not the catalyst itself (see
+lessons.md #1). Testing real catalyst confluence properly needs a
+forward-only track — tagging future TA/ICT paper-trade signals against
+real dated news as it happens — not a historical backtest built on a
+price-derived stand-in. Not started without the user weighing in first;
+same patience standard as everything else here. Full trade-level results
+cached at `data/reference/backtest_confluence/*.json` (gitignored,
+regenerable via `scripts/backtest_confluence.py`).
+
 ### Original theoretical cadence (kept for reference — superseded by the single daily run above for the screen/research/council/propose steps)
 - Pre-market (8:00 AM ET): run skills/screen.md → update watchlist
 - Market open+30m (10:00 AM ET): run skills/research.md → skills/council.md
