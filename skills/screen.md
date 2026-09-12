@@ -79,17 +79,44 @@ Goal: produce a short list (5–15 tickers) of candidates worth researching toda
    out there, not comprehensive, so widen the query angles (analyst
    upgrades, sector rotation, earnings calendar) rather than trusting one
    narrow search.
-2. Separately, look ahead: earnings calendar for the coming week (real
-   dates from step 0b's FMP call when reachable, WebSearch otherwise). This
-   exists because reacting only to today's movers means always chasing a
-   catalyst that already happened — the GTLB case in /data/journal/ is the
-   example: by the time it showed up as a "mover," it was already up 20%
-   and multiple analysts had already moved targets. Flagging earnings
-   dates in advance lets research.md catch the reaction same-session
-   instead of days late. Add promising names (that would otherwise pass
-   the filters below) with a distinct comment tag: `# EARNINGS {date} —
-   pre-catalyst watch, not yet a candidate`. These are watch-and-be-ready
-   entries, not movers.
+2. **Look ahead — MANDATORY, run this every time, it is not optional
+   garnish.** `python scripts/earnings_calendar.py upcoming 14` (and
+   `refresh 90` weekly, or whenever the cache is stale).
+   **Why this step is load-bearing, measured 2026-09-12**: step 0 ranks
+   the whole market by |% change|, so every ticker it hands research.md
+   has ALREADY made its move — and "stale / already priced in / sell the
+   news" is the single most common reason research.md rejects a ticker
+   (57 of 147 notes, 39%, per scorecard.md). The pipeline finds movers
+   then rejects them for being movers. That closed loop, not the market,
+   is the best explanation for a week with zero CANDIDATEs. This step is
+   the only thing that breaks it. When it was neglected the forward arm
+   was effectively dead: 4 of 174 watchlist lines carried a pre-catalyst
+   tag, and 7 of 136 research notes had any forward framing.
+   - Add every name it returns that would otherwise pass the filters
+     below, tagged exactly: `# EARNINGS {date} — pre-catalyst watch, not
+     yet a candidate`.
+   - **Coverage is narrow and you must not misreport it.** FMP's free
+     tier covers a curated ~78-name universe (measured: 1 entry in the
+     next 7 days, 13 in 30, 78 in 90), NOT the whole market. Absence from
+     the calendar means "not in FMP's covered set" — NEVER write "no
+     upcoming earnings" on the strength of it.
+   - **Widen it when a screened name matters.** If a ticker from step 0
+     looks interesting and isn't in the calendar, WebSearch its next
+     earnings date and record it with
+     `python scripts/earnings_calendar.py merge {TICKER} {YYYY-MM-DD} "{source}"`.
+     A sourcing note is required; the script refuses an unsourced date
+     (lessons.md #2). Merged entries survive `refresh`.
+   - Other sources were tested live 2026-09-12 and do NOT work from this
+     environment — Nasdaq's calendar API is proxy-blocked, Massive's
+     earnings feed is a paid add-on (403 "not entitled"), and Yahoo
+     429s/500s including the repo's own yahoo_screener_client. Don't
+     rediscover these; FMP + WebSearch merge is the working path.
+   The point is timing, not prediction: being ALREADY on the name when it
+   reports, so research.md evaluates the real reaction that session
+   instead of meeting the stock three days later as a +12% mover and
+   correctly rejecting it for having already moved. HPE is the cautionary
+   case — declined 09-03 after its pop had fired, stopped out at -4%, then
+   +15.2% by 09-11 (see trade_ledger.md).
 3. Filter (all lists from steps 0/0b/0c/1/2): price between $5–$500 (avoid
    penny stocks and needing huge capital), average daily volume > 1M shares
    (avoid illiquid names you can't exit). Already applied if step 0's

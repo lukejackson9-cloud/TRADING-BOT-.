@@ -172,3 +172,10 @@ BAND   # 2026-09-10: +11.94% on 2026-09-09 session, Bandwidth
 KRMN   # 2026-09-10: -11.26% on 2026-09-09 session, Karman Holdings
 TBBK   # 2026-09-10: -22.33% on 2026-09-09 session, The Bancorp
 BRZE   # 2026-09-10: -21.73% on 2026-09-09 session, Braze
+
+# --- Forward-looking (earnings lookahead), added 2026-09-12 via scripts/earnings_calendar.py ---
+# These are NOT movers and NOT candidates. research.md step 5 caps them at WATCH
+# until the print lands; the point is to be already watching on the day.
+FDX   # EARNINGS 2026-09-17 — pre-catalyst watch, not yet a candidate
+COST  # EARNINGS 2026-09-24 — pre-catalyst watch, not yet a candidate
+NKE   # EARNINGS 2026-10-01 — pre-catalyst watch, not yet a candidate

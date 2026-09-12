@@ -1,0 +1,467 @@
+{
+ "entries": {
+  "AAL": {
+   "date": "2026-10-22",
+   "eps_estimated": -0.32,
+   "revenue_estimated": 16137910000,
+   "source": "fmp"
+  },
+  "AAPL": {
+   "date": "2026-10-29",
+   "eps_estimated": 1.98,
+   "revenue_estimated": 113210600000,
+   "source": "fmp"
+  },
+  "ABBV": {
+   "date": "2026-10-30",
+   "eps_estimated": 3.86,
+   "revenue_estimated": 17312390000,
+   "source": "fmp"
+  },
+  "ADBE": {
+   "date": "2026-12-09",
+   "eps_estimated": 6.3,
+   "revenue_estimated": 6831179000,
+   "source": "fmp"
+  },
+  "AMD": {
+   "date": "2026-11-03",
+   "eps_estimated": 1.9,
+   "revenue_estimated": 12966980000,
+   "source": "fmp"
+  },
+  "AMZN": {
+   "date": "2026-10-29",
+   "eps_estimated": 1.96,
+   "revenue_estimated": 202098300000,
+   "source": "fmp"
+  },
+  "BA": {
+   "date": "2026-10-28",
+   "eps_estimated": -0.15,
+   "revenue_estimated": 24965010000,
+   "source": "fmp"
+  },
+  "BABA": {
+   "date": "2026-11-24",
+   "eps_estimated": 1.63,
+   "revenue_estimated": 40343930000,
+   "source": "fmp"
+  },
+  "BAC": {
+   "date": "2026-10-14",
+   "eps_estimated": 1.18,
+   "revenue_estimated": 31244450000,
+   "source": "fmp"
+  },
+  "BIDU": {
+   "date": "2026-11-17",
+   "eps_estimated": 1.22,
+   "revenue_estimated": 4581809000,
+   "source": "fmp"
+  },
+  "BILI": {
+   "date": "2026-11-12",
+   "eps_estimated": 0.28,
+   "revenue_estimated": 1235709000,
+   "source": "fmp"
+  },
+  "C": {
+   "date": "2026-10-13",
+   "eps_estimated": 2.67,
+   "revenue_estimated": 23739130000,
+   "source": "fmp"
+  },
+  "CARR": {
+   "date": "2026-10-27",
+   "eps_estimated": 0.81,
+   "revenue_estimated": 5973503000,
+   "source": "fmp"
+  },
+  "CCL": {
+   "date": "2026-10-05",
+   "eps_estimated": 1.35,
+   "revenue_estimated": 8396053000,
+   "source": "fmp"
+  },
+  "COIN": {
+   "date": "2026-10-29",
+   "eps_estimated": -0.35667,
+   "revenue_estimated": 1168676000,
+   "source": "fmp"
+  },
+  "COST": {
+   "date": "2026-09-24",
+   "eps_estimated": 6.55,
+   "revenue_estimated": 94826740000,
+   "source": "fmp"
+  },
+  "CSCO": {
+   "date": "2026-11-11",
+   "eps_estimated": 1.32,
+   "revenue_estimated": 18114740000,
+   "source": "fmp"
+  },
+  "CVX": {
+   "date": "2026-10-30",
+   "eps_estimated": 4.65,
+   "revenue_estimated": 57363590000,
+   "source": "fmp"
+  },
+  "DAL": {
+   "date": "2026-10-08",
+   "eps_estimated": 2.03,
+   "revenue_estimated": 17589120000,
+   "source": "fmp"
+  },
+  "DIS": {
+   "date": "2026-11-12",
+   "eps_estimated": 1.66,
+   "revenue_estimated": 25115750000,
+   "source": "fmp"
+  },
+  "DOCU": {
+   "date": "2026-12-03",
+   "eps_estimated": 1.16,
+   "revenue_estimated": 888999300,
+   "source": "fmp"
+  },
+  "ET": {
+   "date": "2026-11-04",
+   "eps_estimated": 0.41,
+   "revenue_estimated": 30827090000,
+   "source": "fmp"
+  },
+  "ETSY": {
+   "date": "2026-11-04",
+   "eps_estimated": 1.31,
+   "revenue_estimated": 667617800,
+   "source": "fmp"
+  },
+  "F": {
+   "date": "2026-10-22",
+   "eps_estimated": 0.41,
+   "revenue_estimated": 48422820000,
+   "source": "fmp"
+  },
+  "FDX": {
+   "date": "2026-09-17",
+   "eps_estimated": 4.21,
+   "revenue_estimated": 23198360000,
+   "source": "fmp"
+  },
+  "FUBO": {
+   "date": "2026-11-02",
+   "eps_estimated": -0.2425,
+   "revenue_estimated": 1510268000,
+   "source": "fmp"
+  },
+  "GE": {
+   "date": "2026-10-20",
+   "eps_estimated": 2.01,
+   "revenue_estimated": 12812370000,
+   "source": "fmp"
+  },
+  "GM": {
+   "date": "2026-10-20",
+   "eps_estimated": 3.66,
+   "revenue_estimated": 48742040000,
+   "source": "fmp"
+  },
+  "GOOGL": {
+   "date": "2026-10-28",
+   "eps_estimated": 3.03,
+   "revenue_estimated": 126790100000,
+   "source": "fmp"
+  },
+  "GS": {
+   "date": "2026-10-13",
+   "eps_estimated": 16.42,
+   "revenue_estimated": 17641610000,
+   "source": "fmp"
+  },
+  "HCA": {
+   "date": "2026-10-23",
+   "eps_estimated": 6.71,
+   "revenue_estimated": 19345600000,
+   "source": "fmp"
+  },
+  "HOOD": {
+   "date": "2026-11-04",
+   "eps_estimated": 0.52,
+   "revenue_estimated": 1363052000,
+   "source": "fmp"
+  },
+  "INTC": {
+   "date": "2026-10-22",
+   "eps_estimated": 0.39,
+   "revenue_estimated": 16317630000,
+   "source": "fmp"
+  },
+  "JNJ": {
+   "date": "2026-10-13",
+   "eps_estimated": 2.9,
+   "revenue_estimated": 25329570000,
+   "source": "fmp"
+  },
+  "JPM": {
+   "date": "2026-10-13",
+   "eps_estimated": 5.84,
+   "revenue_estimated": 50564570000,
+   "source": "fmp"
+  },
+  "KO": {
+   "date": "2026-10-20",
+   "eps_estimated": 0.87,
+   "revenue_estimated": 12895220000,
+   "source": "fmp"
+  },
+  "LCID": {
+   "date": "2026-11-04",
+   "eps_estimated": -2.28333,
+   "revenue_estimated": 468622400,
+   "source": "fmp"
+  },
+  "LMT": {
+   "date": "2026-10-20",
+   "eps_estimated": 7.43,
+   "revenue_estimated": 20441270000,
+   "source": "fmp"
+  },
+  "META": {
+   "date": "2026-10-28",
+   "eps_estimated": 6.74,
+   "revenue_estimated": 63246260000,
+   "source": "fmp"
+  },
+  "MGM": {
+   "date": "2026-11-04",
+   "eps_estimated": 0.1696,
+   "revenue_estimated": 4285696000,
+   "source": "fmp"
+  },
+  "MRNA": {
+   "date": "2026-11-05",
+   "eps_estimated": -1.3114,
+   "revenue_estimated": 894988600,
+   "source": "fmp"
+  },
+  "MSFT": {
+   "date": "2026-10-28",
+   "eps_estimated": 4.67,
+   "revenue_estimated": 90596210000,
+   "source": "fmp"
+  },
+  "NFLX": {
+   "date": "2026-10-20",
+   "eps_estimated": 0.82,
+   "revenue_estimated": 12872610000,
+   "source": "fmp"
+  },
+  "NIO": {
+   "date": "2026-11-24",
+   "eps_estimated": -0.06,
+   "revenue_estimated": 4936163000,
+   "source": "fmp"
+  },
+  "NKE": {
+   "date": "2026-10-01",
+   "eps_estimated": 0.4452,
+   "revenue_estimated": 11357860000,
+   "source": "fmp"
+  },
+  "NOK": {
+   "date": "2026-10-22",
+   "eps_estimated": 0.08,
+   "revenue_estimated": 5745047000,
+   "source": "fmp"
+  },
+  "NVDA": {
+   "date": "2026-11-18",
+   "eps_estimated": 2.47,
+   "revenue_estimated": 108672700000,
+   "source": "fmp"
+  },
+  "PEP": {
+   "date": "2026-10-08",
+   "eps_estimated": 2.3,
+   "revenue_estimated": 25002870000,
+   "source": "fmp"
+  },
+  "PFE": {
+   "date": "2026-11-03",
+   "eps_estimated": 0.79,
+   "revenue_estimated": 15934520000,
+   "source": "fmp"
+  },
+  "PINS": {
+   "date": "2026-11-03",
+   "eps_estimated": 0.49,
+   "revenue_estimated": 1205172000,
+   "source": "fmp"
+  },
+  "PLTR": {
+   "date": "2026-11-02",
+   "eps_estimated": 0.41,
+   "revenue_estimated": 2166903000,
+   "source": "fmp"
+  },
+  "PYPL": {
+   "date": "2026-10-27",
+   "eps_estimated": 1.32,
+   "revenue_estimated": 8725305000,
+   "source": "fmp"
+  },
+  "RBLX": {
+   "date": "2026-10-29",
+   "eps_estimated": -0.41,
+   "revenue_estimated": 1632610000,
+   "source": "fmp"
+  },
+  "RIOT": {
+   "date": "2026-10-29",
+   "eps_estimated": -0.33,
+   "revenue_estimated": 158713400,
+   "source": "fmp"
+  },
+  "RIVN": {
+   "date": "2026-11-03",
+   "eps_estimated": -0.67,
+   "revenue_estimated": 1965941000,
+   "source": "fmp"
+  },
+  "RKT": {
+   "date": "2026-10-29",
+   "eps_estimated": 0.16,
+   "revenue_estimated": 2642885000,
+   "source": "fmp"
+  },
+  "ROKU": {
+   "date": "2026-11-04",
+   "eps_estimated": 0.55,
+   "revenue_estimated": 1409045000,
+   "source": "fmp"
+  },
+  "SBUX": {
+   "date": "2026-10-28",
+   "eps_estimated": 0.71,
+   "revenue_estimated": 9212245000,
+   "source": "fmp"
+  },
+  "SHOP": {
+   "date": "2026-11-03",
+   "eps_estimated": 0.44,
+   "revenue_estimated": 3777410000,
+   "source": "fmp"
+  },
+  "SIRI": {
+   "date": "2026-11-03",
+   "eps_estimated": 0.76,
+   "revenue_estimated": 2154790000,
+   "source": "fmp"
+  },
+  "SNAP": {
+   "date": "2026-11-04",
+   "eps_estimated": 0.16,
+   "revenue_estimated": 1730569000,
+   "source": "fmp"
+  },
+  "SOFI": {
+   "date": "2026-10-27",
+   "eps_estimated": 0.17,
+   "revenue_estimated": 1253790000,
+   "source": "fmp"
+  },
+  "SONY": {
+   "date": "2026-11-10",
+   "eps_estimated": 0.4104,
+   "revenue_estimated": 20041860000,
+   "source": "fmp"
+  },
+  "T": {
+   "date": "2026-10-21",
+   "eps_estimated": 0.62,
+   "revenue_estimated": 31687320000,
+   "source": "fmp"
+  },
+  "TGT": {
+   "date": "2026-11-18",
+   "eps_estimated": 2.04,
+   "revenue_estimated": 26370390000,
+   "source": "fmp"
+  },
+  "TLRY": {
+   "date": "2026-10-08",
+   "eps_estimated": -0.166,
+   "revenue_estimated": 269419900,
+   "source": "fmp"
+  },
+  "TSLA": {
+   "date": "2026-10-28",
+   "eps_estimated": 0.47,
+   "revenue_estimated": 27634380000,
+   "source": "fmp"
+  },
+  "TSM": {
+   "date": "2026-10-15",
+   "eps_estimated": 4.45,
+   "revenue_estimated": 45169040000,
+   "source": "fmp"
+  },
+  "UAL": {
+   "date": "2026-10-21",
+   "eps_estimated": 2.91,
+   "revenue_estimated": 17816480000,
+   "source": "fmp"
+  },
+  "UBER": {
+   "date": "2026-11-03",
+   "eps_estimated": 0.866,
+   "revenue_estimated": 14685160000,
+   "source": "fmp"
+  },
+  "UNH": {
+   "date": "2026-10-27",
+   "eps_estimated": 4.09,
+   "revenue_estimated": 111311200000,
+   "source": "fmp"
+  },
+  "V": {
+   "date": "2026-10-27",
+   "eps_estimated": 3.43,
+   "revenue_estimated": 12077370000,
+   "source": "fmp"
+  },
+  "VZ": {
+   "date": "2026-10-20",
+   "eps_estimated": 1.29,
+   "revenue_estimated": 34798630000,
+   "source": "fmp"
+  },
+  "WFC": {
+   "date": "2026-10-13",
+   "eps_estimated": 1.84,
+   "revenue_estimated": 22355920000,
+   "source": "fmp"
+  },
+  "WMT": {
+   "date": "2026-11-19",
+   "eps_estimated": 0.63,
+   "revenue_estimated": 187305600000,
+   "source": "fmp"
+  },
+  "XOM": {
+   "date": "2026-10-30",
+   "eps_estimated": 3.66,
+   "revenue_estimated": 106769600000,
+   "source": "fmp"
+  },
+  "ZM": {
+   "date": "2026-11-23",
+   "eps_estimated": 1.5,
+   "revenue_estimated": 1279053000,
+   "source": "fmp"
+  }
+ },
+ "fetched_at": "2026-09-12T02:24:45+00:00"
+}
