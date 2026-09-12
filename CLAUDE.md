@@ -716,6 +716,35 @@ the data. Rebuilding the screen around the fundamental horizon is the next
 piece of work. Until then, treat the universe as a known limitation of every
 result the new council produces, and say so when reporting.
 
+**GRADING HORIZON FIXED 2026-09-12, same day — the ranker was about to
+measure the new game with the old game's ruler.** `ranker.py report` graded
+picks through `counterfactual.grade()`, which applies this file's SHORT
+rule: -4% stop / +8% target / 5-day time stop. Correct while the project
+traded two-week momentum; catastrophic for a 3-12 month council. A sound
+company routinely draws down 4% in a week on noise, so nearly every pick
+would have "resolved" as a stop-out within days, long before its thesis
+could be right or wrong — and the track would have reported failure that
+meant nothing, while looking like a real result. Six weeks of data would
+have been garbage. Caught before a single real pick was recorded.
+`python scripts/ranker.py grade` is the correct grader:
+- **Fixed holds at the actual horizon** — 21/63/126/252 sessions. 21d is
+  printed but tagged EARLY READ, below the 3-month mandate.
+- **No stop at all.** At this horizon a tight stop exits on noise before the
+  thesis resolves; that IS the flaw being removed. Tail risk is reported
+  instead (worst trade, % losing >20%) rather than truncated.
+- **Benchmarked against SPY over the IDENTICAL window.** Excess is the only
+  number that counts: holding anything in a rising market gives a positive
+  raw return, that is beta, and an index fund sells it cheaper.
+- **Every pick lands in exactly one bucket and the totals must reconcile**
+  (matured / open / not-yet-entered / no-price-data = total). An earlier
+  version dropped a pick recorded on a date with no following session — 3
+  in, 2 counted, no warning. Silent loss is how a measurement rots unnoticed.
+- Immature picks are never averaged in, which would bias the result toward
+  whatever the newest picks happen to be doing.
+`ranker.py backtest` KEEPS the short rule on purpose: it grades the old
+pipeline's historical short-horizon verdicts, where -4%/+8%/5d is what those
+decisions were actually made under.
+
 **Expect a slow feedback loop, and do not treat that as failure.** A 3-12
 month horizon cannot be validated in weeks. The edge there exists precisely
 because it needs patience institutions are not paid to have. Nothing built

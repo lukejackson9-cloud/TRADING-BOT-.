@@ -244,6 +244,156 @@ def report():
         print("\nAnd none of it counts until the sample clears the bar above.")
 
 
+# ---------------------------------------------------------------------------
+# LONG-HORIZON GRADING
+#
+# The original report() graded picks through counterfactual.grade(), which
+# applies CLAUDE.md's short-horizon rule: -4% stop / +8% target / 5-day time
+# stop. That was correct while this project traded two-week momentum. It is
+# WRONG for the 3-12 month council and would have quietly destroyed the first
+# six weeks of data.
+#
+# Why it breaks: a perfectly sound company routinely draws down 4% in a week
+# on noise. Grading a 3-12 month thesis with a 5-day -4% stop means nearly
+# every pick "resolves" as a stop-out within days, long before the thesis has
+# any chance to be right or wrong. The track would have reported failure that
+# meant nothing at all -- and, worse, it would have looked like a real result.
+#
+# So: fixed holds at the actual horizon, NO stop, and measured against SPY
+# over the IDENTICAL window. Against zero, any hold in a rising market looks
+# like skill; the benchmark is the whole point.
+# ---------------------------------------------------------------------------
+
+HORIZONS = [(21, "1 month"), (63, "3 months"), (126, "6 months"), (252, "12 months")]
+MANDATE_MIN = 63          # 3-12 months is the mandate; 21d is an early read only
+_BARS_CACHE = Path("data/reference/ranker_bars")
+
+
+def _bars(ticker, refresh_days=1):
+    """Daily bars to TODAY. Unlike counterfactual's cache this must keep
+    extending forward, because a pick made today is graded 1/3/6/12 months
+    from now — a frozen cache would silently stop maturing picks."""
+    _BARS_CACHE.mkdir(parents=True, exist_ok=True)
+    f = _BARS_CACHE / f"{ticker.upper()}.json"
+    if f.exists():
+        d = json.loads(f.read_text())
+        age = (datetime.date.today() - datetime.date.fromisoformat(d["fetched"])).days
+        if age <= refresh_days:
+            return [tuple(b) for b in d["bars"]]
+    from alpaca_client import get_historical_bars
+    try:
+        raw = get_historical_bars(ticker, "2026-08-01T00:00:00Z",
+                                  f"{datetime.date.today()}T23:59:59Z", timeframe="1Day")
+    except Exception:
+        return []
+    bars = [(b["t"][:10], b["o"], b["h"], b["l"], b["c"], b["v"]) for b in raw]
+    f.write_text(json.dumps({"fetched": datetime.date.today().isoformat(), "bars": bars}))
+    return bars
+
+
+def _hold_return(bars, date, sessions):
+    """Buy at the open after `date`, hold `sessions` sessions, no stop.
+
+    Returns (pct_return, matured). `matured` False means the window has not
+    elapsed yet — the partial number is returned for visibility but must
+    never be averaged in with matured ones, which would bias the result
+    toward whatever the newest picks are doing."""
+    prior = [i for i, b in enumerate(bars) if b[0] <= date]
+    if not prior:
+        return None, False
+    i = prior[-1]
+    if i + 1 >= len(bars):
+        return None, False
+    entry = bars[i + 1][1]
+    if entry <= 0:
+        return None, False
+    end = i + 1 + sessions
+    matured = end < len(bars)
+    last = bars[min(end, len(bars) - 1)][4]
+    return (last - entry) / entry, matured
+
+
+def grade_long():
+    """Grade ranked picks at the horizon they were actually chosen for."""
+    rows = _load()
+    if not rows:
+        print("no picks recorded yet — nothing to grade.")
+        return
+    spy = _bars("SPY")
+    if not spy:
+        print("WARNING: no SPY bars. Returns below are against ZERO, which in a")
+        print("rising market flatters everything. Treat them as uninterpretable.")
+
+    print("=" * 78)
+    print("SAMPLE QUALITY")
+    print("=" * 78)
+    dates = sorted({r["date"] for r in rows})
+    print(f"{len(rows)} picks over {len(dates)} date(s)"
+          f"{f' ({dates[0]}..{dates[-1]})' if dates else ''}")
+    if len(dates) < MIN_DATES:
+        print(f"  ! {len(dates)}/{MIN_DATES} distinct dates — clustered picks measure the"
+              f" tape, not the picking")
+    print()
+
+    for sessions, label in HORIZONS:
+        # Every pick must land in exactly ONE bucket and the totals must
+        # reconcile with len(rows). An earlier version returned None for a
+        # pick with no session after its date yet (recorded at the close, so
+        # not yet buyable) and that pick vanished from BOTH counters — three
+        # picks in, two accounted for, no warning. Silent loss is how a
+        # measurement rots without anyone noticing.
+        mat, imm, no_entry, no_data = [], 0, 0, 0
+        for r in rows:
+            b = _bars(r["ticker"])
+            if not b:
+                no_data += 1
+                continue
+            ret, done = _hold_return(b, r["date"], sessions)
+            if ret is None:
+                no_entry += 1
+                continue
+            if not done:
+                imm += 1
+                continue
+            sret, sdone = _hold_return(spy, r["date"], sessions) if spy else (None, False)
+            mat.append((r, ret, sret if sdone else None))
+        tag = "" if sessions >= MANDATE_MIN else "   [EARLY READ — below the 3-month mandate]"
+        print(f"--- {label} ({sessions} sessions){tag}")
+        accounted = len(mat) + imm + no_entry + no_data
+        tally = (f"{len(mat)} matured / {imm} open / {no_entry} not yet entered"
+                 f" / {no_data} no price data  = {accounted} of {len(rows)}")
+        if accounted != len(rows):
+            tally += "   <-- BUG: picks unaccounted for"
+        if not mat:
+            print(f"    none matured yet.  [{tally}]\n")
+            continue
+        avg = sum(x[1] for x in mat) / len(mat)
+        bench = [x[2] for x in mat if x[2] is not None]
+        line = (f"    n={len(mat):<4} picks {avg * 100:+.2f}%   "
+                f"win {sum(1 for x in mat if x[1] > 0) / len(mat) * 100:.0f}%")
+        if bench:
+            ba = sum(bench) / len(bench)
+            line += f"   SPY {ba * 100:+.2f}%   EXCESS {(avg - ba) * 100:+.2f}%"
+        else:
+            line += "   (no benchmark — NOT interpretable)"
+        print(line)
+        worst = min(x[1] for x in mat)
+        big = sum(1 for x in mat if x[1] <= -0.20) / len(mat) * 100
+        print(f"    worst {worst * 100:+.1f}%   losing >20%: {big:.0f}%")
+        print(f"    [{tally}]")
+        print()
+
+    print("=" * 78)
+    print("EXCESS OVER SPY IS THE NUMBER THAT MATTERS, NOT THE RAW RETURN.")
+    print("Holding anything in a rising market produces a positive raw return; that is")
+    print("beta and an index fund sells it cheaper. Only the excess is evidence of")
+    print("picking. No stop is applied on purpose — at this horizon a tight stop exits")
+    print("on noise before the thesis resolves, which is exactly the flaw this replaced.")
+    print("Nothing here is readable until the 3-month column has a real sample across")
+    print("many distinct dates; expect that to take months, by design.")
+    print("=" * 78)
+
+
 def backtest():
     """Did the labels this system ALREADY recorded carry ordering information?
 
@@ -399,5 +549,7 @@ if __name__ == "__main__":
         report()
     elif cmd == "backtest":
         backtest()
+    elif cmd == "grade":
+        grade_long()
     else:
         print(__doc__.strip().split("Usage:")[-1])
