@@ -211,6 +211,22 @@ def shortlist(n=10):
             flags.append("P/S>20")
         if h.get("negative_equity"):
             flags.append("neg-equity")
+        # Valuation rests on a share count that is wrong for ~30% of names.
+        # Where it could not be corroborated, say so on the line rather than
+        # letting an uncorroborated P/S or earnings yield read like a fact.
+        # ROE above ~200% is the denominator collapsing, not quality: UNIT
+        # showed 666.9% and HRB 624.4% on near-zero book equity. The cut sits
+        # at 200% deliberately — AAPL's 119.9% is genuine (heavy buybacks
+        # shrink book equity at a real business), so a lower threshold would
+        # flag the very companies the quality role should be looking at.
+        roe = q.get("return_on_equity")
+        if roe is not None and roe > 2.0:
+            flags.append("tiny-equity")
+        basis = m.get("share_count_basis", "")
+        if basis.startswith("UNVERIFIABLE"):
+            flags.append("shares?")
+        elif "uncorroborated" in basis or "implausible" in basis:
+            flags.append("shares~")
         # A name with no reported figures triggers no flags, so without this it
         # would rank ABOVE names with real data and one blemish — absence of
         # information reading as absence of problems, which is the same trap
@@ -226,6 +242,8 @@ def shortlist(n=10):
     rows.sort()
     print(f"# Council shortlist — {len(covered)} names covered, showing {min(n, len(rows))}")
     print("# ATTENTION ORDER, NOT a return forecast. Low rank is not a rejection.")
+    print("# flags: shares? = share count unverifiable, cap metrics suppressed;")
+    print("#        shares~ = share count from a single uncorroborated source.")
     print(f"# Universe: liquid common stocks, coverage-based — NOT today's movers.")
     print(f"{'ticker':<8}{'earn yld':>10}{'P/S':>8}{'ROE':>8}{'rev YoY':>10}  flags")
     print("-" * 68)

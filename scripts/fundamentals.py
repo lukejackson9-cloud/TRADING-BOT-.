@@ -153,36 +153,67 @@ def metrics(ticker):
     shares = _v(ttm, "income_statement", "diluted_average_shares")
     eps = _v(ttm, "income_statement", "diluted_earnings_per_share")
 
-    # SHARE COUNT: never trust the reported field alone.
-    # `diluted_average_shares` is wrong for roughly 30% of names, in several
-    # different ways: HUBG reports 180,826 against ~61,000,000 real shares
-    # (a units problem), while WU and DAN come back 2x and 3x too high
-    # (TTM apparently summing quarterly averages). Market cap depends on it,
-    # and so do price_to_sales, price_to_book, earnings_yield and
-    # op_cashflow_yield — HUBG surfaced at the TOP of the shortlist with a
-    # 1619% earnings yield because of it, which is the single most damaging
-    # place for a bad number to appear.
-    # net_income / diluted_EPS comes from the SAME TTM period, is internally
-    # consistent and unit-free, so it is the basis; the reported field is a
-    # cross-check and a fallback. Where they disagree materially, the
-    # disagreement is recorded rather than hidden.
+    # SHARE COUNT: BOTH candidate fields are unreliable, in different ways.
+    #   reported `diluted_average_shares` — HUBG gives 180,826 against ~61M
+    #     real shares (units); WU 1.98x and DAN 3.18x too high (TTM appears to
+    #     sum quarterly averages). 3 of 10 sampled names wrong by >10%.
+    #   `diluted_earnings_per_share` — BE reports 280 (real EPS ~1.09), and
+    #     AGNC reports the integer 2, so a derived count inherits that error.
+    # Deriving from EPS alone fixed HUBG and broke BE. Since neither field can
+    # be trusted on its own, they must AGREE, with revenue x price as an
+    # independent plausibility anchor to break ties. Where the two cannot be
+    # reconciled the honest output is NOTHING: market cap and everything
+    # derived from it (P/S, P/B, earnings yield, cash-flow yield) go to None
+    # with a reason. A confidently wrong valuation at the top of the council's
+    # list is far worse than a gap -- HUBG at a 1619% earnings yield, and then
+    # BE at 101.7%, were both exactly that.
+    px = _price(ticker)
+
+    # Reject EPS outright when it is impossible relative to the share price.
+    # BE reports diluted EPS of 280 against a ~$279 share price — a P/E of
+    # 1.0, which essentially never occurs. Annual EPS above half the share
+    # price (P/E < 2) is corrupt far more often than it is a genuine deep-
+    # value situation, and the cost of wrongly excluding a real one is a gap,
+    # while the cost of accepting a corrupt one is a fabricated valuation at
+    # the top of the list. BE reached the shortlist at a 101.7% earnings
+    # yield this way, immediately after the same slot was vacated by HUBG.
+    eps_usable = (eps is not None and abs(eps) > 0.01
+                  and not (px and abs(eps) > px / 2))
     shares_implied = None
-    if ni is not None and eps not in (None, 0) and abs(eps) > 0.01:
+    if ni is not None and eps_usable:
         cand = ni / eps
         if cand > 0:
             shares_implied = cand
-    share_basis = "reported"
-    if shares_implied is not None:
-        ratio = (shares / shares_implied) if shares else None
-        if shares is None or ratio is None or not (0.8 < ratio < 1.25):
-            share_basis = (f"derived from net_income/EPS"
-                           + (f" — reported field disagrees by {ratio:.2f}x"
-                              if ratio else " — no reported field"))
-        shares = shares_implied
-    elif shares is not None:
-        share_basis = "reported (no usable EPS to cross-check) — treat cap-derived metrics with care"
 
-    px = _price(ticker)
+    def _plausible(sh):
+        """Is this share count consistent with price and revenue? A $36 stock
+        with $3.7bn of revenue does not have 180,826 shares outstanding."""
+        if not sh or not px or not rev or rev <= 0:
+            return None
+        return 0.02 <= (px * sh) / rev <= 50
+
+    ok_rep, ok_imp = _plausible(shares), _plausible(shares_implied)
+    agree = (shares and shares_implied
+             and 0.8 < shares / shares_implied < 1.25)
+
+    if agree:
+        shares, share_basis = shares_implied, "reported and EPS-derived agree"
+    elif ok_imp and not ok_rep:
+        share_basis = "EPS-derived (reported figure implausible vs price x revenue)"
+        shares = shares_implied
+    elif ok_rep and not ok_imp:
+        share_basis = "reported (EPS-derived implausible vs price x revenue)"
+    elif shares_implied and shares:
+        shares, share_basis = None, (
+            f"UNVERIFIABLE — reported and EPS-derived disagree "
+            f"({shares / shares_implied:.2f}x) and neither is clearly right; "
+            f"market-cap metrics suppressed")
+    elif shares or shares_implied:
+        shares = shares or shares_implied
+        share_basis = "single source, uncorroborated — treat cap metrics with care"
+    else:
+        share_basis = "no share count available"
+
     mcap = px * shares if (px and shares) else None
 
     # growth: the newest quarter vs the SAME fiscal quarter one year earlier,
@@ -242,7 +273,8 @@ def metrics(ticker):
             "growth_basis": growth_basis,
         },
         "valuation": {
-            "pe_ttm": _div(px, eps) if (px and eps and eps > 0) else None,
+            "pe_ttm": (_div(px, eps) if (px and eps and eps > 0 and eps_usable)
+                       else None),
             "price_to_sales": _div(mcap, rev),
             "price_to_book": _div(mcap, eq),
             "op_cashflow_yield": _div(ocf, mcap),
