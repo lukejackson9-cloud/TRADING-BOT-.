@@ -173,10 +173,22 @@ def metrics(ticker):
         if prior is not None:
             r0 = _v(q0, "income_statement", "revenues")
             r1 = _v(prior, "income_statement", "revenues")
-            if r0 is not None and r1 not in (None, 0):
-                rev_growth = (r0 - r1) / abs(r1)
+            # Growth is UNDEFINED against a non-positive base. DBRG reported
+            # Q2-2025 revenue of -$3.2M (real: fair-value/carried-interest
+            # adjustments at an asset manager), and (508.7M - -3.2M)/3.2M
+            # printed as +15,961% growth -- arithmetically fine, economically
+            # meaningless, and it would have read to the council as a
+            # spectacular business. Report it as undefined, with the reason.
+            if r0 is not None and r1 is not None and r1 > 0:
+                rev_growth = (r0 - r1) / r1
                 growth_basis = (f"{q0.get('fiscal_period')}{q0.get('fiscal_year')}"
                                 f" vs {prior.get('fiscal_period')}{prior.get('fiscal_year')}")
+                if abs(rev_growth) > 5:      # >500%: real but needs a human look
+                    growth_basis += "  [EXTREME — verify against the filing]"
+            elif r1 is not None and r1 <= 0:
+                growth_basis = (f"undefined — base period "
+                                f"{prior.get('fiscal_period')}{prior.get('fiscal_year')} "
+                                f"revenue was {r1:,.0f}")
 
     return {
         "ticker": ticker.upper(),

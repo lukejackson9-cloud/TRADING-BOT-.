@@ -246,6 +246,19 @@ def status():
     u = _load_universe()
     tick = u.get("tickers", {})
     covered = [t for t in tick if (CARDS / f"{t}.json").exists()]
+
+    # An 11% slice of "covered" carries NO financials, and they are not random
+    # failures: AEG, AEM, AQN, AZN, BCE, BEP, BIRK, AU ... are foreign issuers
+    # and ADRs. Massive's financials are built from SEC filings, and foreign
+    # private issuers file 20-F/40-F, which this dataset does not carry. They
+    # are cached (correctly -- retrying them forever would waste the budget)
+    # but counting them as covered overstates real coverage, so report both.
+    def _has_data(t):
+        try:
+            return bool(json.loads((CARDS / f"{t}.json").read_text()).get("results"))
+        except Exception:
+            return False
+    with_data = [t for t in covered if _has_data(t)]
     # `(_card_age(t) or 999)` would be wrong: a card fetched TODAY has age 0,
     # which is falsy, so it would be scored 999 days old — the freshest cards
     # counted as the stalest. Compare against None explicitly.
@@ -255,6 +268,9 @@ def status():
     fresh = [t for t in covered if _age_or_stale(t) < STALE_DAYS]
     print(f"universe    {len(tick)} liquid common stocks (built {u.get('built', 'never')})")
     print(f"covered     {len(covered)} ({len(covered) / max(len(tick), 1) * 100:.1f}%)")
+    print(f"  with data  {len(with_data)}")
+    print(f"  no filings {len(covered) - len(with_data)} (foreign issuers/ADRs — "
+          f"file 20-F/40-F, not in this dataset; permanent, not a retry)")
     print(f"fresh       {len(fresh)} (<{STALE_DAYS}d old)")
     if tick:
         rem = len(tick) - len(covered)
