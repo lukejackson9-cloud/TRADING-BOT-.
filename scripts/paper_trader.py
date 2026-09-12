@@ -157,6 +157,22 @@ def scan_for_new_signals(as_of_date):
                 continue  # only care about a signal firing on the most recent day
             if (ticker, setup) in already_open:
                 continue
+            # KNOWN DIVERGENCE FROM THE BACKTEST (documented 2026-09-12).
+            # backtest_ta._simulate_exit enters at the NEXT session's OPEN;
+            # this track enters at the SIGNAL DAY'S CLOSE because it runs
+            # once daily after the close and cannot know tomorrow's open.
+            # This module's docstring claims the two tracks "can never
+            # define a signal differently" -- true of the SIGNAL, but the
+            # ENTRY has silently differed all along.
+            # Re-graded all 51 closed trades with the backtest's next-open
+            # convention on 2026-09-12: aggregate was IDENTICAL (-3.48%/trade,
+            # 4% win either way; mean overnight gap -0.68%, 24/46 gapping
+            # down). So this is a real inconsistency to fix, but it is NOT
+            # what produced the bad numbers -- entry-date concentration was
+            # (see _entry_date_concentration). Proper fix is two-phase:
+            # record the signal today, set entry from tomorrow's open on the
+            # next run. Not done yet; do not quietly "fix" it by changing
+            # the number here, which would just mislabel the same close.
             entry_price = bars[i][4]  # today's close -- real entry would be tomorrow's
             # open; using today's close as a same-day approximation since
             # this runs once daily after close, not intraday.
@@ -181,11 +197,47 @@ def scan_for_new_signals(as_of_date):
     return ledger
 
 
+def _entry_date_concentration(closed):
+    """THE CHECK THAT SHOULD HAVE BEEN HERE FROM DAY ONE (added 2026-09-12).
+
+    On 2026-09-12 this ledger showed 51 closed trades at -3.06%/trade with a
+    7.8% win rate, which reads as catastrophic strategy failure. It is not.
+    All 51 were opened on exactly TWO dates -- 2026-09-04 (28) and
+    2026-09-08 (23) -- and those were the two worst sessions in the cached
+    window for this exit rule. Whole-market baseline on the same dates and
+    the same rule: -2.51% / 12.4% win on 09-04, -3.18% / 6.9% win on 09-08.
+    The identical rule on 2026-09-01 returned +0.15% with a 42.1% win rate.
+
+    So "n=51" was really n=2 independent days. Trades opened on one session
+    share that session's forward tape almost entirely -- they are nowhere
+    near independent observations. Same effective-sample-size trap that
+    invalidated the 20-day backtest result (see exit_rule_sweep.py), now in
+    the live track. There is a selection effect on top: breakout-type
+    signals cluster on churny, high-dispersion days, which are precisely the
+    days that mean-revert afterwards, so this ledger will keep
+    over-sampling bad tape unless the date spread is watched.
+
+    Never report this ledger's aggregate without this line beside it."""
+    dates = sorted({p["entry_date"] for p in closed})
+    n = len(closed)
+    print(f"\n  entry-date spread: {n} closed trades across {len(dates)} distinct "
+          f"entry date(s) -> ~{len(dates)} independent observations, NOT {n}")
+    if dates:
+        import collections
+        c = collections.Counter(p["entry_date"] for p in closed)
+        print("  " + ", ".join(f"{d}:{c[d]}" for d in dates))
+    if len(dates) < 5:
+        print("  *** TOO FEW DISTINCT DATES TO CONCLUDE ANYTHING. A bad (or good) tape on")
+        print("      one session dominates the whole aggregate. Do not read the avg/win")
+        print("      rate below as a verdict on the setups. ***")
+
+
 def summary():
     ledger = _load_ledger()
     open_n = sum(1 for p in ledger if p["status"] == "open")
     closed = [p for p in ledger if p["status"] == "closed"]
     print(f"{open_n} open, {len(closed)} closed")
+    _entry_date_concentration(closed)
     for setup in ("breakout", "ema_cross"):
         trades = [p for p in closed if p["setup"] == setup]
         if not trades:

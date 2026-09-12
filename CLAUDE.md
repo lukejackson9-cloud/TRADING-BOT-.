@@ -250,6 +250,41 @@ numbers.**
   holds on this cache are not testable at all. Evaluating any 20-day
   variant honestly requires the full 2-year fetch (parked at 63/520).
 
+**FORWARD PAPER TRACK'S BAD NUMBERS ARE AN ARTIFACT OF TWO DATES
+(2026-09-12).** `data/paper_trades.json` showed 51 closed trades at
+-3.06%/trade, 7.8% win, 47 stops vs 4 targets — which reads as total
+strategy failure and prompted the reasonable question of why these
+setups do so much worse than strategies other people apparently trade to
+breakeven. They don't. **All 51 trades were opened on exactly two
+sessions: 2026-09-04 (28) and 2026-09-08 (23)**, and those were the two
+worst days in the cached window for this exit rule. Whole-market baseline,
+same dates, same rule: **-2.51% / 12.4% win (09-04) and -3.18% / 6.9% win
+(09-08)**. The same rule on 2026-09-01 returned **+0.15% / 42.1% win**.
+- Date-matched, the paper track (-3.48%, 4% win) is modestly worse than
+  its own tape (-2.81%, ~9.9% win) — consistent with the small negative
+  selection already measured (-0.23% vol-matched) — but that effect is
+  dwarfed by WHICH DAYS the trades landed on.
+- So "n=51" was really **n=2 independent observations**. This is the same
+  effective-sample-size trap that invalidated the 20-day backtest result,
+  now caught in the live track. `scripts/paper_trader.py summary` now
+  prints entry-date spread ABOVE the returns and refuses to let fewer
+  than 5 distinct dates be read as a verdict.
+- There is a compounding selection effect: breakout-type signals cluster
+  on churny, high-dispersion sessions, which are exactly the sessions that
+  mean-revert afterwards. Expect this ledger to keep over-sampling hostile
+  tape until the date spread widens.
+- **Separately found and documented, NOT the cause**: paper_trader.py
+  enters at the signal day's CLOSE while backtest_ta enters at the NEXT
+  session's OPEN — a real divergence the module docstring wrongly implied
+  could not happen. Re-grading all 51 trades with the backtest convention
+  gave an identical aggregate, so it explains nothing here; proper fix is
+  a two-phase entry (record signal today, price it from tomorrow's open),
+  not yet built.
+- **Implication for promotion**: criterion (b) "a meaningful number of
+  forward paper trades agree" is NOT yet failed, because there is not yet
+  a meaningful number — two days is not a sample. It is also not passed.
+  It is unmeasured, and saying so is the honest state.
+
 **IN-MANDATE RULE TWEAKS SWEPT 2026-09-12 (`--tweak`) — 0 of 72 survive.**
 The 20-day result above is both untestable here AND out of mandate (this
 project specifies an "intraday to ~2 week horizon"). So the answerable
