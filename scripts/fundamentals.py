@@ -153,6 +153,35 @@ def metrics(ticker):
     shares = _v(ttm, "income_statement", "diluted_average_shares")
     eps = _v(ttm, "income_statement", "diluted_earnings_per_share")
 
+    # SHARE COUNT: never trust the reported field alone.
+    # `diluted_average_shares` is wrong for roughly 30% of names, in several
+    # different ways: HUBG reports 180,826 against ~61,000,000 real shares
+    # (a units problem), while WU and DAN come back 2x and 3x too high
+    # (TTM apparently summing quarterly averages). Market cap depends on it,
+    # and so do price_to_sales, price_to_book, earnings_yield and
+    # op_cashflow_yield — HUBG surfaced at the TOP of the shortlist with a
+    # 1619% earnings yield because of it, which is the single most damaging
+    # place for a bad number to appear.
+    # net_income / diluted_EPS comes from the SAME TTM period, is internally
+    # consistent and unit-free, so it is the basis; the reported field is a
+    # cross-check and a fallback. Where they disagree materially, the
+    # disagreement is recorded rather than hidden.
+    shares_implied = None
+    if ni is not None and eps not in (None, 0) and abs(eps) > 0.01:
+        cand = ni / eps
+        if cand > 0:
+            shares_implied = cand
+    share_basis = "reported"
+    if shares_implied is not None:
+        ratio = (shares / shares_implied) if shares else None
+        if shares is None or ratio is None or not (0.8 < ratio < 1.25):
+            share_basis = (f"derived from net_income/EPS"
+                           + (f" — reported field disagrees by {ratio:.2f}x"
+                              if ratio else " — no reported field"))
+        shares = shares_implied
+    elif shares is not None:
+        share_basis = "reported (no usable EPS to cross-check) — treat cap-derived metrics with care"
+
     px = _price(ticker)
     mcap = px * shares if (px and shares) else None
 
@@ -197,6 +226,7 @@ def metrics(ticker):
                   f"({ttm.get('start_date')}..{ttm.get('end_date')})",
         "price": px,
         "market_cap": mcap,
+        "share_count_basis": share_basis,
         "quality": {
             "revenue_ttm": rev,
             "gross_margin": _div(gp, rev),
@@ -256,6 +286,8 @@ def card(ticker):
     px = f"${m['price']:,.2f}" if m["price"] else "n/a"
     mc = f"${m['market_cap'] / 1e9:,.2f}B" if m["market_cap"] else "n/a"
     print(f"price: {px}   market cap: {mc}")
+    if m.get("share_count_basis", "reported") != "reported":
+        print(f"shares: {m['share_count_basis']}")
     print("=" * 64)
     for role, label in (("quality", "BUSINESS QUALITY"), ("valuation", "VALUATION"),
                         ("health", "FINANCIAL HEALTH")):

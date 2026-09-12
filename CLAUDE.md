@@ -699,6 +699,26 @@ call it debt/equity) and no capex line (so operating cash flow is reported
 raw; there is no free cash flow). Missing fields return None and print "n/a",
 never zero and never an estimate.
 
+**SHARE COUNT IS UNRELIABLE — NEVER TRUST `diluted_average_shares` ALONE
+(found 2026-09-12 on the first market-wide run).** With all 1,348 names
+covered, the top of the shortlist was **HUBG at a 1619% earnings yield and
+P/S of 0.0** — obvious garbage, in the single most damaging position on the
+list. Cause: HUBG reports `diluted_average_shares` of 180,826 against
+~61,000,000 real shares. Checked across a sample, **3 of 10 names disagree by
+more than 10%**, in different ways: HUBG off by ~1000x (units), WU by 1.98x
+and DAN by 3.18x (TTM apparently summing quarterly averages). Seven agreed
+to within 1%, which is exactly why this survives casual inspection.
+Market cap depends on it, and so do price_to_sales, price_to_book,
+earnings_yield and op_cashflow_yield — i.e. most of the valuation role's
+evidence. `net_income / diluted_EPS` comes from the SAME TTM period, is
+internally consistent and unit-free, so it is now the basis; the reported
+field is a cross-check and fallback, and `share_count_basis` records which
+was used and by how much they disagreed. Post-fix HUBG reads $2.20B market
+cap, 4.8% earnings yield, P/S 0.59 — all sane. **P/E was never affected**
+because it is computed from EPS directly and needs no share count; that is
+the general lesson — prefer per-share figures over anything requiring a
+share count.
+
 **BUG CAUGHT IN BUILD, worth remembering:** Massive returns periods
 UNORDERED and mixed — a real response was `[TTM2025, FY2025, Q12026, Q22026,
 FY2024, Q12025]`. The first version took `quarters[3]` as "a year ago", which
