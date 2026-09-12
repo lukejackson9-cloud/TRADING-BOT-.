@@ -11,6 +11,34 @@ research note before any trade decision is made.
    not a rule — a past pattern doesn't decide this ticker's verdict, fresh
    evidence does. No entry yet for this ticker, or an empty lessons.md, is
    normal; skip this step if so.
+0b. **TA context (added 2026-09-12, user request — read it, don't obey
+   it)**. Run `python scripts/ta_context.py check {TICKER}`. This is the
+   first and only bridge between the mechanical TA track and this
+   advisory pipeline; before it, the two had zero cross-references in
+   either direction. It reports which mechanical setups fired recently
+   plus where the price sits in its 20-day range.
+   **It is not corroboration, and the numbers it prints beside each setup
+   say why.** Every setup carries a NEGATIVE volatility-matched edge
+   (breakout -0.21%/trade over 2,460 entries, ema_cross -0.16%,
+   relative_strength -0.23%, mean_reversion -0.45%, vcp_breakout -0.19%),
+   and 0 of 72 in-mandate exit-rule variants produce a positive,
+   split-half-consistent edge. So:
+   - NEVER cite a fired setup as a reason to move a verdict toward
+     CANDIDATE. A setup firing has no measured predictive value in this
+     project's own data. Doing so would import noise into the one layer
+     that still shows signal.
+   - DO read it positionally. "Closed above its 20-day high on 1.5x
+     volume" means the move has ALREADY happened — lessons.md #1's exact
+     situation, and the thing step 3a's checklist exists to weigh. A
+     reading above ~100% of the 20-day range is a caution flag about
+     chasing, not a green light.
+   - Heed its warnings. If it reports a partial-volume feed or stale
+     data, record "TA context unavailable/stale", NOT "no setup fired" —
+     those are different claims and only one of them is evidence.
+   - Log what it said either way, including "nothing fired". The
+     catalyst_tag track needs both arms to eventually compare "signal +
+     real news" against news alone, and absence is as loggable as
+     presence.
 1. For each ticker, use the WebSearch tool directly (not
    `scripts/perplexity_client.py` — this project doesn't use a paid
    Perplexity API; Claude Code's built-in web search covers this instead).
@@ -42,6 +70,13 @@ research note before any trade decision is made.
 
    ## Risks
    (earnings whipsaw, macro exposure, thin float, etc.)
+
+   ## TA context
+   (verbatim gist of what scripts/ta_context.py reported — setups fired
+   or "none fired", % of 20-day range, and any partial-feed/stale-data
+   warning. Record it even when empty; see step 0b for why absence is
+   as loggable as presence, and why a fired setup is never a reason to
+   upgrade this verdict.)
 
    ## Sources
    (links from the searches you ran)
