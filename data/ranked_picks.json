@@ -1,0 +1,29 @@
+[
+  {
+    "date": "2026-09-12",
+    "ticker": "URBN",
+    "rank": 1,
+    "conviction": "high",
+    "pool_size": 10,
+    "reason": "Q17/20. Quality 4: op margin 11.3%, ROA 11.1%, rev +10.4% YoY. Valuation 4: P/E 12.3, earn yld 8.1% - fair not cheap. Health 5: liab/equity 0.79, OCF +715.9M, current 1.58. Falsifier 4: fails if comps turn negative or op margin (near format highs) compresses; none true today.",
+    "recorded_at": "2026-09-12T23:33:12+00:00"
+  },
+  {
+    "date": "2026-09-12",
+    "ticker": "CSTM",
+    "rank": 2,
+    "conviction": "medium",
+    "pool_size": 10,
+    "reason": "14/20. Quality 3: ROE 43.5% is LEVERAGE not quality - ROA 9.0% is the honest read, op margin 8.1% thin/cyclical. Valuation 5: P/E 6.76, earn yld 14.8%, OCF yld 14.9%. Health 3: liab/equity 3.84 high, current 1.43. Falsifier 3: cheap cyclical at possible peak earnings - rev +30.7% may be cycle top; aluminium price unverifiable from filings.",
+    "recorded_at": "2026-09-12T23:33:12+00:00"
+  },
+  {
+    "date": "2026-09-12",
+    "ticker": "M",
+    "rank": 3,
+    "conviction": "medium",
+    "pool_size": 10,
+    "reason": "14/20. Quality 2: net margin 3.3%, rev +1.2% ie flat, structurally challenged format. Valuation 5: P/E 8.09, P/S 0.27, OCF yld 29.0%. Health 4: OCF +1761M, current 1.59. Falsifier 3: fails if rev turns negative - at +1.2% that is ALREADY marginal; 29% OCF yield may include non-repeating working-capital release.",
+    "recorded_at": "2026-09-12T23:33:12+00:00"
+  }
+]
