@@ -475,6 +475,82 @@ more than another flat backtest. Do NOT flip the setups to fade momentum
 on the strength of this — the long-only, post-cost, in-junk, this-year-
 negative numbers above are what such a strategy would actually earn.
 
+## RESEARCH PROGRAMME CLOSED — explicit user decision, 2026-09-12. READ
+## THIS BEFORE STARTING ANY NEW BACKTEST.
+After being shown the regime test and the feature-IC result together, the
+user was asked directly what to spend effort on and chose: **run the
+forward threads, stop new backtesting.** No new historical sweep, no new
+setup, no new variant, no new combination. The reason is not fatigue —
+it is that `feature_ic.py` answered the question at the level underneath
+all of them: seven of eight features carry no cross-sectional information
+in this universe, so there is nothing for a new rule to harvest. Variant
+27 cannot succeed where 1-26 failed, and searching harder across a
+dead feature set is how overfitting happens (this was the first warning
+in the methodology review that started this whole line of work).
+
+**What "do not restart this" means concretely.** Do NOT, without the user
+explicitly asking for it in a new conversation:
+- add a new TA setup or ICT mechanism, or re-parameterise an existing one;
+- sweep stops, targets, time-stops, thresholds, or regimes again;
+- test another confluence combination;
+- re-run a finished backtest hoping for a different answer.
+If you find yourself reasoning "but what if we tried X" about mechanical
+price-derived signals, the answer is in the feature-IC section above: the
+features are noise. Say that instead of testing it.
+
+**What IS still running (the forward threads).** All three routines are
+live and bound to session_016iH5aNy36JTes3cWw5Geez:
+- `trig_0115k27mXZHtq2a6uQwt21Xa` daily TA paper trade + catalyst tag
+- `trig_01HnDaZn85mK1Vz9wjKEdB3a` daily ICT paper trade + catalyst tag
+- `trig_0149vd3ymUFWFhDyRxza7aA4` daily screen -> research -> council
+These need no changes. They accumulate the one thing never tested: whether
+a signal accompanied by a REAL, DATED, COMPANY-SPECIFIC catalyst behaves
+differently from a signal alone. That cannot be backtested at this data
+tier (the one price-derived proxy tried made results worse — see the
+confluence section), so time is the only way to get it, and the correct
+action is to wait rather than to substitute another historical test for it.
+
+**PLUMBING CHECK — 2026-09-19, and this one is not optional.** As of
+2026-09-12, **zero of 174 TA entries and zero of 14 ICT entries carry a
+populated `catalyst` field**, because the tagging was built 2026-09-11 and
+the newest entries in the repo predate it (TA 09-09, ICT 09-10). The
+writers are correctly wired (both emit `"catalyst": None` on new entries)
+and both routines fired SUCCEEDED on 09-11 — but a routine's SUCCEEDED
+status records that the wake was DELIVERED, not that the turn did the
+work, so it is not evidence the tagging ran. On 2026-09-19 run
+`python scripts/tag_catalyst.py report` and confirm the tagged count is
+now NON-ZERO. If it is still zero, the forward thread is not running and
+the fix is a plumbing fix, not a research question. Do not let this sit:
+an evaluation track that silently collects nothing looks identical to one
+that is patiently accumulating.
+
+**FIRST RESULTS REVIEW — 2026-10-10, not before, and the bar is fixed
+NOW, before the data exists.** Pre-registering it is the point; a bar
+chosen after seeing the numbers is not a bar. To be read as evidence of
+anything, the HAS-catalyst bucket must show ALL of:
+- **>=50 closed trades** in the bucket (the floor used everywhere else
+  in this file); AND
+- **>=20 distinct entry dates**, not just 50 trades — the paper track's
+  "n=51" was really n=2 sessions, and `paper_trader.py summary` now
+  refuses a verdict under 5 distinct dates for exactly this reason; AND
+- a **genuine uplift over the NO-catalyst bucket**, not merely a positive
+  number; AND
+- **no single ticker driving >35%** of the net positive return (the check
+  that caught vcp_breakout and the ICT OTE result); AND
+- **consistency across both halves** of the accumulation window.
+Miss any one of these and the honest report is "still unmeasured", which
+is a legitimate and expected outcome on 2026-10-10 — the estimate in the
+confluence section is weeks to a couple of months to reach n=50. Do not
+soften the bar because the wait has been long; that is the 2026-09-09
+patience decision, which the user reaffirmed here.
+
+**If the review comes back negative or still unmeasured**, that is not a
+prompt for new mechanical testing. It is a prompt for a conversation with
+the user about whether goal (1) — short-term trades for actual profit —
+is reachable with these inputs at all: free-tier daily bars, long-only US
+liquid equities, a mechanical 2-week horizon. Say that plainly when it
+comes up rather than filling the silence with another sweep.
+
 ## Trade execution & approval — updated 2026-09-07 (supersedes the old
 ## "no trade without human approval, ever" rule below for paper/demo and,
 ## eventually, live — read this whole section before touching execution)
