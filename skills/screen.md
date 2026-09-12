@@ -59,8 +59,10 @@ weeks.
 - Price action is **not** an input and must not be reintroduced as one.
 
 ## Rate limit — the binding constraint
-Massive fundamentals are **5 requests/minute**. ~24 names/hour, so the whole
-universe is ~56 hours of budget: coverage is built over weeks, by design.
+Massive fundamentals are **5 requests/minute** — that is ~277 names/hour at
+the 13s spacing used, so the whole 1,348-name universe is **~5 hours of wall
+clock**, not weeks. Spread over daily runs it is a few days at 200/day, or
+about two months at 20/day. Pick the batch size accordingly.
 **An empty or failed result is a 429, not "this company files nothing"** —
 that misreading already happened once, when a fast probe made AEHR, TARS and
 BIAF look uncovered. `fundamentals.py` raises rather than returning empty so

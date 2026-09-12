@@ -1089,9 +1089,15 @@ market, completed 2026-09-07):**
       trusted as bias-corrected. `fetch_range_alpaca()` (the 6-year
       extension) has a harder, NOT-fixed version of the same bug — it
       iterates today's active-ticker list up front and never attempts a
-      delisted ticker's history at all, and fixing that needs a
+      delisted ticker's history at all. **The claim that this "needs a
       point-in-time delisted-securities list this project doesn't have
-      access to. Until both are addressed, treat every 6-year Alpaca
+      access to" is FALSE — corrected 2026-09-12.** Massive's
+      `/v3/reference/tickers?active=false` returns delisted securities on
+      the FREE tier (verified live; first row was a 2008-expired Lehman
+      Brothers warrant). The survivorship fix is therefore buildable, not
+      blocked. It is not being built because the mechanical programme is
+      closed, not because the data is missing — do not repeat the old
+      excuse if the question comes up again. Until both are addressed, treat every 6-year Alpaca
       number in this section as still fully survivorship-biased, and every
       2-year Massive number as biased until the cache is regenerated.
     - **Cost sensitivity, added 2026-09-11**: `scripts/backtest_ta.py`

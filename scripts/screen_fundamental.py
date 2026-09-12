@@ -258,7 +258,13 @@ def status():
     print(f"fresh       {len(fresh)} (<{STALE_DAYS}d old)")
     if tick:
         rem = len(tick) - len(covered)
-        print(f"remaining   {rem} uncovered — {rem / 24:.0f}h of budget at 5 req/min")
+        # 5 req/min is 300/hour, not 24. An earlier version divided by 24 and
+        # reported 56h instead of ~5h — an 11x overstatement of the only real
+        # cost of the free tier, which is exactly the number a decision about
+        # paying for data would turn on.
+        from fundamentals import RATE_SLEEP
+        print(f"remaining   {rem} uncovered — {rem * RATE_SLEEP / 3600:.1f}h of wall clock "
+              f"at {60 / RATE_SLEEP:.1f} req/min")
     print("\nCoverage compounds; a mover list does not. Breadth here is cumulative.")
 
 
