@@ -1,193 +1,113 @@
-# Skill: Council Review
+# Skill: Council (scored, 3-12 month horizon)
 
-Goal: pressure-test a CANDIDATE verdict from skills/research.md before it's
-allowed to reach skills/propose_trades.md, using independent adversarial
-perspectives — so one enthusiastic research pass doesn't turn into
-overconfident advice. This step only runs on tickers already marked
-CANDIDATE; WATCH/PASS tickers don't need it.
+**Rewritten 2026-09-12 on the user's explicit decision.** The previous
+adversarial gate is preserved verbatim at `skills/council_shortterm_superseded.md`.
+Read "Why this replaced a gate" before changing anything here.
 
-## Why this exists
-CLAUDE.md already says "CANDIDATE should be rare... require a real
-catalyst." A single research pass can still talk itself into a good story,
-especially once it's already found a catalyst it likes. This runs a
-structured, adversarial second look — closer to a real investment
-committee than a single analyst — before anything reaches the user as
-advice. The point isn't theater: if this step never downgrades anything,
-it isn't doing its job, and that should be said out loud, not hidden.
+Goal: given the day's shortlist, produce a **ranked conviction score** for a
+**3-12 month** holding period. Not a pass/fail. This always produces a best
+idea, including on days when every idea is mediocre.
 
-## The failure mode this is designed to avoid
-Multi-agent setups usually fail by having every "agent" agree with
-whatever the first one said — the illusion of scrutiny without the
-substance. This design avoids that on purpose:
-- The bull and bear agents each research and write independently — neither
-  ever sees the other's output, or your framing of the ticker, before
-  forming its own case. No anchoring.
-- Both are told explicitly to be honest, not persuasive: a weak bull case
-  should say it's weak; a bear case that finds nothing real should say so
-  rather than manufacturing doubt.
-- The bear case is mandatory even when the bull case looks obviously
-  strong — that's exactly when overconfidence does the most damage.
-- You (the moderator) do not default to the bull case. Ties, or "not
-  clearly weaker," go to WATCH/PASS, not CANDIDATE.
+## Why this replaced a gate (read before touching the scoring)
+The old council downgraded 15 of 15 candidates. `counterfactual.py` graded
+those downgrades as if bought anyway: **-1.71%/trade against a date-matched
+market baseline of -1.71%** — identical. Rejecting everything is not skill,
+it is an absence of measurement.
 
-## Why this requirement exists (14-for-14 downgrades, added 2026-09-11)
-As of 2026-09-11 every single CANDIDATE that has ever reached council (14
-for 14, see scorecard.md) has been downgraded. That streak is genuinely
-consistent with two very different explanations, and this design as
-originally written can't tell them apart:
-1. The market really is that unforgiving for this project's screening
-   criteria and horizon, and skepticism is correctly earning its keep
-   (scorecard.md's 90.9% downgrade-validation rate is real evidence for
-   this).
-2. Step c above ("does the bull case clearly survive the bear case")
-   means bull must win on EVERY point while bear only needs ONE — by that
-   rule, a 100% downgrade rate is what the rule produces mechanically,
-   whether or not council's actual calibration is any good. A structural
-   rule can't be validated by its own output volume.
-This project's data can't fully separate these two explanations yet (14
-CANDIDATEs is a small sample, and there's no recorded case where bull
-came close but still lost — every review before this fix recorded only
-the final verdict). Two changes address this without loosening anything:
-- The falsifiability requirement above makes bear's objections concrete
-  enough to fact-check instead of "vague risk = automatic loss" (a vague
-  risk is cheap for bear to raise and hard for bull to overrule, which
-  could explain part of the streak on its own, independent of whether the
-  underlying calls are right).
-- The near-miss field (step e below) starts recording, per review,
-  whether bull came close — not to change today's verdict, but so a
-  future pass (or the user) can look back and tell whether the gate is
-  well-tuned or just permanently closed. Do not let a string of "not
-  close" near-miss notes become a reason to loosen the verdict rule on
-  its own — that's still the user's call per CLAUDE.md's standing
-  2026-09-03 decision. This is diagnostic instrumentation, not a policy
-  change.
-Do NOT add a third generic debate seat (another bull- or bear-style
-agent) to address this — one more agent arguing the same bull/bear frame
-most likely just adds another "no" vote, not new information, and makes
-the review harder to audit without adding real sample size. If a
-genuinely new failure mode is identified (like the "stale story despite a
-pending dated catalyst" pattern AEHR exposed), give it a narrow,
-falsifiable check tied to that specific pattern — as done above for the
-sell-the-news case — rather than a generic peer.
+The cause was the decision rule, not the analysts: bull had to win on EVERY
+point while bear needed ONE. Every company has a flaw, so "is this flawless?"
+returns no by construction, regardless of truth. Adding more members to that
+structure makes it stricter, not better — which is why this rewrite changes
+the **aggregation** and only then the roles.
 
-## Steps
-1. Precondition: /data/research/{today}/{TICKER}.md exists with
-   Verdict == CANDIDATE.
-2. Check /data/journal/trade_ledger.md for this ticker (skills/journal.md's
-   trade ledger — past verdicts on this exact ticker and what actually
-   happened). If it has an entry, that content is fair shared background
-   for BOTH agents below — it's factual track record, not either agent's
-   opinion, so handing it to both doesn't bias which side wins.
-3. Spawn two subagents in parallel with the Agent tool. Give each ONLY the
-   ticker, today's date, and the journal history from step 2 if any — not
-   the research.md file, not each other's output, not your own opinion of
-   the trade:
-   - **Bull case agent**: research and build the strongest honest case FOR
-     entering this trade. Use WebSearch for its own sources — don't just
-     hand it research.md's citations to rephrase. Must cite real,
-     checkable sources for every factual claim. Explicitly instructed:
-     if the case is weak, say so plainly rather than inflating it.
-   - **Bear case / risk critic agent**: research and build the strongest
-     honest case AGAINST entering. Actively hunt for reasons this could be
-     a trap: is the move already exhausted / already priced in, is there a
-     sector headwind, insider selling, a valuation red flag, guidance that
-     sounds better than the underlying numbers, a pattern resembling past
-     failed breakouts in similar names. Must cite real sources for every
-     claim, not vague hedging.
-     **Falsifiability requirement (added 2026-09-11, see "Why this
-     requirement exists" below)**: every objection must be a specific,
-     checkable claim with a concrete "this would be wrong if X" condition
-     — e.g. "this catalyst is already priced in because the stock moved
-     +12% on the news day itself, per {source}" (checkable: was there
-     actually a same-day pop that size?) or "there's a dated event on
-     {date} that could reignite this even though the initial move has
-     faded" (checkable: does that event exist and is it still pending?).
-     A generic risk with no concrete condition ("sentiment could turn",
-     "valuation looks stretched", "this could be overextended") is not
-     acceptable on its own — if that's genuinely the best objection
-     available, the agent must say the case against is weak, the mirror
-     image of the bull agent's instruction to say a weak bull case is
-     weak. **Specifically applies to any "stale story" / "already priced
-     in" / "sell the news" objection**: it must explicitly state whether
-     it checked for a known, dated, still-upcoming catalyst (an earnings
-     date, a conference, a data readout, an FDA decision) and found none
-     — not just assert staleness because the initial move already
-     happened. AEHR (2026-09-04 WATCH, missed a further +69% into a
-     2026-09-10 investor conference — see lessons.md #1's counter-example)
-     is the concrete case this exists to catch: "every driver is 3+ weeks
-     stale" was true and still the wrong call, because a live dated event
-     was still ahead of it.
-4. Once both return, act as moderator yourself — this step is not
-   delegated:
-   a. Fact-check both cases against their own cited sources. Reject or
-      flag any claim you can't verify was actually said by the source
-      (CLAUDE.md's "never fabricate research" rule applies here too).
-   b. Weigh them honestly against each other. The bull case does not win
-      by default, and having already called this a CANDIDATE in
-      research.md is not a reason to protect that verdict.
-   c. Decide: does the bull case clearly survive the bear case, with
-      real, sourced substance? Only then does CANDIDATE stand.
-   d. Reject any bear objection that fails the falsifiability requirement
-      above (generic, no concrete checkable condition) before weighing
-      it — note in the fact-check section that it was discounted and why,
-      don't just quietly not mention it.
-   e. Record how close it was, not just the verdict: did the bull case
-      come close to surviving (a real, specific, sourced case that only
-      lost to one strong bear point), or was it a clear blowout either
-      way? This is the "near-miss" field in the template below — see "Why
-      this requirement exists" for why this is tracked even though it
-      doesn't change today's verdict.
-   f. Write the outcome to
-      /data/research/{today}/{TICKER}_council.md using the template below.
-5. Only a ticker that keeps CANDIDATE status after this step moves to
-   skills/propose_trades.md. A downgrade here is a normal, expected
-   outcome — tell the user plainly when it happens and why, don't bury it.
+Each member now owns a **dimension** and scores it. Nobody argues a side and
+**nobody has a veto.** A serious problem shows up as a low score that drags
+the total, which is how a real analyst weighs a flaw — against the price —
+rather than as a trapdoor.
 
-## Council note template
+## Horizon: 3-12 months. This changes what counts as evidence.
+At two weeks the only question was "is this catalyst already priced in", and
+`feature_ic.py` showed the price-derived features answering it carry no
+information. Over 3-12 months the questions are about the business and the
+price paid, and the evidence is filings, not charts.
+- **Momentum and recent price action are NOT evidence here.** A name being
+  up 12% this week is neither a reason to buy nor to avoid. Ignore it.
+- A pending earnings date is still not a thesis, but at this horizon you are
+  buying through several prints, so a single reaction matters far less.
+
+## Inputs
+Run `python scripts/fundamentals.py card {TICKER}` for each name. Whole-market
+coverage via Massive; FMP's richer ratios exist only for its ~78-name set.
+**Pace it — 5 requests/minute.** An empty result is a rate limit, never
+"this company files nothing".
+Read `data/journal/lessons.md` and `trade_ledger.md` for base rates first, as
+context, never as an override.
+
+## The four members
+Each scores **1-5** and must cite a **specific number or a dated, sourced
+fact**. A score with no figure behind it is not a score. Where the data is
+missing, say so and score 3 — never guess, and never let a gap read as good
+news.
+
+**1. Business quality** — is this a good business?
+Margins and their direction, return on equity/assets, revenue growth on a
+like-for-like quarter, whether the advantage is durable.
+`5` durable and improving · `3` ordinary or mixed · `1` deteriorating
+
+**2. Valuation** — is the price sane for what you get?
+P/E, price/sales, price/book, cash-flow and earnings yield. Owns the verdict
+"good company, bad price", which is the most common reason a quality name is
+still a poor buy.
+`5` cheap for the quality · `3` fair · `1` priced for perfection
+
+**3. Financial health** — can it survive to the end of the horizon?
+Current ratio, total-liabilities/equity, operating cash flow, profitability.
+Over 3-12 months solvency risk is real in a way it is not over 5 days.
+`5` fortress · `3` adequate · `1` stressed or burning cash with no runway
+
+**4. Falsifier** — what would have to be TRUE for this to fail?
+Not "raise risks". State 2-3 **specific, checkable** failure conditions, then
+check whether any is **already true**. "Competition could increase" is not a
+falsifier. "Gross margin falls below 30% for two consecutive quarters — it is
+currently 35.3%" is.
+`5` failure conditions are specific and none currently hold · `3` one is
+partly true or unverifiable · `1` at least one is **already true today**
+This member has real weight and no veto. An already-true failure condition
+scoring 1 pulls the total down hard, and that is the mechanism.
+
+## Output — always produce this, for every name reviewed
 ```
-# {TICKER} — Council Review — {date}
-
-## Bull case (from independent agent)
-Summary:
-Key sources:
-
-## Bear case (from independent agent)
-Summary:
-Key sources:
-
-## Fact-check notes
-(claims from either side you couldn't verify against their cited source,
-or corrected)
-
-## Moderator decision
-Verdict: CANDIDATE | WATCH | PASS
-Reasoning: (why the bull case did, or didn't, survive the bear case —
-be specific, not "on balance")
-Near-miss: (blowout either way / close — bull had a real, specific,
-sourced case that lost to exactly one strong bear point) — recorded for
-every review regardless of verdict, see "Why this requirement exists"
-above
-Discounted bear claims: (any bear objection rejected under the
-falsifiability requirement above, and why — "none" if all objections were
-concrete and checkable)
-Confidence: low / medium / high
+{TICKER}  quality X/5  valuation X/5  health X/5  falsifier X/5  = TOTAL/20
+Thesis (one line, 3-12 month):
+Falsification conditions: 1) ... 2) ...  [already true? yes/no]
+Data gaps:
 ```
+Then rank the day's names by total, break ties on valuation, and record the
+top 1-3:
+```
+python scripts/ranker.py pick {DATE} {TICKER} {RANK} high|medium|low {POOL} "{thesis}"
+```
+Conviction: `high` 16-20 · `medium` 11-15 · `low` ≤10. **Record the top name
+even when its total is low** — "the best of a weak day, conviction low" is a
+real and useful data point. Never skip a day to protect the record; that turns
+the ledger into a highlight reel and invalidates the measurement.
 
 ## Hard rules
-- Never skip the bear case, including when you personally already feel
-  confident about the bull case from research.md.
-- Never let the bull or bear subagent see the other's output, or the
-  original research.md verdict, before it forms its own case.
-- Never let a CANDIDATE from research.md survive council review just
-  because downgrading feels like wasted work — the wasted work already
-  happened in research.md; the cost of a bad trade idea reaching the user
-  is much higher than the cost of a discarded research pass.
-- If several tickers in a row all survive council as CANDIDATE, treat that
-  as a signal the bear agent's prompt or your own moderation needs to get
-  tougher, not as a sign the tickers are all genuinely strong.
-- Never record Confidence or Near-miss retroactively adjusted toward
-  whatever the eventual outcome turned out to be — both are written the
-  day of the review, before the outcome is known, specifically so
-  skills/journal.md can later check calibration (does "high confidence"
-  actually predict being right more often than "low confidence" does)
-  honestly against a real prediction, not a hindsight-adjusted one.
+- **No vetoes.** No member may reject a name outright. Score it.
+- **A low total is not a rejection**, it is a ranking. Nothing here is a
+  trade proposal, advice to the user, or an order — scoring is not buying.
+- **Never inflate a score to manufacture a candidate.** The point of scoring
+  was never to produce more buys; it was to stop discarding the ordering
+  information a gate throws away. A 6/20 recorded honestly is worth more than
+  a 14/20 talked up.
+- Do not score on price action. See the horizon section.
+- CLAUDE.md's Hard Risk Rules are untouched and still bind everything
+  downstream.
+
+## Known gap — the screen still feeds the wrong names
+`skills/screen.md` ranks the whole market by |% change|, which is a 2-week
+mover screen. Feeding those into a 3-12 month fundamental council is a
+mismatch: the universe is selected for having just moved, which is irrelevant
+at this horizon and correlated with the one real effect in the data (5-day
+reversal). Until the screen is rebuilt around the fundamental horizon, score
+what arrives, and treat the universe as a known limitation of every result.

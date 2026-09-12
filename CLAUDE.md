@@ -657,6 +657,71 @@ is reachable with these inputs at all: free-tier daily bars, long-only US
 liquid equities, a mechanical 2-week horizon. Say that plainly when it
 comes up rather than filling the silence with another sweep.
 
+## GAME CHANGE — explicit user decision, 2026-09-12. Supersedes the
+## short-horizon mechanical programme above for the DECISION layer.
+Shown the full negative record (26 variants, the regime test, and feature_ic
+finding 7 of 8 features carry no cross-sectional information), the user was
+given four honest options and chose **a different game**: a **3-12 month
+horizon** with an **expanded, scored council**. Not better tactics in the
+same game — the same game is closed.
+
+**Aggregation changed FIRST, roles second, and that order matters.** Adding
+members to the old rule (bull must win every point, bear needs one) would
+have produced 18-for-18 instead of 15-for-15; the user's own methodology
+review said "add a falsifiability rule rather than more agents". So each
+member now owns a DIMENSION and scores it 1-5, nobody argues a side, and
+**nobody has a veto**. Output is a ranked conviction total out of 20 feeding
+`scripts/ranker.py`, not a pass/fail. Four members: business quality,
+valuation, financial health, falsifier. See `skills/council.md`; the old gate
+is preserved verbatim at `skills/council_shortterm_superseded.md`.
+
+**THE ENABLING DISCOVERY — we had fundamentals all along (measured live
+2026-09-12).** This project did price-only analysis for weeks on the
+assumption fundamentals were out of reach. They are not:
+- **FMP** `/stable/` ratios-ttm, income-statement, balance-sheet, cash-flow,
+  analyst-estimates, grades-consensus all WORK — but only for its curated
+  ~78-name universe. Everything outside returns **402 Payment Required**
+  (verified refused: CENX, DRH, BAND, ROIV, TARS, AEHR, BIAF, GWRE, ASTS).
+- **Massive** `/vX/reference/financials` covers the **WHOLE MARKET**, free,
+  including every name FMP refused, micro-caps included. Four statements,
+  ~50 line items, TTM plus quarterly history. **This is the base source;
+  FMP is optional enrichment, not the other way round.**
+- **5 requests/minute, and this WILL mislead you.** A probe at 0.25s spacing
+  returned six empty results that looked like missing coverage; they were
+  429s — AEHR, TARS and BIAF all returned full statements once paced.
+  `fundamentals.py` raises on 429 rather than returning empty, precisely so
+  a rate limit can never again be read as "this company files nothing".
+  Screen down to ~20-30 names FIRST, then fetch (~6 minutes).
+
+**What the filings do NOT contain, and is therefore never reported:** no debt
+breakdown (so leverage is TOTAL LIABILITIES/equity, labelled as such — never
+call it debt/equity) and no capex line (so operating cash flow is reported
+raw; there is no free cash flow). Missing fields return None and print "n/a",
+never zero and never an estimate.
+
+**BUG CAUGHT IN BUILD, worth remembering:** Massive returns periods
+UNORDERED and mixed — a real response was `[TTM2025, FY2025, Q12026, Q22026,
+FY2024, Q12025]`. The first version took `quarters[3]` as "a year ago", which
+would have compared Q1 against Q2 and reported **seasonality as growth**.
+Growth is now matched on the fiscal label and prints its basis
+("Q32026 vs Q32025") so the comparison is auditable. Never index these
+positionally.
+
+**KNOWN GAP, not yet fixed: the screen still feeds the wrong universe.**
+`skills/screen.md` ranks the whole market by |% change| — a 2-week mover
+screen. Feeding those names into a 3-12 month fundamental council is a
+mismatch: the universe is selected for having just moved, which is irrelevant
+at this horizon and correlated with 5-day reversal, the one real effect in
+the data. Rebuilding the screen around the fundamental horizon is the next
+piece of work. Until then, treat the universe as a known limitation of every
+result the new council produces, and say so when reporting.
+
+**Expect a slow feedback loop, and do not treat that as failure.** A 3-12
+month horizon cannot be validated in weeks. The edge there exists precisely
+because it needs patience institutions are not paid to have. Nothing built
+here shortens that; it is the trade being made, and it was stated to the user
+before they chose it.
+
 ## Trade execution & approval — updated 2026-09-07 (supersedes the old
 ## "no trade without human approval, ever" rule below for paper/demo and,
 ## eventually, live — read this whole section before touching execution)
