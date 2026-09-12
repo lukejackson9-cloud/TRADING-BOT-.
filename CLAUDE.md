@@ -611,6 +611,40 @@ and thesis, then grade them against the same market baseline.
 - **A day where nothing is recorded is a bug, not a quiet day.** Skipping
   unattractive days turns the ledger into a highlight reel and invalidates
   the measurement.
+**RETROACTIVE CHECK RUN THE SAME DAY (`ranker.py backtest`) — INCONCLUSIVE,
+and the first cut of it was wrong.** Before waiting weeks for forward data,
+the ranker's premise was tested against labels the pipeline had ALREADY
+assigned pre-outcome: 136 verdicts carry a verdict (CANDIDATE/WATCH/PASS)
+and a confidence, 105 of them resolvable. If those labels order the
+outcomes, the ordering signal exists.
+- **First cut looked like an inversion and was an artifact.** Bucketing each
+  label's within-day excess gave CANDIDATE -1.48%, WATCH +0.49%, PASS
+  -0.89% — i.e. the names the pipeline liked most did worst. That is NOT a
+  head-to-head: each bucket averages over whatever days it appears on, and
+  those day sets differ sharply (CANDIDATE lands on 4 days, PASS on 6). A
+  bucket can look bad purely because its days were bad for everything.
+- **Restricted to days carrying BOTH a CANDIDATE and a PASS**, the real
+  comparison is CANDIDATE **+0.60%** over 4 shared days, CANDIDATE winning
+  1 of 4. And it is worse than that number suggests: 2 of the 4 days are
+  degenerate (every name stopped out at -4%, so the difference is exactly
+  0.00% and carries no information), and the mean is driven almost entirely
+  by one day (2026-09-02, +4.00%). **Effective sample: roughly ONE
+  informative day.**
+- **Confidence ordering is not monotonic either** (high -0.05%, medium
+  +0.35%, low -0.76%) and rests on the same thin, differing day sets.
+**Honest verdict: no measurable ordering signal in either direction.** Not
+evidence the ranker will work, not evidence it will fail. Report it that
+way — the temptation is to read the first table's inversion as a finding,
+and it is a day-set artifact. The forward track is still the test, because
+it accumulates distinct dates, which is the axis this sample lacks.
+One mechanism worth holding in mind if the forward track does come back
+inverted: CANDIDATEs are the names that travelled furthest through a screen
+that ranks by |% change|, so pipeline enthusiasm is correlated with recent
+price strength — and feature_ic.py found 5-day reversal is the one real
+effect in this data. A gate that likes what just ran hardest would be
+systematically buying the wrong side of it. That is a hypothesis, not a
+result.
+
 If this beats the baseline over a real sample, THAT is the evidenced case
 for converting council from gate to ranking — which is exactly what the
 2026-09-03/09-09 decisions say should change it. If it does not, the

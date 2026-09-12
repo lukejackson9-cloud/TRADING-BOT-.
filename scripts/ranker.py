@@ -244,6 +244,150 @@ def report():
         print("\nAnd none of it counts until the sample clears the bar above.")
 
 
+def backtest():
+    """Did the labels this system ALREADY recorded carry ordering information?
+
+    The ranker's premise is that the pipeline can say "this one is better
+    than that one" even when nothing clears the gate. That claim is testable
+    right now, without waiting for new picks, because 136 verdicts already
+    carry a `verdict` (CANDIDATE/WATCH/PASS) and a `confidence` assigned
+    BEFORE the outcome was known. If those labels order the outcomes, the
+    ranker has something to work with. If they do not, "best available" is
+    arbitrary and the new track will likely find the same.
+
+    WHY THE COMPARISON IS WITHIN EACH DATE
+    ---------------------------------------
+    Verdicts cluster on 9 sessions, and those sessions are wildly different
+    tapes -- the same exit rule returned +0.15%/42% win on 2026-09-01 and
+    -3.18%/6.9% win on 2026-09-08. Pooling across dates measures WHICH DAYS
+    the pipeline happened to be busy, which is exactly the artifact that made
+    the paper track look catastrophic. So every comparison here is made
+    BETWEEN BUCKETS ON THE SAME DAY and only then averaged across days. Every
+    name in a comparison experienced the identical tape, so the market
+    cancels by construction -- the same design that made feature_ic.py's
+    cross-sectional test clean, and it needs no separate control group.
+
+    WHAT THIS IS NOT
+    ----------------
+    It is not a clean out-of-sample test of the new ranker, and must never be
+    reported as one. The labels are real and pre-outcome, but they were
+    produced by a pipeline whose whole purpose was gatekeeping, and the
+    sample is 9 dates. Treat a positive result as "worth continuing", never
+    as validation. A NEGATIVE result is the more informative direction: it
+    would say the ordering signal is not there.
+    """
+    from counterfactual import load_verdicts, fetch_bars, grade, _stats
+
+    verdicts = load_verdicts()
+    print(f"grading {len(verdicts)} recorded verdicts (cached after first run)...\n")
+    rows = []
+    for v in verdicts:
+        bars = fetch_bars(v["ticker"])
+        status, ret, _ = grade(v, bars)
+        if status == "resolved":
+            rows.append((v, ret))
+
+    dates = sorted({v["date"] for v, _ in rows})
+    print("=" * 78)
+    print("SAMPLE QUALITY")
+    print("=" * 78)
+    print(f"{len(rows)} of {len(verdicts)} verdicts resolved, over {len(dates)} distinct dates")
+    print(f"  ! {len(dates)} dates is below the {MIN_DATES}-date bar the forward track uses.")
+    print("  ! Verdicts cluster, so this is nearer 9 observations than 136. Every")
+    print("    number below is a within-day comparison for that reason, but thin is thin.")
+    print()
+
+    def by_day(keyfn, order):
+        """Average of (bucket - day mean) across days, so the tape cancels."""
+        per_day = defaultdict(lambda: defaultdict(list))
+        for v, r in rows:
+            per_day[v["date"]][keyfn(v)].append(r)
+        out = defaultdict(list)
+        for d, buckets in per_day.items():
+            allr = [r for rs in buckets.values() for r in rs]
+            if len(allr) < 3 or len(buckets) < 2:
+                continue          # need a real within-day contrast to compare
+            day_mean = sum(allr) / len(allr)
+            for k, rs in buckets.items():
+                out[k].append((sum(rs) / len(rs)) - day_mean)
+        for k in order:
+            if out[k]:
+                vals = out[k]
+                n = sum(1 for v, _ in rows if keyfn(v) == k)
+                yield k, n, len(vals), sum(vals) / len(vals)
+
+    print("=" * 78)
+    print("DOES THE VERDICT LABEL ORDER THE OUTCOMES?")
+    print("=" * 78)
+    print("Excess over the same day's average verdict. CANDIDATE should beat PASS.")
+    print(f"{'label':<14}{'n':>6}{'days':>7}{'excess vs same-day avg':>26}")
+    print("-" * 78)
+    for k, n, d, x in by_day(lambda v: v["verdict"], ("CANDIDATE", "WATCH", "PASS")):
+        print(f"{k:<14}{n:>6}{d:>7}{x * 100:>25.2f}%")
+
+    print()
+    print("=" * 78)
+    print("DOES THE CONFIDENCE LABEL ORDER THE OUTCOMES?")
+    print("=" * 78)
+    print("If high does not beat low, the confidence label is decoration.")
+    print(f"{'confidence':<14}{'n':>6}{'days':>7}{'excess vs same-day avg':>26}")
+    print("-" * 78)
+    for k, n, d, x in by_day(lambda v: v.get("confidence") or "none",
+                             ("high", "medium", "low", "none")):
+        print(f"{k:<14}{n:>6}{d:>7}{x * 100:>25.2f}%")
+
+    print()
+    print("Raw pooled figures (NOT date-adjusted — shown only so the gap between")
+    print("these and the within-day numbers above is visible):")
+    for lbl in ("CANDIDATE", "WATCH", "PASS"):
+        sub = [(v["ticker"], r) for v, r in rows if v["verdict"] == lbl]
+        if sub:
+            print(f"  {lbl:<12}" + _stats(sub))
+
+    # The tables above average each bucket over whatever days that bucket
+    # appears on -- and those day sets DIFFER (CANDIDATE lands on far fewer
+    # days than PASS). That is not a head-to-head: a bucket can look bad
+    # purely because the days it appears on were bad for everything. The
+    # only clean comparison restricts to days carrying BOTH labels.
+    print()
+    print("=" * 78)
+    print("LIKE-FOR-LIKE: only days carrying BOTH a CANDIDATE and a PASS")
+    print("=" * 78)
+    print("The tables above are NOT a head-to-head — each bucket averages over a")
+    print("different set of days. This one is the real comparison.")
+    pd2 = defaultdict(lambda: defaultdict(list))
+    for v, r in rows:
+        pd2[v["date"]][v["verdict"]].append(r)
+    print(f"{'date':<13}{'CAND n':>8}{'CAND avg':>11}{'PASS n':>8}{'PASS avg':>11}{'CAND-PASS':>12}")
+    print("-" * 63)
+    diffs = []
+    for d in sorted(pd2):
+        b = pd2[d]
+        if "CANDIDATE" in b and "PASS" in b:
+            ca = sum(b["CANDIDATE"]) / len(b["CANDIDATE"])
+            pa = sum(b["PASS"]) / len(b["PASS"])
+            diffs.append(ca - pa)
+            print(f"{d:<13}{len(b['CANDIDATE']):>8}{ca * 100:>10.2f}%"
+                  f"{len(b['PASS']):>8}{pa * 100:>10.2f}%{(ca - pa) * 100:>11.2f}%")
+    if diffs:
+        print("-" * 63)
+        print(f"mean CANDIDATE-minus-PASS: {sum(diffs) / len(diffs) * 100:+.2f}% "
+              f"over {len(diffs)} shared day(s); CANDIDATE won {sum(1 for x in diffs if x > 0)}"
+              f"/{len(diffs)}")
+        print("Count the days, not the trades, and check how many are degenerate (every")
+        print("name stopped out => a 0.00% difference that carries no information).")
+
+    print()
+    print("=" * 78)
+    print("A positive excess for CANDIDATE or for high confidence means the pipeline's")
+    print("own ordering carried information even while its GATE rejected everything —")
+    print("which is the ranker's premise and a reason to keep going. Flat or inverted")
+    print("means the ordering is not there, and the forward track will most likely")
+    print("confirm it. Either way: 9 dates, and labels made by a gatekeeper. Worth")
+    print("continuing or worth worrying about — never validation.")
+    print("=" * 78)
+
+
 if __name__ == "__main__":
     cmd = sys.argv[1] if len(sys.argv) > 1 else "report"
     if cmd == "pick":
@@ -253,5 +397,7 @@ if __name__ == "__main__":
         show(sys.argv[2] if len(sys.argv) > 2 else None)
     elif cmd == "report":
         report()
+    elif cmd == "backtest":
+        backtest()
     else:
         print(__doc__.strip().split("Usage:")[-1])
