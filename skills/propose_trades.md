@@ -69,3 +69,48 @@ This skill NEVER calls `place_market_order()` or `place_limit_order()`, and
 never calls any other `trading212_client.py` function either, since there is
 no connected account in this mode. It only ever writes to
 /data/pending_trades.json and optionally notifies via ClickUp.
+
+## Daily ranked pick — ALWAYS run this, including (especially) on a day nothing passes
+
+Added 2026-09-12. This runs **after** council, **regardless of council's
+verdict**, and does not depend on anything surviving.
+
+**Why it exists.** Council has downgraded 15 of 15 CANDIDATEs, and
+`counterfactual.py` showed those downgrades returned -1.71%/trade against a
+date-matched market baseline of -1.71%/trade — identical. Rejecting
+everything is not skill, it is an absence of measurement: a system that never
+buys never learns whether it can pick. The gate answers *is this good
+enough?* and the honest answer is almost always no, because every stock has a
+flaw. This answers the different question a buyer actually faces: *of the
+names I saw today, which is best, and is the price paying me for the flaw?*
+
+**What to do.** From the shortlist research.md looked at today — NOT only
+CANDIDATEs, the whole shortlist including WATCH and PASS — pick the 1-3 you
+would most want to own for the next 5 sessions and record each:
+
+```
+python scripts/ranker.py pick {DATE} {TICKER} {RANK} high|medium|low {POOL_SIZE} "{one-line thesis}"
+```
+
+- `RANK` 1 = your best idea that day. Rank honestly; if rank 1 never beats
+  rank 3 the ordering is arbitrary and that is itself the finding.
+- `POOL_SIZE` = how many names the shortlist held. "Best of 3" and "best of
+  30" are different claims and the grader needs to know which one was made.
+- `CONVICTION` is checked for calibration later, the same way journal.md
+  checks council's. Do not put `high` on everything; a label that never
+  varies carries no information.
+- The thesis is required. A pick with no recorded reasoning can only be
+  scored right or wrong, never learned from.
+
+**Rules that are not negotiable.**
+- This is NOT a trade proposal. Nothing here goes to the user as advice,
+  reaches /data/pending_trades.json, or touches the T212 demo account.
+- It does NOT change council's verdict or bar. Council stays exactly as
+  strict; per CLAUDE.md's 2026-09-03 and 2026-09-09 decisions, only the user
+  changes that. This records what the system WOULD have picked, alongside.
+- Record a pick even when every name was rejected — that is the whole point.
+  If the day's best name was genuinely poor, say so in the thesis and rank it
+  anyway with `low` conviction.
+- Never skip a day to protect the record. Skipping the unattractive days is
+  how a ledger becomes a highlight reel, and it would invalidate the whole
+  measurement.

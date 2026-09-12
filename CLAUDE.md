@@ -574,6 +574,48 @@ confluence section is weeks to a couple of months to reach n=50. Do not
 soften the bar because the wait has been long; that is the 2026-09-09
 patience decision, which the user reaffirmed here.
 
+**RANKED-PICK TRACK — added 2026-09-12, the buy-side counterpart to a
+pipeline that only knows how to say no.** The user's observation: this bot
+is built to find what NOT to buy, and nothing in it is built to find what
+to buy. Correct, and the premise is worse than it sounds — the bot is not
+even good at rejecting. `counterfactual.py` graded all 15 downgrades as if
+bought: -1.71%/trade against a date-matched market baseline of -1.71%.
+Identical. Saying no to everything is not discrimination, it is an absence
+of measurement.
+The cause is architectural, not tuning: (1) council requires the bull to win
+EVERY point while the bear needs one, so "is this flawless?" returns no by
+construction; (2) the +8% take-profit amputates the fat right tail that
+makes stock-picking pay, while demanding a 33% hit rate — a rejector's
+payoff structure; (3) the screen ranks by |% change|, so every name has
+already moved and "already priced in" is 39% of rejections.
+`scripts/ranker.py` + skills/propose_trades.md's "Daily ranked pick" section
+run a RANKER alongside the gate: every day, record the 1-3 best names from
+the whole shortlist (not just CANDIDATEs) with rank, conviction, pool size
+and thesis, then grade them against the same market baseline.
+- **It contains no scoring formula, deliberately.** feature_ic.py killed the
+  price-derived features, so another mechanical score would be variant 27
+  and is forbidden by this section. The ranking judgment comes from the
+  research/council reasoning over REAL NEWS — the one input never tested.
+  ranker.py is only the ledger and the grader for that judgment.
+- **It does not loosen council**, which keeps its exact bar and keeps
+  downgrading. This is additive instrumentation of the same kind as the
+  2026-09-11 diagnostics, NOT the recalibration reserved for the user.
+- **Nothing here is a trade proposal** — no advice to the user, no
+  pending_trades.json entry, no demo order.
+- **Pre-registered bar** (fixed before data exists): >=30 graded picks AND
+  >=20 distinct dates, beating the DATE-MATCHED baseline rather than zero,
+  no ticker >35% of net positive return, holding in both halves, and ideally
+  rank 1 beating rank 3 plus high conviction beating low — if the ordering
+  carries no information then "best available" is arbitrary even when the
+  pooled average looks fine.
+- **A day where nothing is recorded is a bug, not a quiet day.** Skipping
+  unattractive days turns the ledger into a highlight reel and invalidates
+  the measurement.
+If this beats the baseline over a real sample, THAT is the evidenced case
+for converting council from gate to ranking — which is exactly what the
+2026-09-03/09-09 decisions say should change it. If it does not, the
+selection layer has no skill and that is decisive and cheap.
+
 **If the review comes back negative or still unmeasured**, that is not a
 prompt for new mechanical testing. It is a prompt for a conversation with
 the user about whether goal (1) — short-term trades for actual profit —
