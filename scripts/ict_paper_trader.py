@@ -172,9 +172,41 @@ def run(date):
         print("  (no signals fired across any tracked mechanism today)")
 
 
+def _health_banner():
+    """Run the catalyst-track health check at the end of every daily run.
+
+    Deliberately here in the CODE PATH rather than in the routine's prompt:
+    the daily routines already run this script and are already told to
+    surface anything the script flags, so a check that lives here cannot be
+    lost to a prompt edit, a reworded routine, or a future session that runs
+    the script by hand instead. It is also why this prints loudly rather
+    than changing the exit code -- a non-zero exit from a run that actually
+    SUCCEEDED would read as a crash and could stop the routine before it
+    commits its ledger.
+
+    Today's just-written entries are untagged at this moment by design
+    (tagging runs after this script), which is exactly what health's grace
+    period exists to absorb, so this cannot false-alarm on its own output.
+    """
+    try:
+        sys.path.insert(0, str(Path(__file__).parent))
+        from tag_catalyst import health
+        print()
+        if health() != 0:
+            print("=" * 72)
+            print("PLUMBING PROBLEM IN THE CATALYST TRACK — SURFACE THIS TO THE USER.")
+            print("Send a PushNotification with the RESULT line above. This is a broken")
+            print("pipeline, NOT a result about catalysts: an empty bucket because nothing")
+            print("was ever written is not evidence, and must never be reported as any.")
+            print("=" * 72)
+    except Exception as e:
+        print(f"\nwarn: health check could not run ({e}) — check scripts/tag_catalyst.py")
+
+
 if __name__ == "__main__":
     cmd, date = sys.argv[1], sys.argv[2]
     if cmd == "run":
         run(date)
+        _health_banner()
     else:
         print("usage: ict_paper_trader.py run YYYY-MM-DD")

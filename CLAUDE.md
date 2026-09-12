@@ -522,9 +522,19 @@ UNTAGGED (entries arrive but sit at catalyst=None past a 3-day grace — the
 tagging step after it is not running), and OK. Entries predating the
 2026-09-11 feature carry no `catalyst` key and are excluded from every count,
 or this would read red forever for a reason nobody can fix. Exit code 1 on
-any problem, so the routines react without parsing text. Both daily
-paper-trade routines now run it as their last step and PushNotify on failure
-— that is the monitoring, not a calendar reminder.
+any problem, so the routines react without parsing text. It is called from the END OF
+`paper_trader.py run` and `ict_paper_trader.py run` themselves (`_health_banner()`),
+NOT from the routine prompts — deliberately, because a check living in a
+prompt is lost to any reword, and because the routine prompts bind to
+session_016iH5aNy36JTes3cWw5Geez and cannot be edited from another session
+anyway. In the code path it also covers a human running the script by hand.
+On failure it prints an unmissable banner telling the run to PushNotify the
+user; it does NOT change the exit code, since a non-zero exit from a run that
+actually succeeded would read as a crash and could stop the routine before it
+commits its ledger. Today's freshly-written entries are untagged at that
+moment by design (tagging runs after), which is what the grace period absorbs
+— verified it does not false-alarm on its own output, nor on a Friday entry
+checked the following Monday.
 **Read a PROBLEM result as a plumbing bug, never as evidence about
 catalysts.** An empty HAS-catalyst bucket because nothing was ever written
 is not a finding; treating it as one would be the inverse of this project's
