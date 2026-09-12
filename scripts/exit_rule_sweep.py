@@ -431,11 +431,178 @@ def volmatch(start, end):
     print("=" * 96)
 
 
+def per_setup(start, end):
+    """Per-setup volatility-matched edge, and the fix for a bug in this
+    script's own earlier runs.
+
+    BUG, found 2026-09-12: run() and volmatch() both call
+    `iter_signals(bars)` with no `spy_closes`, and iter_signals only emits
+    "relative_strength" when that argument is supplied. So every result
+    this script produced on 2026-09-11 covered FOUR setups, not five --
+    the write-ups saying "all 5 TA setups pooled" were wrong. This
+    function passes spy_closes, so relative_strength actually fires here.
+
+    WHY PER-SETUP MATTERS: pooling five setups into one "signal"
+    population hides the case where one setup carries a real edge and is
+    diluted by four bad ones. It equally hides the reverse -- one setup
+    dragging down four neutral ones.
+
+    MULTIPLE COMPARISONS, stated before looking at the output: testing 5
+    setups x 3 rules = 15 comparisons. At these sample sizes, one or two
+    landing positive by chance alone is the EXPECTED result, not a
+    finding. The split-half column is the guard -- a genuine setup edge
+    should hold sign in both halves. Nothing here gets promoted on a
+    headline number, per CLAUDE.md's standing promotion criteria."""
+    series = _load_series(start, end)
+    try:
+        from backtest_ta import _spy_closes
+        spy = _spy_closes(start, end)
+        print(f"Loaded {len(series)} tickers; SPY closes for {len(spy)} sessions "
+              f"(relative_strength ENABLED — unlike this script's 2026-09-11 runs)\n")
+    except Exception as e:
+        spy = None
+        print(f"WARNING: could not load SPY closes ({e}) — relative_strength will NOT fire, "
+              f"reproducing the original bug. Fix before trusting this output.\n")
+
+    entries = []  # (date, vol, frozenset(setups), rec)
+    for ticker, bars in series.items():
+        if len(bars) < 25:
+            continue
+        fired = defaultdict(set)
+        for i, _d, setup in iter_signals(bars, spy_closes=spy):
+            fired[i].add(setup)
+        for i, b in enumerate(bars):
+            date, _o, _h, _l, c, v = b
+            if not (PRICE_MIN <= c <= PRICE_MAX and v >= VOLUME_MIN):
+                continue
+            vol = _prior_vol(bars, i)
+            if vol is None:
+                continue
+            rec = _first_touch(bars, i)
+            if rec is not None:
+                entries.append((date, vol, frozenset(fired.get(i, ())), rec))
+
+    counts = defaultdict(int)
+    for _d, _v, setups, _r in entries:
+        for s in setups:
+            counts[s] += 1
+    print("Signal counts per setup (entries passing the liquidity filter):")
+    for s, n in sorted(counts.items(), key=lambda x: -x[1]):
+        print(f"  {s:<20}{n:>7,}")
+    if "relative_strength" not in counts:
+        print("  relative_strength     0  <-- still not firing; check RS_WINDOW warmup vs window length")
+    print()
+
+    by_date = defaultdict(list)
+    for e in entries:
+        by_date[e[0]].append(e)
+    cells = defaultdict(lambda: defaultdict(list))  # (date,decile) -> setup/"__ctl__" -> recs
+    for date, es in by_date.items():
+        vs = sorted(e[1] for e in es)
+        cuts = [vs[int(len(vs) * q / 10)] for q in range(1, 10)]
+        for date_, vol, setups, rec in es:
+            d = sum(1 for c in cuts if vol > c)
+            if setups:
+                for s in setups:
+                    cells[(date_, d)][s].append(rec)
+            else:
+                cells[(date_, d)]["__ctl__"].append(rec)
+
+    def matched(setup, stop, target, ts, subset=None):
+        src = subset if subset is not None else cells
+        diffs = []
+        for _k, cell in src.items():
+            ctl = [r for r in (_outcome(rec, stop, target, ts) for rec in cell.get("__ctl__", []))
+                   if r is not None]
+            if not ctl:
+                continue
+            cm = sum(ctl) / len(ctl)
+            for rec in cell.get(setup, []):
+                r = _outcome(rec, stop, target, ts)
+                if r is not None:
+                    diffs.append(r - cm)
+        if not diffs:
+            return None, 0
+        return sum(diffs) / len(diffs), len(diffs)
+
+    dates = sorted(by_date)
+    mid = dates[len(dates) // 2]
+    h1 = {k: v for k, v in cells.items() if k[0] < mid}
+    h2 = {k: v for k, v in cells.items() if k[0] >= mid}
+    rules = [(STOP_PCT, TARGET_PCT, TIME_STOP_DAYS), (-0.08, None, 20), (None, None, 20)]
+
+    # EFFECTIVE SAMPLE SIZE -- the check that caught this script lying to
+    # itself on 2026-09-12. With daily entries and an N-day hold,
+    # consecutive entries share N-1 of their N forward days, so they are
+    # nowhere near independent: effective independent episodes is roughly
+    # (distinct entry dates) / (holding period), NOT the trade count. On a
+    # 62-session cache a 20-day hold leaves ~20 usable entry dates, i.e.
+    # about ONE independent episode -- and a split-half of one episode is
+    # not a robustness check, it is two halves of the same event. The raw
+    # n= column below will still read in the thousands; ignore it in
+    # favour of this.
+    print("=" * 92)
+    print("EFFECTIVE SAMPLE SIZE (read this BEFORE the tables — the n= column is misleading)")
+    print("=" * 92)
+    print(f"{'hold':<8}{'dates w/ resolvable entries':>29}{'in H1':>8}{'in H2':>8}{'~indep. episodes':>19}")
+    print("-" * 92)
+    for ts in sorted({r[2] for r in rules}):
+        # count from ACTUAL resolvable entries, not the global calendar --
+        # tickers have differing bar coverage, so a calendar approximation
+        # prints "0 in H2" beside tables that clearly used H2 entries.
+        got = {d for (d, _dec), cell in cells.items()
+               for key, recs in cell.items() if key != "__ctl__"
+               for rec in recs if _outcome(rec, None, None, ts) is not None}
+        h1d = sorted(d for d in got if d < mid)
+        h2d = sorted(d for d in got if d >= mid)
+        eff = len(got) / ts if ts else float("nan")
+        warn = "  <-- TOO FEW TO TEST" if eff < 3 else ""
+        print(f"{ts:>3}d{'':<4}{len(got):>29}{len(h1d):>8}{len(h2d):>8}{eff:>19.1f}{warn}")
+    print()
+
+    for stop, target, ts in rules:
+        s = "none" if stop is None else f"{stop * 100:+.0f}%"
+        t = "none" if target is None else f"{target * 100:+.0f}%"
+        cur = "   <-- CLAUDE.md's CURRENT rule" if (stop, target, ts) == (
+            STOP_PCT, TARGET_PCT, TIME_STOP_DAYS) else ""
+        print("=" * 92)
+        print(f"RULE: stop {s}  target {t}  {ts}-day{cur}")
+        print("=" * 92)
+        print(f"{'setup':<22}{'matched edge':>14}{'n':>9}{'H1':>10}{'H2':>10}{'verdict':>20}")
+        print("-" * 92)
+        for setup in sorted(counts, key=lambda x: -counts[x]):
+            edge, n = matched(setup, stop, target, ts)
+            if edge is None or n < 30:
+                print(f"{setup:<22}{'insufficient n':>14}{n:>9}")
+                continue
+            e1, _ = matched(setup, stop, target, ts, h1)
+            e2, _ = matched(setup, stop, target, ts, h2)
+            if e1 is None or e2 is None:
+                v = "insufficient n"
+            elif (e1 > 0) == (e2 > 0):
+                v = "CONSISTENT POS" if e1 > 0 else "consistent neg"
+            else:
+                v = "flips — noise"
+            f = lambda x: "   n/a" if x is None else f"{x * 100:>9.2f}%"
+            print(f"{setup:<22}{edge * 100:>13.2f}%{n:>9,}{f(e1)}{f(e2)}{v:>20}")
+        print()
+
+    print("=" * 92)
+    print("READING THIS: vcp_breakout is a strict SUBSET of breakout by construction, so those two")
+    print("rows are not independent observations. 5 setups x 3 rules = 15 comparisons — one or two")
+    print("positive by chance is expected, which is why the split-half columns, not the headline")
+    print("edge, decide whether anything here is real. Nothing is promoted on this output alone;")
+    print("CLAUDE.md's promotion criteria (backtest edge + forward agreement + user sign-off) stand.")
+    print("=" * 92)
+
+
 if __name__ == "__main__":
     a = [x for x in sys.argv[1:] if not x.startswith("-")]
     start = a[0] if a else "2024-09-11"
     end = a[1] if len(a) > 1 else "2024-12-06"
-    if "--volmatch" in sys.argv:
+    if "--per-setup" in sys.argv:
+        per_setup(start, end)
+    elif "--volmatch" in sys.argv:
         volmatch(start, end)
     else:
         run(start, end)

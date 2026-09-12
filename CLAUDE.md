@@ -211,9 +211,44 @@ position sizing would fix the *punishment* the tight stop inflicts on
 volatile names — but there is no underlying edge left to protect once
 that punishment is removed. This closes the "maybe the exit rule is
 hiding an edge" line of inquiry; the constraint is the signals, not the
-rule. Scope unchanged: one ~3-month regime (2024-09-11..2024-12-06),
-4,438 signal entries, all 5 TA setups pooled (a per-setup breakdown has
-not been run and could still differ).
+rule. Scope: one ~3-month regime (2024-09-11..2024-12-06), 4,438 signal
+entries.
+
+**PER-SETUP BREAKDOWN RUN 2026-09-12 (`exit_rule_sweep.py --per-setup`),
+plus a BUG FIX and a methodology warning that matters more than the
+numbers.**
+- **Bug**: `run()` and `volmatch()` call `iter_signals(bars)` without
+  `spy_closes`, and that function only emits `relative_strength` when
+  spy_closes is supplied. So every 2026-09-11 result covered FOUR setups,
+  not five — the "all 5 TA setups pooled" wording above was wrong.
+  `--per-setup` passes spy_closes and relative_strength does fire (1,121
+  entries).
+- **Under CLAUDE.md's current rule, every setup is individually negative**
+  against volatility-matched peers, all sign-consistent across halves:
+  breakout -0.21% (n=2,460), ema_cross -0.16% (1,327), relative_strength
+  -0.23% (1,024), mean_reversion -0.45% (677), vcp_breakout -0.19% (73).
+  Pooling was NOT hiding a good setup among bad ones — the concern that
+  motivated this run is answered, negatively.
+- **At 20-day horizons breakout (+1.93%) and relative_strength (+2.62%)
+  came back "CONSISTENT POS" — and that label is an artifact, not a
+  finding.** With daily entries and an N-day hold, consecutive entries
+  share N-1 of N forward days, so independent episodes ≈ (entry dates)/N,
+  not the trade count. On this 62-session cache a 20-day hold leaves 21
+  usable entry dates of which **only 2 fall in the second half** —
+  ~1.1 independent episodes. The "split-half confirmation" was computed
+  from two sessions, and every 20-day forward window in the sample
+  overlaps the same November 2024 post-election rally. The n=1,605 column
+  is badly misleading and is now printed beneath an EFFECTIVE SAMPLE SIZE
+  table that flags any horizon under 3 independent episodes as TOO FEW TO
+  TEST.
+- **The general warning**: the first-half/second-half check this project
+  relies on throughout (it caught vcp_breakout and the macro-calendar
+  aggregate) becomes unreliable once the holding period approaches the
+  window length. It will happily print "CONSISTENT" from two days of
+  data. Check effective sample size before trusting it — 5-day holds here
+  have ~7.2 independent episodes and are reasonably supported; 20-day
+  holds on this cache are not testable at all. Evaluating any 20-day
+  variant honestly requires the full 2-year fetch (parked at 63/520).
 **Implication for demo trading**: council still has zero approvals ever
 (15 for 15 downgraded), so there is nothing to execute, and this result
 gives no basis for promoting it. Separately, NONE of the four mandatory
