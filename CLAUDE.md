@@ -336,6 +336,73 @@ this changes today's verdicts or loosens anything; it's built so the
 next real recalibration conversation with the user has actual evidence
 instead of just a streak length to go on.
 
+**WIDER STOPS TESTED ACROSS 2020-2026 INCLUDING THE 2022 BEAR MARKET
+(2026-09-12, `scripts/regime_test.py`) — the bull-quarter result does NOT
+survive, and a volume bug in the earlier reads was found and fixed.**
+The user asked for this before choosing a rule, on the correct ground that
+`exit_rule_sweep.py --realistic` had measured everything inside ONE bull
+quarter (2024-09..2024-12, post-election melt-up). 401 randomly-sampled
+liquid common stocks, Alpaca daily bars 2020-08-01..2026-09-11, 328,200
+control entries / 24,867 signal entries, reported BY CALENDAR YEAR:
+
+| rule | ALL sig | ALL edge | **2022 sig** | 2022 edge | worst 1% | trades losing >5% | yrs edge+ |
+|---|---|---|---|---|---|---|---|
+| CURRENT -4%/+8%/5d | +0.07% | -0.10% | **-0.04%** | +0.06% | -4.00% | 0.0% | 2/7 |
+| flat -8%/+16%/10d | +0.31% | -0.12% | **-0.51%** | -0.16% | -8.00% | 31.8% | 2/7 |
+| vol-scaled 2sig 2:1 10d | +0.61% | 0.00% | **-0.57%** | -0.23% | -23.60% | 23.6% | 3/7 |
+
+- **The headline that prompted this — vol-scaled at +1.23%/trade — was a
+  bull quarter.** Over the full cycle it is +0.61%, and in 2022 it is
+  **-0.57%**. The widened flat rule behaves the same way (+0.40% in the
+  quarter, -0.51% in 2022). Both rules lose MORE in the falling year than
+  the current tight rule does (-0.04%), which is exactly the predicted
+  failure mode: a wide stop buys its higher average by sitting through
+  drawdowns, and a bear tape is where you pay for that.
+- **Edge over the date-matched control is ~zero for all three rules in
+  every year, with no consistent sign** (positive in 2/7, 2/7 and 3/7
+  years respectively). Changing the exit rule changes how much market
+  drift you capture and how much risk you take capturing it. It does not
+  create selection skill, in any regime. This is the same conclusion the
+  volatility-matched sweep reached, now confirmed across a full cycle
+  rather than one quarter.
+- **The risk being bought is large and was previously invisible.** The
+  vol-scaled rule's worst 1% of trades is **-23.6%** (a 2-sigma stop on a
+  volatile name is a wide stop in percentage terms, and gaps run through
+  it), and 23.6% of its trades lose more than 5%. The current rule's worst
+  case is -4.00% by construction and nothing loses more than 5%. Against a
+  measured edge of zero, that is risk purchased for nothing.
+- **BUG FOUND AND FIXED MID-RUN, affects nothing already published but
+  would have invalidated this test**: `scripts/backtest_ta.py`'s
+  `iter_signals()` applies a 1,000,000-share absolute volume floor. Alpaca's
+  free feed reports IEX-only volume, measured here at a median **5.1%** of
+  consolidated volume (p5 2.7%, p95 8.8%) across this exact sample on
+  2026-09-10. Applying the consolidated floor to IEX bars therefore screens
+  for ~20M+ real volume — mega-caps only — and gets progressively stricter
+  the further back you go, because IEX market share was lower. The first
+  run of this script produced 32 signal entries in 2020 against 409 in
+  2026 and was unreadable as a per-year comparison. `iter_signals()` now
+  takes a `vol_min` override (Massive full-tape callers leave it None) and
+  regime_test.py passes 50,000. Corrected, the years are balanced
+  (1,136-5,146 signal entries each). **The 6-year Alpaca backtests earlier
+  in this section were run through the same unadjusted floor** and are
+  therefore mega-cap-skewed on top of their already-documented
+  survivorship bias — another reason not to lean on those numbers.
+- Scope/caveats: survivorship-biased by construction (today's liquid
+  tickers applied backwards), so absolute levels are inflated and must
+  never be quoted as "what the strategy returns"; the COMPARISON between
+  rules on an identical universe is what it is for. One bear year in the
+  sample is one bear year, not a distribution. 10-day holds on daily
+  entries overlap heavily, so per-year trade counts overstate independent
+  episodes.
+- **Decision status: no rule change is being made, and the Strategy
+  section is untouched.** Widening the stop is a risk-appetite choice with
+  no edge attached, not an improvement — it would raise realised P&L in a
+  rising market and hand it back with interest in a falling one. If the
+  user wants the beta the wide rule captures, an index position buys it
+  more cheaply than a signal-triggered one. This stays the user's call per
+  the 2026-09-03/09-09 decisions; the numbers above are what it should be
+  made on.
+
 ## Trade execution & approval — updated 2026-09-07 (supersedes the old
 ## "no trade without human approval, ever" rule below for paper/demo and,
 ## eventually, live — read this whole section before touching execution)

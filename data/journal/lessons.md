@@ -280,3 +280,34 @@ may not represent the whole. Per CLAUDE.md's standing 2026-09-03/09-09
 user decisions, any actual change to confidence-rating behaviour or
 council's bar is the user's call, and nothing here comes close to
 justifying one.
+
+## 11. An absolute volume/liquidity filter silently becomes a different
+##     filter when the data feed changes — and the distortion is worst in
+##     the oldest data, exactly where multi-year tests need it least
+Evidence (2026-09-12, found while building `scripts/regime_test.py`):
+`backtest_ta.iter_signals()` screens for >=1,000,000 shares. That was
+written against Massive's full consolidated tape. Alpaca's free feed
+reports **IEX-only** volume, measured at a median **5.1%** of consolidated
+volume (p5 2.7%, p95 8.8%) across a 401-name sample on 2026-09-10. So the
+same line of code means ">1M shares" on one feed and ">~20M shares" on the
+other — a mega-cap-only screen wearing a liquidity screen's clothes.
+Worse, it is not a constant distortion: IEX's market share was lower in
+earlier years, so the filter tightens as you go back. First run of the
+regime test yielded **32 signal entries in 2020 against 409 in 2026** and
+was unusable as a per-year comparison. With the floor corrected to 50,000
+IEX shares the years came out balanced (1,136-5,146 each) and the totals
+rose from 1,019 to 24,867 signal entries.
+Two general points worth carrying:
+- **A threshold is only meaningful relative to the feed it was calibrated
+  on.** Ratios (today's volume vs. its own 20-day average, as the breakout
+  trigger uses) survive a feed change; absolute levels do not. Prefer
+  ratios where the logic allows it.
+- **Check the per-period sample counts before reading any per-period
+  table.** The distortion here announced itself as a 13x imbalance across
+  years. That imbalance was visible in the output before any number in it
+  was interpreted — the same class of check that caught the 20-day
+  effective-sample-size problem and the two-date paper-trade artifact.
+Consequence for existing numbers: every 6-year Alpaca backtest in
+CLAUDE.md's TA section ran through the unadjusted floor and is mega-cap-
+skewed on top of its documented survivorship bias. Not re-run; treated as
+another reason those figures are not load-bearing.

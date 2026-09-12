@@ -378,7 +378,7 @@ def _simulate_exit(bars, entry_idx):
     return None
 
 
-def iter_signals(bars, spy_closes=None):
+def iter_signals(bars, spy_closes=None, vol_min=None):
     """Shared signal logic -- yields (index, date, setup_name) for every bar
     in `bars` (one ticker's chronological [(date,o,h,l,c,v), ...]) where
     any setup fires. Used by both the historical backtest (run_backtest,
@@ -407,7 +407,16 @@ def iter_signals(bars, spy_closes=None):
       as ema_cross/mean_reversion). Only computed when `spy_closes` (a
       {date: close} dict from _spy_closes) is given -- callers without it
       (e.g. a quick scan that hasn't fetched SPY) simply don't get this
-      setup, not an error."""
+      setup, not an error.
+
+    `vol_min` overrides the absolute VOLUME_MIN share floor. It exists for
+    ONE reason: callers feeding Alpaca IEX bars. Alpaca's free feed reports
+    IEX-only volume, measured at a median 5.1% of consolidated volume across
+    this project's universe on 2026-09-10 (p5-p95: 2.7%-8.8%). Applying the
+    1M consolidated floor to IEX numbers therefore screens for ~20M+
+    consolidated volume -- a mega-cap-only filter masquerading as a
+    liquidity floor, and one whose strictness drifts year to year with IEX
+    market share. Massive full-tape callers must leave this as None."""
     ema9 = ema21 = None
     prev_ema9 = prev_ema21 = None
     rsi = _rsi_series(bars)
@@ -418,7 +427,7 @@ def iter_signals(bars, spy_closes=None):
 
         if i < 21:
             continue
-        if not (PRICE_MIN <= c <= PRICE_MAX) or v < VOLUME_MIN:
+        if not (PRICE_MIN <= c <= PRICE_MAX) or v < (VOLUME_MIN if vol_min is None else vol_min):
             continue
 
         window = bars[i - 20:i]  # prior 20 days, excludes today
