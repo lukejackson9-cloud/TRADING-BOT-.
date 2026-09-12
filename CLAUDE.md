@@ -249,6 +249,31 @@ numbers.**
   have ~7.2 independent episodes and are reasonably supported; 20-day
   holds on this cache are not testable at all. Evaluating any 20-day
   variant honestly requires the full 2-year fetch (parked at 63/520).
+
+**IN-MANDATE RULE TWEAKS SWEPT 2026-09-12 (`--tweak`) — 0 of 72 survive.**
+The 20-day result above is both untestable here AND out of mandate (this
+project specifies an "intraday to ~2 week horizon"). So the answerable
+version of "what if we changed the rule slightly?" is: every stop/target
+pair at 5 and 10 trading days (10d = the 2-week limit), volatility-matched.
+72 combinations. **Zero came back positive AND sign-consistent across
+halves.** Every one either flips sign between halves or is consistently
+negative.
+- The current rule ranks 50th of 72 (edge -0.21%, consistent neg), so it
+  is a genuinely poor choice on the point estimate — but nothing that
+  ranks above it is real either.
+- **Loosening the stop does raise the RAW signal return** — from -0.03%
+  at the current rule to +1.19% at no-stop/10-day. The matched edge stays
+  at ~0 and flips. That gap is the whole lesson: a wider stop captures
+  more market drift, and the volatility-matched control captures exactly
+  as much. It would likely improve realised P&L in a rising market while
+  adding real downside risk in a falling one, and it is NOT edge.
+- Structural tell: nearly every combo shows H1 negative and H2 positive.
+  That is the November 2024 post-election rally showing through, i.e. a
+  regime effect, not a rule effect — which is why "flips" here should be
+  read as "regime," not "almost worked."
+- Caveat: 5d holds have ~7.2 independent episodes, 10d only ~3.1 (thin).
+  And 72 cells were searched, so any winner would have needed retesting
+  anyway — moot, since there were none.
 **Implication for demo trading**: council still has zero approvals ever
 (15 for 15 downgraded), so there is nothing to execute, and this result
 gives no basis for promoting it. Separately, NONE of the four mandatory

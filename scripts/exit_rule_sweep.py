@@ -431,6 +431,150 @@ def volmatch(start, end):
     print("=" * 96)
 
 
+def tweak(start, end):
+    """"What if we changed the rule SLIGHTLY?" — the in-mandate version of
+    the exit-rule question, and the only version this cache can answer.
+
+    The 2026-09-12 per-setup run found breakout/relative_strength looking
+    positive at 20-day holds, then showed that result rests on ~1.1
+    independent episodes and is untestable here. But a 20-day hold is also
+    OUT OF MANDATE: CLAUDE.md specifies an "intraday to ~2 week horizon".
+    So this sweeps only horizons that are both in-mandate and testable —
+    5 and 10 trading days (10 = two weeks exactly) — across every
+    stop/target pair, using the volatility-matched estimator rather than
+    the naive one, since signal names run 1.20x the control's volatility
+    and a fixed stop is not neutral between them.
+
+    Every number is signal-minus-matched-control. A rule that lifts the
+    raw return but not this has bought beta, not edge.
+
+    MULTIPLE COMPARISONS: 6 stops x 6 targets x 2 horizons = 72 cells.
+    Picking the best of 72 guarantees a flattering number, so the ranking
+    is NOT the output — the questions are (a) does ANY combo come back
+    positive AND sign-consistent across halves, and (b) where does the
+    current rule sit. Both are printed."""
+    series = _load_series(start, end)
+    try:
+        from backtest_ta import _spy_closes
+        spy = _spy_closes(start, end)
+    except Exception:
+        spy = None
+        print("WARNING: no SPY closes — relative_strength will not fire\n")
+
+    entries = []
+    for ticker, bars in series.items():
+        if len(bars) < 25:
+            continue
+        sig = {i for i, _d, _s in iter_signals(bars, spy_closes=spy)}
+        for i, b in enumerate(bars):
+            date, _o, _h, _l, c, v = b
+            if not (PRICE_MIN <= c <= PRICE_MAX and v >= VOLUME_MIN):
+                continue
+            vol = _prior_vol(bars, i)
+            if vol is None:
+                continue
+            rec = _first_touch(bars, i)
+            if rec is not None:
+                entries.append((date, vol, i in sig, rec))
+
+    by_date = defaultdict(list)
+    for e in entries:
+        by_date[e[0]].append(e)
+    cells = defaultdict(lambda: {"sig": [], "ctl": []})
+    for date, es in by_date.items():
+        vs = sorted(e[1] for e in es)
+        cuts = [vs[int(len(vs) * q / 10)] for q in range(1, 10)]
+        for date_, vol, is_sig, rec in es:
+            d = sum(1 for c in cuts if vol > c)
+            cells[(date_, d)]["sig" if is_sig else "ctl"].append(rec)
+
+    dates = sorted(by_date)
+    mid = dates[len(dates) // 2]
+    h1 = {k: v for k, v in cells.items() if k[0] < mid}
+    h2 = {k: v for k, v in cells.items() if k[0] >= mid}
+
+    def matched(stop, target, ts, src=None):
+        src = src if src is not None else cells
+        diffs, raws = [], []
+        for _k, cell in src.items():
+            ctl = [r for r in (_outcome(rec, stop, target, ts) for rec in cell["ctl"]) if r is not None]
+            if not ctl:
+                continue
+            cm = sum(ctl) / len(ctl)
+            for rec in cell["sig"]:
+                r = _outcome(rec, stop, target, ts)
+                if r is not None:
+                    diffs.append(r - cm)
+                    raws.append(r)
+        if not diffs:
+            return None, None, 0
+        return sum(diffs) / len(diffs), sum(raws) / len(raws), len(diffs)
+
+    print("=" * 100)
+    print("EFFECTIVE SAMPLE (in-mandate horizons only; 10 trading days = the 2-week mandate limit)")
+    print("=" * 100)
+    for ts in (5, 10):
+        got = {d for (d, _dec), cell in cells.items()
+               for rec in cell["sig"] if _outcome(rec, None, None, ts) is not None}
+        eff = len(got) / ts
+        print(f"  {ts:>2}d hold: {len(got):>3} dates with resolvable entries  ->  ~{eff:.1f} independent episodes"
+              + ("   <-- thin, treat as indicative only" if eff < 4 else ""))
+    print()
+
+    rows = []
+    for ts in (5, 10):
+        for stop in STOPS:
+            for target in TARGETS:
+                edge, raw, n = matched(stop, target, ts)
+                if edge is None or n < 100:
+                    continue
+                e1 = matched(stop, target, ts, h1)[0]
+                e2 = matched(stop, target, ts, h2)[0]
+                if e1 is None or e2 is None:
+                    verdict = "insufficient n"
+                elif (e1 > 0) == (e2 > 0):
+                    verdict = "CONSISTENT POS" if e1 > 0 else "consistent neg"
+                else:
+                    verdict = "flips — noise"
+                s = "none" if stop is None else f"{stop * 100:+.0f}%"
+                t = "none" if target is None else f"{target * 100:+.0f}%"
+                rows.append({"label": f"stop {s:<5} target {t:<5} {ts:>2}d", "edge": edge,
+                             "raw": raw, "n": n, "e1": e1, "e2": e2, "verdict": verdict,
+                             "key": (stop, target, ts)})
+
+    cur = next((r for r in rows if r["key"] == (STOP_PCT, TARGET_PCT, TIME_STOP_DAYS)), None)
+    ranked = sorted(rows, key=lambda r: -r["edge"])
+    print("=" * 100)
+    print("ALL IN-MANDATE RULE TWEAKS, volatility-matched, ranked by edge (top 12 of "
+          f"{len(rows)})")
+    print("=" * 100)
+    print(f"{'rule':<30}{'raw sig':>10}{'MATCHED EDGE':>14}{'H1':>9}{'H2':>9}{'n':>8}{'verdict':>18}")
+    print("-" * 100)
+    f = lambda x: "    n/a" if x is None else f"{x * 100:>8.2f}%"
+    for r in ranked[:12]:
+        tag = "  <-- CURRENT" if r is cur else ""
+        print(f"{r['label']:<30}{r['raw'] * 100:>9.2f}%{r['edge'] * 100:>13.2f}%"
+              f"{f(r['e1'])}{f(r['e2'])}{r['n']:>8,}{r['verdict']:>18}{tag}")
+    if cur and cur not in ranked[:12]:
+        print("  ...")
+        print(f"{cur['label']:<30}{cur['raw'] * 100:>9.2f}%{cur['edge'] * 100:>13.2f}%"
+              f"{f(cur['e1'])}{f(cur['e2'])}{cur['n']:>8,}{cur['verdict']:>18}  <-- CURRENT")
+
+    pos = [r for r in rows if r["verdict"] == "CONSISTENT POS"]
+    print("\n" + "=" * 100)
+    print(f"THE ACTUAL QUESTION: of {len(rows)} in-mandate rule tweaks, how many are positive AND")
+    print(f"sign-consistent across halves?  ANSWER: {len(pos)}")
+    for r in pos:
+        print(f"   {r['label']}   edge {r['edge'] * 100:+.2f}%  (H1 {r['e1'] * 100:+.2f}%, "
+              f"H2 {r['e2'] * 100:+.2f}%, n={r['n']:,})")
+    if cur:
+        print(f"\nCurrent rule ranks {ranked.index(cur) + 1} of {len(rows)} — "
+              f"edge {cur['edge'] * 100:+.2f}%, {cur['verdict']}.")
+    print("\nRemember 72 cells were searched. Treat any single winner as a candidate to RETEST,")
+    print("not a result — and note the effective-episode counts above before believing either half.")
+    print("=" * 100)
+
+
 def per_setup(start, end):
     """Per-setup volatility-matched edge, and the fix for a bug in this
     script's own earlier runs.
@@ -600,7 +744,9 @@ if __name__ == "__main__":
     a = [x for x in sys.argv[1:] if not x.startswith("-")]
     start = a[0] if a else "2024-09-11"
     end = a[1] if len(a) > 1 else "2024-12-06"
-    if "--per-setup" in sys.argv:
+    if "--tweak" in sys.argv:
+        tweak(start, end)
+    elif "--per-setup" in sys.argv:
         per_setup(start, end)
     elif "--volmatch" in sys.argv:
         volmatch(start, end)
