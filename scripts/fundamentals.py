@@ -190,7 +190,11 @@ def metrics(ticker):
             "gross_margin": _div(gp, rev),
             "operating_margin": _div(op, rev),
             "net_margin": _div(ni, rev),
-            "return_on_equity": _div(ni, eq),
+            # ROE is MEANINGLESS when equity is negative: a profitable company
+            # with negative book equity yields a large negative ROE that reads
+            # as catastrophic losses. Seen live — A printed -618% and ABBV
+            # -107% while both were profitable. Suppress it and flag instead.
+            "return_on_equity": (_div(ni, eq) if (eq or 0) > 0 else None),
             "return_on_assets": _div(ni, assets),
             "revenue_growth_yoy_q": rev_growth,
             "growth_basis": growth_basis,
@@ -208,6 +212,7 @@ def metrics(ticker):
             "operating_cash_flow_ttm": ocf,                  # NOT free cash flow
             "cash_flow_positive": None if ocf is None else ocf > 0,
             "profitable": None if ni is None else ni > 0,
+            "negative_equity": None if eq is None else eq < 0,
         },
     }
 

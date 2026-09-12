@@ -1,159 +1,74 @@
-# Skill: Screen
+# Skill: Screen (coverage-based, 3-12 month horizon)
 
-Goal: produce a short list (5–15 tickers) of candidates worth researching today.
+**Rewritten 2026-09-12 with the council rewrite.** The mover screen is
+preserved verbatim at `skills/screen_movers_superseded.md`.
 
-## Steps
-0. Primary source: `scripts/massive_client.py` — a genuine whole-market
-   screen, not a curated top-N list (confirmed live 2026-09-03: 5,315 US
-   common-stock tickers, 1,356 of them passing the price/volume filter on
-   a single real trading day — FMP's free-tier top-50 lists miss the large
-   majority of that).
-   - `screen_market_movers(date, prev_date)` returns every common-stock
-     ticker priced $5–$500 with >1M volume, ranked by |% change| close-to-
-     close between the two dates. Defaults already match step 3's filters
-     and exclude non-equity tickers (ETFs, etc. — see the module docstring
-     on why that filter exists).
-   - **Massive's data is END-OF-DAY, one session behind** — requesting the
-     still-open current trading day returns `NOT_AUTHORIZED`, not partial
-     data (confirmed live). `date`/`prev_date` must be the last two
-     COMPLETED trading days (skip weekends/holidays; if a chosen date
-     comes back empty or non-OK, step back a day and retry — don't trust
-     an empty result as "no movers today").
-   - Take the top ~30 by |% change| from `screen_market_movers()`'s output
-     as this step's working pool — that's deliberately wider than the
-     5–15 final target, because research.md's skepticism is what narrows
-     it the rest of the way (see step 5), and a whole-market screen will
-     surface far more real movers than a top-50 list ever could.
-   - If the call errors on a network/connection error (not an auth error),
-     that's likely this environment's network policy blocking
-     `api.massive.com` — don't retry blindly (same rule as T212 in
-     CLAUDE.md). Fall back to step 0b for this run, and mention to the
-     user once per session that Massive is unreachable.
-0b. Supplement: `scripts/market_screener_client.py` (FMP) — Massive covers
-    breadth but is always a day stale, so use FMP for what it's actually
-    good for instead of duplicating step 0:
-    - `get_gainers()` / `get_losers()` / `get_most_active()` for genuine
-      SAME-DAY intraday framing — useful context on top of Massive's list,
-      and a way to catch a move that started after Massive's last
-      completed session.
-    - `get_earnings_calendar(from_date, to_date)` for step 2's lookahead,
-      with real dates instead of a WebSearch guess. Free-tier coverage is
-      sparse (~17 entries across a 6-week window as of 2026-09-02) — treat
-      it as incomplete, not authoritative; it may simply not have a name
-      you're looking for.
-    Same network-policy caveat as step 0 applies if `financialmodelingprep.com`
-    is unreachable.
-0c. International (UK/European/other non-US markets): steps 0/0b are both
-    US-only (Massive's equity coverage and FMP's free tier both stop at US
-    listings — confirmed 2026-09-06, not an oversight to fix, a real data
-    source limitation). Two layers here, since the primary one is fragile:
-    - `scripts/yahoo_screener_client.py` — free, no key, Yahoo Finance's
-      unofficial regional screeners. `get_uk_gainers()`/`get_uk_losers()`
-      CONFIRMED working live (2026-09-06); other region codes are plausible
-      by the same naming pattern but unverified — check before trusting
-      one. This is UNOFFICIAL and UNSUPPORTED (see the module docstring)
-      — it can break, rate-limit, or change shape with no warning, unlike
-      the documented APIs in steps 0/0b. Wrap it defensively; a failure
-      here is expected sometimes, not a sign something's broken elsewhere.
-    - **Confirmed live: the `_gb` screeners return a MIX of markets, not
-      just UK stocks.** Check `fullExchangeName` on every quote — `"LSE"`/
-      `"Aquis AQSE"` are genuine UK-domestic stocks (priced in GBp/pence);
-      `"IOB"` (International Order Book) rows are foreign companies
-      cross-listed on the LSE, priced in THEIR OWN currency (confirmed:
-      EUR/SEK/NOK/CHF/RON all appeared in one sample) — treat those as
-      whatever market the `currency` field says, not as UK stocks, when
-      deciding where research.md's catalyst-sourcing should focus.
-    - If Yahoo's screener errors, is unreachable, or its data looks
-      obviously wrong (e.g. stale prices, empty quotes list), fall back to
-      WebSearch for that market instead — e.g. "FTSE 100 biggest movers
-      today", "LSE stocks up today news" — same sampling caveat as step 1
-      below (not comprehensive, widen query angles). This isn't a last
-      resort bolted on; it's the designed second layer for exactly the
-      case where the fragile unofficial endpoint stops working.
-    - Mention to the user once per session if Yahoo's screener is
-      unreachable/blocked, same rule as steps 0/0b's network-policy note.
-1. WebSearch fallback (only if 0, 0b, AND 0c are unreachable, or to
-   sanity-check a surprising result from any of them): pull pre-market
-   movers and volume leaders via WebSearch (e.g. "stock market pre-market
-   movers today", "biggest stock gainers premarket") — a sample of what's
-   out there, not comprehensive, so widen the query angles (analyst
-   upgrades, sector rotation, earnings calendar) rather than trusting one
-   narrow search.
-2. **Look ahead — MANDATORY, run this every time, it is not optional
-   garnish.** `python scripts/earnings_calendar.py upcoming 14` (and
-   `refresh 90` weekly, or whenever the cache is stale).
-   **Why this step is load-bearing, measured 2026-09-12**: step 0 ranks
-   the whole market by |% change|, so every ticker it hands research.md
-   has ALREADY made its move — and "stale / already priced in / sell the
-   news" is the single most common reason research.md rejects a ticker
-   (57 of 147 notes, 39%, per scorecard.md). The pipeline finds movers
-   then rejects them for being movers. That closed loop, not the market,
-   is the best explanation for a week with zero CANDIDATEs. This step is
-   the only thing that breaks it. When it was neglected the forward arm
-   was effectively dead: 4 of 174 watchlist lines carried a pre-catalyst
-   tag, and 7 of 136 research notes had any forward framing.
-   - Add every name it returns that would otherwise pass the filters
-     below, tagged exactly: `# EARNINGS {date} — pre-catalyst watch, not
-     yet a candidate`.
-   - **Coverage is narrow and you must not misreport it.** FMP's free
-     tier covers a curated ~78-name universe (measured: 1 entry in the
-     next 7 days, 13 in 30, 78 in 90), NOT the whole market. Absence from
-     the calendar means "not in FMP's covered set" — NEVER write "no
-     upcoming earnings" on the strength of it.
-   - **Widen it when a screened name matters.** If a ticker from step 0
-     looks interesting and isn't in the calendar, WebSearch its next
-     earnings date and record it with
-     `python scripts/earnings_calendar.py merge {TICKER} {YYYY-MM-DD} "{source}"`.
-     A sourcing note is required; the script refuses an unsourced date
-     (lessons.md #2). Merged entries survive `refresh`.
-   - Other sources were tested live 2026-09-12 and do NOT work from this
-     environment — Nasdaq's calendar API is proxy-blocked, Massive's
-     earnings feed is a paid add-on (403 "not entitled"), and Yahoo
-     429s/500s including the repo's own yahoo_screener_client. Don't
-     rediscover these; FMP + WebSearch merge is the working path.
-   The point is timing, not prediction: being ALREADY on the name when it
-   reports, so research.md evaluates the real reaction that session
-   instead of meeting the stock three days later as a +12% mover and
-   correctly rejecting it for having already moved. HPE is the cautionary
-   case — declined 09-03 after its pop had fired, stopped out at -4%, then
-   +15.2% by 09-11 (see trade_ledger.md).
-3. Filter (all lists from steps 0/0b/0c/1/2): price between $5–$500 (avoid
-   penny stocks and needing huge capital), average daily volume > 1M shares
-   (avoid illiquid names you can't exit). Already applied if step 0's
-   `screen_market_movers()` was used; apply manually to WebSearch/FMP/Yahoo
-   movers-list results.
-   **International price-filter gotcha**: LSE stocks are usually quoted in
-   GBX (pence), not GBP (pounds) — e.g. a `regularMarketPrice` of `1250`
-   means £12.50, not £1,250. Convert to a whole-currency-unit price before
-   applying the $5–$500-equivalent band, and convert to USD (or re-derive
-   an equivalent GBP/EUR band) rather than comparing raw non-USD numbers
-   against a dollar threshold. Getting this wrong either dumps real
-   candidates or lets penny stocks through silently — check the currency/
-   unit field in whatever response you're reading, don't assume.
-4. Cross-reference against /config/watchlist.txt (manual adds always included).
-5. Narrow step 0's ~30-name pool (plus anything from 0b/1/2) down to the
-   final 5–15: prioritize names with a plausible catalyst behind the move
-   over a bare price move, exclude anything that looks like thin-float/
-   reverse-split noise (see BIAF in /data/research/2026-09-02/ for what
-   that looks like and why it's still worth a WATCH-level look, not an
-   automatic discard), and prefer liquid, well-covered names over obscure
-   micro-caps when the pool is larger than needed. This is a narrowing
-   pass, not the research itself — don't research catalysts here, just use
-   what's already in front of you (ticker, price, volume, % move) to cut
-   the list to a workable size for research.md.
-6. Write the resulting list to /config/watchlist.txt, overwriting stale entries
-   older than 5 trading days unless still flagged manually.
-7. Do NOT research or trade in this step — screening only narrows the list.
+Goal: maintain coverage of an investable universe and hand the council a
+shortlist drawn from **what is covered**, never from what moved yesterday.
 
-## Output
-Update /config/watchlist.txt with one ticker per line, plus a one-line reason
-as a comment, e.g.:
-  NVDA  # +6% premarket on earnings beat
-  AMD   # EARNINGS 2026-09-05 — pre-catalyst watch, not yet a candidate
+## The closed loop this breaks (measured, not asserted)
+The old screen ranked the whole market by |% change|. So by construction
+every name research ever saw had ALREADY made its move — and "stale /
+already priced in / sell the news" is the single most common rejection
+reason, **57 of 147 notes (39%)**. The pipeline found movers, then rejected
+them for being movers. That loop explains weeks of zero candidates better
+than any claim about the market.
 
-## Hard rule on pre-catalyst (earnings look-ahead) tickers
-An `EARNINGS {date} — pre-catalyst watch` tag is not itself a catalyst and
-must never reach CANDIDATE before the earnings print happens — the earnings
-result itself is unresolved binary risk, not a "documented catalyst" per
-CLAUDE.md's strategy rules. research.md should hold these at WATCH until
-after the print, then evaluate the *reaction* like any other ticker.
+At the new horizon it is worse than circular. Ranking by |% change| selects
+for recent price strength, and `feature_ic.py` found **5-day reversal** is
+the one real effect in this data — so a mover screen fed the council the
+wrong side of the only measurable effect present.
+
+## Coverage, not discovery
+A fundamental investor does not re-screen the market each morning. They
+maintain coverage and act when facts and price line up. A name now reaches
+the council because it is in the investable universe and its filings say
+something, **never because it jumped on Tuesday**.
+
+Coverage also compounds. A mover list evaporates overnight; a covered
+universe is cumulative — a few dozen names a day becomes real breadth in
+weeks.
+
+## Daily steps
+1. **Refresh the universe** (weekly is enough — one API call):
+   `python scripts/screen_fundamental.py universe`
+   Liquid US common stocks, $5-$500, >1M shares. Currently ~1,350 names.
+   Deliberately unranked: ranking the universe by a price move is the exact
+   mistake being undone.
+2. **Spend the day's coverage budget:**
+   `python scripts/screen_fundamental.py cover 20`   (~4-5 minutes)
+   Never-covered names first, then the stalest. **Not "most interesting"** —
+   choosing what to cover from a price signal would smuggle the mover screen
+   back in through the queue.
+3. **Produce the shortlist:**
+   `python scripts/screen_fundamental.py shortlist 10`
+4. Hand it to `skills/council.md` for scoring.
+
+## How to read the shortlist — this matters
+- It is an **ATTENTION ORDER, not a return forecast.** It puts analysable
+  businesses in front of the council first. It is not claimed to predict
+  anything, and building it into something that does would be the variant-27
+  mistake CLAUDE.md's RESEARCH PROGRAMME CLOSED section forbids.
+- **A low rank is not a rejection.** It is further down the queue for
+  analyst time.
+- **Flags are prompts, not verdicts.** `neg-equity` is routine for a
+  heavy-buyback company (ABBV, AAL) and fatal elsewhere; ROE is suppressed
+  there because it is undefined, not because the company lost money.
+  `no-data(n/4)` means the filing did not carry the fields — never that the
+  company is fine.
+- Price action is **not** an input and must not be reintroduced as one.
+
+## Rate limit — the binding constraint
+Massive fundamentals are **5 requests/minute**. ~24 names/hour, so the whole
+universe is ~56 hours of budget: coverage is built over weeks, by design.
+**An empty or failed result is a 429, not "this company files nothing"** —
+that misreading already happened once, when a fast probe made AEHR, TARS and
+BIAF look uncovered. `fundamentals.py` raises rather than returning empty so
+it cannot recur.
+
+## What did not change
+- CLAUDE.md's Hard Risk Rules bind everything downstream.
+- Screening still never researches or trades — it only narrows.
+- International coverage remains a real gap: Massive and FMP are both
+  US-only. The old skill's Yahoo/UK fallback is in
+  `screen_movers_superseded.md` if that becomes wanted again.
