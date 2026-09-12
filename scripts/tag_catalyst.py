@@ -51,6 +51,7 @@ Usage:
 
 import sys
 import json
+import datetime
 from pathlib import Path
 from collections import defaultdict
 
@@ -168,6 +169,101 @@ def report():
               f"too early to conclude anything, keep collecting.")
 
 
+def health(max_stale_days=4, grace_days=3, today=None):
+    """Is this evaluation track actually collecting anything?
+
+    WHY THIS EXISTS
+    ---------------
+    A forward-only track that silently stops collecting looks EXACTLY like
+    one that is patiently accumulating: both report "sample too small,
+    keep going". On 2026-09-12 the ledgers held 174 TA and 14 ICT entries
+    and NOT ONE carried a populated catalyst field -- the tagging had been
+    live for a day and no one could tell from `report` alone whether that
+    was a plumbing failure or just early. Waiting weeks to discover the
+    answer is the expensive version of that mistake.
+
+    So this asks the question `report` cannot: is data arriving, and is it
+    being tagged? It separates the two because they have different fixes.
+
+    THE THREE STATES, AND WHY THEY ARE NOT THE SAME PROBLEM
+    -------------------------------------------------------
+      STALE     Newest entry is older than max_stale_days. The paper
+                trader is not running (or its data source is failing).
+                The tagging step is irrelevant until that is fixed.
+      UNTAGGED  Entries ARE arriving but sit with catalyst=None past
+                grace_days. The paper trader runs and the tagging step
+                after it does not -- a different break in the same routine.
+      OK        Recent entries exist and recent entries are tagged.
+
+    Entries with NO `catalyst` key at all predate the 2026-09-11 feature
+    and are excluded from every count here. Including them would make this
+    permanently red for a reason nobody can fix (there is no retroactive
+    tagging, by design).
+
+    Grace/staleness are in CALENDAR days on purpose -- this project has no
+    market-holiday calendar, and the defaults (4 and 3) already absorb a
+    normal weekend without one. A real outage runs longer than that.
+
+    Exit code is 1 on STALE or UNTAGGED so a caller can react without
+    parsing the text.
+    """
+    today = datetime.date.fromisoformat(today) if today else datetime.date.today()
+
+    def _scan(rows, date_key):
+        # only entries that carry the field at all -- older ones can never be tagged
+        taggable = [r for r in rows if "catalyst" in r]
+        dates = sorted({r[date_key] for r in taggable if r.get(date_key)})
+        untagged = [r for r in taggable if r.get("catalyst") is None]
+        tagged = [r for r in taggable if r.get("catalyst") is not None]
+        return taggable, dates, untagged, tagged
+
+    problems = []
+    print(f"# catalyst-track health, {today}\n")
+    for label, path, date_key in (("TA ", TA_LEDGER, "entry_date"),
+                                  ("ICT", ICT_LEDGER, "date")):
+        rows = _load(path)
+        taggable, dates, untagged, tagged = _scan(rows, date_key)
+        pre = len(rows) - len(taggable)
+        if not taggable:
+            print(f"{label}  no entries carry the catalyst field yet "
+                  f"({pre} pre-2026-09-11 entries excluded)")
+            print(f"      -> nothing has been written since tagging went live. "
+                  f"STALE unless the track only just started.")
+            problems.append(f"{label.strip()}: no post-feature entries at all")
+            continue
+        newest = dates[-1]
+        age = (today - datetime.date.fromisoformat(newest)).days
+        print(f"{label}  {len(taggable)} taggable entries over {len(dates)} dates "
+              f"({pre} pre-feature excluded)")
+        print(f"      newest entry {newest} ({age}d ago) | "
+              f"tagged {len(tagged)} | untagged {len(untagged)}")
+        if age > max_stale_days:
+            print(f"      -> STALE: no new entries in {age} days (limit {max_stale_days}). "
+                  f"The paper trader is not running.")
+            problems.append(f"{label.strip()}: no new entries in {age}d")
+            continue
+        overdue = sorted(r[date_key] for r in untagged
+                         if r.get(date_key)
+                         and (today - datetime.date.fromisoformat(r[date_key])).days > grace_days)
+        if overdue:
+            print(f"      -> UNTAGGED: {len(overdue)} entries from {overdue[0]} onward are "
+                  f"past the {grace_days}d grace period. Entries arrive; tagging does not run.")
+            problems.append(f"{label.strip()}: {len(overdue)} entries untagged since {overdue[0]}")
+        else:
+            print(f"      -> OK")
+        print()
+
+    if problems:
+        print("RESULT: PROBLEM -- " + "; ".join(problems))
+        print("This is a plumbing failure, not a result. Fix the routine before reading")
+        print("anything into `report`'s numbers -- an empty bucket here means the data")
+        print("never arrived, NOT that catalysts do not help.")
+        return 1
+    print("RESULT: OK -- entries are arriving and being tagged.")
+    print("Sample size is a separate question; run `report` for that.")
+    return 0
+
+
 if __name__ == "__main__":
     cmd = sys.argv[1]
     if cmd == "pending":
@@ -177,5 +273,8 @@ if __name__ == "__main__":
         tag(sys.argv[2], sys.argv[3], sys.argv[4], note)
     elif cmd == "report":
         report()
+    elif cmd == "health":
+        sys.exit(health(today=sys.argv[2] if len(sys.argv) > 2 else None))
     else:
-        print("usage: tag_catalyst.py pending DATE | tag TICKER DATE true|false|unclear [NOTE] | report")
+        print("usage: tag_catalyst.py pending DATE | tag TICKER DATE true|false|unclear [NOTE] "
+              "| report | health [DATE]")
