@@ -311,3 +311,47 @@ Consequence for existing numbers: every 6-year Alpaca backtest in
 CLAUDE.md's TA section ran through the unadjusted floor and is mega-cap-
 skewed on top of its documented survivorship bias. Not re-run; treated as
 another reason those figures are not load-bearing.
+
+## 12. Test the FEATURE before testing rules built on it — a threshold can
+##     only destroy information, never create it
+Evidence (2026-09-12, `scripts/feature_ic.py`): this project ran 26+
+binary rule variants, six confluence combinations and 180 exit-rule cells
+across roughly two weeks of work, all flat or negative. Not one of them
+asked whether the underlying continuous variables predicted anything.
+When that was finally measured — cross-sectional rank IC, within-day, per
+year, 318,505 stock-days — seven of eight features came back as noise
+that flips sign year to year, including the raw material of every setup
+being traded (distance from the 20-day high, volume ratio, RSI, EMA
+spread, relative strength).
+The ordering was backwards throughout. A rank-IC table over the features
+would have taken an afternoon and would have said, before any of the rule
+work started, that there was nothing underneath to find. Rules are how
+you HARVEST information; they cannot manufacture it. Measure the raw
+variable first, and only design a rule once something survives.
+Corollary on how to close a line of inquiry: "these 26 rules failed" is
+weak and invites variant 27. "The features carry no cross-sectional
+information in this universe" is final. Prefer the test that can produce
+the final statement.
+
+## 13. When results are consistently NEGATIVE rather than flat, look for a
+##     real effect you are on the wrong side of
+Evidence (2026-09-12): the volatility-matched sweep measured this
+project's signals at -0.23%/trade against matched peers — sign-consistent
+across halves. "No edge" predicts ~0.00%, not a persistent negative, and
+that gap went unexplained for a day.
+The feature test explained it. The one variable that IS sign-consistent
+(6/7 years, rank IC +0.0172) is 5-day reversal — recent losers outperform
+recent winners over the following week, the classic Jegadeesh/Lehmann
+short-term reversal. All five TA setups are momentum-CONTINUATION bets:
+buy what just went up. They were not edge-free, they were systematically
+positioned against a small real effect.
+The general lesson: a persistent negative is information, not just a
+disappointing zero. It means something real is happening and the position
+is backwards. Treating it as "no edge, move on" discards the one finding
+in the dataset. Ask what would have to be true for the sign to come out
+that way.
+The lesson does NOT extend to flipping the bet. The same session measured
+what fading momentum would actually earn long-only, net of costs, and it
+was +0.01%/trade with the apparent profit concentrated in the cheapest,
+widest-spread names — see CLAUDE.md. Understanding why you lost is not
+the same as having found a way to win.

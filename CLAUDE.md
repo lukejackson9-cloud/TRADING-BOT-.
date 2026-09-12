@@ -403,6 +403,78 @@ control entries / 24,867 signal entries, reported BY CALENDAR YEAR:
   the 2026-09-03/09-09 decisions; the numbers above are what it should be
   made on.
 
+**THE MECHANICAL TRACK IS NOW CLOSED PROPERLY, AND WE KNOW WHY IT FAILED
+(2026-09-12, `scripts/feature_ic.py`). READ THIS BEFORE PROPOSING ANY NEW
+TA VARIANT.**
+Every mechanical test in this file measures a BINARY RULE — breakout
+fires or it doesn't, RSI crosses 30 or it doesn't. A threshold collapses
+a whole distribution into one bit, so 26 failed rules could in principle
+sit on top of features that did carry information. That had never been
+checked. `feature_ic.py` checks it: for each continuous feature it ranks
+every qualifying stock CROSS-SECTIONALLY WITHIN EACH TRADING DAY (so
+market direction is differenced out by construction, needing no matched
+control at all) and measures rank IC and decile spread, per year, over
+318,505 stock-days / 1,467 sessions / 2020-2026.
+
+**Seven of eight features are noise — including the raw material of every
+setup this project trades.** 5-day horizon, rank IC and years-with-
+matching-sign out of 7: `dist_20d_high` -0.005 (3/7), `vol_ratio` -0.002
+(4/7), `rsi14` -0.006 (5/7), `ema_spread` -0.005 (4/7), `rel_str_20d`
+-0.008 (5/7), `mom_60d` -0.012 (5/7), `volatility_20d` -0.006 (4/7). All
+flip sign year to year. **So the binary rules were never the problem.
+There is no information underneath them to recover, and no cleverer
+threshold, combination or exit rule can create some.** This is a stronger
+and more final statement than "these 26 rules failed", and it is the
+reason not to run variant 27.
+
+**The eighth feature is the exception, and it explains the whole project's
+results.** `reversal_5d` (the negative of the trailing 5-day return, i.e.
+"has recently fallen") is sign-consistent 6/7 years at a 5-day horizon,
+rank IC +0.0172, D10-D1 +0.31%. That is short-term reversal — one of the
+oldest documented equity anomalies (Jegadeesh 1990, Lehmann 1990) — and
+it decays to noise by 10 days (5/7), exactly as the literature says it
+should. **Every one of this project's five TA setups is a momentum-
+CONTINUATION bet: buy what just went up.** At a 5-day horizon the only
+real effect in the data points the other way. That is a single coherent
+mechanism explaining why the signals measured NEGATIVE against
+volatility-matched peers (-0.23%) rather than merely flat: they were not
+edge-free, they were systematically on the wrong side of a small real
+effect. (mean_reversion is not an exception — RSI crossing UP through 30
+buys a bounce that has already begun, which is momentum again, and rsi14
+as a raw feature is noise.)
+
+**But reversal is NOT tradeable by this project, and the follow-up
+(`feature_ic.py reversal`) is why — checked before getting interested,
+not after:**
+- **Long-only kills most of it.** D10-D1 is a long-short spread and the
+  Hard Risk Rules forbid shorting. The long leg's excess over the same
+  day's average name is **+0.21%/trade**, not +0.31%.
+- **Costs eat the rest.** Breakeven round-trip cost is **21 bps**. A
+  retail market order in a liquid US name runs ~5-20 bps. Net of 20 bps
+  the excess is **+0.01%/trade** — zero. At a 5-day hold that is ~50
+  round trips a year, so cost is not a rounding error here, it is the
+  whole position.
+- **What looks profitable lives in the junk.** By price tercile the
+  excess is +0.32% (cheapest) vs +0.11% (mid) and +0.11% (dearest); by
+  volatility tercile +0.17% (highest) vs +0.08% (lowest). The effect
+  concentrates exactly where spreads are widest, which is the classic
+  signature of measuring spread rather than profit.
+- **Two of seven years are negative, and one of them is now.** 2021
+  -0.36% and **2026 -0.21%** — the current year is one where it does not
+  work.
+- **Survivorship bias cuts directly INTO this result, not against it.**
+  The universe is today's liquid tickers applied backwards, so a stock
+  that fell hard and then delisted is absent. Big 5-day losers that never
+  came back are precisely the missing observations, and precisely the
+  ones that would hurt a buy-the-losers rule. Every number above is
+  biased in this feature's favour by an amount this data cannot measure.
+**Verdict: not promoted, not paper-traded, no rule change.** It is real
+as a measurement and unavailable as a strategy. Its value is explanatory,
+not actionable: it tells us the sign of the bet was wrong, which is worth
+more than another flat backtest. Do NOT flip the setups to fade momentum
+on the strength of this — the long-only, post-cost, in-junk, this-year-
+negative numbers above are what such a strategy would actually earn.
+
 ## Trade execution & approval — updated 2026-09-07 (supersedes the old
 ## "no trade without human approval, ever" rule below for paper/demo and,
 ## eventually, live — read this whole section before touching execution)
