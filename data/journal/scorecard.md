@@ -250,6 +250,60 @@ now closed. Scope: one ~3-month regime (2024-09-11..2024-12-06), 4,438
 signal entries, 53,919 control entries, 63 of 520 intended sessions, all
 5 TA setups pooled (no per-setup breakdown yet).
 
+## Would the UPDATED council have behaved differently? Audit, 2026-09-12
+User asked whether orders could be placed when council finds a CANDIDATE,
+tested against the updated council. Two blockers made the literal test
+impossible, then a cleaner version was run instead.
+
+**Blockers**: (1) council has produced 15 verdicts, all WATCH — so
+"place orders on CANDIDATEs" would have placed ZERO orders in the
+project's entire history; there is no P&L to simulate. (2) The updated
+council (falsifiability rule, near-miss field, added 2026-09-11) **has
+never run** — verified by checking all 15 council notes for the
+`Near-miss:` field: present in 0 of 15. Every verdict predates the change.
+
+**The clean substitute, run with no hindsight**: the main teeth in the
+update is the falsifiability requirement — bear objections must be
+specific and checkable, not generic risk-raising. That can be audited
+against what was already written, using only the 15 existing notes and no
+new WebSearch (so no outcome contamination).
+
+**Result: all 15 bear cases ALREADY clear the falsifiability bar. The new
+rule would have changed zero verdicts.** Not one review rests on
+"sentiment could turn" or "valuation looks stretched" in isolation. Every
+one cites dated, sourced, checkable specifics — e.g. GTLB (consensus
+target FELL $62.30->$61.81 while the stock popped; BofA on record that no
+reacceleration is expected for 9-12 months), VRNS (second unconfirmed
+takeover rumour in under three months, Bloomberg 2026-06-23, +23%
+intraday, no deal ten weeks later; Citi target $45 BELOW the $46.76
+close), ASTS ($619K insider buy against ~$280.6M of net insider selling,
+named holders), GWRE (CFO's own statement that the outlook assumes
+attrition normalising off a record low), ASO (comps -0.4% with full-year
+comp guidance unchanged; tariff benefit "substantially complete").
+SOFI is the standout: the bear agent actively looked for insider selling,
+found net CEO BUYING, and reported that instead of manufacturing doubt —
+exactly the honesty the rule was written to enforce.
+
+**What this means:**
+- The falsifiability rule is still worth keeping — it prevents future
+  drift — but it does NOT explain the 15-for-15 streak, and adding it
+  will not produce candidates. Expected orders under "execute on council
+  CANDIDATE" remains ~zero.
+- It also eliminates one of the two live explanations for the streak.
+  "Bear wins on cheap vague objections" is now ruled out by direct
+  inspection. What remains is (a) research.md's CANDIDATEs are genuinely
+  weak, or (b) the structural rule — bull must win every point, bear
+  needs only one — produces 100% downgrades by construction.
+- (b) is now the leading hypothesis, because the counterfactual showed
+  council's rejects returned exactly the market baseline (-1.71% vs
+  -1.71%): they were not obviously terrible names, they were average
+  ones. A gate that rejects average names 15 times out of 15 is behaving
+  like a structural veto, not a discriminator.
+- The near-miss field (also added 2026-09-11, also never yet exercised)
+  is the instrument that would distinguish these — it records whether
+  bull came close. It needs live verdicts, which needs research.md to
+  produce a CANDIDATE.
+
 ## Sample size note
 With N=14 (council) and N=77 (research-level), these percentages are
 directional only, not statistically meaningful — a single additional
