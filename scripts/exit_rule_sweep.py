@@ -431,6 +431,153 @@ def volmatch(start, end):
     print("=" * 96)
 
 
+def realistic(start, end):
+    """Compare CLAUDE.md's current exit rule against volatility-realistic
+    alternatives — the "widen the stop and target" question, run properly.
+
+    WHY THE CURRENT RULE MISFIRES (measured, not asserted). Signal-day
+    20-day realised volatility across 4,504 signals: median 2.33%/day,
+    p75 3.88%, p90 6.69%. Expected move over a 5-session hold is roughly
+    vol*sqrt(5), so:
+        median name: 5.2% expected  -> a -4% stop is 0.77x that
+        p75    name: 8.7% expected  -> a -4% stop is 0.46x
+        p90    name: 15.0% expected -> a -4% stop is 0.27x
+    A stop set INSIDE one standard deviation of the move you are trying to
+    capture is not protection against being wrong, it is a near-guarantee
+    of being stopped by ordinary noise. That is the mechanical reason the
+    forward paper track logged 47 stops against 4 targets.
+
+    THE RATIO TRAP, stated up front so the comparison is not misread:
+    widening stop and target TOGETHER in proportion does NOT change the
+    break-even win rate. -4%/+8% and -8%/+16% are both 2:1, both need
+    p*2 = (1-p) -> p = 33.3%. Widening buys fewer noise stop-outs, not a
+    lower bar. Only changing the RATIO moves the bar.
+
+    THE BETTER INSTRUMENT: a flat percentage stop is the wrong tool when
+    the p90 name is 3x as volatile as the median — the same -8% means
+    "thesis broken" for one and "Tuesday" for the other. So this also
+    tests a VOLATILITY-SCALED stop: stop = k * (20d vol * sqrt(days)),
+    target = 2x the stop distance. That makes the stop mean the same
+    thing across names.
+
+    Reports ABSOLUTE return (what a trader actually banks) AND matched
+    edge vs a same-session, same-volatility-decile control (whether the
+    SIGNAL knows anything). Both, because they answer different questions
+    and yesterday's sweep showed a rule can lift the first while leaving
+    the second at zero — that is captured beta, not skill, and it is worth
+    having but must not be called an edge."""
+    series = _load_series(start, end)
+    try:
+        from backtest_ta import _spy_closes
+        spy = _spy_closes(start, end)
+    except Exception:
+        spy = None
+        print("WARNING: no SPY closes; relative_strength will not fire\n")
+
+    # (date, vol, is_signal, bars, idx)
+    entries = []
+    for ticker, bars in series.items():
+        if len(bars) < 25:
+            continue
+        sig = {i for i, _d, _s in iter_signals(bars, spy_closes=spy)}
+        for i, b in enumerate(bars):
+            date, _o, _h, _l, c, v = b
+            if not (PRICE_MIN <= c <= PRICE_MAX and v >= VOLUME_MIN):
+                continue
+            vol = _prior_vol(bars, i)
+            if vol is None or i + 1 >= len(bars):
+                continue
+            entries.append((date, vol, i in sig, bars, i))
+    print(f"{len(entries):,} entries ({sum(1 for e in entries if e[2]):,} signal)\n")
+
+    def outcome(bars, i, stop_pct, tgt_pct, ts):
+        """Per-entry thresholds, so a volatility-scaled stop can differ per
+        trade. Same conventions as _outcome: next open entry, stop assumed
+        first when a single session touches both, None if the window runs
+        off the end of the data (never counted as zero)."""
+        entry = bars[i + 1][1]
+        if entry <= 0:
+            return None
+        s, g = entry * (1 + stop_pct), entry * (1 + tgt_pct)
+        for k in range(1, ts + 1):
+            if i + k >= len(bars):
+                return None
+            _, _o, h, l, c, _v = bars[i + k]
+            if l <= s:
+                return stop_pct
+            if h >= g:
+                return tgt_pct
+            if k == ts:
+                return (c - entry) / entry
+        return None
+
+    import math
+    configs = [
+        ("CURRENT  -4% / +8%  / 5d", lambda v: (-0.04, 0.08), 5),
+        ("widened  -8% / +16% / 10d", lambda v: (-0.08, 0.16), 10),
+        ("widened -12% / +24% / 10d", lambda v: (-0.12, 0.24), 10),
+        ("ratio 1:3 -8% / +24% / 10d", lambda v: (-0.08, 0.24), 10),
+        ("vol-scaled 1.5sig, 2:1, 10d", lambda v: (-1.5 * v * math.sqrt(10), 3.0 * v * math.sqrt(10)), 10),
+        ("vol-scaled 2.0sig, 2:1, 10d", lambda v: (-2.0 * v * math.sqrt(10), 4.0 * v * math.sqrt(10)), 10),
+    ]
+
+    dates = sorted({e[0] for e in entries})
+    mid = dates[len(dates) // 2]
+    print(f"{'rule':<30}{'sig abs':>10}{'win%':>7}{'stop%':>7}{'ctl abs':>10}{'EDGE':>9}{'breakeven':>11}{'split-half':>14}")
+    print("-" * 100)
+    for label, fn, ts in configs:
+        cells = defaultdict(lambda: {"sig": [], "ctl": []})
+        by_date = defaultdict(list)
+        for e in entries:
+            by_date[e[0]].append(e)
+        for date, es in by_date.items():
+            vs = sorted(x[1] for x in es)
+            cuts = [vs[int(len(vs) * q / 10)] for q in range(1, 10)]
+            for date_, vol, is_sig, bars, i in es:
+                d = sum(1 for c in cuts if vol > c)
+                sp, tp = fn(vol)
+                r = outcome(bars, i, sp, tp, ts)
+                if r is None:
+                    continue
+                cells[(date_, d)]["sig" if is_sig else "ctl"].append((r, sp, tp))
+        sig = [x for c in cells.values() for x in c["sig"]]
+        ctl = [x for c in cells.values() for x in c["ctl"]]
+        if len(sig) < 50:
+            print(f"{label:<30}  insufficient n ({len(sig)})")
+            continue
+        diffs = []
+        for (dt, dec), c in cells.items():
+            if not c["ctl"]:
+                continue
+            cm = sum(x[0] for x in c["ctl"]) / len(c["ctl"])
+            diffs += [(dt, x[0] - cm) for x in c["sig"]]
+        sa = sum(x[0] for x in sig) / len(sig)
+        ca = sum(x[0] for x in ctl) / len(ctl)
+        win = sum(1 for x in sig if x[0] > 0) / len(sig) * 100
+        stopped = sum(1 for x in sig if abs(x[0] - x[1]) < 1e-12) / len(sig) * 100
+        edge = sum(d for _dt, d in diffs) / len(diffs) if diffs else float("nan")
+        # break-even win rate implied by this rule's average reward:risk
+        rr = (sum(x[2] for x in sig) / len(sig)) / abs(sum(x[1] for x in sig) / len(sig))
+        be = 1 / (1 + rr) * 100
+        h1 = [d for dt, d in diffs if dt < mid]
+        h2 = [d for dt, d in diffs if dt >= mid]
+        if len(h1) > 20 and len(h2) > 20:
+            e1, e2 = sum(h1) / len(h1), sum(h2) / len(h2)
+            sh = "consistent" if (e1 > 0) == (e2 > 0) else "FLIPS"
+            sh += f" {e1*100:+.1f}/{e2*100:+.1f}"
+        else:
+            sh = "thin"
+        print(f"{label:<30}{sa*100:>9.2f}%{win:>6.1f}%{stopped:>6.1f}%{ca*100:>9.2f}%{edge*100:>8.2f}%{be:>10.1f}%{sh:>14}")
+
+    print("\n" + "=" * 100)
+    print("sig abs = what the signal actually returned. ctl abs = same-session, same-vol-decile")
+    print("control. EDGE = sig minus its own matched control; only THAT is skill. breakeven =")
+    print("win rate this rule's realised reward:risk requires. stop% = share of trades stopped out.")
+    print("A rule that lifts 'sig abs' but leaves EDGE at ~0 has bought market beta, which is real")
+    print("money but is NOT evidence the signals work — size it as beta, not as an edge.")
+    print("=" * 100)
+
+
 def tweak(start, end):
     """"What if we changed the rule SLIGHTLY?" — the in-mandate version of
     the exit-rule question, and the only version this cache can answer.
@@ -744,7 +891,9 @@ if __name__ == "__main__":
     a = [x for x in sys.argv[1:] if not x.startswith("-")]
     start = a[0] if a else "2024-09-11"
     end = a[1] if len(a) > 1 else "2024-12-06"
-    if "--tweak" in sys.argv:
+    if "--realistic" in sys.argv:
+        realistic(start, end)
+    elif "--tweak" in sys.argv:
         tweak(start, end)
     elif "--per-setup" in sys.argv:
         per_setup(start, end)
