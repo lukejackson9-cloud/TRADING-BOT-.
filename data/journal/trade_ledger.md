@@ -118,15 +118,29 @@ project, every one downgraded to WATCH at council. Common threads:
 - **Why downgraded**: Morgan Stanley cut its target the same day, no
   dated catalyst inside the 2-week window, and management confirmed
   supply constraints running through 2028.
-- **How it ended (RESOLVED 2026-09-11)**: Q3 beat happened 9/2 (not 9/3 as
-  first logged); Morgan Stanley's same-day cut to $67 vs. Raymond James'
-  raise to $86 marked a real analyst split. Now (9/11): $55.20 — well
-  below both the verdict-date pop and (per an unconfirmed intermediate
-  print) an apparent post-earnings spike toward the mid-$60s that has
-  since fully faded. **Leans validated** — no dated near-term catalyst
-  ever materialized and the stock gave back the earnings pop, though the
-  exact verdict-date baseline print couldn't be pinned to a single
-  authoritative source (moderate confidence).
+- **How it ended (RESOLVED 2026-09-11, CORRECTED 2026-09-12)**: Q3 beat
+  happened 9/2 (not 9/3 as first logged); Morgan Stanley's same-day cut to
+  $67 vs. Raymond James' raise to $86 marked a real analyst split.
+  **VALIDATED — but the original resolution's price and reasoning were
+  both wrong, and are corrected here.**
+  The 09-11 pass recorded "Now (9/11): $55.20 ... the stock gave back the
+  earnings pop." $55.23 is the **2026-09-10** close. HPE actually closed
+  2026-09-11 at **$62.08** (+12.4% on the day, a new recent high), so it
+  did NOT give back the pop — it made a higher one. The pass appears to
+  have read the last settled Massive bar as "today" (Massive runs one
+  session behind, see screen.md step 0).
+  **The verdict survives the correction, for a different reason.** Graded
+  against this project's own exit rule: verdict 09-03 -> entry 09-04 open
+  $53.90, stop $51.74. That day's low was $51.50 — **the stop was hit on
+  day ONE, for -4%.** So declining the trade avoided a realised loss, and
+  "validated" stands. It was never "the story faded."
+  **This is now the project's cleanest case study of the exit rule
+  destroying a winner**: the same position that stopped out at -4% on
+  09-04 was worth **+15.2% vs. its entry** by 09-11. It ties directly to
+  the 2026-09-12 finding that a -4% stop is inside the daily noise band of
+  a volatile name (see CLAUDE.md's exit-rule sections). A future pass must
+  not cite HPE as evidence that "stale stories fade" — it is evidence that
+  a tight stop and a real uptrend can both be true at once.
 
 ### TARS — 2026-09-08, council-downgraded, PENDING
 - **What happened**: +9.1% on two real, dated, converging catalysts
