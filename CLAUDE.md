@@ -510,6 +510,36 @@ tier (the one price-derived proxy tried made results worse — see the
 confluence section), so time is the only way to get it, and the correct
 action is to wait rather than to substitute another historical test for it.
 
+**AUTOMATED HEALTH CHECK — added 2026-09-12, replaces relying on anyone
+remembering the dated check below.** `python scripts/tag_catalyst.py health`
+answers the question `report` structurally cannot: is data arriving, and is
+it being tagged? A forward-only track that silently stops collecting looks
+IDENTICAL to one patiently accumulating — both say "sample too small, keep
+going" — so `report` alone can never distinguish a working track from a
+broken one. `health` separates three states because they have different
+fixes: STALE (no new entries past 4 days — the paper trader is not running),
+UNTAGGED (entries arrive but sit at catalyst=None past a 3-day grace — the
+tagging step after it is not running), and OK. Entries predating the
+2026-09-11 feature carry no `catalyst` key and are excluded from every count,
+or this would read red forever for a reason nobody can fix. Exit code 1 on
+any problem, so the routines react without parsing text. It is called from the END OF
+`paper_trader.py run` and `ict_paper_trader.py run` themselves (`_health_banner()`),
+NOT from the routine prompts — deliberately, because a check living in a
+prompt is lost to any reword, and because the routine prompts bind to
+session_016iH5aNy36JTes3cWw5Geez and cannot be edited from another session
+anyway. In the code path it also covers a human running the script by hand.
+On failure it prints an unmissable banner telling the run to PushNotify the
+user; it does NOT change the exit code, since a non-zero exit from a run that
+actually succeeded would read as a crash and could stop the routine before it
+commits its ledger. Today's freshly-written entries are untagged at that
+moment by design (tagging runs after), which is what the grace period absorbs
+— verified it does not false-alarm on its own output, nor on a Friday entry
+checked the following Monday.
+**Read a PROBLEM result as a plumbing bug, never as evidence about
+catalysts.** An empty HAS-catalyst bucket because nothing was ever written
+is not a finding; treating it as one would be the inverse of this project's
+whole standard.
+
 **PLUMBING CHECK — 2026-09-19, and this one is not optional.** As of
 2026-09-12, **zero of 174 TA entries and zero of 14 ICT entries carry a
 populated `catalyst` field**, because the tagging was built 2026-09-11 and
