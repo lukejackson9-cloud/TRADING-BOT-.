@@ -81,10 +81,19 @@ def fetch(n=400, seed=11):
     volume — a mega-cap-only universe would be a different (and much
     easier) market than the one this project actually screens."""
     CACHE.mkdir(parents=True, exist_ok=True)
+    # Prefer the screen's investable universe (built from a fresh whole-market
+    # grouped-daily call and already price/volume filtered); fall back to a
+    # raw grouped-daily cache file if one happens to be present.
+    uni = Path("data/reference/fundamental_universe.json")
     src = Path("data/reference/backtest_cache/2026-09-10.json")
-    if not src.exists():
-        raise SystemExit(f"need {src} to pick a universe from")
-    rows = json.loads(src.read_text())["results"]
+    if uni.exists():
+        t = json.loads(uni.read_text())["tickers"]
+        rows = {k: [0, 0, 0, v["price"], v["volume"]] for k, v in t.items()}
+    elif src.exists():
+        rows = json.loads(src.read_text())["results"]
+    else:
+        raise SystemExit("no universe source — run "
+                         "`python scripts/screen_fundamental.py universe` first")
     try:
         from massive_client import get_common_stock_tickers
         cs = get_common_stock_tickers()
@@ -268,9 +277,107 @@ def run():
     print("=" * 78)
 
 
+
+def rr():
+    """Risk-reward ratios 1:4 and 1:5, tested directly. USER-REQUESTED
+    2026-09-12 — CLAUDE.md's RESEARCH PROGRAMME CLOSED section permits a
+    sweep only when the user explicitly asks, which they did.
+
+    WHAT THE GRID ALREADY SAID: exit_rule_sweep.py's --tweak swept
+    STOPS [-2,-4,-6,-8,-12,None] x TARGETS [+4,+6,+8,+12,+16,None] at 5 and
+    10 days, volatility-matched — 72 cells, of which 1:4 appears twice
+    (-2/+8 and -4/+16) and 1:5 falls between the tested 1:4 and 1:6. Zero of
+    the 72 came back positive AND sign-consistent across halves. This runs
+    the exact ratios anyway, over the full 2020-2026 cycle rather than one
+    quarter, because quoting an adjacent cell is not the same as testing
+    what was asked.
+
+    THE COLUMN THAT DECIDES IT IS `tgt%`, NOT THE AVERAGE. A "1:5" rule is
+    only a 1:5 rule if the target is actually reached. Widen the target far
+    enough on a 5-10 day hold and it is essentially never hit, so trades
+    resolve at the stop or the time stop and the REALISED ratio is whatever
+    the time stop happens to give — nothing like the nominal one. A high
+    nominal ratio lowers the break-even win rate (1:2 needs 33.3%, 1:4 needs
+    20%, 1:5 needs 16.7%), but it lowers the achieved hit rate too. Edge
+    exists only if the hit rate falls SLOWER than the break-even does; if
+    both fall together, that is precisely what no edge looks like.
+    """
+    series = _load()
+    if not series:
+        raise SystemExit("no cached data — run `fetch` first")
+    from backtest_ta import iter_signals
+    spy = series.get("SPY")
+    spy_closes = {b[0]: b[4] for b in spy} if spy else None
+
+    entries = []
+    for t, bars in series.items():
+        if len(bars) < 60:
+            continue
+        sig = {i for i, _d, _s in iter_signals(bars, spy_closes=spy_closes,
+                                               vol_min=IEX_VOLUME_MIN)}
+        for i, b in enumerate(bars):
+            date, _o, _h, _l, c, v = b
+            if not (PRICE_MIN <= c <= PRICE_MAX and v >= IEX_VOLUME_MIN):
+                continue
+            if _vol(bars, i) is None:
+                continue
+            entries.append((date, i in sig, bars, i))
+    print(f"{len(entries):,} entries ({sum(1 for e in entries if e[1]):,} signal)\n")
+
+    configs = [
+        ("CURRENT 1:2  -4% / +8%  / 5d", -0.04, 0.08, 5),
+        ("1:4 tight    -2% / +8%  / 10d", -0.02, 0.08, 10),
+        ("1:4 wide     -4% / +16% / 10d", -0.04, 0.16, 10),
+        ("1:5 tight    -2% / +10% / 10d", -0.02, 0.10, 10),
+        ("1:5 wide     -4% / +20% / 10d", -0.04, 0.20, 10),
+    ]
+    print("=" * 100)
+    print(f"{'rule':<30}{'break-even':>11}{'sig n':>8}{'sig avg':>9}{'win%':>7}"
+          f"{'tgt%':>7}{'stop%':>7}{'ctl avg':>9}{'EDGE':>8}{'yrs+':>7}")
+    print("-" * 100)
+    for label, stop, tgt, ts in configs:
+        be = abs(stop) / (abs(stop) + tgt) * 100
+        by_year = defaultdict(lambda: {"sig": [], "ctl": []})
+        hits = stops = 0
+        for date, is_sig, bars, i in entries:
+            r = _outcome(bars, i, stop, tgt, ts)
+            if r is None:
+                continue
+            by_year[date[:4]]["sig" if is_sig else "ctl"].append(r)
+            if is_sig:
+                if abs(r - tgt) < 1e-9:
+                    hits += 1
+                elif abs(r - stop) < 1e-9:
+                    stops += 1
+        sig = [x for y in by_year.values() for x in y["sig"]]
+        ctl = [x for y in by_year.values() for x in y["ctl"]]
+        if not sig or not ctl:
+            continue
+        sa, ca = sum(sig) / len(sig), sum(ctl) / len(ctl)
+        pos = sum(1 for y in by_year
+                  if by_year[y]["sig"] and by_year[y]["ctl"]
+                  and (sum(by_year[y]["sig"]) / len(by_year[y]["sig"])
+                       - sum(by_year[y]["ctl"]) / len(by_year[y]["ctl"])) > 0)
+        yrs = sum(1 for y in by_year if by_year[y]["sig"] and by_year[y]["ctl"])
+        print(f"{label:<30}{be:>10.1f}%{len(sig):>8,}{sa*100:>8.2f}%"
+              f"{sum(1 for x in sig if x>0)/len(sig)*100:>6.1f}%"
+              f"{hits/len(sig)*100:>6.1f}%{stops/len(sig)*100:>6.1f}%"
+              f"{ca*100:>8.2f}%{(sa-ca)*100:>7.2f}%{pos:>4}/{yrs}")
+    print("=" * 100)
+    print("`tgt%` is the share of signal trades that actually REACHED the target.")
+    print("A nominal 1:5 that is hit 3% of the time is not a 1:5 rule — it is a time-stop")
+    print("rule wearing one. Compare `win%` against `break-even`: a higher ratio lowers the")
+    print("bar, but it lowers the hit rate too, and edge requires the hit rate to fall")
+    print("SLOWER than the bar. EDGE is signal minus control on the identical universe;")
+    print("`yrs+` counts calendar years where it was positive. Anything under 6/7 flips.")
+    print("=" * 100)
+
+
 if __name__ == "__main__":
     cmd = sys.argv[1] if len(sys.argv) > 1 else "run"
-    if cmd == "fetch":
+    if cmd == "rr":
+        rr()
+    elif cmd == "fetch":
         fetch(int(sys.argv[2]) if len(sys.argv) > 2 else 400)
     else:
         run()
