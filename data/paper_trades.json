@@ -3053,7 +3053,11 @@
     "target_price": 23.8464,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Q2 beat-and-raise released 09-10 (confirmed by this project's 09-14 advisory research on this same move); note a meaningful part of the EPS beat was a one-time tariff refund, and sources disagree on exact reaction timing",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "AAPL",
@@ -3185,7 +3189,11 @@
     "target_price": 61.4196,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No confirmed dated catalyst found despite the bullish move; all bullish coverage found was stale by months, nothing dated to 09-11 explains it (reused from advisory research 09-11/09-14)",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "BAND",
@@ -3196,7 +3204,11 @@
     "target_price": 61.4196,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No confirmed dated catalyst found despite the bullish move; all bullish coverage found was stale by months, nothing dated to 09-11 explains it (reused from advisory research 09-11/09-14)",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "SWKS",
@@ -3482,7 +3494,11 @@
     "target_price": 38.3184,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Reused from 2026-09-14 advisory research on this same move: no fresh dated catalyst; Q3 earnings were 08-26 (stale by 09-11); move pegged to neutral RBC initiation + sector PC/AI enthusiasm, doesn't explain 8%+ jump",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "MWA",
@@ -3702,7 +3718,11 @@
     "target_price": 11.426400000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "CEO Form 4 insider buy disclosed 09-11 plus reaffirmed FY26 guidance (reused from advisory research 09-11/09-14 covering this same session's move)",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "ATEC",
@@ -3713,7 +3733,11 @@
     "target_price": 11.426400000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "CEO Form 4 insider buy disclosed 09-11 plus reaffirmed FY26 guidance (reused from advisory research 09-11/09-14 covering this same session's move)",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "FPS",
