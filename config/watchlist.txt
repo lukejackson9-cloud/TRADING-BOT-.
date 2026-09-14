@@ -186,3 +186,19 @@ SMR    # 2026-09-11: fresh -15.7% intraday move today per FMP most-active, on to
 TGB    # 2026-09-11: -10.19% on 09-10 session, Taseko Mines -- part of a possible copper/mining cluster (HBM/ERO/SCCO/CENX also moved) worth a correlation check if this or another miner reaches CANDIDATE
 TNON   # 2026-09-11: +117.2% on 09-10 session then a further +11.9% intraday today per FMP -- thin-float-style multi-day pump, verify catalyst carefully (BIAF precedent)
 ACVA   # 2026-09-11: +44.2% per FMP most-active, ACV Auctions
+
+# --- added 2026-09-14 via the daily screen routine (Massive whole-market, 2026-09-10 -> 09-11 session pair) ---
+HPE    # 2026-09-14: +12.44% on 09-11 session -- repeat ticker, has a prior council-downgraded WATCH entry (09-03, GWRE-shaped beat-then-guide-down pattern), checking Step 0 history before evaluating this fresh move
+SMR    # 2026-09-14: -15.67% on 09-11 session -- repeat (already PASS 09-11 on a UBS downgrade), checking for a distinct fresh catalyst vs. continuation; possible nuclear/SMR-sector cluster with OKLO (-9.18%) and LEU (-8.18%) also moving
+TNON   # 2026-09-14: +11.89% further on 09-11 session, still climbing -- repeat, thin-float pump persisting, re-checking (BIAF precedent)
+DBGI   # 2026-09-14: -11.63% on 09-11 session (a DIFFERENT session than the 09-10 true-tagged buyout-offer move already in the ledger) -- repeat, checking for a fresh reason for today's reversal
+BAND   # 2026-09-14: +10.17% on 09-11 session -- repeat (was PASS 09-10, no confirmed catalyst that time), checking if a real catalyst has since emerged
+ATEC   # 2026-09-14: +19.68% on 09-11 session, Alphatec Holdings
+ODD    # 2026-09-14: +14.18% on 09-11 session, Oddity Tech
+ZUMZ   # 2026-09-14: -12.93% on 09-11 session, Zumiez
+PMTS   # 2026-09-14: -16.48% on 09-11 session, CPI Card Group
+NTAP   # 2026-09-14: +8.54% on 09-11 session, NetApp
+ON     # 2026-09-14: +8.51% on 09-11 session, ON Semiconductor
+HPQ    # 2026-09-14: +8.40% on 09-11 session, HP Inc
+M      # 2026-09-14: +7.71% on 09-11 session, Macy's
+NOK    # 2026-09-14: -13.25% intraday today per FMP most-active (live 09-14 session, separate from the Massive 09-11 pair above), Nokia
