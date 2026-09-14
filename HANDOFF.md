@@ -879,3 +879,19 @@ catalysts (a convertible-note repayment; a confirmed $10.50/share Copart
 acquisition respectively) but were held at WATCH for structural reasons
 (thin-float pump pattern; upside capped at the deal price) rather than
 catalyst quality.
+
+## 2026-09-14 (daily screen): 0 CANDIDATEs, 14 tickers reviewed, 2nd quiet day running
+Massive whole-market screen (09-10->09-11 session pair) + FMP same-day
+framing. 5 of today's 14 tickers were REPEATS with real prior history
+(HPE, SMR, TNON, DBGI, BAND) -- research.md's Step 0 check worked exactly
+as designed on all five: each note explicitly cited the prior verdict and
+reasoned about continuation vs. fresh event rather than re-researching
+blind or copying the old call. Notable: SMR's screener hit was literally
+the SAME 09-11 UBS-downgrade story just resurfacing a session late in
+Massive's data -- caught and correctly not double-counted as new
+evidence. TNON's thin-float pump is now on its 3rd straight up session
+with still-unreliable price data across sources -- worth a specific
+follow-up look on the next journal check-in given how long it's been
+running. Full detail in data/research/2026-09-14/. Council's downgrade
+streak stays at 14-for-14 (2nd day running with nothing reaching council
+at all, not a new test of the calibration).
