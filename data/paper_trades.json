@@ -2925,7 +2925,11 @@
     "target_price": 106.8876,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "BMO Capital Markets initiated coverage on LULU with Underperform on 9/11/26 (genuinely new analyst action, not a routine target tweak); note the FY26 guidance cut/Q2 miss itself was reported 9/3/26, over a week earlier, so that part is stale on its own",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "REAL",
@@ -2966,7 +2970,11 @@
     "target_price": 15.4224,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Only news is a routine quarterly dividend declaration ($0.063/sh, regular cadence) - not material/new; no earnings/M&A/FDA/guidance/analyst action found for 9/11.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "UTZ",
@@ -2977,7 +2985,11 @@
     "target_price": 15.4224,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Only news is a routine quarterly dividend declaration ($0.063/sh, regular cadence) - not material/new; no earnings/M&A/FDA/guidance/analyst action found for 9/11.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "ALK",
@@ -3003,7 +3015,11 @@
     "target_price": 42.0444,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No 09-11-dated catalyst found. Stock down sharply this month; the one dated corporate event found (removal from S&P 500 effective 09-21) was announced earlier in the month and already priced in by 09-11, not new that day.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "INSM",
@@ -3044,7 +3060,11 @@
     "target_price": 56.4624,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "StockStory dated-9/11 article confirms POWI +6.3% that day, but the driver cited is sector-wide AI/chip sentiment (falling yields, Nvidia's Jensen Huang comments, Oracle cloud results) -- macro/sector, not a POWI-specific event.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "DV",
@@ -3115,7 +3135,11 @@
     "target_price": 9.8172,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated co-specific catalyst for 9/11; TripAdvisor next earnings not until 11/05, Trip.com Q2 call is 9/16 - neither in window.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "NXT",
@@ -3126,7 +3150,11 @@
     "target_price": 89.52120000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": "unclear",
+      "note": "Found a Nextracker/Nextpower Q3 earnings-beat + FY26 guidance raise (11% jump) but could not confirm it fell on/before 9/11 -- next earnings listed as Oct 22 2026, date of the cited jump is ambiguous. Not guessed.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "BBY",
@@ -3182,7 +3210,11 @@
     "target_price": 74.0772,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "10x Genomics announced AI-pathology partnership with Lunit on 9/10 (day before signal) - dated, company-specific, genuinely new business-dev news.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "PHM",
@@ -3193,7 +3225,11 @@
     "target_price": 127.72080000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": "unclear",
+      "note": "Conflicting PulteGroup signals found (a Citizens Market Outperform reiteration/$145 PT causing a 4.6% pop, vs. a separate 3.52% decline mention) with no date confirming either fell on 9/11. Inconclusive.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "ORLY",
@@ -3204,7 +3240,11 @@
     "target_price": 92.6856,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch returned only price/volume data for ORLY on 9/11 (range $85.02-86.45, down from 52-wk high); no earnings/M&A/FDA/guidance/analyst-action news item found for that date.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "CRSR",
@@ -3305,7 +3345,11 @@
     "target_price": 24.624000000000002,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": "unclear",
+      "note": "WebSearch found only generic quote/overview pages for NewAmsterdam Pharma; no dated 9/11 news item (earnings, trial data, M&A) surfaced. Inconclusive, not guessed.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "OUT",
@@ -3316,7 +3360,11 @@
     "target_price": 30.909600000000005,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": "unclear",
+      "note": "Found an analyst PT raise (~$30.83->$36.33) for OUTFRONT Media but no confirmed date tying it to 9/11 specifically; Q2 EPS miss is older news. Inconclusive.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "AXTA",
@@ -3357,7 +3405,11 @@
     "target_price": 13.5324,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Only 9/11 event found is a volatility trading halt (price action, not news); most recent substantive news is Q2 earnings from 7/23, stale.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "ULCC",
@@ -3368,7 +3420,11 @@
     "target_price": 6.0696,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 9/11 news found; most recent Frontier item is a July 2026 aircraft sale-leaseback deal, stale.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "ENOV",
@@ -3394,7 +3450,11 @@
     "target_price": 80.13600000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Confirmed next earnings report is 10/29/26, so no earnings catalyst; only a routine Jefferies price-target cut (120->100, Buy maintained) on 9/11 -- no genuinely new information",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "ROST",
@@ -3405,7 +3465,11 @@
     "target_price": 249.19920000000002,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Truist Securities raised PT to $310 (from lower) on 09-10, reiterating Buy and citing strong traffic trends/H2 outlook -- dated, company-specific analyst action one day before signal, stock gained 2.33% on 09-11 continuing the reaction.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "ETSY",
@@ -3431,7 +3495,11 @@
     "target_price": 55.177200000000006,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Oceaneering items found (Q2 revenue +10% YoY, credit facility amendment, US Navy/DIU CAMP contract, updated EBITDA guidance) all read as prior-weeks news, none dated to 9/11 specifically.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "LUV",
@@ -3442,7 +3510,11 @@
     "target_price": 42.379200000000004,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Only a routine price-target trim (Barclays 65->58, Buy maintained) on 9/11; no earnings/M&A/guidance change, no new-information analyst initiation",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "CRH",
@@ -3483,7 +3555,11 @@
     "target_price": 142.45200000000003,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": "unclear",
+      "note": "Owens Corning news found (earnings beat, updated FY26 outlook, dividend) but no source dated it to 9/11 or 9/10 specifically; could be stale. Inconclusive.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "FLNC",
@@ -3569,7 +3645,11 @@
     "target_price": 51.732,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "TEN = Tsakos Energy Navigation (tanker co., ticker changed to TEN in 2024). Its H1/Q2 2026 earnings and an Alliance Global Partners Buy reiteration both dated 09-01 -- 10 days stale by the 09-11 signal, not same-day news. No other dated event found.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "ACVA",
@@ -3625,7 +3705,11 @@
     "target_price": 25.855200000000004,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated company-specific news found for 9/11; only routine market-data/valuation metrics, no earnings/M&A/FDA/guidance/analyst-initiation event",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "LIN",
@@ -3636,7 +3720,11 @@
     "target_price": 503.5176000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No earnings, M&A, FDA, or guidance news on 9/11; only a Linde/NASA Artemis II supply-contract PR item and KeyCorp maintaining (not changing) Strong-Buy with a forward Q3 estimate -- routine, not a fresh dated catalyst",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "CRGY",
@@ -3662,7 +3750,11 @@
     "target_price": 68.742,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Stock +3.2% on 09-11 but the only analyst action found (RBC initiating Outperform, $89 PT) was dated 09-08, three trading days earlier -- stale by the signal date, not same-day news. No other dated company-specific event found.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "ABBV",
@@ -3688,7 +3780,11 @@
     "target_price": 74.628,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "OTIS paid a quarterly dividend on 9/11 but it was declared earlier (record date Aug 14) -- routine payment, not new information. Stock +1.78% on the day but underlying commentary (earnings miss, tempered outlook) is older news.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "AFL",
@@ -3714,7 +3810,11 @@
     "target_price": 90.288,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "RB Global/Ritchie Bros: only item found near the date is an insider share purchase reported ~Sep 10, which is not one of the qualifying catalyst types (earnings/M&A/FDA/guidance/material analyst action); next earnings not until Nov 5.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "ROL",
@@ -3725,7 +3825,11 @@
     "target_price": 37.5084,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 09-11 catalyst found: recent news is CalSTRS 13F stake increase (routine institutional filing, not new company info) and a consensus Hold rating; stock near 52-week low after prior Q2 earnings miss weeks earlier -- stale, not same-day news.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "INSP",
@@ -3751,7 +3855,11 @@
     "target_price": 51.678000000000004,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": "unclear",
+      "note": "Jefferies 'Buy rating' on 9/11 could not be confirmed as a fresh initiation vs. routine reiteration; no earnings (next report not until 10/6/26) or other dated catalyst found -- inconclusive",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "FEIM",
@@ -3807,7 +3915,11 @@
     "target_price": 14.223600000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": "unclear",
+      "note": "Conflicting search results on exact date of Barclays overweight/target-raise ($16->$19): one source says 9/11, another dates same action to 9/9; Baird downgrade to Neutral undated precisely. Can't confirm same-day event.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "DLB",
@@ -3833,7 +3945,11 @@
     "target_price": 40.77,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated company-specific news found for 9/11; most recent earnings (Q2 EPS miss) and analyst target changes are from August, already stale/priced in",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "AVEX",
@@ -3859,7 +3975,11 @@
     "target_price": 46.3644,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Only 09-11-dated item found is a routine ex-dividend date ($0.21, previously declared) -- mechanical, not new company information. Most recent analyst actions (Piper Sandler) were from late August, stale. No earnings/M&A/FDA/guidance news found for 09-11.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "ATEC",
@@ -3915,7 +4035,11 @@
     "target_price": 104.91120000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Q2 EPS beat and B buyback are from an earlier date already priced in; 9/11 itself was just a modest advance tracking the broader S&P 500, no fresh dated catalyst",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "FLS",
@@ -3941,7 +4065,11 @@
     "target_price": 74.0016,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Only a routine price-target cut (Wells Fargo 87->82) on 9/11; the notable +8% move was 9/10 on sector/dividend rotation, not company-specific news, and no earnings/guidance change on 9/11",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "YSS",
@@ -3952,7 +4080,11 @@
     "target_price": 8.5104,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "York Space Systems announced $187M Tomorrow.io DeepSky contract win 9/10 (day before) - dated, material, company-specific contract news.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "AXSM",
@@ -3978,7 +4110,11 @@
     "target_price": 91.81080000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Viking announced $1B share buyback authorization 9/10 (day before) - dated, material, company-specific; also floated 2nd hydrogen ship 9/11 itself (minor/PR).",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "AVT",
@@ -4019,7 +4155,11 @@
     "target_price": 81.70200000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No fresh 9/11 catalyst; Q2 earnings reported ~9/3 and BMO coverage initiated 9/9, both outside same-day/day-before window.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "ALLE",
@@ -4045,7 +4185,11 @@
     "target_price": 38.2752,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No fresh 9/11 catalyst; most recent news is 350 Park Ave JV (8/11) and Q2 earnings (8/4), both stale.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "IBM",
@@ -4086,7 +4230,11 @@
     "target_price": 12.0852,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No 09-11-dated catalyst found. Most recent dated items (volatility trading halt 09-03, $100M shelf filing 09-02, AI/robotics licensing talks in August) all predate the signal by over a week -- stale/recycled, not new company news on 09-11.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "BA",
@@ -4142,7 +4290,11 @@
     "target_price": 14.2344,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Hit a 52-week high on 09-11 but no dated company-specific news found (no earnings/M&A/FDA/guidance/analyst action) -- described as 'positive investor sentiment and robust market conditions,' i.e. pure price action, not a catalyst.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "LION",
@@ -4153,7 +4305,11 @@
     "target_price": 12.1716,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No fresh 9/11 news; only recycled August story (Anson activist push for a sale) and an older Q1 beat -- stale, not dated to this session",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "CARR",
@@ -4179,7 +4335,11 @@
     "target_price": 8.0568,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "NAT hit a 52-wk high on 9/11 but per Defense World the drivers cited are Wall Street Zen's buy->strong-buy upgrade (Sat Aug 29) and B.Riley's PT hike (Fri Aug 28) -- both ~2 weeks stale, not new 9/11 information.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "GGG",
@@ -4205,7 +4365,11 @@
     "target_price": 22.41,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Primo Brands (PRMB): most recent analyst action found is a Barclays Buy rating from Sep 4 2026 (~1 week stale by 9/11); Q2 earnings (net sales +3.8%) also older. Nothing dated to 9/11.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "AENT",
@@ -4246,6 +4410,10 @@
     "target_price": 8.370000000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "MKDWELL reported quarterly earnings ~9/8-9/10/26 (EPS -0.82) and announced a new $100M at-the-market share offering with Maxim Group dated 9/10-9/11/26 -- a real, dated, company-specific catalyst combo (earnings + material capital-raise news) explaining the outsized move",
+      "tagged_on": "2026-09-11"
+    }
   }
 ]
