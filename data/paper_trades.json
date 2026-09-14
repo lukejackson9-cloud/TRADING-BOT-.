@@ -2910,7 +2910,11 @@
     "target_price": 121.10040000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "WebSearch: Cisco announced a new quantum-networking strategic partnership on 9/11 plus reiterated AI-infrastructure order strength, cited as the driver of that day's 4.37% jump - dated, company-specific.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "LULU",
@@ -2976,7 +2980,11 @@
     "target_price": 44.452799999999996,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Analyst price-target cuts (Raymond James/TD Cowen/UBS) dated to August 2026, not 09-11; no new dated company-specific event found for that day (WebSearch, 2026-09-11)",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "TAP",
@@ -3009,7 +3017,11 @@
     "target_price": 16.221600000000002,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Q2 earnings: EPS beat driven largely by one-time tariff refund, comps missed -- soft underneath print (advisory research, confirmed 2026-09-11)",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "POWI",
@@ -3031,7 +3043,11 @@
     "target_price": 14.482800000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch: Nielsen's acquisition of DoubleVerify predates 9/11 (deal references Aug 5 VWAP), already priced in near the 3.60 deal price; no new dated development confirmed on 9/11 itself.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "ALGM",
@@ -3042,7 +3058,11 @@
     "target_price": 39.214800000000004,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No specific news or dated catalyst found for 09-11, only routine price/analyst-rating data (WebSearch, 2026-09-11)",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "M",
@@ -3068,7 +3088,11 @@
     "target_price": 358.8516,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Unveiled $1,999 foldable iPhone Duo, first foldable iPhone -- shares +1.75% close (+3.6% intraday); Morgan Stanley est. ~$14B Dec-qtr revenue contribution (WebSearch: Yahoo Finance/Fool, 2026-09-11)",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "TRIP",
@@ -3101,7 +3125,11 @@
     "target_price": 98.06400000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No new dated catalyst on 09-11; stock near 52-wk high on continued momentum from an earlier (pre-09-11) fiscal 2027 guidance raise, dividend ex-date is Sep 17 (future), not a same-day event",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "CRDO",
@@ -3112,7 +3140,11 @@
     "target_price": 175.986,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch: Q1FY27 earnings were Sept 1 (10 trading days prior, stale/priced in); BofA PT cut (40->75, kept Buy) not confirmed dated 9/11, reads as lagging follow-through not new info.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "AER",
@@ -3123,7 +3155,11 @@
     "target_price": 152.82000000000002,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated company-specific news found for 09-11; most recent material news (787 order, Q2 beat, dividend) dated 2026-07-31, already stale (WebSearch, 2026-09-11)",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "TXG",
@@ -3167,7 +3203,11 @@
     "target_price": 14.6232,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch: no dated catalyst found for 9/11 despite a +7.7% move; last earnings (Aug 6) and Barclays PT hike (Aug 10) are over a month stale.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "ASO",
@@ -3178,7 +3218,11 @@
     "target_price": 59.7888,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Q2 beat-and-raise, adjusted EPS $2.31 vs $2.08-2.09 est (advisory research, confirmed 2026-09-11)",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "BAND",
@@ -3219,7 +3263,11 @@
     "target_price": 95.418,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "China SAMR antitrust review of Skyworks-Qorvo merger reached final Phase III stage, confirmed by CEO ~09-10, still driving price action into 09-11 -- corroborated independently by this project's own 2026-09-11 advisory research note on SWKS.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "TMUS",
@@ -3263,7 +3311,11 @@
     "target_price": 36.8928,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No catalyst dated to 09-11/09-10; most recent news is 2027 Color of the Year announcement on Sep 8 (3 days prior) and AkzoNobel merger developments from Aug 5/Aug 31, all stale relative to the signal date",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "ANET",
@@ -3274,7 +3326,11 @@
     "target_price": 215.55720000000002,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": "unclear",
+      "note": "Stock +5.6% on 09-11 but WebSearch found no specific dated company-news trigger, only pre-existing AI-demand narrative and valuation commentary -- inconclusive whether a real same-day catalyst exists (WebSearch, 2026-09-11)",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "XHLD",
@@ -3307,7 +3363,11 @@
     "target_price": 20.822400000000002,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch: eCential Robotics acquisition reported only as 'early September', not confirmed dated 9/10 or 9/11; 52-week-low hit on 9/11 is price action, not a catalyst; BMO PT cut date unconfirmed.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "MCHP",
@@ -3340,7 +3400,11 @@
     "target_price": 78.58080000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch: no new dated catalyst on 9/11; Bernstein only maintained (not changed) its Hold rating that day, and the Argus PT raise / Remitly partnership news are from earlier in September (stale).",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "OII",
@@ -3373,7 +3437,11 @@
     "target_price": 95.634,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "WebSearch: Morgan Stanley resumed coverage on CRH at Overweight specifically dated 9/11/2026 - a material, dated analyst action; stock outperformed its index that day.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "DECK",
@@ -3384,7 +3452,11 @@
     "target_price": 87.7716,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch: no dated catalyst found for 9/11; next earnings still upcoming (estimates only), stock has been drifting down on no specific news.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "OC",
@@ -3428,7 +3500,11 @@
     "target_price": 18.813600000000005,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch: no dated 9/11 news found; only stale August analyst-initiation coverage (Bernstein Buy, etc.) turned up.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "CALY",
@@ -3439,7 +3515,11 @@
     "target_price": 16.696800000000003,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No catalyst dated to 09-11/09-10; Q2 earnings were Aug 4 and most recent analyst target raise (Truist) was Sep 1, both too stale to explain a 09-11 signal",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "COCO",
@@ -3450,7 +3530,11 @@
     "target_price": 56.1708,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch: no dated 9/11 catalyst; last earnings beat was prior quarter (not day-of/day-before), only routine price-action context found.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "TEN",
@@ -3472,7 +3556,11 @@
     "target_price": 11.2428,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Copart $10.50/share cash acquisition of ACV Auctions announced -- M&A catalyst (advisory research, confirmed 2026-09-11)",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "ACVA",
@@ -3483,7 +3571,11 @@
     "target_price": 11.2428,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Copart $10.50/share cash acquisition of ACV Auctions announced -- M&A catalyst (advisory research, confirmed 2026-09-11)",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "HPQ",
@@ -3531,7 +3623,11 @@
     "target_price": 15.8328,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch: no dated 9/11 news found; results only returned stale Apr/May 2026 analyst/ownership notes and general company data.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "SHAK",
@@ -3553,7 +3649,11 @@
     "target_price": 277.68960000000004,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Phase III LUNA trial positive results for atogepant (menstrual migraine); HSBC raised PT to $315 same day; shares +1.6% (WebSearch: ad-hoc-news/Trefis, 2026-09-11)",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "OTIS",
@@ -3575,7 +3675,11 @@
     "target_price": 124.50240000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst found; dividend already paid 09-01 (ex-div 08-19), next earnings not until 2026-10-27, +0.71% move with no news cited (WebSearch, 2026-09-11)",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "RBA",
@@ -3652,7 +3756,11 @@
     "target_price": 6.4044,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Early convertible-note repayment removing dilution overhang, continuing from prior session's story -- confirmed by this project's own research (which separately flags the price action as a BIAF-style thin-float pump, but a real catalyst does exist).",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "VFC",
@@ -3674,7 +3782,11 @@
     "target_price": 69.6384,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch: no dated 9/11 news; most recent material item is the Marc Whitten CEO transition announced Aug 27, over 2 weeks stale.",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "LINE",
@@ -3696,7 +3808,11 @@
     "target_price": 17.3664,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": "unclear",
+      "note": "No dated 09-11 catalyst found; prior events (Air Force contract, Apr IPO, Aug 12 BlackSea acquisition) are all older, and 'late Aug/early Sep' lawsuit notices are too vague to date",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "SHOO",
@@ -3803,7 +3919,11 @@
     "target_price": 238.41000000000003,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 09-11/09-10 catalyst found; only general analyst sentiment and Q2 (already-reported) revenue growth commentary, nothing new",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "VIK",
@@ -3825,7 +3945,11 @@
     "target_price": 107.60040000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst on/near 09-11; only news found is a routine dividend with ex-date Sep 9 (2 days prior), not a material event",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "AVT",
@@ -3836,7 +3960,11 @@
     "target_price": 107.60040000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst on/near 09-11; only news found is a routine dividend with ex-date Sep 9 (2 days prior), not a material event",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "VSXY",
@@ -3858,7 +3986,11 @@
     "target_price": 165.618,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Only found conference appearance (CEO at Vertical Research Partners conf) and routine dividend/analyst-estimate update -- no earnings/M&A/FDA/guidance event dated 09-11 (WebSearch, 2026-09-11)",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "VNO",
@@ -3913,7 +4045,11 @@
     "target_price": 227.286,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Boeing awarded a $13.4B Air Force contract modification on September 11, 2026 -- dated, material, company-specific",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "BLDR",
@@ -3924,7 +4060,11 @@
     "target_price": 65.1996,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": "unclear",
+      "note": "Coverage found (earnings miss/cautious outlook, Digs Series A/AI partnership) is not clearly dated to 09-11 or 09-10 -- could be recycled from an earlier earnings report; inconclusive",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "CNC",
@@ -3935,7 +4075,11 @@
     "target_price": 71.73360000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "BofA raised Centene price target to $80 from $78 specifically on September 11, 2026 -- dated, material analyst action with new information",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "SFL",
@@ -3968,7 +4112,11 @@
     "target_price": 62.0568,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated company-specific catalyst on 09-11; only routine analyst price-target overview (MarketBeat), no new action or event",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "NAT",
@@ -4012,7 +4160,11 @@
     "target_price": 6.9336,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "FY2026 earnings call held 2026-09-10: revenue +8% to $1.15B, gross margin +80bps -- stock +27.8% on 09-11 reaction (WebSearch: Timothy Sykes/Yahoo, 2026-09-11)",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "AENT",
@@ -4023,7 +4175,11 @@
     "target_price": 6.9336,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "FY2026 earnings call held 2026-09-10: revenue +8% to $1.15B, gross margin +80bps -- stock +27.8% on 09-11 reaction (WebSearch: Timothy Sykes/Yahoo, 2026-09-11)",
+      "tagged_on": "2026-09-11"
+    }
   },
   {
     "ticker": "MKDW",
