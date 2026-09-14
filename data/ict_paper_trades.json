@@ -192,5 +192,17 @@
       "note": "dated analyst action today (Piper Sandler rating shift) plus a same-window Reuters report on Intel-backed Altera's IPO -- real, dated, company-specific",
       "tagged_on": "2026-09-11"
     }
+  },
+  {
+    "date": "2026-09-14",
+    "symbol": "AMZN",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Amazon paused operations with cargo partner 21 Air on 09-13/09-14 following a fatal incident -- a real, dated, company-specific operational event; also coincides with a broader AI-slowdown selloff hitting big tech that day (sector-wide, not the specific driver)",
+      "tagged_on": "2026-09-14"
+    }
   }
 ]
