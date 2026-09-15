@@ -204,5 +204,137 @@
       "note": "Amazon paused operations with cargo partner 21 Air on 09-13/09-14 following a fatal incident -- a real, dated, company-specific operational event; also coincides with a broader AI-slowdown selloff hitting big tech that day (sector-wide, not the specific driver)",
       "tagged_on": "2026-09-14"
     }
+  },
+  {
+    "date": "2026-09-15",
+    "symbol": "META",
+    "setup": "fvg",
+    "direction": "bearish",
+    "return_r": 0.08577036310107765,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "JPMorgan upgraded META to Overweight citing early Muse AI performance -- a real rating change (not just a PT tweak), material and dated",
+      "tagged_on": "2026-09-15"
+    }
+  },
+  {
+    "date": "2026-09-15",
+    "symbol": "META",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": -0.2824501701507031,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "JPMorgan upgraded META to Overweight citing early Muse AI performance -- a real rating change (not just a PT tweak), material and dated",
+      "tagged_on": "2026-09-15"
+    }
+  },
+  {
+    "date": "2026-09-15",
+    "symbol": "META",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "JPMorgan upgraded META to Overweight citing early Muse AI performance -- a real rating change (not just a PT tweak), material and dated",
+      "tagged_on": "2026-09-15"
+    }
+  },
+  {
+    "date": "2026-09-15",
+    "symbol": "TSLA",
+    "setup": "order_block",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 09-14/09-15 catalyst found -- Roadster announcement (Oct 1 future event), Vietnam subsidiary, and market-share narrative all read as background/analysis, not a fresh same-day trigger",
+      "tagged_on": "2026-09-15"
+    }
+  },
+  {
+    "date": "2026-09-15",
+    "symbol": "TSLA",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 09-14/09-15 catalyst found -- Roadster announcement (Oct 1 future event), Vietnam subsidiary, and market-share narrative all read as background/analysis, not a fresh same-day trigger",
+      "tagged_on": "2026-09-15"
+    }
+  },
+  {
+    "date": "2026-09-15",
+    "symbol": "XOM",
+    "setup": "nypm",
+    "direction": "bearish",
+    "return_r": 0.006993006993000877,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No fresh dated catalyst -- Barclays REAFFIRMED (not changed) its rating 09-10 (stale), OPEC demand-forecast cut is industry-wide not XOM-specific, dividend record date 09-10 is routine/stale",
+      "tagged_on": "2026-09-15"
+    }
+  },
+  {
+    "date": "2026-09-15",
+    "symbol": "DIS",
+    "setup": "order_block",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Real corporate restructuring: ~1,000 job cuts (marketing division consolidation) under new CEO Josh D'Amaro, plus a Barclays PT raise to $135 -- dated, company-specific actions, though exact announcement date fuzzy in sources",
+      "tagged_on": "2026-09-15"
+    }
+  },
+  {
+    "date": "2026-09-15",
+    "symbol": "DIS",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Real corporate restructuring: ~1,000 job cuts (marketing division consolidation) under new CEO Josh D'Amaro, plus a Barclays PT raise to $135 -- dated, company-specific actions, though exact announcement date fuzzy in sources",
+      "tagged_on": "2026-09-15"
+    }
+  },
+  {
+    "date": "2026-09-15",
+    "symbol": "CRM",
+    "setup": "fvg",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": "unclear",
+      "note": "Cantor Fitzgerald raised PT to $300 from $250 (Overweight) -- real analyst action but exact date not confirmed as 09-14/09-15 specifically vs slightly earlier; Fin/Intercom acquisition close (09-10) is 5 days stale",
+      "tagged_on": "2026-09-15"
+    }
+  },
+  {
+    "date": "2026-09-15",
+    "symbol": "CRM",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": "unclear",
+      "note": "Cantor Fitzgerald raised PT to $300 from $250 (Overweight) -- real analyst action but exact date not confirmed as 09-14/09-15 specifically vs slightly earlier; Fin/Intercom acquisition close (09-10) is 5 days stale",
+      "tagged_on": "2026-09-15"
+    }
+  },
+  {
+    "date": "2026-09-15",
+    "symbol": "INTC",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Dominant driver is the SAME sector-wide AI-safety-warning-driven chip selloff already documented in today's daily screen (Amodei/Altman weekend essays) -- not company-specific; Piper Sandler Neutral initiation was 09-10, 5 days stale",
+      "tagged_on": "2026-09-15"
+    }
   }
 ]
