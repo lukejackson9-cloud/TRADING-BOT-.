@@ -202,3 +202,35 @@ ON     # 2026-09-14: +8.51% on 09-11 session, ON Semiconductor
 HPQ    # 2026-09-14: +8.40% on 09-11 session, HP Inc
 M      # 2026-09-14: +7.71% on 09-11 session, Macy's
 NOK    # 2026-09-14: -13.25% intraday today per FMP most-active (live 09-14 session, separate from the Massive 09-11 pair above), Nokia
+
+# --- added 2026-09-15 via the daily screen routine (Massive whole-market, 2026-09-11 -> 09-14 session pair) ---
+# TWO large correlated clusters today, both traced to ONE shared root cause via WebSearch
+# (a weekend AI-safety essay from Anthropic's Dario Amodei + Sam Altman's warnings about
+# losing control of AI, 2026-09-13/14): money rotated OUT of AI-buildout-exposed hardware
+# (optical/semis) and INTO defensive cybersecurity. Full research.md done only on the
+# clearest candidates for an independent angle on top of the shared macro story; the rest
+# noted compactly since the cause is identical and well-sourced, not independently derived.
+PANW   # 2026-09-15: +13.09-13.81%, cybersecurity/AI-safety rotation cluster leader -- full research
+CRWD   # 2026-09-15: +13.85-15.42%, cybersecurity/AI-safety rotation cluster, largest single mover -- full research
+GLW    # 2026-09-15: -13.70-13.74%, has ITS OWN distinct catalyst (a $2B dilutive at-the-market equity offering, disclosed Friday) on top of the sector selloff -- full research
+COHR   # 2026-09-15: -12.73%, optical/semi decline cluster, checking for any independent angle -- full research
+RPD    # 2026-09-15: +24.05%, cybersecurity/AI-safety rotation cluster -- CORRELATED with PANW/CRWD, no independent research done
+ZS     # 2026-09-15: +16.52%, cybersecurity/AI-safety rotation cluster -- CORRELATED with PANW/CRWD
+TENB   # 2026-09-15: +16.51%, cybersecurity/AI-safety rotation cluster -- CORRELATED with PANW/CRWD
+RBRK   # 2026-09-15: +15.64%, cybersecurity/AI-safety rotation cluster -- CORRELATED with PANW/CRWD
+SAIL   # 2026-09-15: +15.31%, cybersecurity/AI-safety rotation cluster -- CORRELATED with PANW/CRWD
+QLYS   # 2026-09-15: +15.06%, cybersecurity/AI-safety rotation cluster -- CORRELATED with PANW/CRWD
+S      # 2026-09-15: +14.48%, cybersecurity/AI-safety rotation cluster (SentinelOne) -- CORRELATED with PANW/CRWD
+OKTA   # 2026-09-15: +11.98%, cybersecurity/AI-safety rotation cluster -- CORRELATED with PANW/CRWD
+TER    # 2026-09-15: -13.30%, optical/semi decline cluster -- CORRELATED with GLW/COHR
+MXL    # 2026-09-15: -13.12%, optical/semi decline cluster -- CORRELATED with GLW/COHR
+MTSI   # 2026-09-15: -12.83%, optical/semi decline cluster -- CORRELATED with GLW/COHR
+SMTC   # 2026-09-15: -12.07%, optical/semi decline cluster -- CORRELATED with GLW/COHR
+TYRA   # 2026-09-15: +13.80% -- repeat ticker (3rd appearance: WATCH 09-08, PASS 09-10 after Phase 2 readout resolved) -- checking Step 0 history for a genuinely new reason
+BAND   # 2026-09-15: -13.89% -- repeat ticker (PASS 09-10 and 09-14, no confirmed catalyst either time), now REVERSING direction -- checking Step 0
+AEHR   # 2026-09-15: -11.95% -- repeat ticker (WATCH 09-04, later resolved as a "cost a winner" +69% miss on the sell-the-news pattern, logged as a lessons.md #1 counter-example) -- checking Step 0 carefully given that history
+AEHL   # 2026-09-15: -22.28% -- repeat ticker (PASS 09-03, "recycled Bitcoin-treasury narrative, 3rd+ time this year") -- checking Step 0
+VIAV   # 2026-09-15: -12.72% -- repeat ticker (WATCH low confidence 09-09, no dated catalyst confirmed) -- checking Step 0
+NTSK   # 2026-09-15: +15.65% -- repeat ticker (appeared in the 09-11 catalyst-tag batch, tagged false -- no dated news found then) -- checking Step 0
+ARQQ   # 2026-09-15: -18.75%, Arqit Quantum -- new, real quantum-computing theme
+RBLX   # 2026-09-15: +12.73%, Roblox -- new
