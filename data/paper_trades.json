@@ -4781,7 +4781,11 @@
     "target_price": 40.2948,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated company-specific catalyst found for 9/14; analyst notes were stale (Citi Hold 9/9, RBC Buy 9/3), no earnings/M&A/FDA/guidance news that day.",
+      "tagged_on": "2026-09-14"
+    }
   },
   {
     "ticker": "KD",
@@ -4803,7 +4807,11 @@
     "target_price": 336.46320000000003,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "WebSearch: Aon launched a 7-part, ~$13.5B bond sale on 9/14/2026 to fund the USI acquisition, and TD Cowen raised its price target to $420 same day -- dated, company-specific M&A-financing catalyst.",
+      "tagged_on": "2026-09-14"
+    }
   },
   {
     "ticker": "AUR",
@@ -4814,7 +4822,11 @@
     "target_price": 6.976800000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch: no news dated 9/14; Morgan Stanley PT raise to $18 was 9/11, outside the day-of/day-before window.",
+      "tagged_on": "2026-09-14"
+    }
   },
   {
     "ticker": "CLDX",
@@ -4917,7 +4929,11 @@
     "target_price": 12.063600000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch: only sector-wide AI-stock selloff news (Amodei/Altman AI-pacing warnings, semis down) on 9/14; no company-specific C3.ai news found.",
+      "tagged_on": "2026-09-14"
+    }
   },
   {
     "ticker": "ROKU",
@@ -4961,7 +4977,11 @@
     "target_price": 360.97920000000005,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch: no dated 9/14 catalyst, only routine price movement; next earnings Nov 11, 2026.",
+      "tagged_on": "2026-09-14"
+    }
   },
   {
     "ticker": "BWIN",
@@ -5020,7 +5040,11 @@
     "target_price": 412.02000000000004,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch: no dated 9/14 catalyst; TD Cowen Buy reiteration and competitor-trial-failure concern are not new/dated to that day.",
+      "tagged_on": "2026-09-14"
+    }
   },
   {
     "ticker": "TXG",
@@ -5094,7 +5118,11 @@
     "target_price": 73.1592,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch: Alcon's Q2 earnings beat/outlook raise was ~9/11, 3 days before signal date; no new dated news on 9/14 itself, stale by definition.",
+      "tagged_on": "2026-09-14"
+    }
   },
   {
     "ticker": "SION",
@@ -5116,7 +5144,11 @@
     "target_price": 9.622800000000002,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch: no news dated 9/14; last earnings was Aug 5, 2026, well outside the window.",
+      "tagged_on": "2026-09-14"
+    }
   },
   {
     "ticker": "SHW",
@@ -5138,7 +5170,11 @@
     "target_price": 14.742,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch: no news found for 9/14; next earnings not until Nov 10, 2026.",
+      "tagged_on": "2026-09-14"
+    }
   },
   {
     "ticker": "T",
@@ -5237,7 +5273,11 @@
     "target_price": 23.220000000000002,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Department of War announced 50M committed investment in Elmet (tungsten supply chain), press release dated 2026-09-14; shares up ~48% premarket -- genuine dated, company-specific catalyst.",
+      "tagged_on": "2026-09-14"
+    }
   },
   {
     "ticker": "ELMT",
@@ -5248,7 +5288,11 @@
     "target_price": 23.220000000000002,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Department of War announced 50M committed investment in Elmet (tungsten supply chain), press release dated 2026-09-14; shares up ~48% premarket -- genuine dated, company-specific catalyst.",
+      "tagged_on": "2026-09-14"
+    }
   },
   {
     "ticker": "GMED",
@@ -5281,7 +5325,11 @@
     "target_price": 9.050400000000002,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch: no news dated 9/14; most recent items are Aug 17 guidance raise and Sep 10 annual-meeting notice, both stale.",
+      "tagged_on": "2026-09-14"
+    }
   },
   {
     "ticker": "ALLT",
@@ -5292,7 +5340,11 @@
     "target_price": 9.050400000000002,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch: no news dated 9/14; most recent items are Aug 17 guidance raise and Sep 10 annual-meeting notice, both stale.",
+      "tagged_on": "2026-09-14"
+    }
   },
   {
     "ticker": "FND",
@@ -5413,7 +5465,11 @@
     "target_price": 36.774,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "7.22% move but cited news (DHA contract 8/11, AWS partner expansion 8/4) is stale/recycled, not a dated event on or the day before 9/14.",
+      "tagged_on": "2026-09-14"
+    }
   },
   {
     "ticker": "EFOR",
@@ -5424,7 +5480,11 @@
     "target_price": 36.774,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "7.22% move but cited news (DHA contract 8/11, AWS partner expansion 8/4) is stale/recycled, not a dated event on or the day before 9/14.",
+      "tagged_on": "2026-09-14"
+    }
   },
   {
     "ticker": "GENB",
@@ -5512,7 +5572,11 @@
     "target_price": 66.5064,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Only news is a routine dividend declaration ($0.543, ex-date 9/25), not a material catalyst; no earnings/M&A/FDA/guidance event found for 9/14.",
+      "tagged_on": "2026-09-14"
+    }
   },
   {
     "ticker": "CL",
@@ -5589,7 +5653,11 @@
     "target_price": 86.0976,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Move driven by sector-wide oil tanker rate story (Middle East shipping risk) plus generic technical/algo commentary, not a company-specific dated event; next earnings not until 11/11.",
+      "tagged_on": "2026-09-14"
+    }
   },
   {
     "ticker": "CLOV",
@@ -5663,7 +5731,11 @@
     "target_price": 8.8884,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": "unclear",
+      "note": "WebSearch found an RBC Capital downgrade tied to Pharvaris competitive concerns, but no confirmed date placing it on 9/13 or 9/14 -- inconclusive.",
+      "tagged_on": "2026-09-14"
+    }
   },
   {
     "ticker": "RDDT",
@@ -5729,7 +5801,11 @@
     "target_price": 13.0896,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No company-specific news found for 9/14; only routine price/quote data and general Q3 performance context, nothing dated to that day.",
+      "tagged_on": "2026-09-14"
+    }
   },
   {
     "ticker": "SVV",
@@ -5777,7 +5853,11 @@
     "target_price": 5.778,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch: only a routine quarterly dividend declaration (ex-date 9/29), not a material catalyst.",
+      "tagged_on": "2026-09-14"
+    }
   },
   {
     "ticker": "BLSH",
@@ -5788,6 +5868,10 @@
     "target_price": 40.629599999999996,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "WebSearch: Compass Point upgraded Bullish (BLSH) to Buy on 9/14/2026, lifting price target ~45%, citing Bitcoin rebound and the Senate's CLARITY Act floor vote -- dated, material analyst action with new information.",
+      "tagged_on": "2026-09-14"
+    }
   }
 ]
