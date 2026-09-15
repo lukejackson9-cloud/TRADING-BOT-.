@@ -924,3 +924,28 @@ structurally the same pattern as TARS's 09-08 downgrade (lessons.md #1).
 Full files: data/research/2026-09-15/ABBV*.md (research, technical,
 correlation, bull, bear, council). Ledger entry added to
 data/journal/trade_ledger.md.
+
+## 2026-09-15 (daily screen): 0 CANDIDATEs, 3rd quiet day running -- two large correlated clusters identified and correctly handled
+Massive whole-market screen (09-11->09-14 session pair) turned up two
+large sector-wide clusters (10 cybersecurity names up, 6 optical/semi
+names down) that both traced back to ONE shared macro cause via
+WebSearch: a weekend AI-safety essay from Anthropic's Dario Amodei plus
+Sam Altman's AI-risk warnings (09-13/14) rotated money out of
+AI-buildout hardware and into defensive cybersecurity. Rather than
+researching all 22 cluster names individually, did full research.md
+passes on the 4 most informative (PANW/CRWD as cyber leaders, GLW/COHR
+as decline leaders) and noted the other 18 compactly with the shared,
+verified cause -- efficient without skipping the "check ticker identity/
+correlation" step screen.md requires.
+
+Also researched 6 repeat tickers with Step 0 history checks (TYRA, BAND,
+AEHR, AEHL, VIAV, NTSK) plus 2 new names (ARQQ, RBLX). Notable: AEHR
+(the project's one documented "cost a winner" miss, +69% from 09-04) got
+extra scrutiny given that history -- confirmed today's move is a pullback
+from the real all-time high the miss was about, not fresh news, so PASS
+was the right call rather than either ignoring the prior miss or
+overcorrecting from it.
+
+0 CANDIDATEs, 3rd day running with nothing reaching the new 4-role
+council since it was built yesterday. Full detail in
+data/research/2026-09-15/.
