@@ -191,6 +191,43 @@ project, every one downgraded to WATCH at council. Common threads:
   since the verdict (9/9 earnings pop, 9/10 verdict); no confirmed 9/10 or
   9/11 close was found. Re-check in a few more days.
 
+### ABBV — 2026-09-15, council-downgraded (first review under the expanded 4-role council), PENDING
+- **What happened**: +3.8-4.4% over 9/9-9/15 on four largely independent
+  real catalysts — a positive Phase 3 LUNA readout for atogepant
+  (p<0.0001 primary + all 8 secondaries), the Apogee Therapeutics
+  acquisition CLOSING (not just announced), an HSBC upgrade to $315 on a
+  falsifiable 2027 guidance-raise thesis, and Skyrizi/Rinvoq independently
+  guided >20% combined 2026 growth. Originally sourced from a mechanical
+  TA paper-trade catalyst-tag check on 2026-09-11 (see CLAUDE.md's
+  catalyst-tagging track), then given a real research.md pass.
+- **First real test of the 4-role council** (Technical Context +
+  Correlation & Macro specialists added 2026-09-15, see CLAUDE.md). Both
+  specialists caught something the original 2-role council would have
+  missed or under-weighted:
+  - **Technical**: not a fresh breakout — an unresolved retest of
+    AbbVie's own ALL-TIME closing high ($265.97, 8/19), which already
+    produced a real reversal ("pivot top" sell signal, independently
+    sourced) five weeks ago, on volume too thin (+13.8%) to signal
+    conviction. The bear agent caught that the technical specialist's own
+    framing ("20-day high") undersold this — it's the stock's ATH, not
+    just a recent range boundary.
+  - **Correlation**: a real, confirmed sector-wide healthcare rally
+    (XLV +3.3%/5 sessions, XBI near 52-wk highs, peer Merck's own Phase 3
+    win same week) dilutes how independent the catalyst stack really is,
+    even though `correlation_flag` was "none" for direct portfolio
+    overlap (no open pharma/healthcare idea existed to conflict with).
+- **Why downgraded**: The bull case was itself only self-rated "moderate,
+  not strong" and explicitly conceded the decisive open question ("found
+  nothing suggesting $266.88 clears this time rather than failing again
+  as in August"). Structurally identical to TARS's 09-08 downgrade
+  (lessons.md #1: entry at an all-time high right after catalysts have
+  already fired) — not a rejection of the fundamentals, a statement that
+  the entry point is a retest of a level that already failed once, on
+  weak confirming volume, riding a real sector tailwind.
+- **Outcome**: PENDING — re-check whether ABBV actually clears $266.88 on
+  real volume without giving it back, which per the council file would be
+  "a materially different, re-checkable setup."
+
 ---
 
 ## Appendix: every other researched ticker (WATCH/PASS, never reached council)

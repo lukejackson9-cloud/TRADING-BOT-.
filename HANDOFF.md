@@ -895,3 +895,32 @@ follow-up look on the next journal check-in given how long it's been
 running. Full detail in data/research/2026-09-14/. Council's downgrade
 streak stays at 14-for-14 (2nd day running with nothing reaching council
 at all, not a new test of the calibration).
+
+## 2026-09-15: Built the 4-role council expansion, ran it for real on ABBV
+User asked to build the specialist-council expansion deferred since
+09-11 ("a single strategy alone will not help us win trades, it needs
+multiple alongside news"). skills/council.md now has 4 roles: Technical
+Context specialist + Correlation & Macro specialist (both new,
+non-argumentative fact-reporters) running before the existing bull/bear
+pair. Explicitly documented in CLAUDE.md as adding rigor, not loosening
+the 09-03 calibration freeze -- a matching mechanical TA/ICT signal is
+never treated as adding confidence, per the "Signal confluence testing"
+section's own findings.
+
+**First real test**: researched 7 tickers from the 09-11 catalyst-tag
+true-list (AAPL, ABBV, BA, CSCO, TXG, VIK, YSS) with a proper research.md
+pass. Only ABBV reached CANDIDATE. Ran the new council on it -- both
+specialists caught something real: the Technical specialist found the
+move is an unresolved retest of AbbVie's own ALL-TIME HIGH (not just a
+"20-day high"), and the Correlation specialist confirmed a genuine
+sector-wide healthcare rally diluting the catalyst's independence. The
+bear agent then independently verified and sharpened the technical
+specialist's own framing -- a good sign the roles are doing real
+cross-checking, not rubber-stamping each other. Moderator verdict:
+**WATCH**, not CANDIDATE -- the bull case (itself only self-rated
+"moderate") explicitly conceded the decisive open question. This is
+structurally the same pattern as TARS's 09-08 downgrade (lessons.md #1).
+
+Full files: data/research/2026-09-15/ABBV*.md (research, technical,
+correlation, bull, bear, council). Ledger entry added to
+data/journal/trade_ledger.md.
