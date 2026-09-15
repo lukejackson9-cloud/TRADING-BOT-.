@@ -10,7 +10,10 @@ full stop — there is no execution path to hand off to.
 - /data/research/{today}/{TICKER}_council.md exists (see skills/council.md)
   and its Moderator decision is also CANDIDATE. If council.md hasn't been
   run yet for this ticker, run it first — never propose a trade idea off
-  the research.md verdict alone.
+  the research.md verdict alone. Since 2026-09-15, council.md's
+  Correlation & Macro specialist already produced a `correlation_flag`
+  finding for this ticker as part of getting to CANDIDATE — read it from
+  the council file rather than starting step 5 below from zero.
 
 ## Steps
 1. Do NOT call `scripts/trading212_client.py` — there is no connected
@@ -29,14 +32,18 @@ full stop — there is no execution path to hand off to.
    set themselves in the T212 app — this agent cannot attach or monitor
    live orders.
 5. Correlation/concentration check — do this before finalizing size, not
-   after. Read every entry in /data/pending_trades.json that isn't
-   WITHDRAWN/EXECUTED/FAILED, and everything in /data/positions.json. Ask
-   honestly: does this new ticker share a sector or theme (e.g. AI
-   infrastructure, regional banks, a single commodity, a single supplier's
-   customer base) with any of them? CLAUDE.md's 50% total-exposure cap
-   counts dollars, not correlation — three "different" 5% ideas that are
-   all really one AI-infrastructure bet isn't diversification, it's a 15%
-   concentrated bet wearing three tickers. If you find real overlap:
+   after. Start from council.md's Correlation & Macro specialist finding
+   (the precondition above) — it already checked pending_trades.json/
+   positions.json overlap and same-day sector movement as of when council
+   ran. Re-check /data/pending_trades.json (non-terminal entries) and
+   /data/positions.json only for anything added SINCE council ran, rather
+   than re-deriving the whole check. Ask honestly: does this new ticker
+   share a sector or theme (e.g. AI infrastructure, regional banks, a
+   single commodity, a single supplier's customer base) with any of them?
+   CLAUDE.md's 50% total-exposure cap counts dollars, not correlation —
+   three "different" 5% ideas that are all really one AI-infrastructure
+   bet isn't diversification, it's a 15% concentrated bet wearing three
+   tickers. If you find real overlap (from council's finding or new):
    - Say so explicitly in the proposal (`correlation_flag` field below) —
      don't silently adjust the size without explaining why.
    - Consider whether the size should be smaller than the standard 5% cap

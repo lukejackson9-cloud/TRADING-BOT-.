@@ -149,6 +149,23 @@ evidence from journal.md (see the scheduled check-in noted in HANDOFF.md)
 should ever inform a recalibration decision, and even then, discuss it
 with the user first rather than changing the skills unilaterally.
 
+**Council structure expanded 2026-09-15 — this ADDS rigor, it does not
+loosen anything above.** Per explicit user request ("a single strategy
+alone will not help us win trades, it needs multiple alongside news"),
+skills/council.md grew from 2 roles (bull/bear) to 4: a **Technical
+Context specialist** and a **Correlation & Macro specialist** now run
+before bull/bear and hand them (and the moderator) grounded facts —
+neither is an advocate, and a matching mechanical TA/ICT signal is
+EXPLICITLY never treated as adding confidence (see the "Signal confluence
+testing" section below — that was tested and found to be no edge). Their
+job is to catch what a pure news read misses: an already-extended chart
+(sell-the-news, lessons.md #1) or a sector-wide move with no independent
+company-specific angle on top (lessons.md #3) are each now independently
+sufficient grounds for a downgrade, not just informal moderator judgment.
+This makes council STRICTER in practice (more ways to fail, same bar to
+pass), consistent with — not a violation of — the calibration freeze
+above.
+
 ## Trade execution & approval — updated 2026-09-07 (supersedes the old
 ## "no trade without human approval, ever" rule below for paper/demo and,
 ## eventually, live — read this whole section before touching execution)
