@@ -4858,7 +4858,11 @@
     "target_price": 186.74280000000002,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Part of sector-wide cybersecurity rally (CRWD/PANW/ZS/OKTA) driven by weekend AI-safety warning from Anthropic/OpenAI CEOs -- no independent QLYS-specific catalyst found (see lessons.md #3).",
+      "tagged_on": "2026-09-14"
+    }
   },
   {
     "ticker": "CNC",
@@ -4979,7 +4983,11 @@
     "target_price": 201.366,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Sector-wide cybersecurity rally (CRWD/PANW/ZS/OKTA) driven by weekend AI-safety warning from Anthropic/OpenAI CEOs; no independent OKTA-specific catalyst found (see lessons.md #3)",
+      "tagged_on": "2026-09-14"
+    }
   },
   {
     "ticker": "HUBS",
@@ -5056,7 +5064,11 @@
     "target_price": 254.21040000000002,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Wedbush added CRWD to its 'Best Ideas' list with a price-target hike (dated, genuinely new analyst action). Caveat: dominant driver of the day's move was a broader cybersecurity-sector rally tied to a weekend AI-safety warning from Anthropic/OpenAI CEOs, not company-specific news alone -- see lessons.md #3 correlated-cluster pattern.",
+      "tagged_on": "2026-09-14"
+    }
   },
   {
     "ticker": "CRWD",
@@ -5067,7 +5079,11 @@
     "target_price": 254.21040000000002,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Wedbush added CRWD to its 'Best Ideas' list with a price-target hike (dated, genuinely new analyst action). Caveat: dominant driver of the day's move was a broader cybersecurity-sector rally tied to a weekend AI-safety warning from Anthropic/OpenAI CEOs, not company-specific news alone -- see lessons.md #3 correlated-cluster pattern.",
+      "tagged_on": "2026-09-14"
+    }
   },
   {
     "ticker": "ALC",
@@ -5606,7 +5622,11 @@
     "target_price": 18.36,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Stephens initiated coverage 09-14 (Overweight, 1 PT), part of a two-week wave of target hikes off the real 09-02 earnings beat",
+      "tagged_on": "2026-09-14"
+    }
   },
   {
     "ticker": "NTSK",
@@ -5617,7 +5637,11 @@
     "target_price": 18.36,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Stephens initiated coverage 09-14 (Overweight, 1 PT), part of a two-week wave of target hikes off the real 09-02 earnings beat",
+      "tagged_on": "2026-09-14"
+    }
   },
   {
     "ticker": "CHRW",
@@ -5727,7 +5751,11 @@
     "target_price": 55.3932,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Roblox 09-14 developer conference unveiled 'Roblox Everywhere' (standalone-app distribution, AI dev tools), reinforced by same-day BofA/Wedbush price-target hikes.",
+      "tagged_on": "2026-09-14"
+    }
   },
   {
     "ticker": "FTFT",
