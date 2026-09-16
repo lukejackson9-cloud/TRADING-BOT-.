@@ -6514,7 +6514,11 @@
     "target_price": 68.634,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Real, dated catalyst: Rocket Lab completed a $1.944B ATM share offering on 9/15 to help finance its Iridium (IRDM) acquisition and retired its $3.6B bridge facility; stock +3%.",
+      "tagged_on": "2026-09-15"
+    }
   },
   {
     "ticker": "MGY",
@@ -6555,7 +6559,11 @@
     "target_price": 209.4012,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Move (closed 9/14 +16.52%) traces to Dario Amodei's 9/12 AI-safety essay driving a sector-wide cybersecurity rally (ZS/CRWD/PANW all jumped together per 24/7 Wall St) -- correlated sector move, not a ZS-specific catalyst; the Q4 earnings beat is not freshly dated to this window.",
+      "tagged_on": "2026-09-15"
+    }
   },
   {
     "ticker": "ATRC",
@@ -6596,7 +6604,11 @@
     "target_price": 10.594800000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Reused from data/research/2026-09-16/RLGT.md: Q4 FY2026 earnings beat (revenue +18.5% YoY, net income +53.1%) and earnings call held 9/14, debt-free balance sheet with expanded credit facility; stock reaction continued into 9/15.",
+      "tagged_on": "2026-09-15"
+    }
   },
   {
     "ticker": "RLGT",
@@ -6607,7 +6619,11 @@
     "target_price": 10.594800000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Reused from data/research/2026-09-16/RLGT.md: Q4 FY2026 earnings beat (revenue +18.5% YoY, net income +53.1%) and earnings call held 9/14, debt-free balance sheet with expanded credit facility; stock reaction continued into 9/15.",
+      "tagged_on": "2026-09-15"
+    }
   },
   {
     "ticker": "CAI",
@@ -6693,7 +6709,11 @@
     "target_price": 25.110000000000003,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "12.1% rally into 9/15 has no stated cause in search results; nearest company news is the Tectora licensing deal from 9/9, already 6 days stale (lessons.md #6).",
+      "tagged_on": "2026-09-15"
+    }
   },
   {
     "ticker": "VEEA",
@@ -6704,7 +6724,11 @@
     "target_price": 6.1668,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Per today's full research.md note (data/research/2026-09-16/VEEA.md): dated, real term-sheet announcement to combine with NovaGen Group plus a GeoNova Capital 0M cornerstone-investor term sheet -- a genuine M&A-type catalyst, even though council verdict is PASS on quality grounds (thin-float/reverse-split pump pattern).",
+      "tagged_on": "2026-09-15"
+    }
   },
   {
     "ticker": "TWST",
@@ -6715,7 +6739,11 @@
     "target_price": 149.148,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Only 9/15 event found is a scheduled Baird Global Healthcare Conference fireside chat (routine IR activity, not a business event); the Lilly TuneLab deal is dated 9/16, a day later.",
+      "tagged_on": "2026-09-15"
+    }
   },
   {
     "ticker": "BLZE",
@@ -6846,7 +6874,11 @@
     "target_price": 28.803600000000003,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Reuters-reported: Waystar hired Evercore to explore strategic options including a sale, shares +16% premarket, RBC named Oracle as a likely buyer -- a dated, real, company-specific M&A catalyst.",
+      "tagged_on": "2026-09-15"
+    }
   },
   {
     "ticker": "ECVT",
@@ -6887,7 +6919,11 @@
     "target_price": 14.374800000000002,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated news found for 9/15; most recent item is analysts cutting forecasts after the 8/3 Q2 earnings miss, over a month stale.",
+      "tagged_on": "2026-09-15"
+    }
   },
   {
     "ticker": "FLO",
@@ -6928,7 +6964,11 @@
     "target_price": 77.6196,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 9/15 news; CEO-transition/Elliott story is from August (stale) and Q3 earnings aren't until 11/3.",
+      "tagged_on": "2026-09-15"
+    }
   },
   {
     "ticker": "COP",
@@ -7164,7 +7204,11 @@
     "target_price": 151.4052,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Move driven by appearing at Morgan Stanley/Baird healthcare conferences amid a broader life-science-tools sector rally, reiterating existing 2026 outlook -- no new guidance change or company-specific hard news.",
+      "tagged_on": "2026-09-15"
+    }
   },
   {
     "ticker": "DT",
@@ -7205,7 +7249,11 @@
     "target_price": 25.358400000000003,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Move tracks a sector-wide cybersecurity rally tied to weekend AI-safety commentary (Amodei/Altman/Musk), not company-specific; earnings are stale (reported 8/27) and the Latio 'AI Security Platform Leader' report is a third-party recognition, not a rated-firm upgrade/downgrade/PT action.",
+      "tagged_on": "2026-09-15"
+    }
   },
   {
     "ticker": "MTCH",
@@ -7291,7 +7339,11 @@
     "target_price": 100.56960000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": "unclear",
+      "note": "Stock +1.2% on 9/15 with a headline referencing an 'AI push and Iraq investment plans' (ad-hoc-news.de) but no confirmed date/detail matching 9/15 specifically, plus a gradual (60-day) analyst estimate revision, not a single dated action -- inconclusive rather than a clear yes/no.",
+      "tagged_on": "2026-09-15"
+    }
   },
   {
     "ticker": "BKSY",
@@ -7407,7 +7459,11 @@
     "target_price": 443.7072,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": "unclear",
+      "note": "All-time-high close; analyst PT raises circulating (Morgan Stanley->$453, Raymond James->$445) but no confirmed date tying them to 9/14-9/15 specifically. (Re-tagged: original tag lost to a concurrent-write race across the 8 parallel tagging batches.)",
+      "tagged_on": "2026-09-15"
+    }
   },
   {
     "ticker": "CXW",
