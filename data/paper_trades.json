@@ -4771,7 +4771,11 @@
     "target_price": 7.0416,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": "unclear",
+      "note": "Ticker identity/date cannot be confirmed: search for 'STLN Stellar Bancorp' returned results only for ticker STEL, and revealed Stellar Bancorp was already merged into Prosperity Bancshares earlier in 2026 (regulatory approval 2026-04-22). Marking unclear rather than guessing per non-negotiable against fabricating research.",
+      "tagged_on": "2026-09-14"
+    }
   },
   {
     "ticker": "EW",
@@ -5097,7 +5101,11 @@
     "target_price": 12.4524,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Only stale/non-catalyst items found: FINRA short-interest model data, a 9/3 volatility pause, a 9/2 shelf filing.",
+      "tagged_on": "2026-09-14"
+    }
   },
   {
     "ticker": "AMGN",
@@ -5153,7 +5161,11 @@
     "target_price": 240.74280000000002,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Financial results cited are from an older quarter; key dated markers (annual meeting 9/17, GTA6 release 11/19) are future events, not a 9/14 trigger. Move attributed to broader Nasdaq strength.",
+      "tagged_on": "2026-09-14"
+    }
   },
   {
     "ticker": "CRWD",
@@ -5269,7 +5281,11 @@
     "target_price": 28.630800000000004,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "AT&T guided adjusted EPS $2.25-$2.35, EBITDA growth 3-4%, FCF path above $21B by 2028, all dated 9/14.",
+      "tagged_on": "2026-09-14"
+    }
   },
   {
     "ticker": "KLAR",
@@ -5295,7 +5311,11 @@
     "target_price": 6.9876000000000005,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Closed acquisition of LivePerson on 9/14 -- real dated M&A event.",
+      "tagged_on": "2026-09-14"
+    }
   },
   {
     "ticker": "PGNY",
@@ -5576,7 +5596,11 @@
     "target_price": 42.15240000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "UBS raised price target to $48 from $36, dated Monday 9/14 -- real material analyst action.",
+      "tagged_on": "2026-09-14"
+    }
   },
   {
     "ticker": "PTCT",
@@ -5722,7 +5746,11 @@
     "target_price": 130.60440000000003,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Toronto-Dominion announced a $150B five-year Canada lending/advisory commitment, dated 9/14.",
+      "tagged_on": "2026-09-14"
+    }
   },
   {
     "ticker": "DBI",
@@ -5778,7 +5806,11 @@
     "target_price": 28.328400000000002,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated company-specific catalyst found for 9/14 move; surge unexplained by any verified news item.",
+      "tagged_on": "2026-09-14"
+    }
   },
   {
     "ticker": "KR",
@@ -5819,7 +5851,11 @@
     "target_price": 408.29400000000004,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst; routine technical/analyst commentary only, next earnings 10/15.",
+      "tagged_on": "2026-09-14"
+    }
   },
   {
     "ticker": "TRV",
@@ -5830,7 +5866,11 @@
     "target_price": 408.29400000000004,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst; routine technical/analyst commentary only, next earnings 10/15.",
+      "tagged_on": "2026-09-14"
+    }
   },
   {
     "ticker": "ECO",
@@ -5871,7 +5911,11 @@
     "target_price": 19.893600000000003,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Partner Akeso revealed Phase 3 HARMONi-2 overall survival data on 9/14; stock +6%.",
+      "tagged_on": "2026-09-14"
+    }
   },
   {
     "ticker": "NTSK",
@@ -5972,7 +6016,11 @@
     "target_price": 235.5372,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No fresh dated catalyst; only routine dividend/analyst estimate commentary.",
+      "tagged_on": "2026-09-14"
+    }
   },
   {
     "ticker": "SN",
@@ -5983,7 +6031,11 @@
     "target_price": 183.1896,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No 9/14-specific news found; nearest items were stale.",
+      "tagged_on": "2026-09-14"
+    }
   },
   {
     "ticker": "CI",
@@ -6024,7 +6076,11 @@
     "target_price": 10.6488,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst found; only FINRA short-interest model data available for this period.",
+      "tagged_on": "2026-09-14"
+    }
   },
   {
     "ticker": "RBLX",
