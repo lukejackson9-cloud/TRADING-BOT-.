@@ -949,3 +949,24 @@ overcorrecting from it.
 0 CANDIDATEs, 3rd day running with nothing reaching the new 4-role
 council since it was built yesterday. Full detail in
 data/research/2026-09-15/.
+
+## 2026-09-16 daily screen
+18 tickers researched (VEEA, HQ, ENVA, ALHC, RLGT, PLAY, SWKS, FTRE,
+ARWR, WING, SDGR, CRCL, TEM, CBRL, BOOT, COIN, BLMN, AXON) from Massive's
+09-14->09-15 session-pair whole-market screen. Ran an identity-check pass
+first (per the routine's explicit instruction) on the more obscure top
+movers -- confirmed all are real common stocks, no leveraged-ETF
+wrappers, though USDE and FWDI (not researched further, outside the
+shortlist) are crypto-treasury proxy vehicles worth remembering if they
+resurface. FMP was reachable this session (previously blocked by network
+policy as of 09-02) -- worth re-verifying next time rather than assuming
+either state.
+
+0 CANDIDATEs, 4th day running. Two names worth tracking: RLGT (real
+earnings-beat + analyst-upgrade catalyst, held at WATCH only because the
+reaction already fired the day before) and SWKS (3rd appearance --
++9.79% on 09-10, +13.55% further on 09-15, same unresolved Qorvo-merger
+story both times, no actual China/Korea regulatory clearance yet, and
+BMO initiated coverage today at a $70 target, 22% below the $90 close --
+a real overextension warning sign on the same story). Full detail in
+data/research/2026-09-16/.
