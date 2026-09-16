@@ -336,5 +336,125 @@
       "note": "Dominant driver is the SAME sector-wide AI-safety-warning-driven chip selloff already documented in today's daily screen (Amodei/Altman weekend essays) -- not company-specific; Piper Sandler Neutral initiation was 09-10, 5 days stale",
       "tagged_on": "2026-09-15"
     }
+  },
+  {
+    "date": "2026-09-16",
+    "symbol": "JNJ",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 9/16-specific catalyst found; Q2 earnings/guidance is stale, Deutsche Bank Healthcare Summit appearance is tomorrow (9/17) not today.",
+      "tagged_on": "2026-09-16"
+    }
+  },
+  {
+    "date": "2026-09-16",
+    "symbol": "WMT",
+    "setup": "fvg",
+    "direction": "bullish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Papa John's delivery partnership announced 2026-09-10, six days stale -- not today's driver. No fresh 9/16 catalyst found.",
+      "tagged_on": "2026-09-16"
+    }
+  },
+  {
+    "date": "2026-09-16",
+    "symbol": "WMT",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Papa John's delivery partnership announced 2026-09-10, six days stale -- not today's driver. No fresh 9/16 catalyst found.",
+      "tagged_on": "2026-09-16"
+    }
+  },
+  {
+    "date": "2026-09-16",
+    "symbol": "WMT",
+    "setup": "inverse_fvg",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Papa John's delivery partnership announced 2026-09-10, six days stale -- not today's driver. No fresh 9/16 catalyst found.",
+      "tagged_on": "2026-09-16"
+    }
+  },
+  {
+    "date": "2026-09-16",
+    "symbol": "CRM",
+    "setup": "order_block",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Dreamforce 2026 investor/analyst session held same day (1pm PT/4pm ET); launched new Koa reasoning model (built with Nvidia) and Agentforce AI strategy expansion -- real, dated, company-specific event.",
+      "tagged_on": "2026-09-16"
+    }
+  },
+  {
+    "date": "2026-09-16",
+    "symbol": "CRM",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Dreamforce 2026 investor/analyst session held same day (1pm PT/4pm ET); launched new Koa reasoning model (built with Nvidia) and Agentforce AI strategy expansion -- real, dated, company-specific event.",
+      "tagged_on": "2026-09-16"
+    }
+  },
+  {
+    "date": "2026-09-16",
+    "symbol": "NFLX",
+    "setup": "fvg",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No fresh dated catalyst; Evercore ISI PT raise and SACA coalition news are both dated 9/14, two days stale.",
+      "tagged_on": "2026-09-16"
+    }
+  },
+  {
+    "date": "2026-09-16",
+    "symbol": "NFLX",
+    "setup": "order_block",
+    "direction": "bullish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No fresh dated catalyst; Evercore ISI PT raise and SACA coalition news are both dated 9/14, two days stale.",
+      "tagged_on": "2026-09-16"
+    }
+  },
+  {
+    "date": "2026-09-16",
+    "symbol": "NFLX",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No fresh dated catalyst; Evercore ISI PT raise and SACA coalition news are both dated 9/14, two days stale.",
+      "tagged_on": "2026-09-16"
+    }
+  },
+  {
+    "date": "2026-09-16",
+    "symbol": "MRK",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "INTerpath-001 Phase 3 trial results (Merck/Moderna) are dated 2026-08-19, nearly a month stale -- not today's driver. No fresh 9/16 catalyst found.",
+      "tagged_on": "2026-09-16"
+    }
   }
 ]
