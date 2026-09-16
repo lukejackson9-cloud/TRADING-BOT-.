@@ -54,17 +54,20 @@ import json
 from pathlib import Path
 from collections import defaultdict
 
+sys.path.insert(0, str(Path(__file__).parent))
+from ledger_lock import locked_ledger  # noqa: E402
+
 TA_LEDGER = Path("data/paper_trades.json")
 ICT_LEDGER = Path("data/ict_paper_trades.json")
 MIN_SAMPLE = 50  # floor before drawing any conclusion -- same bar as backtest_confluence.py
 
 
 def _load(path):
+    """Plain unlocked read -- safe for read-only callers (pending/report)
+    since locked_ledger's writes are atomic (temp file + rename), so this
+    never observes a half-written file. Don't use this where a
+    read-modify-write follows; use locked_ledger for that (see `tag`)."""
     return json.loads(path.read_text()) if path.exists() else []
-
-
-def _save(path, data):
-    path.write_text(json.dumps(data, indent=2))
 
 
 def pending(date):
@@ -86,7 +89,13 @@ def tag(ticker, date, verdict_str, note=""):
     ledger entry for (ticker, date) in BOTH ledgers -- a ticker that fired
     multiple TA setups or ICT mechanisms the same day gets the same tag
     applied everywhere at once, since it's one real-world fact (was there
-    a catalyst that day), not a per-setup one."""
+    a catalyst that day), not a per-setup one.
+
+    Each ledger's read-modify-write goes through locked_ledger so
+    concurrent `tag` calls (e.g. parallel catalyst-tagging subagents, the
+    normal way skills/catalyst_tag.md runs this) serialize instead of
+    racing -- see ledger_lock.py's docstring for the 2026-09-16 incident
+    this fixes (a lost tag from 8 agents writing the same file at once)."""
     if verdict_str not in ("true", "false", "unclear"):
         print(f"error: verdict must be true/false/unclear, got {verdict_str!r}")
         return
@@ -94,19 +103,17 @@ def tag(ticker, date, verdict_str, note=""):
     payload = {"has_catalyst": verdict, "note": note, "tagged_on": date}
 
     updated = 0
-    ta = _load(TA_LEDGER)
-    for p in ta:
-        if p.get("ticker") == ticker and p.get("entry_date") == date and p.get("catalyst") is None:
-            p["catalyst"] = payload
-            updated += 1
-    _save(TA_LEDGER, ta)
+    with locked_ledger(TA_LEDGER) as ta:
+        for p in ta:
+            if p.get("ticker") == ticker and p.get("entry_date") == date and p.get("catalyst") is None:
+                p["catalyst"] = payload
+                updated += 1
 
-    ict = _load(ICT_LEDGER)
-    for t in ict:
-        if t.get("symbol") == ticker and t.get("date") == date and t.get("catalyst") is None:
-            t["catalyst"] = payload
-            updated += 1
-    _save(ICT_LEDGER, ict)
+    with locked_ledger(ICT_LEDGER) as ict:
+        for t in ict:
+            if t.get("symbol") == ticker and t.get("date") == date and t.get("catalyst") is None:
+                t["catalyst"] = payload
+                updated += 1
 
     print(f"tagged {updated} ledger entries for {ticker} on {date}: has_catalyst={verdict}")
 

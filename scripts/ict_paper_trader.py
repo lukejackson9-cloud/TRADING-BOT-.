@@ -52,19 +52,18 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 import backtest_ict as ict  # noqa: E402
+from ledger_lock import locked_ledger  # noqa: E402
 
 LEDGER_PATH = Path("data/ict_paper_trades.json")
 LOOKBACK_DAYS_FOR_EQHL = 5
 
 
 def _load_ledger():
+    """Plain unlocked read -- safe since locked_ledger's writes are
+    atomic. Only use where no write follows."""
     if LEDGER_PATH.exists():
         return json.loads(LEDGER_PATH.read_text())
     return []
-
-
-def _save_ledger(trades):
-    LEDGER_PATH.write_text(json.dumps(trades, indent=2))
 
 
 def _ensure_day_cached(date):
@@ -114,51 +113,50 @@ def _day_eqh_eql(days, date, sorted_dates):
 
 def run(date):
     _ensure_day_cached(date)
-    ledger = _load_ledger()
-    already_done = {(t["date"], t["symbol"], t["setup"]) for t in ledger}
-    new_trades = []
+    with locked_ledger(LEDGER_PATH) as ledger:
+        already_done = {(t["date"], t["symbol"], t["setup"]) for t in ledger}
+        new_trades = []
 
-    for symbol in ict.UNIVERSE:
-        days = ict._load_days(symbol)
-        sorted_dates = sorted(days.keys())
-        if date not in sorted_dates:
-            continue
-        day_bars = sorted(days[date], key=lambda b: b["_ny_time"])
-        kz = [b for b in day_bars if ict.KILLZONE_START <= b["_ny_time"] <= ict.KILLZONE_END]
-        kz_start_idx = next((idx for idx, b in enumerate(day_bars) if b["_ny_time"] >= ict.KILLZONE_START), None)
-        kz_pm = [b for b in day_bars if datetime.time(13, 30) <= b["_ny_time"] <= datetime.time(16, 0)]
-        kz_pm_start_idx = next((idx for idx, b in enumerate(day_bars) if b["_ny_time"] >= datetime.time(13, 30)), None)
-        pdh, pdl = _day_pdh_pdl(days, date, sorted_dates)
-        eqh, eql = _day_eqh_eql(days, date, sorted_dates)
-
-        checks = []
-        if kz and kz_start_idx is not None and pdh is not None:
-            checks.append(("fvg", kz, pdh, pdl, day_bars, kz_start_idx, {}))
-            checks.append(("order_block", kz, pdh, pdl, day_bars, kz_start_idx, {"entry_mode": "order_block"}))
-            checks.append(("ote", kz, pdh, pdl, day_bars, kz_start_idx, {"entry_mode": "ote"}))
-        if kz_pm and kz_pm_start_idx is not None and pdh is not None:
-            checks.append(("nypm", kz_pm, pdh, pdl, day_bars, kz_pm_start_idx, {}))
-        if kz and kz_start_idx is not None and (eqh is not None or eql is not None):
-            checks.append(("eqhl", kz, eqh, eql, day_bars, kz_start_idx, {}))
-
-        for setup, killzone_bars, use_pdh, use_pdl, all_day_bars, start_idx, kwargs in checks:
-            if (date, symbol, setup) in already_done:
+        for symbol in ict.UNIVERSE:
+            days = ict._load_days(symbol)
+            sorted_dates = sorted(days.keys())
+            if date not in sorted_dates:
                 continue
-            trade = ict._simulate_day(killzone_bars, use_pdh, use_pdl, all_day_bars, start_idx, **kwargs)
-            if trade:
-                new_trades.append({"date": date, "symbol": symbol, "setup": setup,
-                                    "direction": trade["direction"], "return_r": trade["return_r"],
-                                    "catalyst": None})
+            day_bars = sorted(days[date], key=lambda b: b["_ny_time"])
+            kz = [b for b in day_bars if ict.KILLZONE_START <= b["_ny_time"] <= ict.KILLZONE_END]
+            kz_start_idx = next((idx for idx, b in enumerate(day_bars) if b["_ny_time"] >= ict.KILLZONE_START), None)
+            kz_pm = [b for b in day_bars if datetime.time(13, 30) <= b["_ny_time"] <= datetime.time(16, 0)]
+            kz_pm_start_idx = next((idx for idx, b in enumerate(day_bars) if b["_ny_time"] >= datetime.time(13, 30)), None)
+            pdh, pdl = _day_pdh_pdl(days, date, sorted_dates)
+            eqh, eql = _day_eqh_eql(days, date, sorted_dates)
 
-        if kz and kz_start_idx is not None and pdh is not None and (date, symbol, "inverse_fvg") not in already_done:
-            trade = ict._simulate_day_inverse_fvg(kz, pdh, pdl, day_bars, kz_start_idx)
-            if trade:
-                new_trades.append({"date": date, "symbol": symbol, "setup": "inverse_fvg",
-                                    "direction": trade["direction"], "return_r": trade["return_r"],
-                                    "catalyst": None})
+            checks = []
+            if kz and kz_start_idx is not None and pdh is not None:
+                checks.append(("fvg", kz, pdh, pdl, day_bars, kz_start_idx, {}))
+                checks.append(("order_block", kz, pdh, pdl, day_bars, kz_start_idx, {"entry_mode": "order_block"}))
+                checks.append(("ote", kz, pdh, pdl, day_bars, kz_start_idx, {"entry_mode": "ote"}))
+            if kz_pm and kz_pm_start_idx is not None and pdh is not None:
+                checks.append(("nypm", kz_pm, pdh, pdl, day_bars, kz_pm_start_idx, {}))
+            if kz and kz_start_idx is not None and (eqh is not None or eql is not None):
+                checks.append(("eqhl", kz, eqh, eql, day_bars, kz_start_idx, {}))
 
-    ledger.extend(new_trades)
-    _save_ledger(ledger)
+            for setup, killzone_bars, use_pdh, use_pdl, all_day_bars, start_idx, kwargs in checks:
+                if (date, symbol, setup) in already_done:
+                    continue
+                trade = ict._simulate_day(killzone_bars, use_pdh, use_pdl, all_day_bars, start_idx, **kwargs)
+                if trade:
+                    new_trades.append({"date": date, "symbol": symbol, "setup": setup,
+                                        "direction": trade["direction"], "return_r": trade["return_r"],
+                                        "catalyst": None})
+
+            if kz and kz_start_idx is not None and pdh is not None and (date, symbol, "inverse_fvg") not in already_done:
+                trade = ict._simulate_day_inverse_fvg(kz, pdh, pdl, day_bars, kz_start_idx)
+                if trade:
+                    new_trades.append({"date": date, "symbol": symbol, "setup": "inverse_fvg",
+                                        "direction": trade["direction"], "return_r": trade["return_r"],
+                                        "catalyst": None})
+
+        ledger.extend(new_trades)
 
     from collections import defaultdict
     by_setup = defaultdict(list)
