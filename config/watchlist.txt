@@ -234,3 +234,23 @@ VIAV   # 2026-09-15: -12.72% -- repeat ticker (WATCH low confidence 09-09, no da
 NTSK   # 2026-09-15: +15.65% -- repeat ticker (appeared in the 09-11 catalyst-tag batch, tagged false -- no dated news found then) -- checking Step 0
 ARQQ   # 2026-09-15: -18.75%, Arqit Quantum -- new, real quantum-computing theme
 RBLX   # 2026-09-15: +12.73%, Roblox -- new
+
+# --- added 2026-09-16 via the daily screen routine (Massive whole-market, 2026-09-14 -> 09-15 session pair) ---
+VEEA   # 2026-09-16: +149.34%, reverse-split/thin-float pump pattern (BIAF precedent) -- PASS
+HQ     # 2026-09-16: +27.66%, Horizon Quantum Holdings -- no confirmed catalyst for the move -- PASS
+ENVA   # 2026-09-16: -23.43%, Enova International -- withdrew Grasshopper Bank acquisition + securities-investigation notice -- PASS (negative catalyst, no buy case)
+ALHC   # 2026-09-16: -19.86%, Alignment Healthcare -- medical-cost warning + whistleblower accounting allegation -- PASS (negative catalyst)
+RLGT   # 2026-09-16: +19.49%, Radiant Logistics -- real Q4 earnings beat + analyst upgrade, but reaction already fired the day before -- WATCH
+PLAY   # 2026-09-16: -19.01%, Dave & Buster's -- Q2 earnings miss -- PASS (negative catalyst)
+SWKS   # 2026-09-16: +13.55% further -- repeat (WATCH 09-11 on Qorvo-merger progress) -- same unresolved story, no new regulatory clearance, BMO initiated at $70 target (below price) -- WATCH
+FTRE   # 2026-09-16: +13.33%, Fortrea Holdings -- no dated catalyst found, possible squeeze setup -- PASS
+ARWR   # 2026-09-16: -12.40%, Arrowhead Pharmaceuticals -- disappointing Phase 1/2a interim data -- PASS (negative catalyst)
+WING   # 2026-09-16: -12.09% -- repeat (PASS 09-14/09-15, no confirmed catalyst then) -- continuation of known comp-sales story + stale downgrade -- PASS
+SDGR   # 2026-09-16: +12.05%, Schrodinger -- new 52-wk high on vague AI-drug-discovery interest around a company-hosted event, no hard announcement -- WATCH
+CRCL   # 2026-09-16: -11.41%, Circle Internet Group -- sector/regulatory-driven (Clarity Act Senate vote failure, broad crypto selloff), not company-specific -- PASS
+TEM    # 2026-09-16: +10.67%, Tempus AI -- real catalyst (Piper Sandler upgrade + ARPA-H grant + FDA clearances) but stock already +70% trailing month, overextension risk -- WATCH
+CBRL   # 2026-09-16: -10.65%, Cracker Barrel -- no fresh catalyst, known rebrand-backlash story continuation -- PASS
+BOOT   # 2026-09-16: -10.13%, Boot Barn -- comp-sales deceleration disclosed at Goldman conference, still positive comps -- PASS
+COIN   # 2026-09-16: -10.10%, Coinbase -- sector/macro-driven (Clarity Act failure + broad crypto selloff), not company-specific -- PASS
+BLMN   # 2026-09-16: -10.10%, Bloomin' Brands -- no fresh catalyst, stale negative fundamentals -- PASS
+AXON   # 2026-09-16: -9.81%, Axon Enterprise -- $1B 0% convertible notes offering (dilution concern) same day, fundamentals still solid -- PASS
