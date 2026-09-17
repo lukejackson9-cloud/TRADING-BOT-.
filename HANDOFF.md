@@ -970,3 +970,44 @@ story both times, no actual China/Korea regulatory clearance yet, and
 BMO initiated coverage today at a $70 target, 22% below the $90 close --
 a real overextension warning sign on the same story). Full detail in
 data/research/2026-09-16/.
+
+## 2026-09-16 (evening): fixed a real concurrent-write bug
+scripts/tag_catalyst.py's `tag` command is designed to be called from
+many parallel subagents at once (that's how skills/catalyst_tag.md's
+daily batches run) -- but its read-modify-write on the JSON ledgers had
+no locking, and 8 parallel batches tagging the 2026-09-15 TA signals
+lost one ticker's tag (MPC) to a classic race: two overlapping calls
+both read the pre-write state, the later save clobbered the earlier one.
+Caught it via a full post-batch audit (not just the pending()-count
+check), fixed the tag, then fixed the actual bug: added
+scripts/ledger_lock.py (an fcntl.flock-based `locked_ledger()` context
+manager, atomic temp-file+rename on write) and applied it to all three
+scripts that touch data/paper_trades.json / data/ict_paper_trades.json
+(tag_catalyst.py, paper_trader.py, ict_paper_trader.py). Verified with a
+stress test: 0 lost tags with the fix across 40 tickers / 20 concurrent
+callers, vs. 3/40 lost reproducing the same test against the old logic.
+Future catalyst-tag batches no longer need the extra audit step just to
+catch this class of bug -- the pending()-count check is trustworthy again.
+
+## 2026-09-17 daily screen
+18 tickers researched (MEDS, AEHL, FTFT, NRXS, NCT, ALHC, BBNX, EAF,
+JBHT, AXTI, BULL, ARQT, CIFR, BYND, BLSH, BRKR, MTDR, AMRX) from
+Massive's 09-15->09-16 session-pair whole-market screen.
+
+**NRXS (NeurAxis) reached CANDIDATE** -- the first CANDIDATE since the
+09-03 calibration freeze to actually get a full 4-role council review
+(ABBV on 09-15 was the only other one). Real, dated, idiosyncratic
+catalyst (payer-coverage expansion, correlation specialist confirmed no
+sector-wide dilution) -- but council downgraded to WATCH on two
+independent grounds: already-extended/already-faded technical picture
+(16x volume, breakout already fired, ~10% intraday fade before close),
+plus a verified going-concern qualification and real dilution history
+the bull case never addressed. Bull agent conceded the entry-timing
+problem itself. Council downgrade streak: 15-for-15. Full detail in
+data/research/2026-09-17/NRXS_council.md.
+
+Two confirmed sector/macro-wide moves this session (BLSH: Clarity Act
+Senate failure; MTDR: WTI crude selloff) -- same correlated-move pattern
+as lessons.md #3, correctly held to PASS rather than treated as
+independent opportunities. COST earnings 09-24 flagged as a forward
+pre-catalyst watch entry.
