@@ -7947,7 +7947,11 @@
     "target_price": 30.078000000000003,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": "unclear",
+      "note": "Search surfaced a Q3 EPS beat ($0.50 vs $0.40 est) and a separate 9% down-day mention, but neither result gave a clear date matching Sept 16 -- can't confirm alignment, marking unclear rather than guessing.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "FTRE",
@@ -7973,7 +7977,11 @@
     "target_price": 175.9212,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": "unclear",
+      "note": "WebSearch found JPMorgan reiterating (not changing) Overweight tied to the 9/16 +2.16% move, plus a separate Deutsche Bank Sell-to-Hold revision whose exact date wasn't confirmed as 9/16 vs 'recently' -- can't confirm a dated analyst-action catalyst specifically on 9/16.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "XRAY",
@@ -7999,7 +8007,11 @@
     "target_price": 40.8996,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No LiveRamp-specific catalyst found for Sept 16; the only $60B-valuation funding-round news in results is for the unrelated private fintech company 'Ramp', not LiveRamp Holdings (ticker RAMP).",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "NCT",
@@ -8025,7 +8037,11 @@
     "target_price": 14.5044,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch found no dated 9/16 news; only a standing Aug10-Sep16 investor-conference participation window and an unchanged analyst consensus target.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "BXSL",
@@ -8126,7 +8142,11 @@
     "target_price": 505.89360000000005,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Confirmed: Axon priced a $1.0B 0% convertible senior notes offering (dated 9/15-16), a major dilution/leverage-driven company-specific event that drove the ~10% drop/volatility; consistent with existing data/research/2026-09-16/AXON.md.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "TWLO",
@@ -8137,7 +8157,11 @@
     "target_price": 257.9904,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Only dated 9/16 item found is Bernstein reiterating (not changing) a Hold rating at $199 PT -- not a rated-firm change, so doesn't qualify as a material analyst action. Real news (22% revenue growth, raised guidance) is from Q2 2026 earnings, already stale by this signal date.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "VLO",
@@ -8223,7 +8247,11 @@
     "target_price": 29.3004,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Amer Sports issued a dated 9/16 press release updating its long-term financial algorithm and Q3 2026 guidance -- a genuine, dated, company-specific guidance-change catalyst (Stockhouse press release).",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "SHOO",
@@ -8294,7 +8322,11 @@
     "target_price": 26.4276,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Up 4.5% intraday on above-avg volume per MarketBeat, but no dated earnings/M&A/FDA/analyst-action catalyst found in search results.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "PPL",
@@ -8305,7 +8337,11 @@
     "target_price": 36.0828,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Closed -0.8% Sept 16 in line with a broad market down day; only company-specific item is a routine PA data-center grid-interconnection tariff filing, not an earnings/M&A/FDA-decision/guidance-change/analyst-action event.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "YSS",
@@ -8481,7 +8517,11 @@
     "target_price": 73.28880000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "ISO New England selected an Eversource joint transmission project on Sep 16 (ad-hoc-news.de), but this doesn't fit the defined catalyst categories (earnings/M&A/FDA/guidance/analyst action); no qualifying dated catalyst found.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "ADMA",
@@ -8567,7 +8607,11 @@
     "target_price": 45.8784,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Only item found is a Sept 15 investor-conference appearance (Jefferies Healthcare Services Conference) reviewing existing trends -- not earnings/M&A/FDA/guidance-change/analyst-action.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "DTE",
@@ -8608,7 +8652,11 @@
     "target_price": 11.7504,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst found for Ecovyst (ECVT) on Sep 16; only intraday price range (0.63-0.93) reported, no company-specific event.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "UTI",
@@ -8679,7 +8727,11 @@
     "target_price": 11.4696,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No Sept-16-specific news found; nearest items are a 50M note private placement (Sept 4) and a dividend ex-date (Sept 21), neither dated to the signal day.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "BRUN",
@@ -8795,7 +8847,11 @@
     "target_price": 8.0298,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated Sept-16 event; H.C. Wainwright's PT raise to $18 was tied to the Q2 earnings beat reported earlier, and next earnings isn't until Nov 5, 2026.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "NAT",
@@ -8836,7 +8892,11 @@
     "target_price": 23.9544,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Confirmed: BBNX priced its $150M public offering on 9/16 and BofA raised its price target to $20 (from $18) same day, both dated company-specific catalysts; consistent with data/research/2026-09-17/BBNX.md.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "BBNX",
@@ -8847,7 +8907,11 @@
     "target_price": 23.9544,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Confirmed: BBNX priced its $150M public offering on 9/16 and BofA raised its price target to $20 (from $18) same day, both dated company-specific catalysts; consistent with data/research/2026-09-17/BBNX.md.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "OUST",
@@ -8858,7 +8922,11 @@
     "target_price": 36.7092,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Only news is a pre-arranged sell-to-cover RSU insider sale by CEO Angus Pacala (dated Sept 14, routine tax-withholding instruction letter) -- not a genuine catalyst; no earnings/M&A/FDA/analyst action found.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "VSTS",
@@ -8884,7 +8952,11 @@
     "target_price": 56.1708,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "MarketBeat's 'Up 6.1% -- Here's What Happened' Sept 16 alert attributes the move to a new non-binding MoU with Aramco on industrial quantum computing -- dated, company-specific, though the MoU is non-binding.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "ABCL",
