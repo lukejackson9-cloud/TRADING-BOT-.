@@ -228,6 +228,41 @@ project, every one downgraded to WATCH at council. Common threads:
   real volume without giving it back, which per the council file would be
   "a materially different, re-checkable setup."
 
+### NRXS — 2026-09-17, council-downgraded, PENDING
+- **What happened**: NeurAxis (small-cap medtech, PENFS/IB-Stim
+  neuromodulation therapy for gut-brain disorders) +21.75% on 09-16 on a
+  real, dated, company-specific catalyst — a new national payer coverage
+  policy adding ~18M covered lives (footprint now >120M). Correlation &
+  Macro specialist confirmed this was a genuine idiosyncratic move (no
+  sector-wide medtech rally that session), the strongest-sourced part of
+  the case.
+- **Why downgraded — two independently sufficient grounds, per
+  council.md's standard**:
+  - **Technical**: already extended, not early-stage. The move fired
+    16x normal volume, closed +7.8% above its own prior 20-day high, and
+    had already faded ~10.3% off its intraday peak ($7.74→$6.94) before
+    the close — a fresh gap that already partially reversed same-day.
+    Only the `breakout` mechanical signal fired (never treated as adding
+    confidence, per CLAUDE.md's confluence-testing findings — used here
+    only to confirm the overextension read).
+  - **Fundamentals risk the bull case never engaged with**: a verified
+    going-concern qualification in NeurAxis's own Q2 2026 10-Q
+    (fact-checked verbatim against the actual filing), plus a real
+    dilution history (~53% share-count growth over the trailing year,
+    including a dilutive raise at $3.25/share within the past 18
+    months). The bear case's catalyst-size-vs-reaction mismatch was
+    independently verified: a materially LARGER prior milestone
+    (Dec 2025, ~45M covered lives) produced a much smaller reaction than
+    this smaller (~18M lives) one — reads as thin-float momentum
+    chasing, not a proportional fundamental re-rate.
+  - The bull agent conceded the entry-timing problem itself rather than
+    being argued into it ("good news, bad entry point... not a clean
+    bull case for chasing at $6.94").
+- **Outcome**: PENDING — re-check whether NRXS bases constructively
+  without giving back more of the gain, and whether margin/revenue
+  trends continue next quarter without a new dilutive raise, which would
+  be a materially different, re-checkable setup.
+
 ---
 
 ## Appendix: every other researched ticker (WATCH/PASS, never reached council)

@@ -254,3 +254,24 @@ BOOT   # 2026-09-16: -10.13%, Boot Barn -- comp-sales deceleration disclosed at 
 COIN   # 2026-09-16: -10.10%, Coinbase -- sector/macro-driven (Clarity Act failure + broad crypto selloff), not company-specific -- PASS
 BLMN   # 2026-09-16: -10.10%, Bloomin' Brands -- no fresh catalyst, stale negative fundamentals -- PASS
 AXON   # 2026-09-16: -9.81%, Axon Enterprise -- $1B 0% convertible notes offering (dilution concern) same day, fundamentals still solid -- PASS
+
+# --- added 2026-09-17 via the daily screen routine (Massive whole-market, 2026-09-15 -> 09-16 session pair) ---
+NRXS   # 2026-09-17: +21.75%, NeurAxis -- REACHED CANDIDATE in research.md (real payer-coverage-expansion catalyst), council-downgraded to WATCH (already-extended/faded technical picture + verified going-concern/dilution risk) -- see data/research/2026-09-17/NRXS_council.md
+MEDS   # 2026-09-17: +274.69%, DataMEDS AI -- thin-float pump/fade pattern, already reversing intraday -- PASS
+AEHL   # 2026-09-17: +78.68% -- repeat (PASS 09-03/09-15) -- NEW dilutive catalyst this time (toxic convertible note, not the recycled BTC story) -- PASS
+FTFT   # 2026-09-17: +21.95% -- repeat (was -28.61% on 09-15) -- no catalyst found, speculative whipsaw around a tightened float -- PASS
+NCT    # 2026-09-17: +18.40%, Intercont (Cayman) -- likely a reverse-split-adjustment artifact, not a real move -- PASS
+ALHC   # 2026-09-17: -16.01% -- repeat (PASS 09-16) -- same unresolved negative-catalyst cluster continuing, no new info -- PASS
+BBNX   # 2026-09-17: +15.34%, Beta Bionics -- repeat -- analyst PT raises vs. dilutive offering, no new hard catalyst -- WATCH
+EAF    # 2026-09-17: +13.74%, GrafTech -- momentum off a stale (09-08) price-hike announcement, no fresh catalyst -- WATCH
+JBHT   # 2026-09-17: -13.30%, J.B. Hunt Transport -- clean negative catalyst (earnings warning) but not actionable long-only -- PASS
+AXTI   # 2026-09-17: +11.44%, AXT Inc -- genuine company-specific catalyst this time (S&P SmallCap 600 inclusion, not the 09-08 sector rally) but already +600% YTD -- WATCH
+BULL   # 2026-09-17: -11.20%, Webull -- insider sale + dilution overhang -- PASS
+ARQT   # 2026-09-17: +11.19%, Arcutis Biotherapeutics -- soft catalyst (conference reiteration), corrected a stale "new Phase 2 data" claim circulating in aggregator coverage -- WATCH
+CIFR   # 2026-09-17: +10.80%, Cipher Mining -- real AI/HPC-pivot catalyst, not crypto-price-driven, but news already public for days -- WATCH
+BYND   # 2026-09-17: +9.61%, Beyond Meat -- no dated catalyst, distress signals (Sell rating, high short interest, reverse split) -- PASS
+BLSH   # 2026-09-17: -9.53%, Bullish -- sector/regulatory-wide (Clarity Act Senate failure hit crypto-adjacent names broadly) -- PASS
+BRKR   # 2026-09-17: +8.83%, Bruker -- real catalyst (Luvata superconducting-wire partnership) but move size looks disproportionate -- WATCH
+MTDR   # 2026-09-17: -8.61%, Matador Resources -- sector-wide (WTI crude -5%+, 8 E&P peers fell together) -- PASS
+AMRX   # 2026-09-17: +8.59%, Amneal Pharmaceuticals -- no reliable dated catalyst, inconsistent source data -- PASS
+COST   # EARNINGS 2026-09-24 -- pre-catalyst watch, not yet a candidate
