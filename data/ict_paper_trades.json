@@ -456,5 +456,89 @@
       "note": "INTerpath-001 Phase 3 trial results (Merck/Moderna) are dated 2026-08-19, nearly a month stale -- not today's driver. No fresh 9/16 catalyst found.",
       "tagged_on": "2026-09-16"
     }
+  },
+  {
+    "date": "2026-09-17",
+    "symbol": "MSFT",
+    "setup": "nypm",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 9/17-specific catalyst found; only opinion/commentary pieces (Nadella AI remarks, Suleyman comments) and a future Oct 7 Surface event.",
+      "tagged_on": "2026-09-17"
+    }
+  },
+  {
+    "date": "2026-09-17",
+    "symbol": "TSLA",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst found; NHTSA Cybercab scrutiny is ongoing (not new), Roadster event is a future date (10/1), Musk merger speculation not specifically dated to 9/17.",
+      "tagged_on": "2026-09-17"
+    }
+  },
+  {
+    "date": "2026-09-17",
+    "symbol": "TSLA",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst found; NHTSA Cybercab scrutiny is ongoing (not new), Roadster event is a future date (10/1), Musk merger speculation not specifically dated to 9/17.",
+      "tagged_on": "2026-09-17"
+    }
+  },
+  {
+    "date": "2026-09-17",
+    "symbol": "XOM",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No qualifying dated company-specific catalyst; Venezuela/Vietnam expansion talks lack a confirmed date, and the 9/16 -3.5% drop was attributed to a broad Fed-driven market selloff, not company-specific news.",
+      "tagged_on": "2026-09-17"
+    }
+  },
+  {
+    "date": "2026-09-17",
+    "symbol": "ADBE",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Outgoing CEO filed a $31.5M share sale (reported 9/17), but a routine pre-transition insider sale isn't one of the defined catalyst categories (earnings/M&A/FDA/guidance/analyst action); no qualifying dated catalyst found.",
+      "tagged_on": "2026-09-17"
+    }
+  },
+  {
+    "date": "2026-09-17",
+    "symbol": "CVX",
+    "setup": "order_block",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Goldman Sachs raised PT to $240 from $225 (dated 9/16, the trading day before) after meetings with senior leadership, reiterating Buy -- a real, dated, material analyst action; BMO and Piper Sandler also raised targets around the same time.",
+      "tagged_on": "2026-09-17"
+    }
+  },
+  {
+    "date": "2026-09-17",
+    "symbol": "CVX",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Goldman Sachs raised PT to $240 from $225 (dated 9/16, the trading day before) after meetings with senior leadership, reiterating Buy -- a real, dated, material analyst action; BMO and Piper Sandler also raised targets around the same time.",
+      "tagged_on": "2026-09-17"
+    }
   }
 ]
