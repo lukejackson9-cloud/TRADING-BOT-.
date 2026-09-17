@@ -7842,7 +7842,11 @@
     "target_price": 5.7132000000000005,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch found a dated 9/16 announcement (participation in OpenAI ChatGPT sponsored-ads experience), but it is a product/partnership item, not earnings/M&A/FDA/guidance/analyst-action -- doesn't meet the catalyst definition.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "EYE",
@@ -7853,7 +7857,11 @@
     "target_price": 17.766000000000002,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "6.3% move on 9/16 attributed only to reaffirmed (unchanged) FY26 guidance/military-rollout narrative per dailypolitical.com -- 'stock moved' pattern, not a new dated catalyst.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "DOCN",
@@ -7864,7 +7872,11 @@
     "target_price": 133.66080000000002,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Sep 16: launched Managed AI Agents product and secured a 25M AI-infrastructure financing facility, stock +5.1% same day (StockStory/FinancialContent).",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "CON",
@@ -7875,7 +7887,11 @@
     "target_price": 39.2796,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No news specifically dated 9/16/2026 found for Concentra Group Holdings (CON); Goldman Sachs Buy-rating initiation referenced is undated to that day and from earlier in 2026 (Q1 earnings/guidance already stale).",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "EXC",
@@ -7886,7 +7902,11 @@
     "target_price": 45.8352,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 9/16 catalyst; earnings was 9/8 (too early) and exec-departure news is undated, not a fresh company-specific event.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "FIVN",
@@ -7897,7 +7917,11 @@
     "target_price": 36.806400000000004,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No 9/16-specific news found; only prior Q2 earnings, an undated FBN Securities initiation, and an undated 00M contract turned up in search.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "EBS",
@@ -7908,7 +7932,11 @@
     "target_price": 7.290000000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst found for Sep 16; only a small price move (-2.18%) noted, prior-quarter earnings referenced but not dated to Sep 16.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "PLAB",
@@ -7930,7 +7958,11 @@
     "target_price": 21.5676,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Only news is routine investor-conference attendance (Deutsche Bank Healthcare Summit) on 9/16 -- not earnings/M&A/FDA/guidance/analyst action.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "AZN",
@@ -7952,7 +7984,11 @@
     "target_price": 10.951200000000002,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch found only routine price/quote data for Dentsply Sirona on 9/16, no dated company-specific news event (earnings/M&A/FDA/guidance/analyst action).",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "RAMP",
@@ -7974,7 +8010,11 @@
     "target_price": 9.504000000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Per today's research.md: no genuine operating catalyst found; reported move likely confounded by the second 25-for-1 reverse-split (effective 09-17) rather than real news.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "AVPT",
@@ -7996,7 +8036,11 @@
     "target_price": 26.8704,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Only news found was a routine recurring cash dividend of $0.77 (ex-date 9/30/2026), a scheduled BDC distribution, not a material dated company-specific catalyst; no other news for 9/16.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "NRXS",
@@ -8007,7 +8051,11 @@
     "target_price": 7.4952000000000005,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Per today's research.md/council: NeurAxis announced a new payer coverage policy on 09-16 adding ~18M covered lives for its IB-Stim/PENFS therapy -- real, dated, company-specific.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "NRXS",
@@ -8018,7 +8066,11 @@
     "target_price": 7.4952000000000005,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Per today's research.md/council: NeurAxis announced a new payer coverage policy on 09-16 adding ~18M covered lives for its IB-Stim/PENFS therapy -- real, dated, company-specific.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "DK",
@@ -8029,7 +8081,11 @@
     "target_price": 85.4928,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No Sep-16-dated catalyst found; TD Cowen/Raymond James/Morgan Stanley PT raises were dated Sep 14, two days prior, not the signal day.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "HLMN",
@@ -8040,7 +8096,11 @@
     "target_price": 7.905600000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": "unclear",
+      "note": "Ticker ambiguous in search (Hillman Solutions vs. Helmerich & Payne/HP) and no dated 9/16/2026 news surfaced for either -- marking unclear rather than guessing.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "XERS",
@@ -8051,7 +8111,11 @@
     "target_price": 8.4024,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch found no news dated 9/16 for Xeris Biopharma; nearest items are a Sep 9 XP-8121 webinar and a Sep 10 Leerink PT raise to $16, neither same-day.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "AXON",
@@ -8084,7 +8148,11 @@
     "target_price": 435.5424,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "UBS raised PT to $450 from $355 (Buy) and TD Cowen to $350 from $338 (Hold) dated 9/16, citing refining margins (WebSearch).",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "GIII",
@@ -8095,7 +8163,11 @@
     "target_price": 30.423600000000004,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Gap up on 9/16 attributed to insider buying activity per marketbeat.com, and a routine dividend ex-date (9/15) -- neither fits the defined catalyst categories (earnings/M&A/FDA/guidance/analyst action).",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "TRMD",
@@ -8106,7 +8178,11 @@
     "target_price": 39.528000000000006,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Only a secondary share offering by existing holder Oaktree/OCM Njord pricing/closing 9/16 -- not earnings/M&A/FDA/guidance/analyst action per definition (WebSearch).",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "FLS",
@@ -8117,7 +8193,11 @@
     "target_price": 78.0948,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No company-specific catalyst found for 9/16; only a routine /bin/bash.22 dividend with ex-date 9/25.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "SUPX",
@@ -8128,7 +8208,11 @@
     "target_price": 8.8344,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No news for 9/16 found; most recent item was a stale 9/3 buyback/hardware-deal announcement (WebSearch).",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "AS",
@@ -8150,7 +8234,11 @@
     "target_price": 44.8308,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst found; only a routine dividend (ex-date 9/11) surfaced, not earnings/M&A/guidance/analyst action (WebSearch).",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "REF",
@@ -8161,7 +8249,11 @@
     "target_price": 16.988400000000002,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No company-specific news found for 9/16 (Reformation Inc.); only general market/Fed-rate-hike commentary (WebSearch).",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "IOVA",
@@ -8172,7 +8264,11 @@
     "target_price": 10.6596,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No new dated catalyst found for 09-16; coverage only references the already-reported Q2 earnings and general 243% YTD momentum/technical commentary, not fresh company-specific news.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "IOVA",
@@ -8183,7 +8279,11 @@
     "target_price": 10.6596,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No new dated catalyst found for 09-16; coverage only references the already-reported Q2 earnings and general 243% YTD momentum/technical commentary, not fresh company-specific news.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "OPCH",
@@ -8216,7 +8316,11 @@
     "target_price": 8.8884,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch found only Sep 16 law-firm securities-class-action solicitation press releases (Hagens Berman, Robbins Geller) tied to a May 11 short report \u2014 litigation solicitations aren't a qualifying catalyst category (no earnings/M&A/FDA/guidance/analyst action).",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "NEOG",
@@ -8227,7 +8331,11 @@
     "target_price": 13.554000000000002,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "09-16 coverage is vague bearish commentary on sales/leverage (Simply Wall St), not a specific dated analyst upgrade/downgrade or any earnings/M&A/FDA/guidance event.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "CNM",
@@ -8238,7 +8346,11 @@
     "target_price": 46.2456,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Simply Wall St: on 9/16/2026 Core & Main released a fresh quarterly earnings report paired with active M&A/acquisition commentary -- dated, company-specific earnings catalyst.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "ECO",
@@ -8249,7 +8361,11 @@
     "target_price": 91.5192,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": "unclear",
+      "note": "WebSearch returned no Sep-16-specific news for Okeanis Eco Tankers; most recent dated events were Q2 earnings (Aug 13) and a dividend (Aug 4), nothing found for the signal day itself.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "EAF",
@@ -8260,7 +8376,11 @@
     "target_price": 8.7588,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Zacks Research upgraded EAF from 'strong sell' to 'hold' on Sep 16, 2026 (thecerbatgem.com), a dated material analyst action.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "EAF",
@@ -8271,7 +8391,11 @@
     "target_price": 8.7588,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Zacks Research upgraded EAF from 'strong sell' to 'hold' on Sep 16, 2026 (thecerbatgem.com), a dated material analyst action.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "MEDS",
@@ -8282,7 +8406,11 @@
     "target_price": 6.555600000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Real dated catalyst per today's research.md: DataMEDS AI closed a $1.5M Helomics oncology-diagnostics acquisition via 8-K around 09-15/09-16, though disproportionate to the +274.69% move.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "MEDS",
@@ -8293,7 +8421,11 @@
     "target_price": 6.555600000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Real dated catalyst per today's research.md: DataMEDS AI closed a $1.5M Helomics oncology-diagnostics acquisition via 8-K around 09-15/09-16, though disproportionate to the +274.69% move.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "RBRK",
@@ -8304,7 +8436,11 @@
     "target_price": 113.37840000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Wedbush assumed coverage w/ Outperform, PT raised to $120 from $90 and added RBRK to Best Ideas List; also launched Rubrik MCP/Code Guardian products ~9/15 (WebSearch).",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "EAT",
@@ -8315,7 +8451,11 @@
     "target_price": 227.45880000000002,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst found for Sep 16; coverage is general strategy/valuation commentary (Motley Fool), not a dated event on that day.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "HON",
@@ -8326,7 +8466,11 @@
     "target_price": 224.27280000000002,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No 9/16-specific catalyst found; Melius downgrade was 9/10 and the access-control platform news was 9/14, both prior to the signal date.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "ES",
@@ -8348,7 +8492,11 @@
     "target_price": 9.612000000000002,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch found no 9/16-specific news; only a general recent analyst PT trim (19.24 to 17.00) and 2026 revenue/EBITDA guidance with no confirmed 9/16 date.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "ADPT",
@@ -8359,7 +8507,11 @@
     "target_price": 29.883600000000005,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch found no 9/16-specific news; recent analyst PT raises (Piper Sandler 8/4, JPMorgan 7/30) and the business-separation/convertible-notes items are older, not dated 9/16.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "ADPT",
@@ -8370,7 +8522,11 @@
     "target_price": 29.883600000000005,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch found no 9/16-specific news; recent analyst PT raises (Piper Sandler 8/4, JPMorgan 7/30) and the business-separation/convertible-notes items are older, not dated 9/16.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "INIO",
@@ -8381,7 +8537,11 @@
     "target_price": 20.2068,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "INNIO disclosed a 450MW Jenbacher engine order for US data-center power on 09-16, plus Moody's upgraded its corporate family rating to Ba3 from B1 same day (Investing.com/Moody's, 09-16-2026).",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "BIPC",
@@ -8392,7 +8552,11 @@
     "target_price": 38.556000000000004,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch found only technical/trading-signal commentary (mid-channel oscillation, risk-reward setup); no dated company-specific news (earnings/M&A/FDA/guidance/analyst action) for 9/16.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "PNTG",
@@ -8414,7 +8578,11 @@
     "target_price": 141.156,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst for Sep 16; next earnings Oct 15, dividend ex-date Sep 21, nothing company-specific dated to the signal day itself.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "RCUS",
@@ -8425,7 +8593,11 @@
     "target_price": 26.622,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 9/15-16 news found; most recent items were a stale Truist PT raise (9/8) and a trial data update (9/9) (WebSearch).",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "ECVT",
@@ -8447,7 +8619,11 @@
     "target_price": 22.5504,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No company-specific news found for 9/16; only price/market-cap stats surfaced (WebSearch).",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "KTB",
@@ -8458,7 +8634,11 @@
     "target_price": 73.8396,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Only news dated 09-16 is a limited-run Wrangler 'Blue Bell Collection' product launch -- a minor merchandising item, not earnings/M&A/FDA/guidance/analyst action; stock actually down 21% over 30 days.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "YETI",
@@ -8469,7 +8649,11 @@
     "target_price": 43.794,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch found no 9/16-dated catalyst for YETI; the only notable item is an Investor Day scheduled for Sep 17, one day after the signal date.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "W",
@@ -8480,7 +8664,11 @@
     "target_price": 111.4992,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": "unclear",
+      "note": "Wayfair (W) filed a Form 8-K dated Sep 16 2026 per Investing.com, but WebSearch returned no detail on its content, so materiality/catalyst status can't be confirmed.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "OTF",
@@ -8502,7 +8690,11 @@
     "target_price": 16.3728,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": "unclear",
+      "note": "Ticker identity ambiguous: search results conflated at least 3 different entities under BRUN (Boost Run Inc, Willow Lane Acquisition Corp, Brunner Investment Trust) with inconsistent/contradictory narratives (product launch vs earnings/analyst upgrades, differing % moves); could not confirm a real dated company-specific catalyst.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "DHT",
@@ -8513,7 +8705,11 @@
     "target_price": 24.883200000000002,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "DHT announced (9/14/2026, 2 trading days prior) a new 3-year VLCC time charter for DHT Panther at $100,000/day -- dated, company-specific, material contract news plausibly still driving the 9/16 signal; no closer-dated news found.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "CNP",
@@ -8524,7 +8720,11 @@
     "target_price": 41.3964,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No news dated 9/16/2026; only general oversold-rebound/dividend-yield commentary and a stale Q1 2026 earnings recap, not a new dated catalyst.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "CVI",
@@ -8535,7 +8735,11 @@
     "target_price": 57.294000000000004,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No news dated 9/16/2026 found beyond intraday price range; most recent company news was Q2 2026 earnings from 7/30/2026, already stale.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "MAMA",
@@ -8546,7 +8750,11 @@
     "target_price": 15.39,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 09-16 catalyst; most recent real news is the Q2 FY2027 earnings beat reported 09-03, already over a week stale by the signal date.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "CDNS",
@@ -8557,7 +8765,11 @@
     "target_price": 302.292,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No news dated 9/16/2026 found; only recap of Q2 2026 earnings/raised guidance from late July, already stale/priced-in by mid-September.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "TXNM",
@@ -8568,7 +8780,11 @@
     "target_price": 63.223200000000006,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 9/15-16 news found; most recent item was an August stock-sale/loan-repayment story, too stale (WebSearch).",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "PGEN",
@@ -8590,7 +8806,11 @@
     "target_price": 8.6292,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 09-16 catalyst found; coverage is generic tanker-market/dividend commentary plus already-reported Q2 EPS beat, nothing company-specific dated to 09-16.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "GE",
@@ -8601,7 +8821,11 @@
     "target_price": 337.932,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "GE Aerospace announced 1.75B acquisition of Consolidated Precision Products on 9/16, cited as the driver of the day's ~2-3% gain (per marketbeat.com/tradingkey.com) -- genuine dated M&A catalyst.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "BBNX",
@@ -8645,7 +8869,11 @@
     "target_price": 14.8716,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch found no dated 9/16 company news for Vestis (VSTS) \u2014 only stale Aug 2026 trading-up mentions and an unrelated Sep 21 dividend ex-date.",
+      "tagged_on": "2026-09-16"
+    }
   },
   {
     "ticker": "QNT",
@@ -8667,6 +8895,10 @@
     "target_price": 12.6036,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch found only a future conference-presentation announcement (Phase 2 data at World Congress on Menopause, Sept 30-Oct 3) and background insider-buying stats; no earnings/M&A/FDA/guidance/analyst-action catalyst dated 9/16.",
+      "tagged_on": "2026-09-16"
+    }
   }
 ]
