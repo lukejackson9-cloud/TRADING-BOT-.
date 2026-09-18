@@ -263,6 +263,48 @@ project, every one downgraded to WATCH at council. Common threads:
   trends continue next quarter without a new dilutive raise, which would
   be a materially different, re-checkable setup.
 
+### GNRC — 2026-09-18, council-downgraded, PENDING
+- **What happened**: Generac (backup-generator/power-equipment maker)
+  +18.34% on 09-17 on a real, dated, idiosyncratic catalyst — a
+  long-term Amazon data-center supply deal (up to $8B, $2.4B of
+  disclosed near-term deliveries 2027-28) with a warrant tying Amazon's
+  own economics to GNRC's share price (1,693,745 shares at $200.93
+  strike, verified against the SEC 8-K). Correlation specialist
+  confirmed peers (CAT, CMI, VRT) barely moved same session.
+- **Why downgraded**: Technical picture showed real exhaustion, not
+  confirmation — 8.2x average volume, a ~10.6% intraday reversal off
+  the day's high, and the stock still failed to close above its own
+  prior 20-day high despite an 18%+ day. Valuation was already stretched
+  independent of the news (GF Value ~22.5% below the close). The bull
+  agent itself didn't argue for entering at the close — it proposed
+  waiting for a pullback toward the warrant strike ($200.93) as the
+  better entry, effectively conceding the timing problem.
+- **Outcome**: PENDING — re-check if GNRC bases constructively near
+  $200 without giving back further ground, or if the deferred $2.4B in
+  deliveries starts showing up in forward guidance.
+
+### RARE — 2026-09-18, council-downgraded, PENDING
+- **What happened**: Ultragenyx +12.58% on 09-17 on FDA approval of
+  FAYUVI, the first-ever treatment for pediatric Sanfilippo syndrome
+  type A — genuinely separable (different modality/target/program) from
+  the unrelated 09-03 Angelman (apazunersen) Phase 3 failure that had
+  crashed the stock -44%. Correlation specialist confirmed no
+  gene-therapy/biotech sector-wide move that session.
+- **Why downgraded**: The approval is real, but the addressable
+  population is confirmed genuinely tiny (Sanfilippo type A incidence
+  ~0.26/100k births, independently checked against Orphanet/NORD data)
+  — not enough volume to plausibly offset the profitability the
+  Angelman failure cost the company, against a balance sheet already
+  under real stress (~4.5 quarters of cash runway, a widening
+  stockholders' deficit). Sell-side has not re-rated bullish (Goldman
+  cut to $19 pre-approval, Evercore in-line). Stock is still -45.3%
+  below its pre-crash level with a bearish-leaning technical consensus
+  (TradingView SELL) — a modest bounce, not a turnaround, even on
+  genuinely idiosyncratic news.
+- **Outcome**: PENDING — re-check if Ultragenyx discloses real
+  pricing/reimbursement traction on FAYUVI or a credible path to
+  offsetting the Angelman loss.
+
 ---
 
 ## Appendix: every other researched ticker (WATCH/PASS, never reached council)
