@@ -1011,3 +1011,34 @@ Senate failure; MTDR: WTI crude selloff) -- same correlated-move pattern
 as lessons.md #3, correctly held to PASS rather than treated as
 independent opportunities. COST earnings 09-24 flagged as a forward
 pre-catalyst watch entry.
+
+## 2026-09-18 daily screen -- first TWO-CANDIDATE day
+20 tickers researched from Massive's 09-16->09-17 session-pair
+whole-market screen. For the first time, TWO tickers reached CANDIDATE
+in the same day: GNRC (Generac, a real, dated, idiosyncratic Amazon
+data-center backup-power deal worth up to $8B) and RARE (Ultragenyx, a
+real FDA approval of FAYUVI, first-ever treatment for pediatric
+Sanfilippo syndrome type A). Ran the full 4-role council on both in
+parallel -- both downgraded to WATCH, for different reasons:
+- **GNRC**: the catalyst itself wasn't the problem -- the entry was.
+  8.2x average volume, a ~10.6% intraday reversal off the day's high,
+  and the stock still failed to close above its own prior 20-day high
+  despite an 18%+ day -- textbook exhaustion, not a confirmed breakout.
+  Valuation was already stretched independent of the news. The bull
+  agent itself proposed waiting for a pullback rather than chasing.
+- **RARE**: the approval is real and genuinely separable from an
+  unrelated 09-03 Angelman trial failure that had crashed the stock
+  -44% -- but the newly-approved indication's addressable population is
+  confirmed genuinely tiny (independently checked against epidemiology
+  data), nowhere near enough to offset a company already burning cash
+  with a widening stockholders' deficit. Sell-side hasn't re-rated
+  bullish either.
+
+Council downgrade streak now 17-for-17. Two other notable repeats this
+session: CHPT (the exact ticker lessons.md #1 uses as its "sell the
+news" reference case) had no new catalyst, confirming the pattern
+again; BIAF (this project's own thin-float pump/dump reference case)
+had a genuine new patent-grant catalyst this time, but the same
+ultra-thin float that already produced one confirmed pump/dump on
+09-09 kept it at WATCH rather than PASS or CANDIDATE. Full detail in
+data/research/2026-09-18/.
