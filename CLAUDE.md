@@ -770,6 +770,22 @@ month horizon cannot be validated in weeks. The edge there exists precisely
 because it needs patience institutions are not paid to have. Nothing built
 here shortens that; it is the trade being made, and it was stated to the user
 before they chose it.
+**Council structure expanded 2026-09-15 — this ADDS rigor, it does not
+loosen anything above.** Per explicit user request ("a single strategy
+alone will not help us win trades, it needs multiple alongside news"),
+skills/council.md grew from 2 roles (bull/bear) to 4: a **Technical
+Context specialist** and a **Correlation & Macro specialist** now run
+before bull/bear and hand them (and the moderator) grounded facts —
+neither is an advocate, and a matching mechanical TA/ICT signal is
+EXPLICITLY never treated as adding confidence (see the "Signal confluence
+testing" section below — that was tested and found to be no edge). Their
+job is to catch what a pure news read misses: an already-extended chart
+(sell-the-news, lessons.md #1) or a sector-wide move with no independent
+company-specific angle on top (lessons.md #3) are each now independently
+sufficient grounds for a downgrade, not just informal moderator judgment.
+This makes council STRICTER in practice (more ways to fail, same bar to
+pass), consistent with — not a violation of — the calibration freeze
+above.
 
 ## Trade execution & approval — updated 2026-09-07 (supersedes the old
 ## "no trade without human approval, ever" rule below for paper/demo and,
@@ -1159,6 +1175,15 @@ market, completed 2026-09-07):**
       `python scripts/backtest_ta.py cost_sensitivity {start} {end}` once
       a session with the real cache (or a freshly regenerated one) is
       available, and report the breakeven bps per setup here.
+    - **Standing caveat, applies to every backtest in this file**: the
+      universe (`get_common_stock_tickers()`) reflects TODAY's active
+      tickers applied retroactively — a company that delisted or was
+      acquired between 2020-2026 is entirely absent from every year's
+      test, including years it was actually trading. This is
+      survivorship bias in the classic sense and plausibly makes every
+      result here look somewhat better than the true historical
+      picture, on top of whatever each individual setup's own numbers
+      already show (or don't).
 
 Do not promote any setup to the Strategy section — none has earned it,
 and vcp_breakout's earlier promising read did not hold up under more

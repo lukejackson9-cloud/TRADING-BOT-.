@@ -1,4 +1,5 @@
 # Scorecard — updated 2026-09-11 (17 unchecked outcomes cleared via OHLCV; calibration corrected)
+# Scorecard — updated 2026-09-11
 
 ## Proposed ideas (survived council, reached propose_trades.md)
 Total checked: 0
@@ -303,6 +304,38 @@ exactly the honesty the rule was written to enforce.
   is the instrument that would distinguish these — it records whether
   bull came close. It needs live verdicts, which needs research.md to
   produce a CANDIDATE.
+validated the downgrade and only 1 (DELL) cost a winner — a real, if
+still small, sample suggesting council's skepticism has been earning its
+keep, not just suppressing activity. Per the 2026-09-03/09-09 user
+decisions, this is NOT license to loosen anything unilaterally — it's the
+first real evidence to bring back to the user for that conversation.
+
+## Research-level WATCH/PASS calls (never reached council)
+Total checked: 77
+Call validated (price faded/stayed flat/moved against the thesis,
+  matching the PASS/WATCH reasoning): 32
+Call cost a winner (price moved the way a CANDIDATE would have,
+  without us): 7 (XP, FCEL-tentative, AEHL-so far, CLS-tentative, CCC.L-leaning,
+  OXM, AEHR — AEHR is the standout, a genuine +69% miss on a "sell the
+  news" call, see lessons.md #1's new counter-example note)
+Unclear: 38 (mostly missing a clean verdict-date or current-date baseline
+  price rather than contradictory evidence — see the trade_ledger.md
+  appendix's per-ticker notes for exactly what's missing on each)
+Accuracy: 32/(32+7) = 82.1%
+
+Separately, 18 tickers (BMNR, PUR, ZOOZ, and the full 09-09/09-10 batch —
+FCUV, BIAF, DOCN, VIAV, ADBE, CHWY, NET, PINS, VRT, BAND, KRMN, TBBK,
+BRZE, SIG, plus 2 more) were **not checked at all** this pass — the
+outcome-check subagents ran out of WebSearch budget before reaching them,
+not because the evidence contradicted anything. These are not "unclear"
+outcomes, they're unattempted ones; they need a dedicated follow-up pass
+(ADBE especially, since CLAUDE.md/HANDOFF.md specifically wanted its
+earnings-reaction checked) before being folded into this scorecard.
+9 more (the 09-02 screened-movers batch: CNH, ONDS, IREN, NU, CDE, RIG,
+SOFI, PLTR, PCG, NVDA) had no directional thesis to grade in the first
+place (bare price/volume movers logged without a bull/bear call) and are
+excluded from the denominator entirely, not counted as validated,
+missed, or unclear.
 
 ## Sample size note
 With N=14 (council) and N=77 (research-level), these percentages are

@@ -863,3 +863,151 @@ overriding a Hard Risk Rule (no setup has earned promotion; no execution
 code or safeguards exist yet either) via AskUserQuestion rather than
 just acting on it. User chose to hold off on any demo trade and build
 this track instead.
+
+## 2026-09-11 (daily screen): 0 CANDIDATEs, 12 tickers reviewed
+Massive whole-market screen (09-09->09-10 session pair) + FMP same-day
+framing. Screened ORCL, COO, AEO, BHVN, SWKS, WOLF, RELY, REPL, SMR, TGB,
+TNON, ACVA -- full detail in data/research/2026-09-11/. 4 WATCH (ORCL,
+SWKS, TNON, ACVA), 8 PASS. Nothing reached CANDIDATE, so council.md and
+propose_trades.md did not run today. Council's downgrade streak stays at
+14-for-14 by definition (no new CANDIDATE to test it against). Notable:
+ORCL's earnings beat was real but the -5.4% price move actually predates
+the print (pre-earnings AI-capex worry), so the earnings reaction itself
+isn't confirmed yet in a completed session -- worth a look on a future
+screen if ORCL moves again. TNON and ACVA both got real, verified
+catalysts (a convertible-note repayment; a confirmed $10.50/share Copart
+acquisition respectively) but were held at WATCH for structural reasons
+(thin-float pump pattern; upside capped at the deal price) rather than
+catalyst quality.
+
+## 2026-09-14 (daily screen): 0 CANDIDATEs, 14 tickers reviewed, 2nd quiet day running
+Massive whole-market screen (09-10->09-11 session pair) + FMP same-day
+framing. 5 of today's 14 tickers were REPEATS with real prior history
+(HPE, SMR, TNON, DBGI, BAND) -- research.md's Step 0 check worked exactly
+as designed on all five: each note explicitly cited the prior verdict and
+reasoned about continuation vs. fresh event rather than re-researching
+blind or copying the old call. Notable: SMR's screener hit was literally
+the SAME 09-11 UBS-downgrade story just resurfacing a session late in
+Massive's data -- caught and correctly not double-counted as new
+evidence. TNON's thin-float pump is now on its 3rd straight up session
+with still-unreliable price data across sources -- worth a specific
+follow-up look on the next journal check-in given how long it's been
+running. Full detail in data/research/2026-09-14/. Council's downgrade
+streak stays at 14-for-14 (2nd day running with nothing reaching council
+at all, not a new test of the calibration).
+
+## 2026-09-15: Built the 4-role council expansion, ran it for real on ABBV
+User asked to build the specialist-council expansion deferred since
+09-11 ("a single strategy alone will not help us win trades, it needs
+multiple alongside news"). skills/council.md now has 4 roles: Technical
+Context specialist + Correlation & Macro specialist (both new,
+non-argumentative fact-reporters) running before the existing bull/bear
+pair. Explicitly documented in CLAUDE.md as adding rigor, not loosening
+the 09-03 calibration freeze -- a matching mechanical TA/ICT signal is
+never treated as adding confidence, per the "Signal confluence testing"
+section's own findings.
+
+**First real test**: researched 7 tickers from the 09-11 catalyst-tag
+true-list (AAPL, ABBV, BA, CSCO, TXG, VIK, YSS) with a proper research.md
+pass. Only ABBV reached CANDIDATE. Ran the new council on it -- both
+specialists caught something real: the Technical specialist found the
+move is an unresolved retest of AbbVie's own ALL-TIME HIGH (not just a
+"20-day high"), and the Correlation specialist confirmed a genuine
+sector-wide healthcare rally diluting the catalyst's independence. The
+bear agent then independently verified and sharpened the technical
+specialist's own framing -- a good sign the roles are doing real
+cross-checking, not rubber-stamping each other. Moderator verdict:
+**WATCH**, not CANDIDATE -- the bull case (itself only self-rated
+"moderate") explicitly conceded the decisive open question. This is
+structurally the same pattern as TARS's 09-08 downgrade (lessons.md #1).
+
+Full files: data/research/2026-09-15/ABBV*.md (research, technical,
+correlation, bull, bear, council). Ledger entry added to
+data/journal/trade_ledger.md.
+
+## 2026-09-15 (daily screen): 0 CANDIDATEs, 3rd quiet day running -- two large correlated clusters identified and correctly handled
+Massive whole-market screen (09-11->09-14 session pair) turned up two
+large sector-wide clusters (10 cybersecurity names up, 6 optical/semi
+names down) that both traced back to ONE shared macro cause via
+WebSearch: a weekend AI-safety essay from Anthropic's Dario Amodei plus
+Sam Altman's AI-risk warnings (09-13/14) rotated money out of
+AI-buildout hardware and into defensive cybersecurity. Rather than
+researching all 22 cluster names individually, did full research.md
+passes on the 4 most informative (PANW/CRWD as cyber leaders, GLW/COHR
+as decline leaders) and noted the other 18 compactly with the shared,
+verified cause -- efficient without skipping the "check ticker identity/
+correlation" step screen.md requires.
+
+Also researched 6 repeat tickers with Step 0 history checks (TYRA, BAND,
+AEHR, AEHL, VIAV, NTSK) plus 2 new names (ARQQ, RBLX). Notable: AEHR
+(the project's one documented "cost a winner" miss, +69% from 09-04) got
+extra scrutiny given that history -- confirmed today's move is a pullback
+from the real all-time high the miss was about, not fresh news, so PASS
+was the right call rather than either ignoring the prior miss or
+overcorrecting from it.
+
+0 CANDIDATEs, 3rd day running with nothing reaching the new 4-role
+council since it was built yesterday. Full detail in
+data/research/2026-09-15/.
+
+## 2026-09-16 daily screen
+18 tickers researched (VEEA, HQ, ENVA, ALHC, RLGT, PLAY, SWKS, FTRE,
+ARWR, WING, SDGR, CRCL, TEM, CBRL, BOOT, COIN, BLMN, AXON) from Massive's
+09-14->09-15 session-pair whole-market screen. Ran an identity-check pass
+first (per the routine's explicit instruction) on the more obscure top
+movers -- confirmed all are real common stocks, no leveraged-ETF
+wrappers, though USDE and FWDI (not researched further, outside the
+shortlist) are crypto-treasury proxy vehicles worth remembering if they
+resurface. FMP was reachable this session (previously blocked by network
+policy as of 09-02) -- worth re-verifying next time rather than assuming
+either state.
+
+0 CANDIDATEs, 4th day running. Two names worth tracking: RLGT (real
+earnings-beat + analyst-upgrade catalyst, held at WATCH only because the
+reaction already fired the day before) and SWKS (3rd appearance --
++9.79% on 09-10, +13.55% further on 09-15, same unresolved Qorvo-merger
+story both times, no actual China/Korea regulatory clearance yet, and
+BMO initiated coverage today at a $70 target, 22% below the $90 close --
+a real overextension warning sign on the same story). Full detail in
+data/research/2026-09-16/.
+
+## 2026-09-16 (evening): fixed a real concurrent-write bug
+scripts/tag_catalyst.py's `tag` command is designed to be called from
+many parallel subagents at once (that's how skills/catalyst_tag.md's
+daily batches run) -- but its read-modify-write on the JSON ledgers had
+no locking, and 8 parallel batches tagging the 2026-09-15 TA signals
+lost one ticker's tag (MPC) to a classic race: two overlapping calls
+both read the pre-write state, the later save clobbered the earlier one.
+Caught it via a full post-batch audit (not just the pending()-count
+check), fixed the tag, then fixed the actual bug: added
+scripts/ledger_lock.py (an fcntl.flock-based `locked_ledger()` context
+manager, atomic temp-file+rename on write) and applied it to all three
+scripts that touch data/paper_trades.json / data/ict_paper_trades.json
+(tag_catalyst.py, paper_trader.py, ict_paper_trader.py). Verified with a
+stress test: 0 lost tags with the fix across 40 tickers / 20 concurrent
+callers, vs. 3/40 lost reproducing the same test against the old logic.
+Future catalyst-tag batches no longer need the extra audit step just to
+catch this class of bug -- the pending()-count check is trustworthy again.
+
+## 2026-09-17 daily screen
+18 tickers researched (MEDS, AEHL, FTFT, NRXS, NCT, ALHC, BBNX, EAF,
+JBHT, AXTI, BULL, ARQT, CIFR, BYND, BLSH, BRKR, MTDR, AMRX) from
+Massive's 09-15->09-16 session-pair whole-market screen.
+
+**NRXS (NeurAxis) reached CANDIDATE** -- the first CANDIDATE since the
+09-03 calibration freeze to actually get a full 4-role council review
+(ABBV on 09-15 was the only other one). Real, dated, idiosyncratic
+catalyst (payer-coverage expansion, correlation specialist confirmed no
+sector-wide dilution) -- but council downgraded to WATCH on two
+independent grounds: already-extended/already-faded technical picture
+(16x volume, breakout already fired, ~10% intraday fade before close),
+plus a verified going-concern qualification and real dilution history
+the bull case never addressed. Bull agent conceded the entry-timing
+problem itself. Council downgrade streak: 15-for-15. Full detail in
+data/research/2026-09-17/NRXS_council.md.
+
+Two confirmed sector/macro-wide moves this session (BLSH: Clarity Act
+Senate failure; MTDR: WTI crude selloff) -- same correlated-move pattern
+as lessons.md #3, correctly held to PASS rather than treated as
+independent opportunities. COST earnings 09-24 flagged as a forward
+pre-catalyst watch entry.

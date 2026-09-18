@@ -173,9 +173,105 @@ KRMN   # 2026-09-10: -11.26% on 2026-09-09 session, Karman Holdings
 TBBK   # 2026-09-10: -22.33% on 2026-09-09 session, The Bancorp
 BRZE   # 2026-09-10: -21.73% on 2026-09-09 session, Braze
 
-# --- Forward-looking (earnings lookahead), added 2026-09-12 via scripts/earnings_calendar.py ---
-# These are NOT movers and NOT candidates. research.md step 5 caps them at WATCH
-# until the print lands; the point is to be already watching on the day.
-FDX   # EARNINGS 2026-09-17 — pre-catalyst watch, not yet a candidate
-COST  # EARNINGS 2026-09-24 — pre-catalyst watch, not yet a candidate
-NKE   # EARNINGS 2026-10-01 — pre-catalyst watch, not yet a candidate
+# --- added 2026-09-11 via the daily screen routine (Massive whole-market, 2026-09-09 -> 09-10 session pair) ---
+ORCL   # 2026-09-11: pending pre-catalyst tag from earlier (EARNINGS ~09-09, unconfirmed date) now resolving -- ORCL fell -5.4% on 09-10 on heavy volume (56.8M vs ~30-40M typical), evaluating the reaction
+COO    # 2026-09-11: -14.67% on 09-10 session, Cooper Companies
+AEO    # 2026-09-11: -13.97% on 09-10 session, American Eagle Outfitters
+BHVN   # 2026-09-11: -14.73% on 09-10 session, Biohaven
+SWKS   # 2026-09-11: +9.79% on 09-10 session, Skyworks Solutions
+WOLF   # 2026-09-11: -7.73% on 09-10 session, Wolfspeed
+RELY   # 2026-09-11: -8.89% on 09-10 session, Remitly
+REPL   # 2026-09-11: -8.37% on 09-10 session, Replimune
+SMR    # 2026-09-11: fresh -15.7% intraday move today per FMP most-active, on top of the existing 09-09 WATCH low-confidence entry -- re-checking given the escalation
+TGB    # 2026-09-11: -10.19% on 09-10 session, Taseko Mines -- part of a possible copper/mining cluster (HBM/ERO/SCCO/CENX also moved) worth a correlation check if this or another miner reaches CANDIDATE
+TNON   # 2026-09-11: +117.2% on 09-10 session then a further +11.9% intraday today per FMP -- thin-float-style multi-day pump, verify catalyst carefully (BIAF precedent)
+ACVA   # 2026-09-11: +44.2% per FMP most-active, ACV Auctions
+
+# --- added 2026-09-14 via the daily screen routine (Massive whole-market, 2026-09-10 -> 09-11 session pair) ---
+HPE    # 2026-09-14: +12.44% on 09-11 session -- repeat ticker, has a prior council-downgraded WATCH entry (09-03, GWRE-shaped beat-then-guide-down pattern), checking Step 0 history before evaluating this fresh move
+SMR    # 2026-09-14: -15.67% on 09-11 session -- repeat (already PASS 09-11 on a UBS downgrade), checking for a distinct fresh catalyst vs. continuation; possible nuclear/SMR-sector cluster with OKLO (-9.18%) and LEU (-8.18%) also moving
+TNON   # 2026-09-14: +11.89% further on 09-11 session, still climbing -- repeat, thin-float pump persisting, re-checking (BIAF precedent)
+DBGI   # 2026-09-14: -11.63% on 09-11 session (a DIFFERENT session than the 09-10 true-tagged buyout-offer move already in the ledger) -- repeat, checking for a fresh reason for today's reversal
+BAND   # 2026-09-14: +10.17% on 09-11 session -- repeat (was PASS 09-10, no confirmed catalyst that time), checking if a real catalyst has since emerged
+ATEC   # 2026-09-14: +19.68% on 09-11 session, Alphatec Holdings
+ODD    # 2026-09-14: +14.18% on 09-11 session, Oddity Tech
+ZUMZ   # 2026-09-14: -12.93% on 09-11 session, Zumiez
+PMTS   # 2026-09-14: -16.48% on 09-11 session, CPI Card Group
+NTAP   # 2026-09-14: +8.54% on 09-11 session, NetApp
+ON     # 2026-09-14: +8.51% on 09-11 session, ON Semiconductor
+HPQ    # 2026-09-14: +8.40% on 09-11 session, HP Inc
+M      # 2026-09-14: +7.71% on 09-11 session, Macy's
+NOK    # 2026-09-14: -13.25% intraday today per FMP most-active (live 09-14 session, separate from the Massive 09-11 pair above), Nokia
+
+# --- added 2026-09-15 via the daily screen routine (Massive whole-market, 2026-09-11 -> 09-14 session pair) ---
+# TWO large correlated clusters today, both traced to ONE shared root cause via WebSearch
+# (a weekend AI-safety essay from Anthropic's Dario Amodei + Sam Altman's warnings about
+# losing control of AI, 2026-09-13/14): money rotated OUT of AI-buildout-exposed hardware
+# (optical/semis) and INTO defensive cybersecurity. Full research.md done only on the
+# clearest candidates for an independent angle on top of the shared macro story; the rest
+# noted compactly since the cause is identical and well-sourced, not independently derived.
+PANW   # 2026-09-15: +13.09-13.81%, cybersecurity/AI-safety rotation cluster leader -- full research
+CRWD   # 2026-09-15: +13.85-15.42%, cybersecurity/AI-safety rotation cluster, largest single mover -- full research
+GLW    # 2026-09-15: -13.70-13.74%, has ITS OWN distinct catalyst (a $2B dilutive at-the-market equity offering, disclosed Friday) on top of the sector selloff -- full research
+COHR   # 2026-09-15: -12.73%, optical/semi decline cluster, checking for any independent angle -- full research
+RPD    # 2026-09-15: +24.05%, cybersecurity/AI-safety rotation cluster -- CORRELATED with PANW/CRWD, no independent research done
+ZS     # 2026-09-15: +16.52%, cybersecurity/AI-safety rotation cluster -- CORRELATED with PANW/CRWD
+TENB   # 2026-09-15: +16.51%, cybersecurity/AI-safety rotation cluster -- CORRELATED with PANW/CRWD
+RBRK   # 2026-09-15: +15.64%, cybersecurity/AI-safety rotation cluster -- CORRELATED with PANW/CRWD
+SAIL   # 2026-09-15: +15.31%, cybersecurity/AI-safety rotation cluster -- CORRELATED with PANW/CRWD
+QLYS   # 2026-09-15: +15.06%, cybersecurity/AI-safety rotation cluster -- CORRELATED with PANW/CRWD
+S      # 2026-09-15: +14.48%, cybersecurity/AI-safety rotation cluster (SentinelOne) -- CORRELATED with PANW/CRWD
+OKTA   # 2026-09-15: +11.98%, cybersecurity/AI-safety rotation cluster -- CORRELATED with PANW/CRWD
+TER    # 2026-09-15: -13.30%, optical/semi decline cluster -- CORRELATED with GLW/COHR
+MXL    # 2026-09-15: -13.12%, optical/semi decline cluster -- CORRELATED with GLW/COHR
+MTSI   # 2026-09-15: -12.83%, optical/semi decline cluster -- CORRELATED with GLW/COHR
+SMTC   # 2026-09-15: -12.07%, optical/semi decline cluster -- CORRELATED with GLW/COHR
+TYRA   # 2026-09-15: +13.80% -- repeat ticker (3rd appearance: WATCH 09-08, PASS 09-10 after Phase 2 readout resolved) -- checking Step 0 history for a genuinely new reason
+BAND   # 2026-09-15: -13.89% -- repeat ticker (PASS 09-10 and 09-14, no confirmed catalyst either time), now REVERSING direction -- checking Step 0
+AEHR   # 2026-09-15: -11.95% -- repeat ticker (WATCH 09-04, later resolved as a "cost a winner" +69% miss on the sell-the-news pattern, logged as a lessons.md #1 counter-example) -- checking Step 0 carefully given that history
+AEHL   # 2026-09-15: -22.28% -- repeat ticker (PASS 09-03, "recycled Bitcoin-treasury narrative, 3rd+ time this year") -- checking Step 0
+VIAV   # 2026-09-15: -12.72% -- repeat ticker (WATCH low confidence 09-09, no dated catalyst confirmed) -- checking Step 0
+NTSK   # 2026-09-15: +15.65% -- repeat ticker (appeared in the 09-11 catalyst-tag batch, tagged false -- no dated news found then) -- checking Step 0
+ARQQ   # 2026-09-15: -18.75%, Arqit Quantum -- new, real quantum-computing theme
+RBLX   # 2026-09-15: +12.73%, Roblox -- new
+
+# --- added 2026-09-16 via the daily screen routine (Massive whole-market, 2026-09-14 -> 09-15 session pair) ---
+VEEA   # 2026-09-16: +149.34%, reverse-split/thin-float pump pattern (BIAF precedent) -- PASS
+HQ     # 2026-09-16: +27.66%, Horizon Quantum Holdings -- no confirmed catalyst for the move -- PASS
+ENVA   # 2026-09-16: -23.43%, Enova International -- withdrew Grasshopper Bank acquisition + securities-investigation notice -- PASS (negative catalyst, no buy case)
+ALHC   # 2026-09-16: -19.86%, Alignment Healthcare -- medical-cost warning + whistleblower accounting allegation -- PASS (negative catalyst)
+RLGT   # 2026-09-16: +19.49%, Radiant Logistics -- real Q4 earnings beat + analyst upgrade, but reaction already fired the day before -- WATCH
+PLAY   # 2026-09-16: -19.01%, Dave & Buster's -- Q2 earnings miss -- PASS (negative catalyst)
+SWKS   # 2026-09-16: +13.55% further -- repeat (WATCH 09-11 on Qorvo-merger progress) -- same unresolved story, no new regulatory clearance, BMO initiated at $70 target (below price) -- WATCH
+FTRE   # 2026-09-16: +13.33%, Fortrea Holdings -- no dated catalyst found, possible squeeze setup -- PASS
+ARWR   # 2026-09-16: -12.40%, Arrowhead Pharmaceuticals -- disappointing Phase 1/2a interim data -- PASS (negative catalyst)
+WING   # 2026-09-16: -12.09% -- repeat (PASS 09-14/09-15, no confirmed catalyst then) -- continuation of known comp-sales story + stale downgrade -- PASS
+SDGR   # 2026-09-16: +12.05%, Schrodinger -- new 52-wk high on vague AI-drug-discovery interest around a company-hosted event, no hard announcement -- WATCH
+CRCL   # 2026-09-16: -11.41%, Circle Internet Group -- sector/regulatory-driven (Clarity Act Senate vote failure, broad crypto selloff), not company-specific -- PASS
+TEM    # 2026-09-16: +10.67%, Tempus AI -- real catalyst (Piper Sandler upgrade + ARPA-H grant + FDA clearances) but stock already +70% trailing month, overextension risk -- WATCH
+CBRL   # 2026-09-16: -10.65%, Cracker Barrel -- no fresh catalyst, known rebrand-backlash story continuation -- PASS
+BOOT   # 2026-09-16: -10.13%, Boot Barn -- comp-sales deceleration disclosed at Goldman conference, still positive comps -- PASS
+COIN   # 2026-09-16: -10.10%, Coinbase -- sector/macro-driven (Clarity Act failure + broad crypto selloff), not company-specific -- PASS
+BLMN   # 2026-09-16: -10.10%, Bloomin' Brands -- no fresh catalyst, stale negative fundamentals -- PASS
+AXON   # 2026-09-16: -9.81%, Axon Enterprise -- $1B 0% convertible notes offering (dilution concern) same day, fundamentals still solid -- PASS
+
+# --- added 2026-09-17 via the daily screen routine (Massive whole-market, 2026-09-15 -> 09-16 session pair) ---
+NRXS   # 2026-09-17: +21.75%, NeurAxis -- REACHED CANDIDATE in research.md (real payer-coverage-expansion catalyst), council-downgraded to WATCH (already-extended/faded technical picture + verified going-concern/dilution risk) -- see data/research/2026-09-17/NRXS_council.md
+MEDS   # 2026-09-17: +274.69%, DataMEDS AI -- thin-float pump/fade pattern, already reversing intraday -- PASS
+AEHL   # 2026-09-17: +78.68% -- repeat (PASS 09-03/09-15) -- NEW dilutive catalyst this time (toxic convertible note, not the recycled BTC story) -- PASS
+FTFT   # 2026-09-17: +21.95% -- repeat (was -28.61% on 09-15) -- no catalyst found, speculative whipsaw around a tightened float -- PASS
+NCT    # 2026-09-17: +18.40%, Intercont (Cayman) -- likely a reverse-split-adjustment artifact, not a real move -- PASS
+ALHC   # 2026-09-17: -16.01% -- repeat (PASS 09-16) -- same unresolved negative-catalyst cluster continuing, no new info -- PASS
+BBNX   # 2026-09-17: +15.34%, Beta Bionics -- repeat -- analyst PT raises vs. dilutive offering, no new hard catalyst -- WATCH
+EAF    # 2026-09-17: +13.74%, GrafTech -- momentum off a stale (09-08) price-hike announcement, no fresh catalyst -- WATCH
+JBHT   # 2026-09-17: -13.30%, J.B. Hunt Transport -- clean negative catalyst (earnings warning) but not actionable long-only -- PASS
+AXTI   # 2026-09-17: +11.44%, AXT Inc -- genuine company-specific catalyst this time (S&P SmallCap 600 inclusion, not the 09-08 sector rally) but already +600% YTD -- WATCH
+BULL   # 2026-09-17: -11.20%, Webull -- insider sale + dilution overhang -- PASS
+ARQT   # 2026-09-17: +11.19%, Arcutis Biotherapeutics -- soft catalyst (conference reiteration), corrected a stale "new Phase 2 data" claim circulating in aggregator coverage -- WATCH
+CIFR   # 2026-09-17: +10.80%, Cipher Mining -- real AI/HPC-pivot catalyst, not crypto-price-driven, but news already public for days -- WATCH
+BYND   # 2026-09-17: +9.61%, Beyond Meat -- no dated catalyst, distress signals (Sell rating, high short interest, reverse split) -- PASS
+BLSH   # 2026-09-17: -9.53%, Bullish -- sector/regulatory-wide (Clarity Act Senate failure hit crypto-adjacent names broadly) -- PASS
+BRKR   # 2026-09-17: +8.83%, Bruker -- real catalyst (Luvata superconducting-wire partnership) but move size looks disproportionate -- WATCH
+MTDR   # 2026-09-17: -8.61%, Matador Resources -- sector-wide (WTI crude -5%+, 8 E&P peers fell together) -- PASS
+AMRX   # 2026-09-17: +8.59%, Amneal Pharmaceuticals -- no reliable dated catalyst, inconsistent source data -- PASS
+COST   # EARNINGS 2026-09-24 -- pre-catalyst watch, not yet a candidate

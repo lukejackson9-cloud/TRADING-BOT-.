@@ -92,6 +92,29 @@ even when its total is low** — "the best of a weak day, conviction low" is a
 real and useful data point. Never skip a day to protect the record; that turns
 the ledger into a highlight reel and invalidates the measurement.
 
+## Correlation & macro check — MANDATORY, imported from the parallel branch
+
+The other session's council independently grew a **Correlation & Macro
+specialist** on 2026-09-15, and it fills a genuine hole in the four roles
+above: none of quality, valuation, health or falsifier asks whether today's
+best idea is the same bet you already hold. CLAUDE.md's Hard Risk Rules
+require that check ("the 50% cap counts dollars, not correlated risk"), so
+it cannot live only in propose_trades.md.
+
+Run it for every name you record, BEFORE recording:
+- Check the ticker against open ranked picks (`python scripts/ranker.py list`)
+  and anything in /data/positions.json, for sector, theme and factor overlap.
+- Three cheap retailers, or three aluminium-adjacent cyclicals, are ONE bet
+  wearing three tickers. Say so explicitly as `correlation_flag: {reason}`
+  in the thesis rather than letting the ledger imply three independent ideas.
+- It is **not a veto and not a score.** A flagged name still gets recorded
+  with its total; the flag travels with it so the record shows what was
+  actually being bet on. Suppressing the pick would hide the concentration
+  rather than measure it.
+
+This is deliberately non-argumentative, exactly as the other branch designed
+it: it reports a fact about the portfolio, it does not advocate.
+
 ## Hard rules
 - **No vetoes.** No member may reject a name outright. Score it.
 - **A low total is not a rejection**, it is a ranking. Nothing here is a

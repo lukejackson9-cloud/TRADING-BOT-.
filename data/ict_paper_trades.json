@@ -96,5 +96,449 @@
     "setup": "order_block",
     "direction": "bullish",
     "return_r": 0.05633802816900224
+  },
+  {
+    "date": "2026-09-11",
+    "symbol": "JNJ",
+    "setup": "nypm",
+    "direction": "bullish",
+    "return_r": 0.2307692307693653,
+    "catalyst": {
+      "has_catalyst": "unclear",
+      "note": "no clearly-dated same-day catalyst found; the FDA approval is from August (stale) and the UBS coverage-initiation date couldn't be pinned to today specifically",
+      "tagged_on": "2026-09-11"
+    }
+  },
+  {
+    "date": "2026-09-11",
+    "symbol": "MA",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "no dated catalyst found; referenced CFO commentary is from the Q2 earnings call (already old), next earnings not until Oct 22",
+      "tagged_on": "2026-09-11"
+    }
+  },
+  {
+    "date": "2026-09-11",
+    "symbol": "BAC",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": -0.3606557377049165,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "no dated company-specific news found for 09-10/09-11; Goldman's Buy rating was a reiteration from 09-09, and the 09-15 floating-rate note redemption is routine, not a catalyst",
+      "tagged_on": "2026-09-11"
+    }
+  },
+  {
+    "date": "2026-09-11",
+    "symbol": "ADBE",
+    "setup": "order_block",
+    "direction": "bullish",
+    "return_r": 0.009430094300948466,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Q3 FY26 earnings printed 09-10: beat + raised full-year guidance + CEO transition announced -- real, dated, still-fresh reaction the next session",
+      "tagged_on": "2026-09-11"
+    }
+  },
+  {
+    "date": "2026-09-11",
+    "symbol": "NFLX",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "no fresh dated catalyst found for today specifically; the Florida lawsuit and UK price-hike stories read as ongoing/stale, not new news pinned to 09-10/09-11",
+      "tagged_on": "2026-09-11"
+    }
+  },
+  {
+    "date": "2026-09-11",
+    "symbol": "NFLX",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "no fresh dated catalyst found for today specifically; the Florida lawsuit and UK price-hike stories read as ongoing/stale, not new news pinned to 09-10/09-11",
+      "tagged_on": "2026-09-11"
+    }
+  },
+  {
+    "date": "2026-09-11",
+    "symbol": "INTC",
+    "setup": "fvg",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "dated analyst action today (Piper Sandler rating shift) plus a same-window Reuters report on Intel-backed Altera's IPO -- real, dated, company-specific",
+      "tagged_on": "2026-09-11"
+    }
+  },
+  {
+    "date": "2026-09-11",
+    "symbol": "INTC",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "dated analyst action today (Piper Sandler rating shift) plus a same-window Reuters report on Intel-backed Altera's IPO -- real, dated, company-specific",
+      "tagged_on": "2026-09-11"
+    }
+  },
+  {
+    "date": "2026-09-14",
+    "symbol": "AMZN",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Amazon paused operations with cargo partner 21 Air on 09-13/09-14 following a fatal incident -- a real, dated, company-specific operational event; also coincides with a broader AI-slowdown selloff hitting big tech that day (sector-wide, not the specific driver)",
+      "tagged_on": "2026-09-14"
+    }
+  },
+  {
+    "date": "2026-09-15",
+    "symbol": "META",
+    "setup": "fvg",
+    "direction": "bearish",
+    "return_r": 0.08577036310107765,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "JPMorgan upgraded META to Overweight citing early Muse AI performance -- a real rating change (not just a PT tweak), material and dated",
+      "tagged_on": "2026-09-15"
+    }
+  },
+  {
+    "date": "2026-09-15",
+    "symbol": "META",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": -0.2824501701507031,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "JPMorgan upgraded META to Overweight citing early Muse AI performance -- a real rating change (not just a PT tweak), material and dated",
+      "tagged_on": "2026-09-15"
+    }
+  },
+  {
+    "date": "2026-09-15",
+    "symbol": "META",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "JPMorgan upgraded META to Overweight citing early Muse AI performance -- a real rating change (not just a PT tweak), material and dated",
+      "tagged_on": "2026-09-15"
+    }
+  },
+  {
+    "date": "2026-09-15",
+    "symbol": "TSLA",
+    "setup": "order_block",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 09-14/09-15 catalyst found -- Roadster announcement (Oct 1 future event), Vietnam subsidiary, and market-share narrative all read as background/analysis, not a fresh same-day trigger",
+      "tagged_on": "2026-09-15"
+    }
+  },
+  {
+    "date": "2026-09-15",
+    "symbol": "TSLA",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 09-14/09-15 catalyst found -- Roadster announcement (Oct 1 future event), Vietnam subsidiary, and market-share narrative all read as background/analysis, not a fresh same-day trigger",
+      "tagged_on": "2026-09-15"
+    }
+  },
+  {
+    "date": "2026-09-15",
+    "symbol": "XOM",
+    "setup": "nypm",
+    "direction": "bearish",
+    "return_r": 0.006993006993000877,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No fresh dated catalyst -- Barclays REAFFIRMED (not changed) its rating 09-10 (stale), OPEC demand-forecast cut is industry-wide not XOM-specific, dividend record date 09-10 is routine/stale",
+      "tagged_on": "2026-09-15"
+    }
+  },
+  {
+    "date": "2026-09-15",
+    "symbol": "DIS",
+    "setup": "order_block",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Real corporate restructuring: ~1,000 job cuts (marketing division consolidation) under new CEO Josh D'Amaro, plus a Barclays PT raise to $135 -- dated, company-specific actions, though exact announcement date fuzzy in sources",
+      "tagged_on": "2026-09-15"
+    }
+  },
+  {
+    "date": "2026-09-15",
+    "symbol": "DIS",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Real corporate restructuring: ~1,000 job cuts (marketing division consolidation) under new CEO Josh D'Amaro, plus a Barclays PT raise to $135 -- dated, company-specific actions, though exact announcement date fuzzy in sources",
+      "tagged_on": "2026-09-15"
+    }
+  },
+  {
+    "date": "2026-09-15",
+    "symbol": "CRM",
+    "setup": "fvg",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": "unclear",
+      "note": "Cantor Fitzgerald raised PT to $300 from $250 (Overweight) -- real analyst action but exact date not confirmed as 09-14/09-15 specifically vs slightly earlier; Fin/Intercom acquisition close (09-10) is 5 days stale",
+      "tagged_on": "2026-09-15"
+    }
+  },
+  {
+    "date": "2026-09-15",
+    "symbol": "CRM",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": "unclear",
+      "note": "Cantor Fitzgerald raised PT to $300 from $250 (Overweight) -- real analyst action but exact date not confirmed as 09-14/09-15 specifically vs slightly earlier; Fin/Intercom acquisition close (09-10) is 5 days stale",
+      "tagged_on": "2026-09-15"
+    }
+  },
+  {
+    "date": "2026-09-15",
+    "symbol": "INTC",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Dominant driver is the SAME sector-wide AI-safety-warning-driven chip selloff already documented in today's daily screen (Amodei/Altman weekend essays) -- not company-specific; Piper Sandler Neutral initiation was 09-10, 5 days stale",
+      "tagged_on": "2026-09-15"
+    }
+  },
+  {
+    "date": "2026-09-16",
+    "symbol": "JNJ",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 9/16-specific catalyst found; Q2 earnings/guidance is stale, Deutsche Bank Healthcare Summit appearance is tomorrow (9/17) not today.",
+      "tagged_on": "2026-09-16"
+    }
+  },
+  {
+    "date": "2026-09-16",
+    "symbol": "WMT",
+    "setup": "fvg",
+    "direction": "bullish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Papa John's delivery partnership announced 2026-09-10, six days stale -- not today's driver. No fresh 9/16 catalyst found.",
+      "tagged_on": "2026-09-16"
+    }
+  },
+  {
+    "date": "2026-09-16",
+    "symbol": "WMT",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Papa John's delivery partnership announced 2026-09-10, six days stale -- not today's driver. No fresh 9/16 catalyst found.",
+      "tagged_on": "2026-09-16"
+    }
+  },
+  {
+    "date": "2026-09-16",
+    "symbol": "WMT",
+    "setup": "inverse_fvg",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Papa John's delivery partnership announced 2026-09-10, six days stale -- not today's driver. No fresh 9/16 catalyst found.",
+      "tagged_on": "2026-09-16"
+    }
+  },
+  {
+    "date": "2026-09-16",
+    "symbol": "CRM",
+    "setup": "order_block",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Dreamforce 2026 investor/analyst session held same day (1pm PT/4pm ET); launched new Koa reasoning model (built with Nvidia) and Agentforce AI strategy expansion -- real, dated, company-specific event.",
+      "tagged_on": "2026-09-16"
+    }
+  },
+  {
+    "date": "2026-09-16",
+    "symbol": "CRM",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Dreamforce 2026 investor/analyst session held same day (1pm PT/4pm ET); launched new Koa reasoning model (built with Nvidia) and Agentforce AI strategy expansion -- real, dated, company-specific event.",
+      "tagged_on": "2026-09-16"
+    }
+  },
+  {
+    "date": "2026-09-16",
+    "symbol": "NFLX",
+    "setup": "fvg",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No fresh dated catalyst; Evercore ISI PT raise and SACA coalition news are both dated 9/14, two days stale.",
+      "tagged_on": "2026-09-16"
+    }
+  },
+  {
+    "date": "2026-09-16",
+    "symbol": "NFLX",
+    "setup": "order_block",
+    "direction": "bullish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No fresh dated catalyst; Evercore ISI PT raise and SACA coalition news are both dated 9/14, two days stale.",
+      "tagged_on": "2026-09-16"
+    }
+  },
+  {
+    "date": "2026-09-16",
+    "symbol": "NFLX",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No fresh dated catalyst; Evercore ISI PT raise and SACA coalition news are both dated 9/14, two days stale.",
+      "tagged_on": "2026-09-16"
+    }
+  },
+  {
+    "date": "2026-09-16",
+    "symbol": "MRK",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "INTerpath-001 Phase 3 trial results (Merck/Moderna) are dated 2026-08-19, nearly a month stale -- not today's driver. No fresh 9/16 catalyst found.",
+      "tagged_on": "2026-09-16"
+    }
+  },
+  {
+    "date": "2026-09-17",
+    "symbol": "MSFT",
+    "setup": "nypm",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 9/17-specific catalyst found; only opinion/commentary pieces (Nadella AI remarks, Suleyman comments) and a future Oct 7 Surface event.",
+      "tagged_on": "2026-09-17"
+    }
+  },
+  {
+    "date": "2026-09-17",
+    "symbol": "TSLA",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst found; NHTSA Cybercab scrutiny is ongoing (not new), Roadster event is a future date (10/1), Musk merger speculation not specifically dated to 9/17.",
+      "tagged_on": "2026-09-17"
+    }
+  },
+  {
+    "date": "2026-09-17",
+    "symbol": "TSLA",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst found; NHTSA Cybercab scrutiny is ongoing (not new), Roadster event is a future date (10/1), Musk merger speculation not specifically dated to 9/17.",
+      "tagged_on": "2026-09-17"
+    }
+  },
+  {
+    "date": "2026-09-17",
+    "symbol": "XOM",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No qualifying dated company-specific catalyst; Venezuela/Vietnam expansion talks lack a confirmed date, and the 9/16 -3.5% drop was attributed to a broad Fed-driven market selloff, not company-specific news.",
+      "tagged_on": "2026-09-17"
+    }
+  },
+  {
+    "date": "2026-09-17",
+    "symbol": "ADBE",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Outgoing CEO filed a $31.5M share sale (reported 9/17), but a routine pre-transition insider sale isn't one of the defined catalyst categories (earnings/M&A/FDA/guidance/analyst action); no qualifying dated catalyst found.",
+      "tagged_on": "2026-09-17"
+    }
+  },
+  {
+    "date": "2026-09-17",
+    "symbol": "CVX",
+    "setup": "order_block",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Goldman Sachs raised PT to $240 from $225 (dated 9/16, the trading day before) after meetings with senior leadership, reiterating Buy -- a real, dated, material analyst action; BMO and Piper Sandler also raised targets around the same time.",
+      "tagged_on": "2026-09-17"
+    }
+  },
+  {
+    "date": "2026-09-17",
+    "symbol": "CVX",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Goldman Sachs raised PT to $240 from $225 (dated 9/16, the trading day before) after meetings with senior leadership, reiterating Buy -- a real, dated, material analyst action; BMO and Piper Sandler also raised targets around the same time.",
+      "tagged_on": "2026-09-17"
+    }
   }
 ]

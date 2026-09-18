@@ -141,6 +141,15 @@ project, every one downgraded to WATCH at council. Common threads:
   a volatile name (see CLAUDE.md's exit-rule sections). A future pass must
   not cite HPE as evidence that "stale stories fade" — it is evidence that
   a tight stop and a real uptrend can both be true at once.
+- **How it ended (RESOLVED 2026-09-11)**: Q3 beat happened 9/2 (not 9/3 as
+  first logged); Morgan Stanley's same-day cut to $67 vs. Raymond James'
+  raise to $86 marked a real analyst split. Now (9/11): $55.20 — well
+  below both the verdict-date pop and (per an unconfirmed intermediate
+  print) an apparent post-earnings spike toward the mid-$60s that has
+  since fully faded. **Leans validated** — no dated near-term catalyst
+  ever materialized and the stock gave back the earnings pop, though the
+  exact verdict-date baseline print couldn't be pinned to a single
+  authoritative source (moderate confidence).
 
 ### TARS — 2026-09-08, council-downgraded, PENDING
 - **What happened**: +9.1% on two real, dated, converging catalysts
@@ -205,6 +214,78 @@ project, every one downgraded to WATCH at council. Common threads:
   since the verdict (9/9 earnings pop, 9/10 verdict); no confirmed 9/10 or
   9/11 close was found. Re-check in a few more days.
 
+### ABBV — 2026-09-15, council-downgraded (first review under the expanded 4-role council), PENDING
+- **What happened**: +3.8-4.4% over 9/9-9/15 on four largely independent
+  real catalysts — a positive Phase 3 LUNA readout for atogepant
+  (p<0.0001 primary + all 8 secondaries), the Apogee Therapeutics
+  acquisition CLOSING (not just announced), an HSBC upgrade to $315 on a
+  falsifiable 2027 guidance-raise thesis, and Skyrizi/Rinvoq independently
+  guided >20% combined 2026 growth. Originally sourced from a mechanical
+  TA paper-trade catalyst-tag check on 2026-09-11 (see CLAUDE.md's
+  catalyst-tagging track), then given a real research.md pass.
+- **First real test of the 4-role council** (Technical Context +
+  Correlation & Macro specialists added 2026-09-15, see CLAUDE.md). Both
+  specialists caught something the original 2-role council would have
+  missed or under-weighted:
+  - **Technical**: not a fresh breakout — an unresolved retest of
+    AbbVie's own ALL-TIME closing high ($265.97, 8/19), which already
+    produced a real reversal ("pivot top" sell signal, independently
+    sourced) five weeks ago, on volume too thin (+13.8%) to signal
+    conviction. The bear agent caught that the technical specialist's own
+    framing ("20-day high") undersold this — it's the stock's ATH, not
+    just a recent range boundary.
+  - **Correlation**: a real, confirmed sector-wide healthcare rally
+    (XLV +3.3%/5 sessions, XBI near 52-wk highs, peer Merck's own Phase 3
+    win same week) dilutes how independent the catalyst stack really is,
+    even though `correlation_flag` was "none" for direct portfolio
+    overlap (no open pharma/healthcare idea existed to conflict with).
+- **Why downgraded**: The bull case was itself only self-rated "moderate,
+  not strong" and explicitly conceded the decisive open question ("found
+  nothing suggesting $266.88 clears this time rather than failing again
+  as in August"). Structurally identical to TARS's 09-08 downgrade
+  (lessons.md #1: entry at an all-time high right after catalysts have
+  already fired) — not a rejection of the fundamentals, a statement that
+  the entry point is a retest of a level that already failed once, on
+  weak confirming volume, riding a real sector tailwind.
+- **Outcome**: PENDING — re-check whether ABBV actually clears $266.88 on
+  real volume without giving it back, which per the council file would be
+  "a materially different, re-checkable setup."
+
+### NRXS — 2026-09-17, council-downgraded, PENDING
+- **What happened**: NeurAxis (small-cap medtech, PENFS/IB-Stim
+  neuromodulation therapy for gut-brain disorders) +21.75% on 09-16 on a
+  real, dated, company-specific catalyst — a new national payer coverage
+  policy adding ~18M covered lives (footprint now >120M). Correlation &
+  Macro specialist confirmed this was a genuine idiosyncratic move (no
+  sector-wide medtech rally that session), the strongest-sourced part of
+  the case.
+- **Why downgraded — two independently sufficient grounds, per
+  council.md's standard**:
+  - **Technical**: already extended, not early-stage. The move fired
+    16x normal volume, closed +7.8% above its own prior 20-day high, and
+    had already faded ~10.3% off its intraday peak ($7.74→$6.94) before
+    the close — a fresh gap that already partially reversed same-day.
+    Only the `breakout` mechanical signal fired (never treated as adding
+    confidence, per CLAUDE.md's confluence-testing findings — used here
+    only to confirm the overextension read).
+  - **Fundamentals risk the bull case never engaged with**: a verified
+    going-concern qualification in NeurAxis's own Q2 2026 10-Q
+    (fact-checked verbatim against the actual filing), plus a real
+    dilution history (~53% share-count growth over the trailing year,
+    including a dilutive raise at $3.25/share within the past 18
+    months). The bear case's catalyst-size-vs-reaction mismatch was
+    independently verified: a materially LARGER prior milestone
+    (Dec 2025, ~45M covered lives) produced a much smaller reaction than
+    this smaller (~18M lives) one — reads as thin-float momentum
+    chasing, not a proportional fundamental re-rate.
+  - The bull agent conceded the entry-timing problem itself rather than
+    being argued into it ("good news, bad entry point... not a clean
+    bull case for chasing at $6.94").
+- **Outcome**: PENDING — re-check whether NRXS bases constructively
+  without giving back more of the gain, and whether margin/revenue
+  trends continue next quarter without a new dilutive raise, which would
+  be a materially different, re-checkable setup.
+
 ---
 
 ## Appendix: every other researched ticker (WATCH/PASS, never reached council)
@@ -259,6 +340,7 @@ pass, they are not evidence either way.
 | 09-03 | MSTR | WATCH | real BTC breakout but company news 4 days stale | Validated — chasing the peak would have lost ~11-13% |
 | 09-03 | MARA | WATCH low confidence | conflicting BTC price levels across sources | Unclear — a source appears to have conflated BTC price with MARA's own |
 | 09-03 | BMNR | PASS | wrong-asset confusion (ETH not BTC), no fresh catalyst | Validated — stop hit (low -7.8% vs 09-04 entry $25.34), ended -1.1%; 5/5 days elapsed [OHLCV 2026-09-11] |
+| 09-03 | BMNR | PASS | wrong-asset confusion (ETH not BTC), no fresh catalyst | Not checked this pass |
 | 09-03 | AVGO | WATCH | negative catalyst, long-only has no edge | Unclear (leans validated) — real ~-6.2% drop confirmed, no clean current print |
 | 09-03 | VALE | PASS | direction of the move itself unconfirmed across sources | Unclear — verdict-date baseline still not confirmed |
 | 09-03 | CHPT | WATCH | real beat but already fully priced, squeeze-driven | Validated — squeeze substantially unwound |
@@ -267,6 +349,8 @@ pass, they are not evidence either way.
 | 09-03 | FCUV | PASS | thin-float pump, no dated catalyst | Validated strongly — collapsed ~65% by 9/10-11 |
 | 09-03 | PUR | PASS | could not identify the company | Unclear — BOTH +8% target (max +16.4%) and -4% stop (max -8.2%) touched in-window; daily bars can't sequence them (conservative convention assumes stop first). Also not a directional thesis — PASS was "could not identify the company" [OHLCV 2026-09-11] |
 | 09-03 | ZOOZ | PASS | down 90% from high, vague "strategic alternatives" | Validated strongly — never traded above the 09-04 entry open ($7.82) at all (max +0.0%), stop hit, ended -3.0% [OHLCV 2026-09-11] |
+| 09-03 | PUR | PASS | could not identify the company | Not checked this pass |
+| 09-03 | ZOOZ | PASS | down 90% from high, vague "strategic alternatives" | Not checked this pass |
 | 09-03 | PRHI | WATCH low confidence | real fundamentals but no same-day news | Unclear — no clean baseline, but the later pop doesn't contradict the thesis |
 | 09-03 | MF | PASS | thin-float shell-like microcap, no news | Unclear on direction — but the observed ~23% intraday range itself supports the "too noisy" framing |
 | 09-03 | PSQL | PASS | post-SPAC pop-and-fade (repeat 09-08) | Validated strongly — ~70% collapse from peak |
@@ -329,3 +413,18 @@ pass, they are not evidence either way.
 | 09-10 | TBBK | PASS | clean structural negative (Chime/Stride partner-loss risk) | Provisional (1/5 days) — -0.4%, neither hit [OHLCV 2026-09-11] |
 | 09-10 | BRZE | WATCH | real beat undercut by soft forward guidance, GWRE-shaped pattern | Leans validated (1/5 days) — -4% stop touched intraday on day 1 (low -4.0%), ended -1.9%; the GWRE-shaped soft-guidance read looks right [OHLCV 2026-09-11] |
 | 09-10 | SIG | WATCH | real beat-and-raise but reaction already fired, now reversing | Provisional (1/5 days) — +0.2%, neither hit [OHLCV 2026-09-11] |
+| 09-09 | FCUV | PASS | repeat thin-float/no-catalyst pattern (see 09-03) | Not checked — search budget exhausted this pass |
+| 09-09 | BIAF | PASS | confirmed pump/dump pattern (see 09-02) | Not checked — search budget exhausted this pass |
+| 09-09 | DOCN | WATCH | real catalyst but already +160% YTD, analysts Neutral | Not checked — search budget exhausted this pass |
+| 09-09 | VIAV | WATCH low confidence | no dated catalyst confirmed despite strong fundamentals | Not checked — search budget exhausted this pass |
+| 09-10 | ADBE | WATCH | earnings beat printed, reaction pending at write-up time | **Not checked — search budget exhausted before reaching it; explicitly requested, needs a dedicated re-run** |
+| 09-10 | TYRA | PASS | Sept 9 Phase 2 data read favorably but stock still fell -17.66% | Already resolved in the Why column itself — favorable-looking data still sold off |
+| 09-10 | CHWY | PASS | in-line quarter after pre-earnings run-up, real liquidity flag | Not checked — search budget exhausted this pass |
+| 09-10 | NET | WATCH low confidence | no confirmed dated catalyst despite bullish backdrop | Not checked — search budget exhausted this pass |
+| 09-10 | PINS | PASS | clean negative catalyst (CEO international-headwinds warning) | Not checked — search budget exhausted this pass |
+| 09-10 | VRT | PASS | sector-wide AI-infra repricing + deal-financial-disclosure gap | Not checked — search budget exhausted this pass |
+| 09-10 | BAND | PASS | no confirmed dated catalyst despite bullish backdrop | Not checked — search budget exhausted this pass |
+| 09-10 | KRMN | PASS | insufficient information on a dated same-day catalyst | Not checked — search budget exhausted this pass |
+| 09-10 | TBBK | PASS | clean structural negative (Chime/Stride partner-loss risk) | Not checked — search budget exhausted this pass |
+| 09-10 | BRZE | WATCH | real beat undercut by soft forward guidance, GWRE-shaped pattern | Not checked — search budget exhausted this pass |
+| 09-10 | SIG | WATCH | real beat-and-raise but reaction already fired, now reversing | Not checked — search budget exhausted this pass |
