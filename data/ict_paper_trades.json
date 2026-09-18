@@ -540,5 +540,125 @@
       "note": "Goldman Sachs raised PT to $240 from $225 (dated 9/16, the trading day before) after meetings with senior leadership, reiterating Buy -- a real, dated, material analyst action; BMO and Piper Sandler also raised targets around the same time.",
       "tagged_on": "2026-09-17"
     }
+  },
+  {
+    "date": "2026-09-18",
+    "symbol": "AMZN",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 9/18-specific catalyst found; AWS growth commentary references an earlier quarterly report, not a fresh event, and the Generac deal is GNRC's news, not AMZN's own.",
+      "tagged_on": "2026-09-18"
+    }
+  },
+  {
+    "date": "2026-09-18",
+    "symbol": "AMZN",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 9/18-specific catalyst found; AWS growth commentary references an earlier quarterly report, not a fresh event, and the Generac deal is GNRC's news, not AMZN's own.",
+      "tagged_on": "2026-09-18"
+    }
+  },
+  {
+    "date": "2026-09-18",
+    "symbol": "TSLA",
+    "setup": "nypm",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst; only opinion/commentary (Ron Baron remark, Morgan Stanley diesel-cost comment), no earnings/M&A/FDA/guidance/analyst-rating-change found.",
+      "tagged_on": "2026-09-18"
+    }
+  },
+  {
+    "date": "2026-09-18",
+    "symbol": "PG",
+    "setup": "order_block",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst; Bernstein reiterated (didn't change) a Hold rating on 9/17 -- not a rated-firm change, and no earnings/M&A/FDA/guidance event found.",
+      "tagged_on": "2026-09-18"
+    }
+  },
+  {
+    "date": "2026-09-18",
+    "symbol": "PG",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst; Bernstein reiterated (didn't change) a Hold rating on 9/17 -- not a rated-firm change, and no earnings/M&A/FDA/guidance event found.",
+      "tagged_on": "2026-09-18"
+    }
+  },
+  {
+    "date": "2026-09-18",
+    "symbol": "COST",
+    "setup": "nypm",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 9/18 catalyst; BofA's PT cut to $1,095 was dated 9/16 (2 days stale), Uber Eats expansion has no confirmed date, and earnings aren't until 9/24.",
+      "tagged_on": "2026-09-18"
+    }
+  },
+  {
+    "date": "2026-09-18",
+    "symbol": "CVX",
+    "setup": "fvg",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No fresh dated catalyst for 9/18; the $7B Venezuela Orinoco Belt investment is dated 9/2 (16 days stale), and the Goldman Sachs PT raise was already dated 9/16 (covered by yesterday's 9/17 signal tag).",
+      "tagged_on": "2026-09-18"
+    }
+  },
+  {
+    "date": "2026-09-18",
+    "symbol": "CVX",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No fresh dated catalyst for 9/18; the $7B Venezuela Orinoco Belt investment is dated 9/2 (16 days stale), and the Goldman Sachs PT raise was already dated 9/16 (covered by yesterday's 9/17 signal tag).",
+      "tagged_on": "2026-09-18"
+    }
+  },
+  {
+    "date": "2026-09-18",
+    "symbol": "CVX",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No fresh dated catalyst for 9/18; the $7B Venezuela Orinoco Belt investment is dated 9/2 (16 days stale), and the Goldman Sachs PT raise was already dated 9/16 (covered by yesterday's 9/17 signal tag).",
+      "tagged_on": "2026-09-18"
+    }
+  },
+  {
+    "date": "2026-09-18",
+    "symbol": "CVX",
+    "setup": "inverse_fvg",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No fresh dated catalyst for 9/18; the $7B Venezuela Orinoco Belt investment is dated 9/2 (16 days stale), and the Goldman Sachs PT raise was already dated 9/16 (covered by yesterday's 9/17 signal tag).",
+      "tagged_on": "2026-09-18"
+    }
   }
 ]
