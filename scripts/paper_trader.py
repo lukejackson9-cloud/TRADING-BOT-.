@@ -178,7 +178,48 @@ def scan_for_new_signals(as_of_date):
         return ledger
 
 
+def _entry_date_concentration(closed):
+    """THE CHECK THAT SHOULD HAVE BEEN HERE FROM DAY ONE (added 2026-09-12).
+
+    On 2026-09-12 this ledger showed 51 closed trades at -3.06%/trade with a
+    7.8% win rate, which reads as catastrophic strategy failure. It is not.
+    All 51 were opened on exactly TWO dates -- 2026-09-04 (28) and
+    2026-09-08 (23) -- and those were the two worst sessions in the cached
+    window for this exit rule. Whole-market baseline on the same dates and
+    the same rule: -2.51% / 12.4% win on 09-04, -3.18% / 6.9% win on 09-08.
+    The identical rule on 2026-09-01 returned +0.15% with a 42.1% win rate.
+
+    So "n=51" was really n=2 independent days. Trades opened on one session
+    share that session's forward tape almost entirely -- they are nowhere
+    near independent observations. Same effective-sample-size trap that
+    invalidated the 20-day backtest result (see exit_rule_sweep.py), now in
+    the live track. There is a selection effect on top: breakout-type
+    signals cluster on churny, high-dispersion days, which are precisely the
+    days that mean-revert afterwards, so this ledger will keep
+    over-sampling bad tape unless the date spread is watched.
+
+    Never report this ledger's aggregate without this line beside it."""
+    dates = sorted({p["entry_date"] for p in closed})
+    n = len(closed)
+    print(f"\n  entry-date spread: {n} closed trades across {len(dates)} distinct "
+          f"entry date(s) -> ~{len(dates)} independent observations, NOT {n}")
+    if dates:
+        import collections
+        c = collections.Counter(p["entry_date"] for p in closed)
+        print("  " + ", ".join(f"{d}:{c[d]}" for d in dates))
+    if len(dates) < 5:
+        print("  *** TOO FEW DISTINCT DATES TO CONCLUDE ANYTHING. A bad (or good) tape on")
+        print("      one session dominates the whole aggregate. Do not read the avg/win")
+        print("      rate below as a verdict on the setups. ***")
+
+
 def summary():
+    # Printed BEFORE any return, deliberately. 292 closed trades still sit on
+    # only 7 entry dates, and a return quoted above its own sample-size caveat
+    # gets repeated without it — which is exactly how "n=51" was once read as a
+    # verdict when it was really 2 sessions. Restored after the 2026-09-18
+    # merge dropped it.
+    _entry_date_concentration([p for p in _load_ledger() if p["status"] == "closed"])
     ledger = _load_ledger()
     open_n = sum(1 for p in ledger if p["status"] == "open")
     closed = [p for p in ledger if p["status"] == "closed"]
