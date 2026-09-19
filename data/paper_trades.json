@@ -9367,7 +9367,11 @@
     "target_price": 78.2028,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Merck KGaA's $11.3B acquisition of Bio-Techne is real but was announced 2026-06-25, nearly 3 months earlier -- not a fresh 9/17 catalyst, and no new dated development was found for 9/17.",
+      "tagged_on": "2026-09-17"
+    }
   },
   {
     "ticker": "SOPH",
@@ -9378,7 +9382,11 @@
     "target_price": 9.2124,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No news specific to 9/17 found for SOPHiA GENETICS; no catalyst identified.",
+      "tagged_on": "2026-09-17"
+    }
   },
   {
     "ticker": "JNJ",
@@ -9449,7 +9457,11 @@
     "target_price": 6.4152000000000005,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "The only real catalyst found, Citi's Neutral-to-Buy upgrade, was dated 9/18 -- one day after this signal; no 9/17-dated catalyst confirmed.",
+      "tagged_on": "2026-09-17"
+    }
   },
   {
     "ticker": "IONS",
@@ -9520,7 +9532,11 @@
     "target_price": 265.9392,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Search initially suggested a 9/17 earnings beat, but Twilio's actual Q2 2026 results were reported 2026-08-06, over a month earlier; no genuine dated catalyst confirmed for 9/17 itself.",
+      "tagged_on": "2026-09-17"
+    }
   },
   {
     "ticker": "GNRC",
@@ -9606,7 +9622,11 @@
     "target_price": 48.1788,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Needham's price-target cut to $60 was dated 9/15, two days prior; no dated catalyst found for the 9/17 move itself.",
+      "tagged_on": "2026-09-17"
+    }
   },
   {
     "ticker": "TEM",
@@ -9617,7 +9637,11 @@
     "target_price": 86.78880000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Per prior research (data/research/2026-09-18/TEM.md): continuation of the dated Piper Sandler upgrade/Personalis catalyst plus a 2026-09-15 Morgan Stanley reimbursement-pricing note; TEM closed +14.85% on 9/17 -- real, dated, company-specific.",
+      "tagged_on": "2026-09-17"
+    }
   },
   {
     "ticker": "NESR",
@@ -9763,7 +9787,11 @@
     "target_price": 43.578,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Goldman Sachs research report (dated 9/17 per Invezz) projected $1.5T global AI-server TAM by 2030 and cited SMCI's ~40% neocloud market share, driving a ~10% rally.",
+      "tagged_on": "2026-09-17"
+    }
   },
   {
     "ticker": "XE",
@@ -10044,7 +10072,11 @@
     "target_price": 168.00480000000002,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Multiple 9/17-dated outlets reported a new Eli Lilly TuneLab AI drug-discovery data partnership, a genuine dated company-specific catalyst; stock +10-11%.",
+      "tagged_on": "2026-09-17"
+    }
   },
   {
     "ticker": "CERT",
@@ -10235,7 +10267,11 @@
     "target_price": 192.4452,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 9/17 catalyst found; the 10G PON chipset news was from 9/9 and the 'AI data center boom' commentary traces to 9/16, not a fresh company-specific event on 9/17.",
+      "tagged_on": "2026-09-17"
+    }
   },
   {
     "ticker": "CFG",
@@ -10591,7 +10627,11 @@
     "target_price": 46.882799999999996,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Only routine digestion of already-reported Q2 earnings/margins found; no new dated catalyst for 9/17.",
+      "tagged_on": "2026-09-17"
+    }
   },
   {
     "ticker": "ALK",
@@ -10722,7 +10762,11 @@
     "target_price": 94.878,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Only news found on 9/17 was COO Cameron Mackey's 125,000-share insider stock sale -- not a qualifying catalyst category (earnings/M&A/FDA/guidance/analyst action).",
+      "tagged_on": "2026-09-17"
+    }
   },
   {
     "ticker": "GENB",
@@ -10778,7 +10822,11 @@
     "target_price": 9.622800000000002,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": "unclear",
+      "note": "Scotiabank/TD Securities price-target cuts were referenced but exact dates unconfirmed (other TU downgrades found date to August); could not confirm a genuine 9/17-dated analyst action distinct from stale news.",
+      "tagged_on": "2026-09-17"
+    }
   },
   {
     "ticker": "CRVS",
@@ -10849,7 +10897,11 @@
     "target_price": 22.420800000000003,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": "unclear",
+      "note": "Positive nearby items exist (Morgan Stanley PT raise 9/14, CEO insider buy 9/15, an Aug-19 hyperscaler contract) but no source clearly dates a specific catalyst to 9/17 itself for the 10.7% move.",
+      "tagged_on": "2026-09-17"
+    }
   },
   {
     "ticker": "IMVT",
@@ -11100,7 +11152,11 @@
     "target_price": 365.4612,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Only generic valuation/momentum commentary found (51% YTD, momentum cooling); no dated company-specific catalyst for 9/17.",
+      "tagged_on": "2026-09-17"
+    }
   },
   {
     "ticker": "COMP",
@@ -11201,7 +11257,11 @@
     "target_price": 220.82760000000002,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "FFO-guidance-raise/leasing commentary traces to a 9/16 conference, not dated 9/17; REIT plausibly riding the broader Fed-driven macro wave rather than a company-specific 9/17 catalyst.",
+      "tagged_on": "2026-09-17"
+    }
   },
   {
     "ticker": "AMRX",
