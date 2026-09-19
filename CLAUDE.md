@@ -574,6 +574,48 @@ confluence section is weeks to a couple of months to reach n=50. Do not
 soften the bar because the wait has been long; that is the 2026-09-09
 patience decision, which the user reaffirmed here.
 
+**CATALYST TRACK CONCLUDED 2026-09-19 — HYPOTHESIS NOT SUPPORTED. This
+closes the last open question on the mechanical side; stop collecting.**
+The pre-registered bar (set 2026-09-12, before any of this data existed)
+required all of: >=50 closed trades, >=20 distinct entry dates, a genuine
+uplift over the NO-catalyst bucket, no ticker >35% of net positive return,
+and consistency across halves. Result at 2026-09-19:
+
+| | trades | win% | avg |
+|---|---|---|---|
+| HAS catalyst | 54 | 14.8% | **-2.36%** |
+| NO catalyst | 120 | 20.8% | **-1.65%** |
+| unclear | 13 | 15.4% | -2.05% |
+
+- **Trade count PASSES (54 >= 50). Concentration PASSES for TA** (NRXS 30.1%,
+  under the 35% line). ICT fails it badly (DIS 95.5% of positive return) and
+  its 13 trades are not readable either way.
+- **Uplift FAILS, in the wrong direction: -0.71%.** Signals with a real,
+  dated, company-specific catalyst did WORSE than signals without.
+- **Split-half FAILS**: -1.58% then +0.04%, not sign-consistent.
+- **Distinct dates FAIL badly: 5, against 20 required.**
+- **The cleanest cut is the same-day head-to-head** (both buckets compared
+  only on dates carrying both, so the tape cancels): 09-10 -1.46%,
+  09-11 -1.45%, 09-14 -1.09%, 09-15 -0.40%, 09-16 +0.80%. **HAS loses on 4 of
+  5 days, mean -0.72%.**
+**Verdict: not supported, and consistent with lessons.md #1 and the
+2026-09-07 gap-proxy test — this is the third independent measurement of
+"sell the news" in this project.** Honest limit: 5 dates is 5 observations,
+so this is a directionally consistent negative, not a decisive one. But the
+count criterion was met and the direction is wrong, so there is no reading
+of this data that supports the hypothesis.
+**Structural note that matters more than the numbers**: the 20-date
+criterion may be UNREACHABLE by construction. TA signals cluster on churny,
+high-dispersion sessions (see the two-dates artifact above), so trades
+accumulate in bursts on few dates rather than spreading. A bar that cannot
+be met is not a bar — if a future track needs date spread, the collection
+design has to change, not just the waiting time. Note this before
+pre-registering a date criterion again.
+**Action: stop the catalyst tagging and the TA/ICT paper-trade routines.**
+They are now accumulating precision on three separately-answered questions
+at real daily cost. Nothing about the advisory or 3-12 month tracks depends
+on them continuing.
+
 **RANKED-PICK TRACK — added 2026-09-12, the buy-side counterpart to a
 pipeline that only knows how to say no.** The user's observation: this bot
 is built to find what NOT to buy, and nothing in it is built to find what
