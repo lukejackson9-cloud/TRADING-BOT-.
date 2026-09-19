@@ -9643,7 +9643,11 @@
     "target_price": 39.798,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 9/17 news found; the Repligen acquisition process is ongoing/older context, not a fresh same-day event.",
+      "tagged_on": "2026-09-17"
+    }
   },
   {
     "ticker": "MSFT",
@@ -9800,7 +9804,11 @@
     "target_price": 32.6592,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Consistent with repo's existing 2026-09-18 research file: no hard dated catalyst found beyond a routine RSU-grant filing; move reads as continued AI-drug-discovery sentiment/momentum, third-party sources flag overvaluation.",
+      "tagged_on": "2026-09-17"
+    }
   },
   {
     "ticker": "PSIX",
@@ -9886,7 +9894,11 @@
     "target_price": 68.09400000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No fresh 9/17 catalyst; UBS coverage initiation ($65 PT, Neutral) was dated 9/9 and the 9/16 move was tied to older 'fusion bet'/UBS coverage collision, not new 9/17 news. An insider sale (VP Mark Munch, 2,000 shares) dated 9/17 is not a qualifying catalyst.",
+      "tagged_on": "2026-09-17"
+    }
   },
   {
     "ticker": "BRKR",
@@ -9897,7 +9909,11 @@
     "target_price": 68.09400000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No fresh 9/17 catalyst; UBS coverage initiation ($65 PT, Neutral) was dated 9/9 and the 9/16 move was tied to older 'fusion bet'/UBS coverage collision, not new 9/17 news. An insider sale (VP Mark Munch, 2,000 shares) dated 9/17 is not a qualifying catalyst.",
+      "tagged_on": "2026-09-17"
+    }
   },
   {
     "ticker": "MGNI",
@@ -9998,7 +10014,11 @@
     "target_price": 31.125600000000002,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No fresh 9/17 catalyst; the Stifel PT raise to C$56 was dated 9/11 and the high-grade silver drill results were dated 9/16 -- both stale relative to this session, and move looks consistent with broader gold/silver price strength.",
+      "tagged_on": "2026-09-17"
+    }
   },
   {
     "ticker": "ABEO",
@@ -10080,7 +10100,11 @@
     "target_price": 9.3852,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Dated 9/17 events: BCB Bancorp priced an $85.25M common stock offering, disclosed an expected Q3 2026 net loss of $126.2-136.1M (deferred tax asset valuation allowance), and KBW cut its price target to $8.35 same day -- multiple confirmed, dated, company-specific events.",
+      "tagged_on": "2026-09-17"
+    }
   },
   {
     "ticker": "PCT",
@@ -10477,7 +10501,11 @@
     "target_price": 27.3456,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No 9/17-specific news found; most recent items are a future dividend ex-date (9/30) and a mid-August analyst PT cut, neither dated to this session.",
+      "tagged_on": "2026-09-17"
+    }
   },
   {
     "ticker": "OBDC",
@@ -10518,7 +10546,11 @@
     "target_price": 29.106,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No 9/17-specific news found; most recent items (board appointment, AI Gateway launch) date to 9/9 or earlier, not this session.",
+      "tagged_on": "2026-09-17"
+    }
   },
   {
     "ticker": "DNA",
@@ -10615,7 +10647,11 @@
     "target_price": 48.330000000000005,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No 9/17-specific news found; most recent analyst PT changes (Jefferies, Citi, KBW) date to July/August 2026, not this session.",
+      "tagged_on": "2026-09-17"
+    }
   },
   {
     "ticker": "EWTX",
@@ -10974,7 +11010,11 @@
     "target_price": 24.580800000000004,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No 9/17-specific catalyst found; satellite launch and strong Q2 results are undated/stale relative to this session, no fresh dated news identified for the +5.8% move.",
+      "tagged_on": "2026-09-17"
+    }
   },
   {
     "ticker": "PSX",
@@ -11247,7 +11287,11 @@
     "target_price": 28.576800000000002,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Shares down 4.7% on 9/17 with no identified reason in coverage; reads as a giveback after the 9/16 Morgan Stanley conference-driven pop (already flagged as a soft, reiteration-only catalyst in prior research), not a fresh dated event.",
+      "tagged_on": "2026-09-17"
+    }
   },
   {
     "ticker": "DX",
@@ -11273,7 +11317,11 @@
     "target_price": 17.128800000000002,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "A search result claimed Avantor 'announced financial results' on 9/17, but Avantor's actual Q2 2026 earnings were reported July 29, 2026 -- that date attribution is stale/incorrect data (lessons.md #2 pattern), not a real 9/17 catalyst.",
+      "tagged_on": "2026-09-17"
+    }
   },
   {
     "ticker": "AEE",
@@ -11374,7 +11422,11 @@
     "target_price": 9.644400000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "SEC issued an 'innovation exemption' greenlighting tokenized US stock trading on 09-17-2026 (CNBC); Securitize named as the direct/primary beneficiary given its BlackRock/Apollo/KKR fund and NYSE/Computershare infrastructure ties, stock +18%.",
+      "tagged_on": "2026-09-17"
+    }
   },
   {
     "ticker": "AEMD",
