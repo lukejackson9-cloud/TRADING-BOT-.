@@ -1042,3 +1042,33 @@ had a genuine new patent-grant catalyst this time, but the same
 ultra-thin float that already produced one confirmed pump/dump on
 09-09 kept it at WATCH rather than PASS or CANDIDATE. Full detail in
 data/research/2026-09-18/.
+
+## 2026-09-21 daily screen (no weekend routines fired 09-19/09-20, as
+## expected -- markets closed)
+18 tickers researched from Massive's 09-17->09-18 session-pair
+whole-market screen. A large correlated crypto-beta cluster showed up
+early (Bitcoin cleared $80,000 on 09-18) -- confirmed via WebSearch
+before researching anything, then handled the efficient way: full
+research on the 3 cluster leaders (COIN, MSTR, MARA), the other 4
+(QMLS, CSHR, BNC, BTGO) noted compactly as correlated rather than
+independently researched, per lessons.md #3.
+
+**SECZ (Securitize) reached CANDIDATE** on a real SEC "Innovation
+Exemption" for tokenized-stock trading (09-17) plus a Citi Buy
+initiation (09-18) -- council downgraded to WATCH on three grounds at
+once: (1) technical -- already extended, 11.4x volume, near a
+short-term high, +111% off its post-listing low with only 55 sessions
+of trading history to judge normal range against; (2) correlation --
+NOT clean, a named peer (Ondo Finance) rose ~13% the SAME DAY on the
+IDENTICAL SEC news, confirming a sector-wide reaction rather than a
+purely idiosyncratic SECZ story; (3) fundamentals -- a ~4.7x valuation
+re-rating in 11 weeks against revenue that's actually DOWN 5% YoY, plus
+a real (if unconfirmed) SPAC-lockup risk window landing exactly now and
+no confirmation Securitize itself has the TSV status needed to directly
+benefit from the exemption. Council also caught and fact-checked a
+same-day (09-21) Cantor Fitzgerald initiation ($21.20 PT) that the
+specialists' earlier snapshot hadn't captured -- a good example of the
+moderator step doing real work, not rubber-stamping stale inputs.
+
+Council downgrade streak now 18-for-18. Full detail in
+data/research/2026-09-21/SECZ_council.md.
