@@ -305,6 +305,30 @@ project, every one downgraded to WATCH at council. Common threads:
   pricing/reimbursement traction on FAYUVI or a credible path to
   offsetting the Angelman loss.
 
+### SECZ — 2026-09-21, council-downgraded, PENDING
+- **What happened**: Securitize (tokenization-infrastructure company,
+  SPAC-listed July 2026) +21.61% on 09-18 on a real SEC "Innovation
+  Exemption" order (09-17) permitting limited on-chain trading of
+  tokenized U.S. stocks, plus a Citi Buy initiation naming SECZ (09-18)
+  and — discovered fresh during council — a same-day Cantor Fitzgerald
+  Overweight initiation at a $21.20 target (09-21).
+- **Why downgraded — three grounds at once**: (1) Technical: already
+  extended, 11.4x average volume, within 2% of a short-term high, more
+  than doubled off its post-listing low in three weeks, with only 55
+  sessions of trading history to judge normal range against. (2)
+  Correlation: NOT clean — peer Ondo Finance (ONDO) rose ~13% the same
+  day on the identical SEC news, confirming a sector-wide tokenization
+  re-rating rather than a purely idiosyncratic SECZ story, plus overlap
+  with the same week's broader crypto risk-on backdrop (BTC>$80K). (3)
+  Fundamentals: a ~4.7x valuation re-rating in 11 weeks against Q2 2026
+  revenue DOWN 5% YoY with real cash burn, plus a real (if unconfirmed)
+  SPAC-lockup risk window landing exactly now (~day 81 post-close,
+  inside the typical 60-180 day range) — and no confirmation Securitize
+  itself has actually filed for the Tokenized Securities Venue status
+  the exemption requires to directly benefit.
+- **Outcome**: PENDING — re-check if SECZ bases constructively without
+  giving back the gain, or confirms TSV status directly.
+
 ---
 
 ## Appendix: every other researched ticker (WATCH/PASS, never reached council)

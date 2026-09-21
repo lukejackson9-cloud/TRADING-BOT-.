@@ -297,3 +297,26 @@ CHPT   # 2026-09-18: +11.34% -- repeat (lessons.md #1 "sell the news" example) -
 OKLO   # 2026-09-18: +11.31% -- repeat (nuclear/SMR cluster) -- same legislative catalyst as FCEL lifted the sector, plus a real OKLO-specific Piper Sandler initiation -- WATCH
 DNA    # 2026-09-18: +11.05%, Ginkgo Bioworks -- real catalyst (Lilly TuneLab partnership) but no disclosed economics, deteriorating fundamentals -- WATCH
 INIO   # 2026-09-18: +12.03% -- repeat (real catalyst tagged true 09-16) -- continuation/digestion of same two-part catalyst, not a fresh event -- WATCH
+
+# --- added 2026-09-21 via the daily screen routine (Massive whole-market, 2026-09-17 -> 09-18 session pair) ---
+# Large correlated crypto-beta cluster today: Bitcoin cleared $80,000 on 09-18,
+# lifting exchange/miner/treasury names together. Full research on 3 cluster
+# leaders; rest noted compactly since the cause is identical and well-sourced.
+COIN   # 2026-09-21: +11.66%, Coinbase -- crypto-rally cluster leader, S&P 500 top gainer that session -- full research -- WATCH
+MSTR   # 2026-09-21: +16.39%, Strategy -- crypto-rally cluster, pure BTC beta -- full research -- PASS (lessons.md #1 example ticker)
+MARA   # 2026-09-21: +13.75%, MARA Holdings -- crypto-rally cluster -- full research -- PASS
+QMLS   # 2026-09-21: +20.26%, QumulusAI -- CORRELATED with crypto-rally cluster -- PASS
+CSHR   # 2026-09-21: +13.37%, CoinShares -- CORRELATED with crypto-rally cluster -- PASS
+BNC    # 2026-09-21: +10.33%, CEA Industries (BNB treasury vehicle) -- CORRELATED with crypto-rally cluster -- PASS
+BTGO   # 2026-09-21: +11.83%, BitGo Holdings -- CORRELATED with crypto-rally cluster -- PASS
+SECZ   # 2026-09-21: +21.61% -- repeat -- REACHED CANDIDATE (real SEC tokenized-stock innovation exemption + fresh Cantor Fitzgerald initiation today) -- council-downgraded to WATCH (extended technicals, real sector overlap with ONDO, valuation detached from shrinking revenue, unconfirmed TSV status, imminent lockup window) -- see data/research/2026-09-21/SECZ_council.md
+XENE   # 2026-09-21: -30.69% -- repeat -- market fully digesting the already-known 09-17 FDA filing + trial-pause disclosure, nothing new -- PASS
+TJGC   # 2026-09-21: +52.95% -- repeat (PASS 09-11/09-14, no catalyst both times) -- same speculative AI-hardware narrative, now even more extended -- PASS
+SION   # 2026-09-21: -16.99% -- repeat -- continuing the already-logged 09-14 workforce-cut/pipeline-reset bleed -- PASS
+GENI   # 2026-09-21: -12.96%, Genius Sports -- real but negative catalyst (heavy dated insider selling) -- PASS
+FTFT   # 2026-09-21: -12.07% -- repeat -- same speculative reverse-split churn, no new catalyst -- PASS
+ALMU   # 2026-09-21: +10.22%, Aeluma -- contradictory WebSearch sources on earnings beat vs. miss, net loss widened -- PASS
+ALVO   # 2026-09-21: +9.93%, Alvotech -- real catalyst (Barclays double-upgrade + FDA inspection resolution) but already 2 sessions stale, single-analyst-driven -- WATCH
+DSP    # 2026-09-21: +18.56%, Viant Technology -- real catalyst (withdrawn secondary offering) but relief-rally undercut by same-day CFO insider selling -- WATCH
+FAC    # 2026-09-21: +10.62%, Factorial Energy -- real Mitsui Kinzoku partnership but 2nd day into an already-fired reaction, recent-IPO/warrant overhang -- WATCH
+SGML   # 2026-09-21: +12.27%, Sigma Lithium -- real fundamentals but move mostly continuation of an already-known rally + sector-wide lithium strength -- WATCH
