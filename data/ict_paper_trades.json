@@ -660,5 +660,89 @@
       "note": "No fresh dated catalyst for 9/18; the $7B Venezuela Orinoco Belt investment is dated 9/2 (16 days stale), and the Goldman Sachs PT raise was already dated 9/16 (covered by yesterday's 9/17 signal tag).",
       "tagged_on": "2026-09-18"
     }
+  },
+  {
+    "date": "2026-09-21",
+    "symbol": "AMZN",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Only item found was Erste Group Bank raising earnings estimates -- a minor, non-bulge-bracket estimate revision, not a rating/PT change; no other dated 9/21 catalyst found.",
+      "tagged_on": "2026-09-21"
+    }
+  },
+  {
+    "date": "2026-09-21",
+    "symbol": "JNJ",
+    "setup": "fvg",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "CAPLYTA met the primary endpoint in a pivotal Phase 3 study for bipolar I manic episodes, dated 9/21; stock outperformed the broader market same day -- real, dated, company-specific clinical catalyst.",
+      "tagged_on": "2026-09-21"
+    }
+  },
+  {
+    "date": "2026-09-21",
+    "symbol": "JNJ",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "CAPLYTA met the primary endpoint in a pivotal Phase 3 study for bipolar I manic episodes, dated 9/21; stock outperformed the broader market same day -- real, dated, company-specific clinical catalyst.",
+      "tagged_on": "2026-09-21"
+    }
+  },
+  {
+    "date": "2026-09-21",
+    "symbol": "JNJ",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "CAPLYTA met the primary endpoint in a pivotal Phase 3 study for bipolar I manic episodes, dated 9/21; stock outperformed the broader market same day -- real, dated, company-specific clinical catalyst.",
+      "tagged_on": "2026-09-21"
+    }
+  },
+  {
+    "date": "2026-09-21",
+    "symbol": "JNJ",
+    "setup": "inverse_fvg",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "CAPLYTA met the primary endpoint in a pivotal Phase 3 study for bipolar I manic episodes, dated 9/21; stock outperformed the broader market same day -- real, dated, company-specific clinical catalyst.",
+      "tagged_on": "2026-09-21"
+    }
+  },
+  {
+    "date": "2026-09-21",
+    "symbol": "HD",
+    "setup": "nypm",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst; only vague, unnamed-firm commentary about analysts trimming long-term EPS estimates, not a specific dated rating/PT action.",
+      "tagged_on": "2026-09-21"
+    }
+  },
+  {
+    "date": "2026-09-21",
+    "symbol": "PEP",
+    "setup": "nypm",
+    "direction": "bullish",
+    "return_r": -0.6140350877192843,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Only a routine quarterly dividend increase (4%, $1.48/share) declared 9/21 -- a scheduled corporate action, not one of the qualifying catalyst categories; no other dated news found.",
+      "tagged_on": "2026-09-21"
+    }
   }
 ]
