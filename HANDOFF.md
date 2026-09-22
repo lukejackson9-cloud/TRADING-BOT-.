@@ -1072,3 +1072,32 @@ moderator step doing real work, not rubber-stamping stale inputs.
 
 Council downgrade streak now 18-for-18. Full detail in
 data/research/2026-09-21/SECZ_council.md.
+
+## 2026-09-22 daily screen -- quiet day, streak unchanged
+18 tickers researched from Massive's 09-18->09-21 session-pair
+whole-market screen. 0 CANDIDATEs -- council not needed. A few things
+worth remembering:
+- **GRML/CRML** correlated cluster: both traced to one Trump-Denmark
+  Greenland geopolitical headline, not two independent opportunities.
+  GRML in particular (+230.53%) is a textbook thin-float pump (a
+  6-month-old renamed biotech shell, 218M-share volume on essentially
+  no real business) -- same discipline as the BIAF precedent.
+- **SECZ** (3rd+ appearance) is already playing out the way yesterday's
+  council review predicted: same-day sources show it pulling back
+  ~6.65% intraday on 09-22, right after council flagged extension risk.
+  Worth remembering as a concrete data point next time this project
+  second-guesses a downgrade.
+- **ALAB's 09-08 S&P 500 inclusion hypothesis is now confirmed FALSE**
+  -- S&P actually added Bloom Energy/Illumina/Everpure on 09-21, not
+  ALAB. Today's ALAB move is pure Nasdaq/AMD sector beta plus heavy
+  insider selling. Worth a lessons.md-style note if this pattern (an
+  unconfirmed inclusion rumor treated as a real catalyst) recurs.
+- **GRAL**: FDA advisory panel vote on Galleri is tomorrow (09-23),
+  still unresolved -- capped at WATCH per the pre-catalyst rule, same
+  logic as the earnings-lookahead cap.
+- **WBD**: real M&A catalyst (Paramount Skydance deal cleared its last
+  legal hurdle) but the stock is already ~99% of deal price -- late-stage
+  merger arb with no spread left, not a short-term momentum setup.
+
+COST earnings 09-24 (2 days out) and CCL earnings 09-29 flagged for
+forward lookahead. Full detail in data/research/2026-09-22/.
