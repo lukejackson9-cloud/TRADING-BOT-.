@@ -744,5 +744,137 @@
       "note": "Only a routine quarterly dividend increase (4%, $1.48/share) declared 9/21 -- a scheduled corporate action, not one of the qualifying catalyst categories; no other dated news found.",
       "tagged_on": "2026-09-21"
     }
+  },
+  {
+    "date": "2026-09-22",
+    "symbol": "AAPL",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst; move described only as a technical breakout, no earnings/M&A/FDA/guidance/analyst-rating-change dated 9/22.",
+      "tagged_on": "2026-09-22"
+    }
+  },
+  {
+    "date": "2026-09-22",
+    "symbol": "AAPL",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst; move described only as a technical breakout, no earnings/M&A/FDA/guidance/analyst-rating-change dated 9/22.",
+      "tagged_on": "2026-09-22"
+    }
+  },
+  {
+    "date": "2026-09-22",
+    "symbol": "XOM",
+    "setup": "order_block",
+    "direction": "bullish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst; decline tracks sector-wide oil-price weakness, RBC reiterated (not changed) Sector Perform rating.",
+      "tagged_on": "2026-09-22"
+    }
+  },
+  {
+    "date": "2026-09-22",
+    "symbol": "HD",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst; +2.06% move tracks the broader S&P 500 gain (+1.49%) same day, analyst commentary is reiterated sentiment not a new dated action.",
+      "tagged_on": "2026-09-22"
+    }
+  },
+  {
+    "date": "2026-09-22",
+    "symbol": "HD",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst; +2.06% move tracks the broader S&P 500 gain (+1.49%) same day, analyst commentary is reiterated sentiment not a new dated action.",
+      "tagged_on": "2026-09-22"
+    }
+  },
+  {
+    "date": "2026-09-22",
+    "symbol": "DIS",
+    "setup": "fvg",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 9/22 catalyst; CTO hire is effective 10/2 (future), DTC chairman appointment date unconfirmed, analysts reaffirmed (not changed) their rating.",
+      "tagged_on": "2026-09-22"
+    }
+  },
+  {
+    "date": "2026-09-22",
+    "symbol": "DIS",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 9/22 catalyst; CTO hire is effective 10/2 (future), DTC chairman appointment date unconfirmed, analysts reaffirmed (not changed) their rating.",
+      "tagged_on": "2026-09-22"
+    }
+  },
+  {
+    "date": "2026-09-22",
+    "symbol": "DIS",
+    "setup": "inverse_fvg",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 9/22 catalyst; CTO hire is effective 10/2 (future), DTC chairman appointment date unconfirmed, analysts reaffirmed (not changed) their rating.",
+      "tagged_on": "2026-09-22"
+    }
+  },
+  {
+    "date": "2026-09-22",
+    "symbol": "COST",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Expanded same-day delivery through DoorDash across ~630 US warehouse locations, announced 9/22 -- real, dated, company-specific business development.",
+      "tagged_on": "2026-09-22"
+    }
+  },
+  {
+    "date": "2026-09-22",
+    "symbol": "COST",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Expanded same-day delivery through DoorDash across ~630 US warehouse locations, announced 9/22 -- real, dated, company-specific business development.",
+      "tagged_on": "2026-09-22"
+    }
+  },
+  {
+    "date": "2026-09-22",
+    "symbol": "CVX",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst; decline tracks a 4th-consecutive-session drop in crude prices (sector-wide), RBC reiterated (not changed) its rating.",
+      "tagged_on": "2026-09-22"
+    }
   }
 ]
