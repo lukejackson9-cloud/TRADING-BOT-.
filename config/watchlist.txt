@@ -320,3 +320,27 @@ ALVO   # 2026-09-21: +9.93%, Alvotech -- real catalyst (Barclays double-upgrade 
 DSP    # 2026-09-21: +18.56%, Viant Technology -- real catalyst (withdrawn secondary offering) but relief-rally undercut by same-day CFO insider selling -- WATCH
 FAC    # 2026-09-21: +10.62%, Factorial Energy -- real Mitsui Kinzoku partnership but 2nd day into an already-fired reaction, recent-IPO/warrant overhang -- WATCH
 SGML   # 2026-09-21: +12.27%, Sigma Lithium -- real fundamentals but move mostly continuation of an already-known rally + sector-wide lithium strength -- WATCH
+
+# --- added 2026-09-22 via the daily screen routine (Massive whole-market, 2026-09-18 -> 09-21 session pair) ---
+GRML   # 2026-09-22: +230.53%, "Greenland Mines" (ex-Klotho Neurosciences shell) -- thin-float pump on a Trump-Denmark Greenland geopolitical headline -- PASS
+CRML   # 2026-09-22: +38.63%, Critical Metals Corp -- real rare-earth company but move dominated by the same Greenland headline as GRML (correlated cluster) -- WATCH
+VEEE   # 2026-09-22: +100.93%, Twin Vee PowerCats -- mid-reverse-merger, boat business carved out for a non-transferable CVR, 1-for-37 split pending -- PASS
+PRTH   # 2026-09-22: +33.79%, Priority Technology Holdings -- real $8.05/share go-private deal but fired 09-18, now a 15-month merger-arb situation not a momentum trade -- PASS
+NUAI   # 2026-09-22: +30.55%, New Era Energy & Digital -- genuine AI-datacenter pivot + Vistra power deal but pre-revenue, already ran for weeks -- WATCH
+HUBC   # 2026-09-22: +30.43%, Hub Cyber Security -- distressed, recent reverse split, contradictory price data, no dated catalyst -- PASS
+SECZ   # 2026-09-22: +24.31% -- repeat (3rd+) -- same 09-21 catalyst already council-downgraded, now pulling back intraday exactly as flagged -- WATCH
+USDE   # 2026-09-22: +23.65% -- repeat -- crypto-treasury proxy, no verifiable dated catalyst -- PASS
+WBD    # 2026-09-22: +10.79%, Warner Bros Discovery -- real M&A catalyst (state-AG settlement clears Paramount Skydance deal) but already ~99% of deal price, no spread left -- WATCH
+INTC   # 2026-09-22: +12.14%, Intel -- real analyst upgrades + 18A/High-NA-EUV progress but already extended after tripling YTD -- WATCH
+MRNA   # 2026-09-22: +12.27%, Moderna -- ESMO abstract acceptance for an Oct 23-27 presentation, not new data, outside short-term window -- WATCH
+GRAL   # 2026-09-22: +33.68%, GRAIL -- FDA advisory panel vote on Galleri is TOMORROW (09-23), unresolved -- capped at WATCH per pre-catalyst rule
+CUE    # 2026-09-22: -23.70%, Cue Biopharma (not Cue Health) -- real Phase 2 data but this is a fade off an even bigger intraday spike -- PASS
+DOCN   # 2026-09-22: +12.31% -- repeat -- same 09-17 catalyst, now more extended (+203.7% YTD), shares a macro tailwind with AKAM -- WATCH
+ALAB   # 2026-09-22: +12.36% -- repeat -- 09-08 S&P 500 inclusion hypothesis confirmed FALSE, today's move is pure Nasdaq/AMD sector beta plus heavy insider selling -- PASS
+AKAM   # 2026-09-22: +12.33% -- repeat -- same "no new catalyst" pattern already caught and stopped out (-4%) by the mechanical TA track on 09-17/18 -- PASS
+LUNR   # 2026-09-22: +12.93%, Intuitive Machines -- real SXM-11/Clear Street proof points but sources conflate with month-old contracts, can't pin exact driver -- WATCH
+FSLY   # 2026-09-22: +14.92%, Fastly -- move ran entirely ahead of an unresolved Investor Day, stale news otherwise -- WATCH
+
+# --- pre-catalyst watch entries ---
+COST   # EARNINGS 2026-09-24 -- pre-catalyst watch, not yet a candidate
+CCL    # EARNINGS 2026-09-29 -- pre-catalyst watch, not yet a candidate
