@@ -17167,7 +17167,11 @@
     "target_price": 35.488800000000005,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Modest +1.5-2% move; only news found is a July earnings miss (already stale/priced) and routine congressional-trading disclosure; no fresh 09-22 catalyst.",
+      "tagged_on": "2026-09-22"
+    }
   },
   {
     "ticker": "RGEN",
@@ -17253,7 +17257,11 @@
     "target_price": 5.572800000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 09-22 catalyst found; only items located were a routine 09-01 employee equity-award grant and a stale 05-06 Q1/TSHA-102 program update, neither company-material news for this session.",
+      "tagged_on": "2026-09-22"
+    }
   },
   {
     "ticker": "TSEM",
@@ -17264,7 +17272,11 @@
     "target_price": 255.53880000000004,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No fresh 09-22 news; Barclays Overweight initiation was 09-18 (4 days stale) and NewPhotonics high-volume shipment announcement was 09-17 (5 days stale).",
+      "tagged_on": "2026-09-22"
+    }
   },
   {
     "ticker": "STM",
@@ -17485,7 +17497,11 @@
     "target_price": 77.73840000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Up 2.99% (continuing an 8.24% Monday pop) on a cluster of genuinely new, dated items: Raymond James initiated coverage with Outperform/$80 PT, a $1.94B ATM equity raise announced to fund the Iridium Communications acquisition (replacing a costlier $3.6B bridge loan), plus new Space Force multi-launch ($266M) and HASTE hypersonic ($190M) contract wins and a Viasat GEO satellite-bus award.",
+      "tagged_on": "2026-09-22"
+    }
   },
   {
     "ticker": "INOD",
@@ -17766,7 +17782,11 @@
     "target_price": 6.1992,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 09-22-specific catalyst found; coverage is generic bullish analyst/Seeking Alpha commentary referencing already-reported Q2 2026 results.",
+      "tagged_on": "2026-09-22"
+    }
   },
   {
     "ticker": "MANE",
@@ -17942,7 +17962,11 @@
     "target_price": 23.079600000000003,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Gapped up ~4% but all cited drivers are stale: CrowdStrike Falcon SIEM integration announced 08-31, earnings reported 09-09, Barclays/BofA price-target raises 09-11/09-18; the only 09-22-dated item is an announcement of a future Oct 14 investor webcast, which is forward scheduling, not new substantive information.",
+      "tagged_on": "2026-09-22"
+    }
   },
   {
     "ticker": "GENI",
@@ -18103,7 +18127,11 @@
     "target_price": 113.6592,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Up ~7.6-8.5% but the only cited drivers are a Form 3 insider beneficial-ownership filing (not a catalyst) and a Benchmark analyst meeting note misdated to 09-10 -- no confirmed genuine dated RMBS-specific event for 09-22; reads as unexplained AI/chip-sector momentum, same pattern as RSKD's unexplained-pop case.",
+      "tagged_on": "2026-09-22"
+    }
   },
   {
     "ticker": "RMBS",
@@ -18114,7 +18142,11 @@
     "target_price": 113.6592,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Up ~7.6-8.5% but the only cited drivers are a Form 3 insider beneficial-ownership filing (not a catalyst) and a Benchmark analyst meeting note misdated to 09-10 -- no confirmed genuine dated RMBS-specific event for 09-22; reads as unexplained AI/chip-sector momentum, same pattern as RSKD's unexplained-pop case.",
+      "tagged_on": "2026-09-22"
+    }
   },
   {
     "ticker": "CCK",
@@ -18155,7 +18187,11 @@
     "target_price": 40.5864,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Down 1.4%, no news; only item found was a routine quarterly dividend declaration, not a catalyst.",
+      "tagged_on": "2026-09-22"
+    }
   },
   {
     "ticker": "IFF",
@@ -18436,7 +18472,11 @@
     "target_price": 7.5708,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Reusing 2026-09-23 research.md PASS verdict: no fresh catalyst for the 9/21-9/22 move -- nearest dated news (Zendesk integration) is a week stale (09-15), and the 'sale exploration' story is 18 months stale.",
+      "tagged_on": "2026-09-22"
+    }
   },
   {
     "ticker": "TKR",
@@ -18447,7 +18487,11 @@
     "target_price": 124.7616,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Stock actually down 1.19% on 09-22. BofA upgrade to Buy (35 PT) was dated 2026-09-01, 3 weeks stale and already noted as priced in (article notes shares slipped anyway on macro/oil/yield pressure); no fresh 09-22 catalyst.",
+      "tagged_on": "2026-09-22"
+    }
   },
   {
     "ticker": "AZTA",
@@ -18533,7 +18577,11 @@
     "target_price": 18.3168,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Up 5.2% but move coincides with a sector-wide seasonal-retail rally (Arhaus, Dollar Tree also jumped same session on NRF holiday-spending data) -- a same-day Dallas Cowboys stadium-sponsorship announcement is real and dated but is marketing/sponsorship, not a material catalyst under this project's definition (not earnings/M&A/FDA/guidance/analyst action).",
+      "tagged_on": "2026-09-22"
+    }
   },
   {
     "ticker": "MKC",
@@ -18859,7 +18907,11 @@
     "target_price": 86.1084,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "New 52-week high (+3.14%) but drivers found are stale: the ChatGPT-plugin/Claude-MCP-connector news is dated 09-10 (12 days old) and the strong Q2 earnings beat was already reported/priced earlier; no fresh 09-22-specific announcement.",
+      "tagged_on": "2026-09-22"
+    }
   },
   {
     "ticker": "MRVI",
@@ -19065,7 +19117,11 @@
     "target_price": 278.95320000000004,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Up 3.3% alongside broader gold-price strength; no company-specific dated announcement found -- reads as sector/commodity-driven, not an RGLD-specific catalyst.",
+      "tagged_on": "2026-09-22"
+    }
   },
   {
     "ticker": "WPC",
@@ -19121,7 +19177,11 @@
     "target_price": 9.892800000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": "unclear",
+      "note": "Up 8.7% with no confirmed dated 09-22 announcement found via WebSearch; company has an active board-led strategic-sale review underway (American Industrial Partners stake, prior rejected $11-12/share bid) that could plausibly be generating headline-driven speculative moves, but no specific dated development for this date could be confirmed -- genuinely inconclusive rather than guessed.",
+      "tagged_on": "2026-09-22"
+    }
   },
   {
     "ticker": "RYAM",
@@ -19132,7 +19192,11 @@
     "target_price": 9.892800000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": "unclear",
+      "note": "Up 8.7% with no confirmed dated 09-22 announcement found via WebSearch; company has an active board-led strategic-sale review underway (American Industrial Partners stake, prior rejected $11-12/share bid) that could plausibly be generating headline-driven speculative moves, but no specific dated development for this date could be confirmed -- genuinely inconclusive rather than guessed.",
+      "tagged_on": "2026-09-22"
+    }
   },
   {
     "ticker": "GMED",
@@ -19248,7 +19312,11 @@
     "target_price": 137.66760000000002,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No fresh 09-22 catalyst. Move traces to (a) Third Point/BofA new positions disclosed via a Q2-lagged 13F made public 09-18 (4 days stale, and 13F disclosures are lagged positions, not new buying -- same disqualifying pattern as SGRY), and (b) a debt-financed notes offering to fund the Epiq Solutions/Swiss Technology Group acquisitions, which were originally announced 2026-08-17/18, over a month stale -- financing execution of an already-known deal, not new information.",
+      "tagged_on": "2026-09-22"
+    }
   },
   {
     "ticker": "CERT",
