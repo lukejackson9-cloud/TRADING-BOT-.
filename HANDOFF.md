@@ -1101,3 +1101,49 @@ worth remembering:
 
 COST earnings 09-24 (2 days out) and CCL earnings 09-29 flagged for
 forward lookahead. Full detail in data/research/2026-09-22/.
+
+## 2026-09-23 daily screen -- largest single-day mover pool yet, still 0 CANDIDATEs
+22 tickers researched from Massive's 09-21->09-22 session-pair whole-market
+screen (1,469 movers passed the price/volume filter that pair, the largest
+pool seen yet -- broad market strength: S&P +1.49%/Nasdaq record close the
+prior session). 0 CANDIDATEs -- council not needed, streak stays at
+18-for-18 by definition. A few things worth remembering:
+- **JAGX (Jaguar Health)** is the cleanest reverse-split/thin-float
+  distortion example this project has documented: a 1-for-15 split
+  (effective 09-17) plus a real but minor FDA fee-waiver news item
+  combined into a headline "+1190.6% close / as much as +1585% intraday"
+  move on 09-22, which had already round-tripped to -74.14% intraday by
+  09-23. Worth a lessons.md entry if a similarly extreme reverse-split
+  distortion recurs -- the percentage-change math across a split date is
+  not economically meaningful on its own.
+- **CLDX (Celldex)** is a genuinely interesting case of a real, dated
+  Phase 3 catalyst (barzolvolimab met all endpoints in chronic hives)
+  where the market's own reaction (sharp reversal, -11.6% close after
+  an intraday spike) already disagrees with the bullish sell-side
+  price-target hikes -- sitting on top of a fresh, not-yet-characterized
+  safety signal (two probable Grade 4 anaphylaxis cases). Flagged WATCH,
+  worth checking how it resolves over the next few sessions.
+- **OMER**: real, dated Cantor Fitzgerald upgrade grounded in actual
+  YARTEMLEA revenue growth (not a bare narrative) -- the closest thing to
+  a clean single-analyst-action catalyst seen recently, still held at
+  WATCH per lessons.md #5 (single analyst action, fresh 52-wk-high entry,
+  pending EU/FDA binary risk).
+- **VICR** is now a 4th consecutive appearance, extension continuing to
+  worsen (GF Value now flags it +293% overvalued) on the same 09-16 VPD
+  licensing story -- a clean illustration of why this project keeps
+  capping repeat catalysts at WATCH rather than treating persistence as
+  confirmation.
+- **GRAL**: the FDA advisory panel actually voted on the Galleri PMA
+  TODAY (09-23) -- WebSearch could not yet confirm the vote outcome
+  (news indexed as of this screen predates the actual vote), and the
+  market reaction won't show up in Massive's completed-session data
+  until tomorrow's screen. Flagged explicitly in watchlist.txt to check
+  first thing next session.
+- **INOD**: a dated but conflicted source (Hunterbrook Capital, which
+  disclosed a long position in INOD) linked the move to a Meta AI-agent
+  report unconfirmed by either company -- held at WATCH rather than
+  CANDIDATE specifically because of that disclosed conflict of interest,
+  not because the claim itself was implausible.
+
+COST earnings 09-24 (tomorrow) and CCL earnings 09-29 still flagged for
+forward lookahead. Full detail in data/research/2026-09-23/.

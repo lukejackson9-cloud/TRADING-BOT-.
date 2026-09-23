@@ -344,3 +344,32 @@ FSLY   # 2026-09-22: +14.92%, Fastly -- move ran entirely ahead of an unresolved
 # --- pre-catalyst watch entries ---
 COST   # EARNINGS 2026-09-24 -- pre-catalyst watch, not yet a candidate
 CCL    # EARNINGS 2026-09-29 -- pre-catalyst watch, not yet a candidate
+
+# --- added 2026-09-23 via the daily screen routine (Massive whole-market, 2026-09-21 -> 09-22 session pair) ---
+VKTX   # 2026-09-23: +35.69%, Viking Therapeutics -- real VK2735 Phase 1 maintenance data but reaction already fired + concurrent $400M dilutive offering same day -- WATCH
+MAZE   # 2026-09-23: +26.75%, Maze Therapeutics -- competitor (Vertex) data validating shared APOL1-inhibitor class, not Maze-specific news -- WATCH
+NFE    # 2026-09-23: -24.68%, New Fortress Energy -- distressed multi-day slide (1-for-50 reverse split, dilutive Brazil-ops restructuring), long-only so no way to act on the bear thesis -- PASS
+BFLY   # 2026-09-23: +21.99%, Butterfly Network -- single Needham initiation, already reversing (-4.98%) intraday today -- PASS
+XNDU   # 2026-09-23: -21.57%, Xanadu Quantum Technologies -- real dated catalyst (180-day IPO lockup expiry + CEO share sale) but a negative supply event, not a buy catalyst -- PASS
+VICR   # 2026-09-23: +19.85% -- repeat (4th appearance) -- same VPD-licensing guidance-raise story, now a 3rd consecutive extension leg, GF Value flags +293% overvalued -- WATCH
+EAF    # 2026-09-23: +19.76%, GrafTech International -- same stale price-hike story already flagged 09-17, no fresh catalyst -- WATCH
+DNA    # 2026-09-23: +17.42% -- repeat -- no new catalyst, move already fading intraday today, fundamentals still deteriorating -- PASS
+SGRY   # 2026-09-23: +15.67%, Surgery Partners -- real Idaho Falls divestiture catalyst already fired 5 days ago (09-17), today rides stale 13F headlines -- WATCH
+INOD   # 2026-09-23: +14.61%, Innodata -- dated Hunterbrook Capital report linking to Meta's "Muse" agent, but Hunterbrook discloses a long position (conflict of interest), unconfirmed by either company -- WATCH
+EVER   # 2026-09-23: -14.37%, EverQuote -- no dated catalyst found; one dated item (Raymond James PT raise) runs the opposite direction of the move -- PASS
+TNGX   # 2026-09-23: +14.33%, Tango Therapeutics -- real Phase 1/2 data but 3+ months stale, no fresh 09-22 trigger found -- PASS
+OMER   # 2026-09-23: +13.85%, Omeros -- real dated Cantor Fitzgerald upgrade grounded in actual YARTEMLEA revenue growth, but single-analyst-action + fresh 52-wk-high entry + pending EU/FDA binary risk -- WATCH
+CLPT   # 2026-09-23: +13.03%, ClearPoint Neuro -- fundamentals genuinely positive but all predate this session, no dated trigger for today's move -- PASS
+CLDX   # 2026-09-23: -11.56%, Celldex Therapeutics -- real Phase 3 barzolvolimab data but reaction already fired/reversed + fresh unresolved anaphylaxis safety signal -- WATCH
+GSHD   # 2026-09-23: -11.49%, Goosehead Insurance -- no discrete catalyst, continuation of multi-week AI-disintermediation de-rating -- PASS
+RSKD   # 2026-09-23: +10.39%, Riskified -- no fresh catalyst, nearest dated news (Zendesk integration) a week stale -- PASS
+CUE    # 2026-09-23: +9.30% -- repeat -- same aging 09-20 CUE-221 data, now three sessions into a whipsaw -- PASS
+ABSI   # 2026-09-23: +9.06% -- repeat -- unchanged, modest insider buy but no real catalyst -- WATCH
+TTAN   # 2026-09-23: +8.90%, ServiceTitan (not Titan Machinery) -- no catalyst found for the move -- PASS
+GRML   # 2026-09-23: +50.21% -- repeat (3rd+) -- thin-float pump continuation, genuine resource-estimate update but magnitude still driven by post-split float mechanics -- PASS
+JAGX   # 2026-09-23: +1190.6%(09-22)/-74.14%(09-23) -- Jaguar Health -- reverse-split distortion + minor FDA fee-waiver news, confirmed blow-off by today's crash -- PASS
+
+# --- pre-catalyst watch entries ---
+COST   # EARNINGS 2026-09-24 -- pre-catalyst watch, not yet a candidate
+CCL    # EARNINGS 2026-09-29 -- pre-catalyst watch, not yet a candidate
+GRAL   # FDA advisory panel VOTED 2026-09-23 on Galleri PMA -- outcome not yet confirmed via search as of this screen; market reaction not yet in Massive's completed-session data -- check tomorrow's screen for the reaction, hold at WATCH until then
