@@ -876,5 +876,53 @@
       "note": "No dated catalyst; decline tracks a 4th-consecutive-session drop in crude prices (sector-wide), RBC reiterated (not changed) its rating.",
       "tagged_on": "2026-09-22"
     }
+  },
+  {
+    "date": "2026-09-23",
+    "symbol": "TSLA",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-09-23",
+    "symbol": "TSLA",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-09-23",
+    "symbol": "JNJ",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-09-23",
+    "symbol": "NFLX",
+    "setup": "fvg",
+    "direction": "bullish",
+    "return_r": -0.025830258302580705,
+    "catalyst": null
+  },
+  {
+    "date": "2026-09-23",
+    "symbol": "NFLX",
+    "setup": "nypm",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-09-23",
+    "symbol": "INTC",
+    "setup": "order_block",
+    "direction": "bullish",
+    "return_r": -0.02097902097901505,
+    "catalyst": null
   }
 ]
