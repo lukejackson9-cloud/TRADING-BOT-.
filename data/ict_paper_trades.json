@@ -883,7 +883,11 @@
     "setup": "order_block",
     "direction": "bearish",
     "return_r": -1.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No fresh 09-23 catalyst -- Semi factory event is 09-24 (next day), stock only +0.41%, no dated news found",
+      "tagged_on": "2026-09-23"
+    }
   },
   {
     "date": "2026-09-23",
@@ -891,7 +895,11 @@
     "setup": "ote",
     "direction": "bearish",
     "return_r": -1.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No fresh 09-23 catalyst -- Semi factory event is 09-24 (next day), stock only +0.41%, no dated news found",
+      "tagged_on": "2026-09-23"
+    }
   },
   {
     "date": "2026-09-23",
@@ -899,7 +907,11 @@
     "setup": "order_block",
     "direction": "bearish",
     "return_r": 2.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Caplyta Phase 3 data is 09-21 (2 days stale), analyst actions (RBC/Scotiabank) dated 09-22 but described ambiguously as reiterations not confirmed new actions, stock barely moved -0.42%",
+      "tagged_on": "2026-09-23"
+    }
   },
   {
     "date": "2026-09-23",
@@ -907,7 +919,11 @@
     "setup": "fvg",
     "direction": "bullish",
     "return_r": -0.025830258302580705,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Wells Fargo cut PT to $57 same session (09-23), explicitly cited as adding pressure that day -- dated analyst action",
+      "tagged_on": "2026-09-23"
+    }
   },
   {
     "date": "2026-09-23",
@@ -915,7 +931,11 @@
     "setup": "nypm",
     "direction": "bullish",
     "return_r": -1.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Wells Fargo cut PT to $57 same session (09-23), explicitly cited as adding pressure that day -- dated analyst action",
+      "tagged_on": "2026-09-23"
+    }
   },
   {
     "date": "2026-09-23",
@@ -923,6 +943,10 @@
     "setup": "order_block",
     "direction": "bullish",
     "return_r": -0.02097902097901505,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Profit-taking after the stale 09-22 rally (+14.05%), no fresh dated catalyst for 09-23 itself",
+      "tagged_on": "2026-09-23"
+    }
   }
 ]
