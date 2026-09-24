@@ -373,3 +373,46 @@ JAGX   # 2026-09-23: +1190.6%(09-22)/-74.14%(09-23) -- Jaguar Health -- reverse-
 COST   # EARNINGS 2026-09-24 -- pre-catalyst watch, not yet a candidate
 CCL    # EARNINGS 2026-09-29 -- pre-catalyst watch, not yet a candidate
 GRAL   # FDA advisory panel VOTED 2026-09-23 on Galleri PMA -- outcome not yet confirmed via search as of this screen; market reaction not yet in Massive's completed-session data -- check tomorrow's screen for the reaction, hold at WATCH until then
+
+# --- added 2026-09-24 via the daily screen routine (Massive whole-market, 2026-09-22 -> 09-23 session pair) ---
+GRAL   # 2026-09-24: FDA advisory panel voted 7-2 in favor (Galleri PMA), real catalyst but stock already trading above every analyst's price target ($125.70 vs $79-84 range), FDA approval itself still pending -- WATCH
+ARTL   # 2026-09-24: +76.14%, Artelo Biosciences -- real dated obesity patent/nonclinical data but mouse-only, provisional patent, serial reverse-split history (3 splits in 16 months) signals real dilution risk -- WATCH
+ALKT   # 2026-09-24: -19.30%, Alkami Technology -- real dated negative catalyst (board rejects Jana Partners sale push), fresh 3-year lows, falling knife not a bounce setup -- PASS
+VOYG   # 2026-09-24: Voyager Technologies -- real dated negative catalyst ($350M convertible note dilution), long-only can't act on it -- PASS
+DBGI   # 2026-09-24: +21.23%, Digital Brands Group -- no fresh catalyst found, 5th straight up day with no clean news behind it, repeat of a 09-14 unexplained-move pattern -- PASS
+CGEM   # 2026-09-24: -22.15%, Cullinan Therapeutics -- part of a broader biotech selloff but move is 2-3x peers, sources conflict on the CGEM-specific driver (lessons.md #2) -- WATCH
+SRPT   # 2026-09-24: -8.94%, Sarepta Therapeutics -- confirmed sector-wide biotech selloff, no fresh company-specific catalyst (gene-therapy safety concerns are stale, Jun-Aug) -- PASS
+PGY    # 2026-09-24: -9.87%, Pagaya -- sector-wide consumer-lending selloff (rate sensitivity), company's own news was actually positive -- PASS
+BYND   # 2026-09-24: -12.86%, Beyond Meat -- real dated catalyst ($15M convertible-note-for-stock exchange) but unambiguously dilutive/bearish -- PASS
+CCOI   # 2026-09-24: -12.67%, Cogent Communications -- no fresh catalyst, continued bleed in an already-known bad story (Wavelength litigation, prior dividend cut) -- PASS
+MEI    # 2026-09-24: +9.69%, Methode Electronics -- real dated catalyst (first-ever Investor Day announced) but reaction already fired, mixed fundamentals, prior 09-03 history of headline/substance mismatch -- WATCH
+BW     # 2026-09-24: -9.54%, Babcock & Wilcox -- no new catalyst, continuation of an existing ~40%-over-the-quarter decline tied to known securities-fraud allegations -- PASS
+BKKT   # 2026-09-24: -9.46%, Bakkt -- 3rd consecutive no-catalyst day per the TA track's own tags, BTC itself near 8-month highs so not sector beta either -- PASS
+REAX   # 2026-09-24: -11.68%, The Real Brokerage -- real dated negative catalyst (RE/MAX merger cash-election overproration read as low confidence in the deal) -- PASS
+INNV   # 2026-09-24: -15.53%, InnovAge Holding -- real dated negative catalyst (10M-share secondary offering by PE sponsors, no company proceeds) -- PASS
+EXK    # 2026-09-24: -11.89%, Endeavour Silver -- mix of sector-wide silver weakness + company-specific mill outage at Guanacevi (~3 weeks reduced capacity) -- PASS
+JAGX   # 2026-09-24: -74.14% -- repeat -- confirmed reverse-split/thin-float blow-off exactly as flagged yesterday -- PASS
+GRML   # 2026-09-24: -20.92% -- repeat -- pullback confirms thin-float pump thesis, no new catalyst -- PASS
+WHLR   # 2026-09-24: +190.91%(09-23)/-31.25%(09-24 intraday), Wheeler REIT -- reverse-split distortion, same pattern as JAGX/IPDN, company on its 4th+ split in a year -- PASS
+IPDN   # 2026-09-24: +38.97%, Professional Diversity Network -- reverse-split/thin-float distortion, same pattern as JAGX/WHLR -- PASS
+NFE    # 2026-09-24: -21.47% -- repeat -- continuing distressed slide, no new catalyst -- PASS
+FSLY   # 2026-09-24: +13.69% -- repeat -- Investor Day resolved with a real long-term plan but reaction already fading (sell-the-news) -- WATCH
+SECZ   # 2026-09-24: new ATH $14.07, +67% over the week -- repeat (7th+) -- now trading above even its most bullish analyst target, same council-flagged extension continuing -- WATCH
+CRML   # 2026-09-24: -9.60% -- repeat -- pullback after last week's Greenland-cluster rally, no new catalyst -- WATCH
+EVER   # 2026-09-24: -9.82% -- repeat -- continuing unexplained decline, no new catalyst -- PASS
+ABSI   # 2026-09-24: -9.01% -- repeat -- downgraded to PASS, move reversed with nothing new to sustain prior soft-catalyst read
+COST   # 2026-09-24: earnings printed (EPS beat $6.75 vs $6.54 est, revenue figures conflict across sources), only ~1% pop, well inside the options-implied move -- PASS, pre-catalyst watch resolved
+# Biotech cooling-off cluster (compact, lessons.md #3) -- see data/research/2026-09-24/biotech_cluster_note.md
+VOR    # 2026-09-24: -11.95% -- part of biotech cooling-off cluster, no dated company-specific news -- PASS
+CLYM   # 2026-09-24: -11.89% -- part of biotech cooling-off cluster, no dated company-specific news -- PASS
+STOK   # 2026-09-24: -10.58% -- part of biotech cooling-off cluster, no dated company-specific news -- PASS
+ERAS   # 2026-09-24: -10.32% -- part of biotech cooling-off cluster, no dated company-specific news -- PASS
+SLDB   # 2026-09-24: -10.09% -- part of biotech cooling-off cluster, no dated company-specific news -- PASS
+PHAT   # 2026-09-24: -9.99% -- part of biotech cooling-off cluster, no dated company-specific news -- PASS
+TYRA   # 2026-09-24: -9.15% -- part of biotech cooling-off cluster, no dated company-specific news -- PASS
+JBIO   # 2026-09-24: -12.23% -- part of biotech cooling-off cluster, no dated company-specific news -- PASS
+PBLS   # 2026-09-24: -12.73% -- part of biotech cooling-off cluster, no dated company-specific news -- PASS
+
+# --- pre-catalyst watch entries ---
+CCL    # EARNINGS 2026-09-29 -- pre-catalyst watch, not yet a candidate
+NKE    # EARNINGS 2026-10-01 -- pre-catalyst watch, not yet a candidate

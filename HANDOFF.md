@@ -1147,3 +1147,51 @@ prior session). 0 CANDIDATEs -- council not needed, streak stays at
 
 COST earnings 09-24 (tomorrow) and CCL earnings 09-29 still flagged for
 forward lookahead. Full detail in data/research/2026-09-23/.
+
+## 2026-09-24 daily screen -- GRAL's pre-catalyst resolved same-session, still 0 CANDIDATEs
+26 tickers researched individually plus 9 more noted compactly as one
+biotech-cooling-off cluster (lessons.md #3), from Massive's 09-22->09-23
+session-pair screen. 0 CANDIDATEs -- streak stays at 18-for-18. Highlights:
+- **GRAL**: the FDA advisory panel vote flagged as pending yesterday
+  actually happened and resolved into a real, dated, genuinely positive
+  catalyst (7-2 benefit-risk vote, unanimous safety) -- exactly the
+  same-session catch screen.md's forward earnings-lookahead logic is
+  designed to produce. But the stock is already trading well above every
+  covering analyst's price target (even the most bullish post-vote
+  reiteration), the actual FDA approval decision is still pending, and
+  the move was still actively unfolding intraday as researched -- capped
+  at WATCH, the same "real catalyst, already priced past fundamentals"
+  pattern as VICR/OMER/SECZ.
+- **Reverse-split/thin-float cluster confirmed twice more**: JAGX's crash
+  predicted yesterday fully played out (-74% close, further crashing
+  today), and GRML's pump also reversed hard (-20.9%) exactly as the
+  thin-float thesis predicted. Two NEW examples of the same pattern
+  surfaced today: WHLR (a company running MONTHLY reverse splits since
+  August 2025 to stay listing-compliant) and IPDN (1-for-30 split,
+  5-minute swings between $6-$11). This is now a well-established,
+  repeatedly-confirmed pattern worth a dedicated lessons.md entry if it
+  keeps recurring at this frequency.
+- **Biotech cooling-off cluster**: 9 small/mid-cap biotech names (VOR,
+  CLYM, STOK, ERAS, SLDB, PHAT, TYRA, JBIO, PBLS) all declined 10-13% the
+  same session with no individual dated catalyst found for any of them,
+  alongside larger named declines (Moderna -11%, Sarepta -8%) reported as
+  a "biotech rout." Noted compactly per lessons.md #3 rather than given
+  9 separate full research passes -- CGEM (biggest decliner, -22%) and
+  SRPT (most liquid/named in the rout coverage) got individual treatment
+  and both confirmed no company-specific catalyst beyond the sector move.
+- **COST's earnings (the pre-catalyst watch entry) printed today**: EPS
+  beat, but the reaction was muted (~1% pop, well inside the
+  options-implied move) -- a well-telegraphed print that was already
+  largely anticipated, not a short-term opportunity. Revenue figures
+  disagreed across sources (lessons.md #2) and were left unresolved
+  rather than asserted either way.
+- Several real, DATED, but NEGATIVE catalysts this session (ALKT board
+  rejecting a sale, VOYG's dilutive convert offering, BYND's
+  convertible-note exchange, REAX's merger cash-election overproration,
+  INNV's PE-sponsor secondary offering) -- all correctly PASS given this
+  project's long-only mandate, logged as real findings rather than
+  "no catalyst," since the research itself was genuine even though
+  nothing here is actionable.
+
+CCL earnings 09-29 and NKE earnings 10-01 (newly added to the calendar)
+flagged for forward lookahead. Full detail in data/research/2026-09-24/.
