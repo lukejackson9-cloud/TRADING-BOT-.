@@ -948,5 +948,85 @@
       "note": "Profit-taking after the stale 09-22 rally (+14.05%), no fresh dated catalyst for 09-23 itself",
       "tagged_on": "2026-09-23"
     }
+  },
+  {
+    "date": "2026-09-24",
+    "symbol": "AAPL",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": 2.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-09-24",
+    "symbol": "TSLA",
+    "setup": "order_block",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-09-24",
+    "symbol": "TSLA",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": 2.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-09-24",
+    "symbol": "UNH",
+    "setup": "eqhl",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-09-24",
+    "symbol": "MA",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-09-24",
+    "symbol": "ADBE",
+    "setup": "nypm",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-09-24",
+    "symbol": "AMD",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": 2.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-09-24",
+    "symbol": "KO",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-09-24",
+    "symbol": "COST",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-09-24",
+    "symbol": "CVX",
+    "setup": "nypm",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": null
   }
 ]
