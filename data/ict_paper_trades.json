@@ -955,7 +955,11 @@
     "setup": "ote",
     "direction": "bullish",
     "return_r": 2.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No company-specific catalyst; broad tech-sector weakness (Nasdaq -1.13%) cited as the driver",
+      "tagged_on": "2026-09-24"
+    }
   },
   {
     "date": "2026-09-24",
@@ -963,7 +967,11 @@
     "setup": "order_block",
     "direction": "bullish",
     "return_r": -1.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Tesla formally opened its dedicated Semi factory in Sparks, NV on 09-24 evening, calling it the launch of high-volume production, with PepsiCo/US Foods/DHL named as early customers -- dated, company-specific",
+      "tagged_on": "2026-09-24"
+    }
   },
   {
     "date": "2026-09-24",
@@ -971,7 +979,11 @@
     "setup": "ote",
     "direction": "bullish",
     "return_r": 2.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Tesla formally opened its dedicated Semi factory in Sparks, NV on 09-24 evening, calling it the launch of high-volume production, with PepsiCo/US Foods/DHL named as early customers -- dated, company-specific",
+      "tagged_on": "2026-09-24"
+    }
   },
   {
     "date": "2026-09-24",
@@ -979,7 +991,11 @@
     "setup": "eqhl",
     "direction": "bullish",
     "return_r": -1.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated earnings/M&A/FDA/guidance/analyst-action catalyst; only a CAO leadership hire (not a qualifying category), stock barely moved +0.4%",
+      "tagged_on": "2026-09-24"
+    }
   },
   {
     "date": "2026-09-24",
@@ -987,7 +1003,11 @@
     "setup": "ote",
     "direction": "bearish",
     "return_r": 2.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated MA-specific catalyst; only routine ATM-settlement coverage and a SoFi-Mastercard partnership announcement that is not MA's own dated event",
+      "tagged_on": "2026-09-24"
+    }
   },
   {
     "date": "2026-09-24",
@@ -995,7 +1015,11 @@
     "setup": "nypm",
     "direction": "bullish",
     "return_r": -1.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No fresh 09-24 catalyst; Q3 earnings and CEO-transition news both predate this date, stock down slightly on broad tech weakness",
+      "tagged_on": "2026-09-24"
+    }
   },
   {
     "date": "2026-09-24",
@@ -1003,7 +1027,11 @@
     "setup": "ote",
     "direction": "bullish",
     "return_r": 2.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated company-specific catalyst; move attributed to macro (oil/yields/Iran) and post-$1T-market-cap profit-taking/recovery",
+      "tagged_on": "2026-09-24"
+    }
   },
   {
     "date": "2026-09-24",
@@ -1011,7 +1039,11 @@
     "setup": "ote",
     "direction": "bearish",
     "return_r": -1.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst found, stock essentially flat",
+      "tagged_on": "2026-09-24"
+    }
   },
   {
     "date": "2026-09-24",
@@ -1019,7 +1051,11 @@
     "setup": "ote",
     "direction": "bearish",
     "return_r": 2.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Costco reported Q4 FY2026 earnings after close 09-24: EPS beat ($6.75 vs $6.54 est), revenue $95.72B (+11.1% YoY) -- dated, company-specific earnings print",
+      "tagged_on": "2026-09-24"
+    }
   },
   {
     "date": "2026-09-24",
@@ -1027,6 +1063,10 @@
     "setup": "nypm",
     "direction": "bearish",
     "return_r": 2.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "VP of exploration announced 09-24 a >50% increase in 2027 exploration spending (~20 new wells, wider frontier-basin exposure) -- dated, company-specific strategic guidance",
+      "tagged_on": "2026-09-24"
+    }
   }
 ]
