@@ -1195,3 +1195,45 @@ session-pair screen. 0 CANDIDATEs -- streak stays at 18-for-18. Highlights:
 
 CCL earnings 09-29 and NKE earnings 10-01 (newly added to the calendar)
 flagged for forward lookahead. Full detail in data/research/2026-09-24/.
+
+## 2026-09-25 daily screen -- first CANDIDATE in weeks, downgraded to WATCH (streak now 19-for-19)
+26 tickers researched (22 new/repeat individual files + the TWST council
+review). TWST (Twist Bioscience) reached CANDIDATE on a genuinely
+well-supported catalyst chain -- a real, sequential, multi-day Eli Lilly
+TuneLab / Anthropic-beneficiary story, not a single stale headline, with
+fundamentals accelerating independently and a funded balance sheet. Full
+4-role council review found the bull case honest and well-sourced, but
+downgraded to WATCH because the technical picture was NOT clean (already
+8% above its own 20-day high, RSI 74.53) and because every analyst price
+target found by either the bull or bear agent -- including the freshest,
+most bullish one, hiked the very day of the move -- sat BELOW the current
+price. Per council.md's own hard rule, an unclean technical picture is
+independently sufficient grounds for downgrade even against a strong bull
+case. Full detail in data/research/2026-09-25/TWST_council.md.
+
+Other notable items:
+- **KGC (Kinross Gold)**: correctly identified as a real, company-specific
+  negative catalyst (a production-guidance cut) rather than misattributing
+  it to the broader gold/silver/copper weakness that was also happening
+  the same session (a firmer dollar post-Fed-hike) -- a good example of
+  actually checking the sector-wide explanation before accepting it,
+  consistent with lessons.md #3's discipline.
+- **AVX**: identity check caught that this ticker quietly renamed from
+  AgriFORCE Growing Systems to Avax One Technology and pivoted to an
+  AVAX-crypto-treasury strategy -- the "AgriFORCE" identity in earlier
+  session notes is now stale; today's move tracks the AVAX token's own
+  rally, a correlated crypto proxy, not an independent equity catalyst.
+- **Fact-check catch**: a correlation specialist's report cited a
+  "Ginkgo Bioworks/Pfizer RNA deal" as a same-day (09-24) catalyst for
+  DNA's move; verified via WebSearch that this deal is actually from
+  2023, not 2026 -- a stale search result mistaken for fresh news. Caught
+  before it affected any verdict (TWST's correlation_flag stayed "none"
+  regardless), but a reminder that even specialist fact-reporting roles
+  need their claims spot-checked, not just bull/bear ones.
+- **ARTL/JAGX/GRML/VKTX**: all four predicted reversals/dilution effects
+  from yesterday's research played out almost exactly as flagged --
+  ARTL's thin-float instability, JAGX's continued unwind, GRML's
+  oscillation, and VKTX's dilutive-offering selloff.
+
+CCL earnings 09-29 and NKE earnings 10-01 still on the forward-lookahead
+calendar. Full detail in data/research/2026-09-25/.

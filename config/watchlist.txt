@@ -416,3 +416,31 @@ PBLS   # 2026-09-24: -12.73% -- part of biotech cooling-off cluster, no dated co
 # --- pre-catalyst watch entries ---
 CCL    # EARNINGS 2026-09-29 -- pre-catalyst watch, not yet a candidate
 NKE    # EARNINGS 2026-10-01 -- pre-catalyst watch, not yet a candidate
+
+# --- added 2026-09-25 via the daily screen routine (Massive whole-market, 2026-09-23 -> 09-24 session pair) ---
+TWST   # 2026-09-25: +16.1%, Twist Bioscience -- REACHED CANDIDATE (real sequential Lilly TuneLab + Anthropic-beneficiary catalyst chain) -- council-downgraded to WATCH (already 8% above 20-day high, every analyst target incl. the freshest one sits below current price) -- see data/research/2026-09-25/TWST_council.md
+SRZN   # 2026-09-25: +108.4%, Surrozen -- both cited catalysts stale (IND 09-08, WmBlair init 08-20); real risk found: FDA-clearance event would trigger a dilutive 2nd PIPE tranche -- WATCH
+TRT    # 2026-09-25: -36.6%, Trio-Tech International -- real same-day earnings (revenue beat but margin compression + Q4 net loss) -- PASS (negative, long-only)
+AVX    # 2026-09-25: +32.9% -- identity note: renamed from AgriFORCE to Avax One Technology, now an AVAX-crypto-treasury proxy -- move tracks the AVAX token's own rally, not a company event -- PASS
+QMCO   # 2026-09-25: +13.55%, Quantum Corp -- real Q1 FY27 earnings beat but stock already +298% YTD, thin coverage, high short interest, P/E >55 -- WATCH
+ACAD   # 2026-09-25: -12.78%, ACADIA Pharmaceuticals -- real Phase 2 trial narrowly missed primary endpoint -- PASS (negative)
+SGMT   # 2026-09-25: -12.57%, Sagimet Biosciences -- single Goldman Sachs Sell resumption, sharp reversal from earlier bullish inits -- PASS (negative)
+WRBY   # 2026-09-25: +12.51%, Warby Parker -- speculative Meta-Connect-adjacent hype, not WRBY's own dated news, consensus rating is Hold -- WATCH
+SMWB   # 2026-09-25: -12.24%, Similarweb -- real dated catalyst (founder/CEO stepping down, insider sales before the news) -- WATCH
+GEN    # 2026-09-25: -12.05%, Gen Digital -- real dated catalyst (unsolicited ~$12B GoDaddy approach reported), unconfirmed/early-stage -- WATCH
+MGM    # 2026-09-25: -11.0%, MGM Resorts -- real dated catalyst (Barry Diller's $18B+ buyout proposal withdrawn + same-day BofA downgrade) -- WATCH
+BETR   # 2026-09-25: -10.86%, Better Home & Finance -- no fresh catalyst confirmed, only recycled 5-month-old law-firm solicitation ads; price data itself unreliable across sources -- PASS
+VCYT   # 2026-09-25: +10.77%, Veracyte -- no fresh same-day catalyst found, closest candidates 10-15 days stale -- WATCH
+QURE   # 2026-09-25: -10.38%, uniQure -- macro risk-off + pre-data anxiety ahead of an unresolved Sept 30 Huntington's readout -- PASS
+TSSI   # 2026-09-25: +9.81%, TSS Inc -- no decision-grade catalyst, thin-float momentum on an already-disclosed Nvidia buildout narrative -- WATCH
+FSLR   # 2026-09-25: -10.32%, First Solar -- rate-sensitivity macro (same session gold/silver/copper fell) + a company-specific patent-complaint withdrawal -- PASS
+P      # 2026-09-25: +11.15%, Everpure (data storage, not Pandora/Phunware) -- real FY2028 guidance raise + S&P 500 inclusion tailwind, but reaction already fully fired to a fresh 52-week high -- WATCH
+TNMG   # 2026-09-25: +10.35%, TNL Mediagene -- no fresh catalyst, continuation of an already-running post-reverse-split thin-float spike -- PASS
+EQPT   # 2026-09-25: -9.73%, EquipmentShare.com -- real dated catalyst (Blue Orca short report alleging inflated EBITDA/undisclosed liabilities), company disputes it, unresolved -- PASS (negative/disputed)
+KGC    # 2026-09-25: -11.59%, Kinross Gold -- real company-specific negative catalyst (production guidance cut), NOT sector-wide gold weakness as first assumed -- PASS
+ARTL   # 2026-09-25: -29.27% -- repeat -- predicted instability confirmed, no new catalyst -- PASS
+JAGX   # 2026-09-25: -20.76% -- repeat -- continuing confirmed unwind, no new catalyst -- PASS
+GRML   # 2026-09-25: +33.07% -- repeat -- continued thin-float oscillation, no new catalyst -- PASS
+DNA    # 2026-09-25: +19.46% -- repeat -- continuing unexplained bounce, no new catalyst (a cited "Pfizer RNA deal" checked and confirmed to be stale 2023 news, not fresh) -- PASS
+VKTX   # 2026-09-25: -11.76% -- repeat -- predicted dilution from the upsized $500M offering materialized -- PASS
+SECZ   # 2026-09-25: +15.11% -- repeat (8th+) -- extension continuing, new independent financial-distress signal (Altman Z-Score 0.71) -- WATCH
