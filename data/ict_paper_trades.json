@@ -1075,7 +1075,11 @@
     "setup": "order_block",
     "direction": "bearish",
     "return_r": -1.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No fresh 09-25 catalyst; buyback increase and Hugging Face acquisition are already-known prior events, stock barely moved +0.22%",
+      "tagged_on": "2026-09-25"
+    }
   },
   {
     "date": "2026-09-25",
@@ -1083,7 +1087,11 @@
     "setup": "ote",
     "direction": "bearish",
     "return_r": -1.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated GOOGL-specific negative catalyst found; -3.83% move reads as broad Nasdaq weakness that session (-1.18%)",
+      "tagged_on": "2026-09-25"
+    }
   },
   {
     "date": "2026-09-25",
@@ -1091,7 +1099,11 @@
     "setup": "ote",
     "direction": "bearish",
     "return_r": -1.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "JPMorgan Asset Management announced a $20B partnership with the Qatar Investment Authority (QIA) on 09-25 -- dated, material, company-specific",
+      "tagged_on": "2026-09-25"
+    }
   },
   {
     "date": "2026-09-25",
@@ -1099,7 +1111,11 @@
     "setup": "ote",
     "direction": "bullish",
     "return_r": -1.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated earnings/M&A/FDA/guidance/analyst-action catalyst; a pricing-policy PR statement doesn't qualify, stock down -0.34%",
+      "tagged_on": "2026-09-25"
+    }
   },
   {
     "date": "2026-09-25",
@@ -1107,7 +1123,11 @@
     "setup": "ote",
     "direction": "bullish",
     "return_r": -1.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No material dated catalyst; only a minor Italy antitrust-investigation closure, stock barely moved +0.37%",
+      "tagged_on": "2026-09-25"
+    }
   },
   {
     "date": "2026-09-25",
@@ -1115,7 +1135,11 @@
     "setup": "nypm",
     "direction": "bearish",
     "return_r": 2.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Mastercard began settling SoFi Bank card transactions via SoFiUSD stablecoin on 09-25, a real dated infrastructure launch (~$25B annualized volume), though stock barely moved on the news",
+      "tagged_on": "2026-09-25"
+    }
   },
   {
     "date": "2026-09-25",
@@ -1123,7 +1147,11 @@
     "setup": "eqhl",
     "direction": "bullish",
     "return_r": -1.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No fresh 09-25 catalyst; continuing digestion of already-known soft Q4 guidance, down only -1.1%",
+      "tagged_on": "2026-09-25"
+    }
   },
   {
     "date": "2026-09-25",
@@ -1131,7 +1159,11 @@
     "setup": "ote",
     "direction": "bullish",
     "return_r": -1.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No fresh 09-25 event; continuing digestion of the 09-16 investor day (stale), M&A closes (Contentful 09-01, Fin 09-10) also stale",
+      "tagged_on": "2026-09-25"
+    }
   },
   {
     "date": "2026-09-25",
@@ -1139,6 +1171,10 @@
     "setup": "nypm",
     "direction": "bearish",
     "return_r": -1.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst; continued momentum to a fresh 52-week high on already-known AI-demand narrative",
+      "tagged_on": "2026-09-25"
+    }
   }
 ]
