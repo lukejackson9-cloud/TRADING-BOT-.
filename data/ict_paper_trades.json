@@ -1068,5 +1068,77 @@
       "note": "VP of exploration announced 09-24 a >50% increase in 2027 exploration spending (~20 new wells, wider frontier-basin exposure) -- dated, company-specific strategic guidance",
       "tagged_on": "2026-09-24"
     }
+  },
+  {
+    "date": "2026-09-25",
+    "symbol": "NVDA",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-09-25",
+    "symbol": "GOOGL",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-09-25",
+    "symbol": "JPM",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-09-25",
+    "symbol": "WMT",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-09-25",
+    "symbol": "PG",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-09-25",
+    "symbol": "MA",
+    "setup": "nypm",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-09-25",
+    "symbol": "ADBE",
+    "setup": "eqhl",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-09-25",
+    "symbol": "CRM",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-09-25",
+    "symbol": "AMD",
+    "setup": "nypm",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": null
   }
 ]
