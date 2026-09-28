@@ -1237,3 +1237,50 @@ Other notable items:
 
 CCL earnings 09-29 and NKE earnings 10-01 still on the forward-lookahead
 calendar. Full detail in data/research/2026-09-25/.
+
+## 2026-09-28 daily screen -- KOD's same-day Phase 3 win, closest council call yet (20-for-20)
+21 tickers researched (20 individual files + the KOD council review). KOD
+(Kodiak Sciences) surged +178% same-session on real, TWICE-REPLICATED
+Phase 3 DAYBREAK trial data (both Zenkuda and KSI-501 met primary
+endpoints in wet AMD, consistent with 2023's positive DAYLIGHT readout in
+the same indication) -- caught same-session exactly the way screen.md's
+forward-lookahead logic is designed to, similar to GRAL (09-24) but with
+a meaningfully stronger underlying case. Full 4-role council review found
+this the strongest, best-supported CANDIDATE evaluated so far: NOT an
+extended chase (the stock was actually drifting down over the prior 3
+weeks before today), most fresh analyst targets (HC Wainwright $96, UBS
+$120, LifeSci $145) sitting ABOVE the current price rather than below it,
+and a real, mechanistically-linked competitor selloff (Regeneron/Eylea
+falling on direct competitive read-through) confirming idiosyncratic
+causation rather than sector beta.
+
+Still downgraded to WATCH -- the closest call this project has run.
+Notably, the bear case's single most alarming claim (a "disqualifying"
+prior safety failure on this exact drug) did NOT fully survive
+fact-checking: the 2023 cataract signal that killed two pivotal trials
+was specific to the diabetic-macular-edema indication, not wet AMD, and
+today's wet-AMD safety data (0.5% cataract rate vs 0.9% for the
+comparator) is consistent with the historical DAYLIGHT precedent, not a
+sign the risk simply hasn't had time to appear yet. Even so, real,
+independently-verified risk remained sufficient to downgrade: a likely
+squeeze component (18.1% short interest, up 182.6% YoY, same-day
+elevated put buying, a $35/57.6% intraday range showing genuinely
+unresolved price discovery), a real and foreseeable dilution incentive at
+~4x the company's own December financing price with a Q4 BLA filing to
+fund, a non-inferiority (not superiority) result against a comparator
+(Eylea) that's itself losing market share to Roche's Vabysmo, and one
+major covering bank (Goldman, Neutral/$36 just 4 days pre-catalyst) whose
+skepticism remained unconfirmed as revised. Per council.md's own
+standard, a genuinely close call goes to WATCH, not CANDIDATE. Streak now
+20-for-20. Full detail in data/research/2026-09-28/KOD_council.md.
+
+Other notable items: ONT identity check caught that this NYSE ticker is
+Onterris Inc. (renamed Montrose Environmental), NOT Oxford Nanopore
+(LSE:ONT) despite the similar ticker/plausible-sounding sector overlap.
+PPLI's move traces to a genuinely strange 48-hour reversal (PPLI's own
+bid for MGM withdrawn, then a report MGM might bid for PPLI instead) --
+flagged as a red flag for the story's reliability, not just noted at
+face value.
+
+CCL earnings 09-29 (tomorrow) and NKE earnings 10-01 still on the
+forward-lookahead calendar. Full detail in data/research/2026-09-28/.

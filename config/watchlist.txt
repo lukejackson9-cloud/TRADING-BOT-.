@@ -444,3 +444,25 @@ GRML   # 2026-09-25: +33.07% -- repeat -- continued thin-float oscillation, no n
 DNA    # 2026-09-25: +19.46% -- repeat -- continuing unexplained bounce, no new catalyst (a cited "Pfizer RNA deal" checked and confirmed to be stale 2023 news, not fresh) -- PASS
 VKTX   # 2026-09-25: -11.76% -- repeat -- predicted dilution from the upsized $500M offering materialized -- PASS
 SECZ   # 2026-09-25: +15.11% -- repeat (8th+) -- extension continuing, new independent financial-distress signal (Altman Z-Score 0.71) -- WATCH
+
+# --- added 2026-09-28 via the daily screen routine (same-session catch: KOD's Phase 3 data + Massive 09-24 -> 09-25 session pair) ---
+KOD    # 2026-09-28: +178%, Kodiak Sciences -- REACHED CANDIDATE (real, twice-replicated Phase 3 DAYBREAK win, two candidates, off a flat base) -- council-downgraded to WATCH (closest call yet: squeeze component, dilution incentive, non-inferiority vs a comparator losing share to Vabysmo, Goldman's stale caution) -- see data/research/2026-09-28/KOD_council.md
+ONT    # 2026-09-28: -16.77%, Onterris Inc. (renamed Montrose Environmental, NOT Oxford Nanopore) -- no fresh catalyst, continuation of an already-known August earnings miss/guidance cut -- PASS
+AESI   # 2026-09-28: +13.47%, Atlas Energy Solutions -- real $613.5M AI-datacenter power deal but reaction already fired same-session, crowded AI-power theme -- WATCH
+KPLT   # 2026-09-28: -12.65%, Katapult Holdings -- no confirmed catalyst, only unconfirmed dilution-overhang theory from the Aaron's/CCF merger -- PASS
+PPLI   # 2026-09-28: +11.33%, People Incorporated -- real but speculative WSJ report of MGM "considering" acquiring PPLI, only 48h after PPLI's own competing MGM bid was withdrawn -- WATCH
+WNC    # 2026-09-28: +11.27%, Wabash National -- real investor-conference disclosure (2027 order book, margin improvement) but reaction already fired, 2nd unresolved pop in 4 weeks -- WATCH
+ALM    # 2026-09-28: +10.65%, Almonty Industries -- real Stifel Buy initiation but valuation already ~170% above GF Value, small-cap riding a shared tungsten/China-export macro tailwind -- WATCH
+ZS     # 2026-09-28: -10.06%, Zscaler -- real dated negative catalyst (CRO departure) -- PASS (negative, long-only)
+MXL    # 2026-09-28: +10.00%, MaxLinear -- sector-wide semiconductor rally cluster (LSCC/SMTC), no MXL-specific news, already +57% since 08-31 -- PASS
+RPD    # 2026-09-28: -9.57%, Rapid7 -- sector-wide cybersecurity valuation selloff (QLYS/OKTA/PANW/S all fell), no RPD-specific news -- PASS
+VIAV   # 2026-09-28: +9.27%, Viavi Solutions -- real dated CMMC defense certification + AI-optics tailwind but reaction already fired, +128% YTD, documented history of giving back pops -- WATCH
+FRVO   # 2026-09-28: -9.16%, Fervo Energy -- real negative catalyst (BofA cut on Cape Station delays) plus an active securities-fraud investigation -- PASS
+BE     # 2026-09-28: +8.27%, Bloom Energy -- real catalysts all 4-11 days stale, already-known AI-infrastructure story, +400% trailing year, real negative headwind (Oracle force majeure) -- WATCH
+TWLO   # 2026-09-28: -7.96%, Twilio -- real dated negative catalyst (HSBC downgrade on AI-agent-speculation overrun) plus heavy insider selling -- PASS
+CRDO   # 2026-09-28: +7.65%, Credo Technology -- real Q1 FY27 earnings beat + raised guidance but reaction already fired, several analysts trimming targets on sector-multiple pressure even while bullish -- WATCH
+STAA   # 2026-09-28: +7.49%, Staar Surgical -- real $50M buyback but weaker catalyst type, weak backdrop (failed Alcon deal, down ~12% YTD) -- WATCH
+FIGS   # 2026-09-28: +7.45%, Figs Inc -- no fresh catalyst found, real catalyst (Q2 earnings) 7 weeks stale, reads as short-covering -- PASS
+AEHR   # 2026-09-28: +7.15%, Aehr Test Systems -- single-analyst initiation, heavy one-directional insider selling, AND reports earnings TODAY (imminent binary print) -- WATCH
+ALHC   # 2026-09-28: +7.04%, Alignment Healthcare -- relief bounce off reaffirmed guidance, doesn't resolve the unresolved whistleblower accounting allegation already logged -- PASS
+SAIL   # 2026-09-28: -6.69%, SailPoint -- macro/rate-driven decline (Truist actually RAISED its PT same day), real underlying decelerating growth -- PASS
