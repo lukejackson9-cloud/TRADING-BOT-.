@@ -1183,7 +1183,11 @@
     "setup": "order_block",
     "direction": "bearish",
     "return_r": 2.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Federal jury verdict 9/25 awarded Taction Technology $5.7B for Taptic Engine patent infringement (iPhone/Watch), ~4% of Apple's cash pile -- material dated litigation ruling, still fresh at Mon 9/28 open (Yahoo/financefeeds).",
+      "tagged_on": "2026-09-28"
+    }
   },
   {
     "date": "2026-09-28",
@@ -1191,7 +1195,11 @@
     "setup": "nypm",
     "direction": "bearish",
     "return_r": -1.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Phase 3 CAPLYTA (bipolar I mania) trial met its primary endpoint with statistically significant symptom reduction vs placebo -- dated, company-specific clinical readout covered same-day by 24/7 Wall St ('Next Growth Engine Is Taking Shape', 9/28).",
+      "tagged_on": "2026-09-28"
+    }
   },
   {
     "date": "2026-09-28",
@@ -1199,7 +1207,11 @@
     "setup": "order_block",
     "direction": "bullish",
     "return_r": -1.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Move explicitly attributed to sector-wide mortgage-rate spike (~7.5%) hitting homebuilders/home-improvement retail broadly (HD + Lowe's both cited) -- textbook sector effect, not company-specific (Yahoo Finance stock market wrap).",
+      "tagged_on": "2026-09-28"
+    }
   },
   {
     "date": "2026-09-28",
@@ -1207,7 +1219,11 @@
     "setup": "ote",
     "direction": "bullish",
     "return_r": 2.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Move explicitly attributed to sector-wide mortgage-rate spike (~7.5%) hitting homebuilders/home-improvement retail broadly (HD + Lowe's both cited) -- textbook sector effect, not company-specific (Yahoo Finance stock market wrap).",
+      "tagged_on": "2026-09-28"
+    }
   },
   {
     "date": "2026-09-28",
@@ -1215,7 +1231,11 @@
     "setup": "order_block",
     "direction": "bearish",
     "return_r": 2.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": "unclear",
+      "note": "Guggenheim issued a Buy rating on DIS dated 9/28, but source doesn't specify if it's a new initiation/upgrade vs routine reiteration or give a PT -- not enough to confirm genuinely new material information (Yahoo Finance).",
+      "tagged_on": "2026-09-28"
+    }
   },
   {
     "date": "2026-09-28",
@@ -1223,7 +1243,11 @@
     "setup": "ote",
     "direction": "bullish",
     "return_r": -1.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No company-specific news found; day's move tied to broad market rally (Dow +0.9%) on US-China summit optimism and falling oil prices -- market-wide, not KO-specific (Yahoo Finance market wrap).",
+      "tagged_on": "2026-09-28"
+    }
   },
   {
     "date": "2026-09-28",
@@ -1231,6 +1255,10 @@
     "setup": "nypm",
     "direction": "bearish",
     "return_r": 2.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Only routine coverage: TD Cowen kept Hold, nudged PT to $215 (no rating change), plus vague 'this week' preliminary report of Mediterranean seismic survey plans -- no dated company-specific catalyst (Motley Fool/GuruFocus).",
+      "tagged_on": "2026-09-28"
+    }
   }
 ]
