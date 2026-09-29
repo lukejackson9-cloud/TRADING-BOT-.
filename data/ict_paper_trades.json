@@ -1176,5 +1176,61 @@
       "note": "No dated catalyst; continued momentum to a fresh 52-week high on already-known AI-demand narrative",
       "tagged_on": "2026-09-25"
     }
+  },
+  {
+    "date": "2026-09-28",
+    "symbol": "AAPL",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-09-28",
+    "symbol": "JNJ",
+    "setup": "nypm",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-09-28",
+    "symbol": "HD",
+    "setup": "order_block",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-09-28",
+    "symbol": "HD",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": 2.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-09-28",
+    "symbol": "DIS",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-09-28",
+    "symbol": "KO",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-09-28",
+    "symbol": "CVX",
+    "setup": "nypm",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": null
   }
 ]
