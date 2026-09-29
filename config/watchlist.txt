@@ -414,7 +414,6 @@ JBIO   # 2026-09-24: -12.23% -- part of biotech cooling-off cluster, no dated co
 PBLS   # 2026-09-24: -12.73% -- part of biotech cooling-off cluster, no dated company-specific news -- PASS
 
 # --- pre-catalyst watch entries ---
-CCL    # EARNINGS 2026-09-29 -- pre-catalyst watch, not yet a candidate
 NKE    # EARNINGS 2026-10-01 -- pre-catalyst watch, not yet a candidate
 
 # --- added 2026-09-25 via the daily screen routine (Massive whole-market, 2026-09-23 -> 09-24 session pair) ---
@@ -466,3 +465,34 @@ FIGS   # 2026-09-28: +7.45%, Figs Inc -- no fresh catalyst found, real catalyst 
 AEHR   # 2026-09-28: +7.15%, Aehr Test Systems -- single-analyst initiation, heavy one-directional insider selling, AND reports earnings TODAY (imminent binary print) -- WATCH
 ALHC   # 2026-09-28: +7.04%, Alignment Healthcare -- relief bounce off reaffirmed guidance, doesn't resolve the unresolved whistleblower accounting allegation already logged -- PASS
 SAIL   # 2026-09-28: -6.69%, SailPoint -- macro/rate-driven decline (Truist actually RAISED its PT same day), real underlying decelerating growth -- PASS
+
+# --- added 2026-09-29 via the daily screen routine (same-session catches: CCL earnings + QURE trial readout, plus Massive 09-25 -> 09-28 session pair) ---
+CCL    # 2026-09-29: earnings resolved, EPS $1.43 beat $1.35 est, record revenue $8.43-8.44B, guidance raised -- WATCH
+QURE   # 2026-09-29: AMT-130 48mo Huntington's data missed statistical significance (44% vs prior-year 75% at 36mo), stock -62-64% -- resolves 09-25's pre-data-anxiety WATCH into PASS
+CAAP   # 2026-09-29: +9.09%, Corporacion America Airports -- REACHED CANDIDATE (real Argentine AARG concession renegotiation, tariff dollarization) -- council-downgraded to WATCH (reaction already largely priced in per technical specialist; fact-check found the "2056 extension" is conditional, firm term is 2049; real Q2 EPS miss omitted by bull case; a prior 2025 version of this deal was voided by the regulator) -- see data/research/2026-09-29/CAAP_council.md
+MDB    # 2026-09-29: -18.46%, MongoDB -- real dated negative catalyst (CEO Desai abruptly resigned to join Meta) -- WATCH
+NU     # 2026-09-29: -10.01%, Nu Holdings -- real dated catalyst (reported ~$10.6-13.3B Monzo acquisition talks, overpayment/dilution concern) -- WATCH
+RBLX   # 2026-09-29: -9.86%, Roblox -- Jefferies downgrade to Underperform + escalating child-safety litigation cluster + growing country-ban list -- PASS
+FLUT   # 2026-09-29: -9.09%, Flutter Entertainment -- Brazil market exit + UK tax hike + 4th consecutive guidance cut (Redburn downgrade) -- PASS
+CLF    # 2026-09-29: -7.88%, Cleveland-Cliffs -- Stelco Hamilton Works indefinite idling, tariff-driven, mostly company-specific not sector beta -- PASS
+ITG    # 2026-09-29: -32.59%, ITG Inc (broadband infra) -- unconfirmed large-shareholder-exit report, timing-consistent with post-IPO lock-up expiry, solid Q2 actually reaffirmed -- PASS
+SWMR   # 2026-09-29: -12.30%, Swarmer -- post-IPO lock-up expiration freeing ~59% of shares outstanding, mechanical supply event -- PASS
+UTI    # 2026-09-29: -9.01%, Universal Technical Institute -- continued bleed from mid-Sept guidance cut + 9/22 downgrade, no fresh catalyst -- PASS
+FIGR   # 2026-09-29: -8.06%, Figure Technology Solutions (fintech, NOT Figure AI robotics) -- no company-specific catalyst, macro/rate pressure on fintech names -- PASS
+MIR    # 2026-09-29: -7.95%, Mirion Technologies -- no MIR-specific negative news (recent flow is bullish); sector-wide nuclear/SMR weakness (NuScale/Oklo) -- PASS
+OCUL   # 2026-09-29: -20.67%, Ocular Therapeutix -- real negative catalyst (KOD/4DMT competing wet-AMD data worsens competitive outlook for AXPAXLI) -- PASS
+LFCR   # 2026-09-29: +unch~6.52, Lifecore Biomedical -- real definitive $6.28/share + CVR acquisition by Webster Equity, but stock trades at/above cash consideration and ~Q4 close timeline doesn't fit this project's horizon -- WATCH
+CLRO   # 2026-09-29: +/-56.81% (sources conflict), CLR One (Cortigent/Vivani) -- only real event 3mo stale, sources contradict same-day direction, negative equity/FCF -- PASS
+MOD    # 2026-09-29: -11.63%, Modine Manufacturing -- confirmed record date for Performance Technologies/Gentherm spin-merger, mechanical distribution repricing not new news -- PASS
+AUR    # 2026-09-29: -12.42% (continuing), Aurora Innovation -- repeat, stale reaction to 09-23 Investor Day (pushed-back margin breakeven) -- PASS
+BE     # 2026-09-29: -8.9% (continuing), Bloom Energy -- repeat -- real dated negative (securities-litigation lead-plaintiff deadline) layered on known headwinds -- PASS
+CRDO   # 2026-09-29: -8.7% (continuing), Credo Technology -- repeat -- no new catalyst, continued digestion of already-fired earnings beat, strong analyst support underneath -- WATCH
+DASH   # 2026-09-29: -7.7%, DoorDash -- no identified catalyst, GF Value well above price -- PASS
+WRBY   # 2026-09-29: -7.7% (reversal), Warby Parker -- repeat -- downgraded WATCH->PASS, speculative pop already reversed with nothing new -- PASS
+KOD    # 2026-09-29: repeat -- no new info, WATCH unchanged
+JAGX   # 2026-09-29: repeat -- continuing confirmed unwind, no new catalyst -- PASS
+GRML   # 2026-09-29: -19.17% -- repeat (6th+) -- continued thin-float oscillation, no new catalyst -- PASS
+ACET   # 2026-09-29: -29.6%, Adicet Bio -- unexplained divergence (positive-sounding Phase 1 lupus data the day before, stock fell anyway) -- PASS
+BW     # 2026-09-29: -8.29%, Babcock & Wilcox Enterprises -- no fresh catalyst, stale litigation, continuing slide already priced in -- PASS
+HHH    # 2026-09-29: +8.07%, Howard Hughes Holdings -- real but small insider buying, reaction already fired (3rd consecutive up session) -- WATCH
+BNC    # 2026-09-29: claimed -7.86%, CEA Industries/BNB Standard Corp -- move direction unverifiable against any source (2nd occurrence of the RACC-pattern unreliable-screener-data issue) -- PASS
