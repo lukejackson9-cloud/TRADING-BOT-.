@@ -1267,7 +1267,11 @@
     "setup": "fvg",
     "direction": "bullish",
     "return_r": -1.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 9/29 event found; only earnings-related coverage is Visa's Q3 FY2026 report from late July 2026 (stale, already priced in weeks earlier), next report not until Oct 27 \u2014 no company-specific catalyst near 9/29",
+      "tagged_on": "2026-09-29"
+    }
   },
   {
     "date": "2026-09-29",
@@ -1275,7 +1279,11 @@
     "setup": "order_block",
     "direction": "bullish",
     "return_r": -1.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 9/29 event found; only earnings-related coverage is Visa's Q3 FY2026 report from late July 2026 (stale, already priced in weeks earlier), next report not until Oct 27 \u2014 no company-specific catalyst near 9/29",
+      "tagged_on": "2026-09-29"
+    }
   },
   {
     "date": "2026-09-29",
@@ -1283,7 +1291,11 @@
     "setup": "ote",
     "direction": "bullish",
     "return_r": -1.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 9/29 event found; only earnings-related coverage is Visa's Q3 FY2026 report from late July 2026 (stale, already priced in weeks earlier), next report not until Oct 27 \u2014 no company-specific catalyst near 9/29",
+      "tagged_on": "2026-09-29"
+    }
   },
   {
     "date": "2026-09-29",
@@ -1291,7 +1303,11 @@
     "setup": "nypm",
     "direction": "bullish",
     "return_r": -1.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Only dated 9/29 item found is a routine quarterly dividend declaration at the SAME /bin/bash.87/share payout as before (no change) \u2014 not a material new-information event; no earnings (next report Oct 22), M&A, FDA, or guidance change on/near 9/29",
+      "tagged_on": "2026-09-29"
+    }
   },
   {
     "date": "2026-09-29",
@@ -1299,6 +1315,10 @@
     "setup": "ote",
     "direction": "bullish",
     "return_r": 2.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "9/29 news is only a routine 'Q3 earnings release date' timing announcement (Oct 27) + a JPMorgan PT trim to 5 (still overweight, dated 9/28) \u2014 no earnings, M&A, FDA, or guidance change dated to 9/29 itself; YTD 29% rally is old news, not a dated 9/29 catalyst",
+      "tagged_on": "2026-09-29"
+    }
   }
 ]
