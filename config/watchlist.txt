@@ -496,3 +496,41 @@ ACET   # 2026-09-29: -29.6%, Adicet Bio -- unexplained divergence (positive-soun
 BW     # 2026-09-29: -8.29%, Babcock & Wilcox Enterprises -- no fresh catalyst, stale litigation, continuing slide already priced in -- PASS
 HHH    # 2026-09-29: +8.07%, Howard Hughes Holdings -- real but small insider buying, reaction already fired (3rd consecutive up session) -- WATCH
 BNC    # 2026-09-29: claimed -7.86%, CEA Industries/BNB Standard Corp -- move direction unverifiable against any source (2nd occurrence of the RACC-pattern unreliable-screener-data issue) -- PASS
+
+# --- added 2026-09-30 via the daily screen routine (same-day catch: LQDA patent-ruling crash, plus Massive 09-28 -> 09-29 session pair) ---
+LQDA   # 2026-09-30: -57.19%, Liquidia -- real same-day Delaware patent ruling (lost PH-ILD indication, ~half of YUTREPIA's addressable market) to United Therapeutics -- PASS (negative, long-only)
+CCL    # 2026-09-30: stale screener duplicate of 09-28's already-researched earnings move, real price ~flat/-1% on 09-30 -- no new catalyst
+QURE   # 2026-09-30: same 09-29 AMT-130 crash restated more precisely ($24.51), not a new leg down
+DNA    # 2026-09-30: +14.34% -- repeat -- only a minor Ginkgo Datapoints/Apheris partnership, doesn't explain the move, unexplained-bounce pattern continues -- PASS
+GRML   # 2026-09-30: -12.45% -- repeat -- now genuinely explained: real $17M dilutive offering (+$59M raised this week) -- PASS
+WRBY   # 2026-09-30: +11.39% -- repeat -- 3rd directional flip in 3 sessions on the same recycled AI-glasses narrative, no new catalyst -- PASS
+BE     # 2026-09-30: +10.80% -- repeat -- Oracle reaffirmed Project Jupiter, targets above price, but reaction already fired, extremely extended -- WATCH (upgraded from PASS)
+SWMR   # 2026-09-30: -9.96% -- repeat -- lock-up unwind continuation, now compounded by a dilution fear tied to the Ratel Robotics acquisition -- PASS
+STAA   # 2026-09-30: +7.47% -- repeat -- Stifel upgrade Hold->Buy $31 PT, but consensus still mixed (4buy/6hold/3sell), reaction already fired -- WATCH
+SSTI   # 2026-09-30: +50.09%, SoundThinking -- real signed merger agreement (Transom Capital, up to $11/share) but reaction fully fired, doesn't fit 2-week framework -- WATCH
+IOVA   # 2026-09-30: +31.48%, Iovance Biotherapeutics -- real FY26 guidance raise, targets above price, but reaction already fired same-day -- WATCH
+WYY    # 2026-09-30: +24.58%, WidePoint -- relief bounce 4 sessions after a DHS contract-protest crash, dispute still unresolved -- PASS
+CLPT   # 2026-09-30: -23.12%, ClearPoint Neuro -- real negative read-through from partner uniQure's failed AMT-130 endpoint -- PASS
+XRPN   # 2026-09-30: +21.99%, Armada Acquisition Corp II/Evernorth (renamed from AACI) -- pending merger vote today, unresolved binary, pop already ran -- WATCH
+EGG    # 2026-09-30: +17.65%, Enigmatig Limited -- no catalyst, company itself disclaims knowledge of any driver, thin float -- PASS
+EAF    # 2026-09-30: -14.16%, GrafTech -- no fresh catalyst (BMO actually raised PT 2 days prior), 3rd unexplained large move this project has logged on this ticker -- PASS
+WW     # 2026-09-30: +13.77%, WeightWatchers -- real Google Health partnership but GLP-1 headwind restated, reaction already unwinding -- WATCH
+CABO   # 2026-09-30: -13.05%, Cable One -- real fundamental deterioration (BNP PT cut $40->$13, EBITDA miss, $1.16B net loss) -- PASS
+WGS    # 2026-09-30: -11.80%, GeneDx -- no fresh catalyst, nearest real event (CMS cuts) already 09-22 -- PASS
+NESR   # 2026-09-30: -11.14%, National Energy Services Reunited -- no catalyst either direction, valuation unwind after a ~7x 3-year run -- PASS
+CSIQ   # 2026-09-30: +10.84%, Canadian Solar -- single bullish research note vs broader Reduce consensus, reaction fully fired -- WATCH
+DPRO   # 2026-09-30: +10.81%, Draganfly -- real $10M strategic investment + defense contract wins, but dilutive and reaction already fired -- WATCH
+PIPR   # 2026-09-30: -9.72%, Piper Sandler -- acquirer-side M&A rumor (Perella Weinberg talks), unconfirmed, no bull thesis -- PASS
+MGNI   # 2026-09-30: +9.70%, Magnite -- stale analyst catalyst reused (2wk-old antitrust ruling), extended stock -- WATCH
+CHPT   # 2026-09-30: +8.92%, ChargePoint -- repeat -- 3rd appearance chasing the same stale earnings story, ledger validates prior fades -- PASS
+QMLS   # 2026-09-30: -8.80%, QumulusAI -- real contract but textbook buy-rumor-sell-news round trip -- PASS
+IMMX   # 2026-09-30: -8.11%, Immix Biopharma -- real dilutive offering + strong trial data + analyst hikes above price, offering still settling -- WATCH
+SATL   # 2026-09-30: -7.44%, Satellogic -- no catalyst found either direction -- PASS
+DKNG   # 2026-09-30: -7.42%, DraftKings -- sector-sympathy move (Brazil betting ban hits Flutter/FanDuel, not DKNG) -- PASS
+SRAD   # 2026-09-30: -7.37%, Sportradar -- real Brazil betting-ban exposure but sector-wide + already-known guidance cut -- PASS
+VOYG   # 2026-09-30: -7.35%, Voyager Technologies -- real Anduril partnership but upsized $402.5M convert dilution dominates -- PASS
+AIR    # 2026-09-30: -7.25%, AAR Corp -- real earnings beat but overshadowed by a $1.8B debt/equity-financed acquisition -- PASS
+NEOG   # 2026-09-30: -7.22%, Neogen -- real negative catalyst (FDA warning letters, fungal contamination linked to 20+ horse deaths) -- PASS
+WING   # 2026-09-30: +6.70%, Wingstop -- no fresh catalyst, oversold bounce on an unresolved comp-sales structural issue -- PASS
+METC   # 2026-09-30: -6.68%, Ramaco Resources -- continuation of an already-validated 09-03 WATCH story, no fresh catalyst -- PASS
+ABCL   # 2026-09-30: +6.47%, AbCellera -- JPMorgan initiation continuation into a 2nd session, single-analyst action -- WATCH
