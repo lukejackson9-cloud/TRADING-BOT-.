@@ -1260,5 +1260,45 @@
       "note": "Only routine coverage: TD Cowen kept Hold, nudged PT to $215 (no rating change), plus vague 'this week' preliminary report of Mediterranean seismic survey plans -- no dated company-specific catalyst (Motley Fool/GuruFocus).",
       "tagged_on": "2026-09-28"
     }
+  },
+  {
+    "date": "2026-09-29",
+    "symbol": "V",
+    "setup": "fvg",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-09-29",
+    "symbol": "V",
+    "setup": "order_block",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-09-29",
+    "symbol": "V",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-09-29",
+    "symbol": "MA",
+    "setup": "nypm",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-09-29",
+    "symbol": "KO",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": 2.0,
+    "catalyst": null
   }
 ]
