@@ -616,6 +616,51 @@ They are now accumulating precision on three separately-answered questions
 at real daily cost. Nothing about the advisory or 3-12 month tracks depends
 on them continuing.
 
+### CORRECTION 2026-09-30 — THE 09-19 CONCLUSION ABOVE WAS PREMATURE AND HAS
+### REVERSED. Read this before acting on anything in the section above.
+The routines were NOT stopped (the recommendation was not acted on), and
+eleven more sessions of data changed the answer:
+
+| | 2026-09-19 | 2026-09-30 |
+|---|---|---|
+| HAS catalyst | 54 trades, **-2.36%** | 245 trades, **-1.18%** |
+| NO catalyst | 120 trades, -1.65% | 726 trades, **-1.25%** |
+| gap (HAS minus NO) | **-0.71%** | **+0.07%** |
+| distinct dates | 5 | 13 |
+| top-ticker concentration | NRXS 30.1% | NTSK **4.6%** |
+| same-day head-to-head | HAS lost 4/5 days | HAS won **6/13** days, mean -0.30% |
+
+**The clearly-negative gap collapsed to zero once the sample quadrupled.**
+Concentration fell from 30.1% to 4.6%, so the earlier number was partly one
+ticker. Split-half is +0.02% then -0.57% — it flips, i.e. noise.
+
+**What this means, stated carefully:**
+- The hypothesis is still NOT supported. +0.07% pooled, -0.30% same-day,
+  6 of 13 dates, split-half flipping — that is no detectable effect.
+- But "catalysts make signals WORSE" — which the 09-19 entry asserted
+  directionally — is now unsupported too. The direction reversed.
+- The honest verdict is **no measurable difference either way**, which is a
+  different and weaker claim than the one recorded above.
+
+**The methodological lesson, and it is the important part.** At 09-19 the
+bar's own guardrails were failing: 5 distinct dates against 20 required, and
+a 30% single-ticker concentration. Both were reported, and the direction was
+called anyway on the grounds that "the count criterion was met and the
+direction is wrong". That reasoning was faulty — a pre-registered bar with
+five criteria is not satisfied by meeting one of them, and the two that
+failed were precisely the ones that detect a thin, concentrated sample.
+**Do not call a direction while a guardrail is red, even to call it
+negative.** The pull toward closing a question is as strong as the pull
+toward a positive result, and this project's whole discipline exists to
+resist both.
+**Accidental good outcome**: because the stop recommendation was not acted
+on, the track kept collecting and corrected itself. That is luck, not
+process.
+**Current status: still collecting, 13 of 20 dates. Do not conclude again
+until the date criterion is actually met.** The 09-19 note that the 20-date
+bar "may be UNREACHABLE by construction" also looks wrong — dates went 5 to
+13 in eleven sessions, so it is reachable at roughly one per session.
+
 **RANKED-PICK TRACK — added 2026-09-12, the buy-side counterpart to a
 pipeline that only knows how to say no.** The user's observation: this bot
 is built to find what NOT to buy, and nothing in it is built to find what
