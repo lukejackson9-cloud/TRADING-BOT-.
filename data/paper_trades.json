@@ -17976,14 +17976,18 @@
     "entry_price": 287.86,
     "stop_price": 276.3456,
     "target_price": 310.88880000000006,
-    "days_held": 4,
-    "status": "open",
+    "days_held": 5,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "Arizona semiconductor gas supply contract was announced 09-16 (6 days stale); analyst maintained Hold with unchanged $330 PT -- no fresh dated item for 09-22.",
       "tagged_on": "2026-09-22"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 279.19,
+    "exit_reason": "time_stop",
+    "pct_return": -0.030118807753769246
   },
   {
     "ticker": "DC",
@@ -18112,14 +18116,18 @@
     "entry_price": 110.12,
     "stop_price": 105.7152,
     "target_price": 118.92960000000001,
-    "days_held": 4,
-    "status": "open",
+    "days_held": 5,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "Up 2.0% on 9/22; only named analyst item is a Bernstein reiteration (not new), other headlines (health model test, AI/pricing scrutiny) are vague, not dated catalysts (ad-hoc-news/marketbeat).",
       "tagged_on": "2026-09-22"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 105.7152,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "KOD",
@@ -18148,14 +18156,18 @@
     "entry_price": 119.52,
     "stop_price": 114.7392,
     "target_price": 129.0816,
-    "days_held": 4,
-    "status": "open",
+    "days_held": 5,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "No material dated catalyst; Rail Safety Week campaign and Amtrak dispute resolution are routine/non-market-moving items, not tied to the stock's small decline",
       "tagged_on": "2026-09-22"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 120.55,
+    "exit_reason": "time_stop",
+    "pct_return": 0.008617804551539501
   },
   {
     "ticker": "FOSL",
@@ -18304,14 +18316,18 @@
     "entry_price": 131.19,
     "stop_price": 125.94239999999999,
     "target_price": 141.6852,
-    "days_held": 4,
-    "status": "open",
+    "days_held": 5,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "Stock +1.23% on 9/22; no new dated company-specific news, just general commentary on volume/international growth. Next earnings not until 10/8.",
       "tagged_on": "2026-09-22"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 128.69,
+    "exit_reason": "time_stop",
+    "pct_return": -0.01905633051299642
   },
   {
     "ticker": "MRNA",
@@ -18400,14 +18416,18 @@
     "entry_price": 186.75,
     "stop_price": 179.28,
     "target_price": 201.69000000000003,
-    "days_held": 4,
-    "status": "open",
+    "days_held": 5,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "Up 3.3% but no fresh dated catalyst; cited items are a routine CEO Form 4 option exercise (09-21), a UBS Buy initiation (09-09) and BioLife Solutions antitrust clearance (09-08) -- all stale or routine, not new same-day information.",
       "tagged_on": "2026-09-22"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 194.57,
+    "exit_reason": "time_stop",
+    "pct_return": 0.041874163319946416
   },
   {
     "ticker": "ULCC",
@@ -18436,14 +18456,18 @@
     "entry_price": 22.35,
     "stop_price": 21.456,
     "target_price": 24.138,
-    "days_held": 4,
-    "status": "open",
+    "days_held": 5,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "No 09-22-specific news found; nearest is Q3 earnings (08-04, ~7 weeks stale) and undated analyst PT raises.",
       "tagged_on": "2026-09-22"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 21.82,
+    "exit_reason": "time_stop",
+    "pct_return": -0.02371364653243853
   },
   {
     "ticker": "AR",
@@ -18452,14 +18476,18 @@
     "entry_price": 34.42,
     "stop_price": 33.0432,
     "target_price": 37.17360000000001,
-    "days_held": 4,
-    "status": "open",
+    "days_held": 5,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "No dated 09-22 news found; most recent analyst PT raise (Raymond James, $55) was 09-01, three weeks stale, and earnings reaction was already absorbed.",
       "tagged_on": "2026-09-22"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 33.57,
+    "exit_reason": "time_stop",
+    "pct_return": -0.024694944799535195
   },
   {
     "ticker": "DKS",
@@ -18468,14 +18496,18 @@
     "entry_price": 133.94,
     "stop_price": 128.5824,
     "target_price": 144.6552,
-    "days_held": 4,
-    "status": "open",
+    "days_held": 5,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "No new dated catalyst for 09-22; Q2 earnings miss/guidance cut was Aug 25 (~4 weeks stale); 09-22 commentary is analysts reassessing the already-known selloff as overdone, not fresh info",
       "tagged_on": "2026-09-22"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 134.7,
+    "exit_reason": "time_stop",
+    "pct_return": 0.005674182469762513
   },
   {
     "ticker": "TSHA",
@@ -18884,14 +18916,18 @@
     "entry_price": 28.67,
     "stop_price": 27.5232,
     "target_price": 30.963600000000003,
-    "days_held": 4,
-    "status": "open",
+    "days_held": 5,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": "unclear",
       "note": "Shares rose 7.7% on 9/22 but two WebSearch passes found no specific dated company-specific reason (Q2 earnings and Cincinnati HQ move are both older); inconclusive, not guessed (GuruFocus).",
       "tagged_on": "2026-09-22"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 29.65,
+    "exit_reason": "time_stop",
+    "pct_return": 0.034182071852110106
   },
   {
     "ticker": "IBRX",
@@ -18920,14 +18956,18 @@
     "entry_price": 274.41,
     "stop_price": 263.4336,
     "target_price": 296.36280000000005,
-    "days_held": 4,
-    "status": "open",
+    "days_held": 5,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": true,
       "note": "UBS upgraded UNP from Neutral to Buy on 9/22/2026, a dated rating change (not reiteration) carrying new info (ad-hoc-news/quiverquant).",
       "tagged_on": "2026-09-22"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 274.15,
+    "exit_reason": "time_stop",
+    "pct_return": -0.0009474873364675038
   },
   {
     "ticker": "SRAD",
@@ -19016,14 +19056,18 @@
     "entry_price": 356.09,
     "stop_price": 341.84639999999996,
     "target_price": 384.5772,
-    "days_held": 4,
-    "status": "open",
+    "days_held": 5,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "No fresh dated catalyst for 09-22; move attributed to vague 'renewed investor interest'; leadership change (09-11) and Investor Day announcement (09-08) both stale",
       "tagged_on": "2026-09-22"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 366.47,
+    "exit_reason": "time_stop",
+    "pct_return": 0.02914993400544821
   },
   {
     "ticker": "MCHP",
@@ -19032,14 +19076,18 @@
     "entry_price": 75.82,
     "stop_price": 72.78719999999998,
     "target_price": 81.8856,
-    "days_held": 4,
-    "status": "open",
+    "days_held": 5,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "No clearly dated 09-21/22 catalyst; Hailo acquisition close / AnalogAI IP selection mentioned without specific dating, stock barely moved (+0.51%).",
       "tagged_on": "2026-09-22"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 78.78,
+    "exit_reason": "time_stop",
+    "pct_return": 0.039039831179108524
   },
   {
     "ticker": "POR",
@@ -19128,14 +19176,18 @@
     "entry_price": 15.96,
     "stop_price": 15.3216,
     "target_price": 17.236800000000002,
-    "days_held": 4,
-    "status": "open",
+    "days_held": 5,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "No fresh 9/22 catalyst; Q2 earnings call was 9/17 (stale, >1-2 trading days). Stock only +0.44% on 9/22.",
       "tagged_on": "2026-09-22"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 16.12,
+    "exit_reason": "time_stop",
+    "pct_return": 0.010025062656641612
   },
   {
     "ticker": "YETI",
@@ -19264,14 +19316,18 @@
     "entry_price": 22.8,
     "stop_price": 21.887999999999998,
     "target_price": 24.624000000000002,
-    "days_held": 4,
-    "status": "open",
+    "days_held": 5,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": true,
       "note": "Evercore ISI upgraded MAC to Outperform from In-Line on 2026-09-21 (day before), PT $26 - dated, material analyst action (Benzinga).",
       "tagged_on": "2026-09-22"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 22.89,
+    "exit_reason": "time_stop",
+    "pct_return": 0.003947368421052626
   },
   {
     "ticker": "UCTT",
@@ -19360,14 +19416,18 @@
     "entry_price": 33.04,
     "stop_price": 31.7184,
     "target_price": 35.6832,
-    "days_held": 4,
-    "status": "open",
+    "days_held": 5,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "Stock +3.7% on 09-22 but no material dated news found -- only a non-price-moving 'Edison Awards' recognition item. Stock-moved-without-catalyst pattern.",
       "tagged_on": "2026-09-22"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 32.64,
+    "exit_reason": "time_stop",
+    "pct_return": -0.012106537530266302
   },
   {
     "ticker": "ORC",
@@ -19516,14 +19576,18 @@
     "entry_price": 167.26,
     "stop_price": 160.56959999999998,
     "target_price": 180.6408,
-    "days_held": 4,
-    "status": "open",
+    "days_held": 5,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": true,
       "note": "Goldman Sachs raised PT to $185 from $175 (maintained Buy) dated 2026-09-21, one trading day before the +3.29% move; Q3 earnings beat (08-26) is stale/not the driver.",
       "tagged_on": "2026-09-22"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 175.03,
+    "exit_reason": "time_stop",
+    "pct_return": 0.046454621547291707
   },
   {
     "ticker": "ABSI",
@@ -19652,14 +19716,18 @@
     "entry_price": 109.64,
     "stop_price": 105.25439999999999,
     "target_price": 118.41120000000001,
-    "days_held": 4,
-    "status": "open",
+    "days_held": 5,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "No fresh 09-22 catalyst found -- JPMorgan's Overweight upgrade was 09-18 (stale) and the India can-plant groundbreaking was 09-09 (stale); Q3 earnings not yet released.",
       "tagged_on": "2026-09-22"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 106.35,
+    "exit_reason": "time_stop",
+    "pct_return": -0.030007296607077766
   },
   {
     "ticker": "HCA",
@@ -19708,14 +19776,18 @@
     "entry_price": 85.79,
     "stop_price": 82.3584,
     "target_price": 92.65320000000001,
-    "days_held": 4,
-    "status": "open",
+    "days_held": 5,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "No 9/22-specific dated catalyst found; loan-facility refinancing and dairy-enzyme launch items have unclear/earlier dates, not tied to 9/22.",
       "tagged_on": "2026-09-22"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 85.25,
+    "exit_reason": "time_stop",
+    "pct_return": -0.006294439911411659
   },
   {
     "ticker": "AAP",
@@ -19784,14 +19856,18 @@
     "entry_price": 5.72,
     "stop_price": 5.491199999999999,
     "target_price": 6.1776,
-    "days_held": 4,
-    "status": "open",
+    "days_held": 5,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "No news found for RPC Inc (RES) on or around 09-22-2026; most recent items are a July earnings beat and a routine Sept 10 dividend payment, both stale.",
       "tagged_on": "2026-09-22"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 5.64,
+    "exit_reason": "time_stop",
+    "pct_return": -0.013986013986014
   },
   {
     "ticker": "CROX",
@@ -19800,14 +19876,18 @@
     "entry_price": 124.58,
     "stop_price": 119.59679999999999,
     "target_price": 134.5464,
-    "days_held": 4,
-    "status": "open",
+    "days_held": 5,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "No new dated catalyst for 09-22; continued momentum/new 52-week high citing Q2 earnings from the summer, stale",
       "tagged_on": "2026-09-22"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 122.63,
+    "exit_reason": "time_stop",
+    "pct_return": -0.015652592711510697
   },
   {
     "ticker": "GIL",
@@ -19836,14 +19916,18 @@
     "entry_price": 221.09,
     "stop_price": 212.2464,
     "target_price": 238.77720000000002,
-    "days_held": 4,
-    "status": "open",
+    "days_held": 5,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": true,
       "note": "BofA cut price target from $230 to $220 (maintained Buy) dated Monday Sept 22 -- a dated, company-specific analyst action, though price impact was minimal (+0.16%) and directionally mixed",
       "tagged_on": "2026-09-22"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 226.11,
+    "exit_reason": "time_stop",
+    "pct_return": 0.022705685467456736
   },
   {
     "ticker": "ULS",
@@ -19852,14 +19936,18 @@
     "entry_price": 66.65,
     "stop_price": 63.984,
     "target_price": 71.98200000000001,
-    "days_held": 4,
-    "status": "open",
+    "days_held": 5,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "No dated company-specific event found for 9/22; stock declining on valuation/earnings-forecast concerns, not a catalyst (Simply Wall St/stockanalysis).",
       "tagged_on": "2026-09-22"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 63.984,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "AM",
@@ -19868,14 +19956,18 @@
     "entry_price": 21.12,
     "stop_price": 20.2752,
     "target_price": 22.809600000000003,
-    "days_held": 4,
-    "status": "open",
+    "days_held": 5,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "Only dated item is a UBS PT trim to $22 from $24 (09-21) with rating unchanged at Neutral -- a minor negative revision, not a material fresh catalyst.",
       "tagged_on": "2026-09-22"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 20.2752,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "BAX",
@@ -19884,14 +19976,18 @@
     "entry_price": 23.68,
     "stop_price": 22.732799999999997,
     "target_price": 25.5744,
-    "days_held": 4,
-    "status": "open",
+    "days_held": 5,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "Stock +3.3% on 09-22 but no fresh dated news found -- coverage only restates already-known Q2 guidance raise and ongoing Novum IQ pump-hold risk.",
       "tagged_on": "2026-09-22"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 23.48,
+    "exit_reason": "time_stop",
+    "pct_return": -0.008445945945945915
   },
   {
     "ticker": "KLRA",
@@ -19980,14 +20076,18 @@
     "entry_price": 55.26,
     "stop_price": 53.0496,
     "target_price": 59.680800000000005,
-    "days_held": 4,
-    "status": "open",
+    "days_held": 5,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "No dated 09-22 catalyst found -- coverage only references a 75F acquisition and 2026 guidance already known, plus generic 'top industrial pick' analyst commentary.",
       "tagged_on": "2026-09-22"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 55.38,
+    "exit_reason": "time_stop",
+    "pct_return": 0.002171552660152091
   },
   {
     "ticker": "PS",
@@ -20056,14 +20156,18 @@
     "entry_price": 115.52,
     "stop_price": 110.8992,
     "target_price": 124.7616,
-    "days_held": 4,
-    "status": "open",
+    "days_held": 5,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "Stock actually down 1.19% on 09-22. BofA upgrade to Buy (35 PT) was dated 2026-09-01, 3 weeks stale and already noted as priced in (article notes shares slipped anyway on macro/oil/yield pressure); no fresh 09-22 catalyst.",
       "tagged_on": "2026-09-22"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 117.26,
+    "exit_reason": "time_stop",
+    "pct_return": 0.015062326869806174
   },
   {
     "ticker": "AZTA",
@@ -20072,14 +20176,18 @@
     "entry_price": 34.28,
     "stop_price": 32.9088,
     "target_price": 37.022400000000005,
-    "days_held": 4,
-    "status": "open",
+    "days_held": 5,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "Pomerantz law-firm investigation dated 09-23 is derivative of a stock drop, not a new catalyst; underlying CEO-resignation news is from 08-24 (stale, ~1 month old).",
       "tagged_on": "2026-09-22"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 34.28,
+    "exit_reason": "time_stop",
+    "pct_return": 0.0
   },
   {
     "ticker": "ACHV",
@@ -20108,14 +20216,18 @@
     "entry_price": 52.66,
     "stop_price": 50.553599999999996,
     "target_price": 56.8728,
-    "days_held": 4,
-    "status": "open",
+    "days_held": 5,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "Stock +6.3% on 09-22 but the $100M buyback (the closest thing to a real catalyst) was announced 09-18, 4 trading days stale; 500-restaurant milestone appears aspirational, not a confirmed dated event.",
       "tagged_on": "2026-09-22"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 53.14,
+    "exit_reason": "time_stop",
+    "pct_return": 0.00911507785795678
   },
   {
     "ticker": "FERG",
@@ -20124,14 +20236,18 @@
     "entry_price": 221.17,
     "stop_price": 212.32319999999999,
     "target_price": 238.8636,
-    "days_held": 4,
-    "status": "open",
+    "days_held": 5,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "UDig 'Sales Cockpit' partnership announced 09-22 is dated but a minor operational/product item, not earnings/M&A/FDA/guidance/analyst-action, and no price-moving evidence found.",
       "tagged_on": "2026-09-22"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 223.87,
+    "exit_reason": "time_stop",
+    "pct_return": 0.012207803951711432
   },
   {
     "ticker": "CALM",
@@ -20160,14 +20276,18 @@
     "entry_price": 16.96,
     "stop_price": 16.2816,
     "target_price": 18.3168,
-    "days_held": 4,
-    "status": "open",
+    "days_held": 5,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "Up 5.2% but move coincides with a sector-wide seasonal-retail rally (Arhaus, Dollar Tree also jumped same session on NRF holiday-spending data) -- a same-day Dallas Cowboys stadium-sponsorship announcement is real and dated but is marketing/sponsorship, not a material catalyst under this project's definition (not earnings/M&A/FDA/guidance/analyst action).",
       "tagged_on": "2026-09-22"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 16.46,
+    "exit_reason": "time_stop",
+    "pct_return": -0.029481132075471695
   },
   {
     "ticker": "MKC",
@@ -20196,14 +20316,18 @@
     "entry_price": 37.76,
     "stop_price": 36.249599999999994,
     "target_price": 40.7808,
-    "days_held": 4,
-    "status": "open",
+    "days_held": 5,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": true,
       "note": "APi Group announced completion of its acquisition of Evergreen Fire and Security on 09-22 itself -- dated, company-specific M&A event.",
       "tagged_on": "2026-09-22"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 38.75,
+    "exit_reason": "time_stop",
+    "pct_return": 0.026218220338983106
   },
   {
     "ticker": "AGNC",
@@ -20332,14 +20456,18 @@
     "entry_price": 24.18,
     "stop_price": 23.212799999999998,
     "target_price": 26.1144,
-    "days_held": 4,
-    "status": "open",
+    "days_held": 5,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "Stock +3.2% on 9/22 (momentum rank 10/10) but no company-specific dated news found; nearest analyst action is a stale UBS PT cut ($30->$27, mid-September, and a cut not a raise).",
       "tagged_on": "2026-09-22"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 23.212799999999998,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "KLIC",
@@ -20348,14 +20476,18 @@
     "entry_price": 89.54,
     "stop_price": 85.9584,
     "target_price": 96.70320000000001,
-    "days_held": 4,
-    "status": "open",
+    "days_held": 5,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "+5.3-6.5% on 9/22 explicitly described as a broad sector-wide semiconductor-equipment rally, not a company-specific event.",
       "tagged_on": "2026-09-22"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 93.72,
+    "exit_reason": "time_stop",
+    "pct_return": 0.0466830466830466
   },
   {
     "ticker": "CBRL",
@@ -20504,14 +20636,18 @@
     "entry_price": 73.53,
     "stop_price": 70.58879999999999,
     "target_price": 79.4124,
-    "days_held": 4,
-    "status": "open",
+    "days_held": 5,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "No dated catalyst for 09-22; next earnings not until 10/27/2026, EV-charging partnership and dividend ex-date (9/11) both stale/routine.",
       "tagged_on": "2026-09-22"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 72.66,
+    "exit_reason": "time_stop",
+    "pct_return": -0.011831905344757303
   },
   {
     "ticker": "FDXF",
@@ -20540,14 +20676,18 @@
     "entry_price": 390.9,
     "stop_price": 375.26399999999995,
     "target_price": 422.172,
-    "days_held": 4,
-    "status": "open",
+    "days_held": 5,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": true,
       "note": "Real dated regulatory catalyst: Natera announced 9/22 that Signatera received Japan PMDA approval as a companion diagnostic for muscle-invasive bladder cancer (guiding adjuvant atezolizumab decisions), with a 2027 Japan launch planned. Stock +5.5% same day.",
       "tagged_on": "2026-09-22"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 414.52,
+    "exit_reason": "time_stop",
+    "pct_return": 0.06042466103862882
   },
   {
     "ticker": "ALAB",
@@ -20656,14 +20796,18 @@
     "entry_price": 46.59,
     "stop_price": 44.7264,
     "target_price": 50.31720000000001,
-    "days_held": 4,
-    "status": "open",
+    "days_held": 5,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "No company-specific dated catalyst; next earnings not until Oct 21; merger-review update and rail-link announcement are industry-wide/minor items, not clearly catalytic for this move",
       "tagged_on": "2026-09-22"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 46.93,
+    "exit_reason": "time_stop",
+    "pct_return": 0.00729770336982177
   },
   {
     "ticker": "CLX",
@@ -20712,14 +20856,18 @@
     "entry_price": 36.6,
     "stop_price": 35.136,
     "target_price": 39.528000000000006,
-    "days_held": 4,
-    "status": "open",
+    "days_held": 5,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "No fresh dated catalyst; Sept decline tied to Q2 EPS miss reported weeks earlier (stale), no new 09-21/22 news found.",
       "tagged_on": "2026-09-22"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 35.8,
+    "exit_reason": "time_stop",
+    "pct_return": -0.021857923497267874
   },
   {
     "ticker": "GRML",
@@ -20868,14 +21016,18 @@
     "entry_price": 66.89,
     "stop_price": 64.2144,
     "target_price": 72.2412,
-    "days_held": 4,
-    "status": "open",
+    "days_held": 5,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "No dated news found for 9/22; only upcoming item is a routine 9/30 ex-dividend date, not a catalyst (Yahoo/Benzinga).",
       "tagged_on": "2026-09-22"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 65.98,
+    "exit_reason": "time_stop",
+    "pct_return": -0.013604425175661483
   },
   {
     "ticker": "SNEX",
@@ -20964,14 +21116,18 @@
     "entry_price": 75.19,
     "stop_price": 72.1824,
     "target_price": 81.2052,
-    "days_held": 4,
-    "status": "open",
+    "days_held": 5,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "No dated 9/22 news found; normal trading range $74.25-75.73 on above-avg volume. Only nearby item is a director sale on 9/16 (stale).",
       "tagged_on": "2026-09-22"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 75.69,
+    "exit_reason": "time_stop",
+    "pct_return": 0.006649820454847719
   },
   {
     "ticker": "PENG",
@@ -21000,14 +21156,18 @@
     "entry_price": 162.65,
     "stop_price": 156.144,
     "target_price": 175.662,
-    "days_held": 4,
-    "status": "open",
+    "days_held": 5,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "Only nearby news is a routine quarterly dividend (announced 9/21) and the Maverick Power acquisition, which was actually announced 8/24/2026 -- a month stale, not a 9/22 event.",
       "tagged_on": "2026-09-22"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 161.68,
+    "exit_reason": "time_stop",
+    "pct_return": -0.005963725791576999
   },
   {
     "ticker": "PLAY",
@@ -21116,14 +21276,18 @@
     "entry_price": 8.83,
     "stop_price": 8.476799999999999,
     "target_price": 9.5364,
-    "days_held": 4,
-    "status": "open",
+    "days_held": 5,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "No dated 09-22 catalyst found; NVIDIA biosimulation collab and Q2 earnings are prior/stale items, nothing freshly dated",
       "tagged_on": "2026-09-22"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 9.26,
+    "exit_reason": "time_stop",
+    "pct_return": 0.04869762174405433
   },
   {
     "ticker": "CPB",
@@ -21172,14 +21336,14 @@
     "entry_price": 121.66,
     "stop_price": 116.7936,
     "target_price": 131.3928,
-    "days_held": 3,
+    "days_held": 4,
     "status": "open",
     "catalyst": {
       "has_catalyst": "unclear",
       "note": "15% weekly rally but underlying Q2 FY26 earnings beat not dated to 9/22-23; a Zacks note (9/22) summarizes analyst EPS-estimate revisions made over the prior 60 days, not a fresh dated analyst action -- unclear rather than guessing",
       "tagged_on": "2026-09-23"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "KEYS",
@@ -21188,14 +21352,14 @@
     "entry_price": 353.36,
     "stop_price": 339.2256,
     "target_price": 381.6288,
-    "days_held": 3,
+    "days_held": 4,
     "status": "open",
     "catalyst": {
       "has_catalyst": "unclear",
       "note": "Search results conflate several different-day headlines (1.55%/1.54%/1.74% gains, UBS PT raise to $440, CFO Form 4 sale) around Q3 FY26 earnings; could not confirm whether the earnings beat/guidance actually printed on 9/22-23 vs several trading days earlier -- flagging unclear rather than guessing",
       "tagged_on": "2026-09-23"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "MDB",
@@ -21224,14 +21388,14 @@
     "entry_price": 191.79,
     "stop_price": 184.11839999999998,
     "target_price": 207.13320000000002,
-    "days_held": 3,
+    "days_held": 4,
     "status": "open",
     "catalyst": {
       "has_catalyst": true,
       "note": "9/23: FAA launched Palantir-built 'SMART' AI airspace-management system live at 3 DC-area airports (first operational US gov't AI airspace use), Rosenblatt reiterated Buy/$225PT citing it same morning; stock +3.6%",
       "tagged_on": "2026-09-23"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "PLTR",
@@ -21240,14 +21404,14 @@
     "entry_price": 191.79,
     "stop_price": 184.11839999999998,
     "target_price": 207.13320000000002,
-    "days_held": 3,
+    "days_held": 4,
     "status": "open",
     "catalyst": {
       "has_catalyst": true,
       "note": "9/23: FAA launched Palantir-built 'SMART' AI airspace-management system live at 3 DC-area airports (first operational US gov't AI airspace use), Rosenblatt reiterated Buy/$225PT citing it same morning; stock +3.6%",
       "tagged_on": "2026-09-23"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "CPRT",
@@ -21296,14 +21460,14 @@
     "entry_price": 70.31,
     "stop_price": 67.4976,
     "target_price": 75.93480000000001,
-    "days_held": 3,
+    "days_held": 4,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "RKLB fell -2.32% on 09-23; only company item found is ARK Invest buying shares 09-22 (investor flow, not a company catalyst). No earnings/M&A/FDA/guidance news found.",
       "tagged_on": "2026-09-23"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "FANG",
@@ -21312,14 +21476,14 @@
     "entry_price": 185.65,
     "stop_price": 178.224,
     "target_price": 200.502,
-    "days_held": 3,
+    "days_held": 4,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "WebSearch: single Buy rating from a smaller firm (Siebert Williams Shank) on 09-23 amid a broader energy-sector rally (+1.69%); no company-specific dated event, real earnings news is months stale.",
       "tagged_on": "2026-09-23"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "KLAC",
@@ -21328,14 +21492,14 @@
     "entry_price": 187.86,
     "stop_price": 180.34560000000002,
     "target_price": 202.88880000000003,
-    "days_held": 3,
+    "days_held": 4,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "-1.4% on 9/23; commentary is generic AI-infra/chip-equipment sector rotation (bull/bear sentiment both cited), no dated company-specific event found",
       "tagged_on": "2026-09-23"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "XERS",
@@ -21364,14 +21528,14 @@
     "entry_price": 110.72,
     "stop_price": 106.29119999999999,
     "target_price": 119.5776,
-    "days_held": 3,
+    "days_held": 4,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "UAL -3.95% on 09-23 explicitly attributed to macro factors (higher oil prices, rising Treasury yields, stronger economic data) hitting airlines sector-wide, not a UAL-specific event.",
       "tagged_on": "2026-09-23"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "SBH",
@@ -21380,14 +21544,14 @@
     "entry_price": 16.75,
     "stop_price": 16.08,
     "target_price": 18.09,
-    "days_held": 3,
+    "days_held": 4,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "Only dated item is a 09-22 Dallas Cowboys marketing/sponsorship partnership announcement -- company-specific but not earnings/M&A/FDA/guidance/analyst-action, doesn't meet catalyst bar.",
       "tagged_on": "2026-09-23"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "SONO",
@@ -21396,14 +21560,14 @@
     "entry_price": 17.1,
     "stop_price": 16.416,
     "target_price": 18.468000000000004,
-    "days_held": 3,
+    "days_held": 4,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No dated 09-23 news found; only general price-history and older Q1 2026 earnings commentary. No fresh company-specific catalyst identified.",
       "tagged_on": "2026-09-23"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "FROG",
@@ -21452,14 +21616,14 @@
     "entry_price": 227.53,
     "stop_price": 218.4288,
     "target_price": 245.7324,
-    "days_held": 3,
+    "days_held": 4,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "WebSearch: BIIB up 3.4% on 09-23 outperforming a down Nasdaq, but no dated company-specific driver (earnings/FDA/M&A) identified for that session -- pipeline commentary found is general, not dated to 09-23.",
       "tagged_on": "2026-09-23"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "AVT",
@@ -21468,14 +21632,14 @@
     "entry_price": 101.15,
     "stop_price": 97.104,
     "target_price": 109.24200000000002,
-    "days_held": 3,
+    "days_held": 4,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "WebSearch: 09-23 items are a previously-declared dividend's payment date (record date was 09-09, not new info) and a 52-week high plus an analyst fair-value bump with no confirmed 09-23 date. No fresh dated company-specific event found.",
       "tagged_on": "2026-09-23"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "RGTI",
@@ -21504,14 +21668,18 @@
     "entry_price": 8.48,
     "stop_price": 8.1408,
     "target_price": 9.1584,
-    "days_held": 3,
-    "status": "open",
+    "days_held": 4,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "+2.3% intraday/-3.3% after-hours on 9/23 with no company news that day; recent leadership appointments (9/11 CFO, 9/21 Chief Retail/Sales Officer) are outside the day-of/day-before window and aren't a qualifying catalyst type anyway",
       "tagged_on": "2026-09-23"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 8.1408,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "MCHP",
@@ -21520,14 +21688,14 @@
     "entry_price": 75.53,
     "stop_price": 72.5088,
     "target_price": 81.5724,
-    "days_held": 3,
+    "days_held": 4,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "-0.4% on 9/23; Hailo acquisition closed 9/21 (2 trading days prior, outside the day-of/day-before window) and Q1 FY27 earnings already reported earlier; no fresh 9/22-23 catalyst found",
       "tagged_on": "2026-09-23"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "GTES",
@@ -21536,14 +21704,14 @@
     "entry_price": 26.36,
     "stop_price": 25.3056,
     "target_price": 28.4688,
-    "days_held": 3,
+    "days_held": 4,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "WebSearch: no news dated specifically to 09-23 found; only general analyst-target/earnings commentary from earlier in the quarter. No catalyst evidenced.",
       "tagged_on": "2026-09-23"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "IONQ",
@@ -21572,14 +21740,14 @@
     "entry_price": 12.37,
     "stop_price": 11.8752,
     "target_price": 13.3596,
-    "days_held": 3,
+    "days_held": 4,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "WebSearch: no news found for BPRE around 09-23; only older dividend/distribution info from earlier in the year turned up. No catalyst evidenced.",
       "tagged_on": "2026-09-23"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "ARTL",
@@ -21608,14 +21776,14 @@
     "entry_price": 23.14,
     "stop_price": 22.2144,
     "target_price": 24.991200000000003,
-    "days_held": 3,
+    "days_held": 4,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No 9/23 news; routine dividend declaration (ex-date 9/29) and Raymond James PT raise are both stale (dividend routine, PT raise dated 9/10)",
       "tagged_on": "2026-09-23"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "TMUS",
@@ -21624,14 +21792,14 @@
     "entry_price": 165.66,
     "stop_price": 159.03359999999998,
     "target_price": 178.9128,
-    "days_held": 3,
+    "days_held": 4,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "TMUS +2% on 09-23 outperforming a down market, but no specific dated news found explaining the move; CFO succession news is from early September (stale).",
       "tagged_on": "2026-09-23"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "DT",
@@ -21660,14 +21828,14 @@
     "entry_price": 270.75,
     "stop_price": 259.92,
     "target_price": 292.41,
-    "days_held": 3,
+    "days_held": 4,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "VEEV +3.8% on 09-23 following news a top-20 biopharma adopted its Vault CRM platform -- company-specific and dated, but a customer-adoption announcement doesn't fit the defined catalyst categories (earnings/M&A/FDA/guidance/analyst action).",
       "tagged_on": "2026-09-23"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "AAON",
@@ -21716,14 +21884,14 @@
     "entry_price": 20.49,
     "stop_price": 19.670399999999997,
     "target_price": 22.1292,
-    "days_held": 3,
+    "days_held": 4,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "WebSearch: only items near the date are two mixed analyst initiations (Capital One Overweight, Melius Hold) dated 09-22 -- not a decisive or clearly bullish dated catalyst; other coverage (Q2 earnings/guidance) is stale.",
       "tagged_on": "2026-09-23"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "TWLO",
@@ -21752,14 +21920,14 @@
     "entry_price": 228.78,
     "stop_price": 219.62879999999998,
     "target_price": 247.0824,
-    "days_held": 3,
+    "days_held": 4,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "Stock +1.5% on 9/23 on general aerospace/defense demand commentary + JPMorgan REITERATED (not new) Overweight/$350PT; no dated earnings/M&A/FDA/guidance event found",
       "tagged_on": "2026-09-23"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "WHLR",
@@ -21788,14 +21956,14 @@
     "entry_price": 39.67,
     "stop_price": 38.0832,
     "target_price": 42.8436,
-    "days_held": 3,
+    "days_held": 4,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "9/23 commentary is speculative chatter about Meta's Muse AI agent possibly affecting gym subscription churn -- not a dated, company-specific earnings/M&A/FDA/guidance/analyst event",
       "tagged_on": "2026-09-23"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "NOMD",
@@ -21804,14 +21972,14 @@
     "entry_price": 10.71,
     "stop_price": 10.281600000000001,
     "target_price": 11.566800000000002,
-    "days_held": 3,
+    "days_held": 4,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No news found for or around 9/23; most recent items (CFO share purchase 9/2, guidance cut mid-August) are stale",
       "tagged_on": "2026-09-23"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "DBGI",
@@ -21840,14 +22008,18 @@
     "entry_price": 11.27,
     "stop_price": 10.819199999999999,
     "target_price": 12.1716,
-    "days_held": 3,
-    "status": "open",
+    "days_held": 4,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "-4.2 to -4.5% on 9/23 driven by a 10%-holder's planned sale of ~929K shares (insider selling, not a qualifying catalyst type); Space Force NITE-STAR award mentioned but undated/not tied to 9/22-23",
       "tagged_on": "2026-09-23"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 10.819199999999999,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "FSLY",
@@ -21876,14 +22048,14 @@
     "entry_price": 124.69,
     "stop_price": 119.7024,
     "target_price": 134.6652,
-    "days_held": 3,
+    "days_held": 4,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No 9/23-dated news; Q2 earnings beat was 8/4 and Army ARTEMIS contract award undated/stale, consensus 'Hold' overview on 9/23 just restates existing rating",
       "tagged_on": "2026-09-23"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "YSS",
@@ -21992,14 +22164,18 @@
     "entry_price": 110.53,
     "stop_price": 106.1088,
     "target_price": 119.37240000000001,
-    "days_held": 3,
-    "status": "open",
+    "days_held": 4,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "WMT +0.4% on 09-23, general commentary on store expansion/tariffs/margins but no specific dated 09-23 catalyst found.",
       "tagged_on": "2026-09-23"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 106.1088,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "DBRG",
@@ -22008,14 +22184,14 @@
     "entry_price": 15.99,
     "stop_price": 15.3504,
     "target_price": 17.2692,
-    "days_held": 3,
+    "days_held": 4,
     "status": "open",
     "catalyst": {
       "has_catalyst": true,
       "note": "WebSearch: DigitalBridge announced 09-23 that it received all regulatory approvals (incl. FERC) needed to complete its acquisition by SoftBank -- dated, material, company-specific M&A milestone.",
       "tagged_on": "2026-09-23"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "RYAN",
@@ -22024,14 +22200,14 @@
     "entry_price": 36.74,
     "stop_price": 35.2704,
     "target_price": 39.6792,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No 09-24 dated news found; most recent items (Q2 earnings 07-30, Morgan Stanley PT raise 08-19) are stale.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "ICLR",
@@ -22040,14 +22216,14 @@
     "entry_price": 173.9,
     "stop_price": 166.944,
     "target_price": 187.812,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No 09-24-dated catalyst; Citi PT cut to $175 (neutral) and insider selling both dated 09-18, stale to signal date; no new company-specific news found for 09-24 despite the 4.7-6% move.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "KOD",
@@ -22096,14 +22272,18 @@
     "entry_price": 82.24,
     "stop_price": 78.95039999999999,
     "target_price": 88.8192,
-    "days_held": 2,
-    "status": "open",
+    "days_held": 3,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "Tempus AI +7.38% on 9/24 but no fresh dated event found: FDA clearance for ECG-PH tool was 8/24/26 (1mo stale), Piper Sandler upgrade was 9/1 (stale); Cantor Fitzgerald initiation date unconfirmed as 9/24.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 88.8192,
+    "exit_reason": "target",
+    "pct_return": 0.08
   },
   {
     "ticker": "FLY",
@@ -22132,14 +22312,14 @@
     "entry_price": 61.37,
     "stop_price": 58.9152,
     "target_price": 66.2796,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
     "catalyst": {
       "has_catalyst": true,
       "note": "Up 13% on 09-24: BTIG (Mark Massaro) raised PT $60->$74 same day citing a positive resolution of the transplant Medicare LCD plus Naveris/AlloHeme pipeline confidence from Boston investor meetings -- dated, company-specific regulatory/analyst catalyst.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "TSSI",
@@ -22248,14 +22428,14 @@
     "entry_price": 41.37,
     "stop_price": 39.715199999999996,
     "target_price": 44.6796,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No dated 09-24 catalyst; coverage centers on ongoing Rev8 lidar product demos and mixed analyst sentiment, not a single dated news event.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "ACMR",
@@ -22264,14 +22444,14 @@
     "entry_price": 76.18,
     "stop_price": 73.1328,
     "target_price": 82.27440000000001,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "Up 6.4% on 09-24 but no fresh dated event found; next earnings not until Nov 11 2026, move reads as semiconductor-sector momentum plus a recycled Q2 earnings-beat writeup, not new company-specific news.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "USDE",
@@ -22340,14 +22520,14 @@
     "entry_price": 13.35,
     "stop_price": 12.815999999999999,
     "target_price": 14.418000000000001,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No company-specific catalyst; stock fell 1.91% on sector-wide oil/Middle East macro headwinds. Minor STARLUX codeshare news is not material.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "PFE",
@@ -22356,14 +22536,14 @@
     "entry_price": 28.41,
     "stop_price": 27.2736,
     "target_price": 30.682800000000004,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No dated company-specific 09-24 news; only item found was CEO Bourla attending a Trump state dinner for Xi (not a catalyst), stock +0.82%.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "ADMA",
@@ -22372,14 +22552,14 @@
     "entry_price": 9.52,
     "stop_price": 9.139199999999999,
     "target_price": 10.281600000000001,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No dated company-specific news found for 09-23/24; only general post-Q2 commentary on ASCENIV/BIVIGAM mix, already known.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "SNPS",
@@ -22388,14 +22568,18 @@
     "entry_price": 424.91,
     "stop_price": 407.91360000000003,
     "target_price": 458.90280000000007,
-    "days_held": 2,
-    "status": "open",
+    "days_held": 3,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": true,
       "note": "BNP Paribas upgraded SNPS from Underperform to Neutral on 09-24 (PT $420), citing improving fundamentals/TSMC A14 design-flow partnership; stock +1.74%-1.93%.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 407.91360000000003,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "TWST",
@@ -22444,14 +22628,18 @@
     "entry_price": 73.61,
     "stop_price": 70.6656,
     "target_price": 79.4988,
-    "days_held": 2,
-    "status": "open",
+    "days_held": 3,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": true,
       "note": "Space Force NITE-STAR contract vehicle award reported 09-24 (RKLB 1 of 15 companies, combined cap up to $981M across two 5-yr terms), stock +5.72%; distinct fresh event, not a repeat of the 09-22 RJ-initiation/ATM-raise story (already tagged separately, and 09-23 was tagged false).",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 70.6656,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "FHN",
@@ -22460,14 +22648,14 @@
     "entry_price": 23.18,
     "stop_price": 22.2528,
     "target_price": 25.0344,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "Only a routine quarterly dividend declaration (record date Sep-11) and a Sep-15 conference appearance found; nothing dated 09-23/24.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "GBCI",
@@ -22476,14 +22664,14 @@
     "entry_price": 44.35,
     "stop_price": 42.576,
     "target_price": 47.898,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "Guaranty Bancshares acquisition referenced is from June 2025, over a year stale; remaining commentary is valuation opinion, not a dated event.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "TRIP",
@@ -22512,14 +22700,14 @@
     "entry_price": 18.6,
     "stop_price": 17.856,
     "target_price": 20.088000000000005,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No dated 09-24 catalyst; quarterly dividend declaration was 09-15, stale to signal date.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "TXG",
@@ -22548,14 +22736,14 @@
     "entry_price": 48.46,
     "stop_price": 46.5216,
     "target_price": 52.336800000000004,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
     "catalyst": {
       "has_catalyst": true,
       "note": "Semafor reported 9/24 that UBS restarted talks to exit Swiss regulatory jurisdiction via merger with a foreign bank; stock +1.9% same day -- dated, company-specific M&A-adjacent/regulatory story.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "FWONK",
@@ -22564,14 +22752,14 @@
     "entry_price": 95.08,
     "stop_price": 91.2768,
     "target_price": 102.6864,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
     "catalyst": {
       "has_catalyst": "unclear",
       "note": "Found analyst price-target raises (Guggenheim, Citizens JMP) in general coverage but could not confirm they land on 09-23/24 specifically vs. earlier in September; inconclusive, not guessing.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "EXPE",
@@ -22580,14 +22768,14 @@
     "entry_price": 261.75,
     "stop_price": 251.28,
     "target_price": 282.69,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "09-23 drop tied to sector-wide online-travel selloff (Meta Muse AI disintermediation fear hitting the whole group) plus a Sep-16 Morgan Stanley downgrade already priced in days earlier; 09-24 move is just a partial bounce, not a new company-specific event.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "ADPT",
@@ -22616,14 +22804,14 @@
     "entry_price": 38.74,
     "stop_price": 37.190400000000004,
     "target_price": 41.839200000000005,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No dated company-specific news found for 09-23/24, only price-level data and stale mid-September analyst/conference commentary.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "WT",
@@ -22632,14 +22820,14 @@
     "entry_price": 23.99,
     "stop_price": 23.030399999999997,
     "target_price": 25.9092,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No dated company-specific catalyst found for 9/24; MoonPay partnership was 9/17 (stale), AUM report was 9/14 (stale); content of the 9/23 press release could not be confirmed as catalyst-grade despite multiple searches.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "MBLY",
@@ -22648,14 +22836,14 @@
     "entry_price": 7.69,
     "stop_price": 7.3824000000000005,
     "target_price": 8.305200000000001,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No fresh 09-24 catalyst; Jefferies Underperform/Sell call and CEO-succession news both predate 09-24 (~09-10 and 09-03 respectively).",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "QMCO",
@@ -22684,14 +22872,14 @@
     "entry_price": 305.66,
     "stop_price": 293.4336,
     "target_price": 330.11280000000005,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No material dated event; Truist trimmed PT to $370 (09-23, routine tweak, sources conflict on direction) and Wells Fargo Buy reiteration undated -- stock actually down ~1% on 09-24, no real catalyst.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "AUB",
@@ -22700,14 +22888,14 @@
     "entry_price": 38.52,
     "stop_price": 36.9792,
     "target_price": 41.601600000000005,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No dated news found for 09-23/24; most recent identifiable item is a Morgan Stanley price-target raise from 09-08, stale.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "PL",
@@ -22736,14 +22924,14 @@
     "entry_price": 21.31,
     "stop_price": 20.4576,
     "target_price": 23.0148,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "Cambridge Trust merger completion / Eastern Insurance sale referenced only generically as 'September 2026' with no link to 09-23/24; insider sales are early-Sept and not a catalyst type; nothing fresh found.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "DDOG",
@@ -22772,14 +22960,14 @@
     "entry_price": 6.45,
     "stop_price": 6.192,
     "target_price": 6.966000000000001,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No dated company-specific catalyst found for 9/24 (USA TODAY Co / Gannett); next earnings not until 2026-10-29; Q2 revenue decline is already weeks-stale news.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "CTRE",
@@ -22788,14 +22976,14 @@
     "entry_price": 37.32,
     "stop_price": 35.8272,
     "target_price": 40.305600000000005,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "Only stale items found (Sep-12 SNF portfolio acquisition, Sep-16 analyst commentary, Sep-30 dividend ex-date); nothing new dated 09-23/24.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "MAR",
@@ -22804,14 +22992,14 @@
     "entry_price": 351.51,
     "stop_price": 337.4496,
     "target_price": 379.6308,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No material catalyst; only a minor Ritz-Carlton Turkiye resort/Spotnana partnership item, stock essentially flat (-0.04%) on the day.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "SLG",
@@ -22820,14 +23008,18 @@
     "entry_price": 50.88,
     "stop_price": 48.8448,
     "target_price": 54.95040000000001,
-    "days_held": 2,
-    "status": "open",
+    "days_held": 3,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "No 09-24 dated news found; analyst PT changes (Evercore/Scotiabank) dated 09-17/09-21 and dividend ex-date is 09-30, none land on 09-24.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 48.8448,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "BLFS",
@@ -22836,14 +23028,14 @@
     "entry_price": 38.58,
     "stop_price": 37.0368,
     "target_price": 41.6664,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "Repligen merger (agreed 07-21) and HSR clearance (09-03) are both well stale relative to 09-24; no new dated development found around the signal date.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "OLMA",
@@ -22912,14 +23104,14 @@
     "entry_price": 150.68,
     "stop_price": 144.6528,
     "target_price": 162.73440000000002,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
     "catalyst": {
       "has_catalyst": true,
       "note": "GSP T1D 3plex kit launch announced 09-24 (CE-IVDR-certified diabetes autoantibody diagnostic), stock +5.2%, price target raised to $160 same day.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "FNB",
@@ -22928,14 +23120,14 @@
     "entry_price": 17.44,
     "stop_price": 16.7424,
     "target_price": 18.835200000000004,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "Analyst actions found (BofA downgrade, Truist/Wells Fargo target raises) date to July 2026, stale; nothing dated to the signal date.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "AVTX",
@@ -22964,14 +23156,14 @@
     "entry_price": 55.16,
     "stop_price": 52.953599999999994,
     "target_price": 59.5728,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
     "catalyst": {
       "has_catalyst": true,
       "note": "Morgan Stanley initiated coverage 09-24 (Overweight, $63 PT), citing indispensable theater demand -- fresh, dated, material analyst action.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "TTI",
@@ -22980,14 +23172,18 @@
     "entry_price": 6.03,
     "stop_price": 5.7888,
     "target_price": 6.5124,
-    "days_held": 2,
-    "status": "open",
+    "days_held": 3,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": true,
       "note": "Stifel cut PT to $12 from $13 (Buy maintained) on 9/23, citing new company-specific concerns: no desalination contract progress, Eos Energy production-ramp uncertainty, Fluids-division H2 2026 timing risk -- dated, company-specific analyst action.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 5.7888,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "PECO",
@@ -22996,14 +23192,14 @@
     "entry_price": 37.12,
     "stop_price": 35.6352,
     "target_price": 40.0896,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No dated 09-24 catalyst found; most recent substantive news (Q1 results, guidance raise, $400M continuous offering) predates September.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "MDU",
@@ -23012,14 +23208,14 @@
     "entry_price": 18.64,
     "stop_price": 17.8944,
     "target_price": 20.131200000000003,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No dated 09-24 news found; most recent material item (2026-2030 capex plan) predates the signal date, no company-specific news on 09-24 itself.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "KNF",
@@ -23028,14 +23224,14 @@
     "entry_price": 53.37,
     "stop_price": 51.2352,
     "target_price": 57.6396,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
     "catalyst": {
       "has_catalyst": true,
       "note": "Starboard Value disclosed a stake and sent a letter dated 09-24 urging Knife River's board toward a margin-improvement plan or strategic alternatives -- dated, company-specific, genuinely new.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "RRR",
@@ -23044,14 +23240,18 @@
     "entry_price": 51.63,
     "stop_price": 49.5648,
     "target_price": 55.760400000000004,
-    "days_held": 2,
-    "status": "open",
+    "days_held": 3,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "No 09-24 dated news found; most recent items (Texas Capital/Wolfe analyst initiations 09-02/09-09, dividend ex-date 09-15) are stale.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 49.5648,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "EMR",
@@ -23060,14 +23260,14 @@
     "entry_price": 156.14,
     "stop_price": 149.8944,
     "target_price": 168.6312,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "Analyst notes found are reiterations (Bernstein/UBS Buy, not new actions) off already-known fiscal Q3 results; Qatar service-center news undated; no fresh 09-24 company-specific event.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "CNK",
@@ -23076,14 +23276,14 @@
     "entry_price": 36.98,
     "stop_price": 35.5008,
     "target_price": 39.9384,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "Q2 earnings-beat/Morgan Stanley PT-cut coverage found for 09-24 is stale (Q2 results reported ~2 months earlier, already priced in); no fresh dated company-specific event found for 09-23/24.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "VCYT",
@@ -23152,14 +23352,14 @@
     "entry_price": 29.07,
     "stop_price": 27.9072,
     "target_price": 31.3956,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "All identifiable news (prime-rate change eff. 09-17, dividend 09-15, growth-outlook update 09-14) is stale relative to 09-24; nothing dated 09-23/24.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "RSKD",
@@ -23168,14 +23368,18 @@
     "entry_price": 7.91,
     "stop_price": 7.5935999999999995,
     "target_price": 8.542800000000002,
-    "days_held": 2,
-    "status": "open",
+    "days_held": 3,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "No fresh 09-24 catalyst found; nearest dated items (Zendesk integration 09-15, UBS PT raise 09-07) remain stale, consistent with the 09-22/09-23 PASS/false pattern; next earnings not until 11-18.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 7.5935999999999995,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "TBBB",
@@ -23184,14 +23388,14 @@
     "entry_price": 53.02,
     "stop_price": 50.8992,
     "target_price": 57.26160000000001,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No 09-24 dated news found; most recent analyst actions (UBS/Scotiabank) from late August, stale.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "OZK",
@@ -23200,14 +23404,14 @@
     "entry_price": 46.6,
     "stop_price": 44.736,
     "target_price": 50.328,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No dated 09-24 catalyst; Morgan Stanley's downgrade to Underweight was 09-08, stale to signal date.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "AHR",
@@ -23216,14 +23420,14 @@
     "entry_price": 52.31,
     "stop_price": 50.2176,
     "target_price": 56.494800000000005,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "Only prior items found (CTO hire 09-08, acquisition 09-03, dividend declaration 09-18, analyst targets late Aug/early Sep) -- all stale relative to 09-24, nothing dated 09-23/24.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "P",
@@ -23232,14 +23436,18 @@
     "entry_price": 121.88,
     "stop_price": 117.00479999999999,
     "target_price": 131.6304,
-    "days_held": 2,
-    "status": "open",
+    "days_held": 3,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": true,
       "note": "Everpure Inc (NOT Pandora/Phunware): FY2028 guidance raise at analyst day (39-45% YoY rev growth outlook) plus S&P 500 inclusion effective 09-21 converged into the 09-24 +11.15% move; see data/research/2026-09-25/P.md.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 131.6304,
+    "exit_reason": "target",
+    "pct_return": 0.08
   },
   {
     "ticker": "JNJ",
@@ -23248,14 +23456,14 @@
     "entry_price": 270.68,
     "stop_price": 259.8528,
     "target_price": 292.3344,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No fresh 09-24 catalyst; guidance-raise commentary traces back to the 09-17 Deutsche Bank healthcare summit, RBC Buy reiterated 09-21 -- both stale to the signal date.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "SATL",
@@ -23284,14 +23492,14 @@
     "entry_price": 9.47,
     "stop_price": 9.0912,
     "target_price": 10.2276,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "09-23 news is a Fall 2026 collection/anniversary marketing launch and investor-event participation -- not a material catalyst; analyst rating changes found are from August, stale.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "ARHS",
@@ -23300,14 +23508,14 @@
     "entry_price": 9.47,
     "stop_price": 9.0912,
     "target_price": 10.2276,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "09-23 news is a Fall 2026 collection/anniversary marketing launch and investor-event participation -- not a material catalyst; analyst rating changes found are from August, stale.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "FHB",
@@ -23316,14 +23524,14 @@
     "entry_price": 25.12,
     "stop_price": 24.1152,
     "target_price": 27.129600000000003,
-    "days_held": 2,
+    "days_held": 3,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "Only the TriCo Bancshares S-4 merger filing from Sep-1 found, over 3 weeks stale and already known/priced in; nothing new for 09-23/24.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "CHYM",
@@ -23352,14 +23560,18 @@
     "entry_price": 8.26,
     "stop_price": 7.9296,
     "target_price": 8.9208,
-    "days_held": 2,
-    "status": "open",
+    "days_held": 3,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "No 09-24 dated news found; most recent items (new restaurant openings 09-08 and 08-20) are stale.",
       "tagged_on": "2026-09-24"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 8.9208,
+    "exit_reason": "target",
+    "pct_return": 0.08
   },
   {
     "ticker": "SECZ",
@@ -23408,14 +23620,18 @@
     "entry_price": 10.94,
     "stop_price": 10.5024,
     "target_price": 11.8152,
-    "days_held": 1,
-    "status": "open",
+    "days_held": 2,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "WebSearch: only stale news (Aug 6 guidance cut, Aug 25 JPMorgan Sell reiteration); nothing new dated to 9/24-25.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 10.5024,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "WSE",
@@ -23424,14 +23640,14 @@
     "entry_price": 11.55,
     "stop_price": 11.088000000000001,
     "target_price": 12.474000000000002,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "WSE = Wise Group plc. 9/24-9/25 items are law-firm lead-plaintiff-deadline solicitation press releases recycling a July 24 regulatory (trust-bank license) denial; not a fresh company-specific dated event.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "RGTI",
@@ -23520,14 +23736,14 @@
     "entry_price": 69.62,
     "stop_price": 66.8352,
     "target_price": 75.18960000000001,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": "unclear",
       "note": "9/25-dated media piece (247wallst) recaps Evercore's existing Street-high $150 target and Delivery Hero tender/Spain robotaxi permit, none clearly a fresh dated event on 9/25 itself; inconclusive.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "SLM",
@@ -23536,14 +23752,18 @@
     "entry_price": 23.66,
     "stop_price": 22.7136,
     "target_price": 25.5528,
-    "days_held": 1,
-    "status": "open",
+    "days_held": 2,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "WebSearch: only a vague ongoing 'credit fears' narrative, no specific dated company event found for 9/24-25.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 22.7136,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "INLF",
@@ -23592,14 +23812,14 @@
     "entry_price": 56.7,
     "stop_price": 54.432,
     "target_price": 61.236000000000004,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "WebSearch: no dated 9/24-25 company-specific catalyst found; scheduled dividend payment and analyst Buy notes not clearly dated to this window; next earnings 10/14/26.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "VLY",
@@ -23608,14 +23828,18 @@
     "entry_price": 13.08,
     "stop_price": 12.556799999999999,
     "target_price": 14.1264,
-    "days_held": 1,
-    "status": "open",
+    "days_held": 2,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "Bluevine acquisition news is dated 9/28, after this window; no company-specific dated event found for 9/25 itself.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 12.556799999999999,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "RGNX",
@@ -23624,14 +23848,14 @@
     "entry_price": 7.4,
     "stop_price": 7.104,
     "target_price": 7.992000000000001,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": true,
       "note": "WebSearch: REGENXBIO presented positive 3-year Phase II ALTITUDE diabetic-retinopathy durability data at the Retina Society Annual Meeting on 9/25/2026, shares +4.8% premarket.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "HBAN",
@@ -23640,14 +23864,14 @@
     "entry_price": 15.64,
     "stop_price": 15.0144,
     "target_price": 16.8912,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": "unclear",
       "note": "WebSearch: cluster of analyst actions (Goldman initiated Buy 9/23, Truist cut PT 9/23, Morgan Stanley reaffirmed Hold 9/25) plus a vague 'executive leadership transition plan' announced 9/24 -- no single clear dated catalyst identified, none confirmed as genuinely new info tied to the move",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "PRVA",
@@ -23656,14 +23880,14 @@
     "entry_price": 19.71,
     "stop_price": 18.9216,
     "target_price": 21.286800000000003,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "WebSearch: no dated company-specific catalyst found; most recent news was a Sept 16 Jefferies rating, nothing new for 9/24-25.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "AMRZ",
@@ -23672,14 +23896,14 @@
     "entry_price": 38.22,
     "stop_price": 36.691199999999995,
     "target_price": 41.2776,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "Confirmed ticker is Amrize Ltd (building solutions), not Amerant Bancorp (AMTB, a different company whose Zacks downgrade is unrelated). Amrize's only recent company news (President, Building Envelope appointment) is dated 9/11, stale by 9/25; no fresh dated catalyst found.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "ON",
@@ -23728,14 +23952,14 @@
     "entry_price": 177.71,
     "stop_price": 170.6016,
     "target_price": 191.92680000000001,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "WebSearch: -10.3% move driven by rising Treasury yields/rate-sensitivity, a sector-wide macro move, not a dated company-specific event (Roth polysilicon note is a sector tailwind, not FSLR-specific news)",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "CDNS",
@@ -23744,14 +23968,14 @@
     "entry_price": 326.13,
     "stop_price": 313.0848,
     "target_price": 352.22040000000004,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "WebSearch: 8-day rally (+19%) matched EDA peer SNPS's near-identical streak -- reads as broad AI/chip-software sector rally, not company-specific; Mizuho Buy on 9/24 appears routine, not clearly material new info.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "SFNC",
@@ -23760,14 +23984,14 @@
     "entry_price": 23.23,
     "stop_price": 22.3008,
     "target_price": 25.088400000000004,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "WebSearch: Piper Sandler/KBW upgrades and branch-closure plan all dated to Sept 1-4, 2026 -- stale, nothing new confirmed for 9/24-25.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "KMB",
@@ -23776,14 +24000,14 @@
     "entry_price": 98.43,
     "stop_price": 94.4928,
     "target_price": 106.30440000000002,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": true,
       "note": "WebSearch: BofA cut price target to $120 (from $122) and cut Q3/FY26 adjusted EPS estimates on 9/25/2026 -- a dated, genuinely new analyst estimate revision",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "Z",
@@ -23912,14 +24136,14 @@
     "entry_price": 89.13,
     "stop_price": 85.56479999999999,
     "target_price": 96.2604,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": true,
       "note": "Aetna oncology-bundle expansion news dated 09-25 plus Bernstein PT raise 106->112 (cites faster Aetna recovery) alongside UBS Buy reiterated 118 -- dated, company-specific.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "LRCX",
@@ -23928,14 +24152,14 @@
     "entry_price": 315.21,
     "stop_price": 302.60159999999996,
     "target_price": 340.4268,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "WebSearch: board approved a 27% dividend increase and filed a routine proxy statement (9/24), but no earnings/M&A/FDA/guidance-change/analyst-action dated to 9/25; move attributed to ex-dividend adjustment and sector profit-taking",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "HON",
@@ -23944,14 +24168,14 @@
     "entry_price": 212.55,
     "stop_price": 204.048,
     "target_price": 229.55400000000003,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "WebSearch: only 9/25 items are a routine quarterly dividend declaration and a BofA Hold-rating reaffirmation (no new info/rating change) -- not a real catalyst",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "DKNG",
@@ -23980,14 +24204,14 @@
     "entry_price": 157.47,
     "stop_price": 151.1712,
     "target_price": 170.0676,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No company-specific dated catalyst found; move reads as part of a sector-wide online-travel selloff/bounce (ABNB/Booking/Expedia) tied to fears of Meta's AI agent disintermediating travel platforms, not ABNB-specific news.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "SATL",
@@ -23996,14 +24220,18 @@
     "entry_price": 6.17,
     "stop_price": 5.9232,
     "target_price": 6.663600000000001,
-    "days_held": 1,
-    "status": "open",
+    "days_held": 2,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": true,
       "note": "WebSearch: Satellogic announced an expanded Slingshot III defense/maritime satellite deal (6 more NewSat Mark VI satellites); shares +3.87% on 9/25/2026 on the news.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 5.9232,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "FLYW",
@@ -24012,14 +24240,14 @@
     "entry_price": 17.4,
     "stop_price": 16.703999999999997,
     "target_price": 18.791999999999998,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "WebSearch: only news is a 9/23 board appointment (Sabrina Farmer); no earnings/M&A/FDA/guidance/analyst-action found for 9/25, modest +1.36% move",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "VTRS",
@@ -24028,14 +24256,14 @@
     "entry_price": 17.83,
     "stop_price": 17.116799999999998,
     "target_price": 19.2564,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "Nearest analyst actions (Oppenheimer initiation 9/23, Piper Sandler target raise 9/16) both predate 9/25 by more than one trading day; no fresh dated event found for 9/25.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "PRGO",
@@ -24044,14 +24272,14 @@
     "entry_price": 15.42,
     "stop_price": 14.803199999999999,
     "target_price": 16.6536,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "6.1% rise was on 9/24 and traces back to guidance reaffirmed 2026-08-05 (Q2 earnings, stale); no fresh 9/25-dated news found.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "PRGO",
@@ -24060,14 +24288,14 @@
     "entry_price": 15.42,
     "stop_price": 14.803199999999999,
     "target_price": 16.6536,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "6.1% rise was on 9/24 and traces back to guidance reaffirmed 2026-08-05 (Q2 earnings, stale); no fresh 9/25-dated news found.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "AMAT",
@@ -24076,14 +24304,14 @@
     "entry_price": 485,
     "stop_price": 465.59999999999997,
     "target_price": 523.8000000000001,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No clear fresh dated catalyst for 9/25 specifically; India investment and AI-demand narrative are ongoing themes, Morgan Stanley PT cut to $563 not clearly dated to 9/25, next earnings not until Nov 12.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "AEHR",
@@ -24172,14 +24400,14 @@
     "entry_price": 236.12,
     "stop_price": 226.6752,
     "target_price": 255.00960000000003,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "WebSearch: only a board-appointment announcement (effective Oct 2026) and prior-week analyst ratings; nothing new dated to 9/24-25.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "GENI",
@@ -24208,14 +24436,14 @@
     "entry_price": 149.21,
     "stop_price": 143.2416,
     "target_price": 161.1468,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No fresh dated catalyst on 9/25; $1.0B buyback (announced 9/16) and $1.5B notes offering are stale relative to this date, no new company-specific news found for 9/25 itself.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "FISV",
@@ -24224,14 +24452,14 @@
     "entry_price": 46.48,
     "stop_price": 44.620799999999996,
     "target_price": 50.1984,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "Leadership transition and Clover-Canada deal both dated 09-22 (3 days stale); Wells Fargo reiterated (not changed) Hold rating 09-24 -- no new information, no fresh 09-25 catalyst.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "HLMN",
@@ -24240,14 +24468,14 @@
     "entry_price": 7.05,
     "stop_price": 6.768,
     "target_price": 7.614,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "WebSearch: no news dated 9/25; most recent items are stale (CFO stock buy 9/14, Kanebridge acquisition closed 9/3)",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "LYFT",
@@ -24256,14 +24484,14 @@
     "entry_price": 14.865,
     "stop_price": 14.2704,
     "target_price": 16.0542,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No dated 9/25 catalyst; Waymo Nashville partnership news is stale (announced 2025-09-17, app integration 2026-09-09); stock actually down -0.90% on 9/25, only ongoing AV/CFO/margin-scrutiny themes found.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "F",
@@ -24272,14 +24500,14 @@
     "entry_price": 12.71,
     "stop_price": 12.201600000000001,
     "target_price": 13.726800000000003,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No company-specific dated catalyst; coverage is general analyst commentary on US market-share decline and Hyundai overtaking Ford in Q3 sales, not a specific dated event.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "MNST",
@@ -24308,14 +24536,14 @@
     "entry_price": 28.07,
     "stop_price": 26.9472,
     "target_price": 30.315600000000003,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "WebSearch: no catalyst dated 9/24-25; Slate Grocery REIT $2.34B acquisition announced 9/28 (after this signal date); prior conference appearance was 9/15 (stale).",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "ALM",
@@ -24344,14 +24572,14 @@
     "entry_price": 14.15,
     "stop_price": 13.584,
     "target_price": 15.282000000000002,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "ESG/sustainability report published 9/23 (2 days prior) and guidance figures reference already-known Q1 FY27 results; no fresh dated event found specifically for 9/25 despite +3.36% move.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "VFC",
@@ -24360,14 +24588,14 @@
     "entry_price": 14.15,
     "stop_price": 13.584,
     "target_price": 15.282000000000002,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "ESG/sustainability report published 9/23 (2 days prior) and guidance figures reference already-known Q1 FY27 results; no fresh dated event found specifically for 9/25 despite +3.36% move.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "MKTX",
@@ -24376,14 +24604,14 @@
     "entry_price": 164.19,
     "stop_price": 157.6224,
     "target_price": 177.3252,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": "unclear",
       "note": "Pending ICE acquisition (67/share cash) is the dominant story but WebSearch did not surface a 9/25-dated development in that deal specifically; no other dated company-specific news found for 9/25.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "ARES",
@@ -24392,14 +24620,14 @@
     "entry_price": 122.01,
     "stop_price": 117.1296,
     "target_price": 131.7708,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": true,
       "note": "Piper Sandler initiated ARES at Overweight on 9/24, the trading day before the signal -- dated, company-specific analyst action.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "FBIN",
@@ -24428,14 +24656,18 @@
     "entry_price": 22.25,
     "stop_price": 21.36,
     "target_price": 24.03,
-    "days_held": 1,
-    "status": "open",
+    "days_held": 2,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": true,
       "note": "WebSearch: multiple analyst price-target cuts dated 9/23 (JPMorgan) and 9/24 (BofA, Susquehanna) ahead of 9/29 earnings -- dated, material analyst action.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 24.03,
+    "exit_reason": "target",
+    "pct_return": 0.08
   },
   {
     "ticker": "AMBA",
@@ -24464,14 +24696,14 @@
     "entry_price": 316.74,
     "stop_price": 304.0704,
     "target_price": 342.0792,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "WebSearch: no 9/25-specific news; Q3 earnings beat already old news, next earnings not until 9/30, analyst PT cuts dated back to 9/8",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "RHI",
@@ -24480,14 +24712,14 @@
     "entry_price": 36.89,
     "stop_price": 35.4144,
     "target_price": 39.8412,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "WebSearch: no new dated catalyst; Q2 earnings/dividend already known, Q3 results not due until October -- upcoming earnings alone is not a catalyst.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "CRH",
@@ -24496,14 +24728,14 @@
     "entry_price": 85.04,
     "stop_price": 81.6384,
     "target_price": 91.84320000000001,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "WebSearch: $8.5B Arcosa acquisition was announced 6/22/26 (stale, 3 months old); UBS PT cut was 9/22 (3 days prior); a vague 'new Buy rating 9/25' had no named analyst/detail to verify as material.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "NCLH",
@@ -24512,14 +24744,14 @@
     "entry_price": 14.61,
     "stop_price": 14.025599999999999,
     "target_price": 15.7788,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": true,
       "note": "Wells Fargo (target cut to $20) and Truist (cut to $16) both issued dated analyst price-target revisions on 9/24-9/25; new Oceania Sonata ship also floated out same window.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "CALY",
@@ -24528,14 +24760,14 @@
     "entry_price": 14.44,
     "stop_price": 13.8624,
     "target_price": 15.5952,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "WebSearch: no dated company-specific catalyst found for Callaway Golf (CALY) around 9/24-25.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "STAA",
@@ -24544,14 +24776,18 @@
     "entry_price": 20.51,
     "stop_price": 19.689600000000002,
     "target_price": 22.150800000000004,
-    "days_held": 1,
-    "status": "open",
+    "days_held": 2,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": true,
       "note": "Reused from data/research/2026-09-28/STAA.md: STAAR Surgical announced a $50M share buyback on 9/25/2026 (MarketBeat-confirmed), verdict WATCH.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 22.150800000000004,
+    "exit_reason": "target",
+    "pct_return": 0.08
   },
   {
     "ticker": "FLY",
@@ -24560,14 +24796,18 @@
     "entry_price": 24.36,
     "stop_price": 23.3856,
     "target_price": 26.3088,
-    "days_held": 1,
-    "status": "open",
+    "days_held": 2,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "No fresh dated catalyst; SSC Space multi-launch agreement was announced 09-09 (over 2 weeks stale), Q2 earnings already priced in from prior period.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 23.3856,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "AMCR",
@@ -24576,14 +24816,14 @@
     "entry_price": 42.51,
     "stop_price": 40.809599999999996,
     "target_price": 45.9108,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No company-specific dated catalyst found for 9/25; coverage is generic ongoing Berry-integration/capacity-expansion narrative, nothing new and dated.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "OMC",
@@ -24592,14 +24832,14 @@
     "entry_price": 76.15,
     "stop_price": 73.104,
     "target_price": 82.24200000000002,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No 9/25-dated company-specific event found; H1 2026 billings-leader stat and PepsiCo client-loss mention are not dated to 9/25 specifically.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "HHH",
@@ -24648,14 +24888,14 @@
     "entry_price": 242.7,
     "stop_price": 232.992,
     "target_price": 262.116,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": true,
       "note": "WebSearch: Deutsche Bank upgraded RCL to Buy from Hold on 9/25/2026 (PT $299), citing improved risk/reward after the 26% post-8/5 decline; also Sandals JV noted.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "COF",
@@ -24664,14 +24904,14 @@
     "entry_price": 200.2,
     "stop_price": 192.19199999999998,
     "target_price": 216.216,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "WebSearch: no dated 9/24-25 catalyst; Discover-integration remarks were from 9/16 (stale), Q3 earnings call not until 10/20, day's move described as technical (RSI exiting oversold).",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "BV",
@@ -24680,14 +24920,14 @@
     "entry_price": 10.41,
     "stop_price": 9.993599999999999,
     "target_price": 11.2428,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "WebSearch: last earnings was 8/4/26 (stale, ~7 weeks prior); no M&A/FDA/guidance news dated to 9/24-25 found.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "DDOG",
@@ -24716,14 +24956,14 @@
     "entry_price": 314.36,
     "stop_price": 301.7856,
     "target_price": 339.50880000000006,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "WebSearch: +3.8% move with RSI exiting oversold and generic peer-comparison analyst commentary; no specific new rating/PT change, earnings, or M&A found for 9/25",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "AJG",
@@ -24732,14 +24972,14 @@
     "entry_price": 231.1,
     "stop_price": 221.856,
     "target_price": 249.58800000000002,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": true,
       "note": "AJG lowered its 2026 brokerage organic-growth outlook (~5% from ~5.5%) around 9/23-24, driving a 4% stock drop and multiple analyst PT cuts (Wells Fargo, Keefe Bruyette, Morgan Stanley) plus mixed reiterations (UBS/Evercore Buy) on 9/25 -- dated, company-specific guidance change the trading day before.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "ARMK",
@@ -24748,14 +24988,14 @@
     "entry_price": 54.92,
     "stop_price": 52.7232,
     "target_price": 59.31360000000001,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No catalyst dated to 9/25 or the day before; the AI-data-center workforce-housing contract via Nexus was reported 9/26, after this signal date, too late to explain the 9/25 move.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "BWA",
@@ -24764,14 +25004,14 @@
     "entry_price": 61.32,
     "stop_price": 58.8672,
     "target_price": 66.2256,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "WebSearch: Barclays Buy rating was 9/15 (stale); no new dated 9/24-25 catalyst found, coverage referenced only insider selling/valuation commentary.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "MLM",
@@ -24780,14 +25020,14 @@
     "entry_price": 484.3,
     "stop_price": 464.928,
     "target_price": 523.0440000000001,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "Wells Fargo price-target cut was 9/21 (4 trading days stale by 9/25); no dated 9/25-specific news found.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "COMP",
@@ -24816,14 +25056,14 @@
     "entry_price": 98.57,
     "stop_price": 94.62719999999999,
     "target_price": 106.4556,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No fresh dated catalyst; stock actually slipped slightly (-0.47%) on 09-24, coverage is generic overvaluation/dividend commentary plus a stale 'reaffirmed 2026 guidance after the quarter' reference and general MISO data-center interconnection context -- nothing new dated to 09-25.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "KIM",
@@ -24832,14 +25072,14 @@
     "entry_price": 22.44,
     "stop_price": 21.5424,
     "target_price": 24.235200000000003,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "WebSearch: no fresh dated news for 9/25; Q2 earnings already old, next earnings not until 10/29",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "TPR",
@@ -24848,14 +25088,14 @@
     "entry_price": 113.88,
     "stop_price": 109.3248,
     "target_price": 122.99040000000001,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "Only a routine proxy filing (9/25) restating already-known FY26 results/FY27 guidance; +1.57% move has no fresh dated company-specific event.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "AAON",
@@ -24884,14 +25124,14 @@
     "entry_price": 93.96,
     "stop_price": 90.20159999999998,
     "target_price": 101.4768,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "+2.05% move attributed to diverging analyst price targets/Amazon-volume commentary, not a new dated event; last earnings was Q2 (July).",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "AU",
@@ -24956,14 +25196,14 @@
     "entry_price": 71.05,
     "stop_price": 68.208,
     "target_price": 76.73400000000001,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No dated catalyst found; general pet-care demand weakness cited, next earnings not until 11/5.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "PGR",
@@ -24972,14 +25212,14 @@
     "entry_price": 205.5,
     "stop_price": 197.28,
     "target_price": 221.94000000000003,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "Only dated item is a routine $0.10 quarterly dividend declaration (ex-date 10/1) plus an undated BMO special-dividend estimate raise -- routine dividend is not a catalyst per this project's definition.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "SARO",
@@ -24988,14 +25228,18 @@
     "entry_price": 22.74,
     "stop_price": 21.830399999999997,
     "target_price": 24.5592,
-    "days_held": 1,
-    "status": "open",
+    "days_held": 2,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": true,
       "note": "WebSearch: Jefferies cut StandardAero's price target to $25 from $30 on 9/24/2026 (day before signal), a dated material analyst action.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 21.830399999999997,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "CWEN",
@@ -25004,14 +25248,14 @@
     "entry_price": 29.77,
     "stop_price": 28.5792,
     "target_price": 32.1516,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "Only routine CFO succession (Rubenstein->Ryder) reported generically as 'Sept 2026', not dated to 09-25, plus an ordinary Form 4 insider filing; no earnings/M&A/FDA/guidance/analyst-action found.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "PSN",
@@ -25040,14 +25284,14 @@
     "entry_price": 35.71,
     "stop_price": 34.2816,
     "target_price": 38.5668,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "Search initially surfaced a Solstice Advanced Materials acquisition of ESI ($14.5B) but verified it was announced 07-06-2026 and then MUTUALLY TERMINATED 08-31-2026 -- dead/stale story, not an active 09-25 catalyst. No other dated company-specific driver found for the 3.5% rise.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "ZION",
@@ -25056,14 +25300,14 @@
     "entry_price": 63.83,
     "stop_price": 61.276799999999994,
     "target_price": 68.9364,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "Internal corporate-controller appointment dated 9/23 (2 trading days prior, not market-moving); no fresh dated catalyst found for 9/25; +1.61% move unexplained by any dated event.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "BMY",
@@ -25072,14 +25316,14 @@
     "entry_price": 62.86,
     "stop_price": 60.3456,
     "target_price": 67.8888,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": true,
       "note": "WebSearch: BMY presented Phase 3 EXCALIBER-RRMM trial results (ZENBEXUS/iberdomide combo) on 9/25, positive MRD-negative CR rate data; Zacks upgraded to strong buy same window; stock +2.22%.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "ZBH",
@@ -25088,14 +25332,14 @@
     "entry_price": 91.04,
     "stop_price": 87.39840000000001,
     "target_price": 98.32320000000001,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "Leadership succession effective Oct 1 and reiteration of Aug 5 guidance; no new dated company-specific catalyst for 9/25 despite prior-day moves.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "M",
@@ -25104,14 +25348,14 @@
     "entry_price": 22.64,
     "stop_price": 21.7344,
     "target_price": 24.451200000000004,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "Q2 FY2026 earnings/guidance raise was reported 2026-09-10, two weeks stale relative to 9/25; no fresh dated company-specific news found for 9/25 itself.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "PNC",
@@ -25120,14 +25364,14 @@
     "entry_price": 225.64,
     "stop_price": 216.6144,
     "target_price": 243.6912,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No dated 9/25-specific catalyst found; only generic AI-efficiency-narrative and rate-environment commentary, stock barely moved (+0.16%).",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "FDX",
@@ -25136,14 +25380,14 @@
     "entry_price": 285.85,
     "stop_price": 274.416,
     "target_price": 308.718,
-    "days_held": 1,
+    "days_held": 2,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No fresh dated catalyst; FedEx Freight spin-off was approved back in May 2026 and JPMorgan's PT cut (460->400) was 'earlier in the month' -- both stale by 09-25.",
       "tagged_on": "2026-09-25"
     },
-    "last_checked_date": "2026-09-28"
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "DNA",
@@ -25172,13 +25416,14 @@
     "entry_price": 7.22,
     "stop_price": 6.9312,
     "target_price": 7.7976,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "WebSearch: no dated 9/28 news; only a stale Lake Street PT raise ($8->$10) from 9/18, ~10 days prior. No earnings/M&A/FDA/guidance event found.",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "ALGM",
@@ -25187,13 +25432,14 @@
     "entry_price": 36.94,
     "stop_price": 35.462399999999995,
     "target_price": 39.8952,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "+4.64% attributed to sector-wide AI/semiconductor infrastructure optimism; nearest analyst note (Morgan Stanley Buy reiteration) dated 9/18, stale; no company-specific dated event on 9/28",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "PZZA",
@@ -25202,13 +25448,14 @@
     "entry_price": 20.09,
     "stop_price": 19.2864,
     "target_price": 21.697200000000002,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "WebSearch: multiple law-firm securities class-action press releases dated 9/28, but all riding on the already-known Aug 6 Q2 earnings miss/guidance cut (stock fell 17% that day) -- recycled story, not new information.",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "VRDN",
@@ -25217,13 +25464,18 @@
     "entry_price": 20.57,
     "stop_price": 19.7472,
     "target_price": 22.215600000000002,
-    "days_held": 0,
-    "status": "open",
+    "days_held": 1,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "No fresh catalyst on 9/28: the FDA approval of Lumvoa (main VRDN news found) was announced 2026-06-26, three months stale/already priced in; only other recent item is an RBC price-target raise from 2026-09-22, also not new that day.",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 19.7472,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "NTAP",
@@ -25232,13 +25484,14 @@
     "entry_price": 204.41,
     "stop_price": 196.2336,
     "target_price": 220.7628,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": true,
       "note": "WebSearch: NetApp announced intent to acquire PEAK:AIO (UK AI storage co.) on 9/28/2026 itself, stock up on the day -- dated, company-specific M&A announcement same-day as the signal.",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "GKOS",
@@ -25247,13 +25500,14 @@
     "entry_price": 158.56,
     "stop_price": 152.2176,
     "target_price": 171.24480000000003,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "Only a Form 4 insider filing on 9/28; stock essentially flat that day (-0.45); no dated earnings/M&A/FDA/guidance news found for 9/26-9/28.",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "AEO",
@@ -25262,13 +25516,14 @@
     "entry_price": 17.31,
     "stop_price": 16.6176,
     "target_price": 18.6948,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "+4.4% attributed to rebound/short-covering after earlier-month post-earnings drop -- stale earnings reaction, no new dated event on 9/28",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "TGB",
@@ -25277,13 +25532,14 @@
     "entry_price": 8.8,
     "stop_price": 8.448,
     "target_price": 9.504000000000001,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": "unclear",
       "note": "WebSearch found no news dated 2026-09-28 for Taseko Mines/Trekor Metals; most recent company update found was Aug 19, 2026 (Aley Niobium project status) -- cannot confirm or rule out a same-day catalyst.",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "NRIX",
@@ -25292,13 +25548,14 @@
     "entry_price": 23.67,
     "stop_price": 22.723200000000002,
     "target_price": 25.563600000000005,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "WebSearch (two queries): only generic 2026 pipeline/regulatory updates (DAYBreak CLL trials, Project Optimus dosing) found, none dated to or near 9/28. No dated catalyst identified.",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "ADMA",
@@ -25307,13 +25564,14 @@
     "entry_price": 10.12,
     "stop_price": 9.7152,
     "target_price": 10.9296,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "MarketBeat/Cerbat Gem explicitly note stock +5.9% 'despite only modest biotech strength with no clear catalyst identified'; no dated company-specific event found",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "TTAN",
@@ -25322,13 +25580,14 @@
     "entry_price": 59.92,
     "stop_price": 57.5232,
     "target_price": 64.7136,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": "unclear",
       "note": "No specific dated news/announcement found for 2026-09-28; coverage describes only a continued technical dip-buying bounce from an early-month selloff, no identifiable company-specific event that day.",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "NKE",
@@ -25337,13 +25596,14 @@
     "entry_price": 36.39,
     "stop_price": 34.9344,
     "target_price": 39.3012,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "WebSearch (checked independently of the Oct 1 earnings watch flag per instructions): 9/28 move (+2.08%) reads as earnings-anticipation trading ahead of the not-yet-occurred Oct 1 report, plus mixed/negative analyst PT changes (Piper Sandler to $38, BofA to $30 underperform) in earnings-preview coverage -- no independent dated catalyst that has actually happened yet.",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "DRH",
@@ -25352,13 +25612,14 @@
     "entry_price": 12.64,
     "stop_price": 12.1344,
     "target_price": 13.651200000000001,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No news found dated 9/26-9/28; last major event was July guidance raise (stale); CEO said 'nothing imminent' on M&A at Aug earnings call.",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "PPC",
@@ -25367,13 +25628,14 @@
     "entry_price": 28.11,
     "stop_price": 26.985599999999998,
     "target_price": 30.358800000000002,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "WebSearch: +1.04% on 9/28 with no specific news found; stock actually down 12% over the trailing month. No dated catalyst identified.",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "SHOP",
@@ -25382,13 +25644,14 @@
     "entry_price": 144.01,
     "stop_price": 138.2496,
     "target_price": 155.5308,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No fresh dated catalyst on 9/28; move (+1.24%) tied to ongoing AI-agentic-commerce narrative (Meta Muse/Shop Pay integration) and stale analyst notes (Mizuho reiterated Sep 23), not new company-specific news that day.",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "QURE",
@@ -25397,13 +25660,18 @@
     "entry_price": 39.11,
     "stop_price": 37.5456,
     "target_price": 42.238800000000005,
-    "days_held": 0,
-    "status": "open",
+    "days_held": 1,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": true,
       "note": "AMT-130 48mo Huntington's data readout: missed statistical significance (44% vs prior 75% at 36mo), stock -62-64% -- real negative binary trial event",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 37.5456,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "NBIX",
@@ -25412,13 +25680,14 @@
     "entry_price": 140.44,
     "stop_price": 134.8224,
     "target_price": 151.67520000000002,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "WebSearch: Bernstein (9/26) and RBC (9/23) reiterated existing Buy ratings, days before the signal, no new info. Soleno acquisition announced 4/6/26, completed 5/18/26 -- both stale/unrelated. No dated 9/28 event found.",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "XERS",
@@ -25427,13 +25696,18 @@
     "entry_price": 9.83,
     "stop_price": 9.4368,
     "target_price": 10.6164,
-    "days_held": 0,
-    "status": "open",
+    "days_held": 1,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "No fresh dated catalyst on 9/28; only prior item is a Wall Street Zen upgrade from 2026-09-19 (stale) plus an insider's proposed share sale (not a catalyst), no new company-specific news identified for that day.",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 10.6164,
+    "exit_reason": "target",
+    "pct_return": 0.08
   },
   {
     "ticker": "MDLN",
@@ -25442,13 +25716,14 @@
     "entry_price": 35.07,
     "stop_price": 33.6672,
     "target_price": 37.875600000000006,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "WebSearch: law firm 'investor investigation' press releases dated 9/28 are ambulance-chasing off the already-known Aug 5 FDA-letter earnings miss (stock fell 12.8% that day) -- not new company-specific info, not a genuine analyst action.",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "SHO",
@@ -25457,13 +25732,14 @@
     "entry_price": 11.3,
     "stop_price": 10.848,
     "target_price": 12.204000000000002,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No dated company-specific catalyst found; only routine /bin/bash.09 dividend ex-date (Sep 30) noted, no earnings/M&A/FDA/guidance/analyst news for Sep 28 (Yahoo/Fool/SimplyWallSt/SeekingAlpha).",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "ODFL",
@@ -25472,13 +25748,14 @@
     "entry_price": 176.85,
     "stop_price": 169.77599999999998,
     "target_price": 190.99800000000002,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "WebSearch: gain attributed to a 4.90% general rate increase announced 9/21 (7 days prior, effective 10/5) and a board appointment 9/22 -- both already-known, more than a day stale by 9/28, not a fresh dated event.",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "ENB",
@@ -25487,13 +25764,14 @@
     "entry_price": 46.97,
     "stop_price": 45.0912,
     "target_price": 50.7276,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No dated 9/28 catalyst; stock down 0.86% that day; recent Tallgrass/Salt Creek M&A activity is from prior weeks, already stale.",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "ALVO",
@@ -25502,13 +25780,18 @@
     "entry_price": 6.15,
     "stop_price": 5.904,
     "target_price": 6.642000000000001,
-    "days_held": 0,
-    "status": "open",
+    "days_held": 1,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": "unclear",
       "note": "No news specific to 9/28 found via WebSearch; nearest item is a Barclays upgrade dated 9/29 (after signal date) -- inconclusive",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 5.904,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "BJ",
@@ -25517,13 +25800,14 @@
     "entry_price": 96.81,
     "stop_price": 92.9376,
     "target_price": 104.55480000000001,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "+3.2% linked to interchange-fee litigation benefit disclosed in an early-September SEC filing and prior Q2 results -- stale news, no new dated event on 9/28",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "TNDM",
@@ -25532,13 +25816,14 @@
     "entry_price": 16.42,
     "stop_price": 15.763200000000001,
     "target_price": 17.733600000000003,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": true,
       "note": "Tandem Diabetes announced international launch of Tandem Mobi insulin pump to 12 countries across Europe/Israel; stock +3.3% to +7.7% same period (Simply Wall St/Yahoo Finance).",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "NKTR",
@@ -25547,13 +25832,18 @@
     "entry_price": 60.4,
     "stop_price": 57.983999999999995,
     "target_price": 65.232,
-    "days_held": 0,
-    "status": "open",
+    "days_held": 1,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "WebSearch: stock down 4% on 9/28 continuing an existing month-long fade (-21% over 30 days); no dated company-specific news found for 9/28 itself.",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 57.983999999999995,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "HTFL",
@@ -25562,13 +25852,14 @@
     "entry_price": 49.92,
     "stop_price": 47.9232,
     "target_price": 53.9136,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No dated 9/26-9/28 catalyst; last analyst action (Canaccord PT raise to $56) was Sept 22, stale; CFO insider sales were Sept 2-4.",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "APLE",
@@ -25577,13 +25868,14 @@
     "entry_price": 16.35,
     "stop_price": 15.696000000000002,
     "target_price": 17.658,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "Only +0.99% move; sole upcoming item is routine monthly-distribution ex-dividend date 9/30 -- not material/dated to 9/28, no other catalyst found",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "TXG",
@@ -25592,13 +25884,14 @@
     "entry_price": 88.5,
     "stop_price": 84.96,
     "target_price": 95.58000000000001,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": true,
       "note": "Argus analyst John Eade initiated coverage on 10x Genomics with a Buy rating on 2026-09-28, cited as driver of stock hitting a new 52-week high (+3.3%) (StockStory/GuruFocus).",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "KMT",
@@ -25607,13 +25900,14 @@
     "entry_price": 31.8,
     "stop_price": 30.528,
     "target_price": 34.344,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No dated 9/28 catalyst; board chairman succession (effective Oct 28) is governance news, not earnings/M&A/FDA/analyst action; no FY27 Q1 earnings yet (FQ1 ends 9/30, historically reported in Nov).",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "KOD",
@@ -25622,13 +25916,18 @@
     "entry_price": 89.92,
     "stop_price": 86.3232,
     "target_price": 97.1136,
-    "days_held": 0,
-    "status": "open",
+    "days_held": 1,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": true,
       "note": "Real, twice-replicated Phase 3 DAYBREAK data (Zenkuda + KSI-501 both met wet-AMD endpoints) -- reached CANDIDATE in advisory pipeline, council-downgraded to WATCH (squeeze/dilution/comparator risk)",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 86.3232,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "KOD",
@@ -25637,13 +25936,18 @@
     "entry_price": 89.92,
     "stop_price": 86.3232,
     "target_price": 97.1136,
-    "days_held": 0,
-    "status": "open",
+    "days_held": 1,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": true,
       "note": "Real, twice-replicated Phase 3 DAYBREAK data (Zenkuda + KSI-501 both met wet-AMD endpoints) -- reached CANDIDATE in advisory pipeline, council-downgraded to WATCH (squeeze/dilution/comparator risk)",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 86.3232,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "CYTK",
@@ -25652,13 +25956,14 @@
     "entry_price": 66.16,
     "stop_price": 63.5136,
     "target_price": 71.4528,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No dated 9/26-9/28 catalyst; Barclays $110 PT raise was Aug 13 (stale, Q2 Myqorzo sales beat); CEO sold ~$491K stock 9/28 per Form 4 (routine insider sale, not a catalyst).",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "REYN",
@@ -25667,13 +25972,14 @@
     "entry_price": 22.08,
     "stop_price": 21.196799999999996,
     "target_price": 23.8464,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "WebSearch: no dated 9/28 news found; most recent company events are an April dividend declaration and a July guidance reaffirmation, both stale.",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "ACGL",
@@ -25682,13 +25988,14 @@
     "entry_price": 94.9,
     "stop_price": 91.104,
     "target_price": 102.49200000000002,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "Only news found: routine 8-K announcing Q3 earnings release date (Oct 27)/call -- scheduling, not guidance or new info; no other dated company-specific event found",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "CLRO",
@@ -25697,13 +26004,18 @@
     "entry_price": 5.1,
     "stop_price": 4.896,
     "target_price": 5.508,
-    "days_held": 0,
-    "status": "open",
+    "days_held": 1,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "Only real event (Cortigent/Vivani reverse merger) is 3mo stale (07-01); sources directly contradict each other on same-day direction; no fresh dated catalyst found",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 4.896,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "INLF",
@@ -25712,13 +26024,18 @@
     "entry_price": 5.23,
     "stop_price": 5.0208,
     "target_price": 5.6484000000000005,
-    "days_held": 0,
-    "status": "open",
+    "days_held": 1,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": "unclear",
       "note": "Real corporate actions found (share capital reorg completed 9/25, ATM ended 9/24 after $21M raise, stock +116% Fri 9/25) but these are 3 days before the 9/28 signal date and no 9/28-specific news was found -- can't confirm this drove the 9/28 signal.",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 5.0208,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "CAAP",
@@ -25727,13 +26044,14 @@
     "entry_price": 26.05,
     "stop_price": 25.008,
     "target_price": 28.134000000000004,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": true,
       "note": "Argentine AARG concession renegotiation announced 09-28: tariff dollarization, 18yr/conditional extension to 2056 (firm term 2049), 14.3% IRR -- reached CANDIDATE in advisory pipeline, council-downgraded to WATCH",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "CAAP",
@@ -25742,13 +26060,14 @@
     "entry_price": 26.05,
     "stop_price": 25.008,
     "target_price": 28.134000000000004,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": true,
       "note": "Argentine AARG concession renegotiation announced 09-28: tariff dollarization, 18yr/conditional extension to 2056 (firm term 2049), 14.3% IRR -- reached CANDIDATE in advisory pipeline, council-downgraded to WATCH",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "OUT",
@@ -25757,13 +26076,14 @@
     "entry_price": 27.91,
     "stop_price": 26.793599999999998,
     "target_price": 30.1428,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "WebSearch: no dated 9/28 news; only an undated analyst fair-value raise, a Snapchat/HBO Max AR campaign with unclear date, and a dividend ex-date that already passed (9/4).",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "LQDA",
@@ -25772,13 +26092,18 @@
     "entry_price": 73.67,
     "stop_price": 70.7232,
     "target_price": 79.56360000000001,
-    "days_held": 0,
-    "status": "open",
+    "days_held": 1,
+    "status": "closed",
     "catalyst": {
       "has_catalyst": false,
       "note": "Stock +7.64% on 9/28 but explicitly attributed by coverage to broader PAH/healthcare-sector momentum (alongside United Therapeutics, Ligand gains), not a company-specific dated event; no LQDA-specific FDA/earnings/M&A news found.",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29",
+    "exit_date": "2026-09-29",
+    "exit_price": 70.7232,
+    "exit_reason": "stop",
+    "pct_return": -0.04
   },
   {
     "ticker": "TT",
@@ -25787,13 +26112,14 @@
     "entry_price": 452.06,
     "stop_price": 433.9776,
     "target_price": 488.2248,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": true,
       "note": "Trane Technologies announced (2026-09-28) expansion of data-center thermal-management portfolio with two 250MW NVIDIA DSX AI Factory reference designs -- dated, company-specific product/partnership news (ad-hoc-news.de).",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "CNK",
@@ -25802,13 +26128,14 @@
     "entry_price": 38.38,
     "stop_price": 36.8448,
     "target_price": 41.45040000000001,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No dated 9/28 event found; analyst target changes and JPMorgan downgrade predate this, VF Trust share-return filing dated 9/25 -- no fresh company-specific catalyst",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "HLF",
@@ -25817,13 +26144,14 @@
     "entry_price": 12.6,
     "stop_price": 12.096,
     "target_price": 13.608,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "Herbalife India announced an Asian Games 2026 nutrition-sponsorship deal with the Indian Olympic Association on 9/28 (dated, sourced), but it's a subsidiary marketing tie-up -- not earnings/M&A/FDA/guidance/analyst action -- doesn't meet the catalyst definition.",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "TFX",
@@ -25832,13 +26160,14 @@
     "entry_price": 127.38,
     "stop_price": 122.28479999999999,
     "target_price": 137.5704,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": true,
       "note": "BofA Securities upgraded TFX from Neutral to Buy, PT raised $145->$158, same-day driver of +4.3-4.5% move (MarketBeat/StockStory/GuruFocus, dated 2026-09-28).",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "LFCR",
@@ -25847,13 +26176,14 @@
     "entry_price": 6.52,
     "stop_price": 6.259199999999999,
     "target_price": 7.0416,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": true,
       "note": "Definitive acquisition agreement 09-28: Webster Equity Partners buying at 6.28/share cash + CVR up to 9.67, close expected end-Q4 2026",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "LFCR",
@@ -25862,13 +26192,14 @@
     "entry_price": 6.52,
     "stop_price": 6.259199999999999,
     "target_price": 7.0416,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": true,
       "note": "Definitive acquisition agreement 09-28: Webster Equity Partners buying at 6.28/share cash + CVR up to 9.67, close expected end-Q4 2026",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "HHH",
@@ -25877,13 +26208,14 @@
     "entry_price": 73.95,
     "stop_price": 70.992,
     "target_price": 79.86600000000001,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": true,
       "note": "Insider buying disclosed 09-23 (Grandisson ~1.6M, Davis ~0.07M) plus vague analyst-upgrade chatter -- real but small, reaction already 3rd consecutive up day per advisory research",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "ERO",
@@ -25892,13 +26224,14 @@
     "entry_price": 37.41,
     "stop_price": 35.913599999999995,
     "target_price": 40.4028,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "No dated 9/26-9/28 catalyst; last analyst action (CIBC PT raise to C$56) was Sept 23, stale by the 9/28 signal date.",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "AGEN",
@@ -25907,13 +26240,14 @@
     "entry_price": 9.43,
     "stop_price": 9.0528,
     "target_price": 10.1844,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": true,
       "note": "Rodman & Renshaw initiated coverage Buy, $19 PT, dated 9/28; stock +12.4% intraday on elevated volume (2.76M vs 928K avg) -- dated, company-specific analyst action",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "ABCL",
@@ -25922,13 +26256,14 @@
     "entry_price": 13.92,
     "stop_price": 13.363199999999999,
     "target_price": 15.033600000000002,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": true,
       "note": "JPMorgan initiated coverage Overweight, $17 PT, 9/28 -- shares hit new 52wk high (+2.1% premarket); dated, company-specific analyst action",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "CPB",
@@ -25937,13 +26272,14 @@
     "entry_price": 20.04,
     "stop_price": 19.2384,
     "target_price": 21.6432,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "+3.5% described as rebound after Sept selloff on stale debt-reduction/credit-agreement actions and Sept 3 Q4 earnings -- no new dated event specifically on 9/28",
       "tagged_on": "2026-09-28"
-    }
+    },
+    "last_checked_date": "2026-09-29"
   },
   {
     "ticker": "WAY",
@@ -25952,12 +26288,808 @@
     "entry_price": 25.74,
     "stop_price": 24.710399999999996,
     "target_price": 27.7992,
-    "days_held": 0,
+    "days_held": 1,
     "status": "open",
     "catalyst": {
       "has_catalyst": false,
       "note": "Strategic-alternatives/potential-sale report (Evercore/Barclays advising) broke 2026-09-15, ~2 weeks before the signal date -- stale/already priced in per lessons.md #6, not a fresh 9/28 catalyst; no new dated news found for 9/28 itself.",
       "tagged_on": "2026-09-28"
+    },
+    "last_checked_date": "2026-09-29"
+  },
+  {
+    "ticker": "PEG",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 67.68,
+    "stop_price": 64.9728,
+    "target_price": 73.09440000000001,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "FWRG",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 10.38,
+    "stop_price": 9.9648,
+    "target_price": 11.210400000000002,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "FIG",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 20.72,
+    "stop_price": 19.891199999999998,
+    "target_price": 22.3776,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "ENTG",
+    "setup": "breakout",
+    "entry_date": "2026-09-29",
+    "entry_price": 154.77,
+    "stop_price": 148.57920000000001,
+    "target_price": 167.15160000000003,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "AVTX",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 15.58,
+    "stop_price": 14.9568,
+    "target_price": 16.8264,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "ATI",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 188.95,
+    "stop_price": 181.392,
+    "target_price": 204.066,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "BEAM",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 24.52,
+    "stop_price": 23.539199999999997,
+    "target_price": 26.4816,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "NTAP",
+    "setup": "vcp_breakout",
+    "entry_date": "2026-09-29",
+    "entry_price": 209.18,
+    "stop_price": 200.8128,
+    "target_price": 225.91440000000003,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "ENPH",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 31.83,
+    "stop_price": 30.556799999999996,
+    "target_price": 34.376400000000004,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "UMAC",
+    "setup": "ema_cross",
+    "entry_date": "2026-09-29",
+    "entry_price": 24.94,
+    "stop_price": 23.9424,
+    "target_price": 26.935200000000002,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "PGY",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 17.37,
+    "stop_price": 16.6752,
+    "target_price": 18.759600000000002,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "SSTI",
+    "setup": "breakout",
+    "entry_date": "2026-09-29",
+    "entry_price": 8.21,
+    "stop_price": 7.881600000000001,
+    "target_price": 8.866800000000001,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Signed definitive merger agreement with Transom Capital Group, dated 09-28, up to 11.00/share cash+CVR",
+      "tagged_on": "2026-09-29"
     }
+  },
+  {
+    "ticker": "SSTI",
+    "setup": "ema_cross",
+    "entry_date": "2026-09-29",
+    "entry_price": 8.21,
+    "stop_price": 7.881600000000001,
+    "target_price": 8.866800000000001,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Signed definitive merger agreement with Transom Capital Group, dated 09-28, up to 11.00/share cash+CVR",
+      "tagged_on": "2026-09-29"
+    }
+  },
+  {
+    "ticker": "CBOE",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 261.75,
+    "stop_price": 251.28,
+    "target_price": 282.69,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "CHDN",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 76.16,
+    "stop_price": 73.11359999999999,
+    "target_price": 82.25280000000001,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "CSX",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 46.93,
+    "stop_price": 45.0528,
+    "target_price": 50.684400000000004,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "CCL",
+    "setup": "breakout",
+    "entry_date": "2026-09-29",
+    "entry_price": 25.11,
+    "stop_price": 24.1056,
+    "target_price": 27.1188,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "09-28's earnings beat was the real catalyst; 09-29 was a slight pullback (-0.66% to -1.27%) with no fresh dated news of its own",
+      "tagged_on": "2026-09-29"
+    }
+  },
+  {
+    "ticker": "CCL",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 25.11,
+    "stop_price": 24.1056,
+    "target_price": 27.1188,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "09-28's earnings beat was the real catalyst; 09-29 was a slight pullback (-0.66% to -1.27%) with no fresh dated news of its own",
+      "tagged_on": "2026-09-29"
+    }
+  },
+  {
+    "ticker": "FLNC",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 7.82,
+    "stop_price": 7.5072,
+    "target_price": 8.4456,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "CSIQ",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 11.55,
+    "stop_price": 11.088000000000001,
+    "target_price": 12.474000000000002,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Phase IV Research bullish note + short-covering off a fresh 52-week low, dated 09-29 -- single research-note call against a broader Reduce sell-side consensus",
+      "tagged_on": "2026-09-29"
+    }
+  },
+  {
+    "ticker": "PPLI",
+    "setup": "breakout",
+    "entry_date": "2026-09-29",
+    "entry_price": 40.74,
+    "stop_price": 39.1104,
+    "target_price": 43.9992,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "PPLI",
+    "setup": "ema_cross",
+    "entry_date": "2026-09-29",
+    "entry_price": 40.74,
+    "stop_price": 39.1104,
+    "target_price": 43.9992,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "YELP",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 18.28,
+    "stop_price": 17.5488,
+    "target_price": 19.742400000000004,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "SOUN",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 5.84,
+    "stop_price": 5.6064,
+    "target_price": 6.3072,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "WYY",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 7.35,
+    "stop_price": 7.055999999999999,
+    "target_price": 7.938,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Relief bounce 4 sessions after a GAO decision sustaining a protest against a DHS contract award; dispute still unresolved, no new catalyst",
+      "tagged_on": "2026-09-29"
+    }
+  },
+  {
+    "ticker": "NFLX",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 70.3,
+    "stop_price": 67.488,
+    "target_price": 75.924,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "DNA",
+    "setup": "breakout",
+    "entry_date": "2026-09-29",
+    "entry_price": 11.96,
+    "stop_price": 11.4816,
+    "target_price": 12.916800000000002,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Only a minor Ginkgo Datapoints/Apheris partnership, doesn't explain the move; unexplained-bounce pattern continues (4th+ appearance)",
+      "tagged_on": "2026-09-29"
+    }
+  },
+  {
+    "ticker": "LMND",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 44.6,
+    "stop_price": 42.816,
+    "target_price": 48.168000000000006,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "ICL",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 5.17,
+    "stop_price": 4.9632,
+    "target_price": 5.583600000000001,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "OGN",
+    "setup": "ema_cross",
+    "entry_date": "2026-09-29",
+    "entry_price": 13.74,
+    "stop_price": 13.1904,
+    "target_price": 14.839200000000002,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "AHRT",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 6.02,
+    "stop_price": 5.7791999999999994,
+    "target_price": 6.5016,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "TTWO",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 202.78,
+    "stop_price": 194.6688,
+    "target_price": 219.00240000000002,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "AEM",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 185.83,
+    "stop_price": 178.3968,
+    "target_price": 200.69640000000004,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "STRZ",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 22.18,
+    "stop_price": 21.2928,
+    "target_price": 23.9544,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "XEL",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 70.69,
+    "stop_price": 67.8624,
+    "target_price": 76.3452,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "IR",
+    "setup": "ema_cross",
+    "entry_date": "2026-09-29",
+    "entry_price": 76.48,
+    "stop_price": 73.4208,
+    "target_price": 82.59840000000001,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "PINS",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 18.54,
+    "stop_price": 17.798399999999997,
+    "target_price": 20.0232,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "LIND",
+    "setup": "breakout",
+    "entry_date": "2026-09-29",
+    "entry_price": 31.27,
+    "stop_price": 30.019199999999998,
+    "target_price": 33.7716,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "FPI",
+    "setup": "breakout",
+    "entry_date": "2026-09-29",
+    "entry_price": 11.09,
+    "stop_price": 10.6464,
+    "target_price": 11.9772,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "RCUS",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 25.65,
+    "stop_price": 24.624,
+    "target_price": 27.702,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "DASH",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 187.1,
+    "stop_price": 179.61599999999999,
+    "target_price": 202.068,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "NAVN",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 20.69,
+    "stop_price": 19.8624,
+    "target_price": 22.345200000000002,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "CUBE",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 37.87,
+    "stop_price": 36.355199999999996,
+    "target_price": 40.8996,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "KREF",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 6.38,
+    "stop_price": 6.1248,
+    "target_price": 6.8904000000000005,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "CVNA",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 63.62,
+    "stop_price": 61.075199999999995,
+    "target_price": 68.7096,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "PNW",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 93.4,
+    "stop_price": 89.664,
+    "target_price": 100.87200000000001,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "DCH",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 5.31,
+    "stop_price": 5.097599999999999,
+    "target_price": 5.7348,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "IOVA",
+    "setup": "breakout",
+    "entry_date": "2026-09-29",
+    "entry_price": 14.45,
+    "stop_price": 13.871999999999998,
+    "target_price": 15.606,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Real FY26 revenue guidance raise (to 410-420M from 350-370M) beating consensus, dated 09-29",
+      "tagged_on": "2026-09-29"
+    }
+  },
+  {
+    "ticker": "PPL",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 32.58,
+    "stop_price": 31.276799999999998,
+    "target_price": 35.1864,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "SYK",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 278.77,
+    "stop_price": 267.6192,
+    "target_price": 301.0716,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "EXR",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 133.49,
+    "stop_price": 128.1504,
+    "target_price": 144.16920000000002,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "SMA",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 32.35,
+    "stop_price": 31.056,
+    "target_price": 34.938,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "SRE",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 78.18,
+    "stop_price": 75.0528,
+    "target_price": 84.43440000000001,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "REPL",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 13,
+    "stop_price": 12.48,
+    "target_price": 14.040000000000001,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "GHRS",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 24.67,
+    "stop_price": 23.6832,
+    "target_price": 26.643600000000003,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "VIRT",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 53.75,
+    "stop_price": 51.6,
+    "target_price": 58.050000000000004,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "CDP",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 34.28,
+    "stop_price": 32.9088,
+    "target_price": 37.022400000000005,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "BA",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 187.68,
+    "stop_price": 180.1728,
+    "target_price": 202.69440000000003,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "LNT",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 64.34,
+    "stop_price": 61.766400000000004,
+    "target_price": 69.4872,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "BIPC",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 35.69,
+    "stop_price": 34.2624,
+    "target_price": 38.5452,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "GAP",
+    "setup": "breakout",
+    "entry_date": "2026-09-29",
+    "entry_price": 23.54,
+    "stop_price": 22.598399999999998,
+    "target_price": 25.4232,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "FE",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 43.64,
+    "stop_price": 41.8944,
+    "target_price": 47.13120000000001,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "PCOR",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 49.54,
+    "stop_price": 47.5584,
+    "target_price": 53.5032,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "WRBY",
+    "setup": "breakout",
+    "entry_date": "2026-09-29",
+    "entry_price": 27.47,
+    "stop_price": 26.371199999999998,
+    "target_price": 29.6676,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "3rd directional flip in 3 sessions on the same recycled AI-glasses/Google-partnership narrative, no new dated catalyst",
+      "tagged_on": "2026-09-29"
+    }
+  },
+  {
+    "ticker": "HLT",
+    "setup": "ema_cross",
+    "entry_date": "2026-09-29",
+    "entry_price": 323.44,
+    "stop_price": 310.50239999999997,
+    "target_price": 349.3152,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "PATH",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 12.32,
+    "stop_price": 11.8272,
+    "target_price": 13.305600000000002,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "MAC",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 22.89,
+    "stop_price": 21.9744,
+    "target_price": 24.721200000000003,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "NXE",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 9.03,
+    "stop_price": 8.6688,
+    "target_price": 9.7524,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
+  },
+  {
+    "ticker": "CARG",
+    "setup": "mean_reversion",
+    "entry_date": "2026-09-29",
+    "entry_price": 31.16,
+    "stop_price": 29.9136,
+    "target_price": 33.6528,
+    "days_held": 0,
+    "status": "open",
+    "catalyst": null
   }
 ]
