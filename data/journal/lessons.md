@@ -151,3 +151,36 @@ Action: when moderating council, explicitly check whether both sides
 independently found the same facts (not just whether they disagree on
 interpretation) — unprompted agreement on a specific risk is more
 reliable than either side's argued position.
+
+## 9. During a bullish market stretch, a WATCH capped on "real catalyst,
+but already extended / valuation / who's-the-counterparty" tends to cost
+more real gains than a WATCH capped on a thin or sector-wide catalyst
+Evidenced by the 2026-09-30 outcome-check pass (user-requested, covering
+~09-15 to 09-24, a specifically bullish 2-week window) — 8 clean "cost a
+winner" misses out of 31 checked, and every one of the 8 shares the same
+shape: a genuine, dated, positive, company-specific catalyst existed
+(CRWD's real news within a hot cluster, TEM's 09-16 continuation,
+VICR's fab expansion + buyback, DNA's Lilly partnership, MRNA's ESMO
+acceptance, GRAL's 7-2 favorable FDA vote, DSP's withdrawn secondary,
+SECZ's SEC exemption + Cantor initiation), and the WATCH cap was
+specifically about entry timing, overextension, valuation, or an
+unnamed/unconfirmed counterparty — never about doubting that the
+catalyst itself was real. Meanwhile, the pass's "validated" calls mostly
+shared the opposite shape: either a real-but-thin/sector-wide catalyst
+sitting on top of a genuine unresolved negative (OKLO's still-bearish
+technical structure, FCEL's escalating securities-fraud case, INTC's
+broad chip-sector selloff), or a mechanically capped setup with no real
+room to run regardless of tape direction (WBD pinned at its own deal
+price, INIO's back-loaded 2028 delivery benefit, ABBV/GNRC/RARE all
+retesting a technical level that had already failed once).
+Action: when council or research.md caps a ticker at WATCH specifically
+because a genuine catalyst looks "already priced in" or "too extended"
+rather than because the catalyst itself is doubted, treat that as the
+single highest-risk WATCH category for costing a real winner in a
+bullish tape — worth a tighter re-check cadence (don't wait the full
+5-day time-stop) rather than filing it away as resolved caution. This is
+NOT license to promote such calls to CANDIDATE by default — council.md's
+bar stays exactly where it is per CLAUDE.md's calibration rule — it's a
+sharper signal for WHICH downgrades deserve a faster second look. N=31,
+still directional per journal.md's own sample-size rule; flagged to the
+user directly rather than acted on unilaterally.

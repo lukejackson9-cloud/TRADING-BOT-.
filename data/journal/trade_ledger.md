@@ -191,7 +191,7 @@ project, every one downgraded to WATCH at council. Common threads:
   since the verdict (9/9 earnings pop, 9/10 verdict); no confirmed 9/10 or
   9/11 close was found. Re-check in a few more days.
 
-### ABBV — 2026-09-15, council-downgraded (first review under the expanded 4-role council), PENDING
+### ABBV — 2026-09-15, council-downgraded (first review under the expanded 4-role council), RESOLVED
 - **What happened**: +3.8-4.4% over 9/9-9/15 on four largely independent
   real catalysts — a positive Phase 3 LUNA readout for atogepant
   (p<0.0001 primary + all 8 secondaries), the Apogee Therapeutics
@@ -227,8 +227,17 @@ project, every one downgraded to WATCH at council. Common threads:
 - **Outcome**: PENDING — re-check whether ABBV actually clears $266.88 on
   real volume without giving it back, which per the council file would be
   "a materially different, re-checkable setup."
+- **How it ended (RESOLVED 2026-09-30)**: Massive OHLCV confirms the exact
+  repeated-failure pattern predicted: intraday ATH tagged 9/23 ($269.39)
+  but closed lower same day ($265.08); pulled back two more sessions;
+  pushed to a marginal new closing ATH 9/28 ($266.28) then gave it
+  straight back, closing 9/29 at $263.29. Net change over the full 2-week
+  window: +0.10% -- essentially flat despite a broadly bullish tape and
+  two separate attempts to break out. **Correct** -- the "unresolved
+  retest of a level that already failed once, on thin volume" call held
+  exactly as written.
 
-### NRXS — 2026-09-17, council-downgraded, PENDING
+### NRXS — 2026-09-17, council-downgraded, RESOLVED (unclear)
 - **What happened**: NeurAxis (small-cap medtech, PENFS/IB-Stim
   neuromodulation therapy for gut-brain disorders) +21.75% on 09-16 on a
   real, dated, company-specific catalyst — a new national payer coverage
@@ -262,8 +271,16 @@ project, every one downgraded to WATCH at council. Common threads:
   without giving back more of the gain, and whether margin/revenue
   trends continue next quarter without a new dilutive raise, which would
   be a materially different, re-checkable setup.
+- **How it ended (RESOLVED 2026-09-30)**: Genuinely a wash. Massive OHLCV
+  shows rangebound chop between $6.94-$8.06 (the exact intraday range set
+  on the catalyst day itself), net +1.70% to $7.76 by 9/29 -- never broke
+  out further, never faded to validate the overextension caution either.
+  No new dilutive raise found (standing ATM shelf unused), cash still
+  thin (~$4M as of 9/21, no debt). **Unclear** -- basing in place exactly
+  as flagged, but the going-concern/dilution risk hasn't materialized nor
+  been disproven at this horizon; genuinely too early to call either way.
 
-### GNRC — 2026-09-18, council-downgraded, PENDING
+### GNRC — 2026-09-18, council-downgraded, RESOLVED
 - **What happened**: Generac (backup-generator/power-equipment maker)
   +18.34% on 09-17 on a real, dated, idiosyncratic catalyst — a
   long-term Amazon data-center supply deal (up to $8B, $2.4B of
@@ -282,8 +299,19 @@ project, every one downgraded to WATCH at council. Common threads:
 - **Outcome**: PENDING — re-check if GNRC bases constructively near
   $200 without giving back further ground, or if the deferred $2.4B in
   deliveries starts showing up in forward guidance.
+- **How it ended (RESOLVED 2026-09-30)**: The entry-timing call was
+  correct: price fell through the suggested $200.93 warrant-strike level,
+  bottoming at a $193.96 intraday low / $198.05 close on 9/24 (a real
+  -4.5% to -6.6% drawdown from the verdict close) before recovering to
+  $212.22 by 9/29 (+2.30% net). UBS ($340) and Cantor ($333) have since
+  raised targets well above spot on deal follow-through. **Correct** on
+  the specific near-term exhaustion/entry-timing call (chasing the close
+  would have meant sitting through a real drawdown for a small net gain)
+  -- the longer-dated fundamental bull case remains open and unresolved
+  at this 8-session horizon, worth a fresh look if it keeps climbing
+  toward those targets.
 
-### RARE — 2026-09-18, council-downgraded, PENDING
+### RARE — 2026-09-18, council-downgraded, RESOLVED
 - **What happened**: Ultragenyx +12.58% on 09-17 on FDA approval of
   FAYUVI, the first-ever treatment for pediatric Sanfilippo syndrome
   type A — genuinely separable (different modality/target/program) from
@@ -304,8 +332,17 @@ project, every one downgraded to WATCH at council. Common threads:
 - **Outcome**: PENDING — re-check if Ultragenyx discloses real
   pricing/reimbursement traction on FAYUVI or a credible path to
   offsetting the Angelman loss.
+- **How it ended (RESOLVED 2026-09-30)**: Price action matches the
+  "modest bounce, not a turnaround" call almost exactly -- choppy, +5.58%
+  net to $15.32 by 9/29, range $14.07-$16.12, no breakout. A complicating
+  wrinkle: sell-side has since re-rated more bullish than the downgrade
+  had (Cantor/Canaccord to $39, Citi $32, Morgan Stanley $20) -- but
+  actual traded price hasn't followed at all, still nowhere near even the
+  lowest of those targets. **Correct** on the traded outcome; the
+  analyst-target gap vs. actual price is worth revisiting if it starts
+  closing.
 
-### SECZ — 2026-09-21, council-downgraded, PENDING
+### SECZ — 2026-09-21, council-downgraded, RESOLVED
 - **What happened**: Securitize (tokenization-infrastructure company,
   SPAC-listed July 2026) +21.61% on 09-18 on a real SEC "Innovation
   Exemption" order (09-17) permitting limited on-chain trading of
@@ -328,6 +365,17 @@ project, every one downgraded to WATCH at council. Common threads:
   the exemption requires to directly benefit.
 - **Outcome**: PENDING — re-check if SECZ bases constructively without
   giving back the gain, or confirms TSV status directly.
+- **How it ended (RESOLVED 2026-09-30)**: Kept climbing hard, without us.
+  New highs through 9/23 ($14.57), continuing to $16.63 by 9/28 before a
+  pullback to $15.84 on 9/29 -- net +17.3% from the verdict close (period
+  high $17.01, +26% off that close). Cantor Fitzgerald's Overweight/$21.20
+  initiation held, and the market kept bidding the stock despite the
+  valuation getting even more stretched (P/S now 64x vs. a 33.7x
+  historical median). The stretched-valuation and thin-trading-history
+  concerns were factually correct but did not stop the move, and no
+  lockup-driven selloff has shown up yet. **Incorrect** -- this is a real,
+  identifiable cost of the downgrade during this bullish stretch, not a
+  near-miss.
 
 ---
 
@@ -453,3 +501,113 @@ pass, they are not evidence either way.
 | 09-10 | TBBK | PASS | clean structural negative (Chime/Stride partner-loss risk) | Not checked — search budget exhausted this pass |
 | 09-10 | BRZE | WATCH | real beat undercut by soft forward guidance, GWRE-shaped pattern | Not checked — search budget exhausted this pass |
 | 09-10 | SIG | WATCH | real beat-and-raise but reaction already fired, now reversing | Not checked — search budget exhausted this pass |
+
+## Outcome-check pass, 2026-09-30 (user-requested, "bullish 2 weeks, we have nothing")
+
+User directly asked whether the council/WATCH strictness has been costing
+real gains during a specifically bullish 2-week stretch (~09-15 to
+09-24). Checked 5 council downgrades (already updated above, full
+narrative section) plus 26 research-level WATCH calls from that exact
+window against real Massive.com OHLCV (preferred) / WebSearch where
+Massive was unreachable. Verdicts below use this pass's own language
+("Validated" / "Cost a winner" / "Unclear") rather than retrofitting to
+the appendix table's older "Correct/Incorrect" phrasing, per the actual
+finding for each.
+
+| Date | Ticker | Verdict | Why (compact) | Outcome (2026-09-30) |
+|---|---|---|---|---|
+| 09-15 | PANW | WATCH | sector-beta cybersecurity rotation, thin PANW-specific layer | Validated (mild) — flat-to-modest drift, +3.55% over 2wk, never broke out |
+| 09-15 | CRWD | WATCH | strongest correlation-cluster case, highest beta to the trade | **Cost a winner** — +8.35% to 09-29, would have hit +8% target cleanly within 5 sessions, no stop risk |
+| 09-16 | TEM | WATCH | real catalyst but already +70% trailing month | **Cost a winner** — +16.7% the very next session, clean fast target hit |
+| 09-18 | TEM | WATCH (repeat) | overextension worsened, 3rd consecutive big-gain session | Wash — would have stopped out intraday (-4%) before later grinding to new highs without us |
+| 09-18 | VICR | WATCH | real catalyst cluster, unnamed AI-OEM counterparty, already ~200% extended | **Cost a winner** — +30.5% by 09-29, largest miss of this pass |
+| 09-18 | OKLO | WATCH | sector-wide legislative catalyst, "bounce in a downtrend not a reversal" | Validated — round-tripped the whole bounce, -2.34% net, barely stopped out |
+| 09-18 | FCEL | WATCH | sector-wide catalyst, unresolved securities class action | Validated — clearest validation, -6.68% net, NEW securities fraud suit filed 09-24 |
+| 09-18 | DNA | WATCH | real catalyst but no disclosed economics, deteriorating fundamentals | **Cost a winner** — +52-68% from verdict close, fundamentals thesis still unconfirmed but market ignored it |
+| 09-18 | INIO | WATCH | real catalyst but back-loaded (deliveries through 2028), overextension-at-the-margin | Validated — round-tripped back near pre-catalyst level, -13% from verdict close |
+| 09-22 | WBD | WATCH | real M&A catalyst but already ~99% of deal price, no spread left | Validated — pinned in a 15-cent range all week, exactly as called |
+| 09-22 | INTC | WATCH | real upgrades + real tech progress but chasing an already-extreme YTD run | Validated — brief further pop reversed hard, net -4.8% (would have breached the hard stop) |
+| 09-22 | MRNA | WATCH | scheduling event only (abstract acceptance), real data a month out | **Cost a winner** — steady +17.7% climb anyway, market didn't wait for the actual data |
+| 09-22/24 | GRAL | WATCH | genuine 7-2 favorable FDA vote but already trading above every analyst target | **Cost a winner** — kept extending, +36% from pre-vote close, past every target rather than fading |
+| 09-21/22 | LUNR | WATCH | real proof points but "can't pin exact driver" | Validated — ~10% fade from verdict close |
+| 09-21/24 | FSLY | WATCH (x2) | anticipatory pop ahead of Investor Day, then "already fading" on the resolution | Validated — cleanest sell-the-news confirmation, -14% from the Investor Day peak |
+| 09-21/22 | NUAI | WATCH | genuine AI-datacenter pivot but pre-revenue, already ran for weeks | Validated — ~-12% from verdict-adjacent close, never regained the high |
+| 09-18/21 | ALVO | WATCH | real double-upgrade but 2 sessions stale, single-analyst-driven | Validated — would have been stopped out (-4%) before a brief reversed pop |
+| 09-18/21 | SGML | WATCH | real fundamentals but continuation of an already-running sector rally | Validated — brief pop fully reversed, ended ~2.6% below verdict close |
+| 09-18/21 | DSP | WATCH | real catalyst (withdrawn offering) undercut by same-day CFO selling | **Cost a winner** — would have hit the +8% take-profit within 2-3 sessions cleanly |
+| 09-21/23 | VKTX | WATCH | real Phase 1 data but reaction fired + concurrent dilutive offering | Validated — offering upsized to $575M, priced below the pop, stock down ~20% from post-news close |
+| 09-23 | MAZE | WATCH | competitor (Vertex) read-through, not Maze-specific news | Validated (mild) — -3.8% verdict-day to 09-29, went nowhere |
+| 09-23 | CLDX | WATCH | real Phase 3 data but reaction already popped-and-reversed intraday | Validated — stabilized flat at the post-reversal level, never recovered toward $56-88 targets |
+| 09-23 | OMER | WATCH | real upgrade but single-analyst, fresh 52wk-high entry, pending binary risk | Validated — -7.2% from verdict close |
+| 09-23 | SGRY | WATCH | real catalyst already 5 sessions stale, riding recycled 13F headlines | Validated — most of the fade had already happened by verdict day; flat/-1% after |
+| 09-23 | INOD | WATCH | unconfirmed Hunterbrook report, publisher discloses a long position | Validated (soft) — -7.0% verdict-day to 09-29, one-day extension right after the call |
+| 09-24 | MEI | WATCH | real Investor Day but reaction already fired, mixed fundamentals | Validated — -3.3% from verdict-adjacent peak, no continuation rally |
+
+**Tally for this pass (26 research-level rows, TEM's two calls counted
+separately)**: 18 Validated, 7 Cost a winner (CRWD, TEM-09-16, VICR, DNA,
+MRNA, GRAL, DSP), 1 Wash (TEM-09-18).
+
+**Combined with the 5 council-downgrade resolutions above**: 21
+Validated, 8 Cost a winner, 2 Unclear/wash, N=31.
+Accuracy excluding unclear: 21/(21+8) = 72.4%.
+
+**Pattern worth flagging (not yet a lessons.md entry — see below)**: the
+8 "cost a winner" misses cluster on a specific shape — a REAL, dated,
+positive company catalyst existed in every one, and the WATCH cap was
+specifically about entry timing / extension / valuation / "who's the
+counterparty" (CRWD, TEM x1, VICR, DNA, MRNA, GRAL, DSP, SECZ), not about
+doubting the catalyst itself. Meanwhile most "validated" calls involved
+either a real-but-thin/sector-wide catalyst with a genuine unresolved
+negative (OKLO's downtrend structure, FCEL's escalating lawsuit, INTC's
+sector selloff), or a mechanically capped situation (WBD's deal-price
+ceiling, INIO's back-loaded benefit, GNRC/RARE/ABBV's already-failed
+technical levels). Sample is N=31, directional only — see scorecard.md's
+sample-size caveat. This is being surfaced to the user directly rather
+than acted on unilaterally, per CLAUDE.md's council-calibration rule.
+
+### TWST — 2026-09-24, council-downgraded, PENDING
+- **What happened**: Twist Bioscience +16.1% on 09-24 on a real,
+  sequential catalyst chain (Lilly TuneLab expansion + being named an
+  Anthropic-beneficiary in the same news cycle). Council review found the
+  technical picture unclean: 8% above its own 20-day high, RSI 74.53, and
+  every analyst target found — including the freshest one hiked the same
+  day — sat below the current price.
+- **Why downgraded**: Per council.md's hard rule, an unclean technical
+  picture (already-extended, no analyst target above spot) is
+  independently sufficient to downgrade even a strong bull case.
+- **Outcome**: PENDING — not yet 5+ trading days old as of 2026-09-30;
+  re-check in the next outcome-check pass.
+
+### KOD — 2026-09-28, council-downgraded (closest call to date), PENDING
+- **What happened**: Kodiak Sciences +178% same-session on real,
+  twice-replicated Phase 3 DAYBREAK data (Zenkuda + KSI-501 both met
+  wet-AMD endpoints). Council found this the strongest-supported
+  CANDIDATE evaluated to date — not extended (drifting down over the
+  prior 3 weeks before the catalyst), most fresh analyst targets (HC
+  Wainwright $96, UBS $120, LifeSci $145) above the current price, and
+  idiosyncratic causation (REGN fell same day on direct competitive
+  read-through).
+- **Why downgraded**: Still downgraded to WATCH on real, independently
+  verified risk: likely squeeze component (18.1% short interest, elevated
+  put buying), a genuine dilution incentive at ~4x the December financing
+  price with a Q4 BLA to fund, a non-inferiority (not superiority) result
+  against a comparator itself losing share, and one major bank's
+  unconfirmed-as-revised skepticism (Goldman Neutral/$36). A fact-check
+  did correct an overstated bear claim (the 2023 cataract safety signal
+  was DME-specific, not wet-AMD) but the remaining risks were sufficient.
+- **Outcome**: PENDING — too fresh to resolve as of 2026-09-30.
+
+### CAAP — 2026-09-29, council-downgraded, PENDING
+- **What happened**: Corporación América Airports +9.09% on a real,
+  primary-source-confirmed Argentine AARG concession renegotiation
+  (tariff dollarization, $7.3B investment, 14.3% agreed IRR). Correlation
+  specialist confirmed genuine idiosyncrasy (CAAP rallied against a
+  -3.28% same-day Merval selloff).
+- **Why downgraded**: The technical specialist found the reaction already
+  largely priced in (5.17x volume, closed within 1% of the high, no
+  fade). Moderator fact-checking further found the widely-reported
+  "2056 extension" is actually conditional (firm term is 2049), a real
+  37% Q2 EPS miss was omitted from the bull case, and a prior 2025
+  version of this same deal was formally voided by the regulator before
+  this second attempt.
+- **Outcome**: PENDING — too fresh to resolve as of 2026-09-30.
