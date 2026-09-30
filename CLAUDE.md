@@ -656,6 +656,35 @@ resist both.
 **Accidental good outcome**: because the stop recommendation was not acted
 on, the track kept collecting and corrected itself. That is luck, not
 process.
+**RANKED-PICK TRACK UNBLOCKED 2026-09-30 — `trig_016fjQ61PCnbQEtQijPXdLgy`,
+weekdays 23:00 UTC, firing into session_016iH5aNy36JTes3cWw5Geez.** The track
+sat idle from 09-12 to 09-30 (3 picks, 1 date, nothing matured) on the stated
+belief that the only fix was the user pasting ROUTINE_PROMPT.md into the
+existing screen routine. **Two things were wrong about that, and both were
+checkable at the time:**
+1. **The blocker was never the prompt — it was missing code.** That session's
+   working copy predates the 2026-09-18 merge and contains NO
+   `ranker.py`, `fundamentals.py` or `screen_fundamental.py`. Pasting the
+   prompt would have failed on its first command. Verified with
+   `git cat-file -e <branch>:scripts/ranker.py`, which is a one-line check
+   that was never run for 18 days.
+2. **A new trigger CAN be created into another session, even though its
+   existing prompt cannot be edited.** `update_trigger` refuses a prompt
+   change for a routine bound elsewhere; `create_trigger` with
+   `persistent_session_id` is permitted. "I cannot edit it" was treated as
+   "nothing can be done", which did not follow.
+**Why it binds to that session rather than a fresh one**: the API keys live
+ONLY in the gitignored `.env` on that container's disk — they are not
+environment variables (checked: MASSIVE/ALPACA/FMP all absent from env,
+all present in `.env`). A `create_new_session_on_fire` routine would clone
+the repo without `.env` and fail every API call. If the keys are ever added
+to the environment's secrets, a fresh-session routine becomes the more robust
+option, since it does not depend on one session staying alive.
+**Step 0 of that routine is `git checkout origin/main -- scripts/ skills/`**,
+which takes code and procedures from main while leaving `data/` and CLAUDE.md
+alone — surgical, so the live ledgers are untouched and no merge conflict
+arises. It is NOT a full merge; the branch stays diverged by design.
+
 **Current status: still collecting, 13 of 20 dates. Do not conclude again
 until the date criterion is actually met.** The 09-19 note that the 20-date
 bar "may be UNREACHABLE by construction" also looks wrong — dates went 5 to
