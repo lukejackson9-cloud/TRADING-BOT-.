@@ -27598,7 +27598,11 @@
     "target_price": 13.6728,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Bloomberg reported 9/28 preliminary Monzo acquisition talks (~GBP8-10bn), stock -10%; NU denied the talks and rebounded ~6% by 9/29-30; Goldman reiterated Buy/3 target. Dated, company-specific M&A news.",
+      "tagged_on": "2026-09-30"
+    }
   },
   {
     "ticker": "CCOI",
@@ -27609,7 +27613,11 @@
     "target_price": 8.4132,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No new dated catalyst for 9/29-9/30; class-action deadline and S&P 600 removal were from 9/21, analyst price cuts from August -- only routine quarterly director stock comp recorded on 9/30",
+      "tagged_on": "2026-09-30"
+    }
   },
   {
     "ticker": "FORM",
@@ -27635,7 +27643,11 @@
     "target_price": 84.39120000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": "unclear",
+      "note": "Mentions of earnings-estimate upgrades / HOKA-UGG momentum found but no confirmed date; BMO's Underperform initiation was 9/9 (stale) -- could not confirm a dated catalyst specifically for 9/29-9/30",
+      "tagged_on": "2026-09-30"
+    }
   },
   {
     "ticker": "BAX",
@@ -27646,7 +27658,11 @@
     "target_price": 25.92,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": "unclear",
+      "note": "Only borderline items found near 9/30: incoming CFO effective 10/1, a routine ex-dividend date, a non-material 'Connected Hospital Report' release, and a Q3 EPS estimate trim on 9/28 -- none clearly rises to a confirmed material catalyst",
+      "tagged_on": "2026-09-30"
+    }
   },
   {
     "ticker": "CLPT",
@@ -27698,7 +27714,11 @@
     "target_price": 9.244800000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "FDA granted Platform Technology Designation for AdenoVerse plus a large earnings beat (EPS $0.05 vs -$0.01 est, revenue $54.98M vs $27.98M est) drove shares to a new 52-week high by 9/30; HC Wainwright raised target to $18. Dated, company-specific FDA + earnings catalyst",
+      "tagged_on": "2026-09-30"
+    }
   },
   {
     "ticker": "FA",
@@ -27754,7 +27774,11 @@
     "target_price": 55.134,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Analyst initiations found (Needham Buy 9/25, Morgan Stanley Overweight 9/8, Bernstein Outperform 8/11) are all stale relative to 9/30 (3-22 trading days prior); only 9/28-30 items are a BofA 13F-style stake-increase filing and a marketbeat consensus-compilation piece, neither a fresh dated catalyst",
+      "tagged_on": "2026-09-30"
+    }
   },
   {
     "ticker": "G",
@@ -27780,7 +27804,11 @@
     "target_price": 16.308,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst found for 9/29-30; last earnings was 8/27 (stale, over a month prior); price-target figures found are aggregator/consensus compilations, not a fresh dated analyst action; 3.2% move on 9/29 not tied to any named event",
+      "tagged_on": "2026-09-30"
+    }
   },
   {
     "ticker": "AVPT",
@@ -27791,7 +27819,11 @@
     "target_price": 15.2064,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst found for 9/29-9/30; only a routine Form 144 insider-sale filing and a stale (9/21) analyst reiterate/PT raise to $17",
+      "tagged_on": "2026-09-30"
+    }
   },
   {
     "ticker": "NTCT",
@@ -27802,7 +27834,11 @@
     "target_price": 43.394400000000005,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst found; only a minor product feature update (MCP connectivity for Omnis AI Insights, undated) and routine insider selling; +3% move cited without any named event",
+      "tagged_on": "2026-09-30"
+    }
   },
   {
     "ticker": "CTNM",
@@ -27858,7 +27894,11 @@
     "target_price": 29.592,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Argus cut CSGP price target to $26 on 9/30 (material analyst action) and CoStar's own Commercial Repeat Sale Indices report showed sharply falling CRE deliveries, shares -3.8% same day",
+      "tagged_on": "2026-09-30"
+    }
   },
   {
     "ticker": "TARS",
@@ -27914,7 +27954,11 @@
     "target_price": 71.2476,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "WSJ reported 9/30/2026 that Piper Sandler is in talks to acquire Perella Weinberg Partners, shares fell ~9% intraday same day -- dated, company-specific M&A news",
+      "tagged_on": "2026-09-30"
+    }
   },
   {
     "ticker": "CDNL",
@@ -27955,7 +27999,11 @@
     "target_price": 85.8816,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "REVTORPYK (breast cancer drug) commercial launch in the US announced 9/30/2026, following July FDA approval -- stock +2.8% same day, clear dated company-specific catalyst",
+      "tagged_on": "2026-09-30"
+    }
   },
   {
     "ticker": "KYMR",
@@ -27996,7 +28044,11 @@
     "target_price": 45.5976,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Argus cut its price target to $39 on 9/30/2026 (dated same-day analyst action) amid a rebound from a sharp late-September selloff that other analysts framed as overdone",
+      "tagged_on": "2026-09-30"
+    }
   },
   {
     "ticker": "PK",
@@ -28007,7 +28059,11 @@
     "target_price": 16.6536,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Wedbush analyst Richard Anderson initiated coverage with a Hold rating and $12 target on 9/30/2026 -- dated, same-day material analyst action (also had a previously-declared routine dividend going ex on 9/30, not itself a catalyst)",
+      "tagged_on": "2026-09-30"
+    }
   },
   {
     "ticker": "RRC",
@@ -28018,7 +28074,11 @@
     "target_price": 40.0032,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Argus lowered its price target to $41 on 9/30/2026 -- dated, same-day material analyst action",
+      "tagged_on": "2026-09-30"
+    }
   },
   {
     "ticker": "PRDO",
@@ -28029,7 +28089,11 @@
     "target_price": 33.415200000000006,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Argus lowered its price target to $29 on 9/30/2026 -- dated, same-day material analyst action (also has a pending South University acquisition announced 9/14, older but still relevant)",
+      "tagged_on": "2026-09-30"
+    }
   },
   {
     "ticker": "FOSL",
@@ -28190,7 +28254,11 @@
     "target_price": 14.5584,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "DA Davidson raised price target to $15 from $12 and reiterated Buy on 9/30/2026 -- dated, same-day material analyst action",
+      "tagged_on": "2026-09-30"
+    }
   },
   {
     "ticker": "VOR",
@@ -28306,7 +28374,11 @@
     "target_price": 8.353800000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "First patient dosed in Phase 1/2 trial of new immuno-oncology candidate ARV-6723, announced 9/28 (2 days before signal) -- genuine company-specific pipeline news, stock +6.3% on 9/30",
+      "tagged_on": "2026-09-30"
+    }
   },
   {
     "ticker": "CALX",
@@ -28317,7 +28389,11 @@
     "target_price": 37.1088,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No new dated catalyst for 9/29-9/30; CMO hire and $62 PT reiterate were from mid-September, next earnings not until Nov 2",
+      "tagged_on": "2026-09-30"
+    }
   },
   {
     "ticker": "ORKA",
@@ -28328,7 +28404,11 @@
     "target_price": 89.95320000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Only recent dated event is positive EVERLAST-A Week 28 data from 9/23, ~5 trading days stale by 9/30; no new dated news found for 9/29-30 besides routine insider selling (CEO sold 9/2)",
+      "tagged_on": "2026-09-30"
+    }
   },
   {
     "ticker": "INN",
