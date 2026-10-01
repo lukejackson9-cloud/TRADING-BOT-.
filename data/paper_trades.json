@@ -27673,7 +27673,11 @@
     "target_price": 13.186800000000002,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Partner uniQure released updated AMT-130 (Huntington's gene therapy) clinical trial data ~9/29/2026; CLPT (delivery-device partner) fell 23-24% on 9/29 then rebounded +3.7% on 9/30 as the market continued digesting that dated, company-specific trial update -- not independent 9/30 news, but the proximate catalyst for the 9/30 move. Source: Yahoo Finance/GuruFocus coverage of uniQure AMT-130 update and CLPT price reaction.",
+      "tagged_on": "2026-09-30"
+    }
   },
   {
     "ticker": "WBD",
