@@ -413,9 +413,6 @@ TYRA   # 2026-09-24: -9.15% -- part of biotech cooling-off cluster, no dated com
 JBIO   # 2026-09-24: -12.23% -- part of biotech cooling-off cluster, no dated company-specific news -- PASS
 PBLS   # 2026-09-24: -12.73% -- part of biotech cooling-off cluster, no dated company-specific news -- PASS
 
-# --- pre-catalyst watch entries ---
-NKE    # EARNINGS 2026-10-01 -- pre-catalyst watch, not yet a candidate
-
 # --- added 2026-09-25 via the daily screen routine (Massive whole-market, 2026-09-23 -> 09-24 session pair) ---
 TWST   # 2026-09-25: +16.1%, Twist Bioscience -- REACHED CANDIDATE (real sequential Lilly TuneLab + Anthropic-beneficiary catalyst chain) -- council-downgraded to WATCH (already 8% above 20-day high, every analyst target incl. the freshest one sits below current price) -- see data/research/2026-09-25/TWST_council.md
 SRZN   # 2026-09-25: +108.4%, Surrozen -- both cited catalysts stale (IND 09-08, WmBlair init 08-20); real risk found: FDA-clearance event would trigger a dilutive 2nd PIPE tranche -- WATCH
@@ -534,3 +531,43 @@ NEOG   # 2026-09-30: -7.22%, Neogen -- real negative catalyst (FDA warning lette
 WING   # 2026-09-30: +6.70%, Wingstop -- no fresh catalyst, oversold bounce on an unresolved comp-sales structural issue -- PASS
 METC   # 2026-09-30: -6.68%, Ramaco Resources -- continuation of an already-validated 09-03 WATCH story, no fresh catalyst -- PASS
 ABCL   # 2026-09-30: +6.47%, AbCellera -- JPMorgan initiation continuation into a 2nd session, single-analyst action -- WATCH
+
+# --- added 2026-10-01 via the daily screen routine (same-day catch: NKE earnings resolution, plus Massive 09-29 -> 09-30 session pair) ---
+NKE    # 2026-10-01: earnings resolved -- FY27 guidance cut hard, China revenue -22% YoY, new "Pace" restructuring plan, stock gapped to a ~12yr low after-hours -- PASS (negative, long-only)
+CTVA   # 2026-10-01: claimed -83.81% -- RESOLVED as a Vylor spin-off basis artifact, not a real crash; real (minor) catalyst is a $455M PFAS settlement -- PASS
+LQDA   # 2026-10-01: repeat -- continuation of 09-30's patent-ruling fallout, BTIG downgraded to Neutral, no new-direction catalyst -- PASS
+# --- mortgage/REIT cluster (one correlated macro move, see data/research/2026-10-01/mortgage_cluster_note.md) ---
+MTG    # 2026-10-01: -8.53%, MGIC Investment -- 10yr yield spike (~5.27-5.29%) + GSE PMIERs capital-rule change effective 09-30 -- PASS
+ESNT   # 2026-10-01: -8.43%, Essent Group -- same mortgage-insurer cluster as MTG -- PASS
+NMIH   # 2026-10-01: -8.37%, NMI Holdings -- same mortgage-insurer cluster -- PASS
+BXMT   # 2026-10-01: -6.99%, Blackstone Mortgage Trust -- rate/book-value-driven, same cluster -- PASS
+CIM    # 2026-10-01: -6.57%, Chimera Investment -- rate/book-value-driven, same cluster -- PASS
+NLY    # 2026-10-01: -7.04%, Annaly Capital -- rate/book-value-driven, same cluster -- PASS
+MSGY   # 2026-10-01: +27.48%, Masonglory -- reverse-split/thin-float pump, no catalyst -- PASS
+SCTX   # 2026-10-01: -20.08%, Scribe Therapeutics -- no catalyst found, runs against same-day bullish signals (ARK bought more) -- PASS
+GLAS   # 2026-10-01: -17.38%, Glass House Brands -- correlated with TRLV, DEA rescheduling-hearing pause (sector-wide) -- PASS
+CTNM   # 2026-10-01: +16.70%, Contineum Therapeutics -- cited catalyst is 5mo stale, red flag not a real driver -- PASS
+QTTB   # 2026-10-01: -13.22%, Q32 Bio -- real positive Phase 2a data but clean sell-the-news reversal -- PASS
+ETON   # 2026-10-01: -13.01%, Eton Pharmaceuticals -- real catalyst already fired as a +39% 2-day spike, today is profit-taking -- PASS
+TRLV   # 2026-10-01: -12.17%, Trulieve Cannabis -- correlated with GLAS, same DEA rescheduling pause + sell-the-news on its own licensing deal -- PASS
+CDNL   # 2026-10-01: +11.80%, Cardinal Infrastructure -- real positive item postdates the move by a day, active fraud investigation -- PASS
+ROG    # 2026-10-01: +10.73%, Rogers Corporation -- real Investor Day targets but already priced in, GF Value ~39% overvalued -- WATCH
+CAPR   # 2026-10-01: +10.50%, Capricor Therapeutics -- real Phase 3 data but FDA PDUFA ~7-8wk out, live fraud lawsuit from a prior adcomm rejection -- WATCH
+JBL    # 2026-10-01: -10.03%, Jabil -- real beat-and-raise but classic sell-the-news, stretched valuation -- PASS
+FORM   # 2026-10-01: +9.59%, FormFactor -- real Deutsche Bank initiation (Nvidia second-source role), confirmed idiosyncratic not sector -- WATCH
+EPRX   # 2026-10-01: +9.57%, Eupraxia Pharmaceuticals (NOT Eiger) -- real Q3 beat + Phase 1b/2a data but 3rd positive rally in 2.5wks, already extended -- WATCH
+ZETA   # 2026-10-01: +9.01%, Zeta Global -- no fresh catalyst, cited "earnings" factually wrong (next report 11-03) -- PASS
+CBRS   # 2026-10-01: -8.87%, Cerebras Systems -- real post-IPO lockup unlock + CFO sale + OpenAI-hardware rumor -- PASS
+OMDA   # 2026-10-01: +7.43%, Omada Health -- no genuine catalyst, WebSearch recycled stale Q2 figures as if new -- PASS
+FROG   # 2026-10-01: +7.38%, JFrog -- every cited driver traces to a 4wk-stale conference -- PASS
+HUT    # 2026-10-01: -7.28%, Hut 8 Mining -- sell-the-news + insider Form 144 filing (clarified as collateral, not open-market sale) -- PASS
+GENI   # 2026-10-01: -7.13% -- repeat -- minor analyst downgrade, same insider-selling pattern as 09-21 -- PASS
+ACMR   # 2026-10-01: +7.02%, ACM Research -- real 8-K backlog disclosure (+88.2% YoY) but overbought RSI, insider selling, no 2nd near-term catalyst -- WATCH
+KMX    # 2026-10-01: -6.96%, CarMax -- real beat but margin erosion underneath, GWRE/HPE-shaped pattern -- PASS
+SLS    # 2026-10-01: +6.95%, SELLAS Life Sciences -- trading on an unresolved pending Phase 3 readout -- PASS
+IBRX   # 2026-10-01: +6.91%, ImmunityBio -- real founder meeting but narrative not a deal, already extended -- WATCH
+DOCS   # 2026-10-01: +6.86%, Doximity -- confirmed no company-specific driver, only negative news is a live class action -- PASS
+IE     # 2026-10-01: -6.77%, Ivanhoe Electric -- real but stale (4-5d) single-analyst PT cut -- PASS
+FOSL   # 2026-10-01: +6.66%, Fossil Group -- technical MA cross only, real news 3-4wks stale -- PASS
+GLND   # 2026-10-01: +8.00%, Greenland Energy -- stale (12d+) catalyst, pre-revenue zero-employee microcap, already round-tripped -- PASS
+BRZE   # 2026-10-01: +8.42%, Braze -- repeat (first appearance 09-10, never outcome-checked) -- real AWS deal but already extended across a 3-day conference, doesn't fix the original crash's root metrics -- WATCH
