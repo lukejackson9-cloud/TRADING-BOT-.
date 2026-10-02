@@ -29031,7 +29031,11 @@
     "target_price": 26.8164,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Insider-buying cluster and guidance raise were Q3/Aug 2026 (stale); no new catalyst dated to Oct 1.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "CHTR",
@@ -29042,7 +29046,11 @@
     "target_price": 120.27960000000002,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No Oct1-dated company-specific catalyst found; stock only +0.42%, Cox acquisition close date not confirmed as Oct1, next earnings 2026-10-30.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "ADP",
@@ -29068,7 +29076,11 @@
     "target_price": 68.7312,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No Oct1-dated catalyst found; 2026/2027 guidance was reaffirmed/introduced earlier, analyst price-target changes found had no confirmed Oct1 date, stock near 52-week low on no specific same-day news.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "Z",
@@ -29273,7 +29285,11 @@
     "target_price": 10.054800000000002,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Buyback expansion Sept 2 and AXA/UK court statement Sept 15, both 2+ weeks stale; no catalyst dated to Oct 1 found.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "KNTK",
@@ -29459,7 +29475,11 @@
     "target_price": 305.4024,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Oct-1 news (NFL partnership extension, 'Intuit Intelligence' marketing launch) is promotional, not earnings/M&A/FDA/guidance/analyst action; coverage attributes the move to a broad software-sector rebound ('software names led a market rebound'), i.e. sector-wide not company-specific.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "HAPN",
@@ -29470,7 +29490,11 @@
     "target_price": 16.632,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": "unclear",
+      "note": "Piper Sandler/Citizens PT raises were Jul 28 (stale); next earnings not until Oct 28; a '0B cumulative loans sold as of Sept 30' stat surfaced but no confirmed formal dated press release could be verified as market-moving -- genuinely inconclusive.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "ROP",
@@ -29668,7 +29692,11 @@
     "target_price": 210.0384,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Evercore ISI lowered Capital One's price target to $220 from $230 dated 2026-10-01 - a material, dated analyst action.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "CMG",
@@ -29679,7 +29707,11 @@
     "target_price": 34.9056,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Dated Oct1 2026 takeover speculation (market chatter of a potential $40-45/share acquisition offer) explicitly cited as driving the day's share gain - company-specific M&A rumor, dated.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "L",
@@ -29701,7 +29733,11 @@
     "target_price": 93.6792,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Wells Fargo added Hexcel to its Q4 Tactical Ideas List on Oct 1 2026, a dated bullish analyst call tied to widebody-aircraft production outlook, same day as the 3.4% rally.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "FOSL",
@@ -29809,7 +29845,11 @@
     "target_price": 62.0028,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Oct1 item found is a law-firm investor-alert press release rehashing the already-priced-in 2026-09-10 earnings miss/guidance cut (channel inventory destocking) - stale, recycled story, not a new dated catalyst on Oct1 itself.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "BEP",
@@ -29861,7 +29901,11 @@
     "target_price": 135.7992,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "CEO succession (Tooker named CEO effective 2027, joins board Oct 1 2026) is real and precisely dated but doesn't fit the defined catalyst types (not earnings/M&A/FDA/guidance/analyst action); no qualifying catalyst found.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "RXO",
@@ -29984,7 +30028,11 @@
     "target_price": 281.7072,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No new dated news; Q2 earnings/dividend hike/buyback already stale, next earnings Oct 27.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "BKR",
@@ -30092,7 +30140,11 @@
     "target_price": 37.476000000000006,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Q2 earnings reported 2026-08-06 (~2mo stale); Oct-1 6.7% rally not tied to any found dated catalyst (no M&A/FDA/guidance/analyst action dated near Oct 1).",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "MSM",
@@ -30215,7 +30267,11 @@
     "target_price": 9.8496,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": "unclear",
+      "note": "Analyst actions (Zelman downgrade to Neutral/$13.50, Benchmark raise to $16) found in search results but neither could be confirmed as dated specifically 2026-10-01 vs a nearby/older date; some retrieved 'soaring' articles appear tied to an older Q2/Q4 earnings context, not Oct1.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "EFOR",
@@ -30282,7 +30338,11 @@
     "target_price": 41.094,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Raymond James downgrade was Jan 2026 (9mo stale); Q2 earnings already reported and priced in; nothing new dated to Oct 1.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "OTIS",
@@ -30345,7 +30405,11 @@
     "target_price": 38.912400000000005,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Dividend ex-date Oct 2 is routine, not a catalyst; Q1 earnings already stale; no qualifying catalyst found.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "ET",

@@ -1428,5 +1428,61 @@
       "note": "No fresh dated catalyst; TD Cowen PT raise was 9/28/26 (2 days stale), stock nearly flat -0.08% on 9/30, only general rally/sector commentary (CNBC/Marketbeat/Kalkine)",
       "tagged_on": "2026-09-30"
     }
+  },
+  {
+    "date": "2026-10-01",
+    "symbol": "MSFT",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-01",
+    "symbol": "MSFT",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-01",
+    "symbol": "TSLA",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-01",
+    "symbol": "TSLA",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-01",
+    "symbol": "KO",
+    "setup": "nypm",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-01",
+    "symbol": "PEP",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-01",
+    "symbol": "ABBV",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": null
   }
 ]
