@@ -28874,7 +28874,11 @@
     "target_price": 13.0248,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": "unclear",
+      "note": "Confirmed stock down 6.48% on 10/1 but could not surface the stated reason; Q2 earnings and analyst target revisions are undated/stale.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "CFFN",
@@ -28960,7 +28964,11 @@
     "target_price": 17.8416,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Shares +6% but dedicated coverage cited only existing analyst consensus/price target, no new dated company event.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "TDAY",
@@ -29151,7 +29159,11 @@
     "target_price": 20.898000000000003,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "52-week low driven by ongoing Kalshi competitive overhang and NYT AI-targeting story that broke 9/19 (13 days stale) -- no fresh dated event on 10/1.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "ES",
@@ -29162,7 +29174,11 @@
     "target_price": 69.4548,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Move framed as continuation of post-Q2-earnings pressure (stale); DOE SPARK award mentioned but undated, not tied to 10/1.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "INGN",
@@ -29203,7 +29219,11 @@
     "target_price": 54.09720000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Shares +3.1% but attributed to sector-wide natural gas price strength/LNG demand narrative, not a company-specific dated event.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "CSTM",
@@ -29214,7 +29234,11 @@
     "target_price": 26.632800000000003,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No fresh Oct1 news; guidance raise and analyst target cuts all trace back to the late-July Q2 print, already stale.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "PAYS",
@@ -29300,7 +29324,11 @@
     "target_price": 55.0908,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Scotiabank/Barclays/RBC price-target raises were ~5 weeks earlier (late Aug 2026) -- stale; no catalyst dated to Oct 1.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "BBIO",
@@ -29356,7 +29384,11 @@
     "target_price": 92.8368,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Twin Eagle acquisition announced 7/24-27 and completed 9/16 -- stale by 10/1; no new dated news found.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "XRPN",
@@ -29397,7 +29429,11 @@
     "target_price": 45.5112,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Gehring/Coca-Cola leadership-change news was disclosed Sept 21 and confirmed Sept 27 2026 -- 4-10 days stale by Oct 1; no new dated catalyst found for Oct 1 itself.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "GDYN",
@@ -29408,7 +29444,11 @@
     "target_price": 9.050400000000002,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Dedicated 10/1 'shares gap up' coverage attributes the move to a quarterly earnings beat (EPS /bin/bash.11 vs /bin/bash.10 est, revenue beat) reported just prior.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "CART",
@@ -29434,7 +29474,11 @@
     "target_price": 41.601600000000005,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Modest +1.24% move on 10/1 with no new dated news found; CEO appointment and Q1 results are weeks/months stale.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "CDNA",
@@ -29550,7 +29594,11 @@
     "target_price": 39.3984,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Dedicated 10/1 'shares climb 5.5-6.1%, here's why' coverage cites Baird upgrading to Outperform (PT 5 from 5) alongside a recent earnings beat (/bin/bash.59 vs /bin/bash.55 EPS est).",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "LIND",
@@ -29561,7 +29609,11 @@
     "target_price": 36.32040000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated news found for Oct 1; Q1 earnings stale, next earnings not until Nov 4.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "VSH",
@@ -29722,7 +29774,11 @@
     "target_price": 113.45400000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No new dated news found; Q2 earnings already stale, nothing catalytic found around Oct 1.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "HXL",
@@ -29778,7 +29834,11 @@
     "target_price": 11.1996,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Evercore PT cut (13->12) was Sept 21 2026, ~10 days stale by Oct 1; no catalyst dated to Oct 1 found.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "OKE",
@@ -29804,7 +29864,11 @@
     "target_price": 82.58760000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Dan Taylor became Group CEO effective October 1, 2026 and joined the Board -- a dated, company-specific leadership change, alongside several analyst rating actions (Redburn downgrade, JPMorgan initiation) around the same date.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "SNX",
@@ -29875,7 +29939,11 @@
     "target_price": 13.2516,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Dedicated 10/1 'here's what happened' coverage explicitly attributes the move to mixed company news on below-average volume -- no identifiable catalyst.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "SO",
@@ -29991,7 +30059,11 @@
     "target_price": 5.9832,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Ganfeng $180M investment / PPG JV finalized Aug 24 2026 -- ~5 weeks stale by Oct 1; no catalyst dated to Oct 1 found.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "PFGC",
@@ -30017,7 +30089,11 @@
     "target_price": 74.358,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": "unclear",
+      "note": "Several items found (board appointment, dividend declaration, contract award, conference appearance) but none explicitly dated to 10/1 vs. surrounding days -- could not confirm same-day trigger.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "ITW",
@@ -30118,7 +30194,11 @@
     "target_price": 13.446,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Loop Capital Hold initiation was Sept 9 2026 (stale); underlying driver is the Aug 18 guidance cut (also stale); no new dated catalyst for Oct 1.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "MRSH",
@@ -30200,7 +30280,11 @@
     "target_price": 30.186,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": "unclear",
+      "note": "Analyst downgrades (Morgan Stanley, Wolfe Research) found but undated; dividend ex-date (9/29) and share offering (6/29) are stale; could not confirm a same-day trigger.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "RKT",
@@ -30241,7 +30325,11 @@
     "target_price": 11.7612,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No Oct1 news; Beazer-merger capital-structure disclosure dates to 8/18, already stale.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "NOV",
@@ -30297,7 +30385,11 @@
     "target_price": 11.998800000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No Oct1-dated catalyst found; analyst price-target changes reference older dividend cuts/credit-facility reduction, not a fresh event.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "ARHS",
@@ -30383,7 +30475,11 @@
     "target_price": 19.126800000000003,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "JPMorgan initiated coverage Sept 28 2026 (~3 days stale) amid a weeks-long wave of post-IPO analyst initiations (RBC/Wells Fargo/Wolfe earlier) -- not a single catalyst dated to Oct 1 or the trading day before.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "COUR",
@@ -30394,7 +30490,11 @@
     "target_price": 5.486400000000001,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated Oct1 catalyst: only a routine Form 144 insider-sale filing; next earnings not until 2026-10-22.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "HASI",
@@ -30420,6 +30520,10 @@
     "target_price": 21.708000000000002,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Only Oct1 item was a routine Q3 earnings-call-timing scheduling notice (not material new info); real listing-transfer news was announced 9/10, stale.",
+      "tagged_on": "2026-10-01"
+    }
   }
 ]
