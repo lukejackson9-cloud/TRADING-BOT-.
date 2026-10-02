@@ -571,3 +571,45 @@ IE     # 2026-10-01: -6.77%, Ivanhoe Electric -- real but stale (4-5d) single-an
 FOSL   # 2026-10-01: +6.66%, Fossil Group -- technical MA cross only, real news 3-4wks stale -- PASS
 GLND   # 2026-10-01: +8.00%, Greenland Energy -- stale (12d+) catalyst, pre-revenue zero-employee microcap, already round-tripped -- PASS
 BRZE   # 2026-10-01: +8.42%, Braze -- repeat (first appearance 09-10, never outcome-checked) -- real AWS deal but already extended across a 3-day conference, doesn't fix the original crash's root metrics -- WATCH
+
+# --- added 2026-10-02 via the daily screen routine (Massive 09-30 -> 10-01 session pair) ---
+SNPS   # 2026-10-02: +12.78%, Synopsys -- REACHED CANDIDATE (real multi-dimensional Investor Day catalyst: FY27 guidance raise, named OpenAI/AWS AI deals, $1B buyback) -- council-downgraded to WATCH (closest call since KOD -- bear's antitrust claim refuted as stale, but independently-measured technical extension: 10% above 20-day high on 3.3x volume, RSI 74, +33% pre-catalyst run -- nearly identical to TWST's shape) -- see data/research/2026-10-02/SNPS_council.md
+COHR   # 2026-10-02: +10.59%(10-01)/+5.59%(10-02), Coherent Corp -- REACHED CANDIDATE (real PhotonLink AI-datacenter optics launch + fresh Bernstein initiation) -- council-downgraded to WATCH (confirmed genuine breakout close above 20-day high, but PhotonLink is actually 10-day-old news re-traded on a bundled 6-name sector note, extreme valuation (173x trailing P/E, GF Value 333% overvalued), and a specific company-level precedent: COHR has given back sector pops/even earnings beats 5+ times in 2026) -- see data/research/2026-10-02/COHR_council.md
+NKTR   # 2026-10-02: -22.39%, Nektar Therapeutics -- real negative Phase 2b data (declining sustained response off-treatment) -- PASS
+MAT    # 2026-10-02: +18.80%, Mattel -- real but unconfirmed Authentic Brands ~$6B takeover rumor + CEO transition -- WATCH
+WFCF   # 2026-10-02: +17.10%, Where Food Comes From -- no catalyst found, volatility halt only -- PASS
+AGEN   # 2026-10-02: -16.11%, Agenus -- no catalyst found, pending 10-03 data event not yet presented -- PASS
+ACN    # 2026-10-02: +15.78%, Accenture -- real beat-and-raise but record-gain sell-the-news pattern, same shape as JBL -- PASS
+INGN   # 2026-10-02: +13.47%, Inogen -- real divestiture + activist cooperation agreement, deal not yet closed -- WATCH
+EVMN   # 2026-10-02: -12.71%, Evommune -- real positive Phase 2a data but reaction already fired and fully reversed -- PASS
+TDAY   # 2026-10-02: +12.24%, USA TODAY Co (NOT ThoughtSpot) -- real antitrust ruling lets a $901M-$2.7B claim proceed, but no trial date set -- WATCH
+EFXT   # 2026-10-02: +11.63%, Enerflex (NOT Equifax) -- real 450MW data-center contract but +280% YTD, 212% above fair value, back-loaded to 2027-28 -- WATCH
+UMAC   # 2026-10-02: -11.03%, Unusual Machines -- continuation/giveback of a stale Draganfly story, Pentagon plan named no suppliers -- PASS
+WOLF   # 2026-10-02: +10.81%, Wolfspeed -- no catalyst found, momentum/short-covering on a distressed name -- PASS
+EFOR   # 2026-10-02: +10.00%, Everforth (fka ASGN) -- real developments but 7-9d stale, mostly short-covering -- WATCH
+PSKY   # 2026-10-02: -9.58%, Paramount Skydance -- real $41.4B debt financing for the WBD deal exceeds PSKY's own market cap, S&P downgrade -- PASS
+LWLG   # 2026-10-02: +8.80%, Lightwave Logic -- no fresh catalyst, 6-7mo stale AI-photonics story -- PASS
+SHAZ   # 2026-10-02: -8.70%, SharonAI Holdings (NOT Shazam) -- macro-driven (10yr yield spike hit rate-sensitive AI-infra names), own news was positive -- PASS
+NMAX   # 2026-10-02: -8.70%, Newsmax -- no fresh catalyst, 12d-stale downgrade -- PASS
+PRGS   # 2026-10-02: -8.48%, Progress Software -- real beat but weak guidance, GWRE/HPE-shaped pattern -- PASS
+CNXC   # 2026-10-02: +8.26%, Concentrix -- confirmed via real-time OHLCV as a sell-the-news bounce already reversing -- PASS
+GRND   # 2026-10-02: -8.17%, Grindr -- real $250M PurposeMed acquisition, market read it negatively (STRONG_SELL) -- PASS
+GENB   # 2026-10-02: -8.12%, Generate Biomedicines -- real EPS miss -- PASS
+AAOI   # 2026-10-02: +8.12%, Applied Optoelectronics -- confirmed riding the same Bernstein optical-sector note as CIEN, 324% above GF Value -- WATCH
+RYAM   # 2026-10-02: -7.90%, Rayonier Advanced Materials -- real EPS miss -- PASS
+RGEN   # 2026-10-02: -7.80%, Repligen -- real $1.5B BioLife acquisition, market read negatively (dilution/integration risk) -- PASS
+CIEN   # 2026-10-02: +7.77%, Ciena -- same Bernstein sector note as AAOI/COHR, earnings beat 4wks stale -- WATCH
+KD     # 2026-10-02: +7.64%, Kyndryl -- correlated IT-services move off Accenture's earnings, TradingView disagrees with the pop -- WATCH
+# --- repeat tickers (continuation notes) ---
+CTVA   # 2026-10-02: repeat -- same Vylor spin-off basis artifact, new 15-state PFAS litigation found but multi-year risk not near-term -- PASS
+XRPN   # 2026-10-02: +68% intraday continuing -- repeat -- Evernorth merger vote passed, 3rd consecutive up session, price now well above NAV estimate -- WATCH
+EPRX   # 2026-10-02: -13.96% -- repeat -- digestion/profit-taking after 3 positive rallies in 2.5wks, no reversal of thesis -- WATCH
+GRML   # 2026-10-02: -14.22% -- repeat -- continued thin-float oscillation -- PASS
+VRDN   # 2026-10-02: -7.77% -- repeat -- resolved: real Q3 EPS miss explains the move -- WATCH
+SGML   # 2026-10-02: -11.33% -- repeat -- real NEW negative catalyst: Brazilian regulator suspended mine operations -- PASS
+DPRO   # 2026-10-02: -9.62% -- repeat -- reaction-already-fired caution unwinding further, below the strategic-raise price -- PASS
+INOD   # 2026-10-02: +9.26% -- repeat -- still unconfirmed Hunterbrook/Meta-Muse thesis, now more extended -- WATCH
+BLMN   # 2026-10-02: +8.13% -- repeat -- upgraded to WATCH: real JPMorgan upgrade + credit-facility extension, but only to Neutral -- WATCH
+CRDO   # 2026-10-02: +7.90% -- repeat -- no new catalyst, continued insider selling underneath -- WATCH
+GWRE   # 2026-10-02: +8.94% -- repeat -- NOT a new catalyst, too early per lessons.md #7's 3-month recovery precedent -- WATCH
+NXL    # 2026-10-02: round-tripped (+76% then -24%) -- repeat -- resolved: real commercialization-advisor hire + distribution deal drove the pop, no negative catalyst for today's giveback -- PASS
