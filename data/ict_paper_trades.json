@@ -1435,7 +1435,11 @@
     "setup": "order_block",
     "direction": "bearish",
     "return_r": 2.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch: only minor items found -- ex-LinkedIn CEO Roslansky departure, Wells Fargo PT raise to $725 (rating maintained), incremental AI speech-model announcement. No earnings/M&A/FDA/guidance/rating-change dated 10-01.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "date": "2026-10-01",
@@ -1443,7 +1447,11 @@
     "setup": "ote",
     "direction": "bearish",
     "return_r": 2.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch: only minor items found -- ex-LinkedIn CEO Roslansky departure, Wells Fargo PT raise to $725 (rating maintained), incremental AI speech-model announcement. No earnings/M&A/FDA/guidance/rating-change dated 10-01.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "date": "2026-10-01",
@@ -1451,7 +1459,11 @@
     "setup": "order_block",
     "direction": "bearish",
     "return_r": -1.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch: Roadster unveiling postponed from 10-01 to 10-15 due to weather -- dated and company-specific but a product-event delay, not earnings/M&A/FDA decision/guidance change/analyst rating action. No other dated catalyst found.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "date": "2026-10-01",
@@ -1459,7 +1471,11 @@
     "setup": "ote",
     "direction": "bearish",
     "return_r": -1.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch: Roadster unveiling postponed from 10-01 to 10-15 due to weather -- dated and company-specific but a product-event delay, not earnings/M&A/FDA decision/guidance change/analyst rating action. No other dated catalyst found.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "date": "2026-10-01",
@@ -1467,7 +1483,11 @@
     "setup": "nypm",
     "direction": "bullish",
     "return_r": -1.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch: routine quarterly dividend payment (/bin/bash.53/sh) + JPMorgan trimmed PT to 5 from 6 while keeping Overweight (no rating change); earnings not until 2026-10-27. No dated company-specific catalyst.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "date": "2026-10-01",
@@ -1475,7 +1495,11 @@
     "setup": "ote",
     "direction": "bullish",
     "return_r": -1.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "WebSearch: JPMorgan downgraded PEP to Neutral from Overweight (genuine rating change, PT $138) citing stalled NA turnaround; Barclays also cut PT to $133 from $142, same day. Material, dated, company-specific analyst action.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "date": "2026-10-01",
@@ -1483,6 +1507,10 @@
     "setup": "ote",
     "direction": "bullish",
     "return_r": -1.0,
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch: only routine clinical data presentations (RINVOQ vitiligo EU data, ABBV-295 Phase 1 weight-loss data); Q3 earnings not until 2026-10-30. No earnings/M&A/FDA decision/guidance change/analyst action dated 10-01.",
+      "tagged_on": "2026-10-01"
+    }
   }
 ]

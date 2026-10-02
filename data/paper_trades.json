@@ -30209,7 +30209,11 @@
     "target_price": 185.598,
     "days_held": 0,
     "status": "open",
-    "catalyst": null
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch: routine dividend declaration + JPMorgan raised PT to 15 from 12 but kept Overweight (no rating change); Q3 earnings not until 2026-10-15. No dated catalyst.",
+      "tagged_on": "2026-10-01"
+    }
   },
   {
     "ticker": "G",
