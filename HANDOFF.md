@@ -1011,3 +1011,320 @@ Senate failure; MTDR: WTI crude selloff) -- same correlated-move pattern
 as lessons.md #3, correctly held to PASS rather than treated as
 independent opportunities. COST earnings 09-24 flagged as a forward
 pre-catalyst watch entry.
+
+## 2026-09-18 daily screen -- first TWO-CANDIDATE day
+20 tickers researched from Massive's 09-16->09-17 session-pair
+whole-market screen. For the first time, TWO tickers reached CANDIDATE
+in the same day: GNRC (Generac, a real, dated, idiosyncratic Amazon
+data-center backup-power deal worth up to $8B) and RARE (Ultragenyx, a
+real FDA approval of FAYUVI, first-ever treatment for pediatric
+Sanfilippo syndrome type A). Ran the full 4-role council on both in
+parallel -- both downgraded to WATCH, for different reasons:
+- **GNRC**: the catalyst itself wasn't the problem -- the entry was.
+  8.2x average volume, a ~10.6% intraday reversal off the day's high,
+  and the stock still failed to close above its own prior 20-day high
+  despite an 18%+ day -- textbook exhaustion, not a confirmed breakout.
+  Valuation was already stretched independent of the news. The bull
+  agent itself proposed waiting for a pullback rather than chasing.
+- **RARE**: the approval is real and genuinely separable from an
+  unrelated 09-03 Angelman trial failure that had crashed the stock
+  -44% -- but the newly-approved indication's addressable population is
+  confirmed genuinely tiny (independently checked against epidemiology
+  data), nowhere near enough to offset a company already burning cash
+  with a widening stockholders' deficit. Sell-side hasn't re-rated
+  bullish either.
+
+Council downgrade streak now 17-for-17. Two other notable repeats this
+session: CHPT (the exact ticker lessons.md #1 uses as its "sell the
+news" reference case) had no new catalyst, confirming the pattern
+again; BIAF (this project's own thin-float pump/dump reference case)
+had a genuine new patent-grant catalyst this time, but the same
+ultra-thin float that already produced one confirmed pump/dump on
+09-09 kept it at WATCH rather than PASS or CANDIDATE. Full detail in
+data/research/2026-09-18/.
+
+## 2026-09-21 daily screen (no weekend routines fired 09-19/09-20, as
+## expected -- markets closed)
+18 tickers researched from Massive's 09-17->09-18 session-pair
+whole-market screen. A large correlated crypto-beta cluster showed up
+early (Bitcoin cleared $80,000 on 09-18) -- confirmed via WebSearch
+before researching anything, then handled the efficient way: full
+research on the 3 cluster leaders (COIN, MSTR, MARA), the other 4
+(QMLS, CSHR, BNC, BTGO) noted compactly as correlated rather than
+independently researched, per lessons.md #3.
+
+**SECZ (Securitize) reached CANDIDATE** on a real SEC "Innovation
+Exemption" for tokenized-stock trading (09-17) plus a Citi Buy
+initiation (09-18) -- council downgraded to WATCH on three grounds at
+once: (1) technical -- already extended, 11.4x volume, near a
+short-term high, +111% off its post-listing low with only 55 sessions
+of trading history to judge normal range against; (2) correlation --
+NOT clean, a named peer (Ondo Finance) rose ~13% the SAME DAY on the
+IDENTICAL SEC news, confirming a sector-wide reaction rather than a
+purely idiosyncratic SECZ story; (3) fundamentals -- a ~4.7x valuation
+re-rating in 11 weeks against revenue that's actually DOWN 5% YoY, plus
+a real (if unconfirmed) SPAC-lockup risk window landing exactly now and
+no confirmation Securitize itself has the TSV status needed to directly
+benefit from the exemption. Council also caught and fact-checked a
+same-day (09-21) Cantor Fitzgerald initiation ($21.20 PT) that the
+specialists' earlier snapshot hadn't captured -- a good example of the
+moderator step doing real work, not rubber-stamping stale inputs.
+
+Council downgrade streak now 18-for-18. Full detail in
+data/research/2026-09-21/SECZ_council.md.
+
+## 2026-09-22 daily screen -- quiet day, streak unchanged
+18 tickers researched from Massive's 09-18->09-21 session-pair
+whole-market screen. 0 CANDIDATEs -- council not needed. A few things
+worth remembering:
+- **GRML/CRML** correlated cluster: both traced to one Trump-Denmark
+  Greenland geopolitical headline, not two independent opportunities.
+  GRML in particular (+230.53%) is a textbook thin-float pump (a
+  6-month-old renamed biotech shell, 218M-share volume on essentially
+  no real business) -- same discipline as the BIAF precedent.
+- **SECZ** (3rd+ appearance) is already playing out the way yesterday's
+  council review predicted: same-day sources show it pulling back
+  ~6.65% intraday on 09-22, right after council flagged extension risk.
+  Worth remembering as a concrete data point next time this project
+  second-guesses a downgrade.
+- **ALAB's 09-08 S&P 500 inclusion hypothesis is now confirmed FALSE**
+  -- S&P actually added Bloom Energy/Illumina/Everpure on 09-21, not
+  ALAB. Today's ALAB move is pure Nasdaq/AMD sector beta plus heavy
+  insider selling. Worth a lessons.md-style note if this pattern (an
+  unconfirmed inclusion rumor treated as a real catalyst) recurs.
+- **GRAL**: FDA advisory panel vote on Galleri is tomorrow (09-23),
+  still unresolved -- capped at WATCH per the pre-catalyst rule, same
+  logic as the earnings-lookahead cap.
+- **WBD**: real M&A catalyst (Paramount Skydance deal cleared its last
+  legal hurdle) but the stock is already ~99% of deal price -- late-stage
+  merger arb with no spread left, not a short-term momentum setup.
+
+COST earnings 09-24 (2 days out) and CCL earnings 09-29 flagged for
+forward lookahead. Full detail in data/research/2026-09-22/.
+
+## 2026-09-23 daily screen -- largest single-day mover pool yet, still 0 CANDIDATEs
+22 tickers researched from Massive's 09-21->09-22 session-pair whole-market
+screen (1,469 movers passed the price/volume filter that pair, the largest
+pool seen yet -- broad market strength: S&P +1.49%/Nasdaq record close the
+prior session). 0 CANDIDATEs -- council not needed, streak stays at
+18-for-18 by definition. A few things worth remembering:
+- **JAGX (Jaguar Health)** is the cleanest reverse-split/thin-float
+  distortion example this project has documented: a 1-for-15 split
+  (effective 09-17) plus a real but minor FDA fee-waiver news item
+  combined into a headline "+1190.6% close / as much as +1585% intraday"
+  move on 09-22, which had already round-tripped to -74.14% intraday by
+  09-23. Worth a lessons.md entry if a similarly extreme reverse-split
+  distortion recurs -- the percentage-change math across a split date is
+  not economically meaningful on its own.
+- **CLDX (Celldex)** is a genuinely interesting case of a real, dated
+  Phase 3 catalyst (barzolvolimab met all endpoints in chronic hives)
+  where the market's own reaction (sharp reversal, -11.6% close after
+  an intraday spike) already disagrees with the bullish sell-side
+  price-target hikes -- sitting on top of a fresh, not-yet-characterized
+  safety signal (two probable Grade 4 anaphylaxis cases). Flagged WATCH,
+  worth checking how it resolves over the next few sessions.
+- **OMER**: real, dated Cantor Fitzgerald upgrade grounded in actual
+  YARTEMLEA revenue growth (not a bare narrative) -- the closest thing to
+  a clean single-analyst-action catalyst seen recently, still held at
+  WATCH per lessons.md #5 (single analyst action, fresh 52-wk-high entry,
+  pending EU/FDA binary risk).
+- **VICR** is now a 4th consecutive appearance, extension continuing to
+  worsen (GF Value now flags it +293% overvalued) on the same 09-16 VPD
+  licensing story -- a clean illustration of why this project keeps
+  capping repeat catalysts at WATCH rather than treating persistence as
+  confirmation.
+- **GRAL**: the FDA advisory panel actually voted on the Galleri PMA
+  TODAY (09-23) -- WebSearch could not yet confirm the vote outcome
+  (news indexed as of this screen predates the actual vote), and the
+  market reaction won't show up in Massive's completed-session data
+  until tomorrow's screen. Flagged explicitly in watchlist.txt to check
+  first thing next session.
+- **INOD**: a dated but conflicted source (Hunterbrook Capital, which
+  disclosed a long position in INOD) linked the move to a Meta AI-agent
+  report unconfirmed by either company -- held at WATCH rather than
+  CANDIDATE specifically because of that disclosed conflict of interest,
+  not because the claim itself was implausible.
+
+COST earnings 09-24 (tomorrow) and CCL earnings 09-29 still flagged for
+forward lookahead. Full detail in data/research/2026-09-23/.
+
+## 2026-09-24 daily screen -- GRAL's pre-catalyst resolved same-session, still 0 CANDIDATEs
+26 tickers researched individually plus 9 more noted compactly as one
+biotech-cooling-off cluster (lessons.md #3), from Massive's 09-22->09-23
+session-pair screen. 0 CANDIDATEs -- streak stays at 18-for-18. Highlights:
+- **GRAL**: the FDA advisory panel vote flagged as pending yesterday
+  actually happened and resolved into a real, dated, genuinely positive
+  catalyst (7-2 benefit-risk vote, unanimous safety) -- exactly the
+  same-session catch screen.md's forward earnings-lookahead logic is
+  designed to produce. But the stock is already trading well above every
+  covering analyst's price target (even the most bullish post-vote
+  reiteration), the actual FDA approval decision is still pending, and
+  the move was still actively unfolding intraday as researched -- capped
+  at WATCH, the same "real catalyst, already priced past fundamentals"
+  pattern as VICR/OMER/SECZ.
+- **Reverse-split/thin-float cluster confirmed twice more**: JAGX's crash
+  predicted yesterday fully played out (-74% close, further crashing
+  today), and GRML's pump also reversed hard (-20.9%) exactly as the
+  thin-float thesis predicted. Two NEW examples of the same pattern
+  surfaced today: WHLR (a company running MONTHLY reverse splits since
+  August 2025 to stay listing-compliant) and IPDN (1-for-30 split,
+  5-minute swings between $6-$11). This is now a well-established,
+  repeatedly-confirmed pattern worth a dedicated lessons.md entry if it
+  keeps recurring at this frequency.
+- **Biotech cooling-off cluster**: 9 small/mid-cap biotech names (VOR,
+  CLYM, STOK, ERAS, SLDB, PHAT, TYRA, JBIO, PBLS) all declined 10-13% the
+  same session with no individual dated catalyst found for any of them,
+  alongside larger named declines (Moderna -11%, Sarepta -8%) reported as
+  a "biotech rout." Noted compactly per lessons.md #3 rather than given
+  9 separate full research passes -- CGEM (biggest decliner, -22%) and
+  SRPT (most liquid/named in the rout coverage) got individual treatment
+  and both confirmed no company-specific catalyst beyond the sector move.
+- **COST's earnings (the pre-catalyst watch entry) printed today**: EPS
+  beat, but the reaction was muted (~1% pop, well inside the
+  options-implied move) -- a well-telegraphed print that was already
+  largely anticipated, not a short-term opportunity. Revenue figures
+  disagreed across sources (lessons.md #2) and were left unresolved
+  rather than asserted either way.
+- Several real, DATED, but NEGATIVE catalysts this session (ALKT board
+  rejecting a sale, VOYG's dilutive convert offering, BYND's
+  convertible-note exchange, REAX's merger cash-election overproration,
+  INNV's PE-sponsor secondary offering) -- all correctly PASS given this
+  project's long-only mandate, logged as real findings rather than
+  "no catalyst," since the research itself was genuine even though
+  nothing here is actionable.
+
+CCL earnings 09-29 and NKE earnings 10-01 (newly added to the calendar)
+flagged for forward lookahead. Full detail in data/research/2026-09-24/.
+
+## 2026-09-25 daily screen -- first CANDIDATE in weeks, downgraded to WATCH (streak now 19-for-19)
+26 tickers researched (22 new/repeat individual files + the TWST council
+review). TWST (Twist Bioscience) reached CANDIDATE on a genuinely
+well-supported catalyst chain -- a real, sequential, multi-day Eli Lilly
+TuneLab / Anthropic-beneficiary story, not a single stale headline, with
+fundamentals accelerating independently and a funded balance sheet. Full
+4-role council review found the bull case honest and well-sourced, but
+downgraded to WATCH because the technical picture was NOT clean (already
+8% above its own 20-day high, RSI 74.53) and because every analyst price
+target found by either the bull or bear agent -- including the freshest,
+most bullish one, hiked the very day of the move -- sat BELOW the current
+price. Per council.md's own hard rule, an unclean technical picture is
+independently sufficient grounds for downgrade even against a strong bull
+case. Full detail in data/research/2026-09-25/TWST_council.md.
+
+Other notable items:
+- **KGC (Kinross Gold)**: correctly identified as a real, company-specific
+  negative catalyst (a production-guidance cut) rather than misattributing
+  it to the broader gold/silver/copper weakness that was also happening
+  the same session (a firmer dollar post-Fed-hike) -- a good example of
+  actually checking the sector-wide explanation before accepting it,
+  consistent with lessons.md #3's discipline.
+- **AVX**: identity check caught that this ticker quietly renamed from
+  AgriFORCE Growing Systems to Avax One Technology and pivoted to an
+  AVAX-crypto-treasury strategy -- the "AgriFORCE" identity in earlier
+  session notes is now stale; today's move tracks the AVAX token's own
+  rally, a correlated crypto proxy, not an independent equity catalyst.
+- **Fact-check catch**: a correlation specialist's report cited a
+  "Ginkgo Bioworks/Pfizer RNA deal" as a same-day (09-24) catalyst for
+  DNA's move; verified via WebSearch that this deal is actually from
+  2023, not 2026 -- a stale search result mistaken for fresh news. Caught
+  before it affected any verdict (TWST's correlation_flag stayed "none"
+  regardless), but a reminder that even specialist fact-reporting roles
+  need their claims spot-checked, not just bull/bear ones.
+- **ARTL/JAGX/GRML/VKTX**: all four predicted reversals/dilution effects
+  from yesterday's research played out almost exactly as flagged --
+  ARTL's thin-float instability, JAGX's continued unwind, GRML's
+  oscillation, and VKTX's dilutive-offering selloff.
+
+CCL earnings 09-29 and NKE earnings 10-01 still on the forward-lookahead
+calendar. Full detail in data/research/2026-09-25/.
+
+## 2026-09-28 daily screen -- KOD's same-day Phase 3 win, closest council call yet (20-for-20)
+21 tickers researched (20 individual files + the KOD council review). KOD
+(Kodiak Sciences) surged +178% same-session on real, TWICE-REPLICATED
+Phase 3 DAYBREAK trial data (both Zenkuda and KSI-501 met primary
+endpoints in wet AMD, consistent with 2023's positive DAYLIGHT readout in
+the same indication) -- caught same-session exactly the way screen.md's
+forward-lookahead logic is designed to, similar to GRAL (09-24) but with
+a meaningfully stronger underlying case. Full 4-role council review found
+this the strongest, best-supported CANDIDATE evaluated so far: NOT an
+extended chase (the stock was actually drifting down over the prior 3
+weeks before today), most fresh analyst targets (HC Wainwright $96, UBS
+$120, LifeSci $145) sitting ABOVE the current price rather than below it,
+and a real, mechanistically-linked competitor selloff (Regeneron/Eylea
+falling on direct competitive read-through) confirming idiosyncratic
+causation rather than sector beta.
+
+Still downgraded to WATCH -- the closest call this project has run.
+Notably, the bear case's single most alarming claim (a "disqualifying"
+prior safety failure on this exact drug) did NOT fully survive
+fact-checking: the 2023 cataract signal that killed two pivotal trials
+was specific to the diabetic-macular-edema indication, not wet AMD, and
+today's wet-AMD safety data (0.5% cataract rate vs 0.9% for the
+comparator) is consistent with the historical DAYLIGHT precedent, not a
+sign the risk simply hasn't had time to appear yet. Even so, real,
+independently-verified risk remained sufficient to downgrade: a likely
+squeeze component (18.1% short interest, up 182.6% YoY, same-day
+elevated put buying, a $35/57.6% intraday range showing genuinely
+unresolved price discovery), a real and foreseeable dilution incentive at
+~4x the company's own December financing price with a Q4 BLA filing to
+fund, a non-inferiority (not superiority) result against a comparator
+(Eylea) that's itself losing market share to Roche's Vabysmo, and one
+major covering bank (Goldman, Neutral/$36 just 4 days pre-catalyst) whose
+skepticism remained unconfirmed as revised. Per council.md's own
+standard, a genuinely close call goes to WATCH, not CANDIDATE. Streak now
+20-for-20. Full detail in data/research/2026-09-28/KOD_council.md.
+
+Other notable items: ONT identity check caught that this NYSE ticker is
+Onterris Inc. (renamed Montrose Environmental), NOT Oxford Nanopore
+(LSE:ONT) despite the similar ticker/plausible-sounding sector overlap.
+PPLI's move traces to a genuinely strange 48-hour reversal (PPLI's own
+bid for MGM withdrawn, then a report MGM might bid for PPLI instead) --
+flagged as a red flag for the story's reliability, not just noted at
+face value.
+
+CCL earnings 09-29 (tomorrow) and NKE earnings 10-01 still on the
+forward-lookahead calendar. Full detail in data/research/2026-09-28/.
+
+## 2026-09-29 daily screen -- CAAP reaches CANDIDATE, downgraded to WATCH (21-for-21); two same-session pre-catalyst resolutions
+29 tickers researched (25 individually + CAAP's full council review; BW/HHH/BNC covered via a background batch). Two pre-catalyst/pending stories resolved cleanly same-session: **CCL** (the project's earnings watch entry) beat on both EPS ($1.43 vs $1.35 est) and revenue (record $8.43-8.44B) with raised guidance -- WATCH, since most analyst targets sit above the post-earnings price but a couple of dissenters (TD Cowen, Goldman) remain below it. **QURE**'s AMT-130 48-month Huntington's readout arrived a day early and missed statistical significance (44% slowing vs. the prior year's reported 75% at 36 months) -- stock crashed 62-64%, resolving 09-25's "pre-data anxiety" WATCH into a clean PASS on a real negative binary event.
+
+**CAAP (Corporación América Airports)** reached CANDIDATE on a real, primary-source-confirmed catalyst: a renegotiated Argentine government concession for its AARG unit (tariff dollarization, $7.3B investment program, 14.3% agreed IRR), confirmed genuinely idiosyncratic by the correlation specialist -- CAAP rallied +9% on a session the broader Argentina market (Merval) fell -3.28% on rising country risk, with no LatAm airport peer participating. Council still downgraded to WATCH, on two independently sufficient grounds: (1) the technical specialist found the reaction already largely priced in -- a high-conviction, no-fade, 5x-volume move completed one session before any entry is possible; (2) moderator fact-checking of the bear case's claims all held up and materially weakened the bull case's framing -- the widely-reported "18-year extension to 2056" is actually a firm 12-year extension to 2049 with 2056 conditional on 2027 financing proof not yet met, CAAP's own Q2 2026 EPS missed consensus by 37% (an omission from the bull case), and a prior September 2025 version of this same deal was formally voided by the regulator before this second attempt -- a real instability precedent, not routine process. Streak now 21-for-21. Full detail in data/research/2026-09-29/CAAP_council.md.
+
+Other notable items: RBLX and FLUT both landed on clean stacks of confirmed negative catalysts (child-safety litigation escalation + analyst downgrade for RBLX; Brazil market exit + UK tax hike + 4th consecutive guidance cut for FLUT) -- both PASS, no bounce case found for either. MDB's CEO abruptly resigning to join Meta (a direct AI-talent competitor) is a real, negative, company-specific event, not a buying opportunity. OCUL's -20.67% move is genuinely explained by KOD's and 4D Molecular's own positive wet-AMD trial data worsening OCUL's competitive position ahead of its Q4 FDA filing -- a clean example of one ticker's catalyst being another's risk. BNC's claimed -7.86% decline could not be verified against any source in either direction (every source found showed the stock rallying, not falling) -- the second occurrence of the RACC-pattern unreliable-screener-data issue from lessons.md #4, worth a note for journal.md's next run.
+
+No CANDIDATE survived to propose_trades.md today. Full detail in data/research/2026-09-29/.
+
+## 2026-09-30 daily screen -- LQDA's same-day patent-ruling crash resolves a major data discrepancy; no CANDIDATE (21-for-21 streak unaffected)
+36 tickers researched (28 new + 8 repeats). No ticker reached CANDIDATE today -- the council-downgrade streak stays at 21-for-21 since nothing reached council.
+
+The most notable story was a data-quality catch, not a trade idea: Massive.com's whole-market screen showed LQDA (Liquidia) down only -4% to $70.69, while FMP's live losers list showed it down -57% to $30.26 -- a huge apparent conflict. Investigated directly rather than picking one number: both sources were correct, just measuring different sessions. Massive's grouped-daily data was one session stale (showing 09-29's real close), while FMP was correctly showing TODAY's (09-30) real crash -- a Delaware court ruled Liquidia infringed United Therapeutics' patent covering inhaled treprostinil for PH-ILD, an indication worth roughly half of YUTREPIA's addressable market. United Therapeutics rose the same session on direct competitive read-through, confirming the causal link. PASS (real, severe negative catalyst, long-only has no edge, and further injunctive-relief risk is still pending).
+
+A second data-consistency question resolved cleanly: CCL's screener entry today exactly matched numbers already researched yesterday (09-28's earnings pop) -- confirmed via WebSearch this was a stale screener duplicate, not a new move (CCL actually pulled back slightly on 09-30). QURE's entry was the same 09-29 AMT-130 trial-miss event restated with a more precise closing figure, not a further leg down.
+
+Several tickers had genuinely real catalysts that still didn't clear the bar: SSTI (a signed $8-11/share merger agreement, but already fully priced and doesn't fit the 2-week framework), IOVA (a real FY26 guidance raise with above-price analyst targets, but reaction already fired same-day -- structurally identical to yesterday's CCL/CAAP pattern), and IMMX (strong trial data + analyst hikes, but a same-day dilutive $125M offering is still settling). NEOG carried a serious real negative catalyst (FDA warning letters tied to fungal contamination and 20+ horse deaths from a veterinary product) -- a clean PASS, not a buy-side story. CHPT was correctly recognized as a third recycled appearance of the same stale earnings story, with the project's own ledger already confirming the first two instances faded -- exactly the kind of self-correcting use of trade_ledger.md/lessons.md this system is designed for.
+
+No trades proposed. Full detail in data/research/2026-09-30/.
+
+## 2026-10-01 daily screen -- NKE's earnings resolve negative, CTVA spin-off artifact caught, no CANDIDATE (streak unaffected)
+39 tickers researched (37 individually + one compact mortgage/REIT cluster note covering 6 names). No ticker reached CANDIDATE today -- nothing escalated to council.md.
+
+Two data-quality catches worth flagging. **CTVA** showed an apparent -83.81% crash on FMP vs. a flat -0.28% on Massive -- investigated directly rather than picking a number, and found this is a spin-off basis artifact: Corteva spun off its seed business as Vylor (NYSE: VYLR) effective 10-01, with no when-issued trading beforehand, so the entire value transfer hit in one day. FMP's $12.57 is the real post-spin price; Massive's $77.65 was simply the correct pre-spin close being diffed against the wrong basis. A real but minor catalyst (a $455M PFAS settlement) sits underneath, nowhere near explaining the apparent delta. **GLAS and TRLV** were confirmed as one correlated regulatory bet (a DEA judge paused the Schedule III marijuana-rescheduling hearing 09-30, hitting the whole cannabis sector including the MSOS ETF) rather than two independent stories -- lessons.md #3 discipline working as intended.
+
+**NKE's pre-catalyst watch entry resolved negative.** Q1 FY27 beat on EPS but missed on revenue, and the real story was underneath the headline: FY27 guidance cut hard (adjusted EPS $1.15-$1.35 vs. ~$1.65 consensus), Greater China revenue down ~22% YoY with segment EBIT missing too, and a brand-new "Pace" restructuring plan (layoffs starting 2027, $2.5B savings target). WebSearch summaries disagreed on the exact post-earnings move (lessons.md #2 pattern) -- pulled Alpaca OHLCV directly and confirmed a genuine after-hours gap to a 12-year-low area. Clean PASS, no bull case found anywhere.
+
+The mortgage/REIT cluster (MTG, ESNT, NMIH, BXMT, CIM, NLY) was confirmed as one macro move -- a 10-year Treasury yield spike to ~5.27-5.29% (largest quarterly surge since 1994) plus a GSE PMIERs capital-rule change effective the same day -- not six independent stories, written as a single compact note per the established cluster-note format.
+
+Several WATCH calls today carry the specific shape flagged in yesterday's lessons.md #9 (real catalyst + already-extended/valuation caution) -- ROG, CAPR, FORM, EPRX, ACMR, IBRX, BRZE -- worth a faster re-check per that lesson's action item rather than waiting the full 5-day time-stop, given yesterday's outcome-check found this exact shape costs more real gains in a bullish tape than other WATCH reasons do.
+
+No trades proposed. Full detail in data/research/2026-10-01/.
+
+## 2026-10-02 daily screen -- two CANDIDATEs reach council, both downgraded (streak 23-for-23)
+38 tickers researched individually, plus two full 4-role council reviews. For the first time this project has run two full council reviews in the same single day.
+
+**SNPS (Synopsys)** reached CANDIDATE on a genuinely strong, multi-dimensional Investor Day catalyst: a company-issued FY2027 guidance raise, two named dollar-quantified AI partnerships (OpenAI, AWS >$1B), a new long-term growth target, and a $1B buyback, backed by six independent post-move analyst target raises all implying further upside. This was the closest call since KOD -- the bear case's most serious-sounding new finding (a live UK antitrust probe into the Ansys acquisition) was independently fact-checked and found to be stale/resolved history from 2024-2025, not a current risk. But council still downgraded to WATCH on an independently-measured technical fact: SNPS closed 10% above its own 20-day high on 3.3x volume with RSI 74, after already running +33% in the 12 sessions before the catalyst even fired -- nearly identical in shape to TWST's 09-24 downgrade.
+
+**COHR (Coherent Corp.)** also reached CANDIDATE the same day, on a real PhotonLink AI-datacenter optics product launch plus a same-day Bernstein analyst initiation. Investigation found the Bernstein note was actually a 6-name bundled sector call (also lifting CIEN and Lumentum), and that PhotonLink itself had launched 10 days earlier (09-21) -- meaning the "catalyst" was substantially a repackaged story riding a sector note, not fresh company-specific news. Moderator fact-checked and confirmed COHR genuinely closed above its prior 20-day high on 10-02 ($337.04, a real breakout) -- but downgraded anyway on a specific, well-evidenced company-level precedent: COHR has given back sector-driven pops, and even a genuine earnings beat, five-plus separate times in 2026 alone (per lessons.md #7's "a company's own past repeat pattern is highly predictive" rule), plus extreme valuation stretch (173x trailing P/E, GF Value 333% overvalued).
+
+Streak now 23-for-23 downgrades. Notable sector-cluster catches: AAOI/CIEN/COHR all confirmed riding one Bernstein "AI optics/networking structural winners" note; KD's move confirmed correlated with Accenture's own earnings beat lifting IT-services peers together. CNXC's apparent bounce was confirmed live as already reversing intraday via real-time OHLCV -- a clean sell-the-news catch. NXL's confusing round-trip (+76% then -24%) was resolved: the pop had a real catalyst (a distribution deal), the giveback did not have a new negative one, consistent with thin-float mechanics on an already-distressed microcap.
+
+No trades proposed. Full detail in data/research/2026-10-02/.

@@ -275,3 +275,341 @@ BRKR   # 2026-09-17: +8.83%, Bruker -- real catalyst (Luvata superconducting-wir
 MTDR   # 2026-09-17: -8.61%, Matador Resources -- sector-wide (WTI crude -5%+, 8 E&P peers fell together) -- PASS
 AMRX   # 2026-09-17: +8.59%, Amneal Pharmaceuticals -- no reliable dated catalyst, inconsistent source data -- PASS
 COST   # EARNINGS 2026-09-24 -- pre-catalyst watch, not yet a candidate
+
+# --- added 2026-09-18 via the daily screen routine (Massive whole-market, 2026-09-16 -> 09-17 session pair) ---
+GNRC   # 2026-09-18: +18.34%, Generac -- REACHED CANDIDATE (real Amazon data-center supply deal, up to $8B) -- council-downgraded to WATCH (technical exhaustion: 8.2x volume, 10.6% intraday fade, no breakout; valuation already stretched) -- see data/research/2026-09-18/GNRC_council.md
+RARE   # 2026-09-18: +12.58%, Ultragenyx -- REACHED CANDIDATE (real FDA approval of FAYUVI for Sanfilippo syndrome type A) -- council-downgraded to WATCH (confirmed tiny addressable population + balance-sheet stress can't offset lost Angelman upside) -- see data/research/2026-09-18/RARE_council.md
+AEMD   # 2026-09-18: +374.13%, Aethlon Medical -- reverse merger into North Immunology, existing holders retain only ~4.75% -- PASS (dilution mechanics, not a buyable move)
+DAIC   # 2026-09-18: +163.68%, CID HoldCo -- no identifiable catalyst, unresolved Nasdaq delisting-hearing appeal -- PASS
+BIAF   # 2026-09-18: +63.55%, bioAffinity Technologies -- project's own thin-float reference case, 3rd distinct pop in 3 weeks, real Hong Kong patent grant but same ultra-thin float that produced a confirmed pump/dump 09-09 -- WATCH
+AEHL   # 2026-09-18: +33.30% -- repeat, same 09-16 toxic-convertible-note catalyst already logged, 4th dilutive event in under a month -- PASS
+SDGR   # 2026-09-18: +26.37% -- repeat (WATCH 09-17) -- still no hard catalyst, now +73.8%/month on sentiment alone -- WATCH
+USDE   # 2026-09-18: +24.35%, StablecoinX -- identity reconfirmed (crypto-treasury/ENA vehicle, not the Ethena token) -- CEO change is governance-only, not a business catalyst -- PASS
+VICR   # 2026-09-18: +17.66%, Vicor -- real catalyst cluster but AI-OEM licensee unnamed, 2nd dated catalyst in a week on an already-extended (~200%) run -- WATCH
+VITL   # 2026-09-18: +16.65%, Vital Farms -- unconfirmed take-private rumor sitting on top of recently slashed guidance -- WATCH
+BHVN   # 2026-09-18: +15.56% -- repeat (PASS 09-11 on FDA partial clinical hold) -- new move has no clear catalyst, original bear thesis unresolved -- PASS
+FLNC   # 2026-09-18: -15.36%, Fluence Energy -- clean negative catalyst (FY26 guidance cut + multi-firm analyst downgrades) -- PASS
+ABSI   # 2026-09-18: +15.30%, Absci -- soft catalyst (conference fireside chat), already-extended momentum run -- WATCH
+TEM    # 2026-09-18: +14.85% -- repeat (WATCH 09-16) -- continuation of same story, overextension risk increased -- WATCH
+FCEL   # 2026-09-18: +14.26%, FuelCell Energy -- real catalyst (Ratepayer Protection Act) but sector-wide (lifted PLUG/BE too), unresolved securities class action -- WATCH
+SHLS   # 2026-09-18: +12.17%, Shoals Technologies -- no company-specific news, broad solar-selloff-unwind move, below-average volume -- PASS
+CHPT   # 2026-09-18: +11.34% -- repeat (lessons.md #1 "sell the news" example) -- no new catalyst, confirmed unexplained momentum continuation -- PASS
+OKLO   # 2026-09-18: +11.31% -- repeat (nuclear/SMR cluster) -- same legislative catalyst as FCEL lifted the sector, plus a real OKLO-specific Piper Sandler initiation -- WATCH
+DNA    # 2026-09-18: +11.05%, Ginkgo Bioworks -- real catalyst (Lilly TuneLab partnership) but no disclosed economics, deteriorating fundamentals -- WATCH
+INIO   # 2026-09-18: +12.03% -- repeat (real catalyst tagged true 09-16) -- continuation/digestion of same two-part catalyst, not a fresh event -- WATCH
+
+# --- added 2026-09-21 via the daily screen routine (Massive whole-market, 2026-09-17 -> 09-18 session pair) ---
+# Large correlated crypto-beta cluster today: Bitcoin cleared $80,000 on 09-18,
+# lifting exchange/miner/treasury names together. Full research on 3 cluster
+# leaders; rest noted compactly since the cause is identical and well-sourced.
+COIN   # 2026-09-21: +11.66%, Coinbase -- crypto-rally cluster leader, S&P 500 top gainer that session -- full research -- WATCH
+MSTR   # 2026-09-21: +16.39%, Strategy -- crypto-rally cluster, pure BTC beta -- full research -- PASS (lessons.md #1 example ticker)
+MARA   # 2026-09-21: +13.75%, MARA Holdings -- crypto-rally cluster -- full research -- PASS
+QMLS   # 2026-09-21: +20.26%, QumulusAI -- CORRELATED with crypto-rally cluster -- PASS
+CSHR   # 2026-09-21: +13.37%, CoinShares -- CORRELATED with crypto-rally cluster -- PASS
+BNC    # 2026-09-21: +10.33%, CEA Industries (BNB treasury vehicle) -- CORRELATED with crypto-rally cluster -- PASS
+BTGO   # 2026-09-21: +11.83%, BitGo Holdings -- CORRELATED with crypto-rally cluster -- PASS
+SECZ   # 2026-09-21: +21.61% -- repeat -- REACHED CANDIDATE (real SEC tokenized-stock innovation exemption + fresh Cantor Fitzgerald initiation today) -- council-downgraded to WATCH (extended technicals, real sector overlap with ONDO, valuation detached from shrinking revenue, unconfirmed TSV status, imminent lockup window) -- see data/research/2026-09-21/SECZ_council.md
+XENE   # 2026-09-21: -30.69% -- repeat -- market fully digesting the already-known 09-17 FDA filing + trial-pause disclosure, nothing new -- PASS
+TJGC   # 2026-09-21: +52.95% -- repeat (PASS 09-11/09-14, no catalyst both times) -- same speculative AI-hardware narrative, now even more extended -- PASS
+SION   # 2026-09-21: -16.99% -- repeat -- continuing the already-logged 09-14 workforce-cut/pipeline-reset bleed -- PASS
+GENI   # 2026-09-21: -12.96%, Genius Sports -- real but negative catalyst (heavy dated insider selling) -- PASS
+FTFT   # 2026-09-21: -12.07% -- repeat -- same speculative reverse-split churn, no new catalyst -- PASS
+ALMU   # 2026-09-21: +10.22%, Aeluma -- contradictory WebSearch sources on earnings beat vs. miss, net loss widened -- PASS
+ALVO   # 2026-09-21: +9.93%, Alvotech -- real catalyst (Barclays double-upgrade + FDA inspection resolution) but already 2 sessions stale, single-analyst-driven -- WATCH
+DSP    # 2026-09-21: +18.56%, Viant Technology -- real catalyst (withdrawn secondary offering) but relief-rally undercut by same-day CFO insider selling -- WATCH
+FAC    # 2026-09-21: +10.62%, Factorial Energy -- real Mitsui Kinzoku partnership but 2nd day into an already-fired reaction, recent-IPO/warrant overhang -- WATCH
+SGML   # 2026-09-21: +12.27%, Sigma Lithium -- real fundamentals but move mostly continuation of an already-known rally + sector-wide lithium strength -- WATCH
+
+# --- added 2026-09-22 via the daily screen routine (Massive whole-market, 2026-09-18 -> 09-21 session pair) ---
+GRML   # 2026-09-22: +230.53%, "Greenland Mines" (ex-Klotho Neurosciences shell) -- thin-float pump on a Trump-Denmark Greenland geopolitical headline -- PASS
+CRML   # 2026-09-22: +38.63%, Critical Metals Corp -- real rare-earth company but move dominated by the same Greenland headline as GRML (correlated cluster) -- WATCH
+VEEE   # 2026-09-22: +100.93%, Twin Vee PowerCats -- mid-reverse-merger, boat business carved out for a non-transferable CVR, 1-for-37 split pending -- PASS
+PRTH   # 2026-09-22: +33.79%, Priority Technology Holdings -- real $8.05/share go-private deal but fired 09-18, now a 15-month merger-arb situation not a momentum trade -- PASS
+NUAI   # 2026-09-22: +30.55%, New Era Energy & Digital -- genuine AI-datacenter pivot + Vistra power deal but pre-revenue, already ran for weeks -- WATCH
+HUBC   # 2026-09-22: +30.43%, Hub Cyber Security -- distressed, recent reverse split, contradictory price data, no dated catalyst -- PASS
+SECZ   # 2026-09-22: +24.31% -- repeat (3rd+) -- same 09-21 catalyst already council-downgraded, now pulling back intraday exactly as flagged -- WATCH
+USDE   # 2026-09-22: +23.65% -- repeat -- crypto-treasury proxy, no verifiable dated catalyst -- PASS
+WBD    # 2026-09-22: +10.79%, Warner Bros Discovery -- real M&A catalyst (state-AG settlement clears Paramount Skydance deal) but already ~99% of deal price, no spread left -- WATCH
+INTC   # 2026-09-22: +12.14%, Intel -- real analyst upgrades + 18A/High-NA-EUV progress but already extended after tripling YTD -- WATCH
+MRNA   # 2026-09-22: +12.27%, Moderna -- ESMO abstract acceptance for an Oct 23-27 presentation, not new data, outside short-term window -- WATCH
+GRAL   # 2026-09-22: +33.68%, GRAIL -- FDA advisory panel vote on Galleri is TOMORROW (09-23), unresolved -- capped at WATCH per pre-catalyst rule
+CUE    # 2026-09-22: -23.70%, Cue Biopharma (not Cue Health) -- real Phase 2 data but this is a fade off an even bigger intraday spike -- PASS
+DOCN   # 2026-09-22: +12.31% -- repeat -- same 09-17 catalyst, now more extended (+203.7% YTD), shares a macro tailwind with AKAM -- WATCH
+ALAB   # 2026-09-22: +12.36% -- repeat -- 09-08 S&P 500 inclusion hypothesis confirmed FALSE, today's move is pure Nasdaq/AMD sector beta plus heavy insider selling -- PASS
+AKAM   # 2026-09-22: +12.33% -- repeat -- same "no new catalyst" pattern already caught and stopped out (-4%) by the mechanical TA track on 09-17/18 -- PASS
+LUNR   # 2026-09-22: +12.93%, Intuitive Machines -- real SXM-11/Clear Street proof points but sources conflate with month-old contracts, can't pin exact driver -- WATCH
+FSLY   # 2026-09-22: +14.92%, Fastly -- move ran entirely ahead of an unresolved Investor Day, stale news otherwise -- WATCH
+
+# --- pre-catalyst watch entries ---
+COST   # EARNINGS 2026-09-24 -- pre-catalyst watch, not yet a candidate
+CCL    # EARNINGS 2026-09-29 -- pre-catalyst watch, not yet a candidate
+
+# --- added 2026-09-23 via the daily screen routine (Massive whole-market, 2026-09-21 -> 09-22 session pair) ---
+VKTX   # 2026-09-23: +35.69%, Viking Therapeutics -- real VK2735 Phase 1 maintenance data but reaction already fired + concurrent $400M dilutive offering same day -- WATCH
+MAZE   # 2026-09-23: +26.75%, Maze Therapeutics -- competitor (Vertex) data validating shared APOL1-inhibitor class, not Maze-specific news -- WATCH
+NFE    # 2026-09-23: -24.68%, New Fortress Energy -- distressed multi-day slide (1-for-50 reverse split, dilutive Brazil-ops restructuring), long-only so no way to act on the bear thesis -- PASS
+BFLY   # 2026-09-23: +21.99%, Butterfly Network -- single Needham initiation, already reversing (-4.98%) intraday today -- PASS
+XNDU   # 2026-09-23: -21.57%, Xanadu Quantum Technologies -- real dated catalyst (180-day IPO lockup expiry + CEO share sale) but a negative supply event, not a buy catalyst -- PASS
+VICR   # 2026-09-23: +19.85% -- repeat (4th appearance) -- same VPD-licensing guidance-raise story, now a 3rd consecutive extension leg, GF Value flags +293% overvalued -- WATCH
+EAF    # 2026-09-23: +19.76%, GrafTech International -- same stale price-hike story already flagged 09-17, no fresh catalyst -- WATCH
+DNA    # 2026-09-23: +17.42% -- repeat -- no new catalyst, move already fading intraday today, fundamentals still deteriorating -- PASS
+SGRY   # 2026-09-23: +15.67%, Surgery Partners -- real Idaho Falls divestiture catalyst already fired 5 days ago (09-17), today rides stale 13F headlines -- WATCH
+INOD   # 2026-09-23: +14.61%, Innodata -- dated Hunterbrook Capital report linking to Meta's "Muse" agent, but Hunterbrook discloses a long position (conflict of interest), unconfirmed by either company -- WATCH
+EVER   # 2026-09-23: -14.37%, EverQuote -- no dated catalyst found; one dated item (Raymond James PT raise) runs the opposite direction of the move -- PASS
+TNGX   # 2026-09-23: +14.33%, Tango Therapeutics -- real Phase 1/2 data but 3+ months stale, no fresh 09-22 trigger found -- PASS
+OMER   # 2026-09-23: +13.85%, Omeros -- real dated Cantor Fitzgerald upgrade grounded in actual YARTEMLEA revenue growth, but single-analyst-action + fresh 52-wk-high entry + pending EU/FDA binary risk -- WATCH
+CLPT   # 2026-09-23: +13.03%, ClearPoint Neuro -- fundamentals genuinely positive but all predate this session, no dated trigger for today's move -- PASS
+CLDX   # 2026-09-23: -11.56%, Celldex Therapeutics -- real Phase 3 barzolvolimab data but reaction already fired/reversed + fresh unresolved anaphylaxis safety signal -- WATCH
+GSHD   # 2026-09-23: -11.49%, Goosehead Insurance -- no discrete catalyst, continuation of multi-week AI-disintermediation de-rating -- PASS
+RSKD   # 2026-09-23: +10.39%, Riskified -- no fresh catalyst, nearest dated news (Zendesk integration) a week stale -- PASS
+CUE    # 2026-09-23: +9.30% -- repeat -- same aging 09-20 CUE-221 data, now three sessions into a whipsaw -- PASS
+ABSI   # 2026-09-23: +9.06% -- repeat -- unchanged, modest insider buy but no real catalyst -- WATCH
+TTAN   # 2026-09-23: +8.90%, ServiceTitan (not Titan Machinery) -- no catalyst found for the move -- PASS
+GRML   # 2026-09-23: +50.21% -- repeat (3rd+) -- thin-float pump continuation, genuine resource-estimate update but magnitude still driven by post-split float mechanics -- PASS
+JAGX   # 2026-09-23: +1190.6%(09-22)/-74.14%(09-23) -- Jaguar Health -- reverse-split distortion + minor FDA fee-waiver news, confirmed blow-off by today's crash -- PASS
+
+# --- pre-catalyst watch entries ---
+COST   # EARNINGS 2026-09-24 -- pre-catalyst watch, not yet a candidate
+CCL    # EARNINGS 2026-09-29 -- pre-catalyst watch, not yet a candidate
+GRAL   # FDA advisory panel VOTED 2026-09-23 on Galleri PMA -- outcome not yet confirmed via search as of this screen; market reaction not yet in Massive's completed-session data -- check tomorrow's screen for the reaction, hold at WATCH until then
+
+# --- added 2026-09-24 via the daily screen routine (Massive whole-market, 2026-09-22 -> 09-23 session pair) ---
+GRAL   # 2026-09-24: FDA advisory panel voted 7-2 in favor (Galleri PMA), real catalyst but stock already trading above every analyst's price target ($125.70 vs $79-84 range), FDA approval itself still pending -- WATCH
+ARTL   # 2026-09-24: +76.14%, Artelo Biosciences -- real dated obesity patent/nonclinical data but mouse-only, provisional patent, serial reverse-split history (3 splits in 16 months) signals real dilution risk -- WATCH
+ALKT   # 2026-09-24: -19.30%, Alkami Technology -- real dated negative catalyst (board rejects Jana Partners sale push), fresh 3-year lows, falling knife not a bounce setup -- PASS
+VOYG   # 2026-09-24: Voyager Technologies -- real dated negative catalyst ($350M convertible note dilution), long-only can't act on it -- PASS
+DBGI   # 2026-09-24: +21.23%, Digital Brands Group -- no fresh catalyst found, 5th straight up day with no clean news behind it, repeat of a 09-14 unexplained-move pattern -- PASS
+CGEM   # 2026-09-24: -22.15%, Cullinan Therapeutics -- part of a broader biotech selloff but move is 2-3x peers, sources conflict on the CGEM-specific driver (lessons.md #2) -- WATCH
+SRPT   # 2026-09-24: -8.94%, Sarepta Therapeutics -- confirmed sector-wide biotech selloff, no fresh company-specific catalyst (gene-therapy safety concerns are stale, Jun-Aug) -- PASS
+PGY    # 2026-09-24: -9.87%, Pagaya -- sector-wide consumer-lending selloff (rate sensitivity), company's own news was actually positive -- PASS
+BYND   # 2026-09-24: -12.86%, Beyond Meat -- real dated catalyst ($15M convertible-note-for-stock exchange) but unambiguously dilutive/bearish -- PASS
+CCOI   # 2026-09-24: -12.67%, Cogent Communications -- no fresh catalyst, continued bleed in an already-known bad story (Wavelength litigation, prior dividend cut) -- PASS
+MEI    # 2026-09-24: +9.69%, Methode Electronics -- real dated catalyst (first-ever Investor Day announced) but reaction already fired, mixed fundamentals, prior 09-03 history of headline/substance mismatch -- WATCH
+BW     # 2026-09-24: -9.54%, Babcock & Wilcox -- no new catalyst, continuation of an existing ~40%-over-the-quarter decline tied to known securities-fraud allegations -- PASS
+BKKT   # 2026-09-24: -9.46%, Bakkt -- 3rd consecutive no-catalyst day per the TA track's own tags, BTC itself near 8-month highs so not sector beta either -- PASS
+REAX   # 2026-09-24: -11.68%, The Real Brokerage -- real dated negative catalyst (RE/MAX merger cash-election overproration read as low confidence in the deal) -- PASS
+INNV   # 2026-09-24: -15.53%, InnovAge Holding -- real dated negative catalyst (10M-share secondary offering by PE sponsors, no company proceeds) -- PASS
+EXK    # 2026-09-24: -11.89%, Endeavour Silver -- mix of sector-wide silver weakness + company-specific mill outage at Guanacevi (~3 weeks reduced capacity) -- PASS
+JAGX   # 2026-09-24: -74.14% -- repeat -- confirmed reverse-split/thin-float blow-off exactly as flagged yesterday -- PASS
+GRML   # 2026-09-24: -20.92% -- repeat -- pullback confirms thin-float pump thesis, no new catalyst -- PASS
+WHLR   # 2026-09-24: +190.91%(09-23)/-31.25%(09-24 intraday), Wheeler REIT -- reverse-split distortion, same pattern as JAGX/IPDN, company on its 4th+ split in a year -- PASS
+IPDN   # 2026-09-24: +38.97%, Professional Diversity Network -- reverse-split/thin-float distortion, same pattern as JAGX/WHLR -- PASS
+NFE    # 2026-09-24: -21.47% -- repeat -- continuing distressed slide, no new catalyst -- PASS
+FSLY   # 2026-09-24: +13.69% -- repeat -- Investor Day resolved with a real long-term plan but reaction already fading (sell-the-news) -- WATCH
+SECZ   # 2026-09-24: new ATH $14.07, +67% over the week -- repeat (7th+) -- now trading above even its most bullish analyst target, same council-flagged extension continuing -- WATCH
+CRML   # 2026-09-24: -9.60% -- repeat -- pullback after last week's Greenland-cluster rally, no new catalyst -- WATCH
+EVER   # 2026-09-24: -9.82% -- repeat -- continuing unexplained decline, no new catalyst -- PASS
+ABSI   # 2026-09-24: -9.01% -- repeat -- downgraded to PASS, move reversed with nothing new to sustain prior soft-catalyst read
+COST   # 2026-09-24: earnings printed (EPS beat $6.75 vs $6.54 est, revenue figures conflict across sources), only ~1% pop, well inside the options-implied move -- PASS, pre-catalyst watch resolved
+# Biotech cooling-off cluster (compact, lessons.md #3) -- see data/research/2026-09-24/biotech_cluster_note.md
+VOR    # 2026-09-24: -11.95% -- part of biotech cooling-off cluster, no dated company-specific news -- PASS
+CLYM   # 2026-09-24: -11.89% -- part of biotech cooling-off cluster, no dated company-specific news -- PASS
+STOK   # 2026-09-24: -10.58% -- part of biotech cooling-off cluster, no dated company-specific news -- PASS
+ERAS   # 2026-09-24: -10.32% -- part of biotech cooling-off cluster, no dated company-specific news -- PASS
+SLDB   # 2026-09-24: -10.09% -- part of biotech cooling-off cluster, no dated company-specific news -- PASS
+PHAT   # 2026-09-24: -9.99% -- part of biotech cooling-off cluster, no dated company-specific news -- PASS
+TYRA   # 2026-09-24: -9.15% -- part of biotech cooling-off cluster, no dated company-specific news -- PASS
+JBIO   # 2026-09-24: -12.23% -- part of biotech cooling-off cluster, no dated company-specific news -- PASS
+PBLS   # 2026-09-24: -12.73% -- part of biotech cooling-off cluster, no dated company-specific news -- PASS
+
+# --- added 2026-09-25 via the daily screen routine (Massive whole-market, 2026-09-23 -> 09-24 session pair) ---
+TWST   # 2026-09-25: +16.1%, Twist Bioscience -- REACHED CANDIDATE (real sequential Lilly TuneLab + Anthropic-beneficiary catalyst chain) -- council-downgraded to WATCH (already 8% above 20-day high, every analyst target incl. the freshest one sits below current price) -- see data/research/2026-09-25/TWST_council.md
+SRZN   # 2026-09-25: +108.4%, Surrozen -- both cited catalysts stale (IND 09-08, WmBlair init 08-20); real risk found: FDA-clearance event would trigger a dilutive 2nd PIPE tranche -- WATCH
+TRT    # 2026-09-25: -36.6%, Trio-Tech International -- real same-day earnings (revenue beat but margin compression + Q4 net loss) -- PASS (negative, long-only)
+AVX    # 2026-09-25: +32.9% -- identity note: renamed from AgriFORCE to Avax One Technology, now an AVAX-crypto-treasury proxy -- move tracks the AVAX token's own rally, not a company event -- PASS
+QMCO   # 2026-09-25: +13.55%, Quantum Corp -- real Q1 FY27 earnings beat but stock already +298% YTD, thin coverage, high short interest, P/E >55 -- WATCH
+ACAD   # 2026-09-25: -12.78%, ACADIA Pharmaceuticals -- real Phase 2 trial narrowly missed primary endpoint -- PASS (negative)
+SGMT   # 2026-09-25: -12.57%, Sagimet Biosciences -- single Goldman Sachs Sell resumption, sharp reversal from earlier bullish inits -- PASS (negative)
+WRBY   # 2026-09-25: +12.51%, Warby Parker -- speculative Meta-Connect-adjacent hype, not WRBY's own dated news, consensus rating is Hold -- WATCH
+SMWB   # 2026-09-25: -12.24%, Similarweb -- real dated catalyst (founder/CEO stepping down, insider sales before the news) -- WATCH
+GEN    # 2026-09-25: -12.05%, Gen Digital -- real dated catalyst (unsolicited ~$12B GoDaddy approach reported), unconfirmed/early-stage -- WATCH
+MGM    # 2026-09-25: -11.0%, MGM Resorts -- real dated catalyst (Barry Diller's $18B+ buyout proposal withdrawn + same-day BofA downgrade) -- WATCH
+BETR   # 2026-09-25: -10.86%, Better Home & Finance -- no fresh catalyst confirmed, only recycled 5-month-old law-firm solicitation ads; price data itself unreliable across sources -- PASS
+VCYT   # 2026-09-25: +10.77%, Veracyte -- no fresh same-day catalyst found, closest candidates 10-15 days stale -- WATCH
+QURE   # 2026-09-25: -10.38%, uniQure -- macro risk-off + pre-data anxiety ahead of an unresolved Sept 30 Huntington's readout -- PASS
+TSSI   # 2026-09-25: +9.81%, TSS Inc -- no decision-grade catalyst, thin-float momentum on an already-disclosed Nvidia buildout narrative -- WATCH
+FSLR   # 2026-09-25: -10.32%, First Solar -- rate-sensitivity macro (same session gold/silver/copper fell) + a company-specific patent-complaint withdrawal -- PASS
+P      # 2026-09-25: +11.15%, Everpure (data storage, not Pandora/Phunware) -- real FY2028 guidance raise + S&P 500 inclusion tailwind, but reaction already fully fired to a fresh 52-week high -- WATCH
+TNMG   # 2026-09-25: +10.35%, TNL Mediagene -- no fresh catalyst, continuation of an already-running post-reverse-split thin-float spike -- PASS
+EQPT   # 2026-09-25: -9.73%, EquipmentShare.com -- real dated catalyst (Blue Orca short report alleging inflated EBITDA/undisclosed liabilities), company disputes it, unresolved -- PASS (negative/disputed)
+KGC    # 2026-09-25: -11.59%, Kinross Gold -- real company-specific negative catalyst (production guidance cut), NOT sector-wide gold weakness as first assumed -- PASS
+ARTL   # 2026-09-25: -29.27% -- repeat -- predicted instability confirmed, no new catalyst -- PASS
+JAGX   # 2026-09-25: -20.76% -- repeat -- continuing confirmed unwind, no new catalyst -- PASS
+GRML   # 2026-09-25: +33.07% -- repeat -- continued thin-float oscillation, no new catalyst -- PASS
+DNA    # 2026-09-25: +19.46% -- repeat -- continuing unexplained bounce, no new catalyst (a cited "Pfizer RNA deal" checked and confirmed to be stale 2023 news, not fresh) -- PASS
+VKTX   # 2026-09-25: -11.76% -- repeat -- predicted dilution from the upsized $500M offering materialized -- PASS
+SECZ   # 2026-09-25: +15.11% -- repeat (8th+) -- extension continuing, new independent financial-distress signal (Altman Z-Score 0.71) -- WATCH
+
+# --- added 2026-09-28 via the daily screen routine (same-session catch: KOD's Phase 3 data + Massive 09-24 -> 09-25 session pair) ---
+KOD    # 2026-09-28: +178%, Kodiak Sciences -- REACHED CANDIDATE (real, twice-replicated Phase 3 DAYBREAK win, two candidates, off a flat base) -- council-downgraded to WATCH (closest call yet: squeeze component, dilution incentive, non-inferiority vs a comparator losing share to Vabysmo, Goldman's stale caution) -- see data/research/2026-09-28/KOD_council.md
+ONT    # 2026-09-28: -16.77%, Onterris Inc. (renamed Montrose Environmental, NOT Oxford Nanopore) -- no fresh catalyst, continuation of an already-known August earnings miss/guidance cut -- PASS
+AESI   # 2026-09-28: +13.47%, Atlas Energy Solutions -- real $613.5M AI-datacenter power deal but reaction already fired same-session, crowded AI-power theme -- WATCH
+KPLT   # 2026-09-28: -12.65%, Katapult Holdings -- no confirmed catalyst, only unconfirmed dilution-overhang theory from the Aaron's/CCF merger -- PASS
+PPLI   # 2026-09-28: +11.33%, People Incorporated -- real but speculative WSJ report of MGM "considering" acquiring PPLI, only 48h after PPLI's own competing MGM bid was withdrawn -- WATCH
+WNC    # 2026-09-28: +11.27%, Wabash National -- real investor-conference disclosure (2027 order book, margin improvement) but reaction already fired, 2nd unresolved pop in 4 weeks -- WATCH
+ALM    # 2026-09-28: +10.65%, Almonty Industries -- real Stifel Buy initiation but valuation already ~170% above GF Value, small-cap riding a shared tungsten/China-export macro tailwind -- WATCH
+ZS     # 2026-09-28: -10.06%, Zscaler -- real dated negative catalyst (CRO departure) -- PASS (negative, long-only)
+MXL    # 2026-09-28: +10.00%, MaxLinear -- sector-wide semiconductor rally cluster (LSCC/SMTC), no MXL-specific news, already +57% since 08-31 -- PASS
+RPD    # 2026-09-28: -9.57%, Rapid7 -- sector-wide cybersecurity valuation selloff (QLYS/OKTA/PANW/S all fell), no RPD-specific news -- PASS
+VIAV   # 2026-09-28: +9.27%, Viavi Solutions -- real dated CMMC defense certification + AI-optics tailwind but reaction already fired, +128% YTD, documented history of giving back pops -- WATCH
+FRVO   # 2026-09-28: -9.16%, Fervo Energy -- real negative catalyst (BofA cut on Cape Station delays) plus an active securities-fraud investigation -- PASS
+BE     # 2026-09-28: +8.27%, Bloom Energy -- real catalysts all 4-11 days stale, already-known AI-infrastructure story, +400% trailing year, real negative headwind (Oracle force majeure) -- WATCH
+TWLO   # 2026-09-28: -7.96%, Twilio -- real dated negative catalyst (HSBC downgrade on AI-agent-speculation overrun) plus heavy insider selling -- PASS
+CRDO   # 2026-09-28: +7.65%, Credo Technology -- real Q1 FY27 earnings beat + raised guidance but reaction already fired, several analysts trimming targets on sector-multiple pressure even while bullish -- WATCH
+STAA   # 2026-09-28: +7.49%, Staar Surgical -- real $50M buyback but weaker catalyst type, weak backdrop (failed Alcon deal, down ~12% YTD) -- WATCH
+FIGS   # 2026-09-28: +7.45%, Figs Inc -- no fresh catalyst found, real catalyst (Q2 earnings) 7 weeks stale, reads as short-covering -- PASS
+AEHR   # 2026-09-28: +7.15%, Aehr Test Systems -- single-analyst initiation, heavy one-directional insider selling, AND reports earnings TODAY (imminent binary print) -- WATCH
+ALHC   # 2026-09-28: +7.04%, Alignment Healthcare -- relief bounce off reaffirmed guidance, doesn't resolve the unresolved whistleblower accounting allegation already logged -- PASS
+SAIL   # 2026-09-28: -6.69%, SailPoint -- macro/rate-driven decline (Truist actually RAISED its PT same day), real underlying decelerating growth -- PASS
+
+# --- added 2026-09-29 via the daily screen routine (same-session catches: CCL earnings + QURE trial readout, plus Massive 09-25 -> 09-28 session pair) ---
+CCL    # 2026-09-29: earnings resolved, EPS $1.43 beat $1.35 est, record revenue $8.43-8.44B, guidance raised -- WATCH
+QURE   # 2026-09-29: AMT-130 48mo Huntington's data missed statistical significance (44% vs prior-year 75% at 36mo), stock -62-64% -- resolves 09-25's pre-data-anxiety WATCH into PASS
+CAAP   # 2026-09-29: +9.09%, Corporacion America Airports -- REACHED CANDIDATE (real Argentine AARG concession renegotiation, tariff dollarization) -- council-downgraded to WATCH (reaction already largely priced in per technical specialist; fact-check found the "2056 extension" is conditional, firm term is 2049; real Q2 EPS miss omitted by bull case; a prior 2025 version of this deal was voided by the regulator) -- see data/research/2026-09-29/CAAP_council.md
+MDB    # 2026-09-29: -18.46%, MongoDB -- real dated negative catalyst (CEO Desai abruptly resigned to join Meta) -- WATCH
+NU     # 2026-09-29: -10.01%, Nu Holdings -- real dated catalyst (reported ~$10.6-13.3B Monzo acquisition talks, overpayment/dilution concern) -- WATCH
+RBLX   # 2026-09-29: -9.86%, Roblox -- Jefferies downgrade to Underperform + escalating child-safety litigation cluster + growing country-ban list -- PASS
+FLUT   # 2026-09-29: -9.09%, Flutter Entertainment -- Brazil market exit + UK tax hike + 4th consecutive guidance cut (Redburn downgrade) -- PASS
+CLF    # 2026-09-29: -7.88%, Cleveland-Cliffs -- Stelco Hamilton Works indefinite idling, tariff-driven, mostly company-specific not sector beta -- PASS
+ITG    # 2026-09-29: -32.59%, ITG Inc (broadband infra) -- unconfirmed large-shareholder-exit report, timing-consistent with post-IPO lock-up expiry, solid Q2 actually reaffirmed -- PASS
+SWMR   # 2026-09-29: -12.30%, Swarmer -- post-IPO lock-up expiration freeing ~59% of shares outstanding, mechanical supply event -- PASS
+UTI    # 2026-09-29: -9.01%, Universal Technical Institute -- continued bleed from mid-Sept guidance cut + 9/22 downgrade, no fresh catalyst -- PASS
+FIGR   # 2026-09-29: -8.06%, Figure Technology Solutions (fintech, NOT Figure AI robotics) -- no company-specific catalyst, macro/rate pressure on fintech names -- PASS
+MIR    # 2026-09-29: -7.95%, Mirion Technologies -- no MIR-specific negative news (recent flow is bullish); sector-wide nuclear/SMR weakness (NuScale/Oklo) -- PASS
+OCUL   # 2026-09-29: -20.67%, Ocular Therapeutix -- real negative catalyst (KOD/4DMT competing wet-AMD data worsens competitive outlook for AXPAXLI) -- PASS
+LFCR   # 2026-09-29: +unch~6.52, Lifecore Biomedical -- real definitive $6.28/share + CVR acquisition by Webster Equity, but stock trades at/above cash consideration and ~Q4 close timeline doesn't fit this project's horizon -- WATCH
+CLRO   # 2026-09-29: +/-56.81% (sources conflict), CLR One (Cortigent/Vivani) -- only real event 3mo stale, sources contradict same-day direction, negative equity/FCF -- PASS
+MOD    # 2026-09-29: -11.63%, Modine Manufacturing -- confirmed record date for Performance Technologies/Gentherm spin-merger, mechanical distribution repricing not new news -- PASS
+AUR    # 2026-09-29: -12.42% (continuing), Aurora Innovation -- repeat, stale reaction to 09-23 Investor Day (pushed-back margin breakeven) -- PASS
+BE     # 2026-09-29: -8.9% (continuing), Bloom Energy -- repeat -- real dated negative (securities-litigation lead-plaintiff deadline) layered on known headwinds -- PASS
+CRDO   # 2026-09-29: -8.7% (continuing), Credo Technology -- repeat -- no new catalyst, continued digestion of already-fired earnings beat, strong analyst support underneath -- WATCH
+DASH   # 2026-09-29: -7.7%, DoorDash -- no identified catalyst, GF Value well above price -- PASS
+WRBY   # 2026-09-29: -7.7% (reversal), Warby Parker -- repeat -- downgraded WATCH->PASS, speculative pop already reversed with nothing new -- PASS
+KOD    # 2026-09-29: repeat -- no new info, WATCH unchanged
+JAGX   # 2026-09-29: repeat -- continuing confirmed unwind, no new catalyst -- PASS
+GRML   # 2026-09-29: -19.17% -- repeat (6th+) -- continued thin-float oscillation, no new catalyst -- PASS
+ACET   # 2026-09-29: -29.6%, Adicet Bio -- unexplained divergence (positive-sounding Phase 1 lupus data the day before, stock fell anyway) -- PASS
+BW     # 2026-09-29: -8.29%, Babcock & Wilcox Enterprises -- no fresh catalyst, stale litigation, continuing slide already priced in -- PASS
+HHH    # 2026-09-29: +8.07%, Howard Hughes Holdings -- real but small insider buying, reaction already fired (3rd consecutive up session) -- WATCH
+BNC    # 2026-09-29: claimed -7.86%, CEA Industries/BNB Standard Corp -- move direction unverifiable against any source (2nd occurrence of the RACC-pattern unreliable-screener-data issue) -- PASS
+
+# --- added 2026-09-30 via the daily screen routine (same-day catch: LQDA patent-ruling crash, plus Massive 09-28 -> 09-29 session pair) ---
+LQDA   # 2026-09-30: -57.19%, Liquidia -- real same-day Delaware patent ruling (lost PH-ILD indication, ~half of YUTREPIA's addressable market) to United Therapeutics -- PASS (negative, long-only)
+CCL    # 2026-09-30: stale screener duplicate of 09-28's already-researched earnings move, real price ~flat/-1% on 09-30 -- no new catalyst
+QURE   # 2026-09-30: same 09-29 AMT-130 crash restated more precisely ($24.51), not a new leg down
+DNA    # 2026-09-30: +14.34% -- repeat -- only a minor Ginkgo Datapoints/Apheris partnership, doesn't explain the move, unexplained-bounce pattern continues -- PASS
+GRML   # 2026-09-30: -12.45% -- repeat -- now genuinely explained: real $17M dilutive offering (+$59M raised this week) -- PASS
+WRBY   # 2026-09-30: +11.39% -- repeat -- 3rd directional flip in 3 sessions on the same recycled AI-glasses narrative, no new catalyst -- PASS
+BE     # 2026-09-30: +10.80% -- repeat -- Oracle reaffirmed Project Jupiter, targets above price, but reaction already fired, extremely extended -- WATCH (upgraded from PASS)
+SWMR   # 2026-09-30: -9.96% -- repeat -- lock-up unwind continuation, now compounded by a dilution fear tied to the Ratel Robotics acquisition -- PASS
+STAA   # 2026-09-30: +7.47% -- repeat -- Stifel upgrade Hold->Buy $31 PT, but consensus still mixed (4buy/6hold/3sell), reaction already fired -- WATCH
+SSTI   # 2026-09-30: +50.09%, SoundThinking -- real signed merger agreement (Transom Capital, up to $11/share) but reaction fully fired, doesn't fit 2-week framework -- WATCH
+IOVA   # 2026-09-30: +31.48%, Iovance Biotherapeutics -- real FY26 guidance raise, targets above price, but reaction already fired same-day -- WATCH
+WYY    # 2026-09-30: +24.58%, WidePoint -- relief bounce 4 sessions after a DHS contract-protest crash, dispute still unresolved -- PASS
+CLPT   # 2026-09-30: -23.12%, ClearPoint Neuro -- real negative read-through from partner uniQure's failed AMT-130 endpoint -- PASS
+XRPN   # 2026-09-30: +21.99%, Armada Acquisition Corp II/Evernorth (renamed from AACI) -- pending merger vote today, unresolved binary, pop already ran -- WATCH
+EGG    # 2026-09-30: +17.65%, Enigmatig Limited -- no catalyst, company itself disclaims knowledge of any driver, thin float -- PASS
+EAF    # 2026-09-30: -14.16%, GrafTech -- no fresh catalyst (BMO actually raised PT 2 days prior), 3rd unexplained large move this project has logged on this ticker -- PASS
+WW     # 2026-09-30: +13.77%, WeightWatchers -- real Google Health partnership but GLP-1 headwind restated, reaction already unwinding -- WATCH
+CABO   # 2026-09-30: -13.05%, Cable One -- real fundamental deterioration (BNP PT cut $40->$13, EBITDA miss, $1.16B net loss) -- PASS
+WGS    # 2026-09-30: -11.80%, GeneDx -- no fresh catalyst, nearest real event (CMS cuts) already 09-22 -- PASS
+NESR   # 2026-09-30: -11.14%, National Energy Services Reunited -- no catalyst either direction, valuation unwind after a ~7x 3-year run -- PASS
+CSIQ   # 2026-09-30: +10.84%, Canadian Solar -- single bullish research note vs broader Reduce consensus, reaction fully fired -- WATCH
+DPRO   # 2026-09-30: +10.81%, Draganfly -- real $10M strategic investment + defense contract wins, but dilutive and reaction already fired -- WATCH
+PIPR   # 2026-09-30: -9.72%, Piper Sandler -- acquirer-side M&A rumor (Perella Weinberg talks), unconfirmed, no bull thesis -- PASS
+MGNI   # 2026-09-30: +9.70%, Magnite -- stale analyst catalyst reused (2wk-old antitrust ruling), extended stock -- WATCH
+CHPT   # 2026-09-30: +8.92%, ChargePoint -- repeat -- 3rd appearance chasing the same stale earnings story, ledger validates prior fades -- PASS
+QMLS   # 2026-09-30: -8.80%, QumulusAI -- real contract but textbook buy-rumor-sell-news round trip -- PASS
+IMMX   # 2026-09-30: -8.11%, Immix Biopharma -- real dilutive offering + strong trial data + analyst hikes above price, offering still settling -- WATCH
+SATL   # 2026-09-30: -7.44%, Satellogic -- no catalyst found either direction -- PASS
+DKNG   # 2026-09-30: -7.42%, DraftKings -- sector-sympathy move (Brazil betting ban hits Flutter/FanDuel, not DKNG) -- PASS
+SRAD   # 2026-09-30: -7.37%, Sportradar -- real Brazil betting-ban exposure but sector-wide + already-known guidance cut -- PASS
+VOYG   # 2026-09-30: -7.35%, Voyager Technologies -- real Anduril partnership but upsized $402.5M convert dilution dominates -- PASS
+AIR    # 2026-09-30: -7.25%, AAR Corp -- real earnings beat but overshadowed by a $1.8B debt/equity-financed acquisition -- PASS
+NEOG   # 2026-09-30: -7.22%, Neogen -- real negative catalyst (FDA warning letters, fungal contamination linked to 20+ horse deaths) -- PASS
+WING   # 2026-09-30: +6.70%, Wingstop -- no fresh catalyst, oversold bounce on an unresolved comp-sales structural issue -- PASS
+METC   # 2026-09-30: -6.68%, Ramaco Resources -- continuation of an already-validated 09-03 WATCH story, no fresh catalyst -- PASS
+ABCL   # 2026-09-30: +6.47%, AbCellera -- JPMorgan initiation continuation into a 2nd session, single-analyst action -- WATCH
+
+# --- added 2026-10-01 via the daily screen routine (same-day catch: NKE earnings resolution, plus Massive 09-29 -> 09-30 session pair) ---
+NKE    # 2026-10-01: earnings resolved -- FY27 guidance cut hard, China revenue -22% YoY, new "Pace" restructuring plan, stock gapped to a ~12yr low after-hours -- PASS (negative, long-only)
+CTVA   # 2026-10-01: claimed -83.81% -- RESOLVED as a Vylor spin-off basis artifact, not a real crash; real (minor) catalyst is a $455M PFAS settlement -- PASS
+LQDA   # 2026-10-01: repeat -- continuation of 09-30's patent-ruling fallout, BTIG downgraded to Neutral, no new-direction catalyst -- PASS
+# --- mortgage/REIT cluster (one correlated macro move, see data/research/2026-10-01/mortgage_cluster_note.md) ---
+MTG    # 2026-10-01: -8.53%, MGIC Investment -- 10yr yield spike (~5.27-5.29%) + GSE PMIERs capital-rule change effective 09-30 -- PASS
+ESNT   # 2026-10-01: -8.43%, Essent Group -- same mortgage-insurer cluster as MTG -- PASS
+NMIH   # 2026-10-01: -8.37%, NMI Holdings -- same mortgage-insurer cluster -- PASS
+BXMT   # 2026-10-01: -6.99%, Blackstone Mortgage Trust -- rate/book-value-driven, same cluster -- PASS
+CIM    # 2026-10-01: -6.57%, Chimera Investment -- rate/book-value-driven, same cluster -- PASS
+NLY    # 2026-10-01: -7.04%, Annaly Capital -- rate/book-value-driven, same cluster -- PASS
+MSGY   # 2026-10-01: +27.48%, Masonglory -- reverse-split/thin-float pump, no catalyst -- PASS
+SCTX   # 2026-10-01: -20.08%, Scribe Therapeutics -- no catalyst found, runs against same-day bullish signals (ARK bought more) -- PASS
+GLAS   # 2026-10-01: -17.38%, Glass House Brands -- correlated with TRLV, DEA rescheduling-hearing pause (sector-wide) -- PASS
+CTNM   # 2026-10-01: +16.70%, Contineum Therapeutics -- cited catalyst is 5mo stale, red flag not a real driver -- PASS
+QTTB   # 2026-10-01: -13.22%, Q32 Bio -- real positive Phase 2a data but clean sell-the-news reversal -- PASS
+ETON   # 2026-10-01: -13.01%, Eton Pharmaceuticals -- real catalyst already fired as a +39% 2-day spike, today is profit-taking -- PASS
+TRLV   # 2026-10-01: -12.17%, Trulieve Cannabis -- correlated with GLAS, same DEA rescheduling pause + sell-the-news on its own licensing deal -- PASS
+CDNL   # 2026-10-01: +11.80%, Cardinal Infrastructure -- real positive item postdates the move by a day, active fraud investigation -- PASS
+ROG    # 2026-10-01: +10.73%, Rogers Corporation -- real Investor Day targets but already priced in, GF Value ~39% overvalued -- WATCH
+CAPR   # 2026-10-01: +10.50%, Capricor Therapeutics -- real Phase 3 data but FDA PDUFA ~7-8wk out, live fraud lawsuit from a prior adcomm rejection -- WATCH
+JBL    # 2026-10-01: -10.03%, Jabil -- real beat-and-raise but classic sell-the-news, stretched valuation -- PASS
+FORM   # 2026-10-01: +9.59%, FormFactor -- real Deutsche Bank initiation (Nvidia second-source role), confirmed idiosyncratic not sector -- WATCH
+EPRX   # 2026-10-01: +9.57%, Eupraxia Pharmaceuticals (NOT Eiger) -- real Q3 beat + Phase 1b/2a data but 3rd positive rally in 2.5wks, already extended -- WATCH
+ZETA   # 2026-10-01: +9.01%, Zeta Global -- no fresh catalyst, cited "earnings" factually wrong (next report 11-03) -- PASS
+CBRS   # 2026-10-01: -8.87%, Cerebras Systems -- real post-IPO lockup unlock + CFO sale + OpenAI-hardware rumor -- PASS
+OMDA   # 2026-10-01: +7.43%, Omada Health -- no genuine catalyst, WebSearch recycled stale Q2 figures as if new -- PASS
+FROG   # 2026-10-01: +7.38%, JFrog -- every cited driver traces to a 4wk-stale conference -- PASS
+HUT    # 2026-10-01: -7.28%, Hut 8 Mining -- sell-the-news + insider Form 144 filing (clarified as collateral, not open-market sale) -- PASS
+GENI   # 2026-10-01: -7.13% -- repeat -- minor analyst downgrade, same insider-selling pattern as 09-21 -- PASS
+ACMR   # 2026-10-01: +7.02%, ACM Research -- real 8-K backlog disclosure (+88.2% YoY) but overbought RSI, insider selling, no 2nd near-term catalyst -- WATCH
+KMX    # 2026-10-01: -6.96%, CarMax -- real beat but margin erosion underneath, GWRE/HPE-shaped pattern -- PASS
+SLS    # 2026-10-01: +6.95%, SELLAS Life Sciences -- trading on an unresolved pending Phase 3 readout -- PASS
+IBRX   # 2026-10-01: +6.91%, ImmunityBio -- real founder meeting but narrative not a deal, already extended -- WATCH
+DOCS   # 2026-10-01: +6.86%, Doximity -- confirmed no company-specific driver, only negative news is a live class action -- PASS
+IE     # 2026-10-01: -6.77%, Ivanhoe Electric -- real but stale (4-5d) single-analyst PT cut -- PASS
+FOSL   # 2026-10-01: +6.66%, Fossil Group -- technical MA cross only, real news 3-4wks stale -- PASS
+GLND   # 2026-10-01: +8.00%, Greenland Energy -- stale (12d+) catalyst, pre-revenue zero-employee microcap, already round-tripped -- PASS
+BRZE   # 2026-10-01: +8.42%, Braze -- repeat (first appearance 09-10, never outcome-checked) -- real AWS deal but already extended across a 3-day conference, doesn't fix the original crash's root metrics -- WATCH
+
+# --- added 2026-10-02 via the daily screen routine (Massive 09-30 -> 10-01 session pair) ---
+SNPS   # 2026-10-02: +12.78%, Synopsys -- REACHED CANDIDATE (real multi-dimensional Investor Day catalyst: FY27 guidance raise, named OpenAI/AWS AI deals, $1B buyback) -- council-downgraded to WATCH (closest call since KOD -- bear's antitrust claim refuted as stale, but independently-measured technical extension: 10% above 20-day high on 3.3x volume, RSI 74, +33% pre-catalyst run -- nearly identical to TWST's shape) -- see data/research/2026-10-02/SNPS_council.md
+COHR   # 2026-10-02: +10.59%(10-01)/+5.59%(10-02), Coherent Corp -- REACHED CANDIDATE (real PhotonLink AI-datacenter optics launch + fresh Bernstein initiation) -- council-downgraded to WATCH (confirmed genuine breakout close above 20-day high, but PhotonLink is actually 10-day-old news re-traded on a bundled 6-name sector note, extreme valuation (173x trailing P/E, GF Value 333% overvalued), and a specific company-level precedent: COHR has given back sector pops/even earnings beats 5+ times in 2026) -- see data/research/2026-10-02/COHR_council.md
+NKTR   # 2026-10-02: -22.39%, Nektar Therapeutics -- real negative Phase 2b data (declining sustained response off-treatment) -- PASS
+MAT    # 2026-10-02: +18.80%, Mattel -- real but unconfirmed Authentic Brands ~$6B takeover rumor + CEO transition -- WATCH
+WFCF   # 2026-10-02: +17.10%, Where Food Comes From -- no catalyst found, volatility halt only -- PASS
+AGEN   # 2026-10-02: -16.11%, Agenus -- no catalyst found, pending 10-03 data event not yet presented -- PASS
+ACN    # 2026-10-02: +15.78%, Accenture -- real beat-and-raise but record-gain sell-the-news pattern, same shape as JBL -- PASS
+INGN   # 2026-10-02: +13.47%, Inogen -- real divestiture + activist cooperation agreement, deal not yet closed -- WATCH
+EVMN   # 2026-10-02: -12.71%, Evommune -- real positive Phase 2a data but reaction already fired and fully reversed -- PASS
+TDAY   # 2026-10-02: +12.24%, USA TODAY Co (NOT ThoughtSpot) -- real antitrust ruling lets a $901M-$2.7B claim proceed, but no trial date set -- WATCH
+EFXT   # 2026-10-02: +11.63%, Enerflex (NOT Equifax) -- real 450MW data-center contract but +280% YTD, 212% above fair value, back-loaded to 2027-28 -- WATCH
+UMAC   # 2026-10-02: -11.03%, Unusual Machines -- continuation/giveback of a stale Draganfly story, Pentagon plan named no suppliers -- PASS
+WOLF   # 2026-10-02: +10.81%, Wolfspeed -- no catalyst found, momentum/short-covering on a distressed name -- PASS
+EFOR   # 2026-10-02: +10.00%, Everforth (fka ASGN) -- real developments but 7-9d stale, mostly short-covering -- WATCH
+PSKY   # 2026-10-02: -9.58%, Paramount Skydance -- real $41.4B debt financing for the WBD deal exceeds PSKY's own market cap, S&P downgrade -- PASS
+LWLG   # 2026-10-02: +8.80%, Lightwave Logic -- no fresh catalyst, 6-7mo stale AI-photonics story -- PASS
+SHAZ   # 2026-10-02: -8.70%, SharonAI Holdings (NOT Shazam) -- macro-driven (10yr yield spike hit rate-sensitive AI-infra names), own news was positive -- PASS
+NMAX   # 2026-10-02: -8.70%, Newsmax -- no fresh catalyst, 12d-stale downgrade -- PASS
+PRGS   # 2026-10-02: -8.48%, Progress Software -- real beat but weak guidance, GWRE/HPE-shaped pattern -- PASS
+CNXC   # 2026-10-02: +8.26%, Concentrix -- confirmed via real-time OHLCV as a sell-the-news bounce already reversing -- PASS
+GRND   # 2026-10-02: -8.17%, Grindr -- real $250M PurposeMed acquisition, market read it negatively (STRONG_SELL) -- PASS
+GENB   # 2026-10-02: -8.12%, Generate Biomedicines -- real EPS miss -- PASS
+AAOI   # 2026-10-02: +8.12%, Applied Optoelectronics -- confirmed riding the same Bernstein optical-sector note as CIEN, 324% above GF Value -- WATCH
+RYAM   # 2026-10-02: -7.90%, Rayonier Advanced Materials -- real EPS miss -- PASS
+RGEN   # 2026-10-02: -7.80%, Repligen -- real $1.5B BioLife acquisition, market read negatively (dilution/integration risk) -- PASS
+CIEN   # 2026-10-02: +7.77%, Ciena -- same Bernstein sector note as AAOI/COHR, earnings beat 4wks stale -- WATCH
+KD     # 2026-10-02: +7.64%, Kyndryl -- correlated IT-services move off Accenture's earnings, TradingView disagrees with the pop -- WATCH
+# --- repeat tickers (continuation notes) ---
+CTVA   # 2026-10-02: repeat -- same Vylor spin-off basis artifact, new 15-state PFAS litigation found but multi-year risk not near-term -- PASS
+XRPN   # 2026-10-02: +68% intraday continuing -- repeat -- Evernorth merger vote passed, 3rd consecutive up session, price now well above NAV estimate -- WATCH
+EPRX   # 2026-10-02: -13.96% -- repeat -- digestion/profit-taking after 3 positive rallies in 2.5wks, no reversal of thesis -- WATCH
+GRML   # 2026-10-02: -14.22% -- repeat -- continued thin-float oscillation -- PASS
+VRDN   # 2026-10-02: -7.77% -- repeat -- resolved: real Q3 EPS miss explains the move -- WATCH
+SGML   # 2026-10-02: -11.33% -- repeat -- real NEW negative catalyst: Brazilian regulator suspended mine operations -- PASS
+DPRO   # 2026-10-02: -9.62% -- repeat -- reaction-already-fired caution unwinding further, below the strategic-raise price -- PASS
+INOD   # 2026-10-02: +9.26% -- repeat -- still unconfirmed Hunterbrook/Meta-Muse thesis, now more extended -- WATCH
+BLMN   # 2026-10-02: +8.13% -- repeat -- upgraded to WATCH: real JPMorgan upgrade + credit-facility extension, but only to Neutral -- WATCH
+CRDO   # 2026-10-02: +7.90% -- repeat -- no new catalyst, continued insider selling underneath -- WATCH
+GWRE   # 2026-10-02: +8.94% -- repeat -- NOT a new catalyst, too early per lessons.md #7's 3-month recovery precedent -- WATCH
+NXL    # 2026-10-02: round-tripped (+76% then -24%) -- repeat -- resolved: real commercialization-advisor hire + distribution deal drove the pop, no negative catalyst for today's giveback -- PASS

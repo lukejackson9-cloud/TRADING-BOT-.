@@ -49,17 +49,6 @@ reignite a "stale" story. Don't downgrade a real near-term dated event
 (even one attached to an already-running story) to "stale" without
 weighing that it could still be the next leg's actual trigger.
 
-**Turned into an explicit checklist (2026-09-11)**, not left as a
-one-line caveat: skills/research.md step 3a now requires research.md to
-explicitly check for, and record, whether a dated near-term company event
-exists before downgrading anything as "stale" — and skills/council.md's
-falsifiability requirement makes the same check mandatory for any bear
-case leaning on "already priced in." The gap this closes specifically:
-AEHR's own research note correctly identified every driver as stale
-without ever checking whether a NEW dated event (the conference) was
-still ahead — the checklist forces that second question to be asked and
-answered on the record, not just the first.
-
 ## 2. WebSearch summaries are unreliable for precise facts (price levels,
 % moves, even direction) — verify against authoritative OHLCV when
 sources disagree
@@ -163,195 +152,35 @@ independently found the same facts (not just whether they disagree on
 interpretation) — unprompted agreement on a specific risk is more
 reliable than either side's argued position.
 
-## 9. "No fresh dated catalyst" is not a reason a move will stop — a
-rising-estimate-revision story can keep running with no new event at all
-This is the failure mode lesson #1's new AEHR checklist does NOT catch,
-found by the 2026-09-11 structured postmortem on every logged miss (see
-scorecard.md's calibration section for the full method). AEHR was a case
-where a dated event WAS pending and got missed. These are the opposite —
-cases where research correctly verified no dated catalyst existed, and
-the move continued anyway:
-- **CLS** (09-04, WATCH, "cost a winner (tentative)", +5-6% in under a
-  week): the note explicitly checked and correctly established that the
-  next earnings were Oct 26, ">7 weeks out, past this bot's ~2-week
-  horizon — no near-term binary event to trade around," and treated that
-  absence as a reason to stand aside. What it also recorded, and then
-  weighed as neutral-to-negative, was that FY26 EPS estimates were +11.4%
-  and FY27 +30.2% over the prior 60 days, with multiple brokers raising
-  targets.
-- **CCC.L** (09-06, WATCH, "leans cost a winner", kept rising to new
-  record highs 5,700-5,825p): same shape — "no fresh company-specific
-  news accompanied this particular UBS note... a target/estimate revision
-  layered on already-known H1/July information," plus "near record highs"
-  treated as extension risk. Underneath it: the company's own July
-  guidance upgrade ("ahead" → "comfortably ahead of market
-  expectations"), H1 adjusted PBT guided to roughly double, and a second
-  broker (Berenberg) independently upgrading.
-Both notes reasoned that an already-known story with no fresh dated event
-had nothing left to give. In both cases the stock kept re-rating on the
-estimate-revision trend itself. Note this is the exact opposite direction
-from lesson #1 — which is why both belong here rather than one replacing
-the other: a fired catalyst with nothing behind it fades (#1), but a
-rising estimate/guidance trend with no single dated event can keep going
-(#9). The distinguishing feature is not "was there a dated catalyst" but
-"is the underlying estimate trend still moving."
-Action: treat a corroborated, multi-source UPWARD estimate/guidance
-revision trend (company guidance raised, consensus EPS revised up over
-weeks, more than one broker moving the same way) as a real signal in its
-own right, not as "no catalyst, therefore pass." Record it explicitly as
-a distinct line in the research note's Catalyst section rather than
-folding it into "no dated event found." This does NOT mean buying
-extended stocks with no catalyst — the opposite overcorrection is just as
-wrong, and lesson #1 still stands on its own evidence. It means the
-absence of a dated event is not itself bearish, and shouldn't be written
-up as though it were.
-**Candidate third instance, found 2026-09-11, not yet resolved**: BAND
-(09-10, PASS, reason given: "no confirmed dated catalyst despite bullish
-backdrop") rose **+7.5% on the very first session after the verdict, with
-an intraday high +7.9% — within 0.1pp of this project's +8% target**, on
-day one of five. Same shape as CLS and CCC.L: the absence of a dated
-catalyst was written up as the reason to stand aside, and the stock moved
-anyway. Deliberately NOT counted as a miss yet — one session is not a
-resolution, and it could still round-trip before the 5-day time-stop.
-Re-check at 5/5 sessions; if it holds, this lesson has three instances
-and the ordering question ("is the estimate trend still moving") becomes
-worth raising with the user directly rather than just logging.
-Sample-size caveat, stated plainly: N=2 clean instances (+1 pending), and
-BOTH resolved ones are logged in the ledger as tentative/leaning ("cost a
-winner (tentative)", "leans cost a winner") rather than cleanly resolved —
-this clears this file's "more than once with real sourcing" bar but is
-nowhere near strong enough to change a verdict rule on its own. Re-check
-all three outcomes with a proper dated-source price comparison before this
-is treated as settled.
-
-## 10. [DOWNGRADED TO HYPOTHESIS, same day it was written — does NOT meet
-this file's evidence bar] Possible pattern: clean structural-negative
-stories snapping back
-**Read the correction first.** This lesson was written earlier on
-2026-09-11 claiming calibration was clearly inverted (high 75%, medium
-78%, low 88%) and that "both high-confidence misses" shared a snapback
-shape. Re-running the tally the same day with bucketing corrected to match
-scorecard.md's own documented methodology — hedged outcomes like "unclear
-— leans cost a winner" count as UNCLEAR, not as confirmed misses, and
-no-thesis rows are excluded — changed the picture materially:
-- High-confidence accuracy is **83% (n=6)**, not 75%. EGAN, one of the two
-  claimed high-confidence misses, is logged as "Unclear (leans cost a
-  winner)" and should never have been counted as a confirmed miss.
-- Corrected calibration: high 83% (n=6), medium 81% (n=27), low 100%
-  (n=8). The low bucket still outperforms the high bucket, so *some*
-  inversion remains at the extremes — but high is no longer the worst
-  bucket, the gap is far smaller than first reported, and n=6 in the high
-  bucket means a single outcome decides it.
-- The snapback pattern therefore rests on **one confirmed instance (OXM)
-  plus one leaning (EGAN)** — which does not clear this file's stated bar
-  of "shown up more than once with real sourcing."
-Kept here, explicitly demoted rather than deleted, for the same reason
-vcp_breakout's reversal was kept in CLAUDE.md: the mistake is instructive.
-A crude text-matching bucket rule inflated a finding into a confident
-claim about the system's calibration within a single pass. Any future
-calibration claim must state its bucketing rules and reproduce
-scorecard.md's miss list exactly (FCEL, XP, AEHL, AEHR, CLS, CCC.L, OXM)
-before its percentages are trusted.
-The underlying hypothesis, still worth watching as more outcomes resolve:
-- **OXM** (09-07, PASS, high confidence): "clean earnings-miss-and-
-  guide-down story," full-year EPS guidance cut well below consensus,
-  next quarter guided to a loss, explicitly written up as a
-  "falling-knife pattern." Then +23% in three sessions.
-- **EGAN** (09-07, PASS, high confidence): "structural decline, swing to
-  GAAP net loss." Ledger: "leans cost a winner — data suggestive of a
-  rebound."
-The pattern is intuitive in hindsight and worth naming: the cleaner and
-more one-sided the bad news, the more confidently this system writes it
-off — and clean, fully-digested bad news is also exactly the setup where
-positioning gets crowded and oversold snapbacks happen. High confidence
-here is tracking "how unambiguous is the story," which is not the same
-thing as "how likely am I to be right about the next two weeks."
-Action while this remains a hypothesis: no behaviour change. Do NOT adjust
-how confidence is assigned, and do not add a "clean bear case" check to
-research.md on this evidence — one confirmed instance is an anecdote. What
-to do instead is purely observational: when the next structural-negative
-PASS at HIGH confidence resolves, record it here. Three confirmed
-instances would make this a real lesson; continued 80%+ high-confidence
-accuracy would retire it.
-Sample-size reality: n=6 (high) and n=8 (low). A single outcome flip moves
-either by 12-17 points. The medium bucket still carries 21 unresolved
-"unclear" outcomes — more unresolved than resolved — so the graded subset
-may not represent the whole. Per CLAUDE.md's standing 2026-09-03/09-09
-user decisions, any actual change to confidence-rating behaviour or
-council's bar is the user's call, and nothing here comes close to
-justifying one.
-
-## 11. An absolute volume/liquidity filter silently becomes a different
-##     filter when the data feed changes — and the distortion is worst in
-##     the oldest data, exactly where multi-year tests need it least
-Evidence (2026-09-12, found while building `scripts/regime_test.py`):
-`backtest_ta.iter_signals()` screens for >=1,000,000 shares. That was
-written against Massive's full consolidated tape. Alpaca's free feed
-reports **IEX-only** volume, measured at a median **5.1%** of consolidated
-volume (p5 2.7%, p95 8.8%) across a 401-name sample on 2026-09-10. So the
-same line of code means ">1M shares" on one feed and ">~20M shares" on the
-other — a mega-cap-only screen wearing a liquidity screen's clothes.
-Worse, it is not a constant distortion: IEX's market share was lower in
-earlier years, so the filter tightens as you go back. First run of the
-regime test yielded **32 signal entries in 2020 against 409 in 2026** and
-was unusable as a per-year comparison. With the floor corrected to 50,000
-IEX shares the years came out balanced (1,136-5,146 each) and the totals
-rose from 1,019 to 24,867 signal entries.
-Two general points worth carrying:
-- **A threshold is only meaningful relative to the feed it was calibrated
-  on.** Ratios (today's volume vs. its own 20-day average, as the breakout
-  trigger uses) survive a feed change; absolute levels do not. Prefer
-  ratios where the logic allows it.
-- **Check the per-period sample counts before reading any per-period
-  table.** The distortion here announced itself as a 13x imbalance across
-  years. That imbalance was visible in the output before any number in it
-  was interpreted — the same class of check that caught the 20-day
-  effective-sample-size problem and the two-date paper-trade artifact.
-Consequence for existing numbers: every 6-year Alpaca backtest in
-CLAUDE.md's TA section ran through the unadjusted floor and is mega-cap-
-skewed on top of its documented survivorship bias. Not re-run; treated as
-another reason those figures are not load-bearing.
-
-## 12. Test the FEATURE before testing rules built on it — a threshold can
-##     only destroy information, never create it
-Evidence (2026-09-12, `scripts/feature_ic.py`): this project ran 26+
-binary rule variants, six confluence combinations and 180 exit-rule cells
-across roughly two weeks of work, all flat or negative. Not one of them
-asked whether the underlying continuous variables predicted anything.
-When that was finally measured — cross-sectional rank IC, within-day, per
-year, 318,505 stock-days — seven of eight features came back as noise
-that flips sign year to year, including the raw material of every setup
-being traded (distance from the 20-day high, volume ratio, RSI, EMA
-spread, relative strength).
-The ordering was backwards throughout. A rank-IC table over the features
-would have taken an afternoon and would have said, before any of the rule
-work started, that there was nothing underneath to find. Rules are how
-you HARVEST information; they cannot manufacture it. Measure the raw
-variable first, and only design a rule once something survives.
-Corollary on how to close a line of inquiry: "these 26 rules failed" is
-weak and invites variant 27. "The features carry no cross-sectional
-information in this universe" is final. Prefer the test that can produce
-the final statement.
-
-## 13. When results are consistently NEGATIVE rather than flat, look for a
-##     real effect you are on the wrong side of
-Evidence (2026-09-12): the volatility-matched sweep measured this
-project's signals at -0.23%/trade against matched peers — sign-consistent
-across halves. "No edge" predicts ~0.00%, not a persistent negative, and
-that gap went unexplained for a day.
-The feature test explained it. The one variable that IS sign-consistent
-(6/7 years, rank IC +0.0172) is 5-day reversal — recent losers outperform
-recent winners over the following week, the classic Jegadeesh/Lehmann
-short-term reversal. All five TA setups are momentum-CONTINUATION bets:
-buy what just went up. They were not edge-free, they were systematically
-positioned against a small real effect.
-The general lesson: a persistent negative is information, not just a
-disappointing zero. It means something real is happening and the position
-is backwards. Treating it as "no edge, move on" discards the one finding
-in the dataset. Ask what would have to be true for the sign to come out
-that way.
-The lesson does NOT extend to flipping the bet. The same session measured
-what fading momentum would actually earn long-only, net of costs, and it
-was +0.01%/trade with the apparent profit concentrated in the cheapest,
-widest-spread names — see CLAUDE.md. Understanding why you lost is not
-the same as having found a way to win.
+## 9. During a bullish market stretch, a WATCH capped on "real catalyst,
+but already extended / valuation / who's-the-counterparty" tends to cost
+more real gains than a WATCH capped on a thin or sector-wide catalyst
+Evidenced by the 2026-09-30 outcome-check pass (user-requested, covering
+~09-15 to 09-24, a specifically bullish 2-week window) — 8 clean "cost a
+winner" misses out of 31 checked, and every one of the 8 shares the same
+shape: a genuine, dated, positive, company-specific catalyst existed
+(CRWD's real news within a hot cluster, TEM's 09-16 continuation,
+VICR's fab expansion + buyback, DNA's Lilly partnership, MRNA's ESMO
+acceptance, GRAL's 7-2 favorable FDA vote, DSP's withdrawn secondary,
+SECZ's SEC exemption + Cantor initiation), and the WATCH cap was
+specifically about entry timing, overextension, valuation, or an
+unnamed/unconfirmed counterparty — never about doubting that the
+catalyst itself was real. Meanwhile, the pass's "validated" calls mostly
+shared the opposite shape: either a real-but-thin/sector-wide catalyst
+sitting on top of a genuine unresolved negative (OKLO's still-bearish
+technical structure, FCEL's escalating securities-fraud case, INTC's
+broad chip-sector selloff), or a mechanically capped setup with no real
+room to run regardless of tape direction (WBD pinned at its own deal
+price, INIO's back-loaded 2028 delivery benefit, ABBV/GNRC/RARE all
+retesting a technical level that had already failed once).
+Action: when council or research.md caps a ticker at WATCH specifically
+because a genuine catalyst looks "already priced in" or "too extended"
+rather than because the catalyst itself is doubted, treat that as the
+single highest-risk WATCH category for costing a real winner in a
+bullish tape — worth a tighter re-check cadence (don't wait the full
+5-day time-stop) rather than filing it away as resolved caution. This is
+NOT license to promote such calls to CANDIDATE by default — council.md's
+bar stays exactly where it is per CLAUDE.md's calibration rule — it's a
+sharper signal for WHICH downgrades deserve a faster second look. N=31,
+still directional per journal.md's own sample-size rule; flagged to the
+user directly rather than acted on unilaterally.

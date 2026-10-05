@@ -540,5 +540,977 @@
       "note": "Goldman Sachs raised PT to $240 from $225 (dated 9/16, the trading day before) after meetings with senior leadership, reiterating Buy -- a real, dated, material analyst action; BMO and Piper Sandler also raised targets around the same time.",
       "tagged_on": "2026-09-17"
     }
+  },
+  {
+    "date": "2026-09-18",
+    "symbol": "AMZN",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 9/18-specific catalyst found; AWS growth commentary references an earlier quarterly report, not a fresh event, and the Generac deal is GNRC's news, not AMZN's own.",
+      "tagged_on": "2026-09-18"
+    }
+  },
+  {
+    "date": "2026-09-18",
+    "symbol": "AMZN",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 9/18-specific catalyst found; AWS growth commentary references an earlier quarterly report, not a fresh event, and the Generac deal is GNRC's news, not AMZN's own.",
+      "tagged_on": "2026-09-18"
+    }
+  },
+  {
+    "date": "2026-09-18",
+    "symbol": "TSLA",
+    "setup": "nypm",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst; only opinion/commentary (Ron Baron remark, Morgan Stanley diesel-cost comment), no earnings/M&A/FDA/guidance/analyst-rating-change found.",
+      "tagged_on": "2026-09-18"
+    }
+  },
+  {
+    "date": "2026-09-18",
+    "symbol": "PG",
+    "setup": "order_block",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst; Bernstein reiterated (didn't change) a Hold rating on 9/17 -- not a rated-firm change, and no earnings/M&A/FDA/guidance event found.",
+      "tagged_on": "2026-09-18"
+    }
+  },
+  {
+    "date": "2026-09-18",
+    "symbol": "PG",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst; Bernstein reiterated (didn't change) a Hold rating on 9/17 -- not a rated-firm change, and no earnings/M&A/FDA/guidance event found.",
+      "tagged_on": "2026-09-18"
+    }
+  },
+  {
+    "date": "2026-09-18",
+    "symbol": "COST",
+    "setup": "nypm",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 9/18 catalyst; BofA's PT cut to $1,095 was dated 9/16 (2 days stale), Uber Eats expansion has no confirmed date, and earnings aren't until 9/24.",
+      "tagged_on": "2026-09-18"
+    }
+  },
+  {
+    "date": "2026-09-18",
+    "symbol": "CVX",
+    "setup": "fvg",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No fresh dated catalyst for 9/18; the $7B Venezuela Orinoco Belt investment is dated 9/2 (16 days stale), and the Goldman Sachs PT raise was already dated 9/16 (covered by yesterday's 9/17 signal tag).",
+      "tagged_on": "2026-09-18"
+    }
+  },
+  {
+    "date": "2026-09-18",
+    "symbol": "CVX",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No fresh dated catalyst for 9/18; the $7B Venezuela Orinoco Belt investment is dated 9/2 (16 days stale), and the Goldman Sachs PT raise was already dated 9/16 (covered by yesterday's 9/17 signal tag).",
+      "tagged_on": "2026-09-18"
+    }
+  },
+  {
+    "date": "2026-09-18",
+    "symbol": "CVX",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No fresh dated catalyst for 9/18; the $7B Venezuela Orinoco Belt investment is dated 9/2 (16 days stale), and the Goldman Sachs PT raise was already dated 9/16 (covered by yesterday's 9/17 signal tag).",
+      "tagged_on": "2026-09-18"
+    }
+  },
+  {
+    "date": "2026-09-18",
+    "symbol": "CVX",
+    "setup": "inverse_fvg",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No fresh dated catalyst for 9/18; the $7B Venezuela Orinoco Belt investment is dated 9/2 (16 days stale), and the Goldman Sachs PT raise was already dated 9/16 (covered by yesterday's 9/17 signal tag).",
+      "tagged_on": "2026-09-18"
+    }
+  },
+  {
+    "date": "2026-09-21",
+    "symbol": "AMZN",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Only item found was Erste Group Bank raising earnings estimates -- a minor, non-bulge-bracket estimate revision, not a rating/PT change; no other dated 9/21 catalyst found.",
+      "tagged_on": "2026-09-21"
+    }
+  },
+  {
+    "date": "2026-09-21",
+    "symbol": "JNJ",
+    "setup": "fvg",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "CAPLYTA met the primary endpoint in a pivotal Phase 3 study for bipolar I manic episodes, dated 9/21; stock outperformed the broader market same day -- real, dated, company-specific clinical catalyst.",
+      "tagged_on": "2026-09-21"
+    }
+  },
+  {
+    "date": "2026-09-21",
+    "symbol": "JNJ",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "CAPLYTA met the primary endpoint in a pivotal Phase 3 study for bipolar I manic episodes, dated 9/21; stock outperformed the broader market same day -- real, dated, company-specific clinical catalyst.",
+      "tagged_on": "2026-09-21"
+    }
+  },
+  {
+    "date": "2026-09-21",
+    "symbol": "JNJ",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "CAPLYTA met the primary endpoint in a pivotal Phase 3 study for bipolar I manic episodes, dated 9/21; stock outperformed the broader market same day -- real, dated, company-specific clinical catalyst.",
+      "tagged_on": "2026-09-21"
+    }
+  },
+  {
+    "date": "2026-09-21",
+    "symbol": "JNJ",
+    "setup": "inverse_fvg",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "CAPLYTA met the primary endpoint in a pivotal Phase 3 study for bipolar I manic episodes, dated 9/21; stock outperformed the broader market same day -- real, dated, company-specific clinical catalyst.",
+      "tagged_on": "2026-09-21"
+    }
+  },
+  {
+    "date": "2026-09-21",
+    "symbol": "HD",
+    "setup": "nypm",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst; only vague, unnamed-firm commentary about analysts trimming long-term EPS estimates, not a specific dated rating/PT action.",
+      "tagged_on": "2026-09-21"
+    }
+  },
+  {
+    "date": "2026-09-21",
+    "symbol": "PEP",
+    "setup": "nypm",
+    "direction": "bullish",
+    "return_r": -0.6140350877192843,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Only a routine quarterly dividend increase (4%, $1.48/share) declared 9/21 -- a scheduled corporate action, not one of the qualifying catalyst categories; no other dated news found.",
+      "tagged_on": "2026-09-21"
+    }
+  },
+  {
+    "date": "2026-09-22",
+    "symbol": "AAPL",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst; move described only as a technical breakout, no earnings/M&A/FDA/guidance/analyst-rating-change dated 9/22.",
+      "tagged_on": "2026-09-22"
+    }
+  },
+  {
+    "date": "2026-09-22",
+    "symbol": "AAPL",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst; move described only as a technical breakout, no earnings/M&A/FDA/guidance/analyst-rating-change dated 9/22.",
+      "tagged_on": "2026-09-22"
+    }
+  },
+  {
+    "date": "2026-09-22",
+    "symbol": "XOM",
+    "setup": "order_block",
+    "direction": "bullish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst; decline tracks sector-wide oil-price weakness, RBC reiterated (not changed) Sector Perform rating.",
+      "tagged_on": "2026-09-22"
+    }
+  },
+  {
+    "date": "2026-09-22",
+    "symbol": "HD",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst; +2.06% move tracks the broader S&P 500 gain (+1.49%) same day, analyst commentary is reiterated sentiment not a new dated action.",
+      "tagged_on": "2026-09-22"
+    }
+  },
+  {
+    "date": "2026-09-22",
+    "symbol": "HD",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst; +2.06% move tracks the broader S&P 500 gain (+1.49%) same day, analyst commentary is reiterated sentiment not a new dated action.",
+      "tagged_on": "2026-09-22"
+    }
+  },
+  {
+    "date": "2026-09-22",
+    "symbol": "DIS",
+    "setup": "fvg",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 9/22 catalyst; CTO hire is effective 10/2 (future), DTC chairman appointment date unconfirmed, analysts reaffirmed (not changed) their rating.",
+      "tagged_on": "2026-09-22"
+    }
+  },
+  {
+    "date": "2026-09-22",
+    "symbol": "DIS",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 9/22 catalyst; CTO hire is effective 10/2 (future), DTC chairman appointment date unconfirmed, analysts reaffirmed (not changed) their rating.",
+      "tagged_on": "2026-09-22"
+    }
+  },
+  {
+    "date": "2026-09-22",
+    "symbol": "DIS",
+    "setup": "inverse_fvg",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 9/22 catalyst; CTO hire is effective 10/2 (future), DTC chairman appointment date unconfirmed, analysts reaffirmed (not changed) their rating.",
+      "tagged_on": "2026-09-22"
+    }
+  },
+  {
+    "date": "2026-09-22",
+    "symbol": "COST",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Expanded same-day delivery through DoorDash across ~630 US warehouse locations, announced 9/22 -- real, dated, company-specific business development.",
+      "tagged_on": "2026-09-22"
+    }
+  },
+  {
+    "date": "2026-09-22",
+    "symbol": "COST",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Expanded same-day delivery through DoorDash across ~630 US warehouse locations, announced 9/22 -- real, dated, company-specific business development.",
+      "tagged_on": "2026-09-22"
+    }
+  },
+  {
+    "date": "2026-09-22",
+    "symbol": "CVX",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst; decline tracks a 4th-consecutive-session drop in crude prices (sector-wide), RBC reiterated (not changed) its rating.",
+      "tagged_on": "2026-09-22"
+    }
+  },
+  {
+    "date": "2026-09-23",
+    "symbol": "TSLA",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No fresh 09-23 catalyst -- Semi factory event is 09-24 (next day), stock only +0.41%, no dated news found",
+      "tagged_on": "2026-09-23"
+    }
+  },
+  {
+    "date": "2026-09-23",
+    "symbol": "TSLA",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No fresh 09-23 catalyst -- Semi factory event is 09-24 (next day), stock only +0.41%, no dated news found",
+      "tagged_on": "2026-09-23"
+    }
+  },
+  {
+    "date": "2026-09-23",
+    "symbol": "JNJ",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Caplyta Phase 3 data is 09-21 (2 days stale), analyst actions (RBC/Scotiabank) dated 09-22 but described ambiguously as reiterations not confirmed new actions, stock barely moved -0.42%",
+      "tagged_on": "2026-09-23"
+    }
+  },
+  {
+    "date": "2026-09-23",
+    "symbol": "NFLX",
+    "setup": "fvg",
+    "direction": "bullish",
+    "return_r": -0.025830258302580705,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Wells Fargo cut PT to $57 same session (09-23), explicitly cited as adding pressure that day -- dated analyst action",
+      "tagged_on": "2026-09-23"
+    }
+  },
+  {
+    "date": "2026-09-23",
+    "symbol": "NFLX",
+    "setup": "nypm",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Wells Fargo cut PT to $57 same session (09-23), explicitly cited as adding pressure that day -- dated analyst action",
+      "tagged_on": "2026-09-23"
+    }
+  },
+  {
+    "date": "2026-09-23",
+    "symbol": "INTC",
+    "setup": "order_block",
+    "direction": "bullish",
+    "return_r": -0.02097902097901505,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Profit-taking after the stale 09-22 rally (+14.05%), no fresh dated catalyst for 09-23 itself",
+      "tagged_on": "2026-09-23"
+    }
+  },
+  {
+    "date": "2026-09-24",
+    "symbol": "AAPL",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No company-specific catalyst; broad tech-sector weakness (Nasdaq -1.13%) cited as the driver",
+      "tagged_on": "2026-09-24"
+    }
+  },
+  {
+    "date": "2026-09-24",
+    "symbol": "TSLA",
+    "setup": "order_block",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Tesla formally opened its dedicated Semi factory in Sparks, NV on 09-24 evening, calling it the launch of high-volume production, with PepsiCo/US Foods/DHL named as early customers -- dated, company-specific",
+      "tagged_on": "2026-09-24"
+    }
+  },
+  {
+    "date": "2026-09-24",
+    "symbol": "TSLA",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Tesla formally opened its dedicated Semi factory in Sparks, NV on 09-24 evening, calling it the launch of high-volume production, with PepsiCo/US Foods/DHL named as early customers -- dated, company-specific",
+      "tagged_on": "2026-09-24"
+    }
+  },
+  {
+    "date": "2026-09-24",
+    "symbol": "UNH",
+    "setup": "eqhl",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated earnings/M&A/FDA/guidance/analyst-action catalyst; only a CAO leadership hire (not a qualifying category), stock barely moved +0.4%",
+      "tagged_on": "2026-09-24"
+    }
+  },
+  {
+    "date": "2026-09-24",
+    "symbol": "MA",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated MA-specific catalyst; only routine ATM-settlement coverage and a SoFi-Mastercard partnership announcement that is not MA's own dated event",
+      "tagged_on": "2026-09-24"
+    }
+  },
+  {
+    "date": "2026-09-24",
+    "symbol": "ADBE",
+    "setup": "nypm",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No fresh 09-24 catalyst; Q3 earnings and CEO-transition news both predate this date, stock down slightly on broad tech weakness",
+      "tagged_on": "2026-09-24"
+    }
+  },
+  {
+    "date": "2026-09-24",
+    "symbol": "AMD",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated company-specific catalyst; move attributed to macro (oil/yields/Iran) and post-$1T-market-cap profit-taking/recovery",
+      "tagged_on": "2026-09-24"
+    }
+  },
+  {
+    "date": "2026-09-24",
+    "symbol": "KO",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst found, stock essentially flat",
+      "tagged_on": "2026-09-24"
+    }
+  },
+  {
+    "date": "2026-09-24",
+    "symbol": "COST",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Costco reported Q4 FY2026 earnings after close 09-24: EPS beat ($6.75 vs $6.54 est), revenue $95.72B (+11.1% YoY) -- dated, company-specific earnings print",
+      "tagged_on": "2026-09-24"
+    }
+  },
+  {
+    "date": "2026-09-24",
+    "symbol": "CVX",
+    "setup": "nypm",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "VP of exploration announced 09-24 a >50% increase in 2027 exploration spending (~20 new wells, wider frontier-basin exposure) -- dated, company-specific strategic guidance",
+      "tagged_on": "2026-09-24"
+    }
+  },
+  {
+    "date": "2026-09-25",
+    "symbol": "NVDA",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No fresh 09-25 catalyst; buyback increase and Hugging Face acquisition are already-known prior events, stock barely moved +0.22%",
+      "tagged_on": "2026-09-25"
+    }
+  },
+  {
+    "date": "2026-09-25",
+    "symbol": "GOOGL",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated GOOGL-specific negative catalyst found; -3.83% move reads as broad Nasdaq weakness that session (-1.18%)",
+      "tagged_on": "2026-09-25"
+    }
+  },
+  {
+    "date": "2026-09-25",
+    "symbol": "JPM",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "JPMorgan Asset Management announced a $20B partnership with the Qatar Investment Authority (QIA) on 09-25 -- dated, material, company-specific",
+      "tagged_on": "2026-09-25"
+    }
+  },
+  {
+    "date": "2026-09-25",
+    "symbol": "WMT",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated earnings/M&A/FDA/guidance/analyst-action catalyst; a pricing-policy PR statement doesn't qualify, stock down -0.34%",
+      "tagged_on": "2026-09-25"
+    }
+  },
+  {
+    "date": "2026-09-25",
+    "symbol": "PG",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No material dated catalyst; only a minor Italy antitrust-investigation closure, stock barely moved +0.37%",
+      "tagged_on": "2026-09-25"
+    }
+  },
+  {
+    "date": "2026-09-25",
+    "symbol": "MA",
+    "setup": "nypm",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Mastercard began settling SoFi Bank card transactions via SoFiUSD stablecoin on 09-25, a real dated infrastructure launch (~$25B annualized volume), though stock barely moved on the news",
+      "tagged_on": "2026-09-25"
+    }
+  },
+  {
+    "date": "2026-09-25",
+    "symbol": "ADBE",
+    "setup": "eqhl",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No fresh 09-25 catalyst; continuing digestion of already-known soft Q4 guidance, down only -1.1%",
+      "tagged_on": "2026-09-25"
+    }
+  },
+  {
+    "date": "2026-09-25",
+    "symbol": "CRM",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No fresh 09-25 event; continuing digestion of the 09-16 investor day (stale), M&A closes (Contentful 09-01, Fin 09-10) also stale",
+      "tagged_on": "2026-09-25"
+    }
+  },
+  {
+    "date": "2026-09-25",
+    "symbol": "AMD",
+    "setup": "nypm",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated catalyst; continued momentum to a fresh 52-week high on already-known AI-demand narrative",
+      "tagged_on": "2026-09-25"
+    }
+  },
+  {
+    "date": "2026-09-28",
+    "symbol": "AAPL",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Federal jury verdict 9/25 awarded Taction Technology $5.7B for Taptic Engine patent infringement (iPhone/Watch), ~4% of Apple's cash pile -- material dated litigation ruling, still fresh at Mon 9/28 open (Yahoo/financefeeds).",
+      "tagged_on": "2026-09-28"
+    }
+  },
+  {
+    "date": "2026-09-28",
+    "symbol": "JNJ",
+    "setup": "nypm",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "Phase 3 CAPLYTA (bipolar I mania) trial met its primary endpoint with statistically significant symptom reduction vs placebo -- dated, company-specific clinical readout covered same-day by 24/7 Wall St ('Next Growth Engine Is Taking Shape', 9/28).",
+      "tagged_on": "2026-09-28"
+    }
+  },
+  {
+    "date": "2026-09-28",
+    "symbol": "HD",
+    "setup": "order_block",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Move explicitly attributed to sector-wide mortgage-rate spike (~7.5%) hitting homebuilders/home-improvement retail broadly (HD + Lowe's both cited) -- textbook sector effect, not company-specific (Yahoo Finance stock market wrap).",
+      "tagged_on": "2026-09-28"
+    }
+  },
+  {
+    "date": "2026-09-28",
+    "symbol": "HD",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Move explicitly attributed to sector-wide mortgage-rate spike (~7.5%) hitting homebuilders/home-improvement retail broadly (HD + Lowe's both cited) -- textbook sector effect, not company-specific (Yahoo Finance stock market wrap).",
+      "tagged_on": "2026-09-28"
+    }
+  },
+  {
+    "date": "2026-09-28",
+    "symbol": "DIS",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": "unclear",
+      "note": "Guggenheim issued a Buy rating on DIS dated 9/28, but source doesn't specify if it's a new initiation/upgrade vs routine reiteration or give a PT -- not enough to confirm genuinely new material information (Yahoo Finance).",
+      "tagged_on": "2026-09-28"
+    }
+  },
+  {
+    "date": "2026-09-28",
+    "symbol": "KO",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No company-specific news found; day's move tied to broad market rally (Dow +0.9%) on US-China summit optimism and falling oil prices -- market-wide, not KO-specific (Yahoo Finance market wrap).",
+      "tagged_on": "2026-09-28"
+    }
+  },
+  {
+    "date": "2026-09-28",
+    "symbol": "CVX",
+    "setup": "nypm",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Only routine coverage: TD Cowen kept Hold, nudged PT to $215 (no rating change), plus vague 'this week' preliminary report of Mediterranean seismic survey plans -- no dated company-specific catalyst (Motley Fool/GuruFocus).",
+      "tagged_on": "2026-09-28"
+    }
+  },
+  {
+    "date": "2026-09-29",
+    "symbol": "V",
+    "setup": "fvg",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 9/29 event found; only earnings-related coverage is Visa's Q3 FY2026 report from late July 2026 (stale, already priced in weeks earlier), next report not until Oct 27 \u2014 no company-specific catalyst near 9/29",
+      "tagged_on": "2026-09-29"
+    }
+  },
+  {
+    "date": "2026-09-29",
+    "symbol": "V",
+    "setup": "order_block",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 9/29 event found; only earnings-related coverage is Visa's Q3 FY2026 report from late July 2026 (stale, already priced in weeks earlier), next report not until Oct 27 \u2014 no company-specific catalyst near 9/29",
+      "tagged_on": "2026-09-29"
+    }
+  },
+  {
+    "date": "2026-09-29",
+    "symbol": "V",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 9/29 event found; only earnings-related coverage is Visa's Q3 FY2026 report from late July 2026 (stale, already priced in weeks earlier), next report not until Oct 27 \u2014 no company-specific catalyst near 9/29",
+      "tagged_on": "2026-09-29"
+    }
+  },
+  {
+    "date": "2026-09-29",
+    "symbol": "MA",
+    "setup": "nypm",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Only dated 9/29 item found is a routine quarterly dividend declaration at the SAME /bin/bash.87/share payout as before (no change) \u2014 not a material new-information event; no earnings (next report Oct 22), M&A, FDA, or guidance change on/near 9/29",
+      "tagged_on": "2026-09-29"
+    }
+  },
+  {
+    "date": "2026-09-29",
+    "symbol": "KO",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "9/29 news is only a routine 'Q3 earnings release date' timing announcement (Oct 27) + a JPMorgan PT trim to 5 (still overweight, dated 9/28) \u2014 no earnings, M&A, FDA, or guidance change dated to 9/29 itself; YTD 29% rally is old news, not a dated 9/29 catalyst",
+      "tagged_on": "2026-09-29"
+    }
+  },
+  {
+    "date": "2026-09-30",
+    "symbol": "DIS",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "J.P. Morgan only REAFFIRMED buy rating 9/30 (not a change); ~300-employee layoffs announced but stock barely moved on it; no earnings/M&A/FDA/guidance event (Yahoo Finance)",
+      "tagged_on": "2026-09-30"
+    }
+  },
+  {
+    "date": "2026-09-30",
+    "symbol": "KO",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No catalyst found; only an earnings-date-timing announcement (9/29) ahead of actual Q3 report due 10/27/26, and a 5-day-old exec appointment (9/25); stock +0.59%, routine (Yahoo/Marketbeat)",
+      "tagged_on": "2026-09-30"
+    }
+  },
+  {
+    "date": "2026-09-30",
+    "symbol": "KO",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No catalyst found; only an earnings-date-timing announcement (9/29) ahead of actual Q3 report due 10/27/26, and a 5-day-old exec appointment (9/25); stock +0.59%, routine (Yahoo/Marketbeat)",
+      "tagged_on": "2026-09-30"
+    }
+  },
+  {
+    "date": "2026-09-30",
+    "symbol": "PEP",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "JPMorgan downgraded PEP to Neutral from Overweight (2nd downgrade that week, after Barclays), PT cut to $138 from $170, dated 9/29/26 on stalled Frito-Lay/NA turnaround; stock fell 1.53% on 9/30 in direct reaction (Yahoo Finance/Defense World/Invezz)",
+      "tagged_on": "2026-09-30"
+    }
+  },
+  {
+    "date": "2026-09-30",
+    "symbol": "PEP",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "JPMorgan downgraded PEP to Neutral from Overweight (2nd downgrade that week, after Barclays), PT cut to $138 from $170, dated 9/29/26 on stalled Frito-Lay/NA turnaround; stock fell 1.53% on 9/30 in direct reaction (Yahoo Finance/Defense World/Invezz)",
+      "tagged_on": "2026-09-30"
+    }
+  },
+  {
+    "date": "2026-09-30",
+    "symbol": "COST",
+    "setup": "nypm",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "Earnings reported 9/24/26 (beat), analyst PT cuts followed 9/25/26 - both >5 trading days stale by 9/30; no new dated company-specific catalyst that day (Yahoo/Marketbeat/Trefis)",
+      "tagged_on": "2026-09-30"
+    }
+  },
+  {
+    "date": "2026-09-30",
+    "symbol": "CVX",
+    "setup": "fvg",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No fresh dated catalyst; TD Cowen PT raise was 9/28/26 (2 days stale), stock nearly flat -0.08% on 9/30, only general rally/sector commentary (CNBC/Marketbeat/Kalkine)",
+      "tagged_on": "2026-09-30"
+    }
+  },
+  {
+    "date": "2026-09-30",
+    "symbol": "CVX",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No fresh dated catalyst; TD Cowen PT raise was 9/28/26 (2 days stale), stock nearly flat -0.08% on 9/30, only general rally/sector commentary (CNBC/Marketbeat/Kalkine)",
+      "tagged_on": "2026-09-30"
+    }
+  },
+  {
+    "date": "2026-09-30",
+    "symbol": "CVX",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No fresh dated catalyst; TD Cowen PT raise was 9/28/26 (2 days stale), stock nearly flat -0.08% on 9/30, only general rally/sector commentary (CNBC/Marketbeat/Kalkine)",
+      "tagged_on": "2026-09-30"
+    }
+  },
+  {
+    "date": "2026-10-01",
+    "symbol": "MSFT",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch: only minor items found -- ex-LinkedIn CEO Roslansky departure, Wells Fargo PT raise to $725 (rating maintained), incremental AI speech-model announcement. No earnings/M&A/FDA/guidance/rating-change dated 10-01.",
+      "tagged_on": "2026-10-01"
+    }
+  },
+  {
+    "date": "2026-10-01",
+    "symbol": "MSFT",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch: only minor items found -- ex-LinkedIn CEO Roslansky departure, Wells Fargo PT raise to $725 (rating maintained), incremental AI speech-model announcement. No earnings/M&A/FDA/guidance/rating-change dated 10-01.",
+      "tagged_on": "2026-10-01"
+    }
+  },
+  {
+    "date": "2026-10-01",
+    "symbol": "TSLA",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch: Roadster unveiling postponed from 10-01 to 10-15 due to weather -- dated and company-specific but a product-event delay, not earnings/M&A/FDA decision/guidance change/analyst rating action. No other dated catalyst found.",
+      "tagged_on": "2026-10-01"
+    }
+  },
+  {
+    "date": "2026-10-01",
+    "symbol": "TSLA",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch: Roadster unveiling postponed from 10-01 to 10-15 due to weather -- dated and company-specific but a product-event delay, not earnings/M&A/FDA decision/guidance change/analyst rating action. No other dated catalyst found.",
+      "tagged_on": "2026-10-01"
+    }
+  },
+  {
+    "date": "2026-10-01",
+    "symbol": "KO",
+    "setup": "nypm",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch: routine quarterly dividend payment (/bin/bash.53/sh) + JPMorgan trimmed PT to 5 from 6 while keeping Overweight (no rating change); earnings not until 2026-10-27. No dated company-specific catalyst.",
+      "tagged_on": "2026-10-01"
+    }
+  },
+  {
+    "date": "2026-10-01",
+    "symbol": "PEP",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": true,
+      "note": "WebSearch: JPMorgan downgraded PEP to Neutral from Overweight (genuine rating change, PT $138) citing stalled NA turnaround; Barclays also cut PT to $133 from $142, same day. Material, dated, company-specific analyst action.",
+      "tagged_on": "2026-10-01"
+    }
+  },
+  {
+    "date": "2026-10-01",
+    "symbol": "ABBV",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "WebSearch: only routine clinical data presentations (RINVOQ vitiligo EU data, ABBV-295 Phase 1 weight-loss data); Q3 earnings not until 2026-10-30. No earnings/M&A/FDA decision/guidance change/analyst action dated 10-01.",
+      "tagged_on": "2026-10-01"
+    }
   }
 ]
