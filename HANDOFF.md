@@ -1328,3 +1328,23 @@ No trades proposed. Full detail in data/research/2026-10-01/.
 Streak now 23-for-23 downgrades. Notable sector-cluster catches: AAOI/CIEN/COHR all confirmed riding one Bernstein "AI optics/networking structural winners" note; KD's move confirmed correlated with Accenture's own earnings beat lifting IT-services peers together. CNXC's apparent bounce was confirmed live as already reversing intraday via real-time OHLCV -- a clean sell-the-news catch. NXL's confusing round-trip (+76% then -24%) was resolved: the pop had a real catalyst (a distribution deal), the giveback did not have a new negative one, consistent with thin-float mechanics on an already-distressed microcap.
 
 No trades proposed. Full detail in data/research/2026-10-02/.
+
+## 2026-10-05: Daily screen + ranked-pick both blocked -- missing .env, not a research finding
+Both of today's scheduled routines (the daily screen and the ranked-pick
+fundamental-council track) failed at their first data-fetch step for the
+same reason: this session's container has no `.env` file and no
+MASSIVE_API_KEY/FMP_API_KEY/ALPACA_API_KEY in its environment at all. This
+is the exact fragility CLAUDE.md's 2026-09-30 "RANKED-PICK TRACK UNBLOCKED"
+note anticipated -- the keys live only in this container's gitignored
+`.env`, which does not survive a container reclaim/restart, and one
+evidently happened. Confirmed via direct script calls
+(`screen_fundamental.py status` showed an unbuilt universe,
+`fundamentals.py card AAPL` and `massive_client.py`/`market_screener_client.py`
+both raised immediately on the missing env vars, before any network call).
+Did not substitute a WebSearch-built approximation for either pipeline --
+that would misrepresent an ad hoc news scan as the real systematic
+Massive/FMP screen or fundamentals pull. Both skipped and logged to
+data/trades.log (21:36:13Z, 21:40:00Z) rather than improvised around.
+**Needs a human:** either repopulate `.env` on this container with the
+real keys, or move them into the environment's actual secrets store so
+they survive restarts (the more durable fix, also noted in CLAUDE.md).
