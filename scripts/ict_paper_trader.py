@@ -74,6 +74,12 @@ def _ensure_day_cached(date):
     cheap no-op."""
     from alpaca_client import get_historical_bars
 
+    # The cache dir is gitignored, so it is ABSENT on any fresh container --
+    # exactly the state after a container reclaim. Without this mkdir the run
+    # dies on the first write with a bare FileNotFoundError, which is how the
+    # 2026-10-08 ICT backfill failed. Create it rather than assume it.
+    ict.CACHE_DIR.mkdir(parents=True, exist_ok=True)
+
     start = (datetime.date.fromisoformat(date) - datetime.timedelta(days=LOOKBACK_DAYS_FOR_EQHL + 3)).isoformat()
     for symbol in ict.UNIVERSE:
         cache_file = ict.CACHE_DIR / f"{symbol}.json"

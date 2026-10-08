@@ -69,6 +69,86 @@ called from this session yet — see screen.md's fallback behavior. This is
 a network-policy problem, not a reason to avoid the script once network
 access is fixed (environment settings, or running locally).
 
+## DATA-SOURCE EMERGENCY — 2026-10-08. THE FREE WHOLE-MARKET FUNDAMENTALS
+## SOURCE SUNSETS 2026-10-09. READ BEFORE RUNNING THE FUNDAMENTAL COUNCIL.
+The "enabling discovery" of 2026-09-12 — that Massive's
+`/vX/reference/financials` covered the WHOLE market free, and that this made a
+3-12 month fundamental council possible at all — **has a hard expiry, and it is
+tomorrow.** Measured live 2026-10-08, not inferred:
+- The endpoint now returns `deprecation: true`, `sunset: 2026-10-09`, and
+  `link: <.../stocks/fundamentals/balance-sheets>; rel="successor-version"`.
+  It is **already in brownout**: eight paced attempts returned
+  `410 200 200 410 410` (then 429s). So it works intermittently today and
+  stops entirely tomorrow.
+- **The successor is PAID.** All four replacement endpoints —
+  `/stocks/financials/v1/{income-statements,balance-sheets,cash-flow-statements,ratios}`
+  — return `403 {"error":"You are not entitled to this data."}` on this key.
+  403 not 404, so the paths are right and the entitlement is the blocker.
+  Price: a $29/month individual "Financials & Ratios" add-on, or bundled in the
+  $199/month Stocks Advanced tier.
+- **FMP free is not a fallback.** Still locked to its ~78-name curated list:
+  retested 2026-10-08, `402 Payment Required` on CENX, ROIV, AEHR, BIAF, ASTS
+  **and on URBN and CSTM** — two of the three recorded ranked picks. It cannot
+  even re-derive the existing ledger, let alone screen a market.
+- **SEC EDGAR is the right answer and is currently BLOCKED.**
+  `data.sec.gov/api/xbrl/{companyfacts,frames}` is free, needs no key, covers
+  every filer, and is the primary filings rather than a vendor's copy — and its
+  rate limit is ~10/sec against Massive's 5/min, which would turn the ~940-name
+  coverage run from hours into minutes. This environment's egress policy denies
+  the CONNECT (verified twice via the agent proxy). Allowlisting
+  `data.sec.gov` under the environment's Network access is therefore the
+  cheapest and best fix, and is strictly better than paying. It needs the user.
+**Until one of those two is resolved, the 3-12 month fundamental council has no
+data source.** Do not improvise around this: no WebSearch-assembled
+"fundamentals", no reusing a stale card as if fresh, no dropping to FMP's 78
+names while calling it a market screen. Report the block and run the price
+tracks, which are unaffected.
+
+**What still works free, verified the same day:** `/v3/reference/tickers`
+(universe) 200; `/v2/aggs/grouped/locale/us/market/stocks/{date}` 200 with
+12,598 rows for 2026-10-07 — but **403 for the SAME day**, i.e. the free tier's
+grouped daily lags one session, which is why the paper-trade routines must run
+against the most recently COMPLETED session and cannot be made same-day; Alpaca
+daily and 5-min bars 200. So the TA track, the ICT track, catalyst tagging and
+the price half of the screen are all intact.
+
+### THE 10-05..10-08 OUTAGE: FOUR DAYS LOST TO ONE GITIGNORED FILE
+All four routines were dead 2026-10-05 through 2026-10-08. Single cause: the
+container behind session_016iH5aNy36JTes3cWw5Geez was reclaimed and came back
+**without `.env`**, so MASSIVE/FMP/ALPACA keys vanished and every script raised
+on import, before any network call. That session diagnosed it correctly each
+day and — correctly — refused to fabricate a pick or dress a WebSearch scan up
+as the real screen. It simply had no way to repair itself.
+- **The 2026-09-30 "fix" was aimed at the wrong half of the problem.** The
+  ranked-pick routine was bound to that specific session *because* the keys
+  lived on its disk; that dependency is precisely what killed it. The track
+  recorded **zero picks in the nine days** after being "unblocked" and still
+  holds only the three from 09-12. A routine is not fixed when its trigger
+  fires reliably into a container that cannot run anything.
+- **The durable fix is the environment's secrets store, not another binding.**
+  Keys in secrets survive container reclaim, and a
+  `create_new_session_on_fire` routine then depends on no container staying
+  alive. Needs the user; do not work around it by re-binding to whichever
+  session happens to hold a `.env` today, which just reproduces the failure
+  with a different hostage.
+- **Recovery done 2026-10-08**: the live branch was merged into main (clean
+  fast-forward, nothing lost) and sessions 10-02, 10-05, 10-06 and 10-07 were
+  replayed from a container that still has `.env`. Replay is legitimate here
+  because both paper traders price entries from the signal date, so a replayed
+  day produces what the day would have produced. 10-08 could not be replayed:
+  the free tier's grouped daily does not carry the same session (403).
+- **The backfilled dates are deliberately left `catalyst: None`.** Retroactive
+  tagging would search news for a past date and pick up stories published
+  AFTER the signal, contaminating the tag with hindsight — skills/catalyst_tag.md
+  forbids it. Those ~520 entries sit outside the HAS/NO comparison, and the
+  catalyst track's distinct-date count resumes from live tagging forward, NOT
+  from this backfill. Do not "repair" this by tagging them later.
+- **Bug found and fixed in the same recovery**: `ict_paper_trader.py`'s
+  `_ensure_day_cached()` wrote into the gitignored `backtest_ict_cache/`
+  without creating it, so it died with a bare `FileNotFoundError` on any fresh
+  container — the exact post-reclaim state. Now `mkdir(parents=True,
+  exist_ok=True)`. Assume gitignored directories are absent, never present.
+
 ## Identity & Mandate
 You are a short-term equity research assistant. In the current
 advisory-only mode (see above), your job is to:

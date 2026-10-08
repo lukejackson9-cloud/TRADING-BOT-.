@@ -1512,5 +1512,221 @@
       "note": "WebSearch: only routine clinical data presentations (RINVOQ vitiligo EU data, ABBV-295 Phase 1 weight-loss data); Q3 earnings not until 2026-10-30. No earnings/M&A/FDA decision/guidance change/analyst action dated 10-01.",
       "tagged_on": "2026-10-01"
     }
+  },
+  {
+    "date": "2026-10-02",
+    "symbol": "AAPL",
+    "setup": "fvg",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-02",
+    "symbol": "AAPL",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-02",
+    "symbol": "V",
+    "setup": "order_block",
+    "direction": "bullish",
+    "return_r": -0.17762237762237282,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-02",
+    "symbol": "MA",
+    "setup": "fvg",
+    "direction": "bullish",
+    "return_r": -0.10041841004184379,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-02",
+    "symbol": "MA",
+    "setup": "inverse_fvg",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-02",
+    "symbol": "PEP",
+    "setup": "nypm",
+    "direction": "bullish",
+    "return_r": 2.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-05",
+    "symbol": "UNH",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-05",
+    "symbol": "WMT",
+    "setup": "order_block",
+    "direction": "bullish",
+    "return_r": 2.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-05",
+    "symbol": "PG",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-05",
+    "symbol": "PG",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-05",
+    "symbol": "COST",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-05",
+    "symbol": "CVX",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": 2.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-06",
+    "symbol": "V",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-06",
+    "symbol": "V",
+    "setup": "nypm",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-06",
+    "symbol": "MA",
+    "setup": "fvg",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-06",
+    "symbol": "MA",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-06",
+    "symbol": "MA",
+    "setup": "nypm",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-06",
+    "symbol": "MA",
+    "setup": "inverse_fvg",
+    "direction": "bullish",
+    "return_r": 2.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-07",
+    "symbol": "AAPL",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-07",
+    "symbol": "AAPL",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-07",
+    "symbol": "GOOGL",
+    "setup": "order_block",
+    "direction": "bullish",
+    "return_r": 2.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-07",
+    "symbol": "GOOGL",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": 2.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-07",
+    "symbol": "V",
+    "setup": "fvg",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-07",
+    "symbol": "V",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-07",
+    "symbol": "V",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-07",
+    "symbol": "CRM",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": 2.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-07",
+    "symbol": "CVX",
+    "setup": "nypm",
+    "direction": "bullish",
+    "return_r": 2.0,
+    "catalyst": null
   }
 ]
