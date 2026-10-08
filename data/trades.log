@@ -186,3 +186,4 @@
 2026-10-07T22:10:00Z NOTE: TA paper-trade update + catalyst-tag BLOCKED, 3rd consecutive day -- .env still absent. No positions opened/closed, no catalyst-tag pass. Already flagged to user this session at the 3-day mark (21:33 NOTE above); not repeating.
 2026-10-07T22:12:00Z NOTE: ICT paper-trade update BLOCKED, 3rd consecutive day -- .env still absent. No trades, no catalyst-tag pass. Already flagged to user this session at the 3-day mark; not repeating.
 2026-10-07T23:20:00Z NOTE: Ranked-pick routine BLOCKED, 3rd consecutive day -- .env still absent. No pick recorded. Already flagged to user this session at the 3-day mark; not repeating.
+2026-10-08T21:34:00Z NOTE: Daily screen BLOCKED, 4th consecutive day -- .env still absent. No screen/research/council since 2026-10-04. Already flagged to user at length; logging for the record without repeating the full alert.
