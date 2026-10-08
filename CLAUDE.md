@@ -578,11 +578,26 @@ If you find yourself reasoning "but what if we tried X" about mechanical
 price-derived signals, the answer is in the feature-IC section above: the
 features are noise. Say that instead of testing it.
 
-**What IS still running (the forward threads).** All three routines are
-live and bound to session_016iH5aNy36JTes3cWw5Geez:
-- `trig_0115k27mXZHtq2a6uQwt21Xa` daily TA paper trade + catalyst tag
-- `trig_01HnDaZn85mK1Vz9wjKEdB3a` daily ICT paper trade + catalyst tag
-- `trig_0149vd3ymUFWFhDyRxza7aA4` daily screen -> research -> council
+**What IS still running (the forward threads). ROUTINE IDS CHANGED
+2026-10-08 — the three below are the live ones; the four listed further down
+this file are DISABLED.** All bound to session_01AvMvpzBXKU4AWJqqqoDp5Y, which
+is on `main` and holds a working `.env`:
+- `trig_01Jkjzmz8WxcUBdogkZr5VX7` daily TA paper trade + catalyst tag (22:00 UTC)
+- `trig_01F2M9pwAnYUdk32EpLzQxpj` daily ICT paper trade + catalyst tag (22:20 UTC)
+- `trig_011Fwq2pXY2oiHUkKwutGRC8` daily screen -> research -> council (21:38 UTC)
+The ICT routine is deliberately 20 minutes after the TA one so the two never
+contend for the same ledgers. The superseded, now-DISABLED routines are
+`trig_0115k27mXZHtq2a6uQwt21Xa` (TA), `trig_01HnDaZn85mK1Vz9wjKEdB3a` (ICT),
+`trig_0149vd3ymUFWFhDyRxza7aA4` (screen) and `trig_016fjQ61PCnbQEtQijPXdLgy`
+(ranked pick) — all bound to session_016iH5aNy36JTes3cWw5Geez, whose container
+lost its `.env`. Do not re-enable them; that is the container that cannot run.
+**The ranked-pick routine has NO replacement on purpose**: it depends on the
+fundamentals endpoint that sunsets 2026-10-09, so a routine for it would fail
+every day. Re-create it only once EDGAR is allowlisted or the paid add-on is
+bought AND `fundamentals.py` has been repointed at whichever source that is.
+Wherever this file names a routine ID below, cross-check it against this list
+first — the IDs further down are the old ones.
+
 These need no changes. They accumulate the one thing never tested: whether
 a signal accompanied by a REAL, DATED, COMPANY-SPECIFIC catalyst behaves
 differently from a signal alone. That cannot be backtested at this data
