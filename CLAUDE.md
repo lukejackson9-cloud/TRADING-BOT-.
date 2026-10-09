@@ -104,6 +104,34 @@ data source.** Do not improvise around this: no WebSearch-assembled
 names while calling it a market screen. Report the block and run the price
 tracks, which are unaffected.
 
+**CONFIRMED DEAD 2026-10-09, the day after the warning above.** Six paced
+attempts on `/vX/reference/financials` returned 410 with no brownout 200s left
+— the sunset happened exactly as the header promised. Re-verified the same
+day: `data.sec.gov` still denied by egress policy (curl 000),
+`/stocks/financials/v1/income-statements` still 403 "not entitled", and the API
+keys still live only in `.env` (checked in a CLEAN shell — an earlier check
+reported them as present in the environment because `set -a && . ./.env` had
+contaminated the same shell, which is worth remembering as a way to fool
+yourself about exactly the thing you are testing). The first firing of the
+repointed screen routine therefore ran Step 0 cleanly — git pull, keys loaded,
+grouped daily 200 with 12,592 rows for 10-08 — and then correctly recorded
+nothing.
+
+**CORRECTION to a figure this file repeats: FMP free is NOT a "~78-name"
+universe.** A 15-name probe on 2026-10-09 returned 200 for 11 of 15 — AAPL,
+MSFT, NVDA, JPM, XOM, WMT, KO, PFE, F, DAL, ETSY — and 402 for CROX, SKX,
+PLUG, RIG. ETSY, DAL and F are not mega-caps, so the covered set is larger and
+less mega-cap-only than "~78" implies. It is still a curated, undisclosed
+subset that refused URBN and CSTM, two of our own three recorded picks.
+**The honest position is that its size is UNKNOWN**: 15 probes on recognisable
+names is a biased sample, and measuring the real overlap against the ~940-name
+fundamental universe would consume FMP's daily request quota. Do not quote
+"78" as fact, and do not quote a bigger number either. It is a possible narrow
+stopgap for the long-horizon council, but running the council over it and
+calling the result a market screen is forbidden — and quietly swapping the
+universe would change a pre-registered measurement, so it needs the user's
+explicit decision, not a session's initiative.
+
 **What still works free, verified the same day:** `/v3/reference/tickers`
 (universe) 200; `/v2/aggs/grouped/locale/us/market/stocks/{date}` 200 with
 12,598 rows for 2026-10-07 — but **403 for the SAME day**, i.e. the free tier's
@@ -584,7 +612,16 @@ this file are DISABLED.** All bound to session_01AvMvpzBXKU4AWJqqqoDp5Y, which
 is on `main` and holds a working `.env`:
 - `trig_01Jkjzmz8WxcUBdogkZr5VX7` daily TA paper trade + catalyst tag (22:00 UTC)
 - `trig_01F2M9pwAnYUdk32EpLzQxpj` daily ICT paper trade + catalyst tag (22:20 UTC)
-- `trig_011Fwq2pXY2oiHUkKwutGRC8` daily screen -> research -> council (21:38 UTC)
+- `trig_011Fwq2pXY2oiHUkKwutGRC8` daily 3-12 month council + ranked pick
+  (21:38 UTC) — **GATED on a fundamentals source since 2026-10-09; it checks
+  EDGAR, then the paid successor, then stops without recording anything if
+  both fail.** Renamed from "Daily short-term stock screen (main)" because its
+  first firing exposed that its prompt was incoherent: it said to run
+  `screen_market_movers()` (the SUPERSEDED |%change| screen) and feed it into
+  `skills/council.md` (the 3-12 month SCORED council). Those do not compose,
+  and doing it would have re-run the exact short-horizon game closed on
+  2026-09-12 while labelling it the current pipeline. Prompt corrected the
+  same day.
 The ICT routine is deliberately 20 minutes after the TA one so the two never
 contend for the same ledgers. The superseded, now-DISABLED routines are
 `trig_0115k27mXZHtq2a6uQwt21Xa` (TA), `trig_01HnDaZn85mK1Vz9wjKEdB3a` (ICT),
