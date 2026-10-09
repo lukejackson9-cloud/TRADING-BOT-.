@@ -1728,5 +1728,213 @@
     "direction": "bullish",
     "return_r": 2.0,
     "catalyst": null
+  },
+  {
+    "date": "2026-10-08",
+    "symbol": "MSFT",
+    "setup": "fvg",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-08",
+    "symbol": "MSFT",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-08",
+    "symbol": "MSFT",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-08",
+    "symbol": "MSFT",
+    "setup": "inverse_fvg",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-08",
+    "symbol": "NVDA",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-08",
+    "symbol": "META",
+    "setup": "order_block",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-08",
+    "symbol": "META",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-08",
+    "symbol": "ADBE",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-08",
+    "symbol": "CRM",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-08",
+    "symbol": "AMD",
+    "setup": "fvg",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-08",
+    "symbol": "AMD",
+    "setup": "order_block",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-08",
+    "symbol": "AMD",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-08",
+    "symbol": "PEP",
+    "setup": "nypm",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-08",
+    "symbol": "COST",
+    "setup": "nypm",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": null
+  },
+  {
+    "date": "2026-10-09",
+    "symbol": "JPM",
+    "setup": "fvg",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 10-09 event. Q3 2026 earnings are scheduled 2026-10-13 pre-open (company's own announcement, consensus EPS ~$5.88) -- i.e. FOUR DAYS AFTER this signal. Per skills/screen.md an upcoming-earnings tag is never itself a catalyst, so this is pre-catalyst, not catalyst.",
+      "tagged_on": "2026-10-09"
+    }
+  },
+  {
+    "date": "2026-10-09",
+    "symbol": "JPM",
+    "setup": "order_block",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 10-09 event. Q3 2026 earnings are scheduled 2026-10-13 pre-open (company's own announcement, consensus EPS ~$5.88) -- i.e. FOUR DAYS AFTER this signal. Per skills/screen.md an upcoming-earnings tag is never itself a catalyst, so this is pre-catalyst, not catalyst.",
+      "tagged_on": "2026-10-09"
+    }
+  },
+  {
+    "date": "2026-10-09",
+    "symbol": "JPM",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 10-09 event. Q3 2026 earnings are scheduled 2026-10-13 pre-open (company's own announcement, consensus EPS ~$5.88) -- i.e. FOUR DAYS AFTER this signal. Per skills/screen.md an upcoming-earnings tag is never itself a catalyst, so this is pre-catalyst, not catalyst.",
+      "tagged_on": "2026-10-09"
+    }
+  },
+  {
+    "date": "2026-10-09",
+    "symbol": "JPM",
+    "setup": "inverse_fvg",
+    "direction": "bullish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 10-09 event. Q3 2026 earnings are scheduled 2026-10-13 pre-open (company's own announcement, consensus EPS ~$5.88) -- i.e. FOUR DAYS AFTER this signal. Per skills/screen.md an upcoming-earnings tag is never itself a catalyst, so this is pre-catalyst, not catalyst.",
+      "tagged_on": "2026-10-09"
+    }
+  },
+  {
+    "date": "2026-10-09",
+    "symbol": "CRM",
+    "setup": "ote",
+    "direction": "bearish",
+    "return_r": 0.5112413103624586,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 10-09 company-specific event found. Nothing current surfaced; the only 2026 item was a May-2026 earnings beat with weak full-year guidance, on an unreliable mirror site and months stale. No 10-09 catalyst.",
+      "tagged_on": "2026-10-09"
+    }
+  },
+  {
+    "date": "2026-10-09",
+    "symbol": "AMD",
+    "setup": "fvg",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 10-09 company-specific event found. Searches returned only stale coverage: a Q3 $13B guidance figure, Taalas acquisition and BMO initiation all appear to be August 2026, weeks old relative to the signal. No earnings/M&A/guidance/material analyst action dated 10-09.",
+      "tagged_on": "2026-10-09"
+    }
+  },
+  {
+    "date": "2026-10-09",
+    "symbol": "AMD",
+    "setup": "ote",
+    "direction": "bullish",
+    "return_r": -1.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 10-09 company-specific event found. Searches returned only stale coverage: a Q3 $13B guidance figure, Taalas acquisition and BMO initiation all appear to be August 2026, weeks old relative to the signal. No earnings/M&A/guidance/material analyst action dated 10-09.",
+      "tagged_on": "2026-10-09"
+    }
+  },
+  {
+    "date": "2026-10-09",
+    "symbol": "AMD",
+    "setup": "inverse_fvg",
+    "direction": "bearish",
+    "return_r": 2.0,
+    "catalyst": {
+      "has_catalyst": false,
+      "note": "No dated 10-09 company-specific event found. Searches returned only stale coverage: a Q3 $13B guidance figure, Taalas acquisition and BMO initiation all appear to be August 2026, weeks old relative to the signal. No earnings/M&A/guidance/material analyst action dated 10-09.",
+      "tagged_on": "2026-10-09"
+    }
   }
 ]
