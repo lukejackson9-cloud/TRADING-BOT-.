@@ -176,6 +176,13 @@ def report():
               f"too early to conclude anything, keep collecting.")
 
 
+# Sessions replayed on 2026-10-08 to recover the 10-05..10-08 outage. Entries
+# opened on these dates are deliberately never catalyst-tagged (no retroactive
+# tagging), so `health` excludes the untagged ones instead of reporting them as
+# a tagging failure in perpetuity.
+BACKFILL_START, BACKFILL_END = "2026-10-02", "2026-10-07"
+
+
 def health(max_stale_days=4, grace_days=3, today=None):
     """Is this evaluation track actually collecting anything?
 
@@ -218,19 +225,34 @@ def health(max_stale_days=4, grace_days=3, today=None):
 
     def _scan(rows, date_key):
         # only entries that carry the field at all -- older ones can never be tagged
-        taggable = [r for r in rows if "catalyst" in r]
+        has_field = [r for r in rows if "catalyst" in r]
+        taggable = has_field
         dates = sorted({r[date_key] for r in taggable if r.get(date_key)})
+        # The 2026-10-05..10-08 outage was recovered by REPLAYING the missed
+        # sessions on 2026-10-08. Those entries are deliberately left untagged
+        # forever: searching news for a past date picks up stories published
+        # AFTER the signal, so tagging them would contaminate the tag with
+        # hindsight (skills/catalyst_tag.md forbids retroactive tagging).
+        # They must therefore be excluded here too. Without this, ~594 entries
+        # sit untagged permanently and `health` reports PROBLEM every single
+        # day regardless of whether the tagger works -- which destroys the one
+        # mechanism built to tell a dead pipeline from a patiently accumulating
+        # one. A detector that always fires detects nothing.
+        taggable = [r for r in taggable
+                    if not (BACKFILL_START <= (r.get(date_key) or "") <= BACKFILL_END
+                            and r.get("catalyst") is None)]
+        backfill = len(has_field) - len(taggable)
         untagged = [r for r in taggable if r.get("catalyst") is None]
         tagged = [r for r in taggable if r.get("catalyst") is not None]
-        return taggable, dates, untagged, tagged
+        return taggable, dates, untagged, tagged, backfill
 
     problems = []
     print(f"# catalyst-track health, {today}\n")
     for label, path, date_key in (("TA ", TA_LEDGER, "entry_date"),
                                   ("ICT", ICT_LEDGER, "date")):
         rows = _load(path)
-        taggable, dates, untagged, tagged = _scan(rows, date_key)
-        pre = len(rows) - len(taggable)
+        taggable, dates, untagged, tagged, backfill = _scan(rows, date_key)
+        pre = len(rows) - len(taggable) - backfill
         if not taggable:
             print(f"{label}  no entries carry the catalyst field yet "
                   f"({pre} pre-2026-09-11 entries excluded)")
@@ -241,7 +263,7 @@ def health(max_stale_days=4, grace_days=3, today=None):
         newest = dates[-1]
         age = (today - datetime.date.fromisoformat(newest)).days
         print(f"{label}  {len(taggable)} taggable entries over {len(dates)} dates "
-              f"({pre} pre-feature excluded)")
+              f"({pre} pre-feature, {backfill} outage-backfill excluded)")
         print(f"      newest entry {newest} ({age}d ago) | "
               f"tagged {len(tagged)} | untagged {len(untagged)}")
         if age > max_stale_days:

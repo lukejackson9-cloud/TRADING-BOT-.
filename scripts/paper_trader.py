@@ -59,6 +59,7 @@ Usage:
 
 import sys
 import json
+import pathlib
 import datetime
 from pathlib import Path
 
@@ -128,6 +129,45 @@ def check_open_positions(as_of_date):
         return ledger
 
 
+def _common_stock_set():
+    """Tickers of type CS from Massive's reference data, cached on disk.
+
+    WHY THIS EXISTS (found 2026-10-09). This function had no counterpart:
+    scan_for_new_signals filtered nothing, so its universe was raw grouped
+    daily -- every ETF, bond fund and leveraged/inverse product that printed
+    that session. On 2026-10-08, **95 of 233 signalling tickers (41%) were not
+    common stock**, and the bulk were rate funds: AGG, BND, BIV, BLV, EDV,
+    GOVT, GOVZ, IEF, IEI, IGIB, IGLB, IUSB, LQD, LTPZ, MBB, MUB, TLT, ZROZ and
+    ~20 more. Those do not move independently -- one move in rates fires all of
+    them -- so the ledger counted a single macro event as ~35 observations.
+    That is the SAME effective-sample-size error this project already caught
+    twice (the 20-day backtest, the n=51/2-dates paper track), appearing a
+    third time in the universe dimension instead of the date dimension.
+    It also admitted inverse and geared products (SQQQ, QID, PSQ, TMF, GDXU,
+    PLTU) -- buying an inverse ETF is a synthetic short, which the Hard Risk
+    Rules forbid.
+
+    The historical side of this same evaluation (backtest_ta.py) DID filter to
+    common stock. CLAUDE.md says the two tracks "reuse the same signal function
+    on purpose so the two tracks can never define a signal differently" -- but
+    they were running it over different universes, so this restores the
+    intended parity rather than changing the strategy.
+
+    Returns an empty set if the cache is missing, which disables filtering
+    rather than silently screening everything out -- an absent cache must never
+    look like "no stock qualified today". Refresh it from
+    /v3/reference/tickers?market=stocks&type=CS&active=true.
+    """
+    path = pathlib.Path("data/reference/common_stock_tickers.json")
+    if not path.exists():
+        print("warn: data/reference/common_stock_tickers.json missing — "
+              "NOT filtering to common stock, so this run's universe includes "
+              "ETFs and leveraged products. Regenerate it before trusting "
+              "these entries.")
+        return set()
+    return set(json.loads(path.read_text()))
+
+
 def scan_for_new_signals(as_of_date):
     """Opens a new paper position for each (ticker, setup) that signals on
     as_of_date's session, unless that exact combination already has an
@@ -146,7 +186,11 @@ def scan_for_new_signals(as_of_date):
         already_open = {(p["ticker"], p["setup"]) for p in ledger if p["status"] == "open"}
         opened = 0
 
+        common = _common_stock_set()
+
         for ticker, bars in series.items():
+            if common and ticker not in common:
+                continue  # ETF / fund / leveraged-inverse product -- see _common_stock_set
             if len(bars) < 25 or bars[-1][0] != as_of_date:
                 continue  # not enough history, or ticker had no print on as_of_date
             last_i = len(bars) - 1

@@ -177,6 +177,73 @@ as the real screen. It simply had no way to repair itself.
   container — the exact post-reclaim state. Now `mkdir(parents=True,
   exist_ok=True)`. Assume gitignored directories are absent, never present.
 
+### THE FORWARD TA TRACK'S UNIVERSE WAS 41% NOT-COMMON-STOCK (found and
+### fixed 2026-10-09). This affects every TA paper-track number since 09-04.
+`scan_for_new_signals()` had **no security-type filter at all** — its universe
+was raw grouped daily, i.e. everything that printed that session. Measured on
+2026-10-08: **95 of 233 signalling tickers (41%) were not common stock.**
+- **The bulk were rate funds**: AGG, BND, BIV, BLV, EDV, GOVT, GOVZ, IEF, IEI,
+  IGIB, IGLB, IUSB, JBND, JCPB, JMBS, JMUB, JPIE, LMBS, LQD, LTPZ, MBB, MLN,
+  MQY, MUB, NYF, TLT, TLH, ZROZ, VCIT, VGIT, VGLT, SCHP/Q/R/Z, SPTL and more.
+  **These do not move independently.** One move in rates fires all of them, so
+  the ledger recorded a single macro event as ~35 observations.
+- **This is the project's own recurring error, a third time.** The 20-day
+  backtest counted overlapping windows as independent; the n=51 paper track was
+  really n=2 dates. Both were caught. This is the same mistake in the
+  **universe** dimension instead of the date dimension, and it went unnoticed
+  for five weeks because nobody looked at the ticker list.
+- **It also admitted inverse and geared products** — SQQQ, QID, PSQ (inverse),
+  TMF, GDXU, PLTU, SHNY, SSG (leveraged). Buying an inverse ETF is a synthetic
+  short, which the Hard Risk Rules forbid. These are paper evaluation entries,
+  not proposals, but the universe should never have contained them.
+- **The two halves of the same evaluation disagreed.** `backtest_ta.py`
+  (historical) filtered via `get_common_stock_tickers()` — that filter is the
+  documented source of its survivorship bias. `paper_trader.py` (forward) did
+  not. CLAUDE.md claims the two "reuse the same signal function on purpose so
+  the two tracks can never define a signal differently"; that was true of the
+  signal and false of the universe. The fix restores intended parity, it does
+  not change the strategy.
+- **Fix**: `_common_stock_set()` reads Massive's CS reference set (5,319
+  tickers) from `data/reference/common_stock_tickers.json`. A MISSING cache
+  disables filtering with a loud warning rather than screening everything out
+  — an absent file must never look like "no stock qualified today".
+- **2026-10-08 is a transition date**: its entries were written before the fix,
+  so that one date holds a mixed universe. Dates from 2026-10-09 are filtered.
+  **Do not pool pre- and post-fix dates without saying so.** The saved CS set
+  makes a retroactive split possible for analysis (noting that it is today's
+  active list, so a since-delisted name would be missing — fine for
+  classification, not a basis for any survivorship claim).
+- **Confound this creates in the CATALYST result, which is not yet corrected**:
+  a bond ETF cannot have a company-specific catalyst by construction, so a
+  large share of the NO-catalyst bucket is instruments the hypothesis does not
+  even apply to. The measured "no difference either way" (2026-09-30) was
+  computed over that diluted bucket. Re-deriving HAS vs NO over common stock
+  ONLY is the honest next cut, and it needs no new data — just the saved CS
+  set applied to the existing ledger.
+
+**THE TAGGING DESIGN WAS SIZED ON A FIGURE 10-30x TOO SMALL.** CLAUDE.md
+estimated "~3-8 unique tickers/day across both trackers". The actual rate has
+been **32-233 unique tickers/day, every day since 2026-09-04** (233 on 10-08,
+189 on 10-02, 157 on 09-22). Nobody checked. Tagging coverage on completed
+dates is nevertheless **100% — 1,373 of 1,373 unique tickers across 16 dates**,
+so the existing tags are not a thin sample; the live session managed it largely
+by cross-referencing each day's research notes rather than running ~86 fresh
+searches. But the step is far more expensive than documented, and on a day with
+no research files (e.g. a blocked screen) it cannot be done that way at all.
+2026-10-08 is consequently untagged: 138 common-stock names would need 138 real
+searches, and doing them hastily is worse than leaving them — never fabricate a
+tag to clear a counter.
+
+**HEALTH-CHECK FALSE ALARM, introduced 2026-10-08 and fixed 2026-10-09.** The
+outage backfill is deliberately never tagged, and `health` could not tell those
+594 entries from a dead tagger — so it reported PROBLEM every day regardless of
+whether anything was wrong. **A detector that always fires detects nothing**,
+and this is the one mechanism that exists because a silently-stopped track
+looks identical to a patiently accumulating one. `health` now excludes the
+2026-10-02..10-07 untagged window explicitly and prints that count separately
+from the pre-feature one. If a future recovery replays sessions again, extend
+`BACKFILL_START/END` rather than letting the alarm rot.
+
 ## Identity & Mandate
 You are a short-term equity research assistant. In the current
 advisory-only mode (see above), your job is to:
