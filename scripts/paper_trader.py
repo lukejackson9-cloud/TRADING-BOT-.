@@ -263,8 +263,34 @@ def summary():
     # gets repeated without it — which is exactly how "n=51" was once read as a
     # verdict when it was really 2 sessions. Restored after the 2026-09-18
     # merge dropped it.
-    _entry_date_concentration([p for p in _load_ledger() if p["status"] == "closed"])
     ledger = _load_ledger()
+
+    # Entries from 2026-10-02..10-08 were produced by the outage REPLAY run on
+    # 2026-10-08, from a cache regenerated after the survivorship-bias fix had
+    # removed get_common_stock_tickers() from fetch_range(). That made their
+    # universe 26-41% non-common-stock -- overwhelmingly rate funds (AGG, BND,
+    # GOVT, IEF, LQD, MBB, MUB, TLT, ZROZ ...), which all fire together on one
+    # move in rates. Dates up to 2026-10-01 came from a container whose cache
+    # predated that change and are 0-3% non-CS, i.e. clean.
+    #
+    # The rows are KEPT, not deleted: dropping ledger history to tidy a number
+    # is how an audit trail stops being one, and the split is reproducible from
+    # the saved CS reference set. They are excluded from the RETURNS instead,
+    # and the exclusion is printed so the figure is never quoted without it.
+    common = _common_stock_set()
+    contaminated = [p for p in ledger
+                    if common and "2026-10-02" <= p.get("entry_date", "") <= "2026-10-08"
+                    and p["ticker"] not in common]
+    if contaminated:
+        n_closed = sum(1 for p in contaminated if p["status"] == "closed")
+        print(f"  excluding {len(contaminated)} non-common-stock entries "
+              f"({n_closed} closed) from 2026-10-02..10-08 — ETF/fund "
+              f"contamination introduced by the outage replay; see "
+              f"_common_stock_set(). Returns below are common stock only.")
+        skip = {id(p) for p in contaminated}
+        ledger = [p for p in ledger if id(p) not in skip]
+
+    _entry_date_concentration([p for p in ledger if p["status"] == "closed"])
     open_n = sum(1 for p in ledger if p["status"] == "open")
     closed = [p for p in ledger if p["status"] == "closed"]
     print(f"{open_n} open, {len(closed)} closed")

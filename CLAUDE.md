@@ -177,8 +177,22 @@ as the real screen. It simply had no way to repair itself.
   container — the exact post-reclaim state. Now `mkdir(parents=True,
   exist_ok=True)`. Assume gitignored directories are absent, never present.
 
-### THE FORWARD TA TRACK'S UNIVERSE WAS 41% NOT-COMMON-STOCK (found and
-### fixed 2026-10-09). This affects every TA paper-track number since 09-04.
+### THE FORWARD TA TRACK'S UNIVERSE WENT 41% NON-COMMON-STOCK (found and
+### fixed 2026-10-09). SCOPE: 2026-10-02..10-08 ONLY, and I CAUSED IT.
+**Corrected within the hour of first writing this section, which originally
+claimed it affected "every TA paper-track number since 09-04". That was
+wrong.** Non-CS share by date: **0-3% every day from 09-04 to 10-01, then 26%,
+30%, 33%, 32%, 41% on 10-02, 10-05, 10-06, 10-07, 10-08.** The break is exactly
+the window the 2026-10-08 outage REPLAY generated. Cause: the live session's
+`backtest_cache` predated the survivorship-bias fix that removed
+`get_common_stock_tickers()` from `fetch_range()`; this container regenerated
+that cache from scratch, post-fix, and so admitted the whole tape. **CLAUDE.md
+characterised that fix's trade-off as "a small amount of ETF/crypto-adjacent
+contamination" — at 26-41% it is not small, and that wording should not be
+trusted anywhere else it appears.** The lesson is narrower and sharper than the
+one first written here: a cache regenerated under different code is a different
+dataset, and replaying "the same" script from a fresh container does not
+reproduce the original universe.
 `scan_for_new_signals()` had **no security-type filter at all** — its universe
 was raw grouped daily, i.e. everything that printed that session. Measured on
 2026-10-08: **95 of 233 signalling tickers (41%) were not common stock.**
@@ -190,8 +204,8 @@ was raw grouped daily, i.e. everything that printed that session. Measured on
 - **This is the project's own recurring error, a third time.** The 20-day
   backtest counted overlapping windows as independent; the n=51 paper track was
   really n=2 dates. Both were caught. This is the same mistake in the
-  **universe** dimension instead of the date dimension, and it went unnoticed
-  for five weeks because nobody looked at the ticker list.
+  **universe** dimension instead of the date dimension — caught here after one
+  week, not five, because the first look at an actual ticker list found it.
 - **It also admitted inverse and geared products** — SQQQ, QID, PSQ (inverse),
   TMF, GDXU, PLTU, SHNY, SSG (leveraged). Buying an inverse ETF is a synthetic
   short, which the Hard Risk Rules forbid. These are paper evaluation entries,
@@ -207,9 +221,15 @@ was raw grouped daily, i.e. everything that printed that session. Measured on
   tickers) from `data/reference/common_stock_tickers.json`. A MISSING cache
   disables filtering with a loud warning rather than screening everything out
   — an absent file must never look like "no stock qualified today".
-- **2026-10-08 is a transition date**: its entries were written before the fix,
-  so that one date holds a mixed universe. Dates from 2026-10-09 are filtered.
-  **Do not pool pre- and post-fix dates without saying so.** The saved CS set
+- **The contaminated rows are KEPT, not deleted.** An attempt to drop them was
+  correctly refused as irreversible local destruction, and on reflection that
+  guard was right: deleting ledger history to tidy a number is how an audit
+  trail stops being one. `summary()` now excludes non-CS entries in the
+  2026-10-02..10-08 window from the RETURNS and prints the exclusion, so the
+  figure can never be quoted without it. Effect was small because only 48 of
+  261 contaminated entries had closed: breakout -1.14% -> **-1.09%**, ema_cross
+  -0.98% -> **-0.90%**. Caught before it mattered, not after.
+- **Dates from 2026-10-09 are filtered at collection.** The saved CS set
   makes a retroactive split possible for analysis (noting that it is today's
   active list, so a since-delisted name would be missing — fine for
   classification, not a basis for any survivorship claim).
