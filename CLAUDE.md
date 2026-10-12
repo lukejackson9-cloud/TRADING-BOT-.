@@ -264,6 +264,44 @@ looks identical to a patiently accumulating one. `health` now excludes the
 from the pre-feature one. If a future recovery replays sessions again, extend
 `BACKFILL_START/END` rather than letting the alarm rot.
 
+### IT HAPPENED AGAIN, TO THE OTHER CONTAINER, 2026-10-12. STOP REPOINTING
+### ROUTINES AND READ THIS BEFORE "FIXING" THE CREDENTIAL PROBLEM AGAIN.
+On 2026-10-08 the three forward routines were repointed to
+session_01AvMvpzBXKU4AWJqqqoDp5Y because that container still held a working
+`.env`. Over the following weekend **that container was reclaimed too**, and on
+2026-10-12 every routine is dead again from the identical single cause: no
+`.env`, and MASSIVE/FMP/ALPACA/T212 all absent from the environment.
+`data/reference/` and the scratchpad are gone with it, so there is no local
+copy left to restore from — the `.env` recovered from a zip on 2026-09-11 is
+also lost. **Committed work is intact; nothing was lost because it was all
+pushed.** That is the only reason this is an outage and not a disaster.
+- **This was predicted in writing on 2026-10-08** ("the routines still depend
+  on this container surviving... I've reduced the blast radius, not removed
+  it") and it still happened, because reducing blast radius was all that was
+  done. **Repointing a routine to whichever container currently holds a `.env`
+  is not a fix — it relocates the hostage.** Do not do it a third time.
+- **The only durable fix is the environment's secrets store.** Keys there
+  survive reclaim, and the routines can then run as
+  `create_new_session_on_fire`, depending on no container staying alive. It
+  needs the user; there is no agent-side workaround, and inventing one is how
+  this recurs.
+- **A 401 is not an answer about entitlement.** The 10-12 gate probes returned
+  000 for EDGAR and `401 "API Key was not provided"` twice. Those 401s are the
+  missing key, not a verdict on whether EDGAR was allowlisted or the paid
+  add-on bought. **Re-run the gate once credentials exist before concluding
+  anything about the data source.** Reading a credential failure as a
+  data-source answer would be the same error class as reading a 429 as "this
+  company files nothing" (see the fundamentals section).
+- **What the routines did right**: all three check credentials at Step 0 and
+  are instructed to log, notify and stop rather than improvise. No ranked pick
+  was recorded and nothing was substituted — a missing day is a bug, a
+  fabricated day is worse.
+- **Regenerable vs lost**: `data/reference/` is gitignored infrastructure and
+  rebuilds itself on the next successful run (the CS reference set, the
+  backtest caches). The ledgers in `data/` are committed and safe. Only the
+  credentials are irreplaceable from inside a container, which is exactly why
+  they belong in secrets rather than on a disk.
+
 ## Identity & Mandate
 You are a short-term equity research assistant. In the current
 advisory-only mode (see above), your job is to:
