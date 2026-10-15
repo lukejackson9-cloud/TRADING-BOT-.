@@ -41,6 +41,9 @@ Environment:
   T212_API_KEY, T212_API_SECRET, T212_BASE_URL (demo)    required to trade
   BRIDGE_SECRET            required; shared secret the phone sends
   BRIDGE_PORT              default 8787
+  BRIDGE_HOST              default 0.0.0.0 (deploy uses 127.0.0.1 behind Caddy/HTTPS)
+  BRIDGE_STATE_DIR         default data/discord_bridge
+  BRIDGE_TRADES_LOG        default data/trades.log
   BRIDGE_DRY_RUN           default "1"; set "0" to place demo orders
   BRIDGE_CHANNEL_FILTER    optional; substring the notification title must
                            contain (e.g. "#alerts"), so other Discord
@@ -59,7 +62,8 @@ Environment:
 Phone side: POST http://<server>:<port>/alert with header
   X-Bridge-Secret: <BRIDGE_SECRET>
 and JSON body {"title": "<notification title>", "text": "<notification text>"}
-(a raw text body is accepted too). GET /health returns "ok".
+or a plain-text body whose first line is the title. GET /health returns "ok".
+Setup guide: deploy/discord_bridge/README.md
 
 CLI:
   python scripts/discord_alert_bridge.py serve
@@ -85,10 +89,12 @@ from pathlib import Path
 import requests
 
 ROOT = Path(__file__).resolve().parents[1]
-STATE_DIR = ROOT / "data" / "discord_bridge"
+# On a server these live outside the git checkout (deploy sets both), so the
+# tracked data/trades.log never picks up local edits that block `git pull`.
+STATE_DIR = Path(os.environ.get("BRIDGE_STATE_DIR", ROOT / "data" / "discord_bridge"))
 STATE_PATH = STATE_DIR / "state.json"
 ALERT_LOG = STATE_DIR / "alerts.jsonl"
-TRADES_LOG = ROOT / "data" / "trades.log"
+TRADES_LOG = Path(os.environ.get("BRIDGE_TRADES_LOG", ROOT / "data" / "trades.log"))
 
 # Hard Risk Rules ceilings (CLAUDE.md). Env may tighten, never loosen.
 HARD_MAX_POSITION_PCT = 0.05
@@ -502,7 +508,7 @@ def trim_position(sym, state, why):
 
 def process_notification(title, text):
     """Entry point for one forwarded notification. Returns a result string."""
-    if CHANNEL_FILTER and CHANNEL_FILTER not in (title or "").lower():
+    if CHANNEL_FILTER and CHANNEL_FILTER not in f"{title or ''}\n{text or ''}".lower():
         return "ignored: not from the configured channel"
     body = f"{title or ''}\n{text or ''}".strip()
     digest = hashlib.sha256(body.encode()).hexdigest()
@@ -635,7 +641,12 @@ class Handler(BaseHTTPRequestHandler):
             body = json.loads(raw)
             title, text = body.get("title", ""), body.get("text", "")
         except (json.JSONDecodeError, AttributeError):
-            title, text = "", raw
+            # Plain-text body: first line is the notification title, the rest
+            # the message. Phone apps substitute raw notification text into the
+            # body, and a quote or newline in it would break a JSON template.
+            title, _, text = raw.partition("\n")
+            if not text:
+                title, text = "", raw
         _work.put((title, text))
         self._reply(200, "queued")
 
@@ -652,12 +663,13 @@ def serve():
             if not os.environ.get(k):
                 sys.exit(f"{k} is not set; cannot trade. Set BRIDGE_DRY_RUN=1 to test parsing.")
     port = int(os.environ.get("BRIDGE_PORT", "8787"))
+    host = os.environ.get("BRIDGE_HOST", "0.0.0.0")
     threading.Thread(target=_worker, daemon=True).start()
     threading.Thread(target=_monitor_loop, daemon=True).start()
     print(f"Discord alert bridge on :{port}  dry_run={DRY_RUN}  "
           f"pos<={MAX_POSITION_PCT:.0%} exposure<={MAX_EXPOSURE_PCT:.0%} "
           f"daily_loss<={DAILY_LOSS_PCT:.0%}", flush=True)
-    ThreadingHTTPServer(("0.0.0.0", port), Handler).serve_forever()
+    ThreadingHTTPServer((host, port), Handler).serve_forever()
 
 
 def main(argv):
