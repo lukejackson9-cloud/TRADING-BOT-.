@@ -54,6 +54,7 @@ Environment:
   BRIDGE_MAX_PER_SECTOR    default 2
   ALPACA_API_KEY/SECRET    optional; price source when an alert has no entry
   MASSIVE_API_KEY          optional; SIC industry for the correlation check
+  BRIDGE_FX_GBP_USD        optional fallback FX rate if frankfurter.app is unreachable
 
 Phone side: POST http://<server>:<port>/alert with header
   X-Bridge-Secret: <BRIDGE_SECRET>
@@ -301,10 +302,18 @@ def fx_rate(from_ccy, to_ccy):
     """Units of to_ccy per 1 from_ccy."""
     if from_ccy == to_ccy:
         return 1.0
-    r = requests.get("https://api.frankfurter.app/latest",
-                     params={"from": from_ccy, "to": to_ccy}, timeout=10)
-    r.raise_for_status()
-    return float(r.json()["rates"][to_ccy])
+    try:
+        r = requests.get("https://api.frankfurter.app/latest",
+                         params={"from": from_ccy, "to": to_ccy}, timeout=10)
+        r.raise_for_status()
+        return float(r.json()["rates"][to_ccy])
+    except Exception:  # noqa: BLE001
+        # Manual fallback, e.g. BRIDGE_FX_GBP_USD=1.27. With neither source the
+        # trade errors out (logged + pushed) rather than sizing on a guess.
+        override = os.environ.get(f"BRIDGE_FX_{from_ccy}_{to_ccy}")
+        if override:
+            return float(override)
+        raise
 
 
 def sector_of(symbol):
