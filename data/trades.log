@@ -203,3 +203,4 @@
 2026-10-14T22:03:00Z NOTE: TA paper-trade routine BLOCKED, day 3 -- no .env, no keys in env (checked independently). TA ledger holds at 2026-10-08. Push already sent today at 21:40; next scheduled ~10-19 per the stepped-down cadence.
 2026-10-14T22:22:00Z NOTE: ICT paper-trade routine BLOCKED, day 3 -- no .env, no ALPACA_API_KEY (checked independently). ICT ledger holds at 2026-10-09; unrecoverable ICT sessions now 3 (10-12, 10-13, 10-14). No push, per stepped-down cadence. Day-3 totals: 3 routines fired, 3 blocked, 1 push, 0 fabricated entries.
 2026-10-15T21:40:00Z NOTE: Ranked-pick/council routine BLOCKED, day 4 -- no .env, no keys in env (re-checked). Gate still not evaluable; EDGAR and the paid add-on remain UNANSWERED, not negative. No pick, nothing substituted. No push (stepped-down cadence; next ~10-19).
+2026-10-15T22:03:00Z NOTE: TA paper-trade routine BLOCKED, day 4 -- no .env, no keys (checked independently). TA ledger holds at 2026-10-08. No push.
