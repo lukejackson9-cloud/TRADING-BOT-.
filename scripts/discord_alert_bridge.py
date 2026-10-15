@@ -63,7 +63,7 @@ and JSON body {"title": "<notification title>", "text": "<notification text>"}
 
 CLI:
   python scripts/discord_alert_bridge.py serve
-  python scripts/discord_alert_bridge.py parse "BUY $AAPL @ 182.5 SL 178 TP 190"
+  python scripts/discord_alert_bridge.py parse "Bought more IREN at 26.8 and CRWV at 59.9"
   python scripts/discord_alert_bridge.py status
   python scripts/discord_alert_bridge.py resume
 """
@@ -121,30 +121,75 @@ _state_lock = threading.Lock()
 # --------------------------------------------------------------------------
 # Parsing
 # --------------------------------------------------------------------------
+# Written against the user's real "Saucy Stocks" channel (screenshots,
+# 2026-10-15). Alerts are casual prose, not a fixed format:
+#   "ASTS is a buy here if you don't have ..."                 -> buy ASTS
+#   "Added into the rest of my WDC position, my new avg is 392" -> buy WDC
+#   "Closed NBIL at 17.4 and FPSX 3.7, I'm planning to hold VSH for a while"
+#                                       -> close NBIL, close FPSX, NOT VSH
+#   "Bought more IREN at 26.8 lowering my avg to 33 and CRWV at 59.9 my avg
+#    is 69 now"                                                 -> buy IREN, CRWV
+#   "RKLB at 54 is a buy, my average is way lower so I won't be adding ..."
+# Prices in them are often the author's AVERAGE, not today's price, so sizing
+# always prefers a live quote; an "at <price>" is only a fallback.
+# The same author runs an OPTIONS channel ("GOOGL 352.5c 1.53 10/16"). Trading
+# 212 cannot trade options and the user chose the stocks channel instead, so
+# any option-contract alert is ignored outright -- if its notifications ever
+# get forwarded too, they must not turn into share trades.
 _NUM = r"\$?\s*(\d+(?:\.\d+)?)"
-_SHORT_RE = re.compile(r"\b(short(?![\s-]term)|shorting|puts?)\b", re.I)
-_OPTIONS_RE = re.compile(
-    r"\b(calls?|puts?|strike|expiry|expiration|exp)\b|\b\d+(?:\.\d+)?[cp]\b", re.I)
-_BUY_RE = re.compile(r"\b(buy|buying|bought|long|entry|entering|entered|adding)\b", re.I)
+_CONTRACT_RE = re.compile(r"(?<![\w.])\d+(?:\.\d+)?[cp]\b|\b(calls?|puts?|strike|expiry)\b", re.I)
+_RECAP_RE = re.compile(r"\b(recap|summary|watchlist|positions? update)\b", re.I)
+_SHORT_RE = re.compile(r"\b(short(?![\s-]term)|shorting|shorted)\b", re.I)
+_NEGATED_BUY_RE = re.compile(
+    r"\b(not a buy|wouldn'?t buy|don'?t buy|do not buy|avoid|stay away)\b", re.I)
+_BUY_RE = re.compile(
+    r"\b(buy|buying|bought|long|entry|entering|entered|add|added|adding|"
+    r"starting a position|started a position|opened)\b", re.I)
+_TRIM_RE = re.compile(
+    r"\b(trim|trimmed|trimming|took (?:some )?profits?|sold (?:some|half|part)|"
+    r"selling (?:some|half|part)|scal(?:ed|ing) out)\b", re.I)
 _CLOSE_RE = re.compile(
     r"\b(sell|selling|sold|close|closing|closed|exit|exiting|exited|stopped out|"
-    r"cut|cutting)\b", re.I)
-_ENTRY_RE = re.compile(r"(?:entry|buy|bought|long|price|@|\bat\b)\s*[:\-=]?\s*" + _NUM, re.I)
+    r"cut|cutting|out of)\b", re.I)
+_HOLD_RE = re.compile(r"\b(hold|holding|keep|keeping|still in|watching|watch)\b", re.I)
+_AT_PRICE_RE = re.compile(r"\bat\s*" + _NUM, re.I)
 _STOP_RE = re.compile(r"(?:\bsl\b|stop[\s-]*loss|\bstop\b)\s*[:\-=@]?\s*(?:at\s*)?" + _NUM, re.I)
 _TARGET_RE = re.compile(
-    r"(?:\b(?:tp|pt|target)\d?\b|take[\s-]*profit)\s*[:\-=@]?\s*(?:at\s*)?" + _NUM,
-    re.I)
-_DOLLAR_TICKER_RE = re.compile(r"\$([A-Za-z]{1,5})\b")
-_BARE_TICKER_RE = re.compile(r"\b([A-Z]{1,5})\b")
+    r"(?:\b(?:tp|pt|target)\d?\b|take[\s-]*profit)\s*[:\-=@]?\s*(?:at\s*)?" + _NUM, re.I)
+_TICKER_RE = re.compile(r"\$([A-Za-z]{1,5})\b|\b([A-Z]{1,5})\b")
+_CLAUSE_SPLIT_RE = re.compile(r"\n+|[;,.!?](?!\d)\s*|\s+\band\b\s+", re.I)
 _NOT_TICKERS = {
-    "BUY", "BUYING", "LONG", "SELL", "SL", "TP", "PT", "ENTRY", "STOP", "LOSS",
-    "TARGET", "NOW", "AT", "USD", "ALERT", "NEW", "I", "A", "AM", "PM", "ET",
-    "EST", "EDT", "UK", "US", "NYSE", "OTC", "ATH", "EOD", "HOD", "LOD", "DAY",
-    "SWING", "CEO", "ER", "PR", "FDA", "IPO", "ETF", "RSI", "EMA", "SMA", "VWAP",
-    "TP1", "TP2", "PT1", "PT2", "OR", "AND", "THE", "IN", "ON", "TO", "OF", "IT",
-    "IS", "MY", "GO", "UP", "ALL", "OUT", "RISK", "SIZE", "HALF", "FULL", "NFA",
-    "DYOR", "GL", "LFG", "IMO", "CLOSE", "EXIT", "HOLD", "WATCH", "NOTE",
+    "I", "A", "AM", "PM", "ET", "EST", "EDT", "UK", "US", "USA", "SL", "TP", "PT",
+    "NFA", "DYOR", "IMO", "IMHO", "ATH", "ATL", "EOD", "HOD", "LOD", "DCA", "AI",
+    "EV", "CPI", "PPI", "FOMC", "FED", "GDP", "NFP", "ER", "PR", "FDA", "IPO", "ETF",
+    "CEO", "CFO", "RSI", "EMA", "SMA", "MA", "VWAP", "OTC", "NYSE", "LFG", "GL",
+    "OK", "TBH", "BTW", "FYI", "LOL", "ALL", "NEW", "BUY", "SELL", "LONG", "STOP",
+    "AND", "THE", "OR", "IT", "IS", "ON", "IN", "AT", "TO", "MY", "UP", "NOW",
 }
+
+
+def _tickers(clause):
+    out = []
+    for m in _TICKER_RE.finditer(clause):
+        t = (m.group(1) or m.group(2)).upper()
+        if t not in _NOT_TICKERS and t not in out:
+            out.append(t)
+    return out
+
+
+def _clause_action(clause):
+    """buy / trim / close / hold / None, by whichever keyword comes first."""
+    if _NEGATED_BUY_RE.search(clause):
+        return "hold"
+    hits = []
+    for kind, rx in (("trim", _TRIM_RE), ("close", _CLOSE_RE), ("buy", _BUY_RE),
+                     ("hold", _HOLD_RE)):
+        m = rx.search(clause)
+        if m:
+            hits.append((m.start(), kind))
+    # A trim phrase ("sold some") also matches the close word "sold"; same start
+    # position, so the sort keeps trim because it was appended first.
+    return sorted(hits, key=lambda h: h[0])[0][1] if hits else None
 
 
 def _first_num(rx, text):
@@ -152,65 +197,57 @@ def _first_num(rx, text):
     return float(m.group(1)) if m else None
 
 
-def _find_tickers(text):
-    found = [t.upper() for t in _DOLLAR_TICKER_RE.findall(text)]
-    if not found:
-        found = [t for t in _BARE_TICKER_RE.findall(text) if t not in _NOT_TICKERS]
-    seen, out = set(), []
-    for t in found:
-        if t not in seen and t not in _NOT_TICKERS:
-            seen.add(t)
-            out.append(t)
-    return out
-
-
 def parse_alert(text):
     """
-    Turn one alert's text into an action. Conservative by design: anything
-    ambiguous is "ignore" with a reason, because a missed alert costs nothing
-    on a demo account and a misread one teaches the measurement something false.
+    Turn one alert into a LIST of actions (one message can close two names).
+    Conservative: anything unclear is "ignore" with a reason, because a missed
+    alert costs nothing on a demo account and a misread one records a trade
+    the author never made.
     """
     raw = (text or "").strip()
     if not raw:
-        return {"action": "ignore", "reason": "empty"}
-    if _OPTIONS_RE.search(raw):
-        return {"action": "ignore", "reason": "options alert (T212 API is shares only)"}
+        return [{"action": "ignore", "reason": "empty"}]
+    if _RECAP_RE.search(raw):
+        return [{"action": "ignore", "reason": "recap/summary message, never traded"}]
+    if _CONTRACT_RE.search(raw):
+        return [{"action": "ignore", "reason": "options alert (T212 is shares only)"}]
     if _SHORT_RE.search(raw):
-        return {"action": "ignore", "reason": "short alert (long-only per Hard Risk Rules)"}
+        return [{"action": "ignore", "reason": "short alert (long-only per Hard Risk Rules)"}]
 
-    buy_m, close_m = _BUY_RE.search(raw), _CLOSE_RE.search(raw)
-    if not buy_m and not close_m:
-        return {"action": "ignore", "reason": "no buy/close keyword"}
-    # Whichever comes first decides, so "Buy X, sell at 200" stays a buy.
-    if buy_m and (not close_m or buy_m.start() < close_m.start()):
-        action = "buy"
-    else:
-        action = "close"
-
-    tickers = _find_tickers(raw)
-    if not tickers:
-        return {"action": "ignore", "reason": f"{action} keyword but no ticker found"}
-    if len(tickers) > 1:
-        return {"action": "ignore",
-                "reason": f"ambiguous: several tickers {tickers}", "tickers": tickers}
-
-    out = {"action": action, "ticker": tickers[0]}
-    if action == "buy":
-        # Prices after a sell word ("buy X, sell at 450") are an exit level,
-        # never the entry.
-        head = raw[:close_m.start()] if close_m else raw
-        entry = _first_num(_ENTRY_RE, head)
-        stop = _first_num(_STOP_RE, raw)
-        target = _first_num(_TARGET_RE, raw)
-        if target is None and close_m:
-            target = _first_num(re.compile(r"\bat\s*" + _NUM, re.I), raw[close_m.start():])
-        # Reject levels that are inconsistent with a long; defaults apply later.
-        if entry and stop and stop >= entry:
-            stop = None
-        if entry and target and target <= entry:
-            target = None
-        out.update({"entry": entry, "stop": stop, "target": target})
-    return out
+    actions, seen, prev = [], set(), None
+    for clause in filter(None, (c.strip() for c in _CLAUSE_SPLIT_RE.split(raw))):
+        tickers = _tickers(clause)
+        kind = _clause_action(clause)
+        if kind is None and tickers and prev in ("buy", "close", "trim") \
+                and _tickers(clause.split()[0]) == tickers[:1]:
+            # "Closed NBIL at 17.4 and FPSX 3.7": a verbless clause that STARTS
+            # with a ticker continues the previous verb. "I'm planning to hold
+            # VSH" does not start with one, and says hold anyway.
+            kind = prev
+        if kind:
+            prev = kind
+        if kind not in ("buy", "close", "trim") or not tickers:
+            continue
+        if len(tickers) > 1:
+            actions.append({"action": "ignore",
+                            "reason": f"ambiguous clause, several tickers {tickers}: {clause!r}"})
+            continue
+        t = tickers[0]
+        if t in seen:
+            continue
+        seen.add(t)
+        a = {"action": kind, "ticker": t}
+        if kind == "buy":
+            a.update({"entry": _first_num(_AT_PRICE_RE, clause),
+                      "stop": _first_num(_STOP_RE, clause),
+                      "target": _first_num(_TARGET_RE, clause)})
+            e = a["entry"]
+            if e and a["stop"] and a["stop"] >= e:
+                a["stop"] = None
+            if e and a["target"] and a["target"] <= e:
+                a["target"] = None
+        actions.append(a)
+    return actions or [{"action": "ignore", "reason": "no buy/close/trim with a ticker"}]
 
 
 # --------------------------------------------------------------------------
@@ -273,6 +310,27 @@ def _t212():
 
 
 _instrument_cache = {"at": 0, "data": None}
+_acct = {"ccy": None, "cash_at": 0.0}
+# T212 rate-limits account endpoints (measured 2026-10-15: a second /cash call
+# right after the first returned 429). Pacing, not retrying: one alert can name
+# two tickers, and each needs a fresh balance.
+CASH_MIN_INTERVAL_S = 5.0
+
+
+def account_currency():
+    if not _acct["ccy"]:
+        _acct["ccy"] = _t212()._get("/equity/account/info").get("currencyCode", "USD")
+    return _acct["ccy"]
+
+
+def account_cash():
+    wait = CASH_MIN_INTERVAL_S - (time.time() - _acct["cash_at"])
+    if wait > 0:
+        time.sleep(wait)
+    try:
+        return _t212().get_account_cash()
+    finally:
+        _acct["cash_at"] = time.time()
 
 
 def resolve_instrument(symbol):
@@ -291,11 +349,18 @@ def resolve_instrument(symbol):
 
 
 def latest_price(symbol):
-    if not os.environ.get("ALPACA_API_KEY"):
-        return None
-    sys.path.insert(0, str(ROOT / "scripts"))
-    import alpaca_client
-    return float(alpaca_client.get_latest_trade(symbol)["trade"]["p"])
+    """Live share price: Alpaca when keyed, else Yahoo's keyless chart endpoint
+    (unofficial -- see yahoo_screener_client.py; needs a User-Agent)."""
+    if os.environ.get("ALPACA_API_KEY"):
+        sys.path.insert(0, str(ROOT / "scripts"))
+        import alpaca_client
+        return float(alpaca_client.get_latest_trade(symbol)["trade"]["p"])
+    r = requests.get(f"https://query2.finance.yahoo.com/v8/finance/chart/{symbol}",
+                     params={"interval": "1m", "range": "1d"},
+                     headers={"User-Agent": "Mozilla/5.0"}, timeout=10)
+    r.raise_for_status()
+    px = r.json()["chart"]["result"][0]["meta"].get("regularMarketPrice")
+    return float(px) if px else None
 
 
 def fx_rate(from_ccy, to_ccy):
@@ -346,9 +411,14 @@ def handle_buy(alert, state, source_text):
             return (f"skipped {sym}: correlation cap, already {len(same)} open in "
                     f"'{sector}' ({', '.join(p['ticker'] for p in same)})")
 
-    price = alert.get("entry") or latest_price(sym)
+    # Live quote first: alert prices are often the author's average, not today's.
+    try:
+        price = latest_price(sym)
+    except Exception:  # noqa: BLE001
+        price = None
+    price = price or alert.get("entry")
     if not price:
-        return f"skipped {sym}: no entry price in alert and no price source configured"
+        return f"skipped {sym}: no live price and no price in the alert"
 
     if DRY_RUN and not os.environ.get("T212_API_KEY"):
         total, free, invested, acct_ccy = 5000.0, 5000.0, 0.0, "USD"
@@ -359,11 +429,14 @@ def handle_buy(alert, state, source_text):
         if not inst:
             return f"skipped {sym}: no unique T212 instrument found"
         t212_ticker, instr_ccy = inst["ticker"], inst.get("currencyCode", "USD")
-        cash = t212.get_account_cash()
-        info = t212._get("/equity/account/info")
+        cash = account_cash()
         total, free = float(cash["total"]), float(cash["free"])
-        invested, acct_ccy = float(cash.get("invested", 0)), info.get("currencyCode", "USD")
+        invested, acct_ccy = float(cash.get("invested", 0)), account_currency()
 
+    if DRY_RUN:
+        # No real fills in dry-run, so count the simulated book against the caps.
+        sim = sum(p.get("cost_acct", 0) for p in state["positions"].values())
+        invested, free = invested + sim, free - sim
     budget = min(total * MAX_POSITION_PCT, free)
     if invested + budget > total * MAX_EXPOSURE_PCT:
         budget = total * MAX_EXPOSURE_PCT - invested
@@ -386,6 +459,7 @@ def handle_buy(alert, state, source_text):
     state["positions"][sym] = {
         "ticker": sym, "t212_ticker": t212_ticker, "qty": qty, "entry_ref": price,
         "stop": stop, "target": target, "sector": sector, "order_id": order_id,
+        "cost_acct": round(budget, 2),
         "opened_at": _now().isoformat(), "source": source_text[:500],
         "dry_run": DRY_RUN,
     }
@@ -409,6 +483,23 @@ def close_position(sym, state, why):
     return msg
 
 
+def trim_position(sym, state, why):
+    """Their trims never state a size, so sell half (the whole thing if tiny)."""
+    pos = state["positions"].get(sym)
+    if not pos:
+        return f"no bridge position in {sym} to trim"
+    half = math.floor(pos["qty"] / 2 * 1000) / 1000
+    if half <= 0 or pos["qty"] - half <= 0:
+        return close_position(sym, state, why)
+    if not DRY_RUN:
+        _t212().place_market_order(pos["t212_ticker"], -half)
+    pos["qty"] = round(pos["qty"] - half, 3)
+    msg = f"SELL {half} {sym} (half, {why}); {pos['qty']} left"
+    log_trade(msg)
+    notify(f"{'[DRY RUN] ' if DRY_RUN else ''}Demo TRIM {sym}", msg)
+    return msg
+
+
 def process_notification(title, text):
     """Entry point for one forwarded notification. Returns a result string."""
     if CHANNEL_FILTER and CHANNEL_FILTER not in (title or "").lower():
@@ -424,21 +515,26 @@ def process_notification(title, text):
             return "ignored: duplicate notification"
         state["recent_hashes"][digest] = now
 
-        alert = parse_alert(text)
-        try:
-            if alert["action"] == "buy":
-                result = handle_buy(alert, state, body)
-            elif alert["action"] == "close":
-                result = close_position(alert["ticker"], state, "close alert")
-            else:
-                result = f"ignored: {alert['reason']}"
-        except Exception as e:  # noqa: BLE001
-            # Per CLAUDE.md: if a T212 call errors, stop and log -- never retry blindly.
-            result = f"ERROR, nothing retried: {e!r}"
-            notify("Discord bridge error", f"{alert.get('ticker', '?')}: {e!r}")
+        alerts = parse_alert(text)
+        results = []
+        for alert in alerts:
+            try:
+                if alert["action"] == "buy":
+                    results.append(handle_buy(alert, state, body))
+                elif alert["action"] == "close":
+                    results.append(close_position(alert["ticker"], state, "close alert"))
+                elif alert["action"] == "trim":
+                    results.append(trim_position(alert["ticker"], state, "trim alert"))
+                else:
+                    results.append(f"ignored: {alert['reason']}")
+            except Exception as e:  # noqa: BLE001
+                # Per CLAUDE.md: if a T212 call errors, stop and log -- never retry blindly.
+                results.append(f"ERROR, nothing retried: {e!r}")
+                notify("Discord bridge error", f"{alert.get('ticker', '?')}: {e!r}")
+        result = " | ".join(results)
         save_state(state)
     log_alert({"at": _now().isoformat(), "title": title, "text": text,
-               "parsed": alert, "result": result, "dry_run": DRY_RUN})
+               "parsed": alerts, "result": result, "dry_run": DRY_RUN})
     print(f"[alert] {result}", flush=True)
     return result
 
@@ -465,7 +561,7 @@ def monitor_once():
             prices = {sym: prices.get(pos["t212_ticker"])
                       for sym, pos in state["positions"].items()}
 
-            cash = t212.get_account_cash()
+            cash = account_cash()
             total = float(cash["total"])
             today = _now().date().isoformat()
             if state["day"] != today:
